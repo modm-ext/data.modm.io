@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,156 +319,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="module-modm_data.pdf.page">
-<span id="modm-data-pdf-page-module"></span><h1>modm_data.pdf.page module<a class="headerlink" href="#module-modm_data.pdf.page" title="Permalink to this heading">#</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf.page.</span></span><span class="sig-name descname"><span class="pre">Page</span></span><a class="reference internal" href="../_modules/modm_data/pdf/page.html#Page"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.page.Page" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PdfPage</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/page.html#Page.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.page.Page.__init__" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.bbox">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">Rectangle</span></a></em><a class="headerlink" href="#modm_data.pdf.page.Page.bbox" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.char">
-<span class="sig-name descname"><span class="pre">char</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/page.html#Page.char"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.page.Page.char" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="modm_data.pdf.character.html#modm_data.pdf.character.Character" title="modm_data.pdf.character.Character"><em>Character</em></a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.char_count">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">char_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.page.Page.char_count" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.charlines">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">charlines</span></span><a class="headerlink" href="#modm_data.pdf.page.Page.charlines" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.chars">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chars</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modm_data.pdf.character.html#modm_data.pdf.character.Character" title="modm_data.pdf.character.Character"><span class="pre">modm_data.pdf.character.Character</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.page.Page.chars" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.chars_in_area">
-<span class="sig-name descname"><span class="pre">chars_in_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/page.html#Page.chars_in_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.page.Page.chars_in_area" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>area</strong> (<a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><em>Rectangle</em></a>) – </p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list[<a class="reference internal" href="modm_data.pdf.character.html#modm_data.pdf.character.Character" title="modm_data.pdf.character.Character">modm_data.pdf.character.Character</a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.find">
-<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_sensitive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/page.html#Page.find"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.page.Page.find" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list[<a class="reference internal" href="modm_data.pdf.character.html#modm_data.pdf.character.Character" title="modm_data.pdf.character.Character">modm_data.pdf.character.Character</a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.graphic_clusters">
-<span class="sig-name descname"><span class="pre">graphic_clusters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/page.html#Page.graphic_clusters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.page.Page.graphic_clusters" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.height">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.page.Page.height" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.images">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">images</span></span><a class="headerlink" href="#modm_data.pdf.page.Page.images" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.label">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.page.Page.label" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.link_characters">
-<span class="sig-name descname"><span class="pre">link_characters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/page.html#Page.link_characters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.page.Page.link_characters" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.objlinks">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">objlinks</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modm_data.pdf.link.html#modm_data.pdf.link.ObjLink" title="modm_data.pdf.link.ObjLink"><span class="pre">modm_data.pdf.link.ObjLink</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.page.Page.objlinks" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.paths">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">paths</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modm_data.pdf.path.html#modm_data.pdf.path.Path" title="modm_data.pdf.path.Path"><span class="pre">modm_data.pdf.path.Path</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.page.Page.paths" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.rotation">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.page.Page.rotation" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.structures">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">structures</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modm_data.pdf.structure.html#modm_data.pdf.structure.Structure" title="modm_data.pdf.structure.Structure"><span class="pre">modm_data.pdf.structure.Structure</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.page.Page.structures" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.text_in_area">
-<span class="sig-name descname"><span class="pre">text_in_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">area</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/page.html#Page.text_in_area"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.page.Page.text_in_area" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>area</strong> (<a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><em>Rectangle</em></a>) – </p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.weblinks">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weblinks</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modm_data.pdf.link.html#modm_data.pdf.link.WebLink" title="modm_data.pdf.link.WebLink"><span class="pre">modm_data.pdf.link.WebLink</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.page.Page.weblinks" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.page.Page.width">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.page.Page.width" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+          <section id="modm-data-pdf-page-module">
+<h1>modm_data.pdf.page module<a class="headerlink" href="#modm-data-pdf-page-module" title="Permalink to this heading">#</a></h1>
 </section>
 
         </article>
@@ -514,49 +372,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">modm_data.pdf.page module</a><ul>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page"><code class="docutils literal notranslate"><span class="pre">Page</span></code></a><ul>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.__init__"><code class="docutils literal notranslate"><span class="pre">Page.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.bbox"><code class="docutils literal notranslate"><span class="pre">Page.bbox</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.char"><code class="docutils literal notranslate"><span class="pre">Page.char()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.char_count"><code class="docutils literal notranslate"><span class="pre">Page.char_count</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.charlines"><code class="docutils literal notranslate"><span class="pre">Page.charlines</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.chars"><code class="docutils literal notranslate"><span class="pre">Page.chars</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.chars_in_area"><code class="docutils literal notranslate"><span class="pre">Page.chars_in_area()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.find"><code class="docutils literal notranslate"><span class="pre">Page.find()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.graphic_clusters"><code class="docutils literal notranslate"><span class="pre">Page.graphic_clusters()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.height"><code class="docutils literal notranslate"><span class="pre">Page.height</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.images"><code class="docutils literal notranslate"><span class="pre">Page.images</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.label"><code class="docutils literal notranslate"><span class="pre">Page.label</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.link_characters"><code class="docutils literal notranslate"><span class="pre">Page.link_characters()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.objlinks"><code class="docutils literal notranslate"><span class="pre">Page.objlinks</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.paths"><code class="docutils literal notranslate"><span class="pre">Page.paths</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.rotation"><code class="docutils literal notranslate"><span class="pre">Page.rotation</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.structures"><code class="docutils literal notranslate"><span class="pre">Page.structures</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.text_in_area"><code class="docutils literal notranslate"><span class="pre">Page.text_in_area()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.weblinks"><code class="docutils literal notranslate"><span class="pre">Page.weblinks</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.page.Page.width"><code class="docutils literal notranslate"><span class="pre">Page.width</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

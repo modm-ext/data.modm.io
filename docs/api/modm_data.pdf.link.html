@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,61 +319,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="module-modm_data.pdf.link">
-<span id="modm-data-pdf-link-module"></span><h1>modm_data.pdf.link module<a class="headerlink" href="#module-modm_data.pdf.link" title="Permalink to this heading">#</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="modm_data.pdf.link.ObjLink">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf.link.</span></span><span class="sig-name descname"><span class="pre">ObjLink</span></span><a class="reference internal" href="../_modules/modm_data/pdf/link.html#ObjLink"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.link.ObjLink" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.link.ObjLink.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/link.html#ObjLink.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.link.ObjLink.__init__" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.link.ObjLink.page_index">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">page_index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.link.ObjLink.page_index" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="modm_data.pdf.link.WebLink">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf.link.</span></span><span class="sig-name descname"><span class="pre">WebLink</span></span><a class="reference internal" href="../_modules/modm_data/pdf/link.html#WebLink"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.link.WebLink" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.link.WebLink.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/link.html#WebLink.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.link.WebLink.__init__" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.link.WebLink.bbox_count">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.link.WebLink.bbox_count" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.link.WebLink.bboxes">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bboxes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">modm_data.utils.math.Rectangle</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.link.WebLink.bboxes" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.link.WebLink.range">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">range</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.link.WebLink.range" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.link.WebLink.url">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.link.WebLink.url" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+          <section id="modm-data-pdf-link-module">
+<h1>modm_data.pdf.link module<a class="headerlink" href="#modm-data-pdf-link-module" title="Permalink to this heading">#</a></h1>
 </section>
 
         </article>
@@ -419,39 +372,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">modm_data.pdf.link module</a><ul>
-<li><a class="reference internal" href="#modm_data.pdf.link.ObjLink"><code class="docutils literal notranslate"><span class="pre">ObjLink</span></code></a><ul>
-<li><a class="reference internal" href="#modm_data.pdf.link.ObjLink.__init__"><code class="docutils literal notranslate"><span class="pre">ObjLink.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.link.ObjLink.page_index"><code class="docutils literal notranslate"><span class="pre">ObjLink.page_index</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#modm_data.pdf.link.WebLink"><code class="docutils literal notranslate"><span class="pre">WebLink</span></code></a><ul>
-<li><a class="reference internal" href="#modm_data.pdf.link.WebLink.__init__"><code class="docutils literal notranslate"><span class="pre">WebLink.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.link.WebLink.bbox_count"><code class="docutils literal notranslate"><span class="pre">WebLink.bbox_count</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.link.WebLink.bboxes"><code class="docutils literal notranslate"><span class="pre">WebLink.bboxes</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.link.WebLink.range"><code class="docutils literal notranslate"><span class="pre">WebLink.range</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.link.WebLink.url"><code class="docutils literal notranslate"><span class="pre">WebLink.url</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

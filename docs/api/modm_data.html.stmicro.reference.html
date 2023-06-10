@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,65 +319,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="module-modm_data.html.stmicro.reference">
-<span id="modm-data-html-stmicro-reference-module"></span><h1>modm_data.html.stmicro.reference module<a class="headerlink" href="#module-modm_data.html.stmicro.reference" title="Permalink to this heading">#</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="modm_data.html.stmicro.reference.ReferenceManual">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.stmicro.reference.</span></span><span class="sig-name descname"><span class="pre">ReferenceManual</span></span><a class="reference internal" href="../_modules/modm_data/html/stmicro/reference.html#ReferenceManual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.stmicro.reference.ReferenceManual" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="modm_data.html.document.html#modm_data.html.document.Document" title="modm_data.html.document.Document"><code class="xref py py-class docutils literal notranslate"><span class="pre">Document</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.html.stmicro.reference.ReferenceManual.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/stmicro/reference.html#ReferenceManual.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.stmicro.reference.ReferenceManual.__init__" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.html.stmicro.reference.ReferenceManual.device_filters">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">device_filters</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.html.stmicro.reference.ReferenceManual.device_filters" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.html.stmicro.reference.ReferenceManual.devices">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">devices</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.html.stmicro.reference.ReferenceManual.devices" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.html.stmicro.reference.ReferenceManual.filter_devices">
-<span class="sig-name descname"><span class="pre">filter_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">devices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/stmicro/reference.html#ReferenceManual.filter_devices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.stmicro.reference.ReferenceManual.filter_devices" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.html.stmicro.reference.ReferenceManual.flash_latencies">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flash_latencies</span></span><a class="headerlink" href="#modm_data.html.stmicro.reference.ReferenceManual.flash_latencies" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.html.stmicro.reference.ReferenceManual.peripheral_maps">
-<span class="sig-name descname"><span class="pre">peripheral_maps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chapter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assert_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/stmicro/reference.html#ReferenceManual.peripheral_maps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.stmicro.reference.ReferenceManual.peripheral_maps" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.html.stmicro.reference.ReferenceManual.peripherals">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">peripherals</span></span><a class="headerlink" href="#modm_data.html.stmicro.reference.ReferenceManual.peripherals" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="modm_data.html.stmicro.reference.ReferenceManual.vector_tables">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vector_tables</span></span><a class="headerlink" href="#modm_data.html.stmicro.reference.ReferenceManual.vector_tables" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+          <section id="modm-data-html-stmicro-reference-module">
+<h1>modm_data.html.stmicro.reference module<a class="headerlink" href="#modm-data-html-stmicro-reference-module" title="Permalink to this heading">#</a></h1>
 </section>
 
         </article>
@@ -423,37 +372,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">modm_data.html.stmicro.reference module</a><ul>
-<li><a class="reference internal" href="#modm_data.html.stmicro.reference.ReferenceManual"><code class="docutils literal notranslate"><span class="pre">ReferenceManual</span></code></a><ul>
-<li><a class="reference internal" href="#modm_data.html.stmicro.reference.ReferenceManual.__init__"><code class="docutils literal notranslate"><span class="pre">ReferenceManual.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.html.stmicro.reference.ReferenceManual.device_filters"><code class="docutils literal notranslate"><span class="pre">ReferenceManual.device_filters</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.html.stmicro.reference.ReferenceManual.devices"><code class="docutils literal notranslate"><span class="pre">ReferenceManual.devices</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.html.stmicro.reference.ReferenceManual.filter_devices"><code class="docutils literal notranslate"><span class="pre">ReferenceManual.filter_devices()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.html.stmicro.reference.ReferenceManual.flash_latencies"><code class="docutils literal notranslate"><span class="pre">ReferenceManual.flash_latencies</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.html.stmicro.reference.ReferenceManual.peripheral_maps"><code class="docutils literal notranslate"><span class="pre">ReferenceManual.peripheral_maps()</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.html.stmicro.reference.ReferenceManual.peripherals"><code class="docutils literal notranslate"><span class="pre">ReferenceManual.peripherals</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.html.stmicro.reference.ReferenceManual.vector_tables"><code class="docutils literal notranslate"><span class="pre">ReferenceManual.vector_tables</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
