@@ -1,0 +1,7 @@
+modm\_data.pdf2html.stmicro.convert module
+==========================================
+
+.. automodule:: modm_data.pdf2html.stmicro.convert
+   :members:
+   :undoc-members:
+   :show-inheritance:

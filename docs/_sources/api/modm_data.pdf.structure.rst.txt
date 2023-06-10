@@ -1,0 +1,7 @@
+modm\_data.pdf.structure module
+===============================
+
+.. automodule:: modm_data.pdf.structure
+   :members:
+   :undoc-members:
+   :show-inheritance:

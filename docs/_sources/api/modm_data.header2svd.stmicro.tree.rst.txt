@@ -1,0 +1,7 @@
+modm\_data.header2svd.stmicro.tree module
+=========================================
+
+.. automodule:: modm_data.header2svd.stmicro.tree
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+modm\_data.header2svd.stmicro.header module
+===========================================
+
+.. automodule:: modm_data.header2svd.stmicro.header
+   :members:
+   :undoc-members:
+   :show-inheritance:

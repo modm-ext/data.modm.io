@@ -1,0 +1,7 @@
+modm\_data.html.table module
+============================
+
+.. automodule:: modm_data.html.table
+   :members:
+   :undoc-members:
+   :show-inheritance:

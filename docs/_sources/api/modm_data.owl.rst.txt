@@ -1,0 +1,27 @@
+modm\_data.owl package
+======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.owl.stmicro
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.owl.identifier
+   modm_data.owl.store
+
+Module contents
+---------------
+
+.. automodule:: modm_data.owl
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+modm\_data.utils.math module
+============================
+
+.. automodule:: modm_data.utils.math
+   :members:
+   :undoc-members:
+   :show-inheritance:

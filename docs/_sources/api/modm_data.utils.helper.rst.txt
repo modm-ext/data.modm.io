@@ -1,0 +1,7 @@
+modm\_data.utils.helper module
+==============================
+
+.. automodule:: modm_data.utils.helper
+   :members:
+   :undoc-members:
+   :show-inheritance:

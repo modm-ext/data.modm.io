@@ -1,0 +1,7 @@
+modm\_data.owl.stmicro.ontology module
+======================================
+
+.. automodule:: modm_data.owl.stmicro.ontology
+   :members:
+   :undoc-members:
+   :show-inheritance:

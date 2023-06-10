@@ -1,0 +1,10 @@
+modm\_data.html2owl.stmicro package
+===================================
+
+Module contents
+---------------
+
+.. automodule:: modm_data.html2owl.stmicro
+   :members:
+   :undoc-members:
+   :show-inheritance:

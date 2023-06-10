@@ -1,0 +1,7 @@
+modm\_data.cubemx.stm32\_data module
+====================================
+
+.. automodule:: modm_data.cubemx.stm32_data
+   :members:
+   :undoc-members:
+   :show-inheritance:

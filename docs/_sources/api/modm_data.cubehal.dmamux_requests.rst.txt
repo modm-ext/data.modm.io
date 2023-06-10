@@ -1,0 +1,7 @@
+modm\_data.cubehal.dmamux\_requests module
+==========================================
+
+.. automodule:: modm_data.cubehal.dmamux_requests
+   :members:
+   :undoc-members:
+   :show-inheritance:

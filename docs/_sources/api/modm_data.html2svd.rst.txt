@@ -1,0 +1,18 @@
+modm\_data.html2svd package
+===========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.html2svd.stmicro
+
+Module contents
+---------------
+
+.. automodule:: modm_data.html2svd
+   :members:
+   :undoc-members:
+   :show-inheritance:

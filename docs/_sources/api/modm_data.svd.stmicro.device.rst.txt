@@ -1,0 +1,7 @@
+modm\_data.svd.stmicro.device module
+====================================
+
+.. automodule:: modm_data.svd.stmicro.device
+   :members:
+   :undoc-members:
+   :show-inheritance:

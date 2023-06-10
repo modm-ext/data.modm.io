@@ -1,0 +1,22 @@
+---
+hide-toc: false
+---
+
+```{include} ../README.md
+```
+
+```{toctree}
+:hidden:
+
+pipeline/pdf2html
+pipeline/html2svd
+pipeline/html2owl
+pipeline/header2svd
+```
+
+```{toctree}
+:caption: Development
+:hidden:
+
+api/modules
+```

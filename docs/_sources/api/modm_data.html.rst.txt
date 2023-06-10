@@ -1,0 +1,31 @@
+modm\_data.html package
+=======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.html.stmicro
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.html.chapter
+   modm_data.html.document
+   modm_data.html.list
+   modm_data.html.parser
+   modm_data.html.table
+   modm_data.html.text
+
+Module contents
+---------------
+
+.. automodule:: modm_data.html
+   :members:
+   :undoc-members:
+   :show-inheritance:

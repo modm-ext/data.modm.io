@@ -1,0 +1,18 @@
+modm\_data.html2owl package
+===========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.html2owl.stmicro
+
+Module contents
+---------------
+
+.. automodule:: modm_data.html2owl
+   :members:
+   :undoc-members:
+   :show-inheritance:

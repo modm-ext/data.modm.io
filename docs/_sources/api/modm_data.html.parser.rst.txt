@@ -1,0 +1,7 @@
+modm\_data.html.parser module
+=============================
+
+.. automodule:: modm_data.html.parser
+   :members:
+   :undoc-members:
+   :show-inheritance:

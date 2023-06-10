@@ -1,0 +1,7 @@
+modm\_data.svd.read module
+==========================
+
+.. automodule:: modm_data.svd.read
+   :members:
+   :undoc-members:
+   :show-inheritance:

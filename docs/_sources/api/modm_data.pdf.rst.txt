@@ -1,0 +1,25 @@
+modm\_data.pdf package
+======================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.pdf.character
+   modm_data.pdf.document
+   modm_data.pdf.image
+   modm_data.pdf.link
+   modm_data.pdf.page
+   modm_data.pdf.path
+   modm_data.pdf.render
+   modm_data.pdf.structure
+
+Module contents
+---------------
+
+.. automodule:: modm_data.pdf
+   :members:
+   :undoc-members:
+   :show-inheritance:

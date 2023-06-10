@@ -1,0 +1,7 @@
+modm\_data.html2svd.stmicro.reference module
+============================================
+
+.. automodule:: modm_data.html2svd.stmicro.reference
+   :members:
+   :undoc-members:
+   :show-inheritance:

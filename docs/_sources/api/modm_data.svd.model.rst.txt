@@ -1,0 +1,7 @@
+modm\_data.svd.model module
+===========================
+
+.. automodule:: modm_data.svd.model
+   :members:
+   :undoc-members:
+   :show-inheritance:

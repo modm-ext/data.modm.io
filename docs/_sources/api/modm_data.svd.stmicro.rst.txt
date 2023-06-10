@@ -1,0 +1,18 @@
+modm\_data.svd.stmicro package
+==============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.svd.stmicro.device
+
+Module contents
+---------------
+
+.. automodule:: modm_data.svd.stmicro
+   :members:
+   :undoc-members:
+   :show-inheritance:

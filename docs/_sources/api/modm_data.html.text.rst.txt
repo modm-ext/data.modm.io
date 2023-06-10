@@ -1,0 +1,7 @@
+modm\_data.html.text module
+===========================
+
+.. automodule:: modm_data.html.text
+   :members:
+   :undoc-members:
+   :show-inheritance:

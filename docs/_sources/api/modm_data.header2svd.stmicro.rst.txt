@@ -1,0 +1,19 @@
+modm\_data.header2svd.stmicro package
+=====================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.header2svd.stmicro.header
+   modm_data.header2svd.stmicro.tree
+
+Module contents
+---------------
+
+.. automodule:: modm_data.header2svd.stmicro
+   :members:
+   :undoc-members:
+   :show-inheritance:

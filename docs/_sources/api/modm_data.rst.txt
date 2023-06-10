@@ -1,0 +1,30 @@
+modm\_data package
+==================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.cube2owl
+   modm_data.cubehal
+   modm_data.cubemx
+   modm_data.dl
+   modm_data.header2svd
+   modm_data.html
+   modm_data.html2owl
+   modm_data.html2svd
+   modm_data.owl
+   modm_data.pdf
+   modm_data.pdf2html
+   modm_data.svd
+   modm_data.utils
+
+Module contents
+---------------
+
+.. automodule:: modm_data
+   :members:
+   :undoc-members:
+   :show-inheritance:

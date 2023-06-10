@@ -1,0 +1,19 @@
+modm\_data.dl.stmicro package
+=============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   modm_data.dl.stmicro.cubemx
+   modm_data.dl.stmicro.document
+
+Module contents
+---------------
+
+.. automodule:: modm_data.dl.stmicro
+   :members:
+   :undoc-members:
+   :show-inheritance:

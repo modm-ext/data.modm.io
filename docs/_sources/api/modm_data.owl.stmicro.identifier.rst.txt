@@ -1,0 +1,7 @@
+modm\_data.owl.stmicro.identifier module
+========================================
+
+.. automodule:: modm_data.owl.stmicro.identifier
+   :members:
+   :undoc-members:
+   :show-inheritance:

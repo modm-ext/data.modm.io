@@ -1,0 +1,7 @@
+modm\_data.html.stmicro.helper module
+=====================================
+
+.. automodule:: modm_data.html.stmicro.helper
+   :members:
+   :undoc-members:
+   :show-inheritance:
