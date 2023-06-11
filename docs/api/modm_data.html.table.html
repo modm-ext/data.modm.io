@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,14 +319,190 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-html-table-module">
-<h1>modm_data.html.table module<a class="headerlink" href="#modm-data-html-table-module" title="Permalink to this heading">#</a></h1>
+          <section id="module-modm_data.html.table">
+<span id="modm-data-html-table-module"></span><h1>modm_data.html.table module<a class="headerlink" href="#module-modm_data.html.table" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.html.table.Cell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.table.</span></span><span class="sig-name descname"><span class="pre">Cell</span></span><a class="reference internal" href="../_modules/modm_data/html/table.html#Cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Cell" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="modm_data.html.text.html#modm_data.html.text.Text" title="modm_data.html.text.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Cell.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Cell.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Cell.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – </p></li>
+<li><p><strong>y</strong> (<em>int</em>) – </p></li>
+<li><p><strong>xs</strong> (<em>int</em>) – </p></li>
+<li><p><strong>ys</strong> (<em>int</em>) – </p></li>
+<li><p><strong>head</strong> (<em>bool</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.table.Cell.positions">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">positions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.html.table.Cell.positions" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.table.Cell.span">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">span</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.html.table.Cell.span" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.table.Cell.x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.html.table.Cell.x" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.table.Cell.xspan">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xspan</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.html.table.Cell.xspan" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.table.Cell.y">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.html.table.Cell.y" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.table.Cell.yspan">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">yspan</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.html.table.Cell.yspan" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.html.table.Domains">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.table.</span></span><span class="sig-name descname"><span class="pre">Domains</span></span><a class="reference internal" href="../_modules/modm_data/html/table.html#Domains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Domains" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Domains.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domains</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Domains.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Domains.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Domains.cells">
+<span class="sig-name descname"><span class="pre">cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Domains.cells"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Domains.cells" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pattern_x</strong> (<em>str</em>) – </p></li>
+<li><p><strong>pattern_y</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[<a class="reference internal" href="#modm_data.html.table.Cell" title="modm_data.html.table.Cell">modm_data.html.table.Cell</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Domains.domains_y">
+<span class="sig-name descname"><span class="pre">domains_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Domains.domains_y"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Domains.domains_y" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.html.table.Table">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.table.</span></span><span class="sig-name descname"><span class="pre">Table</span></span><a class="reference internal" href="../_modules/modm_data/html/table.html#Table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Table" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heading</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Table.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Table.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.caption">
+<span class="sig-name descname"><span class="pre">caption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Table.caption"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Table.caption" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.cell">
+<span class="sig-name descname"><span class="pre">cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Table.cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Table.cell" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#modm_data.html.table.Cell" title="modm_data.html.table.Cell"><em>Cell</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.cell_rows">
+<span class="sig-name descname"><span class="pre">cell_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Table.cell_rows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Table.cell_rows" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pattern</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict[str, list[<a class="reference internal" href="#modm_data.html.table.Cell" title="modm_data.html.table.Cell">modm_data.html.table.Cell</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.columns">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">columns</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.html.table.Table.columns" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.domains">
+<span class="sig-name descname"><span class="pre">domains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Table.domains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Table.domains" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pattern</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#modm_data.html.table.Domains" title="modm_data.html.table.Domains"><em>Domains</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.domains_x">
+<span class="sig-name descname"><span class="pre">domains_x</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Table.domains_x"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Table.domains_x" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.heading">
+<span class="sig-name descname"><span class="pre">heading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Table.heading"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Table.heading" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/table.html#Table.render"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.table.Table.render" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.rows">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rows</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.html.table.Table.rows" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.table.Table.size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.html.table.Table.size" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -372,8 +548,56 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modm_data.html.table module</a><ul>
+<li><a class="reference internal" href="#modm_data.html.table.Cell"><code class="docutils literal notranslate"><span class="pre">Cell</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.html.table.Cell.__init__"><code class="docutils literal notranslate"><span class="pre">Cell.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Cell.positions"><code class="docutils literal notranslate"><span class="pre">Cell.positions</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Cell.span"><code class="docutils literal notranslate"><span class="pre">Cell.span</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Cell.x"><code class="docutils literal notranslate"><span class="pre">Cell.x</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Cell.xspan"><code class="docutils literal notranslate"><span class="pre">Cell.xspan</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Cell.y"><code class="docutils literal notranslate"><span class="pre">Cell.y</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Cell.yspan"><code class="docutils literal notranslate"><span class="pre">Cell.yspan</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.html.table.Domains"><code class="docutils literal notranslate"><span class="pre">Domains</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.html.table.Domains.__init__"><code class="docutils literal notranslate"><span class="pre">Domains.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Domains.cells"><code class="docutils literal notranslate"><span class="pre">Domains.cells()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Domains.domains_y"><code class="docutils literal notranslate"><span class="pre">Domains.domains_y()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.html.table.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.html.table.Table.__init__"><code class="docutils literal notranslate"><span class="pre">Table.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.caption"><code class="docutils literal notranslate"><span class="pre">Table.caption()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.cell"><code class="docutils literal notranslate"><span class="pre">Table.cell()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.cell_rows"><code class="docutils literal notranslate"><span class="pre">Table.cell_rows()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.columns"><code class="docutils literal notranslate"><span class="pre">Table.columns</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.domains"><code class="docutils literal notranslate"><span class="pre">Table.domains()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.domains_x"><code class="docutils literal notranslate"><span class="pre">Table.domains_x()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.heading"><code class="docutils literal notranslate"><span class="pre">Table.heading()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.render"><code class="docutils literal notranslate"><span class="pre">Table.render()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.rows"><code class="docutils literal notranslate"><span class="pre">Table.rows</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.table.Table.size"><code class="docutils literal notranslate"><span class="pre">Table.size</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

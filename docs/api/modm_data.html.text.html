@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,14 +319,102 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-html-text-module">
-<h1>modm_data.html.text module<a class="headerlink" href="#modm-data-html-text-module" title="Permalink to this heading">#</a></h1>
+          <section id="module-modm_data.html.text">
+<span id="modm-data-html-text-module"></span><h1>modm_data.html.text module<a class="headerlink" href="#module-modm_data.html.text" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.html.text.Heading">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.text.</span></span><span class="sig-name descname"><span class="pre">Heading</span></span><a class="reference internal" href="../_modules/modm_data/html/text.html#Heading"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.Heading" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#modm_data.html.text.Text" title="modm_data.html.text.Text"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.html.text.ReDict">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.text.</span></span><span class="sig-name descname"><span class="pre">ReDict</span></span><a class="reference internal" href="../_modules/modm_data/html/text.html#ReDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.ReDict" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.text.ReDict.match_key">
+<span class="sig-name descname"><span class="pre">match_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/text.html#ReDict.match_key"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.ReDict.match_key" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.text.ReDict.match_keys">
+<span class="sig-name descname"><span class="pre">match_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/text.html#ReDict.match_keys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.ReDict.match_keys" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.text.ReDict.match_value">
+<span class="sig-name descname"><span class="pre">match_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/text.html#ReDict.match_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.ReDict.match_value" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.text.ReDict.match_values">
+<span class="sig-name descname"><span class="pre">match_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">subs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/text.html#ReDict.match_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.ReDict.match_values" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.html.text.Text">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.text.</span></span><span class="sig-name descname"><span class="pre">Text</span></span><a class="reference internal" href="../_modules/modm_data/html/text.html#Text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.Text" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.text.Text.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/text.html#Text.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.Text.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.text.Text.text">
+<span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">filters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/text.html#Text.text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.Text.text" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modm_data.html.text.listify">
+<span class="sig-prename descclassname"><span class="pre">modm_data.html.text.</span></span><span class="sig-name descname"><span class="pre">listify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/text.html#listify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.listify" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modm_data.html.text.replace">
+<span class="sig-prename descclassname"><span class="pre">modm_data.html.text.</span></span><span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">substitutions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/text.html#replace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.text.replace" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
         </article>
@@ -372,8 +460,41 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modm_data.html.text module</a><ul>
+<li><a class="reference internal" href="#modm_data.html.text.Heading"><code class="docutils literal notranslate"><span class="pre">Heading</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.text.ReDict"><code class="docutils literal notranslate"><span class="pre">ReDict</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.html.text.ReDict.match_key"><code class="docutils literal notranslate"><span class="pre">ReDict.match_key()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.text.ReDict.match_keys"><code class="docutils literal notranslate"><span class="pre">ReDict.match_keys()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.text.ReDict.match_value"><code class="docutils literal notranslate"><span class="pre">ReDict.match_value()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.text.ReDict.match_values"><code class="docutils literal notranslate"><span class="pre">ReDict.match_values()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.html.text.Text"><code class="docutils literal notranslate"><span class="pre">Text</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.html.text.Text.__init__"><code class="docutils literal notranslate"><span class="pre">Text.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.text.Text.text"><code class="docutils literal notranslate"><span class="pre">Text.text()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.html.text.listify"><code class="docutils literal notranslate"><span class="pre">listify()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.text.replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

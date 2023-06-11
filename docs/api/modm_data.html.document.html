@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,14 +319,61 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-html-document-module">
-<h1>modm_data.html.document module<a class="headerlink" href="#modm-data-html-document-module" title="Permalink to this heading">#</a></h1>
+          <section id="module-modm_data.html.document">
+<span id="modm-data-html-document-module"></span><h1>modm_data.html.document module<a class="headerlink" href="#module-modm_data.html.document" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.html.document.Document">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.document.</span></span><span class="sig-name descname"><span class="pre">Document</span></span><a class="reference internal" href="../_modules/modm_data/html/document.html#Document"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.document.Document" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.document.Document.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/document.html#Document.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.document.Document.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.document.Document.chapter">
+<span class="sig-name descname"><span class="pre">chapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/document.html#Document.chapter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.document.Document.chapter" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pattern</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="modm_data.html.chapter.html#modm_data.html.chapter.Chapter" title="modm_data.html.chapter.Chapter"><em>Chapter</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.document.Document.chapters">
+<span class="sig-name descname"><span class="pre">chapters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/document.html#Document.chapters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.document.Document.chapters" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pattern</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[<a class="reference internal" href="modm_data.html.chapter.html#modm_data.html.chapter.Chapter" title="modm_data.html.chapter.Chapter">modm_data.html.chapter.Chapter</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.document.Document.path_pdf">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">path_pdf</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.html.document.Document.path_pdf" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -372,8 +419,33 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modm_data.html.document module</a><ul>
+<li><a class="reference internal" href="#modm_data.html.document.Document"><code class="docutils literal notranslate"><span class="pre">Document</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.html.document.Document.__init__"><code class="docutils literal notranslate"><span class="pre">Document.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.document.Document.chapter"><code class="docutils literal notranslate"><span class="pre">Document.chapter()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.document.Document.chapters"><code class="docutils literal notranslate"><span class="pre">Document.chapters()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.document.Document.path_pdf"><code class="docutils literal notranslate"><span class="pre">Document.path_pdf</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

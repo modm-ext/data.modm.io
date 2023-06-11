@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,14 +319,66 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-html-stmicro-datasheet-module">
-<h1>modm_data.html.stmicro.datasheet module<a class="headerlink" href="#modm-data-html-stmicro-datasheet-module" title="Permalink to this heading">#</a></h1>
+          <section id="module-modm_data.html.stmicro.datasheet">
+<span id="modm-data-html-stmicro-datasheet-module"></span><h1>modm_data.html.stmicro.datasheet module<a class="headerlink" href="#module-modm_data.html.stmicro.datasheet" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.html.stmicro.datasheet.DatasheetMicro">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.stmicro.datasheet.</span></span><span class="sig-name descname"><span class="pre">DatasheetMicro</span></span><a class="reference internal" href="../_modules/modm_data/html/stmicro/datasheet.html#DatasheetMicro"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.stmicro.datasheet.DatasheetMicro" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="modm_data.html.document.html#modm_data.html.document.Document" title="modm_data.html.document.Document"><code class="xref py py-class docutils literal notranslate"><span class="pre">Document</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.stmicro.datasheet.DatasheetMicro.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/stmicro/datasheet.html#DatasheetMicro.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.stmicro.datasheet.DatasheetMicro.device_family">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">device_family</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.device_family" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.stmicro.datasheet.DatasheetMicro.devices">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">devices</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modm_data.owl.identifier.html#modm_data.owl.identifier.DeviceIdentifier" title="modm_data.owl.identifier.DeviceIdentifier"><span class="pre">modm_data.owl.identifier.DeviceIdentifier</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.devices" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.stmicro.datasheet.DatasheetMicro.packages">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">packages</span></span><a class="headerlink" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.packages" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.html.stmicro.datasheet.DatasheetMicro.packages_pins">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">packages_pins</span></span><a class="headerlink" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.packages_pins" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.html.stmicro.datasheet.DatasheetSensor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.html.stmicro.datasheet.</span></span><span class="sig-name descname"><span class="pre">DatasheetSensor</span></span><a class="reference internal" href="../_modules/modm_data/html/stmicro/datasheet.html#DatasheetSensor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.stmicro.datasheet.DatasheetSensor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="modm_data.html.document.html#modm_data.html.document.Document" title="modm_data.html.document.Document"><code class="xref py py-class docutils literal notranslate"><span class="pre">Document</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.html.stmicro.datasheet.DatasheetSensor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/html/stmicro/datasheet.html#DatasheetSensor.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.html.stmicro.datasheet.DatasheetSensor.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -372,8 +424,38 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modm_data.html.stmicro.datasheet module</a><ul>
+<li><a class="reference internal" href="#modm_data.html.stmicro.datasheet.DatasheetMicro"><code class="docutils literal notranslate"><span class="pre">DatasheetMicro</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.__init__"><code class="docutils literal notranslate"><span class="pre">DatasheetMicro.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.device_family"><code class="docutils literal notranslate"><span class="pre">DatasheetMicro.device_family</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.devices"><code class="docutils literal notranslate"><span class="pre">DatasheetMicro.devices</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.packages"><code class="docutils literal notranslate"><span class="pre">DatasheetMicro.packages</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.html.stmicro.datasheet.DatasheetMicro.packages_pins"><code class="docutils literal notranslate"><span class="pre">DatasheetMicro.packages_pins</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.html.stmicro.datasheet.DatasheetSensor"><code class="docutils literal notranslate"><span class="pre">DatasheetSensor</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.html.stmicro.datasheet.DatasheetSensor.__init__"><code class="docutils literal notranslate"><span class="pre">DatasheetSensor.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

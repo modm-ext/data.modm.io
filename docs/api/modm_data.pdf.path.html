@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,14 +319,173 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-pdf-path-module">
-<h1>modm_data.pdf.path module<a class="headerlink" href="#modm-data-pdf-path-module" title="Permalink to this heading">#</a></h1>
+          <section id="module-modm_data.pdf.path">
+<span id="modm-data-pdf-path-module"></span><h1>modm_data.pdf.path module<a class="headerlink" href="#module-modm_data.pdf.path" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf.path.</span></span><span class="sig-name descname"><span class="pre">Path</span></span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PdfObject</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Cap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Cap</span></span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path.Cap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path.Cap" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Cap.BUTT">
+<span class="sig-name descname"><span class="pre">BUTT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.Cap.BUTT" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Cap.PROJECTING_SQUARE">
+<span class="sig-name descname"><span class="pre">PROJECTING_SQUARE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.Cap.PROJECTING_SQUARE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Cap.ROUND">
+<span class="sig-name descname"><span class="pre">ROUND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.Cap.ROUND" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Join">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Join</span></span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path.Join"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path.Join" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Join.BEVEL">
+<span class="sig-name descname"><span class="pre">BEVEL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.Join.BEVEL" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Join.MITER">
+<span class="sig-name descname"><span class="pre">MITER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.Join.MITER" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Join.ROUND">
+<span class="sig-name descname"><span class="pre">ROUND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.Join.ROUND" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Line">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Line</span></span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path.Line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path.Line" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Line" title="modm_data.utils.math.Line"><code class="xref py py-class docutils literal notranslate"><span class="pre">Line</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Line.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ltype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path.Line.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path.Line.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Point">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Point</span></span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path.Point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path.Point" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Point" title="modm_data.utils.math.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Point.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ptype</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path.Point.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path.Point.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – </p></li>
+<li><p><strong>y</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Type">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Type</span></span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path.Type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path.Type" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Type.BEZIER">
+<span class="sig-name descname"><span class="pre">BEZIER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.Type.BEZIER" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Type.LINE">
+<span class="sig-name descname"><span class="pre">LINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.Type.LINE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.Type.MOVE">
+<span class="sig-name descname"><span class="pre">MOVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.Type.MOVE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.__new__">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">__new__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/path.html#Path.__new__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.path.Path.__new__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.bbox">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">Rectangle</span></a></em><a class="headerlink" href="#modm_data.pdf.path.Path.bbox" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.cap">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cap</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#modm_data.pdf.path.Path.Cap" title="modm_data.pdf.path.Path.Cap"><span class="pre">Cap</span></a></em><a class="headerlink" href="#modm_data.pdf.path.Path.cap" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.count">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.count" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.fill">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.fill" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.join">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">join</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#modm_data.pdf.path.Path.Join" title="modm_data.pdf.path.Path.Join"><span class="pre">Join</span></a></em><a class="headerlink" href="#modm_data.pdf.path.Path.join" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.lines">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lines</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#modm_data.pdf.path.Path.Line" title="modm_data.pdf.path.Path.Line"><span class="pre">modm_data.pdf.path.Path.Line</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.path.Path.lines" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.matrix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">matrix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">PdfMatrix</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.matrix" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.points">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">points</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#modm_data.pdf.path.Path.Point" title="modm_data.pdf.path.Path.Point"><span class="pre">modm_data.pdf.path.Path.Point</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.path.Path.points" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.stroke">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stroke</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.stroke" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.path.Path.width">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.path.Path.width" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -372,8 +531,67 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modm_data.pdf.path module</a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path"><code class="docutils literal notranslate"><span class="pre">Path</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Cap"><code class="docutils literal notranslate"><span class="pre">Path.Cap</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Cap.BUTT"><code class="docutils literal notranslate"><span class="pre">Path.Cap.BUTT</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Cap.PROJECTING_SQUARE"><code class="docutils literal notranslate"><span class="pre">Path.Cap.PROJECTING_SQUARE</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Cap.ROUND"><code class="docutils literal notranslate"><span class="pre">Path.Cap.ROUND</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Join"><code class="docutils literal notranslate"><span class="pre">Path.Join</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Join.BEVEL"><code class="docutils literal notranslate"><span class="pre">Path.Join.BEVEL</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Join.MITER"><code class="docutils literal notranslate"><span class="pre">Path.Join.MITER</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Join.ROUND"><code class="docutils literal notranslate"><span class="pre">Path.Join.ROUND</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Line"><code class="docutils literal notranslate"><span class="pre">Path.Line</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Line.__init__"><code class="docutils literal notranslate"><span class="pre">Path.Line.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Point"><code class="docutils literal notranslate"><span class="pre">Path.Point</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Point.__init__"><code class="docutils literal notranslate"><span class="pre">Path.Point.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Type"><code class="docutils literal notranslate"><span class="pre">Path.Type</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Type.BEZIER"><code class="docutils literal notranslate"><span class="pre">Path.Type.BEZIER</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Type.LINE"><code class="docutils literal notranslate"><span class="pre">Path.Type.LINE</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.Type.MOVE"><code class="docutils literal notranslate"><span class="pre">Path.Type.MOVE</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.__init__"><code class="docutils literal notranslate"><span class="pre">Path.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.__new__"><code class="docutils literal notranslate"><span class="pre">Path.__new__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.bbox"><code class="docutils literal notranslate"><span class="pre">Path.bbox</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.cap"><code class="docutils literal notranslate"><span class="pre">Path.cap</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.count"><code class="docutils literal notranslate"><span class="pre">Path.count</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.fill"><code class="docutils literal notranslate"><span class="pre">Path.fill</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.join"><code class="docutils literal notranslate"><span class="pre">Path.join</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.lines"><code class="docutils literal notranslate"><span class="pre">Path.lines</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.matrix"><code class="docutils literal notranslate"><span class="pre">Path.matrix</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.points"><code class="docutils literal notranslate"><span class="pre">Path.points</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.stroke"><code class="docutils literal notranslate"><span class="pre">Path.stroke</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.path.Path.width"><code class="docutils literal notranslate"><span class="pre">Path.width</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

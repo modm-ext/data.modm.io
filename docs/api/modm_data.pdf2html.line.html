@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,14 +319,107 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-pdf2html-line-module">
-<h1>modm_data.pdf2html.line module<a class="headerlink" href="#modm-data-pdf2html-line-module" title="Permalink to this heading">#</a></h1>
+          <section id="module-modm_data.pdf2html.line">
+<span id="modm-data-pdf2html-line-module"></span><h1>modm_data.pdf2html.line module<a class="headerlink" href="#module-modm_data.pdf2html.line" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharCluster">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf2html.line.</span></span><span class="sig-name descname"><span class="pre">CharCluster</span></span><a class="reference internal" href="../_modules/modm_data/pdf2html/line.html#CharCluster"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.line.CharCluster" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A cluster of characters separated by less than two space-widths.
+These denote the use of additional white space that is not encoded in the
+character stream of the PDF page.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharCluster.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chars</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/line.html#CharCluster.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.line.CharCluster.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>chars</strong> (<em>list</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharCluster.bbox">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">Rectangle</span></a></em><a class="headerlink" href="#modm_data.pdf2html.line.CharCluster.bbox" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharCluster.content">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">content</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf2html.line.CharCluster.content" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf2html.line.</span></span><span class="sig-name descname"><span class="pre">CharLine</span></span><a class="reference internal" href="../_modules/modm_data/pdf2html/line.html#CharLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.line.CharLine" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A line of characters with super- and sub-script chars merged into.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharLine.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chars</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/line.html#CharLine.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.line.CharLine.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chars</strong> (<em>list</em>) – </p></li>
+<li><p><strong>bottom</strong> (<em>float</em>) – </p></li>
+<li><p><strong>origin</strong> (<em>float</em>) – </p></li>
+<li><p><strong>top</strong> (<em>float</em>) – </p></li>
+<li><p><strong>height</strong> (<em>float</em>) – </p></li>
+<li><p><strong>rotation</strong> (<em>int</em>) – </p></li>
+<li><p><strong>offset</strong> (<em>float</em>) – </p></li>
+<li><p><strong>sort_origin</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharLine.bbox">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">Rectangle</span></a></em><a class="headerlink" href="#modm_data.pdf2html.line.CharLine.bbox" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharLine.clusters">
+<span class="sig-name descname"><span class="pre">clusters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/line.html#CharLine.clusters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.line.CharLine.clusters" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>atol</strong> (<em>float</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[<a class="reference internal" href="#modm_data.pdf2html.line.CharCluster" title="modm_data.pdf2html.line.CharCluster">modm_data.pdf2html.line.CharCluster</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharLine.contains_font">
+<span class="sig-name descname"><span class="pre">contains_font</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">fragments</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/line.html#CharLine.contains_font"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.line.CharLine.contains_font" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharLine.content">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">content</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf2html.line.CharLine.content" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.line.CharLine.fonts">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fonts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">set</span></em><a class="headerlink" href="#modm_data.pdf2html.line.CharLine.fonts" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -372,8 +465,41 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modm_data.pdf2html.line module</a><ul>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharCluster"><code class="docutils literal notranslate"><span class="pre">CharCluster</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharCluster.__init__"><code class="docutils literal notranslate"><span class="pre">CharCluster.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharCluster.bbox"><code class="docutils literal notranslate"><span class="pre">CharCluster.bbox</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharCluster.content"><code class="docutils literal notranslate"><span class="pre">CharCluster.content</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharLine"><code class="docutils literal notranslate"><span class="pre">CharLine</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharLine.__init__"><code class="docutils literal notranslate"><span class="pre">CharLine.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharLine.bbox"><code class="docutils literal notranslate"><span class="pre">CharLine.bbox</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharLine.clusters"><code class="docutils literal notranslate"><span class="pre">CharLine.clusters()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharLine.contains_font"><code class="docutils literal notranslate"><span class="pre">CharLine.contains_font()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharLine.content"><code class="docutils literal notranslate"><span class="pre">CharLine.content</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.line.CharLine.fonts"><code class="docutils literal notranslate"><span class="pre">CharLine.fonts</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

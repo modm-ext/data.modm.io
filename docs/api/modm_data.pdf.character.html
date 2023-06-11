@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,14 +319,171 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-pdf-character-module">
-<h1>modm_data.pdf.character module<a class="headerlink" href="#modm-data-pdf-character-module" title="Permalink to this heading">#</a></h1>
+          <section id="module-modm_data.pdf.character">
+<span id="modm-data-pdf-character-module"></span><h1>modm_data.pdf.character module<a class="headerlink" href="#module-modm_data.pdf.character" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf.character.</span></span><span class="sig-name descname"><span class="pre">Character</span></span><a class="reference internal" href="../_modules/modm_data/pdf/character.html#Character"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.character.Character" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RenderMode</span></span><a class="reference internal" href="../_modules/modm_data/pdf/character.html#Character.RenderMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.CLIP">
+<span class="sig-name descname"><span class="pre">CLIP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.CLIP" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.FILL">
+<span class="sig-name descname"><span class="pre">FILL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.FILL" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.FILL_CLIP">
+<span class="sig-name descname"><span class="pre">FILL_CLIP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.FILL_CLIP" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.FILL_STROKE">
+<span class="sig-name descname"><span class="pre">FILL_STROKE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.FILL_STROKE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.FILL_STROKE_CLIP">
+<span class="sig-name descname"><span class="pre">FILL_STROKE_CLIP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.FILL_STROKE_CLIP" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.INVISIBLE">
+<span class="sig-name descname"><span class="pre">INVISIBLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.INVISIBLE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.STROKE">
+<span class="sig-name descname"><span class="pre">STROKE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.STROKE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.STROKE_CLIP">
+<span class="sig-name descname"><span class="pre">STROKE_CLIP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.STROKE_CLIP" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.UNKNOWN">
+<span class="sig-name descname"><span class="pre">UNKNOWN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-1</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.UNKNOWN" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/character.html#Character.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.character.Character.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.bbox">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">Rectangle</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.bbox" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.char">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">char</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.char" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.descr">
+<span class="sig-name descname"><span class="pre">descr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/character.html#Character.descr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.character.Character.descr" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.fill">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.character.Character.fill" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.flags">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.flags" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.font">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">font</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.font" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.height">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.height" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.origin">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">origin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Point" title="modm_data.utils.math.Point"><span class="pre">Point</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.origin" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.render_mode">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">render_mode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode" title="modm_data.pdf.character.Character.RenderMode"><span class="pre">RenderMode</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.render_mode" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.rotation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.rotation" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.size" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.stroke">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stroke</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.stroke" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.tbbox">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tbbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">Rectangle</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.tbbox" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.theight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">theight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.theight" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.twidth">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">twidth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.twidth" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.weight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.weight" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.width">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.width" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -372,8 +529,59 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modm_data.pdf.character module</a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character"><code class="docutils literal notranslate"><span class="pre">Character</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode.CLIP"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode.CLIP</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode.FILL"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode.FILL</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode.FILL_CLIP"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode.FILL_CLIP</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode.FILL_STROKE"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode.FILL_STROKE</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode.FILL_STROKE_CLIP"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode.FILL_STROKE_CLIP</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode.INVISIBLE"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode.INVISIBLE</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode.STROKE"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode.STROKE</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode.STROKE_CLIP"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode.STROKE_CLIP</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode.UNKNOWN"><code class="docutils literal notranslate"><span class="pre">Character.RenderMode.UNKNOWN</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.__init__"><code class="docutils literal notranslate"><span class="pre">Character.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.bbox"><code class="docutils literal notranslate"><span class="pre">Character.bbox</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.char"><code class="docutils literal notranslate"><span class="pre">Character.char</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.descr"><code class="docutils literal notranslate"><span class="pre">Character.descr()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.fill"><code class="docutils literal notranslate"><span class="pre">Character.fill</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.flags"><code class="docutils literal notranslate"><span class="pre">Character.flags</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.font"><code class="docutils literal notranslate"><span class="pre">Character.font</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.height"><code class="docutils literal notranslate"><span class="pre">Character.height</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.origin"><code class="docutils literal notranslate"><span class="pre">Character.origin</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.render_mode"><code class="docutils literal notranslate"><span class="pre">Character.render_mode</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.rotation"><code class="docutils literal notranslate"><span class="pre">Character.rotation</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.size"><code class="docutils literal notranslate"><span class="pre">Character.size</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.stroke"><code class="docutils literal notranslate"><span class="pre">Character.stroke</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.tbbox"><code class="docutils literal notranslate"><span class="pre">Character.tbbox</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.theight"><code class="docutils literal notranslate"><span class="pre">Character.theight</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.twidth"><code class="docutils literal notranslate"><span class="pre">Character.twidth</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.weight"><code class="docutils literal notranslate"><span class="pre">Character.weight</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.width"><code class="docutils literal notranslate"><span class="pre">Character.width</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

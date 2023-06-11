@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,14 +319,94 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-pdf-document-module">
-<h1>modm_data.pdf.document module<a class="headerlink" href="#modm-data-pdf-document-module" title="Permalink to this heading">#</a></h1>
+          <section id="module-modm_data.pdf.document">
+<span id="modm-data-pdf-document-module"></span><h1>modm_data.pdf.document module<a class="headerlink" href="#module-modm_data.pdf.document" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf.document.</span></span><span class="sig-name descname"><span class="pre">Document</span></span><a class="reference internal" href="../_modules/modm_data/pdf/document.html#Document"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.document.Document" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PdfDocument</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/document.html#Document.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.document.Document.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.destinations">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">destinations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.document.Document.destinations" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.identifier_changing">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identifier_changing</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.document.Document.identifier_changing" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.identifier_permanent">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identifier_permanent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.document.Document.identifier_permanent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.metadata">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.document.Document.metadata" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.document.Document.name" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.page">
+<span class="sig-name descname"><span class="pre">page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/document.html#Document.page"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.document.Document.page" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="modm_data.pdf.page.html#modm_data.pdf.page.Page" title="modm_data.pdf.page.Page"><em>Page</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.page_count">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">page_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.document.Document.page_count" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.pages">
+<span class="sig-name descname"><span class="pre">pages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numbers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/document.html#Document.pages"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.document.Document.pages" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[<a class="reference internal" href="modm_data.pdf.page.html#modm_data.pdf.page.Page" title="modm_data.pdf.page.Page">modm_data.pdf.page.Page</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.document.Document.toc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">toc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#modm_data.pdf.document.OutlineItem" title="modm_data.pdf.document.OutlineItem"><span class="pre">modm_data.pdf.document.OutlineItem</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.document.Document.toc" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf.document.OutlineItem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf.document.</span></span><span class="sig-name descname"><span class="pre">OutlineItem</span></span><a class="reference internal" href="../_modules/modm_data/pdf/document.html#OutlineItem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.document.OutlineItem" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PdfOutlineItem</span></code></p>
+</dd></dl>
+
 </section>
 
         </article>
@@ -372,8 +452,40 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modm_data.pdf.document module</a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document"><code class="docutils literal notranslate"><span class="pre">Document</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.__init__"><code class="docutils literal notranslate"><span class="pre">Document.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.destinations"><code class="docutils literal notranslate"><span class="pre">Document.destinations</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.identifier_changing"><code class="docutils literal notranslate"><span class="pre">Document.identifier_changing</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.identifier_permanent"><code class="docutils literal notranslate"><span class="pre">Document.identifier_permanent</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.metadata"><code class="docutils literal notranslate"><span class="pre">Document.metadata</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.name"><code class="docutils literal notranslate"><span class="pre">Document.name</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.page"><code class="docutils literal notranslate"><span class="pre">Document.page()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.page_count"><code class="docutils literal notranslate"><span class="pre">Document.page_count</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.pages"><code class="docutils literal notranslate"><span class="pre">Document.pages()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.document.Document.toc"><code class="docutils literal notranslate"><span class="pre">Document.toc</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf.document.OutlineItem"><code class="docutils literal notranslate"><span class="pre">OutlineItem</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

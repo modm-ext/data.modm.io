@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -319,14 +319,149 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-pdf2html-stmicro-table-module">
-<h1>modm_data.pdf2html.stmicro.table module<a class="headerlink" href="#modm-data-pdf2html-stmicro-table-module" title="Permalink to this heading">#</a></h1>
+          <section id="module-modm_data.pdf2html.stmicro.table">
+<span id="modm-data-pdf2html-stmicro-table-module"></span><h1>modm_data.pdf2html.stmicro.table module<a class="headerlink" href="#module-modm_data.pdf2html.stmicro.table" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.Table">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf2html.stmicro.table.</span></span><span class="sig-name descname"><span class="pre">Table</span></span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#Table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.Table" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.Table.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cbbox</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_register</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#Table.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.Table.__init__" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bbox</strong> (<a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><em>Rectangle</em></a>) – </p></li>
+<li><p><strong>xlines</strong> (<em>list</em>) – </p></li>
+<li><p><strong>ylines</strong> (<em>list</em>) – </p></li>
+<li><p><strong>cbbox</strong> (<a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><em>Rectangle</em></a>) – </p></li>
+<li><p><strong>is_register</strong> (<em>bool</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.Table.append_bottom">
+<span class="sig-name descname"><span class="pre">append_bottom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#Table.append_bottom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.Table.append_bottom" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.Table.append_side">
+<span class="sig-name descname"><span class="pre">append_side</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#Table.append_side"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.Table.append_side" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.Table.cells">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cells</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell" title="modm_data.pdf2html.stmicro.table.TableCell"><span class="pre">modm_data.pdf2html.stmicro.table.TableCell</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.Table.cells" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.Table.header_rows">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">header_rows</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.Table.header_rows" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf2html.stmicro.table.</span></span><span class="sig-name descname"><span class="pre">TableCell</span></span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#TableCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.Borders">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Borders</span></span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#TableCell.Borders"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.Borders" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.Borders.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#TableCell.Borders.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.Borders.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_simple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#TableCell.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.ast">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ast</span></span><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.ast" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.bbox">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">Rectangle</span></a></em><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.bbox" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.content">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">content</span></span><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.content" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.left_aligned">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">left_aligned</span></span><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.left_aligned" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.lines">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lines</span></span><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.lines" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.rotation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.rotation" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.x" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.xspan">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">xspan</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.xspan" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.y">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.y" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.TableCell.yspan">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">yspan</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.TableCell.yspan" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.VirtualTable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf2html.stmicro.table.</span></span><span class="sig-name descname"><span class="pre">VirtualTable</span></span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#VirtualTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.VirtualTable" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#modm_data.pdf2html.stmicro.table.Table" title="modm_data.pdf2html.stmicro.table.Table"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modm_data.pdf2html.stmicro.table.VirtualTable.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cells</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf2html/stmicro/table.html#VirtualTable.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf2html.stmicro.table.VirtualTable.__init__" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -372,8 +507,56 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">modm_data.pdf2html.stmicro.table module</a><ul>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.Table.__init__"><code class="docutils literal notranslate"><span class="pre">Table.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.Table.append_bottom"><code class="docutils literal notranslate"><span class="pre">Table.append_bottom()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.Table.append_side"><code class="docutils literal notranslate"><span class="pre">Table.append_side()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.Table.cells"><code class="docutils literal notranslate"><span class="pre">Table.cells</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.Table.header_rows"><code class="docutils literal notranslate"><span class="pre">Table.header_rows</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell"><code class="docutils literal notranslate"><span class="pre">TableCell</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.Borders"><code class="docutils literal notranslate"><span class="pre">TableCell.Borders</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.Borders.__init__"><code class="docutils literal notranslate"><span class="pre">TableCell.Borders.__init__()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.__init__"><code class="docutils literal notranslate"><span class="pre">TableCell.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.ast"><code class="docutils literal notranslate"><span class="pre">TableCell.ast</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.bbox"><code class="docutils literal notranslate"><span class="pre">TableCell.bbox</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.content"><code class="docutils literal notranslate"><span class="pre">TableCell.content</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.left_aligned"><code class="docutils literal notranslate"><span class="pre">TableCell.left_aligned</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.lines"><code class="docutils literal notranslate"><span class="pre">TableCell.lines</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.rotation"><code class="docutils literal notranslate"><span class="pre">TableCell.rotation</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.x"><code class="docutils literal notranslate"><span class="pre">TableCell.x</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.xspan"><code class="docutils literal notranslate"><span class="pre">TableCell.xspan</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.y"><code class="docutils literal notranslate"><span class="pre">TableCell.y</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.TableCell.yspan"><code class="docutils literal notranslate"><span class="pre">TableCell.yspan</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.VirtualTable"><code class="docutils literal notranslate"><span class="pre">VirtualTable</span></code></a><ul>
+<li><a class="reference internal" href="#modm_data.pdf2html.stmicro.table.VirtualTable.__init__"><code class="docutils literal notranslate"><span class="pre">VirtualTable.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
