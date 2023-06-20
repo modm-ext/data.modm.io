@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>modm_data.pdf.document - modm-data</title>
+        <title>modm_data.pdf.document - modm-data: Semantic Hardware Description</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">modm-data</div></a>
+      <a href="../../../index.html"><div class="brand">modm-data: Semantic Hardware Description</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
   
   
-  <span class="sidebar-brand-text">modm-data</span>
+  <span class="sidebar-brand-text">modm-data: Semantic Hardware Description</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -162,7 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../pipeline/html2owl.html">HTML to OWL Pipeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../pipeline/header2svd.html">CMSIS Header to SVD Pipeline</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/modules.html">modm_data</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of modm_data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/modm_data.html">modm_data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of modm_data package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -172,7 +172,6 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/modm_data.cubemx.html">modm_data.cubemx package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of modm_data.cubemx package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.device.html">modm_data.cubemx.device module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.device_data.html">modm_data.cubemx.device_data module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.peripherals.html">modm_data.cubemx.peripherals module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.stm32_data.html">modm_data.cubemx.stm32_data module</a></li>
@@ -238,10 +237,9 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/modm_data.pdf.html">modm_data.pdf package</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of modm_data.pdf package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.character.html">modm_data.pdf.character module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.document.html">modm_data.pdf.document module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.image.html">modm_data.pdf.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.graphics.html">modm_data.pdf.graphics module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.link.html">modm_data.pdf.link module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.page.html">modm_data.pdf.page module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.path.html">modm_data.pdf.path module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.render.html">modm_data.pdf.render module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.structure.html">modm_data.pdf.structure module</a></li>
 </ul>
@@ -325,18 +323,31 @@
 <span class="c1"># file, You can obtain one at http://mozilla.org/MPL/2.0/.</span>
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
-<span class="kn">import</span> <span class="nn">os.path</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># PDF Documents</span>
+
+<span class="sd">The PDF document is the root of the entire data structure and provides access to</span>
+<span class="sd">PDF metadata, the table of contents, as well as individual pages.</span>
+
+<span class="sd">You should extend from this class for a specific vendor to provide the</span>
+<span class="sd">correct page class from `page()` function.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
 <span class="kn">import</span> <span class="nn">ctypes</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">pypdfium2</span> <span class="k">as</span> <span class="nn">pp</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Iterable</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
-<span class="kn">import</span> <span class="nn">pypdfium2</span> <span class="k">as</span> <span class="nn">pp</span>
 <span class="kn">from</span> <span class="nn">.page</span> <span class="kn">import</span> <span class="n">Page</span>
 
 <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="OutlineItem"><a class="viewcode-back" href="../../../api/modm_data.pdf.document.html#modm_data.pdf.document.OutlineItem">[docs]</a><span class="k">class</span> <span class="nc">OutlineItem</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">PdfOutlineItem</span><span class="p">):</span>
+<span class="c1"># We cannot monkey patch this class, since it&#39;s a named tuple. :-(</span>
+<span class="k">class</span> <span class="nc">_OutlineItem</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">PdfOutlineItem</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">page_index</span><span class="si">}</span><span class="s2">+</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -345,65 +356,89 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">page_index</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">page_index</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">title</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;O(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">page_index</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;O(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">page_index</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">)&quot;</span>
 
 
 <div class="viewcode-block" id="Document"><a class="viewcode-back" href="../../../api/modm_data.pdf.document.html#modm_data.pdf.document.Document">[docs]</a><span class="k">class</span> <span class="nc">Document</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">PdfDocument</span><span class="p">):</span>
-<div class="viewcode-block" id="Document.__init__"><a class="viewcode-back" href="../../../api/modm_data.pdf.document.html#modm_data.pdf.document.Document.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class is a convenience wrapper with caching around the high-level APIs</span>
+<span class="sd">    of pypdfium.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Document.__init__"><a class="viewcode-back" href="../../../api/modm_data.pdf.document.html#modm_data.pdf.document.Document.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param path: Path to the PDF to open.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">autoclose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">stem</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Stem of the document file name&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">=</span> <span class="n">path</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_bbox_cache</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
         <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The PDF metadata dictionary.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_metadata_dict</span><span class="p">()</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">destinations</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+    <span class="k">def</span> <span class="nf">destinations</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Yields (page 0-index, named destination) of the whole document.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_CountNamedDests</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
-            <span class="n">clength</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_long</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-            <span class="n">cbuffer</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_GetNamedDest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ii</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">clength</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_long</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+            <span class="n">cbuffer</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">length</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">dest</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_GetNamedDest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ii</span><span class="p">,</span> <span class="n">cbuffer</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
             <span class="n">name</span> <span class="o">=</span> <span class="n">cbuffer</span><span class="o">.</span><span class="n">raw</span><span class="p">[:</span><span class="n">clength</span><span class="o">.</span><span class="n">value</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-16-le&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">page</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDFDest_GetDestPageIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
             <span class="k">yield</span> <span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">toc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">OutlineItem</span><span class="p">]:</span>
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">toc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">pp</span><span class="o">.</span><span class="n">PdfOutlineItem</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The table of content as a sorted list of outline items ensuring item has</span>
+<span class="sd">        a page index by reusing the last one.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">tocs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="c1"># Sometimes the TOC contains duplicates so we must use a set</span>
         <span class="n">last_page_index</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">toc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_toc</span><span class="p">():</span>
-            <span class="n">outline</span> <span class="o">=</span> <span class="n">OutlineItem</span><span class="p">(</span><span class="n">toc</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">is_closed</span><span class="p">,</span>
-                                  <span class="n">toc</span><span class="o">.</span><span class="n">n_kids</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">page_index</span> <span class="ow">or</span> <span class="n">last_page_index</span><span class="p">,</span>
-                                  <span class="n">toc</span><span class="o">.</span><span class="n">view_mode</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">view_pos</span><span class="p">)</span>
+            <span class="n">outline</span> <span class="o">=</span> <span class="n">_OutlineItem</span><span class="p">(</span><span class="n">toc</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">is_closed</span><span class="p">,</span>
+                                   <span class="n">toc</span><span class="o">.</span><span class="n">n_kids</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">page_index</span> <span class="ow">or</span> <span class="n">last_page_index</span><span class="p">,</span>
+                                   <span class="n">toc</span><span class="o">.</span><span class="n">view_mode</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">view_pos</span><span class="p">)</span>
             <span class="n">last_page_index</span> <span class="o">=</span> <span class="n">toc</span><span class="o">.</span><span class="n">page_index</span>
             <span class="n">tocs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">outline</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">tocs</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">o</span><span class="p">:</span> <span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">page_index</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="n">title</span><span class="p">)))</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">identifier_permanent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The permanent file identifier.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_identifier</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FILEIDTYPE_PERMANENT</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">identifier_changing</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The changing file identifier.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_identifier</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FILEIDTYPE_CHANGING</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
-    <span class="k">def</span> <span class="nf">page_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">page_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The number of pages in the document.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_GetPageCount</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Document.page"><a class="viewcode-back" href="../../../api/modm_data.pdf.document.html#modm_data.pdf.document.Document.page">[docs]</a>    <span class="k">def</span> <span class="nf">page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Page</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param index: 0-indexed page number.</span>
+<span class="sd">        :return: the page object for the index.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">page_count</span>
         <span class="k">return</span> <span class="n">Page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Document.pages"><a class="viewcode-back" href="../../../api/modm_data.pdf.document.html#modm_data.pdf.document.Document.pages">[docs]</a>    <span class="k">def</span> <span class="nf">pages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numbers</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Page</span><span class="p">]:</span>
+<div class="viewcode-block" id="Document.pages"><a class="viewcode-back" href="../../../api/modm_data.pdf.document.html#modm_data.pdf.document.Document.pages">[docs]</a>    <span class="k">def</span> <span class="nf">pages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numbers</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Page</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param numbers: an iterable range of page numbers (0-indexed!).</span>
+<span class="sd">                        If `None`, then the whole page range is used.</span>
+<span class="sd">        :return: yields each page in the range.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">numbers</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">page_count</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
@@ -411,7 +446,7 @@
                 <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Doc(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Doc(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">)&quot;</span></div>
 </pre></div>
         </article>
       </div>

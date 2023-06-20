@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="PDF to HTML Pipeline" href="pipeline/pdf2html.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>modm-data: Semantic Hardware Description</title>
+        <title>Documentation - modm-data: Semantic Hardware Description</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -126,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">modm-data: Semantic Hardware Description</div></a>
+      <a href="index.html"><div class="brand">modm-data: Semantic Hardware Description</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -137,7 +137,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -146,7 +146,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
   <span class="sidebar-brand-text">modm-data: Semantic Hardware Description</span>
@@ -301,7 +301,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/modm-io/modm-data/edit/main/docs/index.md" title="Edit this page">
+  <a class="muted-link" href="https://github.com/modm-io/modm-data/edit/main/docs/README.md" title="Edit this page">
     <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
@@ -317,99 +317,28 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="modm-data-high-quality-semantic-description-of-embedded-hardware">
-<h1>modm-data: High-Quality Semantic Description of Embedded Hardware<a class="headerlink" href="#modm-data-high-quality-semantic-description-of-embedded-hardware" title="Permalink to this heading">#</a></h1>
-<p>This project is a collection of data processing pipelines that convert and
-combine multiple sources of hardware description data into the most accurate
-common representation without manual supervision.</p>
-<p>There are many different supported input sources per hardware vendor:</p>
-<ul class="simple">
-<li><p>PDF technical documentation, especially datasheets and reference manuals.</p></li>
-<li><p>Source code and CMSIS-SVD files describing peripheral registers.</p></li>
-<li><p>Vendor libraries for helping with naming things canonically.</p></li>
-<li><p>Proprietary databases extracted from vendor tooling.</p></li>
-</ul>
-<p>These input sources are made accessible via deterministic data pipelines before
-finally merging them together. This approach has the best chance of
-compensating weaknesses in each individual input source while also arbitrating
-conflicts. The output formats are knowledge graphs with a shared ontology.</p>
-<p>The resulting knowledge graphs represent a normalized and complete semantic
-description of the hardware and are NOT intended to be used directly. Rather,
-you should extract the data you require and convert it into a format that is
-useful for your specific use case and device scope. This repository only
-contains data pipeline code, therefore, if you are interested in the hardware
-description data only, please use the resulting knowledge graphs directly.</p>
-<p>This project produces hardware description knowledge graphs for these devices:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/modm-ext/archive-stmicro-owl">STMicro STM32 microcontrollers</a>.</p></li>
-</ul>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
-<p>This is a Python ≥3.11 project making use of these libraries:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">anytree</span></code> for a tree data structure.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CppHeaderParser</span></code> for parsing C headers.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jinja2</span></code> for templating.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lxml</span></code> for working with HTML.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">owlready2</span></code> for working with knowledge graphs via <a class="reference external" href="https://www.w3.org/OWL/">OWL</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pypdfium2&gt;=4.12.0</span></code> for C-bindings to <code class="docutils literal notranslate"><span class="pre">pdfium</span></code>; a pdf manipulation library.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tqdm</span></code> for showing progress bars.</p></li>
-</ul>
-<p>Install the project dependencies with the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+          <section id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h1>
+<p>modm-data is documented in three ways as a public homepage:</p>
+<ol class="arabic simple">
+<li><p>The Markdown files in this folder describe high-level concepts.</p></li>
+<li><p>The auto-generated Python API describes the low-level usage.</p></li>
+<li><p>The auto-generated Knowledge Graph API describes the end-user experience.</p></li>
+</ol>
+<p>You need to install Sphinx and a few plugins:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>docs/requirements.txt
 </pre></div>
 </div>
-<p>You also need <code class="docutils literal notranslate"><span class="pre">g++</span></code> and <code class="docutils literal notranslate"><span class="pre">patch</span></code> installed and callable in your path.</p>
-</section>
-<section id="input-sources">
-<h2>Input Sources<a class="headerlink" href="#input-sources" title="Permalink to this heading">#</a></h2>
-<p>You can download all input sources via <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">input-sources</span></code>. Please note that it
-may take a while to download ~10GB of data, mostly PDF technical documentation.</p>
-<p>This project uses only publicly available data sources which we have aggregated
-in several GitHub repositories. However, since the copyright of some sources
-prohibits republication, these sources are downloaded from the vendor websites
-directly:</p>
-<ul class="simple">
-<li><p>STMicro CubeMX database.</p></li>
-<li><p>STMicro PDF technical documentation.</p></li>
-</ul>
-</section>
-<section id="pipelines">
-<h2>Pipelines<a class="headerlink" href="#pipelines" title="Permalink to this heading">#</a></h2>
-<p>The data pipelines are implemented as Python modules inside <code class="docutils literal notranslate"><span class="pre">modm_data</span></code> folder and
-have the following structure:</p>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
-    A(PDF) --&gt;|pdf2html| B
-    B --&gt;|html2svd| D
-    B(HTML) --&gt;|html| C
-    %% C --&gt; K
-    C(Python) --&gt;|owl| E
-    D(CMSIS-SVD) --&gt;|cmsis-svd| C
-    E[OWL]
-    F(CMSIS\nHeader) --&gt;|header2svd| D
-    G(CubeMX) --&gt;|cubemx| C
-    H(CubeHAL) --&gt;|cubehal| C
-    J --&gt;|dl| A
-    J --&gt;|dl| F
-    J --&gt;|dl| G
-    J --&gt;|dl| H
-    J[Vendor] --&gt;|dl| D
-    %% K[Evaluation]
+<p>Then you can build the homepage locally:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>build-docs
 </pre></div>
 </div>
-<p>Each pipeline has its own command-line interface, please refer to the API
-documentation for their advanced usage.</p>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</section>
 </section>
 
         </article>
@@ -417,15 +346,7 @@ documentation for their advanced usage.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="pipeline/pdf2html.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">PDF to HTML Pipeline</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
+          
           
         </div>
         <div class="bottom-of-page">
@@ -445,31 +366,8 @@ documentation for their advanced usage.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">modm-data: High-Quality Semantic Description of Embedded Hardware</a><ul>
-<li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#input-sources">Input Sources</a></li>
-<li><a class="reference internal" href="#pipelines">Pipelines</a><ul>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

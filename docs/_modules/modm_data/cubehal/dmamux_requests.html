@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>modm_data.cubehal.dmamux_requests - modm-data</title>
+        <title>modm_data.cubehal.dmamux_requests - modm-data: Semantic Hardware Description</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">modm-data</div></a>
+      <a href="../../../index.html"><div class="brand">modm-data: Semantic Hardware Description</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
   
   
-  <span class="sidebar-brand-text">modm-data</span>
+  <span class="sidebar-brand-text">modm-data: Semantic Hardware Description</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -162,7 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../pipeline/html2owl.html">HTML to OWL Pipeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../pipeline/header2svd.html">CMSIS Header to SVD Pipeline</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/modules.html">modm_data</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of modm_data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/modm_data.html">modm_data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of modm_data package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -172,7 +172,6 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/modm_data.cubemx.html">modm_data.cubemx package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of modm_data.cubemx package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.device.html">modm_data.cubemx.device module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.device_data.html">modm_data.cubemx.device_data module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.peripherals.html">modm_data.cubemx.peripherals module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.stm32_data.html">modm_data.cubemx.stm32_data module</a></li>
@@ -238,10 +237,9 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/modm_data.pdf.html">modm_data.pdf package</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of modm_data.pdf package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.character.html">modm_data.pdf.character module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.document.html">modm_data.pdf.document module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.image.html">modm_data.pdf.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.graphics.html">modm_data.pdf.graphics module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.link.html">modm_data.pdf.link module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.page.html">modm_data.pdf.page module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.path.html">modm_data.pdf.path module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.render.html">modm_data.pdf.render module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.structure.html">modm_data.pdf.structure module</a></li>
 </ul>
@@ -329,11 +327,18 @@
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">ext_path</span>
 
-<span class="n">CUBE_PATH</span> <span class="o">=</span> <span class="n">ext_path</span><span class="p">(</span><span class="s2">&quot;stmicro/cubehal&quot;</span><span class="p">)</span>
-<span class="n">DMAMUX_PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\s*#define\s+(?P&lt;name&gt;(LL_DMAMUX_REQ_\w+))\s+(?P&lt;id&gt;(0x[0-9A-Fa-f]+))U&quot;</span><span class="p">)</span>
-<span class="n">REQUEST_PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\s*#define\s+(?P&lt;name&gt;(DMA_REQUEST_\w+))\s+(?P&lt;id&gt;([0-9]+))U&quot;</span><span class="p">)</span>
+<span class="n">_CUBE_PATH</span> <span class="o">=</span> <span class="n">ext_path</span><span class="p">(</span><span class="s2">&quot;stmicro/cubehal&quot;</span><span class="p">)</span>
+<span class="n">_DMAMUX_PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\s*#define\s+(?P&lt;name&gt;(LL_DMAMUX_REQ_\w+))\s+(?P&lt;id&gt;(0x[0-9A-Fa-f]+))U&quot;</span><span class="p">)</span>
+<span class="n">_REQUEST_PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\s*#define\s+(?P&lt;name&gt;(DMA_REQUEST_\w+))\s+(?P&lt;id&gt;([0-9]+))U&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="read_request_map"><a class="viewcode-back" href="../../../api/modm_data.cubehal.dmamux_requests.html#modm_data.cubehal.dmamux_requests.read_request_map">[docs]</a><span class="k">def</span> <span class="nf">read_request_map</span><span class="p">(</span><span class="n">did</span><span class="p">):</span>
+<div class="viewcode-block" id="read_request_map"><a class="viewcode-back" href="../../../api/modm_data.cubehal.dmamux_requests.html#modm_data.cubehal.dmamux_requests.read_request_map">[docs]</a><span class="k">def</span> <span class="nf">read_request_map</span><span class="p">(</span><span class="n">did</span><span class="p">:</span> <span class="s2">&quot;modm_data.owl.DeviceIdentifier&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads the DMA requests mapping from the Low-Level (LL) CubeHAL header files.</span>
+
+<span class="sd">    :param did: Device to query for.</span>
+
+<span class="sd">    :return: A dictionary of DMA trigger name to trigger position.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">dma_header</span> <span class="o">=</span> <span class="n">_get_hal_dma_header_path</span><span class="p">(</span><span class="n">did</span><span class="o">.</span><span class="n">family</span><span class="p">)</span>
     <span class="n">dmamux_header</span> <span class="o">=</span> <span class="n">_get_ll_dmamux_header_path</span><span class="p">(</span><span class="n">did</span><span class="o">.</span><span class="n">family</span><span class="p">)</span>
     <span class="n">request_map</span> <span class="o">=</span> <span class="kc">None</span>
@@ -385,7 +390,7 @@
     <span class="n">request_map</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fix_requests</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">_get_include_path</span><span class="p">(</span><span class="n">family</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">CUBE_PATH</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;stm32</span><span class="si">{}</span><span class="s2">xx/Inc&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">family</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">_CUBE_PATH</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;stm32</span><span class="si">{}</span><span class="s2">xx/Inc&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">family</span><span class="p">))</span>
 
 
 <span class="k">def</span> <span class="nf">_get_hal_dma_header_path</span><span class="p">(</span><span class="n">family</span><span class="p">):</span>
@@ -398,7 +403,7 @@
 
 <span class="c1"># For G4, H7 and L5</span>
 <span class="k">def</span> <span class="nf">_read_requests</span><span class="p">(</span><span class="n">hal_dma_file</span><span class="p">):</span>
-    <span class="n">requests_map</span> <span class="o">=</span> <span class="n">_read_map</span><span class="p">(</span><span class="n">hal_dma_file</span><span class="p">,</span> <span class="n">REQUEST_PATTERN</span><span class="p">)</span>
+    <span class="n">requests_map</span> <span class="o">=</span> <span class="n">_read_map</span><span class="p">(</span><span class="n">hal_dma_file</span><span class="p">,</span> <span class="n">_REQUEST_PATTERN</span><span class="p">)</span>
     <span class="n">out_map</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">requests_map</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">out_map</span><span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;DMA_REQUEST_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">requests_map</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
@@ -407,7 +412,7 @@
 
 <span class="c1"># For G0, WB and WL</span>
 <span class="k">def</span> <span class="nf">_read_requests_from_ll_dmamux</span><span class="p">(</span><span class="n">hal_dma_file</span><span class="p">,</span> <span class="n">ll_dmamux_file</span><span class="p">):</span>
-    <span class="n">dmamux_map</span> <span class="o">=</span> <span class="n">_read_map</span><span class="p">(</span><span class="n">ll_dmamux_file</span><span class="p">,</span> <span class="n">DMAMUX_PATTERN</span><span class="p">)</span>
+    <span class="n">dmamux_map</span> <span class="o">=</span> <span class="n">_read_map</span><span class="p">(</span><span class="n">ll_dmamux_file</span><span class="p">,</span> <span class="n">_DMAMUX_PATTERN</span><span class="p">)</span>
     <span class="n">request_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;^\s*#define\s+(?P&lt;name&gt;(DMA_REQUEST_\w+))\s+(?P&lt;id&gt;(LL_DMAMUX?_REQ_\w+))\s*&quot;</span><span class="p">)</span>
     <span class="n">requests_map</span> <span class="o">=</span> <span class="n">_read_map</span><span class="p">(</span><span class="n">hal_dma_file</span><span class="p">,</span> <span class="n">request_pattern</span><span class="p">)</span>
     <span class="n">out_map</span> <span class="o">=</span> <span class="p">{}</span>
@@ -443,7 +448,7 @@
                 <span class="k">elif</span> <span class="n">else_pattern</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="ow">and</span> <span class="n">if_counter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="n">ignore</span> <span class="o">=</span> <span class="n">read_for_p5_q5</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">ignore</span><span class="p">:</span>
-                <span class="n">m</span> <span class="o">=</span> <span class="n">REQUEST_PATTERN</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">_REQUEST_PATTERN</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
                     <span class="n">name</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;DMA_REQUEST_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">out_map</span><span class="p">:</span>

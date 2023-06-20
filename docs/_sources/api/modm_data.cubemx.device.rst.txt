@@ -1,7 +1,0 @@
-modm\_data.cubemx.device module
-===============================
-
-.. automodule:: modm_data.cubemx.device
-   :members:
-   :undoc-members:
-   :show-inheritance:

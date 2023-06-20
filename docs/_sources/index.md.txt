@@ -1,7 +1,3 @@
----
-hide-toc: false
----
-
 ```{include} ../README.md
 ```
 
@@ -15,7 +11,7 @@ pipeline/header2svd
 ```
 
 ```{toctree}
-:caption: Development
+:caption: API Documentation
 :hidden:
 
 api/modules

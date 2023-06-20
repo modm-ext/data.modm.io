@@ -1,0 +1,7 @@
+modm\_data.pdf.graphics module
+==============================
+
+.. automodule:: modm_data.pdf.graphics
+   :members:
+   :undoc-members:
+   :show-inheritance:

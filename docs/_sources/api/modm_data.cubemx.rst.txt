@@ -7,7 +7,6 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
-   modm_data.cubemx.device
    modm_data.cubemx.device_data
    modm_data.cubemx.peripherals
    modm_data.cubemx.stm32_data

@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>modm_data.pdf.structure - modm-data</title>
+        <title>modm_data.pdf.structure - modm-data: Semantic Hardware Description</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">modm-data</div></a>
+      <a href="../../../index.html"><div class="brand">modm-data: Semantic Hardware Description</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
   
   
-  <span class="sidebar-brand-text">modm-data</span>
+  <span class="sidebar-brand-text">modm-data: Semantic Hardware Description</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -162,7 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../pipeline/html2owl.html">HTML to OWL Pipeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../pipeline/header2svd.html">CMSIS Header to SVD Pipeline</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/modules.html">modm_data</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of modm_data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/modm_data.html">modm_data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of modm_data package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -172,7 +172,6 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/modm_data.cubemx.html">modm_data.cubemx package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of modm_data.cubemx package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.device.html">modm_data.cubemx.device module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.device_data.html">modm_data.cubemx.device_data module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.peripherals.html">modm_data.cubemx.peripherals module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.stm32_data.html">modm_data.cubemx.stm32_data module</a></li>
@@ -238,10 +237,9 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/modm_data.pdf.html">modm_data.pdf package</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of modm_data.pdf package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.character.html">modm_data.pdf.character module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.document.html">modm_data.pdf.document module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.image.html">modm_data.pdf.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.graphics.html">modm_data.pdf.graphics module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.link.html">modm_data.pdf.link module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.page.html">modm_data.pdf.page module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.path.html">modm_data.pdf.path module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.render.html">modm_data.pdf.render module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.structure.html">modm_data.pdf.structure module</a></li>
 </ul>
@@ -316,7 +314,7 @@
         </div>
         <article role="main">
           <h1>Source code for modm_data.pdf.structure</h1><div class="highlight"><pre>
-<span></span><span class="c1"># Copyright (c) 2022, Niklas Hauser</span>
+<span></span><span class="c1"># Copyright (c) 2022-2023, Niklas Hauser</span>
 <span class="c1">#</span>
 <span class="c1"># This file is part of the modm-data project.</span>
 <span class="c1">#</span>
@@ -325,75 +323,184 @@
 <span class="c1"># file, You can obtain one at http://mozilla.org/MPL/2.0/.</span>
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># Tagged PDFs</span>
+
+<span class="sd">A tagged PDF/UA (Universal Accessibility) contains the structure of content as a</span>
+<span class="sd">tree data structure with similar semantics to HTML. Sadly, the quality of the</span>
+<span class="sd">tags depends heavily on the PDF creation software. See [Overview of PDF tags](</span>
+<span class="sd">https://accessible-pdf.info/en/basics/general/overview-of-the-pdf-tags/).</span>
+
+<span class="sd">An example of an accessible pdf that can be inspected via these classes:</span>
+<span class="sd">[Rock On, D.C. Music Festival](</span>
+<span class="sd">https://commonlook.com/wp-content/uploads/2020/04/accessible-pdf-example.pdf).</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+
 <span class="kn">import</span> <span class="nn">ctypes</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span><span class="p">,</span> <span class="n">cache</span>
 <span class="kn">import</span> <span class="nn">pypdfium2</span> <span class="k">as</span> <span class="nn">pp</span>
+<span class="kn">import</span> <span class="nn">weakref</span>
 
 
 <div class="viewcode-block" id="Structure"><a class="viewcode-back" href="../../../api/modm_data.pdf.structure.html#modm_data.pdf.structure.Structure">[docs]</a><span class="k">class</span> <span class="nc">Structure</span><span class="p">:</span>
-<div class="viewcode-block" id="Structure.__init__"><a class="viewcode-back" href="../../../api/modm_data.pdf.structure.html#modm_data.pdf.structure.Structure.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A PDF/UA (&quot;tagged PDF&quot;) contains the structure of content as a tree data</span>
+<span class="sd">    structure with similar semantics to HTML.</span>
+
+<span class="sd">    This class is a convenience wrapper around [the pdfium structtree methods](</span>
+<span class="sd">    https://pdfium.googlesource.com/pdfium/+/main/public/fpdf_structtree.h).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Structure.__init__"><a class="viewcode-back" href="../../../api/modm_data.pdf.structure.html#modm_data.pdf.structure.Structure.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">page</span><span class="p">:</span> <span class="s2">&quot;modm_data.pdf.page.Page&quot;</span><span class="p">,</span>
+                 <span class="n">element</span><span class="p">:</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_STRUCTELEMENT</span><span class="p">,</span>
+                 <span class="n">parent</span><span class="p">:</span> <span class="s2">&quot;Structure&quot;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_page</span> <span class="o">=</span> <span class="n">page</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_element</span> <span class="o">=</span> <span class="n">element</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">:</span> <span class="n">Structure</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span> <span class="k">if</span> <span class="n">parent</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The parent node.&quot;&quot;&quot;</span></div>
 
-    <span class="k">def</span> <span class="nf">_get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">function</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">clength</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulong</span><span class="p">(</span><span class="n">max_length</span><span class="p">)</span>
-        <span class="n">cbuffer</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_ushort</span> <span class="o">*</span> <span class="n">max_length</span><span class="p">)()</span>
+    <span class="k">def</span> <span class="nf">_get_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">function</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">clength</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulong</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">cbuffer</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
         <span class="n">function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">,</span> <span class="n">cbuffer</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">cbuffer</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-16-le&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">title</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Title `/T`&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetTitle</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">actual_text</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The actual text.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetActualText</span><span class="p">)</span>
+
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">alt_text</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alternate Text&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetAltText</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Type `/S`&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetType</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">obj_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Object Type `/Type`&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetObjType</span><span class="p">)</span>
+
+    <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The case-insensitive IETF BCP 47 language code.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetLang</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Identifier&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetID</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
-    <span class="k">def</span> <span class="nf">marked_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetMarkedContentID</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">marked_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;List of marked content identifiers&quot;&quot;&quot;</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetMarkedContentIdCount</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">mcid</span> <span class="o">:=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetMarkedContentIdAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mcid</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ids</span>
 
-<div class="viewcode-block" id="Structure.attribute"><a class="viewcode-back" href="../../../api/modm_data.pdf.structure.html#modm_data.pdf.structure.Structure.attribute">[docs]</a>    <span class="k">def</span> <span class="nf">attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">clength</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulong</span><span class="p">(</span><span class="n">max_length</span><span class="p">)</span>
-        <span class="n">cbuffer</span> <span class="o">=</span> <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_ushort</span> <span class="o">*</span> <span class="n">max_length</span><span class="p">)()</span>
-        <span class="n">length</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetStringAttribute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cbuffer</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">cbuffer</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-16-le&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)[:</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetMarkedContentID</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">)</span></div>
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="o">|</span><span class="nb">bool</span><span class="o">|</span><span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        All attributes of this structure element as a dictionary.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            Due to limitations of the pdfium API, attribute arrays cannot be</span>
+<span class="sd">            extracted! The values are marked as `[?]` in the dictionary.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kv</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">eindex</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetAttributeCount</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">)):</span>
+            <span class="n">attr</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetAttributeAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">,</span> <span class="n">eindex</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">aindex</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetCount</span><span class="p">(</span><span class="n">attr</span><span class="p">)):</span>
+                <span class="c1"># Get the name</span>
+                <span class="n">clength</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">cname</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># workaround to get length</span>
+                <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetName</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">aindex</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
+                <span class="n">cname</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">clength</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+                <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetName</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">aindex</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="n">clength</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">cname</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+                <span class="c1"># Get the type</span>
+                <span class="n">atype</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetType</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">)</span>
+                <span class="k">assert</span> <span class="n">atype</span> <span class="o">!=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_UNKNOWN</span>
+
+                <span class="c1"># Then get each type individually</span>
+                <span class="k">match</span> <span class="n">atype</span><span class="p">:</span>
+                    <span class="k">case</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_BOOLEAN</span><span class="p">:</span>
+                        <span class="n">cbool</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">bool</span><span class="p">()</span>
+                        <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetBooleanValue</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="n">cbool</span><span class="p">)</span>
+                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cbool</span><span class="o">.</span><span class="n">value</span>
+
+                    <span class="k">case</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_NUMBER</span><span class="p">:</span>
+                        <span class="n">cfloat</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_float</span><span class="p">()</span>
+                        <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetNumberValue</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="n">cfloat</span><span class="p">)</span>
+                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cfloat</span><span class="o">.</span><span class="n">value</span>
+
+                    <span class="k">case</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_STRING</span> <span class="o">|</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_NAME</span><span class="p">:</span>
+                        <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetStringValue</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
+                        <span class="n">cattrname</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">clength</span><span class="o">.</span><span class="n">value</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+                        <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetStringValue</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="n">cattrname</span><span class="p">,</span> <span class="n">clength</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
+                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cattrname</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-16-le&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)[:</span><span class="n">clength</span><span class="o">.</span><span class="n">value</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                    <span class="c1"># FIXME: FPDF_OBJECT_ARRAY is not a blob, but no other APIs are exposed?</span>
+                    <span class="c1"># case pp.raw.FPDF_OBJECT_ARRAY:</span>
+                    <span class="c1">#     assert pp.raw.FPDF_StructElement_Attr_GetBlobValue(attr, cname, 0, 0, clength)</span>
+                    <span class="c1">#     cblob = ctypes.create_string_buffer(clength.value)</span>
+                    <span class="c1">#     assert pp.raw.FPDF_StructElement_Attr_GetBlobValue(attr, cname, cblob, clength, clength)</span>
+                    <span class="c1">#     kv[name] = cblob.raw</span>
+
+                    <span class="k">case</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_ARRAY</span><span class="p">:</span>
+                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[?]&quot;</span>
+
+                    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[unknown=</span><span class="si">{</span><span class="n">atype</span><span class="si">}</span><span class="s2">?]&quot;</span>
+        <span class="k">return</span> <span class="n">kv</span>
 
 <div class="viewcode-block" id="Structure.child"><a class="viewcode-back" href="../../../api/modm_data.pdf.structure.html#modm_data.pdf.structure.Structure.child">[docs]</a>    <span class="nd">@cache</span>
-    <span class="k">def</span> <span class="nf">child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="n">child</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetChildAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Structure</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="p">,</span> <span class="n">child</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">child</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Structure&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param index: 0-index of child.</span>
+<span class="sd">        :return: Child structure.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetChildAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Structure</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">children</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;All child structures.&quot;&quot;&quot;</span>
         <span class="n">count</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_CountChildren</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
             <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">child</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Structure.descr"><a class="viewcode-back" href="../../../api/modm_data.pdf.structure.html#modm_data.pdf.structure.Structure.descr">[docs]</a>    <span class="k">def</span> <span class="nf">descr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Description including all children via indentation.&quot;&quot;&quot;</span>
         <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="n">indent</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-            <span class="n">string</span> <span class="o">+=</span> <span class="n">child</span><span class="o">.</span><span class="n">descr</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="n">child</span><span class="o">.</span><span class="n">descr</span><span class="p">(</span><span class="n">indent</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">string</span></div>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
-        <span class="n">string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;S(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">alt_text</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">marked_id</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">string</span><span class="si">}</span><span class="s2">)&quot;</span></div>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">:</span> <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;type=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">:</span> <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;title=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">actual_text</span><span class="p">:</span> <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;act_text=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">actual_text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">alt_text</span><span class="p">:</span> <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;alt_text=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">alt_text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;id=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">values</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;mid=</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">marked_ids</span><span class="p">]</span>
+        <span class="n">values</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;S(</span><span class="si">{</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="p">))</span><span class="si">}</span><span class="s2">)&quot;</span></div>
 </pre></div>
         </article>
       </div>

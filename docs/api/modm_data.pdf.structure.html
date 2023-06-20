@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="modm_data.pdf2html package" href="modm_data.pdf2html.html" /><link rel="prev" title="modm_data.pdf.render module" href="modm_data.pdf.render.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>modm_data.pdf.structure module - modm-data</title>
+        <title>modm_data.pdf.structure module - modm-data: Semantic Hardware Description</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -126,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">modm-data</div></a>
+      <a href="../index.html"><div class="brand">modm-data: Semantic Hardware Description</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">modm-data</span>
+  <span class="sidebar-brand-text">modm-data: Semantic Hardware Description</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -163,7 +163,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../pipeline/html2owl.html">HTML to OWL Pipeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pipeline/header2svd.html">CMSIS Header to SVD Pipeline</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">modm_data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of modm_data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="modm_data.html">modm_data package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of modm_data package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -173,7 +173,6 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="modm_data.cubemx.html">modm_data.cubemx package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of modm_data.cubemx package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="modm_data.cubemx.device.html">modm_data.cubemx.device module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.cubemx.device_data.html">modm_data.cubemx.device_data module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.cubemx.peripherals.html">modm_data.cubemx.peripherals module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.cubemx.stm32_data.html">modm_data.cubemx.stm32_data module</a></li>
@@ -239,10 +238,9 @@
 <li class="toctree-l3 current has-children"><a class="reference internal" href="modm_data.pdf.html">modm_data.pdf package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of modm_data.pdf package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.character.html">modm_data.pdf.character module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.document.html">modm_data.pdf.document module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.image.html">modm_data.pdf.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.graphics.html">modm_data.pdf.graphics module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.link.html">modm_data.pdf.link module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.page.html">modm_data.pdf.page module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.path.html">modm_data.pdf.path module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.render.html">modm_data.pdf.render module</a></li>
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">modm_data.pdf.structure module</a></li>
 </ul>
@@ -327,31 +325,57 @@
         <article role="main">
           <section id="module-modm_data.pdf.structure">
 <span id="modm-data-pdf-structure-module"></span><h1>modm_data.pdf.structure module<a class="headerlink" href="#module-modm_data.pdf.structure" title="Permalink to this heading">#</a></h1>
+<p># Tagged PDFs</p>
+<p>A tagged PDF/UA (Universal Accessibility) contains the structure of content as a
+tree data structure with similar semantics to HTML. Sadly, the quality of the
+tags depends heavily on the PDF creation software. See [Overview of PDF tags](
+<a class="reference external" href="https://accessible-pdf.info/en/basics/general/overview-of-the-pdf-tags/">https://accessible-pdf.info/en/basics/general/overview-of-the-pdf-tags/</a>).</p>
+<p>An example of an accessible pdf that can be inspected via these classes:
+[Rock On, D.C. Music Festival](
+<a class="reference external" href="https://commonlook.com/wp-content/uploads/2020/04/accessible-pdf-example.pdf">https://commonlook.com/wp-content/uploads/2020/04/accessible-pdf-example.pdf</a>).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="modm_data.pdf.structure.Structure">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf.structure.</span></span><span class="sig-name descname"><span class="pre">Structure</span></span><a class="reference internal" href="../_modules/modm_data/pdf/structure.html#Structure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.structure.Structure" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A PDF/UA (“tagged PDF”) contains the structure of content as a tree data
+structure with similar semantics to HTML.</p>
+<p>This class is a convenience wrapper around [the pdfium structtree methods](
+<a class="reference external" href="https://pdfium.googlesource.com/pdfium/+/main/public/fpdf_structtree.h">https://pdfium.googlesource.com/pdfium/+/main/public/fpdf_structtree.h</a>).</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/structure.html#Structure.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.structure.Structure.__init__" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> (<a class="reference internal" href="modm_data.pdf.page.html#modm_data.pdf.page.Page" title="modm_data.pdf.page.Page"><em>modm_data.pdf.page.Page</em></a>) – </p></li>
+<li><p><strong>element</strong> (<em>LP_struct_fpdf_structelement_t__</em>) – </p></li>
+<li><p><strong>parent</strong> (<a class="reference internal" href="#modm_data.pdf.structure.Structure" title="modm_data.pdf.structure.Structure"><em>Structure</em></a>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.actual_text">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">actual_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.actual_text" title="Permalink to this definition">#</a></dt>
+<dd><p>The actual text.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.alt_text">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alt_text</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.alt_text" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Alternate Text</p>
+</dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.attribute">
-<span class="sig-name descname"><span class="pre">attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/structure.html#Structure.attribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.structure.Structure.attribute" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>max_length</strong> (<em>int</em>) – </p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.attributes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attributes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.attributes" title="Permalink to this definition">#</a></dt>
+<dd><p>All attributes of this structure element as a dictionary.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to limitations of the pdfium API, attribute arrays cannot be
+extracted! The values are marked as <cite>[?]</cite> in the dictionary.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -359,7 +383,13 @@
 <span class="sig-name descname"><span class="pre">child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/structure.html#Structure.child"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.structure.Structure.child" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – </p>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – 0-index of child.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Child structure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#modm_data.pdf.structure.Structure" title="modm_data.pdf.structure.Structure"><em>Structure</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -367,12 +397,14 @@
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.children">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">children</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.children" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>All child structures.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.descr">
 <span class="sig-name descname"><span class="pre">descr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/structure.html#Structure.descr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.structure.Structure.descr" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Description including all children via indentation.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
@@ -382,27 +414,44 @@
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.id">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Identifier</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.language">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.language" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The case-insensitive IETF BCP 47 language code.</p>
+</dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.marked_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">marked_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.marked_id" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.marked_ids">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">marked_ids</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.marked_ids" title="Permalink to this definition">#</a></dt>
+<dd><p>List of marked content identifiers</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.obj_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">obj_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.obj_type" title="Permalink to this definition">#</a></dt>
+<dd><p>Object Type <cite>/Type</cite></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#modm_data.pdf.structure.Structure" title="modm_data.pdf.structure.Structure"><span class="pre">Structure</span></a></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.parent" title="Permalink to this definition">#</a></dt>
+<dd><p>The parent node.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.title">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.title" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Title <cite>/T</cite></p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.structure.Structure.type">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.structure.Structure.type" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Type <cite>/S</cite></p>
+</dd></dl>
 
 </dd></dl>
 
@@ -466,14 +515,17 @@
 <li><a class="reference internal" href="#">modm_data.pdf.structure module</a><ul>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure"><code class="docutils literal notranslate"><span class="pre">Structure</span></code></a><ul>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure.__init__"><code class="docutils literal notranslate"><span class="pre">Structure.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.structure.Structure.actual_text"><code class="docutils literal notranslate"><span class="pre">Structure.actual_text</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure.alt_text"><code class="docutils literal notranslate"><span class="pre">Structure.alt_text</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.structure.Structure.attribute"><code class="docutils literal notranslate"><span class="pre">Structure.attribute()</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.structure.Structure.attributes"><code class="docutils literal notranslate"><span class="pre">Structure.attributes</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure.child"><code class="docutils literal notranslate"><span class="pre">Structure.child()</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure.children"><code class="docutils literal notranslate"><span class="pre">Structure.children</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure.descr"><code class="docutils literal notranslate"><span class="pre">Structure.descr()</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure.id"><code class="docutils literal notranslate"><span class="pre">Structure.id</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure.language"><code class="docutils literal notranslate"><span class="pre">Structure.language</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.structure.Structure.marked_id"><code class="docutils literal notranslate"><span class="pre">Structure.marked_id</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.structure.Structure.marked_ids"><code class="docutils literal notranslate"><span class="pre">Structure.marked_ids</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.structure.Structure.obj_type"><code class="docutils literal notranslate"><span class="pre">Structure.obj_type</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.structure.Structure.parent"><code class="docutils literal notranslate"><span class="pre">Structure.parent</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure.title"><code class="docutils literal notranslate"><span class="pre">Structure.title</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.structure.Structure.type"><code class="docutils literal notranslate"><span class="pre">Structure.type</span></code></a></li>
 </ul>

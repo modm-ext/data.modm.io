@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>modm_data.pdf.page - modm-data</title>
+        <title>modm_data.pdf.page - modm-data: Semantic Hardware Description</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../index.html"><div class="brand">modm-data</div></a>
+      <a href="../../../index.html"><div class="brand">modm-data: Semantic Hardware Description</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -148,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
   
   
-  <span class="sidebar-brand-text">modm-data</span>
+  <span class="sidebar-brand-text">modm-data: Semantic Hardware Description</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -162,7 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../pipeline/html2owl.html">HTML to OWL Pipeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../pipeline/header2svd.html">CMSIS Header to SVD Pipeline</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/modules.html">modm_data</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of modm_data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/modm_data.html">modm_data package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of modm_data package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -172,7 +172,6 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/modm_data.cubemx.html">modm_data.cubemx package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of modm_data.cubemx package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.device.html">modm_data.cubemx.device module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.device_data.html">modm_data.cubemx.device_data module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.peripherals.html">modm_data.cubemx.peripherals module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.cubemx.stm32_data.html">modm_data.cubemx.stm32_data module</a></li>
@@ -238,10 +237,9 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../api/modm_data.pdf.html">modm_data.pdf package</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of modm_data.pdf package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.character.html">modm_data.pdf.character module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.document.html">modm_data.pdf.document module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.image.html">modm_data.pdf.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.graphics.html">modm_data.pdf.graphics module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.link.html">modm_data.pdf.link module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.page.html">modm_data.pdf.page module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.path.html">modm_data.pdf.path module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.render.html">modm_data.pdf.render module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/modm_data.pdf.structure.html">modm_data.pdf.structure module</a></li>
 </ul>
@@ -325,9 +323,16 @@
 <span class="c1"># file, You can obtain one at http://mozilla.org/MPL/2.0/.</span>
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># PDF Pages</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+
 <span class="kn">import</span> <span class="nn">ctypes</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">weakref</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Callable</span>
 <span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect_left</span><span class="p">,</span> <span class="n">bisect_right</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span><span class="p">,</span> <span class="n">cache</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="n">OrderedDict</span>
@@ -336,25 +341,33 @@
 <span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">Rectangle</span><span class="p">,</span> <span class="n">Region</span>
 <span class="kn">from</span> <span class="nn">.character</span> <span class="kn">import</span> <span class="n">Character</span>
 <span class="kn">from</span> <span class="nn">.link</span> <span class="kn">import</span> <span class="n">ObjLink</span><span class="p">,</span> <span class="n">WebLink</span>
-<span class="kn">from</span> <span class="nn">.path</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">.image</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">.graphics</span> <span class="kn">import</span> <span class="n">Path</span><span class="p">,</span> <span class="n">Image</span>
 <span class="kn">from</span> <span class="nn">.structure</span> <span class="kn">import</span> <span class="n">Structure</span>
 
 <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="Page"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page">[docs]</a><span class="k">class</span> <span class="nc">Page</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">PdfPage</span><span class="p">):</span>
-<div class="viewcode-block" id="Page.__init__"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class provides low-level access to graphics and characters of the page.</span>
+<span class="sd">    It also fixes missing bounding boxes for rotates characters on page load,</span>
+<span class="sd">    as well as allow searching for characters in an area instead of just text.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Page.__init__"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">document</span><span class="p">:</span> <span class="s2">&quot;modm_data.pdf.Document&quot;</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param document: a PDF document.</span>
+<span class="sd">        :param index: 0-index page number.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_LoadPage</span><span class="p">(</span><span class="n">document</span><span class="p">,</span> <span class="n">index</span><span class="p">),</span> <span class="n">document</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_paths</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_images</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_links</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_weblinks</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_charlines</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_linked</span> <span class="o">=</span> <span class="kc">False</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">index</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;0-index page number.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;1-index page number.&quot;&quot;&quot;</span>
         <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading: </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_textpage</span><span class="p">()</span>
@@ -366,86 +379,50 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_fix_bboxes</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Page.text_in_area"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.text_in_area">[docs]</a>    <span class="k">def</span> <span class="nf">text_in_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">area</span><span class="p">:</span> <span class="n">Rectangle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="o">.</span><span class="n">get_text_bounded</span><span class="p">(</span><span class="n">area</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">top</span><span class="p">)</span></div>
-
-<div class="viewcode-block" id="Page.chars_in_area"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.chars_in_area">[docs]</a>    <span class="k">def</span> <span class="nf">chars_in_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">area</span><span class="p">:</span> <span class="n">Rectangle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Character</span><span class="p">]:</span>
-        <span class="n">found</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="c1"># We perform binary searches of the lower and upper y-positions first</span>
-        <span class="c1"># lines are ordered by y-position</span>
-        <span class="n">ypositions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">charlines</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-        <span class="n">y_bottom</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">ypositions</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">bottom</span><span class="p">)</span>
-        <span class="n">y_top</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">ypositions</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="n">y_bottom</span><span class="p">)</span>
-
-        <span class="c1"># Then for every line we do another binary search for left and right</span>
-        <span class="k">for</span> <span class="n">ypos</span> <span class="ow">in</span> <span class="n">ypositions</span><span class="p">[</span><span class="n">y_bottom</span><span class="p">:</span><span class="n">y_top</span><span class="p">]:</span>
-            <span class="n">chars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">charlines</span><span class="p">[</span><span class="n">ypos</span><span class="p">]</span>
-            <span class="n">x_left</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">midpoint</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-            <span class="n">x_right</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="n">x_left</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">midpoint</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-            <span class="c1"># Finally we add all these characters</span>
-            <span class="n">found</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">chars</span><span class="p">[</span><span class="n">x_left</span><span class="p">:</span><span class="n">x_right</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">found</span></div>
-
-        <span class="c1"># Linear Search implementation for reference</span>
-        <span class="c1"># # lines are ordered by ypos</span>
-        <span class="c1"># for ypos, chars in self.charlines.items():</span>
-        <span class="c1">#     # We can stop the search if the ypos is above the area</span>
-        <span class="c1">#     if ypos &gt; area.top:</span>
-        <span class="c1">#         break</span>
-        <span class="c1">#     # otherwise we check if it&#39;s inside the area</span>
-        <span class="c1">#     if area.bottom &lt;= ypos:</span>
-        <span class="c1">#         # chars are ordered by xpos</span>
-        <span class="c1">#         for char in chars:</span>
-        <span class="c1">#             # we can stop looking into this line</span>
-        <span class="c1">#             if char.bbox.midpoint.x &gt; area.right:</span>
-        <span class="c1">#                 break</span>
-        <span class="c1">#             # otherwise we check if it&#39;s inside the area</span>
-        <span class="c1">#             if area.left &lt;= char.bbox.midpoint.x:</span>
-        <span class="c1">#                 found.append(char)</span>
-        <span class="c1"># return found</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">structures</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Structure</span><span class="p">]:</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructTree_CountChildren</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structtree</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
-            <span class="n">child</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructTree_GetChildAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structtree</span><span class="p">,</span> <span class="n">ii</span><span class="p">)</span>
-            <span class="k">yield</span> <span class="n">Structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">)</span>
-
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The page label.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdf</span><span class="o">.</span><span class="n">get_page_label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The page width.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The page height.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The page rotation in degrees.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_rotation</span><span class="p">()</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Rectangle</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The page bounding box.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Rectangle</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_bbox</span><span class="p">())</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">char_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The total count of characters.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="o">.</span><span class="n">count_chars</span><span class="p">()</span>
 
 <div class="viewcode-block" id="Page.char"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.char">[docs]</a>    <span class="nd">@cache</span>
-    <span class="k">def</span> <span class="nf">char</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Character</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">char</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Character</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;:return: The character at the 0-index.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Character</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">chars</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Character</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">chars</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Character</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Yields all characters.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">char_count</span><span class="p">):</span>
             <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">char</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">objlinks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ObjLink</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;All object links.&quot;&quot;&quot;</span>
         <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">pos</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">link</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_LINK</span><span class="p">()</span>
@@ -455,19 +432,133 @@
 
     <span class="nd">@cached_property</span>
     <span class="k">def</span> <span class="nf">weblinks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">WebLink</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;All web links.&quot;&quot;&quot;</span>
         <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDFLink_CountWebLinks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_linkpage</span><span class="p">)):</span>
             <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">WebLink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ii</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">links</span>
 
-<div class="viewcode-block" id="Page.find"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Character</span><span class="p">]:</span>
+<div class="viewcode-block" id="Page.chars_in_area"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.chars_in_area">[docs]</a>    <span class="k">def</span> <span class="nf">chars_in_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">area</span><span class="p">:</span> <span class="n">Rectangle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Character</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param area: area to search for character in.</span>
+<span class="sd">        :return: All characters found in the area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># We perform binary searches of the lower and upper y-positions first</span>
+        <span class="c1"># lines are ordered by y-position</span>
+        <span class="n">ypositions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_charlines</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">y_bottom</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">ypositions</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">bottom</span><span class="p">)</span>
+        <span class="n">y_top</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">ypositions</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="n">y_bottom</span><span class="p">)</span>
+
+        <span class="c1"># Then for every line we do another binary search for left and right</span>
+        <span class="k">for</span> <span class="n">ypos</span> <span class="ow">in</span> <span class="n">ypositions</span><span class="p">[</span><span class="n">y_bottom</span><span class="p">:</span><span class="n">y_top</span><span class="p">]:</span>
+            <span class="n">chars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_charlines</span><span class="p">[</span><span class="n">ypos</span><span class="p">]</span>
+            <span class="n">x_left</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">midpoint</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">x_right</span> <span class="o">=</span> <span class="n">bisect_right</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="n">x_left</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">midpoint</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+            <span class="c1"># Finally we add all these characters</span>
+            <span class="n">found</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">chars</span><span class="p">[</span><span class="n">x_left</span><span class="p">:</span><span class="n">x_right</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">found</span></div>
+
+<div class="viewcode-block" id="Page.text_in_area"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.text_in_area">[docs]</a>    <span class="k">def</span> <span class="nf">text_in_area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">area</span><span class="p">:</span> <span class="n">Rectangle</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param area: area to search for text in.</span>
+<span class="sd">        :return: Only the text found in the area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="o">.</span><span class="n">get_text_bounded</span><span class="p">(</span><span class="n">area</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">area</span><span class="o">.</span><span class="n">top</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">structures</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Structure</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The PDF/UA tags.&quot;&quot;&quot;</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructTree_CountChildren</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structtree</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+            <span class="n">child</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructTree_GetChildAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_structtree</span><span class="p">,</span> <span class="n">ii</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">Structure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Page.find"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.find">[docs]</a>    <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Character</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Searches for a match string as whole, consecutive words and yields the</span>
+<span class="sd">        characters.</span>
+
+<span class="sd">        :param string: The search string.</span>
+<span class="sd">        :param case_sensitive: Ignore case if false.</span>
+<span class="sd">        :return: yields the characters found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">searcher</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">match_case</span><span class="o">=</span><span class="n">case_sensitive</span><span class="p">,</span>
                                       <span class="n">match_whole_word</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">consecutive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">while</span> <span class="n">idx</span> <span class="o">:=</span> <span class="n">searcher</span><span class="o">.</span><span class="n">get_next</span><span class="p">():</span>
             <span class="n">chars</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">char</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">idx</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
             <span class="k">yield</span> <span class="n">chars</span></div>
 
-<div class="viewcode-block" id="Page.link_characters"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.link_characters">[docs]</a>    <span class="k">def</span> <span class="nf">link_characters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">paths</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;All paths.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_objects</span><span class="p">([</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_PAGEOBJ_PATH</span><span class="p">])]</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">images</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Image</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;All images.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Image</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_objects</span><span class="p">([</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_PAGEOBJ_IMAGE</span><span class="p">])]</span>
+
+<div class="viewcode-block" id="Page.graphic_clusters"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.graphic_clusters">[docs]</a>    <span class="k">def</span> <span class="nf">graphic_clusters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predicate</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Path</span><span class="o">|</span><span class="n">Image</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                         <span class="n">absolute_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> \
+                                            <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">Rectangle</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]]]:</span>
+        <span class="k">if</span> <span class="n">absolute_tolerance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">absolute_tolerance</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.01</span>
+
+        <span class="c1"># First collect all vertical regions</span>
+        <span class="n">filtered_paths</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">paths</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">predicate</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">predicate</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="n">filtered_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">predicate</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">predicate</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+                <span class="n">filtered_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+        <span class="n">regions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">filtered_paths</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">l</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">y</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">reg</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">reg</span><span class="o">.</span><span class="n">overlaps</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="n">absolute_tolerance</span><span class="p">):</span>
+                    <span class="c1"># They overlap, so merge them</span>
+                    <span class="n">reg</span><span class="o">.</span><span class="n">v0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span><span class="p">)</span>
+                    <span class="n">reg</span><span class="o">.</span><span class="n">v1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">v1</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span><span class="p">)</span>
+                    <span class="n">reg</span><span class="o">.</span><span class="n">objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+                    <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">regions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Region</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
+
+        <span class="c1"># Now collect horizontal region inside each vertical region</span>
+        <span class="k">for</span> <span class="n">yreg</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">filtered_paths</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">l</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">x</span><span class="p">):</span>
+                <span class="c1"># check if horizontal line is contained in vregion</span>
+                <span class="k">if</span> <span class="n">yreg</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">absolute_tolerance</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">xreg</span> <span class="ow">in</span> <span class="n">yreg</span><span class="o">.</span><span class="n">subregions</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">xreg</span><span class="o">.</span><span class="n">overlaps</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">absolute_tolerance</span><span class="p">):</span>
+                            <span class="c1"># They overlap so merge them</span>
+                            <span class="n">xreg</span><span class="o">.</span><span class="n">v0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">xreg</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+                            <span class="n">xreg</span><span class="o">.</span><span class="n">v1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">xreg</span><span class="o">.</span><span class="n">v1</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+                            <span class="n">xreg</span><span class="o">.</span><span class="n">objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+                            <span class="k">break</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">yreg</span><span class="o">.</span><span class="n">subregions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Region</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
+
+        <span class="n">clusters</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">yreg</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">xreg</span> <span class="ow">in</span> <span class="n">yreg</span><span class="o">.</span><span class="n">subregions</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">yreg</span><span class="o">.</span><span class="n">subregions</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="c1"># Strip down the height again for subregions</span>
+                    <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">,</span> <span class="mi">0</span>
+                    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">xreg</span><span class="o">.</span><span class="n">objs</span><span class="p">:</span>
+                        <span class="n">y0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span><span class="p">)</span>
+                        <span class="n">y1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">yreg</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">yreg</span><span class="o">.</span><span class="n">v1</span>
+                <span class="n">bbox</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">xreg</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xreg</span><span class="o">.</span><span class="n">v1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+                <span class="n">clusters</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">bbox</span><span class="p">,</span> <span class="n">xreg</span><span class="o">.</span><span class="n">objs</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">clusters</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">))</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_link_characters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_linked</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="c1"># The in-document links only gives us rectangles and we must find the</span>
@@ -479,7 +570,19 @@
         <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">weblinks</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">*</span><span class="n">link</span><span class="o">.</span><span class="n">range</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">char</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span><span class="o">.</span><span class="n">weblink</span> <span class="o">=</span> <span class="n">link</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_linked</span> <span class="o">=</span> <span class="kc">True</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_linked</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@cached_property</span>
+    <span class="k">def</span> <span class="nf">_charlines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">charlines</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chars</span><span class="p">:</span>
+            <span class="n">charlines</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">midpoint</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+        <span class="n">orderedchars</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">charlines</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">ypos</span><span class="p">,</span> <span class="n">chars</span> <span class="ow">in</span> <span class="n">charlines</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">orderedchars</span><span class="p">[</span><span class="n">ypos</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">midpoint</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">orderedchars</span>
 
     <span class="k">def</span> <span class="nf">_fix_bboxes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">_key</span><span class="p">(</span><span class="n">char</span><span class="p">):</span>
@@ -506,89 +609,7 @@
                 <span class="n">bbox</span> <span class="o">=</span> <span class="n">bbox</span><span class="o">.</span><span class="n">rotated</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">rotation</span> <span class="o">-</span> <span class="n">char</span><span class="o">.</span><span class="n">_rotation</span><span class="p">)</span><span class="o">.</span><span class="n">translated</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
                 <span class="n">char</span><span class="o">.</span><span class="n">_bbox</span> <span class="o">=</span> <span class="n">bbox</span>
             <span class="k">elif</span> <span class="n">char</span><span class="o">.</span><span class="n">unicode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x20</span><span class="p">,</span> <span class="mh">0xa</span><span class="p">,</span> <span class="mh">0xd</span><span class="p">}:</span>
-                <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to fix bbox for </span><span class="si">{</span><span class="n">char</span><span class="o">.</span><span class="n">descr</span><span class="p">()</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
-
-    <span class="nd">@cached_property</span>
-    <span class="k">def</span> <span class="nf">charlines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">charlines</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chars</span><span class="p">:</span>
-            <span class="n">charlines</span><span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">midpoint</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
-
-        <span class="n">orderedchars</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">charlines</span><span class="p">))</span>
-        <span class="k">for</span> <span class="n">ypos</span><span class="p">,</span> <span class="n">chars</span> <span class="ow">in</span> <span class="n">charlines</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">orderedchars</span><span class="p">[</span><span class="n">ypos</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">midpoint</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">orderedchars</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">paths</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_paths</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span>
-                           <span class="bp">self</span><span class="o">.</span><span class="n">get_objects</span><span class="p">([</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_PAGEOBJ_PATH</span><span class="p">])]</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_paths</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">images</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_images</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_images</span> <span class="o">=</span> <span class="p">[</span><span class="n">Image</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">get_objects</span><span class="p">([</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_PAGEOBJ_IMAGE</span><span class="p">])]</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_images</span>
-
-<div class="viewcode-block" id="Page.graphic_clusters"><a class="viewcode-back" href="../../../api/modm_data.pdf.page.html#modm_data.pdf.page.Page.graphic_clusters">[docs]</a>    <span class="k">def</span> <span class="nf">graphic_clusters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">atol</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">atol</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.01</span>
-
-        <span class="c1"># First collect all vertical regions</span>
-        <span class="n">filtered_paths</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">paths</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">predicate</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">predicate</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-                <span class="n">filtered_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">predicate</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">predicate</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
-                <span class="n">filtered_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-
-        <span class="n">regions</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">filtered_paths</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">l</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">y</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">reg</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">reg</span><span class="o">.</span><span class="n">overlaps</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="n">atol</span><span class="p">):</span>
-                    <span class="c1"># They overlap, so merge them</span>
-                    <span class="n">reg</span><span class="o">.</span><span class="n">v0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span><span class="p">)</span>
-                    <span class="n">reg</span><span class="o">.</span><span class="n">v1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">v1</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span><span class="p">)</span>
-                    <span class="n">reg</span><span class="o">.</span><span class="n">objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-                    <span class="k">break</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">regions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Region</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
-
-        <span class="c1"># Now collect horizontal region inside each vertical region</span>
-        <span class="k">for</span> <span class="n">yreg</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">filtered_paths</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="n">l</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">x</span><span class="p">):</span>
-                <span class="c1"># check if horizontal line is contained in vregion</span>
-                <span class="k">if</span> <span class="n">yreg</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">atol</span><span class="p">):</span>
-                    <span class="k">for</span> <span class="n">xreg</span> <span class="ow">in</span> <span class="n">yreg</span><span class="o">.</span><span class="n">subregions</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="n">xreg</span><span class="o">.</span><span class="n">overlaps</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">atol</span><span class="p">):</span>
-                            <span class="c1"># They overlap so merge them</span>
-                            <span class="n">xreg</span><span class="o">.</span><span class="n">v0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">xreg</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-                            <span class="n">xreg</span><span class="o">.</span><span class="n">v1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">xreg</span><span class="o">.</span><span class="n">v1</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-                            <span class="n">xreg</span><span class="o">.</span><span class="n">objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-                            <span class="k">break</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">yreg</span><span class="o">.</span><span class="n">subregions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Region</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
-
-        <span class="n">clusters</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">yreg</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">xreg</span> <span class="ow">in</span> <span class="n">yreg</span><span class="o">.</span><span class="n">subregions</span><span class="p">:</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">yreg</span><span class="o">.</span><span class="n">subregions</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="c1"># Strip down the height again for subregions</span>
-                    <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">,</span> <span class="mi">0</span>
-                    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">xreg</span><span class="o">.</span><span class="n">objs</span><span class="p">:</span>
-                        <span class="n">y0</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span><span class="p">)</span>
-                        <span class="n">y1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">path</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">yreg</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">yreg</span><span class="o">.</span><span class="n">v1</span>
-                <span class="n">bbox</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">xreg</span><span class="o">.</span><span class="n">v0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xreg</span><span class="o">.</span><span class="n">v1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
-                <span class="n">clusters</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">bbox</span><span class="p">,</span> <span class="n">xreg</span><span class="o">.</span><span class="n">objs</span><span class="p">))</span>
-
-        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">clusters</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">))</span></div></div>
+                <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to fix bbox for </span><span class="si">{</span><span class="n">char</span><span class="o">.</span><span class="n">descr</span><span class="p">()</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span></div>
 </pre></div>
         </article>
       </div>

@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="modm_data.pdf.document module" href="modm_data.pdf.document.html" /><link rel="prev" title="modm_data.pdf package" href="modm_data.pdf.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>modm_data.pdf.character module - modm-data</title>
+        <title>modm_data.pdf.character module - modm-data: Semantic Hardware Description</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -126,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">modm-data</div></a>
+      <a href="../index.html"><div class="brand">modm-data: Semantic Hardware Description</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -149,7 +149,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">modm-data</span>
+  <span class="sidebar-brand-text">modm-data: Semantic Hardware Description</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -163,7 +163,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../pipeline/html2owl.html">HTML to OWL Pipeline</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pipeline/header2svd.html">CMSIS Header to SVD Pipeline</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">modm_data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of modm_data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="modm_data.html">modm_data package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of modm_data package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -173,7 +173,6 @@
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="modm_data.cubemx.html">modm_data.cubemx package</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of modm_data.cubemx package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="modm_data.cubemx.device.html">modm_data.cubemx.device module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.cubemx.device_data.html">modm_data.cubemx.device_data module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.cubemx.peripherals.html">modm_data.cubemx.peripherals module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.cubemx.stm32_data.html">modm_data.cubemx.stm32_data module</a></li>
@@ -239,10 +238,9 @@
 <li class="toctree-l3 current has-children"><a class="reference internal" href="modm_data.pdf.html">modm_data.pdf package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of modm_data.pdf package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">modm_data.pdf.character module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.document.html">modm_data.pdf.document module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.image.html">modm_data.pdf.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.graphics.html">modm_data.pdf.graphics module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.link.html">modm_data.pdf.link module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.page.html">modm_data.pdf.page module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.path.html">modm_data.pdf.path module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.render.html">modm_data.pdf.render module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modm_data.pdf.structure.html">modm_data.pdf.structure module</a></li>
 </ul>
@@ -327,14 +325,26 @@
         <article role="main">
           <section id="module-modm_data.pdf.character">
 <span id="modm-data-pdf-character-module"></span><h1>modm_data.pdf.character module<a class="headerlink" href="#module-modm_data.pdf.character" title="Permalink to this heading">#</a></h1>
+<p># PDF Characters</p>
+<p>Each character on the PDF page is represented by a character object, describing
+exactly where and how to render the associated glyph.</p>
+<p>While there are font flags, PDF files typically use entirely different fonts to
+render normal, bold, and italic characters.</p>
+<p>The character’s loose bounding box may not always be available, since it must be
+explicitly provided by the font. The tight bounding box is only available as
+long as the glyph is renderable, so a space character may have a loose, but not
+a tight bounding box, or none at all.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modm_data.pdf.character.</span></span><span class="sig-name descname"><span class="pre">Character</span></span><a class="reference internal" href="../_modules/modm_data/pdf/character.html#Character"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.character.Character" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class contains all information about a single character in the PDF
+page.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RenderMode</span></span><a class="reference internal" href="../_modules/modm_data/pdf/character.html#Character.RenderMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Tells the PDF viewer how to render this character glyph.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.RenderMode.CLIP">
 <span class="sig-name descname"><span class="pre">CLIP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.RenderMode.CLIP" title="Permalink to this definition">#</a></dt>
@@ -387,7 +397,10 @@
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/character.html#Character.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.character.Character.__init__" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> (<a class="reference internal" href="modm_data.pdf.page.html#modm_data.pdf.page.Page" title="modm_data.pdf.page.Page"><em>modm_data.pdf.page.Page</em></a>) – The page containing the character.</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – The index of the character.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -395,17 +408,25 @@
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.bbox">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">Rectangle</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.bbox" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The loose bounding box of the character.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">the</span> <span class="n">loose</span> <span class="n">bounding</span> <span class="n">box</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">available</span><span class="p">,</span> <span class="n">the</span> <span class="n">tight</span> <span class="n">bounding</span> <span class="n">box</span>
+<span class="ow">is</span> <span class="n">used</span> <span class="n">instead</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.char">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">char</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.char" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The printable string of the unicode value.</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.descr">
 <span class="sig-name descname"><span class="pre">descr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/character.html#Character.descr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.character.Character.descr" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Human-readable description of the character for debugging.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
@@ -414,73 +435,105 @@
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.fill">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.character.Character.fill" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.fill" title="Permalink to this definition">#</a></dt>
+<dd><p>The fill color of the character.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.flags">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.flags" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The font flags of the character.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.font">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">font</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.font" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The font name of the character.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.height">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.height" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The height of the character’s bounding box.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.objlink">
+<span class="sig-name descname"><span class="pre">objlink</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.pdf.link.html#modm_data.pdf.link.ObjLink" title="modm_data.pdf.link.ObjLink"><span class="pre">modm_data.pdf.link.ObjLink</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.objlink" title="Permalink to this definition">#</a></dt>
+<dd><p>The object link of this character or <cite>None</cite></p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.origin">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">origin</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Point" title="modm_data.utils.math.Point"><span class="pre">Point</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.origin" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The origin of the character.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.render_mode">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">render_mode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#modm_data.pdf.character.Character.RenderMode" title="modm_data.pdf.character.Character.RenderMode"><span class="pre">RenderMode</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.render_mode" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The render mode of the character.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.rotation">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rotation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.rotation" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The rotation of the character in degrees modulo 360.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.size">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.size" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The font size of the character.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.stroke">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stroke</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.stroke" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The stroke color of the character.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.tbbox">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tbbox</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.utils.math.html#modm_data.utils.math.Rectangle" title="modm_data.utils.math.Rectangle"><span class="pre">Rectangle</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.tbbox" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The tight bounding box of the character.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.theight">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">theight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.theight" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The height of the character’s tight bounding box.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.twidth">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">twidth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.twidth" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The width of the character’s tight bounding box.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.unicode">
+<span class="sig-name descname"><span class="pre">unicode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.unicode" title="Permalink to this definition">#</a></dt>
+<dd><p>The unicode value of the character.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modm_data.pdf.character.Character.weblink">
+<span class="sig-name descname"><span class="pre">weblink</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="modm_data.pdf.link.html#modm_data.pdf.link.WebLink" title="modm_data.pdf.link.WebLink"><span class="pre">modm_data.pdf.link.WebLink</span></a></em><a class="headerlink" href="#modm_data.pdf.character.Character.weblink" title="Permalink to this definition">#</a></dt>
+<dd><p>The web link of this character or <cite>None</cite></p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.weight">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.weight" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The font weight of the character.</p>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="modm_data.pdf.character.Character.width">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#modm_data.pdf.character.Character.width" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>The width of the character’s bounding box.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -563,6 +616,7 @@
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.flags"><code class="docutils literal notranslate"><span class="pre">Character.flags</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.font"><code class="docutils literal notranslate"><span class="pre">Character.font</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.height"><code class="docutils literal notranslate"><span class="pre">Character.height</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.objlink"><code class="docutils literal notranslate"><span class="pre">Character.objlink</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.origin"><code class="docutils literal notranslate"><span class="pre">Character.origin</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.render_mode"><code class="docutils literal notranslate"><span class="pre">Character.render_mode</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.rotation"><code class="docutils literal notranslate"><span class="pre">Character.rotation</span></code></a></li>
@@ -571,6 +625,8 @@
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.tbbox"><code class="docutils literal notranslate"><span class="pre">Character.tbbox</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.theight"><code class="docutils literal notranslate"><span class="pre">Character.theight</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.twidth"><code class="docutils literal notranslate"><span class="pre">Character.twidth</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.unicode"><code class="docutils literal notranslate"><span class="pre">Character.unicode</span></code></a></li>
+<li><a class="reference internal" href="#modm_data.pdf.character.Character.weblink"><code class="docutils literal notranslate"><span class="pre">Character.weblink</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.weight"><code class="docutils literal notranslate"><span class="pre">Character.weight</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.character.Character.width"><code class="docutils literal notranslate"><span class="pre">Character.width</span></code></a></li>
 </ul>
