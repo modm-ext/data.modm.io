@@ -339,7 +339,7 @@
 <span class="kn">import</span> <span class="nn">pypdfium2</span> <span class="k">as</span> <span class="nn">pp</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Iterable</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span><span class="p">,</span> <span class="n">cache</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 <span class="kn">from</span> <span class="nn">.page</span> <span class="kn">import</span> <span class="n">Page</span>
 
@@ -425,7 +425,8 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;The number of pages in the document.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_GetPageCount</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Document.page"><a class="viewcode-back" href="../../../api/modm_data.pdf.document.html#modm_data.pdf.document.Document.page">[docs]</a>    <span class="k">def</span> <span class="nf">page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Page</span><span class="p">:</span>
+<div class="viewcode-block" id="Document.page"><a class="viewcode-back" href="../../../api/modm_data.pdf.document.html#modm_data.pdf.document.Document.page">[docs]</a>    <span class="nd">@cache</span>
+    <span class="k">def</span> <span class="nf">page</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Page</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        :param index: 0-indexed page number.</span>
 <span class="sd">        :return: the page object for the index.</span>

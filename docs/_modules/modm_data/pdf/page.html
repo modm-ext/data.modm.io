@@ -358,7 +358,7 @@
 <span class="sd">        :param document: a PDF document.</span>
 <span class="sd">        :param index: 0-index page number.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_LoadPage</span><span class="p">(</span><span class="n">document</span><span class="p">,</span> <span class="n">index</span><span class="p">),</span> <span class="n">document</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_LoadPage</span><span class="p">(</span><span class="n">document</span><span class="p">,</span> <span class="n">index</span><span class="p">),</span> <span class="n">document</span><span class="p">,</span> <span class="n">document</span><span class="o">.</span><span class="n">formenv</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_links</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_weblinks</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_charlines</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
