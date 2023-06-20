@@ -338,10 +338,13 @@ correct page class from <cite>page()</cite> function.</p>
 of pypdfium.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="modm_data.pdf.document.Document.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/document.html#Document.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.document.Document.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autoclose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/modm_data/pdf/document.html#Document.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#modm_data.pdf.document.Document.__init__" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>Path</em>) – Path to the PDF to open.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>Path</em>) – Path to the PDF to open.</p></li>
+<li><p><strong>autoclose</strong> (<em>bool</em>) – </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -368,12 +371,6 @@ of pypdfium.</p>
 <dt class="sig sig-object py" id="modm_data.pdf.document.Document.metadata">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#modm_data.pdf.document.Document.metadata" title="Permalink to this definition">#</a></dt>
 <dd><p>The PDF metadata dictionary.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="modm_data.pdf.document.Document.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#modm_data.pdf.document.Document.name" title="Permalink to this definition">#</a></dt>
-<dd><p>Stem of the document file name</p>
 </dd></dl>
 
 <dl class="py method">
@@ -488,7 +485,6 @@ a page index by reusing the last one.</p>
 <li><a class="reference internal" href="#modm_data.pdf.document.Document.identifier_changing"><code class="docutils literal notranslate"><span class="pre">Document.identifier_changing</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.document.Document.identifier_permanent"><code class="docutils literal notranslate"><span class="pre">Document.identifier_permanent</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.document.Document.metadata"><code class="docutils literal notranslate"><span class="pre">Document.metadata</span></code></a></li>
-<li><a class="reference internal" href="#modm_data.pdf.document.Document.name"><code class="docutils literal notranslate"><span class="pre">Document.name</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.document.Document.page"><code class="docutils literal notranslate"><span class="pre">Document.page()</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.document.Document.page_count"><code class="docutils literal notranslate"><span class="pre">Document.page_count</span></code></a></li>
 <li><a class="reference internal" href="#modm_data.pdf.document.Document.pages"><code class="docutils literal notranslate"><span class="pre">Document.pages()</span></code></a></li>
