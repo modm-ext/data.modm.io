@@ -1,7 +1,0 @@
-modm\_data.html.chapter module
-==============================
-
-.. automodule:: modm_data.html.chapter
-   :members:
-   :undoc-members:
-   :show-inheritance:

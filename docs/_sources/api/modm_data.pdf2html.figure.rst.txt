@@ -1,7 +1,0 @@
-modm\_data.pdf2html.figure module
-=================================
-
-.. automodule:: modm_data.pdf2html.figure
-   :members:
-   :undoc-members:
-   :show-inheritance:

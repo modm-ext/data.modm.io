@@ -1,7 +1,0 @@
-modm\_data.utils.path module
-============================
-
-.. automodule:: modm_data.utils.path
-   :members:
-   :undoc-members:
-   :show-inheritance:

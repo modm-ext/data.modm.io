@@ -1,7 +1,0 @@
-modm\_data.html.document module
-===============================
-
-.. automodule:: modm_data.html.document
-   :members:
-   :undoc-members:
-   :show-inheritance:

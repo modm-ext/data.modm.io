@@ -1,7 +1,0 @@
-modm\_data.pdf.render module
-============================
-
-.. automodule:: modm_data.pdf.render
-   :members:
-   :undoc-members:
-   :show-inheritance:

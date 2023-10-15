@@ -1,7 +1,0 @@
-modm\_data.utils.anytree module
-===============================
-
-.. automodule:: modm_data.utils.anytree
-   :members:
-   :undoc-members:
-   :show-inheritance:

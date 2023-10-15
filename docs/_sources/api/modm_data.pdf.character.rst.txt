@@ -1,7 +1,0 @@
-modm\_data.pdf.character module
-===============================
-
-.. automodule:: modm_data.pdf.character
-   :members:
-   :undoc-members:
-   :show-inheritance:

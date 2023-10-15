@@ -1,7 +1,0 @@
-modm\_data.pdf.page module
-==========================
-
-.. automodule:: modm_data.pdf.page
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-modm\_data.owl.identifier module
-================================
-
-.. automodule:: modm_data.owl.identifier
-   :members:
-   :undoc-members:
-   :show-inheritance:

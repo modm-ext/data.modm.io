@@ -1,7 +1,0 @@
-modm\_data.owl.stmicro.model module
-===================================
-
-.. automodule:: modm_data.owl.stmicro.model
-   :members:
-   :undoc-members:
-   :show-inheritance:

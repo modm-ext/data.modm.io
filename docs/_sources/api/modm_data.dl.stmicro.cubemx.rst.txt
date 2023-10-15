@@ -1,7 +1,0 @@
-modm\_data.dl.stmicro.cubemx module
-===================================
-
-.. automodule:: modm_data.dl.stmicro.cubemx
-   :members:
-   :undoc-members:
-   :show-inheritance:

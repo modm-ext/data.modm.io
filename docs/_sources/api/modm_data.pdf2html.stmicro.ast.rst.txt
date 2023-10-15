@@ -1,7 +1,0 @@
-modm\_data.pdf2html.stmicro.ast module
-======================================
-
-.. automodule:: modm_data.pdf2html.stmicro.ast
-   :members:
-   :undoc-members:
-   :show-inheritance:

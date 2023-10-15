@@ -1,7 +1,0 @@
-modm\_data.cubemx.peripherals module
-====================================
-
-.. automodule:: modm_data.cubemx.peripherals
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-modm\_data.utils.xml module
-===========================
-
-.. automodule:: modm_data.utils.xml
-   :members:
-   :undoc-members:
-   :show-inheritance:

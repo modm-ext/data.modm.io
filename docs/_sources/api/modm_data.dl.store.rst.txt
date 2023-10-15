@@ -1,7 +1,0 @@
-modm\_data.dl.store module
-==========================
-
-.. automodule:: modm_data.dl.store
-   :members:
-   :undoc-members:
-   :show-inheritance:

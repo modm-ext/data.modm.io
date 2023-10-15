@@ -1,7 +1,0 @@
-modm\_data.html.stmicro.document module
-=======================================
-
-.. automodule:: modm_data.html.stmicro.document
-   :members:
-   :undoc-members:
-   :show-inheritance:
