@@ -12,26 +12,22 @@
         <meta name="author" content="Niklas Hauser">
       
       
-        <link rel="canonical" href="http://data.modm.io/">
       
       
       
-        <link rel="next" href="api/modm_data.html">
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="/assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>Introduction - modm-data</title>
+        <title>modm-data</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="/assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="/assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -50,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,11 +74,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#modm-data-semantic-hardware-description" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="modm-data" class="md-header__button md-logo" aria-label="modm-data" data-md-component="logo">
+    <a href="/." title="modm-data" class="md-header__button md-logo" aria-label="modm-data" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -115,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              
             
           </span>
         </div>
@@ -225,7 +216,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="modm-data" class="md-nav__button md-logo" aria-label="modm-data" data-md-component="logo">
+    <a href="/." title="modm-data" class="md-nav__button md-logo" aria-label="modm-data" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -252,20 +243,18 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -279,7 +268,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Home
@@ -290,29 +279,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Introduction
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="/." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -321,47 +290,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pipelines" class="md-nav__link">
-    Pipelines
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#citation" class="md-nav__link">
-    Citation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -373,7 +301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/modm_data.html" class="md-nav__link">
+      <a href="/api/modm_data.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -411,37 +339,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pipelines" class="md-nav__link">
-    Pipelines
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#citation" class="md-nav__link">
-    Citation
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -453,87 +350,8 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
+  <h1>404 - Not found</h1>
 
-  
-  
-
-
-<!-- This file is generated by tools/scripts/synchronize_docs.py! -->
-<h1 id="modm-data-semantic-hardware-description">modm-data: Semantic Hardware Description<a class="headerlink" href="#modm-data-semantic-hardware-description" title="Permanent link">&para;</a></h1>
-<p>This project is a collection of data processing pipelines that convert and
-combine multiple sources of hardware description data into the most accurate
-common representation without manual supervision.</p>
-<p>There are many different supported input sources per hardware vendor:</p>
-<ul>
-<li>PDF technical documentation, especially datasheets and reference manuals.</li>
-<li>Source code and CMSIS-SVD files describing peripheral registers.</li>
-<li>Vendor libraries for helping with naming things canonically.</li>
-<li>Proprietary databases extracted from vendor tooling.</li>
-</ul>
-<p>These input sources are made accessible via deterministic data pipelines before
-finally merging them together. This approach has the best chance of
-compensating weaknesses in each individual input source while also arbitrating
-conflicts. The output formats are knowledge graphs with a shared ontology.</p>
-<p>The resulting knowledge graphs represent a normalized and complete semantic
-description of the hardware and are NOT intended to be used directly. Rather,
-you should extract the data you require and convert it into a format that is
-useful for your specific use case and device scope. This repository only
-contains data pipeline code, therefore, if you are interested in the hardware
-description data only, please use the resulting knowledge graphs directly.</p>
-<blockquote>
-<p><strong>Warning</strong><br />
-The project is still in beta and not fully functional or documented.
-Improving the documentation and flexibility of the <code>modm_data.pdf2html</code>
-submodule is the main focus of development right now.
-No output data other than HTML is currently supported.</p>
-</blockquote>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>You can install this Python ≥3.11 project via PyPi:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>modm-data
-</code></pre></div>
-<p>You also need <code>g++</code> and <code>patch</code> installed and callable in your path.</p>
-<h2 id="pipelines">Pipelines<a class="headerlink" href="#pipelines" title="Permanent link">&para;</a></h2>
-<p>The data pipelines are implemented as Python submodules inside <code>modm_data</code>
-folder and have the following structure:</p>
-<pre class="mermaid"><code>flowchart LR
-    A(PDF) --&gt;|pdf2html| B
-    B --&gt;|html2svd| D
-    B(HTML) --&gt;|html| C
-    C(Python) --&gt;|owl| E
-    D(CMSIS-SVD) --&gt;|cmsis-svd| C
-    E[OWL]
-    F(CMSIS\nHeader) --&gt;|header2svd| D
-    G(CubeMX) --&gt;|cubemx| C
-    H(CubeHAL) --&gt;|cubehal| C
-    J --&gt;|dl| A
-    J --&gt;|dl| F
-    J --&gt;|dl| G
-    J --&gt;|dl| H
-    J[Vendor] --&gt;|dl| D</code></pre>
-<p>Each pipeline has its own command-line interface, please refer to the API
-documentation for their advanced usage.</p>
-<h2 id="citation">Citation<a class="headerlink" href="#citation" title="Permanent link">&para;</a></h2>
-<p>This project is a further development of a <a href="https://www.jsys.org/read">peer-reviewed paper published in
-the in the Journal of Systems Research (JSys)</a>.
-Please cite this paper when referring to this project:</p>
-<div class="highlight"><pre><span></span><code><span class="nc">@article</span><span class="p">{</span><span class="nl">hauser2023automatically</span><span class="p">,</span>
-<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{{Automatically Extracting Hardware Descriptions from PDF Technical Documentation}}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Hauser, Niklas and Pennekamp, Jan}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{Journal of Systems Research (JSys)}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">volume</span><span class="p">=</span><span class="s">{3}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">issue</span><span class="p">=</span><span class="s">{2}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2023}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">doi</span><span class="p">=</span><span class="s">{10.5070/tbd}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>The paper itself is based on a <a href="https://salkinium.com/master.pdf">master thesis</a>.</p>
-
-
-
-
-
-                
               </article>
             </div>
           
@@ -585,10 +403,10 @@ Please cite this paper when referring to this project:</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="/assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>

@@ -39,14 +39,7 @@
 
             <h2>Contents</h2>
             <ul>
-  <li><a href="#semantic-hardware-description-from-technical-documentation">Semantic Hardware Description from Technical Documentation</a>
-  <ul>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#input-sources">Input Sources</a></li>
-    <li><a href="#pipelines">Pipelines</a></li>
-    <li><a href="#development">Development</a></li>
-    <li><a href="#citation">Citation</a></li>
-  </ul></li>
+  <li><a href="#api-reference">API Reference</a></li>
 </ul>
 
 
@@ -81,130 +74,7 @@
                     <h1 class="modulename">
 modm_data    </h1>
 
-                        <div class="docstring"><h1 id="semantic-hardware-description-from-technical-documentation">Semantic Hardware Description from Technical Documentation</h1>
-
-<p>This project is a collection of data processing pipelines that convert and
-combine multiple sources of hardware description data into the most accurate
-common representation without manual supervision.</p>
-
-<p>There are many different supported input sources per hardware vendor:</p>
-
-<ul>
-<li>PDF technical documentation, especially datasheets and reference manuals.</li>
-<li>Source code and CMSIS-SVD files describing peripheral registers.</li>
-<li>Vendor libraries for helping with naming things canonically.</li>
-<li>Proprietary databases extracted from vendor tooling.</li>
-</ul>
-
-<p>These input sources are made accessible via deterministic data pipelines before
-finally merging them together. This approach has the best chance of
-compensating weaknesses in each individual input source while also arbitrating
-conflicts. The output formats are knowledge graphs with a shared ontology.</p>
-
-<p>The resulting knowledge graphs represent a normalized and complete semantic
-description of the hardware and are NOT intended to be used directly. Rather,
-you should extract the data you require and convert it into a format that is
-useful for your specific use case and device scope. This repository only
-contains data pipeline code, therefore, if you are interested in the hardware
-description data only, please use the resulting knowledge graphs directly.</p>
-
-<blockquote>
-  <p><strong>Warning</strong> <br />
-  The project is still in beta and not fully functional or documented.
-  Improving the documentation and flexibility of the <code><a href="modm_data/pdf2html.html">modm_data.pdf2html</a></code>
-  submodule is the main focus of development right now.
-  No output data other than HTML is currently supported.</p>
-</blockquote>
-
-<h2 id="installation">Installation</h2>
-
-<p>You can install this Python ≥3.11 project via PyPi:</p>
-
-<div class="pdoc-code codehilite">
-<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>modm-data
-</code></pre>
-</div>
-
-<p>You also need <code>g++</code> and <code>patch</code> installed and callable in your path.</p>
-
-<h2 id="input-sources">Input Sources</h2>
-
-<p>You can download all input sources via <code>make input-sources</code>. Please note that it
-may take a while to download ~10GB of data, mostly PDF technical documentation.</p>
-
-<p>This project uses only publicly available data sources which we have aggregated
-in several GitHub repositories. However, since the copyright of some sources
-prohibits republication, these sources are downloaded from the vendor websites
-directly:</p>
-
-<ul>
-<li>STMicro CubeMX database.</li>
-<li>STMicro PDF technical documentation.</li>
-</ul>
-
-<h2 id="pipelines">Pipelines</h2>
-
-<p>The data pipelines are implemented as Python modules inside <code><a href="">modm_data</a></code> folder and
-have the following structure:</p>
-
-<pre class="mermaid-pre"><div class="mermaid">flowchart LR
-    A(PDF) --&gt;|pdf2html| B
-    B --&gt;|html2svd| D
-    B(HTML) --&gt;|html| C
-    %% C --&gt; K
-    C(Python) --&gt;|owl| E
-    D(CMSIS-SVD) --&gt;|cmsis-svd| C
-    E[OWL]
-    F(CMSIS\nHeader) --&gt;|header2svd| D
-    G(CubeMX) --&gt;|cubemx| C
-    H(CubeHAL) --&gt;|cubehal| C
-    J --&gt;|dl| A
-    J --&gt;|dl| F
-    J --&gt;|dl| G
-    J --&gt;|dl| H
-    J[Vendor] --&gt;|dl| D
-    %% K[Evaluation]
-</div></pre>
-
-<p>Each pipeline has its own command-line interface, please refer to the API
-documentation for their advanced usage.</p>
-
-<h2 id="development">Development</h2>
-
-<p>For development you can install the package locally:</p>
-
-<div class="pdoc-code codehilite">
-<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[all]&quot;</span>
-</code></pre>
-</div>
-
-<p>To browse the API documentation locally:</p>
-
-<div class="pdoc-code codehilite">
-<pre><span></span><code>pdoc<span class="w"> </span>--mermaid<span class="w"> </span>modm_data
-</code></pre>
-</div>
-
-<h2 id="citation">Citation</h2>
-
-<p>This project is a further development of a <a href="https://www.jsys.org/read">peer-reviewed paper published in
-the in the Journal of Systems Research (JSys)</a>.
-Please cite this paper when referring to this project:</p>
-
-<div class="pdoc-code codehilite">
-<pre><span></span><code><span class="nc">@article</span><span class="p">{</span><span class="nl">hauser2023automatically</span><span class="p">,</span>
-<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{{Automatically Extracting Hardware Descriptions from PDF Technical Documentation}}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Hauser, Niklas and Pennekamp, Jan}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{Journal of Systems Research (JSys)}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">volume</span><span class="p">=</span><span class="s">{3}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">issue</span><span class="p">=</span><span class="s">{2}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2023}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">doi</span><span class="p">=</span><span class="s">{10.5070/tbd}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<p>The paper itself is based on a <a href="https://salkinium.com/master<a href="modm_data/pdf.html">modm_data.pdf</a>">master thesis</a>.</p>
+                        <div class="docstring"><h1 id="api-reference">API Reference</h1>
 </div>
 
                         <input id="mod-modm_data-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -215,7 +85,7 @@ Please cite this paper when referring to this project:</p>
 </span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
 </span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
 </span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="sd">.. include:: README.md</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="sd"># API Reference</span>
 </span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>
 </span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="kn">from</span> <span class="nn">importlib.metadata</span> <span class="kn">import</span> <span class="n">version</span><span class="p">,</span> <span class="n">PackageNotFoundError</span>
