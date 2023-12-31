@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="pdoc 14.1.0"/>
+    <meta name="generator" content="pdoc 14.3.0"/>
     <title>modm_data.pdf.character API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
@@ -672,78 +672,146 @@ page.</p>
 
                             </div>
                             <div id="Character.char" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.char-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">char</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Character.char-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.char"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.char-77"><a href="#Character.char-77"><span class="linenos">77</span></a>    <span class="nd">@property</span>
+</span><span id="Character.char-78"><a href="#Character.char-78"><span class="linenos">78</span></a>    <span class="k">def</span> <span class="nf">char</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Character.char-79"><a href="#Character.char-79"><span class="linenos">79</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The printable string of the unicode value.&quot;&quot;&quot;</span>
+</span><span id="Character.char-80"><a href="#Character.char-80"><span class="linenos">80</span></a>        <span class="n">char</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">unicode</span><span class="p">)</span>
+</span><span id="Character.char-81"><a href="#Character.char-81"><span class="linenos">81</span></a>        <span class="k">return</span> <span class="n">char</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isprintable</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The printable string of the unicode value.</p>
 </div>
 
 
                             </div>
                             <div id="Character.origin" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.origin-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">origin</span><span class="annotation">: <a href="../utils/math.html#Point">modm_data.utils.math.Point</a></span>
 
-        
+                <label class="view-source-button" for="Character.origin-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.origin"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.origin-83"><a href="#Character.origin-83"><span class="linenos">83</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.origin-84"><a href="#Character.origin-84"><span class="linenos">84</span></a>    <span class="k">def</span> <span class="nf">origin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Point</span><span class="p">:</span>
+</span><span id="Character.origin-85"><a href="#Character.origin-85"><span class="linenos">85</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The origin of the character.&quot;&quot;&quot;</span>
+</span><span id="Character.origin-86"><a href="#Character.origin-86"><span class="linenos">86</span></a>        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">(),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_double</span><span class="p">()</span>
+</span><span id="Character.origin-87"><a href="#Character.origin-87"><span class="linenos">87</span></a>        <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDFText_GetCharOrigin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span id="Character.origin-88"><a href="#Character.origin-88"><span class="linenos">88</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">rotation</span><span class="p">:</span>
+</span><span id="Character.origin-89"><a href="#Character.origin-89"><span class="linenos">89</span></a>            <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</span><span id="Character.origin-90"><a href="#Character.origin-90"><span class="linenos">90</span></a>        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The origin of the character.</p>
 </div>
 
 
                             </div>
                             <div id="Character.width" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.width-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">width</span><span class="annotation">: float</span>
 
-        
+                <label class="view-source-button" for="Character.width-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.width"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.width-92"><a href="#Character.width-92"><span class="linenos">92</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.width-93"><a href="#Character.width-93"><span class="linenos">93</span></a>    <span class="k">def</span> <span class="nf">width</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="Character.width-94"><a href="#Character.width-94"><span class="linenos">94</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The width of the character&#39;s bounding box.&quot;&quot;&quot;</span>
+</span><span id="Character.width-95"><a href="#Character.width-95"><span class="linenos">95</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotation</span><span class="p">:</span>
+</span><span id="Character.width-96"><a href="#Character.width-96"><span class="linenos">96</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">height</span>
+</span><span id="Character.width-97"><a href="#Character.width-97"><span class="linenos">97</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">width</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The width of the character's bounding box.</p>
 </div>
 
 
                             </div>
                             <div id="Character.height" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.height-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">height</span><span class="annotation">: float</span>
 
-        
+                <label class="view-source-button" for="Character.height-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.height"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.height-99"><a href="#Character.height-99"><span class="linenos"> 99</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.height-100"><a href="#Character.height-100"><span class="linenos">100</span></a>    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="Character.height-101"><a href="#Character.height-101"><span class="linenos">101</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The height of the character&#39;s bounding box.&quot;&quot;&quot;</span>
+</span><span id="Character.height-102"><a href="#Character.height-102"><span class="linenos">102</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotation</span><span class="p">:</span>
+</span><span id="Character.height-103"><a href="#Character.height-103"><span class="linenos">103</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">width</span>
+</span><span id="Character.height-104"><a href="#Character.height-104"><span class="linenos">104</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">height</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The height of the character's bounding box.</p>
 </div>
 
 
                             </div>
                             <div id="Character.tbbox" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.tbbox-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">tbbox</span><span class="annotation">: <a href="../utils/math.html#Rectangle">modm_data.utils.math.Rectangle</a></span>
 
-        
+                <label class="view-source-button" for="Character.tbbox-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.tbbox"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.tbbox-106"><a href="#Character.tbbox-106"><span class="linenos">106</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.tbbox-107"><a href="#Character.tbbox-107"><span class="linenos">107</span></a>    <span class="k">def</span> <span class="nf">tbbox</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Rectangle</span><span class="p">:</span>
+</span><span id="Character.tbbox-108"><a href="#Character.tbbox-108"><span class="linenos">108</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The tight bounding box of the character.&quot;&quot;&quot;</span>
+</span><span id="Character.tbbox-109"><a href="#Character.tbbox-109"><span class="linenos">109</span></a>        <span class="n">tbbox</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="o">.</span><span class="n">get_charbox</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">))</span>
+</span><span id="Character.tbbox-110"><a href="#Character.tbbox-110"><span class="linenos">110</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">rotation</span><span class="p">:</span>
+</span><span id="Character.tbbox-111"><a href="#Character.tbbox-111"><span class="linenos">111</span></a>            <span class="n">tbbox</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">tbbox</span><span class="o">.</span><span class="n">p0</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">tbbox</span><span class="o">.</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+</span><span id="Character.tbbox-112"><a href="#Character.tbbox-112"><span class="linenos">112</span></a>                              <span class="n">tbbox</span><span class="o">.</span><span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">tbbox</span><span class="o">.</span><span class="n">p0</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+</span><span id="Character.tbbox-113"><a href="#Character.tbbox-113"><span class="linenos">113</span></a>        <span class="k">return</span> <span class="n">tbbox</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The tight bounding box of the character.</p>
 </div>
 
 
                             </div>
                             <div id="Character.bbox" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.bbox-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">bbox</span><span class="annotation">: <a href="../utils/math.html#Rectangle">modm_data.utils.math.Rectangle</a></span>
 
-        
+                <label class="view-source-button" for="Character.bbox-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.bbox"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.bbox-115"><a href="#Character.bbox-115"><span class="linenos">115</span></a>    <span class="nd">@property</span>
+</span><span id="Character.bbox-116"><a href="#Character.bbox-116"><span class="linenos">116</span></a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Rectangle</span><span class="p">:</span>
+</span><span id="Character.bbox-117"><a href="#Character.bbox-117"><span class="linenos">117</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Character.bbox-118"><a href="#Character.bbox-118"><span class="linenos">118</span></a><span class="sd">        The loose bounding box of the character.</span>
+</span><span id="Character.bbox-119"><a href="#Character.bbox-119"><span class="linenos">119</span></a><span class="sd">        .. note::</span>
+</span><span id="Character.bbox-120"><a href="#Character.bbox-120"><span class="linenos">120</span></a><span class="sd">            If the loose bounding box is not available, the tight bounding box</span>
+</span><span id="Character.bbox-121"><a href="#Character.bbox-121"><span class="linenos">121</span></a><span class="sd">            is used instead.</span>
+</span><span id="Character.bbox-122"><a href="#Character.bbox-122"><span class="linenos">122</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Character.bbox-123"><a href="#Character.bbox-123"><span class="linenos">123</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bbox</span><span class="o">.</span><span class="n">width</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bbox</span><span class="o">.</span><span class="n">height</span><span class="p">:</span>
+</span><span id="Character.bbox-124"><a href="#Character.bbox-124"><span class="linenos">124</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tbbox</span>
+</span><span id="Character.bbox-125"><a href="#Character.bbox-125"><span class="linenos">125</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bbox</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The loose bounding box of the character.</p>
 
 <div class="pdoc-alert pdoc-alert-note">
@@ -757,130 +825,219 @@ is used instead.</p>
 
                             </div>
                             <div id="Character.twidth" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.twidth-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">twidth</span><span class="annotation">: float</span>
 
-        
+                <label class="view-source-button" for="Character.twidth-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.twidth"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.twidth-127"><a href="#Character.twidth-127"><span class="linenos">127</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.twidth-128"><a href="#Character.twidth-128"><span class="linenos">128</span></a>    <span class="k">def</span> <span class="nf">twidth</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="Character.twidth-129"><a href="#Character.twidth-129"><span class="linenos">129</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The width of the character&#39;s tight bounding box.&quot;&quot;&quot;</span>
+</span><span id="Character.twidth-130"><a href="#Character.twidth-130"><span class="linenos">130</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tbbox</span><span class="o">.</span><span class="n">width</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The width of the character's tight bounding box.</p>
 </div>
 
 
                             </div>
                             <div id="Character.theight" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.theight-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">theight</span><span class="annotation">: float</span>
 
-        
+                <label class="view-source-button" for="Character.theight-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.theight"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.theight-132"><a href="#Character.theight-132"><span class="linenos">132</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.theight-133"><a href="#Character.theight-133"><span class="linenos">133</span></a>    <span class="k">def</span> <span class="nf">theight</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="Character.theight-134"><a href="#Character.theight-134"><span class="linenos">134</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The height of the character&#39;s tight bounding box.&quot;&quot;&quot;</span>
+</span><span id="Character.theight-135"><a href="#Character.theight-135"><span class="linenos">135</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tbbox</span><span class="o">.</span><span class="n">height</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The height of the character's tight bounding box.</p>
 </div>
 
 
                             </div>
                             <div id="Character.render_mode" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.render_mode-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">render_mode</span><span class="annotation">: <a href="#Character.RenderMode">Character.RenderMode</a></span>
 
-        
+                <label class="view-source-button" for="Character.render_mode-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.render_mode"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.render_mode-137"><a href="#Character.render_mode-137"><span class="linenos">137</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.render_mode-138"><a href="#Character.render_mode-138"><span class="linenos">138</span></a>    <span class="k">def</span> <span class="nf">render_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RenderMode</span><span class="p">:</span>
+</span><span id="Character.render_mode-139"><a href="#Character.render_mode-139"><span class="linenos">139</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The render mode of the character.&quot;&quot;&quot;</span>
+</span><span id="Character.render_mode-140"><a href="#Character.render_mode-140"><span class="linenos">140</span></a>        <span class="k">return</span> <span class="n">Character</span><span class="o">.</span><span class="n">RenderMode</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDFText_GetTextRenderMode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">))</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The render mode of the character.</p>
 </div>
 
 
                             </div>
                             <div id="Character.rotation" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.rotation-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">rotation</span><span class="annotation">: int</span>
 
-        
+                <label class="view-source-button" for="Character.rotation-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.rotation"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.rotation-142"><a href="#Character.rotation-142"><span class="linenos">142</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.rotation-143"><a href="#Character.rotation-143"><span class="linenos">143</span></a>    <span class="k">def</span> <span class="nf">rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Character.rotation-144"><a href="#Character.rotation-144"><span class="linenos">144</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The rotation of the character in degrees modulo 360.&quot;&quot;&quot;</span>
+</span><span id="Character.rotation-145"><a href="#Character.rotation-145"><span class="linenos">145</span></a>        <span class="c1"># Special case for vertical text in rotated pages</span>
+</span><span id="Character.rotation-146"><a href="#Character.rotation-146"><span class="linenos">146</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">rotation</span> <span class="o">==</span> <span class="mi">90</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rotation</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">unicode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="mh">0x20</span><span class="p">,</span> <span class="mh">0xa</span><span class="p">,</span> <span class="mh">0xd</span><span class="p">}:</span>
+</span><span id="Character.rotation-147"><a href="#Character.rotation-147"><span class="linenos">147</span></a>            <span class="k">return</span> <span class="mi">90</span>
+</span><span id="Character.rotation-148"><a href="#Character.rotation-148"><span class="linenos">148</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">rotation</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rotation</span><span class="p">:</span>
+</span><span id="Character.rotation-149"><a href="#Character.rotation-149"><span class="linenos">149</span></a>            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">rotation</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rotation</span><span class="p">)</span> <span class="o">%</span> <span class="mi">360</span>
+</span><span id="Character.rotation-150"><a href="#Character.rotation-150"><span class="linenos">150</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rotation</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The rotation of the character in degrees modulo 360.</p>
 </div>
 
 
                             </div>
                             <div id="Character.size" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.size-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">size</span><span class="annotation">: float</span>
 
-        
+                <label class="view-source-button" for="Character.size-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.size"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.size-152"><a href="#Character.size-152"><span class="linenos">152</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.size-153"><a href="#Character.size-153"><span class="linenos">153</span></a>    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="Character.size-154"><a href="#Character.size-154"><span class="linenos">154</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The font size of the character.&quot;&quot;&quot;</span>
+</span><span id="Character.size-155"><a href="#Character.size-155"><span class="linenos">155</span></a>        <span class="k">return</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDFText_GetFontSize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The font size of the character.</p>
 </div>
 
 
                             </div>
                             <div id="Character.weight" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.weight-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">weight</span><span class="annotation">: int</span>
 
-        
+                <label class="view-source-button" for="Character.weight-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.weight"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.weight-157"><a href="#Character.weight-157"><span class="linenos">157</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.weight-158"><a href="#Character.weight-158"><span class="linenos">158</span></a>    <span class="k">def</span> <span class="nf">weight</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Character.weight-159"><a href="#Character.weight-159"><span class="linenos">159</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The font weight of the character.&quot;&quot;&quot;</span>
+</span><span id="Character.weight-160"><a href="#Character.weight-160"><span class="linenos">160</span></a>        <span class="k">return</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDFText_GetFontWeight</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The font weight of the character.</p>
 </div>
 
 
                             </div>
                             <div id="Character.fill" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.fill-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">fill</span><span class="annotation">: int</span>
 
-        
+                <label class="view-source-button" for="Character.fill-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.fill"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.fill-162"><a href="#Character.fill-162"><span class="linenos">162</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.fill-163"><a href="#Character.fill-163"><span class="linenos">163</span></a>    <span class="k">def</span> <span class="nf">fill</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Character.fill-164"><a href="#Character.fill-164"><span class="linenos">164</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The fill color of the character.&quot;&quot;&quot;</span>
+</span><span id="Character.fill-165"><a href="#Character.fill-165"><span class="linenos">165</span></a>        <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_uint</span><span class="p">(),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_uint</span><span class="p">(),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_uint</span><span class="p">(),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_uint</span><span class="p">()</span>
+</span><span id="Character.fill-166"><a href="#Character.fill-166"><span class="linenos">166</span></a>        <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDFText_GetFillColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</span><span id="Character.fill-167"><a href="#Character.fill-167"><span class="linenos">167</span></a>        <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span> <span class="o">|</span> <span class="n">g</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span> <span class="o">|</span> <span class="n">b</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span> <span class="o">|</span> <span class="n">a</span><span class="o">.</span><span class="n">value</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The fill color of the character.</p>
 </div>
 
 
                             </div>
                             <div id="Character.stroke" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.stroke-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">stroke</span><span class="annotation">: int</span>
 
-        
+                <label class="view-source-button" for="Character.stroke-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.stroke"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.stroke-169"><a href="#Character.stroke-169"><span class="linenos">169</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.stroke-170"><a href="#Character.stroke-170"><span class="linenos">170</span></a>    <span class="k">def</span> <span class="nf">stroke</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Character.stroke-171"><a href="#Character.stroke-171"><span class="linenos">171</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The stroke color of the character.&quot;&quot;&quot;</span>
+</span><span id="Character.stroke-172"><a href="#Character.stroke-172"><span class="linenos">172</span></a>        <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_uint</span><span class="p">(),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_uint</span><span class="p">(),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_uint</span><span class="p">(),</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_uint</span><span class="p">()</span>
+</span><span id="Character.stroke-173"><a href="#Character.stroke-173"><span class="linenos">173</span></a>        <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDFText_GetStrokeColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</span><span id="Character.stroke-174"><a href="#Character.stroke-174"><span class="linenos">174</span></a>        <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span> <span class="o">|</span> <span class="n">g</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span> <span class="o">|</span> <span class="n">b</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span> <span class="o">|</span> <span class="n">a</span><span class="o">.</span><span class="n">value</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The stroke color of the character.</p>
 </div>
 
 
                             </div>
                             <div id="Character.font" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.font-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">font</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Character.font-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.font"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.font-176"><a href="#Character.font-176"><span class="linenos">176</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.font-177"><a href="#Character.font-177"><span class="linenos">177</span></a>    <span class="k">def</span> <span class="nf">font</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Character.font-178"><a href="#Character.font-178"><span class="linenos">178</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The font name of the character.&quot;&quot;&quot;</span>
+</span><span id="Character.font-179"><a href="#Character.font-179"><span class="linenos">179</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_flags</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The font name of the character.</p>
 </div>
 
 
                             </div>
                             <div id="Character.flags" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Character.flags-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">flags</span><span class="annotation">: int</span>
 
-        
+                <label class="view-source-button" for="Character.flags-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Character.flags"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Character.flags-181"><a href="#Character.flags-181"><span class="linenos">181</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Character.flags-182"><a href="#Character.flags-182"><span class="linenos">182</span></a>    <span class="k">def</span> <span class="nf">flags</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Character.flags-183"><a href="#Character.flags-183"><span class="linenos">183</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The font flags of the character.&quot;&quot;&quot;</span>
+</span><span id="Character.flags-184"><a href="#Character.flags-184"><span class="linenos">184</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_font_flags</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The font flags of the character.</p>
 </div>
 

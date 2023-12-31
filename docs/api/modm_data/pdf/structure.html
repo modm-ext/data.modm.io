@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="pdoc 14.1.0"/>
+    <meta name="generator" content="pdoc 14.3.0"/>
     <title>modm_data.pdf.structure API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
@@ -527,117 +527,245 @@ structure with similar semantics to HTML.</p>
 
                             </div>
                             <div id="Structure.title" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.title-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">title</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Structure.title-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.title"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.title-47"><a href="#Structure.title-47"><span class="linenos">47</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Structure.title-48"><a href="#Structure.title-48"><span class="linenos">48</span></a>    <span class="k">def</span> <span class="nf">title</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Structure.title-49"><a href="#Structure.title-49"><span class="linenos">49</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Title `/T`&quot;&quot;&quot;</span>
+</span><span id="Structure.title-50"><a href="#Structure.title-50"><span class="linenos">50</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetTitle</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>Title <code>/T</code></p>
 </div>
 
 
                             </div>
                             <div id="Structure.actual_text" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.actual_text-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">actual_text</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Structure.actual_text-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.actual_text"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.actual_text-52"><a href="#Structure.actual_text-52"><span class="linenos">52</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Structure.actual_text-53"><a href="#Structure.actual_text-53"><span class="linenos">53</span></a>    <span class="k">def</span> <span class="nf">actual_text</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Structure.actual_text-54"><a href="#Structure.actual_text-54"><span class="linenos">54</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The actual text.&quot;&quot;&quot;</span>
+</span><span id="Structure.actual_text-55"><a href="#Structure.actual_text-55"><span class="linenos">55</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetActualText</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The actual text.</p>
 </div>
 
 
                             </div>
                             <div id="Structure.alt_text" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.alt_text-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">alt_text</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Structure.alt_text-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.alt_text"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.alt_text-57"><a href="#Structure.alt_text-57"><span class="linenos">57</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Structure.alt_text-58"><a href="#Structure.alt_text-58"><span class="linenos">58</span></a>    <span class="k">def</span> <span class="nf">alt_text</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Structure.alt_text-59"><a href="#Structure.alt_text-59"><span class="linenos">59</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Alternate Text&quot;&quot;&quot;</span>
+</span><span id="Structure.alt_text-60"><a href="#Structure.alt_text-60"><span class="linenos">60</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetAltText</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>Alternate Text</p>
 </div>
 
 
                             </div>
                             <div id="Structure.type" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.type-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">type</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Structure.type-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.type"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.type-62"><a href="#Structure.type-62"><span class="linenos">62</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Structure.type-63"><a href="#Structure.type-63"><span class="linenos">63</span></a>    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Structure.type-64"><a href="#Structure.type-64"><span class="linenos">64</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Type `/S`&quot;&quot;&quot;</span>
+</span><span id="Structure.type-65"><a href="#Structure.type-65"><span class="linenos">65</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetType</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>Type <code>/S</code></p>
 </div>
 
 
                             </div>
                             <div id="Structure.obj_type" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.obj_type-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">obj_type</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Structure.obj_type-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.obj_type"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.obj_type-67"><a href="#Structure.obj_type-67"><span class="linenos">67</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Structure.obj_type-68"><a href="#Structure.obj_type-68"><span class="linenos">68</span></a>    <span class="k">def</span> <span class="nf">obj_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Structure.obj_type-69"><a href="#Structure.obj_type-69"><span class="linenos">69</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Object Type `/Type`&quot;&quot;&quot;</span>
+</span><span id="Structure.obj_type-70"><a href="#Structure.obj_type-70"><span class="linenos">70</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetObjType</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>Object Type <code>/Type</code></p>
 </div>
 
 
                             </div>
                             <div id="Structure.language" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.language-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">language</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Structure.language-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.language"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.language-72"><a href="#Structure.language-72"><span class="linenos">72</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Structure.language-73"><a href="#Structure.language-73"><span class="linenos">73</span></a>    <span class="k">def</span> <span class="nf">language</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Structure.language-74"><a href="#Structure.language-74"><span class="linenos">74</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The case-insensitive IETF BCP 47 language code.&quot;&quot;&quot;</span>
+</span><span id="Structure.language-75"><a href="#Structure.language-75"><span class="linenos">75</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetLang</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The case-insensitive IETF BCP 47 language code.</p>
 </div>
 
 
                             </div>
                             <div id="Structure.id" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.id-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">id</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Structure.id-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.id"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.id-77"><a href="#Structure.id-77"><span class="linenos">77</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Structure.id-78"><a href="#Structure.id-78"><span class="linenos">78</span></a>    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Structure.id-79"><a href="#Structure.id-79"><span class="linenos">79</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Identifier&quot;&quot;&quot;</span>
+</span><span id="Structure.id-80"><a href="#Structure.id-80"><span class="linenos">80</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_string</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetID</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>Identifier</p>
 </div>
 
 
                             </div>
                             <div id="Structure.marked_ids" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.marked_ids-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">marked_ids</span><span class="annotation">: list[int]</span>
 
-        
+                <label class="view-source-button" for="Structure.marked_ids-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.marked_ids"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.marked_ids-82"><a href="#Structure.marked_ids-82"><span class="linenos">82</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Structure.marked_ids-83"><a href="#Structure.marked_ids-83"><span class="linenos">83</span></a>    <span class="k">def</span> <span class="nf">marked_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+</span><span id="Structure.marked_ids-84"><a href="#Structure.marked_ids-84"><span class="linenos">84</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;List of marked content identifiers&quot;&quot;&quot;</span>
+</span><span id="Structure.marked_ids-85"><a href="#Structure.marked_ids-85"><span class="linenos">85</span></a>        <span class="n">ids</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="Structure.marked_ids-86"><a href="#Structure.marked_ids-86"><span class="linenos">86</span></a>        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetMarkedContentIdCount</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">)):</span>
+</span><span id="Structure.marked_ids-87"><a href="#Structure.marked_ids-87"><span class="linenos">87</span></a>            <span class="k">if</span> <span class="p">(</span><span class="n">mcid</span> <span class="o">:=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetMarkedContentIdAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="Structure.marked_ids-88"><a href="#Structure.marked_ids-88"><span class="linenos">88</span></a>                <span class="n">ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mcid</span><span class="p">)</span>
+</span><span id="Structure.marked_ids-89"><a href="#Structure.marked_ids-89"><span class="linenos">89</span></a>        <span class="k">return</span> <span class="n">ids</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>List of marked content identifiers</p>
 </div>
 
 
                             </div>
                             <div id="Structure.attributes" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.attributes-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">attributes</span><span class="annotation">: dict[str, str | bool | float]</span>
 
-        
+                <label class="view-source-button" for="Structure.attributes-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.attributes"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.attributes-91"><a href="#Structure.attributes-91"><span class="linenos"> 91</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Structure.attributes-92"><a href="#Structure.attributes-92"><span class="linenos"> 92</span></a>    <span class="k">def</span> <span class="nf">attributes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="o">|</span><span class="nb">bool</span><span class="o">|</span><span class="nb">float</span><span class="p">]:</span>
+</span><span id="Structure.attributes-93"><a href="#Structure.attributes-93"><span class="linenos"> 93</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Structure.attributes-94"><a href="#Structure.attributes-94"><span class="linenos"> 94</span></a><span class="sd">        All attributes of this structure element as a dictionary.</span>
+</span><span id="Structure.attributes-95"><a href="#Structure.attributes-95"><span class="linenos"> 95</span></a>
+</span><span id="Structure.attributes-96"><a href="#Structure.attributes-96"><span class="linenos"> 96</span></a><span class="sd">        .. note::</span>
+</span><span id="Structure.attributes-97"><a href="#Structure.attributes-97"><span class="linenos"> 97</span></a><span class="sd">            Due to limitations of the pdfium API, attribute arrays cannot be</span>
+</span><span id="Structure.attributes-98"><a href="#Structure.attributes-98"><span class="linenos"> 98</span></a><span class="sd">            extracted! The values are marked as `[?]` in the dictionary.</span>
+</span><span id="Structure.attributes-99"><a href="#Structure.attributes-99"><span class="linenos"> 99</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Structure.attributes-100"><a href="#Structure.attributes-100"><span class="linenos">100</span></a>        <span class="n">kv</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="Structure.attributes-101"><a href="#Structure.attributes-101"><span class="linenos">101</span></a>        <span class="k">for</span> <span class="n">eindex</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetAttributeCount</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">)):</span>
+</span><span id="Structure.attributes-102"><a href="#Structure.attributes-102"><span class="linenos">102</span></a>            <span class="n">attr</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_GetAttributeAtIndex</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">,</span> <span class="n">eindex</span><span class="p">)</span>
+</span><span id="Structure.attributes-103"><a href="#Structure.attributes-103"><span class="linenos">103</span></a>            <span class="k">for</span> <span class="n">aindex</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetCount</span><span class="p">(</span><span class="n">attr</span><span class="p">)):</span>
+</span><span id="Structure.attributes-104"><a href="#Structure.attributes-104"><span class="linenos">104</span></a>                <span class="c1"># Get the name</span>
+</span><span id="Structure.attributes-105"><a href="#Structure.attributes-105"><span class="linenos">105</span></a>                <span class="n">clength</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ulong</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="Structure.attributes-106"><a href="#Structure.attributes-106"><span class="linenos">106</span></a>                <span class="n">cname</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># workaround to get length</span>
+</span><span id="Structure.attributes-107"><a href="#Structure.attributes-107"><span class="linenos">107</span></a>                <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetName</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">aindex</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
+</span><span id="Structure.attributes-108"><a href="#Structure.attributes-108"><span class="linenos">108</span></a>                <span class="n">cname</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">clength</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</span><span id="Structure.attributes-109"><a href="#Structure.attributes-109"><span class="linenos">109</span></a>                <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetName</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">aindex</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="n">clength</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
+</span><span id="Structure.attributes-110"><a href="#Structure.attributes-110"><span class="linenos">110</span></a>                <span class="n">name</span> <span class="o">=</span> <span class="n">cname</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</span><span id="Structure.attributes-111"><a href="#Structure.attributes-111"><span class="linenos">111</span></a>
+</span><span id="Structure.attributes-112"><a href="#Structure.attributes-112"><span class="linenos">112</span></a>                <span class="c1"># Get the type</span>
+</span><span id="Structure.attributes-113"><a href="#Structure.attributes-113"><span class="linenos">113</span></a>                <span class="n">atype</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetType</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">)</span>
+</span><span id="Structure.attributes-114"><a href="#Structure.attributes-114"><span class="linenos">114</span></a>                <span class="k">assert</span> <span class="n">atype</span> <span class="o">!=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_UNKNOWN</span>
+</span><span id="Structure.attributes-115"><a href="#Structure.attributes-115"><span class="linenos">115</span></a>
+</span><span id="Structure.attributes-116"><a href="#Structure.attributes-116"><span class="linenos">116</span></a>                <span class="c1"># Then get each type individually</span>
+</span><span id="Structure.attributes-117"><a href="#Structure.attributes-117"><span class="linenos">117</span></a>                <span class="k">match</span> <span class="n">atype</span><span class="p">:</span>
+</span><span id="Structure.attributes-118"><a href="#Structure.attributes-118"><span class="linenos">118</span></a>                    <span class="k">case</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_BOOLEAN</span><span class="p">:</span>
+</span><span id="Structure.attributes-119"><a href="#Structure.attributes-119"><span class="linenos">119</span></a>                        <span class="n">cbool</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">bool</span><span class="p">()</span>
+</span><span id="Structure.attributes-120"><a href="#Structure.attributes-120"><span class="linenos">120</span></a>                        <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetBooleanValue</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="n">cbool</span><span class="p">)</span>
+</span><span id="Structure.attributes-121"><a href="#Structure.attributes-121"><span class="linenos">121</span></a>                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cbool</span><span class="o">.</span><span class="n">value</span>
+</span><span id="Structure.attributes-122"><a href="#Structure.attributes-122"><span class="linenos">122</span></a>
+</span><span id="Structure.attributes-123"><a href="#Structure.attributes-123"><span class="linenos">123</span></a>                    <span class="k">case</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_NUMBER</span><span class="p">:</span>
+</span><span id="Structure.attributes-124"><a href="#Structure.attributes-124"><span class="linenos">124</span></a>                        <span class="n">cfloat</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_float</span><span class="p">()</span>
+</span><span id="Structure.attributes-125"><a href="#Structure.attributes-125"><span class="linenos">125</span></a>                        <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetNumberValue</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="n">cfloat</span><span class="p">)</span>
+</span><span id="Structure.attributes-126"><a href="#Structure.attributes-126"><span class="linenos">126</span></a>                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cfloat</span><span class="o">.</span><span class="n">value</span>
+</span><span id="Structure.attributes-127"><a href="#Structure.attributes-127"><span class="linenos">127</span></a>
+</span><span id="Structure.attributes-128"><a href="#Structure.attributes-128"><span class="linenos">128</span></a>                    <span class="k">case</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_STRING</span> <span class="o">|</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_NAME</span><span class="p">:</span>
+</span><span id="Structure.attributes-129"><a href="#Structure.attributes-129"><span class="linenos">129</span></a>                        <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetStringValue</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
+</span><span id="Structure.attributes-130"><a href="#Structure.attributes-130"><span class="linenos">130</span></a>                        <span class="n">cattrname</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">clength</span><span class="o">.</span><span class="n">value</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="Structure.attributes-131"><a href="#Structure.attributes-131"><span class="linenos">131</span></a>                        <span class="k">assert</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_Attr_GetStringValue</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">cname</span><span class="p">,</span> <span class="n">cattrname</span><span class="p">,</span> <span class="n">clength</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
+</span><span id="Structure.attributes-132"><a href="#Structure.attributes-132"><span class="linenos">132</span></a>                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cattrname</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-16-le&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)[:</span><span class="n">clength</span><span class="o">.</span><span class="n">value</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="Structure.attributes-133"><a href="#Structure.attributes-133"><span class="linenos">133</span></a>
+</span><span id="Structure.attributes-134"><a href="#Structure.attributes-134"><span class="linenos">134</span></a>                    <span class="c1"># FIXME: FPDF_OBJECT_ARRAY is not a blob, but no other APIs are exposed?</span>
+</span><span id="Structure.attributes-135"><a href="#Structure.attributes-135"><span class="linenos">135</span></a>                    <span class="c1"># case pp.raw.FPDF_OBJECT_ARRAY:</span>
+</span><span id="Structure.attributes-136"><a href="#Structure.attributes-136"><span class="linenos">136</span></a>                    <span class="c1">#     assert pp.raw.FPDF_StructElement_Attr_GetBlobValue(attr, cname, 0, 0, clength)</span>
+</span><span id="Structure.attributes-137"><a href="#Structure.attributes-137"><span class="linenos">137</span></a>                    <span class="c1">#     cblob = ctypes.create_string_buffer(clength.value)</span>
+</span><span id="Structure.attributes-138"><a href="#Structure.attributes-138"><span class="linenos">138</span></a>                    <span class="c1">#     assert pp.raw.FPDF_StructElement_Attr_GetBlobValue(attr, cname, cblob, clength, clength)</span>
+</span><span id="Structure.attributes-139"><a href="#Structure.attributes-139"><span class="linenos">139</span></a>                    <span class="c1">#     kv[name] = cblob.raw</span>
+</span><span id="Structure.attributes-140"><a href="#Structure.attributes-140"><span class="linenos">140</span></a>
+</span><span id="Structure.attributes-141"><a href="#Structure.attributes-141"><span class="linenos">141</span></a>                    <span class="k">case</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_OBJECT_ARRAY</span><span class="p">:</span>
+</span><span id="Structure.attributes-142"><a href="#Structure.attributes-142"><span class="linenos">142</span></a>                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[?]&quot;</span>
+</span><span id="Structure.attributes-143"><a href="#Structure.attributes-143"><span class="linenos">143</span></a>
+</span><span id="Structure.attributes-144"><a href="#Structure.attributes-144"><span class="linenos">144</span></a>                    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+</span><span id="Structure.attributes-145"><a href="#Structure.attributes-145"><span class="linenos">145</span></a>                        <span class="n">kv</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[unknown=</span><span class="si">{</span><span class="n">atype</span><span class="si">}</span><span class="s2">?]&quot;</span>
+</span><span id="Structure.attributes-146"><a href="#Structure.attributes-146"><span class="linenos">146</span></a>        <span class="k">return</span> <span class="n">kv</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>All attributes of this structure element as a dictionary.</p>
 
 <div class="pdoc-alert pdoc-alert-note">
@@ -689,13 +817,23 @@ extracted! The values are marked as <code>[?]</code> in the dictionary.</p>
 
                             </div>
                             <div id="Structure.children" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Structure.children-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">children</span><span class="annotation">: list</span>
 
-        
+                <label class="view-source-button" for="Structure.children-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Structure.children"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Structure.children-157"><a href="#Structure.children-157"><span class="linenos">157</span></a>    <span class="nd">@property</span>
+</span><span id="Structure.children-158"><a href="#Structure.children-158"><span class="linenos">158</span></a>    <span class="k">def</span> <span class="nf">children</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+</span><span id="Structure.children-159"><a href="#Structure.children-159"><span class="linenos">159</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;All child structures.&quot;&quot;&quot;</span>
+</span><span id="Structure.children-160"><a href="#Structure.children-160"><span class="linenos">160</span></a>        <span class="n">count</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_StructElement_CountChildren</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_element</span><span class="p">)</span>
+</span><span id="Structure.children-161"><a href="#Structure.children-161"><span class="linenos">161</span></a>        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+</span><span id="Structure.children-162"><a href="#Structure.children-162"><span class="linenos">162</span></a>            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">child</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>All child structures.</p>
 </div>
 

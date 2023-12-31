@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="pdoc 14.1.0"/>
+    <meta name="generator" content="pdoc 14.3.0"/>
     <title>modm_data.pdf.document API documentation</title>
 
     <style>/*! * Bootstrap Reboot v5.0.0 (https://getbootstrap.com/) * Copyright 2011-2021 The Bootstrap Authors * Copyright 2011-2021 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE) * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md) */*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}h2{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){h2{font-size:2rem}}h3{font-size:calc(1.3rem + .6vw)}@media (min-width:1200px){h3{font-size:1.75rem}}h4{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){h4{font-size:1.5rem}}h5{font-size:1.25rem}h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}abbr[data-bs-original-title],abbr[title]{-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}ol,ul{padding-left:2rem}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:.875em}mark{padding:.2em;background-color:#fcf8e3}sub,sup{position:relative;font-size:.75em;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#0d6efd;text-decoration:underline}a:hover{color:#0a58ca}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em;direction:ltr;unicode-bidi:bidi-override}pre{display:block;margin-top:0;margin-bottom:1rem;overflow:auto;font-size:.875em}pre code{font-size:inherit;color:inherit;word-break:normal}code{font-size:.875em;color:#d63384;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:.875em;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:1em;font-weight:700}figure{margin:0 0 1rem}img,svg{vertical-align:middle}table{caption-side:bottom;border-collapse:collapse}caption{padding-top:.5rem;padding-bottom:.5rem;color:#6c757d;text-align:left}th{text-align:inherit;text-align:-webkit-match-parent}tbody,td,tfoot,th,thead,tr{border-color:inherit;border-style:solid;border-width:0}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[list]::-webkit-calendar-picker-indicator{display:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{float:left;width:100%;padding:0;margin-bottom:.5rem;font-size:calc(1.275rem + .3vw);line-height:inherit}@media (min-width:1200px){legend{font-size:1.5rem}}legend+*{clear:left}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}iframe{border:0}summary{display:list-item;cursor:pointer}progress{vertical-align:baseline}[hidden]{display:none!important}</style>
@@ -416,39 +416,82 @@ of pypdfium.</p>
 
                             </div>
                             <div id="Document.metadata" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Document.metadata-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">metadata</span><span class="annotation">: dict[str, str]</span>
 
-        
+                <label class="view-source-button" for="Document.metadata-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Document.metadata"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Document.metadata-58"><a href="#Document.metadata-58"><span class="linenos">58</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Document.metadata-59"><a href="#Document.metadata-59"><span class="linenos">59</span></a>    <span class="k">def</span> <span class="nf">metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+</span><span id="Document.metadata-60"><a href="#Document.metadata-60"><span class="linenos">60</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The PDF metadata dictionary.&quot;&quot;&quot;</span>
+</span><span id="Document.metadata-61"><a href="#Document.metadata-61"><span class="linenos">61</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_metadata_dict</span><span class="p">()</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The PDF metadata dictionary.</p>
 </div>
 
 
                             </div>
                             <div id="Document.destinations" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Document.destinations-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">destinations</span><span class="annotation">: Iterator[tuple[int, str]]</span>
 
-        
+                <label class="view-source-button" for="Document.destinations-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Document.destinations"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Document.destinations-63"><a href="#Document.destinations-63"><span class="linenos">63</span></a>    <span class="nd">@property</span>
+</span><span id="Document.destinations-64"><a href="#Document.destinations-64"><span class="linenos">64</span></a>    <span class="k">def</span> <span class="nf">destinations</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+</span><span id="Document.destinations-65"><a href="#Document.destinations-65"><span class="linenos">65</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Yields (page 0-index, named destination) of the whole document.&quot;&quot;&quot;</span>
+</span><span id="Document.destinations-66"><a href="#Document.destinations-66"><span class="linenos">66</span></a>        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_CountNamedDests</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+</span><span id="Document.destinations-67"><a href="#Document.destinations-67"><span class="linenos">67</span></a>            <span class="n">length</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_GetNamedDest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ii</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="Document.destinations-68"><a href="#Document.destinations-68"><span class="linenos">68</span></a>            <span class="n">clength</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_long</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+</span><span id="Document.destinations-69"><a href="#Document.destinations-69"><span class="linenos">69</span></a>            <span class="n">cbuffer</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">create_string_buffer</span><span class="p">(</span><span class="n">length</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="Document.destinations-70"><a href="#Document.destinations-70"><span class="linenos">70</span></a>            <span class="n">dest</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_GetNamedDest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ii</span><span class="p">,</span> <span class="n">cbuffer</span><span class="p">,</span> <span class="n">clength</span><span class="p">)</span>
+</span><span id="Document.destinations-71"><a href="#Document.destinations-71"><span class="linenos">71</span></a>            <span class="n">name</span> <span class="o">=</span> <span class="n">cbuffer</span><span class="o">.</span><span class="n">raw</span><span class="p">[:</span><span class="n">clength</span><span class="o">.</span><span class="n">value</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-16-le&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Document.destinations-72"><a href="#Document.destinations-72"><span class="linenos">72</span></a>            <span class="n">page</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDFDest_GetDestPageIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+</span><span id="Document.destinations-73"><a href="#Document.destinations-73"><span class="linenos">73</span></a>            <span class="k">yield</span> <span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>Yields (page 0-index, named destination) of the whole document.</p>
 </div>
 
 
                             </div>
                             <div id="Document.toc" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Document.toc-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">toc</span><span class="annotation">: list[pypdfium2._helpers.document.PdfOutlineItem]</span>
 
-        
+                <label class="view-source-button" for="Document.toc-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Document.toc"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Document.toc-75"><a href="#Document.toc-75"><span class="linenos">75</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Document.toc-76"><a href="#Document.toc-76"><span class="linenos">76</span></a>    <span class="k">def</span> <span class="nf">toc</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">pp</span><span class="o">.</span><span class="n">PdfOutlineItem</span><span class="p">]:</span>
+</span><span id="Document.toc-77"><a href="#Document.toc-77"><span class="linenos">77</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Document.toc-78"><a href="#Document.toc-78"><span class="linenos">78</span></a><span class="sd">        The table of content as a sorted list of outline items ensuring item has</span>
+</span><span id="Document.toc-79"><a href="#Document.toc-79"><span class="linenos">79</span></a><span class="sd">        a page index by reusing the last one.</span>
+</span><span id="Document.toc-80"><a href="#Document.toc-80"><span class="linenos">80</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Document.toc-81"><a href="#Document.toc-81"><span class="linenos">81</span></a>        <span class="n">tocs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="Document.toc-82"><a href="#Document.toc-82"><span class="linenos">82</span></a>        <span class="c1"># Sometimes the TOC contains duplicates so we must use a set</span>
+</span><span id="Document.toc-83"><a href="#Document.toc-83"><span class="linenos">83</span></a>        <span class="n">last_page_index</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="Document.toc-84"><a href="#Document.toc-84"><span class="linenos">84</span></a>        <span class="k">for</span> <span class="n">toc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_toc</span><span class="p">():</span>
+</span><span id="Document.toc-85"><a href="#Document.toc-85"><span class="linenos">85</span></a>            <span class="n">outline</span> <span class="o">=</span> <span class="n">_OutlineItem</span><span class="p">(</span><span class="n">toc</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">is_closed</span><span class="p">,</span>
+</span><span id="Document.toc-86"><a href="#Document.toc-86"><span class="linenos">86</span></a>                                   <span class="n">toc</span><span class="o">.</span><span class="n">n_kids</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">page_index</span> <span class="ow">or</span> <span class="n">last_page_index</span><span class="p">,</span>
+</span><span id="Document.toc-87"><a href="#Document.toc-87"><span class="linenos">87</span></a>                                   <span class="n">toc</span><span class="o">.</span><span class="n">view_mode</span><span class="p">,</span> <span class="n">toc</span><span class="o">.</span><span class="n">view_pos</span><span class="p">)</span>
+</span><span id="Document.toc-88"><a href="#Document.toc-88"><span class="linenos">88</span></a>            <span class="n">last_page_index</span> <span class="o">=</span> <span class="n">toc</span><span class="o">.</span><span class="n">page_index</span>
+</span><span id="Document.toc-89"><a href="#Document.toc-89"><span class="linenos">89</span></a>            <span class="n">tocs</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">outline</span><span class="p">)</span>
+</span><span id="Document.toc-90"><a href="#Document.toc-90"><span class="linenos">90</span></a>        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">tocs</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">o</span><span class="p">:</span> <span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">page_index</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="n">title</span><span class="p">)))</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The table of content as a sorted list of outline items ensuring item has
 a page index by reusing the last one.</p>
 </div>
@@ -456,39 +499,63 @@ a page index by reusing the last one.</p>
 
                             </div>
                             <div id="Document.identifier_permanent" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Document.identifier_permanent-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">identifier_permanent</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Document.identifier_permanent-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Document.identifier_permanent"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Document.identifier_permanent-92"><a href="#Document.identifier_permanent-92"><span class="linenos">92</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Document.identifier_permanent-93"><a href="#Document.identifier_permanent-93"><span class="linenos">93</span></a>    <span class="k">def</span> <span class="nf">identifier_permanent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Document.identifier_permanent-94"><a href="#Document.identifier_permanent-94"><span class="linenos">94</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The permanent file identifier.&quot;&quot;&quot;</span>
+</span><span id="Document.identifier_permanent-95"><a href="#Document.identifier_permanent-95"><span class="linenos">95</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_identifier</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FILEIDTYPE_PERMANENT</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The permanent file identifier.</p>
 </div>
 
 
                             </div>
                             <div id="Document.identifier_changing" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Document.identifier_changing-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">identifier_changing</span><span class="annotation">: str</span>
 
-        
+                <label class="view-source-button" for="Document.identifier_changing-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Document.identifier_changing"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Document.identifier_changing-97"><a href="#Document.identifier_changing-97"><span class="linenos"> 97</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Document.identifier_changing-98"><a href="#Document.identifier_changing-98"><span class="linenos"> 98</span></a>    <span class="k">def</span> <span class="nf">identifier_changing</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Document.identifier_changing-99"><a href="#Document.identifier_changing-99"><span class="linenos"> 99</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The changing file identifier.&quot;&quot;&quot;</span>
+</span><span id="Document.identifier_changing-100"><a href="#Document.identifier_changing-100"><span class="linenos">100</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_identifier</span><span class="p">(</span><span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FILEIDTYPE_CHANGING</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The changing file identifier.</p>
 </div>
 
 
                             </div>
                             <div id="Document.page_count" class="classattr">
-                                <div class="attr variable">
+                                        <input id="Document.page_count-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
             <span class="name">page_count</span><span class="annotation">: int</span>
 
-        
+                <label class="view-source-button" for="Document.page_count-view-source"><span>View Source</span></label>
+
     </div>
     <a class="headerlink" href="#Document.page_count"></a>
-    
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Document.page_count-102"><a href="#Document.page_count-102"><span class="linenos">102</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Document.page_count-103"><a href="#Document.page_count-103"><span class="linenos">103</span></a>    <span class="k">def</span> <span class="nf">page_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Document.page_count-104"><a href="#Document.page_count-104"><span class="linenos">104</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The number of pages in the document.&quot;&quot;&quot;</span>
+</span><span id="Document.page_count-105"><a href="#Document.page_count-105"><span class="linenos">105</span></a>        <span class="k">return</span> <span class="n">pp</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">FPDF_GetPageCount</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</span></pre></div>
+
+
             <div class="docstring"><p>The number of pages in the document.</p>
 </div>
 
