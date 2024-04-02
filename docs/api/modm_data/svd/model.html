@@ -298,29 +298,10 @@
 </span></pre></div>
 
 
-    
-
-                            <div id="Device.__init__" class="classattr">
-                                        <input id="Device.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr function">
-            
-        <span class="name">Device</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
-
-                <label class="view-source-button" for="Device.__init__-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#Device.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Device.__init__-9"><a href="#Device.__init__-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-</span><span id="Device.__init__-10"><a href="#Device.__init__-10"><span class="linenos">10</span></a>        <span class="k">if</span> <span class="s2">&quot;compatible&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kw</span><span class="p">:</span>
-</span><span id="Device.__init__-11"><a href="#Device.__init__-11"><span class="linenos">11</span></a>            <span class="n">kw</span><span class="p">[</span><span class="s2">&quot;compatible&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span>
-</span><span id="Device.__init__-12"><a href="#Device.__init__-12"><span class="linenos">12</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-</span></pre></div>
-
-
             <div class="docstring"><p>A simple tree node with a <code><a href="#Device.name">name</a></code> and any <code>kwargs</code>.</p>
 
 <p>Args:
-    name: A name or any other object this node can reference to as idendifier.</p>
+    name: A name or any other object this node can reference to as identifier.</p>
 
 <p>Keyword Args:
     parent: Reference to parent node.
@@ -395,6 +376,25 @@ to distinguish between different instances.</p>
 </div>
 
 
+                            <div id="Device.__init__" class="classattr">
+                                        <input id="Device.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">Device</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
+
+                <label class="view-source-button" for="Device.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Device.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Device.__init__-9"><a href="#Device.__init__-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+</span><span id="Device.__init__-10"><a href="#Device.__init__-10"><span class="linenos">10</span></a>        <span class="k">if</span> <span class="s2">&quot;compatible&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kw</span><span class="p">:</span>
+</span><span id="Device.__init__-11"><a href="#Device.__init__-11"><span class="linenos">11</span></a>            <span class="n">kw</span><span class="p">[</span><span class="s2">&quot;compatible&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span>
+</span><span id="Device.__init__-12"><a href="#Device.__init__-12"><span class="linenos">12</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
                             </div>
                             <div class="inherited">
                                 <h5>Inherited Members</h5>
@@ -419,6 +419,7 @@ to distinguish between different instances.</p>
                 <dd id="Device.is_root" class="variable">is_root</dd>
                 <dd id="Device.height" class="variable">height</dd>
                 <dd id="Device.depth" class="variable">depth</dd>
+                <dd id="Device.size" class="variable">size</dd>
 
             </div>
                                 </dl>
@@ -453,27 +454,10 @@ to distinguish between different instances.</p>
 </span></pre></div>
 
 
-    
-
-                            <div id="PeripheralType.__init__" class="classattr">
-                                        <input id="PeripheralType.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr function">
-            
-        <span class="name">PeripheralType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
-
-                <label class="view-source-button" for="PeripheralType.__init__-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#PeripheralType.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PeripheralType.__init__-32"><a href="#PeripheralType.__init__-32"><span class="linenos">32</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-</span><span id="PeripheralType.__init__-33"><a href="#PeripheralType.__init__-33"><span class="linenos">33</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-</span></pre></div>
-
-
             <div class="docstring"><p>A simple tree node with a <code><a href="#PeripheralType.name">name</a></code> and any <code>kwargs</code>.</p>
 
 <p>Args:
-    name: A name or any other object this node can reference to as idendifier.</p>
+    name: A name or any other object this node can reference to as identifier.</p>
 
 <p>Keyword Args:
     parent: Reference to parent node.
@@ -548,6 +532,23 @@ to distinguish between different instances.</p>
 </div>
 
 
+                            <div id="PeripheralType.__init__" class="classattr">
+                                        <input id="PeripheralType.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">PeripheralType</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
+
+                <label class="view-source-button" for="PeripheralType.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#PeripheralType.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PeripheralType.__init__-32"><a href="#PeripheralType.__init__-32"><span class="linenos">32</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+</span><span id="PeripheralType.__init__-33"><a href="#PeripheralType.__init__-33"><span class="linenos">33</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
                             </div>
                             <div class="inherited">
                                 <h5>Inherited Members</h5>
@@ -572,6 +573,7 @@ to distinguish between different instances.</p>
                 <dd id="PeripheralType.is_root" class="variable">is_root</dd>
                 <dd id="PeripheralType.height" class="variable">height</dd>
                 <dd id="PeripheralType.depth" class="variable">depth</dd>
+                <dd id="PeripheralType.size" class="variable">size</dd>
 
             </div>
                                 </dl>
@@ -606,27 +608,10 @@ to distinguish between different instances.</p>
 </span></pre></div>
 
 
-    
-
-                            <div id="Peripheral.__init__" class="classattr">
-                                        <input id="Peripheral.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr function">
-            
-        <span class="name">Peripheral</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="nb">type</span>, </span><span class="param"><span class="n">address</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
-
-                <label class="view-source-button" for="Peripheral.__init__-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#Peripheral.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Peripheral.__init__-49"><a href="#Peripheral.__init__-49"><span class="linenos">49</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-</span><span id="Peripheral.__init__-50"><a href="#Peripheral.__init__-50"><span class="linenos">50</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="n">address</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-</span></pre></div>
-
-
             <div class="docstring"><p>A simple tree node with a <code><a href="#Peripheral.name">name</a></code> and any <code>kwargs</code>.</p>
 
 <p>Args:
-    name: A name or any other object this node can reference to as idendifier.</p>
+    name: A name or any other object this node can reference to as identifier.</p>
 
 <p>Keyword Args:
     parent: Reference to parent node.
@@ -701,6 +686,23 @@ to distinguish between different instances.</p>
 </div>
 
 
+                            <div id="Peripheral.__init__" class="classattr">
+                                        <input id="Peripheral.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">Peripheral</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="nb">type</span>, </span><span class="param"><span class="n">address</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
+
+                <label class="view-source-button" for="Peripheral.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Peripheral.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Peripheral.__init__-49"><a href="#Peripheral.__init__-49"><span class="linenos">49</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+</span><span id="Peripheral.__init__-50"><a href="#Peripheral.__init__-50"><span class="linenos">50</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="n">address</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
                             </div>
                             <div class="inherited">
                                 <h5>Inherited Members</h5>
@@ -725,6 +727,7 @@ to distinguish between different instances.</p>
                 <dd id="Peripheral.is_root" class="variable">is_root</dd>
                 <dd id="Peripheral.height" class="variable">height</dd>
                 <dd id="Peripheral.depth" class="variable">depth</dd>
+                <dd id="Peripheral.size" class="variable">size</dd>
 
             </div>
                                 </dl>
@@ -768,27 +771,10 @@ to distinguish between different instances.</p>
 </span></pre></div>
 
 
-    
-
-                            <div id="Register.__init__" class="classattr">
-                                        <input id="Register.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr function">
-            
-        <span class="name">Register</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="n">offset</span>, </span><span class="param"><span class="n">width</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
-
-                <label class="view-source-button" for="Register.__init__-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#Register.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Register.__init__-66"><a href="#Register.__init__-66"><span class="linenos">66</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-</span><span id="Register.__init__-67"><a href="#Register.__init__-67"><span class="linenos">67</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span> <span class="ow">or</span> <span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-</span></pre></div>
-
-
             <div class="docstring"><p>A simple tree node with a <code><a href="#Register.name">name</a></code> and any <code>kwargs</code>.</p>
 
 <p>Args:
-    name: A name or any other object this node can reference to as idendifier.</p>
+    name: A name or any other object this node can reference to as identifier.</p>
 
 <p>Keyword Args:
     parent: Reference to parent node.
@@ -863,6 +849,23 @@ to distinguish between different instances.</p>
 </div>
 
 
+                            <div id="Register.__init__" class="classattr">
+                                        <input id="Register.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">Register</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="n">offset</span>, </span><span class="param"><span class="n">width</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
+
+                <label class="view-source-button" for="Register.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Register.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Register.__init__-66"><a href="#Register.__init__-66"><span class="linenos">66</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+</span><span id="Register.__init__-67"><a href="#Register.__init__-67"><span class="linenos">67</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span> <span class="ow">or</span> <span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
                             </div>
                             <div id="Register.address" class="classattr">
                                         <input id="Register.address-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -924,6 +927,7 @@ to distinguish between different instances.</p>
                 <dd id="Register.is_root" class="variable">is_root</dd>
                 <dd id="Register.height" class="variable">height</dd>
                 <dd id="Register.depth" class="variable">depth</dd>
+                <dd id="Register.size" class="variable">size</dd>
 
             </div>
                                 </dl>
@@ -964,27 +968,10 @@ to distinguish between different instances.</p>
 </span></pre></div>
 
 
-    
-
-                            <div id="BitField.__init__" class="classattr">
-                                        <input id="BitField.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr function">
-            
-        <span class="name">BitField</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="n">position</span>, </span><span class="param"><span class="n">width</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
-
-                <label class="view-source-button" for="BitField.__init__-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#BitField.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="BitField.__init__-92"><a href="#BitField.__init__-92"><span class="linenos">92</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-</span><span id="BitField.__init__-93"><a href="#BitField.__init__-93"><span class="linenos">93</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-</span></pre></div>
-
-
             <div class="docstring"><p>A simple tree node with a <code><a href="#BitField.name">name</a></code> and any <code>kwargs</code>.</p>
 
 <p>Args:
-    name: A name or any other object this node can reference to as idendifier.</p>
+    name: A name or any other object this node can reference to as identifier.</p>
 
 <p>Keyword Args:
     parent: Reference to parent node.
@@ -1059,6 +1046,23 @@ to distinguish between different instances.</p>
 </div>
 
 
+                            <div id="BitField.__init__" class="classattr">
+                                        <input id="BitField.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">BitField</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">name</span>, </span><span class="param"><span class="n">position</span>, </span><span class="param"><span class="n">width</span><span class="o">=</span><span class="kc">None</span>, </span><span class="param"><span class="o">**</span><span class="n">kw</span></span>)</span>
+
+                <label class="view-source-button" for="BitField.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#BitField.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="BitField.__init__-92"><a href="#BitField.__init__-92"><span class="linenos">92</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+</span><span id="BitField.__init__-93"><a href="#BitField.__init__-93"><span class="linenos">93</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
                             </div>
                             <div id="BitField.bit_address" class="classattr">
                                         <input id="BitField.bit_address-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -1120,6 +1124,7 @@ to distinguish between different instances.</p>
                 <dd id="BitField.is_root" class="variable">is_root</dd>
                 <dd id="BitField.height" class="variable">height</dd>
                 <dd id="BitField.depth" class="variable">depth</dd>
+                <dd id="BitField.size" class="variable">size</dd>
 
             </div>
                                 </dl>
