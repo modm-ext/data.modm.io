@@ -2,37 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://data.modm.io/</loc>
-         <lastmod>2024-04-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-16</lastmod>
     </url>
     <url>
          <loc>https://data.modm.io/pipeline/header2svd/</loc>
-         <lastmod>2024-04-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-16</lastmod>
     </url>
     <url>
          <loc>https://data.modm.io/pipeline/html2owl/</loc>
-         <lastmod>2024-04-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-16</lastmod>
     </url>
     <url>
          <loc>https://data.modm.io/pipeline/html2svd/</loc>
-         <lastmod>2024-04-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-16</lastmod>
     </url>
     <url>
          <loc>https://data.modm.io/pipeline/overview/</loc>
-         <lastmod>2024-04-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-16</lastmod>
     </url>
     <url>
          <loc>https://data.modm.io/pipeline/pdf2html/</loc>
-         <lastmod>2024-04-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-16</lastmod>
     </url>
     <url>
          <loc>https://data.modm.io/source/overview/</loc>
-         <lastmod>2024-04-02</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2024-11-16</lastmod>
     </url>
 </urlset>
