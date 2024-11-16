@@ -45,7 +45,8 @@
 
             <h2>Submodules</h2>
             <ul>
-                    <li><a href="stmicro/datasheet.html">datasheet</a></li>
+                    <li><a href="stmicro/datasheet_sensor.html">datasheet_sensor</a></li>
+                    <li><a href="stmicro/datasheet_stm32.html">datasheet_stm32</a></li>
                     <li><a href="stmicro/document.html">document</a></li>
                     <li><a href="stmicro/helper.html">helper</a></li>
                     <li><a href="stmicro/reference.html">reference</a></li>
@@ -73,11 +74,12 @@
                         <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
 </span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
 </span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.datasheet</span> <span class="kn">import</span> <span class="n">DatasheetMicro</span><span class="p">,</span> <span class="n">DatasheetSensor</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a><span class="kn">from</span> <span class="nn">.reference</span> <span class="kn">import</span> <span class="n">ReferenceManual</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos">6</span></a><span class="kn">from</span> <span class="nn">.document</span> <span class="kn">import</span> <span class="n">load_documents</span><span class="p">,</span> <span class="n">load_document_devices</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos">7</span></a><span class="kn">from</span> <span class="nn">.document</span> <span class="kn">import</span> <span class="n">datasheet_for_device</span><span class="p">,</span> <span class="n">reference_manual_for_device</span>
-</span><span id="L-8"><a href="#L-8"><span class="linenos">8</span></a><span class="kn">from</span> <span class="nn">.helper</span> <span class="kn">import</span> <span class="n">find_device_filter</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.datasheet_sensor</span> <span class="kn">import</span> <span class="n">DatasheetSensor</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a><span class="kn">from</span> <span class="nn">.datasheet_stm32</span> <span class="kn">import</span> <span class="n">DatasheetStm32</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos">6</span></a><span class="kn">from</span> <span class="nn">.reference</span> <span class="kn">import</span> <span class="n">ReferenceManual</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos">7</span></a><span class="kn">from</span> <span class="nn">.document</span> <span class="kn">import</span> <span class="n">load_documents</span><span class="p">,</span> <span class="n">load_document_devices</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos">8</span></a><span class="kn">from</span> <span class="nn">.document</span> <span class="kn">import</span> <span class="n">datasheet_for_device</span><span class="p">,</span> <span class="n">reference_manual_for_device</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos">9</span></a><span class="kn">from</span> <span class="nn">.helper</span> <span class="kn">import</span> <span class="n">find_device_filter</span>
 </span></pre></div>
 
 
