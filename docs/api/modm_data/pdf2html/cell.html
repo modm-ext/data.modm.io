@@ -47,70 +47,70 @@
             <h2>API Documentation</h2>
                 <ul class="memberlist">
             <li>
-                    <a class="class" href="#TableCell">TableCell</a>
+                    <a class="class" href="#Borders">Borders</a>
                             <ul class="memberlist">
                         <li>
-                                <a class="function" href="#TableCell.__init__">TableCell</a>
+                                <a class="function" href="#Borders.__init__">Borders</a>
                         </li>
                         <li>
-                                <a class="class" href="#TableCell.Borders">TableCell.Borders</a>
-                                        <ul class="memberlist">
-                                    <li>
-                                            <a class="function" href="#TableCell.Borders.__init__">Borders</a>
-                                    </li>
-                                    <li>
-                                            <a class="variable" href="#TableCell.Borders.l">l</a>
-                                    </li>
-                                    <li>
-                                            <a class="variable" href="#TableCell.Borders.b">b</a>
-                                    </li>
-                                    <li>
-                                            <a class="variable" href="#TableCell.Borders.r">r</a>
-                                    </li>
-                                    <li>
-                                            <a class="variable" href="#TableCell.Borders.t">t</a>
-                                    </li>
-                            </ul>
+                                <a class="variable" href="#Borders.left">left</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Borders.bottom">bottom</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Borders.right">right</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Borders.top">top</a>
+                        </li>
+                </ul>
 
+            </li>
+            <li>
+                    <a class="class" href="#Cell">Cell</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Cell.__init__">Cell</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.b">b</a>
+                                <a class="variable" href="#Cell.borders">borders</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.positions">positions</a>
+                                <a class="variable" href="#Cell.positions">positions</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.is_header">is_header</a>
+                                <a class="variable" href="#Cell.is_header">is_header</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.x">x</a>
+                                <a class="variable" href="#Cell.x">x</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.y">y</a>
+                                <a class="variable" href="#Cell.y">y</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.xspan">xspan</a>
+                                <a class="variable" href="#Cell.xspan">xspan</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.yspan">yspan</a>
+                                <a class="variable" href="#Cell.yspan">yspan</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.rotation">rotation</a>
+                                <a class="variable" href="#Cell.rotation">rotation</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.bbox">bbox</a>
+                                <a class="variable" href="#Cell.bbox">bbox</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.lines">lines</a>
+                                <a class="variable" href="#Cell.lines">lines</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.content">content</a>
+                                <a class="variable" href="#Cell.content">content</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.is_left_aligned">is_left_aligned</a>
+                                <a class="variable" href="#Cell.is_left_aligned">is_left_aligned</a>
                         </li>
                         <li>
-                                <a class="variable" href="#TableCell.ast">ast</a>
+                                <a class="variable" href="#Cell.ast">ast</a>
                         </li>
                 </ul>
 
@@ -141,338 +141,431 @@
 </span><span id="L-3"><a href="#L-3"><span class="linenos">  3</span></a>
 </span><span id="L-4"><a href="#L-4"><span class="linenos">  4</span></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">cached_property</span>
 </span><span id="L-5"><a href="#L-5"><span class="linenos">  5</span></a><span class="kn">from</span> <span class="nn">anytree</span> <span class="kn">import</span> <span class="n">Node</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos">  6</span></a><span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">Rectangle</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos">  7</span></a><span class="kn">from</span> <span class="nn">.line</span> <span class="kn">import</span> <span class="n">CharLine</span>
-</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a>
+</span><span id="L-6"><a href="#L-6"><span class="linenos">  6</span></a><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos">  7</span></a><span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">Rectangle</span><span class="p">,</span> <span class="n">Point</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos">  8</span></a><span class="kn">from</span> <span class="nn">.line</span> <span class="kn">import</span> <span class="n">CharLine</span>
 </span><span id="L-9"><a href="#L-9"><span class="linenos">  9</span></a>
-</span><span id="L-10"><a href="#L-10"><span class="linenos"> 10</span></a><span class="k">class</span> <span class="nc">TableCell</span><span class="p">:</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos"> 11</span></a>    <span class="k">class</span> <span class="nc">Borders</span><span class="p">:</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos"> 12</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The four borders of a Cell&quot;&quot;&quot;</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos"> 13</span></a>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-</span><span id="L-14"><a href="#L-14"><span class="linenos"> 14</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">l</span> <span class="o">=</span> <span class="n">l</span>
-</span><span id="L-15"><a href="#L-15"><span class="linenos"> 15</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-</span><span id="L-16"><a href="#L-16"><span class="linenos"> 16</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos"> 17</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span>
-</span><span id="L-18"><a href="#L-18"><span class="linenos"> 18</span></a>
-</span><span id="L-19"><a href="#L-19"><span class="linenos"> 19</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">borders</span><span class="p">,</span> <span class="n">is_simple</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="L-20"><a href="#L-20"><span class="linenos"> 20</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">table</span>
-</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
-</span><span id="L-22"><a href="#L-22"><span class="linenos"> 22</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">borders</span>
-</span><span id="L-23"><a href="#L-23"><span class="linenos"> 23</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Borders of the cell&quot;&quot;&quot;</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[</span><span class="n">position</span><span class="p">]</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos"> 25</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Index positions of the cell&quot;&quot;&quot;</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos"> 26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is this cell a header?&quot;&quot;&quot;</span>
-</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_is_simple</span> <span class="o">=</span> <span class="n">is_simple</span>
-</span><span id="L-29"><a href="#L-29"><span class="linenos"> 29</span></a>
-</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a>    <span class="k">def</span> <span class="nf">_merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-</span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
-</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-</span><span id="L-33"><a href="#L-33"><span class="linenos"> 33</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
-</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
-</span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a>
-</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a>    <span class="k">def</span> <span class="nf">_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">py</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">px</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">py</span><span class="p">,</span> <span class="n">px</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">]</span>
-</span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-</span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
-</span><span id="L-40"><a href="#L-40"><span class="linenos"> 40</span></a>
-</span><span id="L-41"><a href="#L-41"><span class="linenos"> 41</span></a>    <span class="k">def</span> <span class="nf">_expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
-</span><span id="L-42"><a href="#L-42"><span class="linenos"> 42</span></a>        <span class="n">ymax</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span><span id="L-43"><a href="#L-43"><span class="linenos"> 43</span></a>        <span class="k">for</span> <span class="n">yi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ymax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="L-44"><a href="#L-44"><span class="linenos"> 44</span></a>            <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">xmax</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="L-45"><a href="#L-45"><span class="linenos"> 45</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">yi</span><span class="p">,</span> <span class="n">xi</span><span class="p">))</span>
-</span><span id="L-46"><a href="#L-46"><span class="linenos"> 46</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-</span><span id="L-47"><a href="#L-47"><span class="linenos"> 47</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
-</span><span id="L-48"><a href="#L-48"><span class="linenos"> 48</span></a>
-</span><span id="L-49"><a href="#L-49"><span class="linenos"> 49</span></a>    <span class="k">def</span> <span class="nf">_invalidate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-50"><a href="#L-50"><span class="linenos"> 50</span></a>        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cached_property</span><span class="p">):</span>
-</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a>                <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-</span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a>
-</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a>    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal position of the cell.&quot;&quot;&quot;</span>
-</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a>
-</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a>    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical position of the cell.&quot;&quot;&quot;</span>
-</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>
-</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>    <span class="k">def</span> <span class="nf">xspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal span of the cell.&quot;&quot;&quot;</span>
-</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a>
-</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>    <span class="k">def</span> <span class="nf">yspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical span of the cell.&quot;&quot;&quot;</span>
-</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a>
-</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a>    <span class="k">def</span> <span class="nf">rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The rotation of the cell text.&quot;&quot;&quot;</span>
-</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
-</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rotation</span>
-</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>
-</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Rectangle</span><span class="p">:</span>
-</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The tight bounding box of this cell.&quot;&quot;&quot;</span>
-</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a>        <span class="k">return</span> <span class="n">Rectangle</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span>   <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
-</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a>                         <span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
-</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a>                         <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span>  <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
-</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a>                         <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span>    <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">))</span>
-</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a>
-</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>    <span class="k">def</span> <span class="nf">lines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">CharLine</span><span class="p">]:</span>
-</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The character lines in this cell.&quot;&quot;&quot;</span>
-</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">charlines_in_area</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
-</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>
-</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>    <span class="k">def</span> <span class="nf">content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The concatenated text content of the table cell.&quot;&quot;&quot;</span>
-</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a>        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">char</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">chars</span><span class="p">)</span>
-</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>
-</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>    <span class="k">def</span> <span class="nf">is_left_aligned</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is the text in the cell left aligned?&quot;&quot;&quot;</span>
-</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>        <span class="n">x_em</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">_spacing</span><span class="p">[</span><span class="s2">&quot;x_em&quot;</span><span class="p">]</span>
-</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
-</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a>            <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">x_em</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">):</span>
-</span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a>                <span class="k">return</span> <span class="kc">True</span>
-</span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a>        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a>
-</span><span id="L-107"><a href="#L-107"><span class="linenos">107</span></a>    <span class="nd">@cached_property</span>
-</span><span id="L-108"><a href="#L-108"><span class="linenos">108</span></a>    <span class="k">def</span> <span class="nf">ast</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span>
-</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The abstract syntax tree of the cell without graphics.&quot;&quot;&quot;</span>
-</span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a>        <span class="n">ast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">ast_in_area</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">,</span> <span class="n">with_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="L-111"><a href="#L-111"><span class="linenos">111</span></a>                                            <span class="n">ignore_xpos</span><span class="o">=</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_left_aligned</span><span class="p">,</span>
-</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a>                                            <span class="n">with_bits</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_notes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="L-113"><a href="#L-113"><span class="linenos">113</span></a>        <span class="n">ast</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cell&quot;</span>
-</span><span id="L-114"><a href="#L-114"><span class="linenos">114</span></a>        <span class="k">return</span> <span class="n">ast</span>
-</span><span id="L-115"><a href="#L-115"><span class="linenos">115</span></a>
-</span><span id="L-116"><a href="#L-116"><span class="linenos">116</span></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="L-117"><a href="#L-117"><span class="linenos">117</span></a>        <span class="n">positions</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
-</span><span id="L-118"><a href="#L-118"><span class="linenos">118</span></a>        <span class="n">borders</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-</span><span id="L-119"><a href="#L-119"><span class="linenos">119</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">l</span><span class="p">:</span> <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;[&quot;</span>
-</span><span id="L-120"><a href="#L-120"><span class="linenos">120</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">b</span><span class="p">:</span> <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;_&quot;</span>
-</span><span id="L-121"><a href="#L-121"><span class="linenos">121</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">t</span><span class="p">:</span> <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;^&quot;</span>
-</span><span id="L-122"><a href="#L-122"><span class="linenos">122</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">r</span><span class="p">:</span> <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;]&quot;</span>
-</span><span id="L-123"><a href="#L-123"><span class="linenos">123</span></a>        <span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;CellH&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span> <span class="k">else</span> <span class="s2">&quot;Cell&quot;</span>
-</span><span id="L-124"><a href="#L-124"><span class="linenos">124</span></a>        <span class="k">return</span> <span class="n">start</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">positions</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">borders</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos"> 10</span></a>
+</span><span id="L-11"><a href="#L-11"><span class="linenos"> 11</span></a><span class="nd">@dataclass</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos"> 12</span></a><span class="k">class</span> <span class="nc">Borders</span><span class="p">:</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos"> 13</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The four borders of a `Cell`&quot;&quot;&quot;</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos"> 14</span></a>
+</span><span id="L-15"><a href="#L-15"><span class="linenos"> 15</span></a>    <span class="n">left</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos"> 16</span></a>    <span class="n">bottom</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos"> 17</span></a>    <span class="n">right</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos"> 18</span></a>    <span class="n">top</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos"> 19</span></a>
+</span><span id="L-20"><a href="#L-20"><span class="linenos"> 20</span></a>
+</span><span id="L-21"><a href="#L-21"><span class="linenos"> 21</span></a><span class="k">class</span> <span class="nc">Cell</span><span class="p">:</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos"> 22</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">bbox</span><span class="p">:</span> <span class="n">Rectangle</span><span class="p">,</span> <span class="n">borders</span><span class="p">:</span> <span class="n">Borders</span><span class="p">,</span> <span class="n">is_simple</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos"> 23</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">table</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos"> 24</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos"> 25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_is_simple</span> <span class="o">=</span> <span class="n">is_simple</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos"> 26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="p">:</span> <span class="n">Borders</span> <span class="o">=</span> <span class="n">borders</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos"> 27</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Borders of the cell&quot;&quot;&quot;</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos"> 28</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Point</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">position</span><span class="p">]</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos"> 29</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Index positions of the cell&quot;&quot;&quot;</span>
+</span><span id="L-30"><a href="#L-30"><span class="linenos"> 30</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="L-31"><a href="#L-31"><span class="linenos"> 31</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is this cell a header?&quot;&quot;&quot;</span>
+</span><span id="L-32"><a href="#L-32"><span class="linenos"> 32</span></a>
+</span><span id="L-33"><a href="#L-33"><span class="linenos"> 33</span></a>    <span class="k">def</span> <span class="nf">_merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+</span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
+</span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
+</span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a>
+</span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a>    <span class="k">def</span> <span class="nf">_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span id="L-40"><a href="#L-40"><span class="linenos"> 40</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">py</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">px</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">py</span><span class="p">,</span> <span class="n">px</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">]</span>
+</span><span id="L-41"><a href="#L-41"><span class="linenos"> 41</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span id="L-42"><a href="#L-42"><span class="linenos"> 42</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
+</span><span id="L-43"><a href="#L-43"><span class="linenos"> 43</span></a>
+</span><span id="L-44"><a href="#L-44"><span class="linenos"> 44</span></a>    <span class="k">def</span> <span class="nf">_expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+</span><span id="L-45"><a href="#L-45"><span class="linenos"> 45</span></a>        <span class="n">ymax</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="L-46"><a href="#L-46"><span class="linenos"> 46</span></a>        <span class="k">for</span> <span class="n">yi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ymax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="L-47"><a href="#L-47"><span class="linenos"> 47</span></a>            <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">xmax</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="L-48"><a href="#L-48"><span class="linenos"> 48</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">yi</span><span class="p">,</span> <span class="n">xi</span><span class="p">))</span>
+</span><span id="L-49"><a href="#L-49"><span class="linenos"> 49</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span id="L-50"><a href="#L-50"><span class="linenos"> 50</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
+</span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a>
+</span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a>    <span class="k">def</span> <span class="nf">_invalidate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a>        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cached_property</span><span class="p">):</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a>                <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a>
+</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a>    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal position of the cell.&quot;&quot;&quot;</span>
+</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a>
+</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical position of the cell.&quot;&quot;&quot;</span>
+</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a>
+</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a>    <span class="k">def</span> <span class="nf">xspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal span of the cell.&quot;&quot;&quot;</span>
+</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a>
+</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a>    <span class="k">def</span> <span class="nf">yspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical span of the cell.&quot;&quot;&quot;</span>
+</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a>
+</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a>    <span class="k">def</span> <span class="nf">rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The rotation of the cell text.&quot;&quot;&quot;</span>
+</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a>            <span class="k">return</span> <span class="mi">0</span>
+</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rotation</span>
+</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a>
+</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Rectangle</span><span class="p">:</span>
+</span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The tight bounding box of this cell.&quot;&quot;&quot;</span>
+</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a>        <span class="k">return</span> <span class="n">Rectangle</span><span class="p">(</span>
+</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a>            <span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>            <span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a>            <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a>            <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>        <span class="p">)</span>
+</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>
+</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a>    <span class="k">def</span> <span class="nf">lines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">CharLine</span><span class="p">]:</span>
+</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The character lines in this cell.&quot;&quot;&quot;</span>
+</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">charlines_in_area</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
+</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>
+</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>    <span class="k">def</span> <span class="nf">content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The concatenated text content of the table cell.&quot;&quot;&quot;</span>
+</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">char</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">chars</span><span class="p">)</span>
+</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a>
+</span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a>    <span class="k">def</span> <span class="nf">is_left_aligned</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is the text in the cell left aligned?&quot;&quot;&quot;</span>
+</span><span id="L-107"><a href="#L-107"><span class="linenos">107</span></a>        <span class="n">x_em</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">_spacing</span><span class="p">[</span><span class="s2">&quot;x_em&quot;</span><span class="p">]</span>
+</span><span id="L-108"><a href="#L-108"><span class="linenos">108</span></a>        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+</span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a>            <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">x_em</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">):</span>
+</span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a>                <span class="k">return</span> <span class="kc">True</span>
+</span><span id="L-111"><a href="#L-111"><span class="linenos">111</span></a>        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a>
+</span><span id="L-113"><a href="#L-113"><span class="linenos">113</span></a>    <span class="nd">@cached_property</span>
+</span><span id="L-114"><a href="#L-114"><span class="linenos">114</span></a>    <span class="k">def</span> <span class="nf">ast</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span>
+</span><span id="L-115"><a href="#L-115"><span class="linenos">115</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The abstract syntax tree of the cell without graphics.&quot;&quot;&quot;</span>
+</span><span id="L-116"><a href="#L-116"><span class="linenos">116</span></a>        <span class="n">ast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">ast_in_area</span><span class="p">(</span>
+</span><span id="L-117"><a href="#L-117"><span class="linenos">117</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">,</span> <span class="n">with_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignore_xpos</span><span class="o">=</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_left_aligned</span><span class="p">,</span> <span class="n">with_bits</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_notes</span><span class="o">=</span><span class="kc">False</span>
+</span><span id="L-118"><a href="#L-118"><span class="linenos">118</span></a>        <span class="p">)</span>
+</span><span id="L-119"><a href="#L-119"><span class="linenos">119</span></a>        <span class="n">ast</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cell&quot;</span>
+</span><span id="L-120"><a href="#L-120"><span class="linenos">120</span></a>        <span class="k">return</span> <span class="n">ast</span>
+</span><span id="L-121"><a href="#L-121"><span class="linenos">121</span></a>
+</span><span id="L-122"><a href="#L-122"><span class="linenos">122</span></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="L-123"><a href="#L-123"><span class="linenos">123</span></a>        <span class="n">positions</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
+</span><span id="L-124"><a href="#L-124"><span class="linenos">124</span></a>        <span class="n">borders</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span id="L-125"><a href="#L-125"><span class="linenos">125</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+</span><span id="L-126"><a href="#L-126"><span class="linenos">126</span></a>            <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;[&quot;</span>
+</span><span id="L-127"><a href="#L-127"><span class="linenos">127</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="o">.</span><span class="n">bottom</span><span class="p">:</span>
+</span><span id="L-128"><a href="#L-128"><span class="linenos">128</span></a>            <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;_&quot;</span>
+</span><span id="L-129"><a href="#L-129"><span class="linenos">129</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="o">.</span><span class="n">top</span><span class="p">:</span>
+</span><span id="L-130"><a href="#L-130"><span class="linenos">130</span></a>            <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;^&quot;</span>
+</span><span id="L-131"><a href="#L-131"><span class="linenos">131</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+</span><span id="L-132"><a href="#L-132"><span class="linenos">132</span></a>            <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;]&quot;</span>
+</span><span id="L-133"><a href="#L-133"><span class="linenos">133</span></a>        <span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;CellH&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span> <span class="k">else</span> <span class="s2">&quot;Cell&quot;</span>
+</span><span id="L-134"><a href="#L-134"><span class="linenos">134</span></a>        <span class="k">return</span> <span class="n">start</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">positions</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">borders</span><span class="si">}</span><span class="s2">&quot;</span>
 </span></pre></div>
 
 
             </section>
-                <section id="TableCell">
-                            <input id="TableCell-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                <section id="Borders">
+                            <input id="Borders-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+                    <div class="decorator">@dataclass</div>
+
+    <span class="def">class</span>
+    <span class="name">Borders</span>:
+
+                <label class="view-source-button" for="Borders-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Borders"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Borders-12"><a href="#Borders-12"><span class="linenos">12</span></a><span class="nd">@dataclass</span>
+</span><span id="Borders-13"><a href="#Borders-13"><span class="linenos">13</span></a><span class="k">class</span> <span class="nc">Borders</span><span class="p">:</span>
+</span><span id="Borders-14"><a href="#Borders-14"><span class="linenos">14</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The four borders of a `Cell`&quot;&quot;&quot;</span>
+</span><span id="Borders-15"><a href="#Borders-15"><span class="linenos">15</span></a>
+</span><span id="Borders-16"><a href="#Borders-16"><span class="linenos">16</span></a>    <span class="n">left</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="Borders-17"><a href="#Borders-17"><span class="linenos">17</span></a>    <span class="n">bottom</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="Borders-18"><a href="#Borders-18"><span class="linenos">18</span></a>    <span class="n">right</span><span class="p">:</span> <span class="nb">bool</span>
+</span><span id="Borders-19"><a href="#Borders-19"><span class="linenos">19</span></a>    <span class="n">top</span><span class="p">:</span> <span class="nb">bool</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>The four borders of a <code><a href="#Cell">Cell</a></code></p>
+</div>
+
+
+                            <div id="Borders.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">Borders</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">left</span><span class="p">:</span> <span class="nb">bool</span>, </span><span class="param"><span class="n">bottom</span><span class="p">:</span> <span class="nb">bool</span>, </span><span class="param"><span class="n">right</span><span class="p">:</span> <span class="nb">bool</span>, </span><span class="param"><span class="n">top</span><span class="p">:</span> <span class="nb">bool</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Borders.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="Borders.left" class="classattr">
+                                <div class="attr variable">
+            <span class="name">left</span><span class="annotation">: bool</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Borders.left"></a>
+    
+    
+
+                            </div>
+                            <div id="Borders.bottom" class="classattr">
+                                <div class="attr variable">
+            <span class="name">bottom</span><span class="annotation">: bool</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Borders.bottom"></a>
+    
+    
+
+                            </div>
+                            <div id="Borders.right" class="classattr">
+                                <div class="attr variable">
+            <span class="name">right</span><span class="annotation">: bool</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Borders.right"></a>
+    
+    
+
+                            </div>
+                            <div id="Borders.top" class="classattr">
+                                <div class="attr variable">
+            <span class="name">top</span><span class="annotation">: bool</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Borders.top"></a>
+    
+    
+
+                            </div>
+                </section>
+                <section id="Cell">
+                            <input id="Cell-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr class">
             
     <span class="def">class</span>
-    <span class="name">TableCell</span>:
+    <span class="name">Cell</span>:
 
-                <label class="view-source-button" for="TableCell-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell-11"><a href="#TableCell-11"><span class="linenos"> 11</span></a><span class="k">class</span> <span class="nc">TableCell</span><span class="p">:</span>
-</span><span id="TableCell-12"><a href="#TableCell-12"><span class="linenos"> 12</span></a>    <span class="k">class</span> <span class="nc">Borders</span><span class="p">:</span>
-</span><span id="TableCell-13"><a href="#TableCell-13"><span class="linenos"> 13</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The four borders of a Cell&quot;&quot;&quot;</span>
-</span><span id="TableCell-14"><a href="#TableCell-14"><span class="linenos"> 14</span></a>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-</span><span id="TableCell-15"><a href="#TableCell-15"><span class="linenos"> 15</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">l</span> <span class="o">=</span> <span class="n">l</span>
-</span><span id="TableCell-16"><a href="#TableCell-16"><span class="linenos"> 16</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-</span><span id="TableCell-17"><a href="#TableCell-17"><span class="linenos"> 17</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-</span><span id="TableCell-18"><a href="#TableCell-18"><span class="linenos"> 18</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span>
-</span><span id="TableCell-19"><a href="#TableCell-19"><span class="linenos"> 19</span></a>
-</span><span id="TableCell-20"><a href="#TableCell-20"><span class="linenos"> 20</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">borders</span><span class="p">,</span> <span class="n">is_simple</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="TableCell-21"><a href="#TableCell-21"><span class="linenos"> 21</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">table</span>
-</span><span id="TableCell-22"><a href="#TableCell-22"><span class="linenos"> 22</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
-</span><span id="TableCell-23"><a href="#TableCell-23"><span class="linenos"> 23</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">borders</span>
-</span><span id="TableCell-24"><a href="#TableCell-24"><span class="linenos"> 24</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Borders of the cell&quot;&quot;&quot;</span>
-</span><span id="TableCell-25"><a href="#TableCell-25"><span class="linenos"> 25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[</span><span class="n">position</span><span class="p">]</span>
-</span><span id="TableCell-26"><a href="#TableCell-26"><span class="linenos"> 26</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Index positions of the cell&quot;&quot;&quot;</span>
-</span><span id="TableCell-27"><a href="#TableCell-27"><span class="linenos"> 27</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="TableCell-28"><a href="#TableCell-28"><span class="linenos"> 28</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is this cell a header?&quot;&quot;&quot;</span>
-</span><span id="TableCell-29"><a href="#TableCell-29"><span class="linenos"> 29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_is_simple</span> <span class="o">=</span> <span class="n">is_simple</span>
-</span><span id="TableCell-30"><a href="#TableCell-30"><span class="linenos"> 30</span></a>
-</span><span id="TableCell-31"><a href="#TableCell-31"><span class="linenos"> 31</span></a>    <span class="k">def</span> <span class="nf">_merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-</span><span id="TableCell-32"><a href="#TableCell-32"><span class="linenos"> 32</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
-</span><span id="TableCell-33"><a href="#TableCell-33"><span class="linenos"> 33</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-</span><span id="TableCell-34"><a href="#TableCell-34"><span class="linenos"> 34</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
-</span><span id="TableCell-35"><a href="#TableCell-35"><span class="linenos"> 35</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
-</span><span id="TableCell-36"><a href="#TableCell-36"><span class="linenos"> 36</span></a>
-</span><span id="TableCell-37"><a href="#TableCell-37"><span class="linenos"> 37</span></a>    <span class="k">def</span> <span class="nf">_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-</span><span id="TableCell-38"><a href="#TableCell-38"><span class="linenos"> 38</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">py</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">px</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">py</span><span class="p">,</span> <span class="n">px</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">]</span>
-</span><span id="TableCell-39"><a href="#TableCell-39"><span class="linenos"> 39</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-</span><span id="TableCell-40"><a href="#TableCell-40"><span class="linenos"> 40</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
-</span><span id="TableCell-41"><a href="#TableCell-41"><span class="linenos"> 41</span></a>
-</span><span id="TableCell-42"><a href="#TableCell-42"><span class="linenos"> 42</span></a>    <span class="k">def</span> <span class="nf">_expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
-</span><span id="TableCell-43"><a href="#TableCell-43"><span class="linenos"> 43</span></a>        <span class="n">ymax</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span><span id="TableCell-44"><a href="#TableCell-44"><span class="linenos"> 44</span></a>        <span class="k">for</span> <span class="n">yi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ymax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="TableCell-45"><a href="#TableCell-45"><span class="linenos"> 45</span></a>            <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">xmax</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="TableCell-46"><a href="#TableCell-46"><span class="linenos"> 46</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">yi</span><span class="p">,</span> <span class="n">xi</span><span class="p">))</span>
-</span><span id="TableCell-47"><a href="#TableCell-47"><span class="linenos"> 47</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-</span><span id="TableCell-48"><a href="#TableCell-48"><span class="linenos"> 48</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
-</span><span id="TableCell-49"><a href="#TableCell-49"><span class="linenos"> 49</span></a>
-</span><span id="TableCell-50"><a href="#TableCell-50"><span class="linenos"> 50</span></a>    <span class="k">def</span> <span class="nf">_invalidate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="TableCell-51"><a href="#TableCell-51"><span class="linenos"> 51</span></a>        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="TableCell-52"><a href="#TableCell-52"><span class="linenos"> 52</span></a>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cached_property</span><span class="p">):</span>
-</span><span id="TableCell-53"><a href="#TableCell-53"><span class="linenos"> 53</span></a>                <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-</span><span id="TableCell-54"><a href="#TableCell-54"><span class="linenos"> 54</span></a>
-</span><span id="TableCell-55"><a href="#TableCell-55"><span class="linenos"> 55</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-56"><a href="#TableCell-56"><span class="linenos"> 56</span></a>    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell-57"><a href="#TableCell-57"><span class="linenos"> 57</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal position of the cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell-58"><a href="#TableCell-58"><span class="linenos"> 58</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-</span><span id="TableCell-59"><a href="#TableCell-59"><span class="linenos"> 59</span></a>
-</span><span id="TableCell-60"><a href="#TableCell-60"><span class="linenos"> 60</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-61"><a href="#TableCell-61"><span class="linenos"> 61</span></a>    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell-62"><a href="#TableCell-62"><span class="linenos"> 62</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical position of the cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell-63"><a href="#TableCell-63"><span class="linenos"> 63</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="TableCell-64"><a href="#TableCell-64"><span class="linenos"> 64</span></a>
-</span><span id="TableCell-65"><a href="#TableCell-65"><span class="linenos"> 65</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-66"><a href="#TableCell-66"><span class="linenos"> 66</span></a>    <span class="k">def</span> <span class="nf">xspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell-67"><a href="#TableCell-67"><span class="linenos"> 67</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal span of the cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell-68"><a href="#TableCell-68"><span class="linenos"> 68</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span id="TableCell-69"><a href="#TableCell-69"><span class="linenos"> 69</span></a>
-</span><span id="TableCell-70"><a href="#TableCell-70"><span class="linenos"> 70</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-71"><a href="#TableCell-71"><span class="linenos"> 71</span></a>    <span class="k">def</span> <span class="nf">yspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell-72"><a href="#TableCell-72"><span class="linenos"> 72</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical span of the cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell-73"><a href="#TableCell-73"><span class="linenos"> 73</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span id="TableCell-74"><a href="#TableCell-74"><span class="linenos"> 74</span></a>
-</span><span id="TableCell-75"><a href="#TableCell-75"><span class="linenos"> 75</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-76"><a href="#TableCell-76"><span class="linenos"> 76</span></a>    <span class="k">def</span> <span class="nf">rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell-77"><a href="#TableCell-77"><span class="linenos"> 77</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The rotation of the cell text.&quot;&quot;&quot;</span>
-</span><span id="TableCell-78"><a href="#TableCell-78"><span class="linenos"> 78</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
-</span><span id="TableCell-79"><a href="#TableCell-79"><span class="linenos"> 79</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rotation</span>
-</span><span id="TableCell-80"><a href="#TableCell-80"><span class="linenos"> 80</span></a>
-</span><span id="TableCell-81"><a href="#TableCell-81"><span class="linenos"> 81</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-82"><a href="#TableCell-82"><span class="linenos"> 82</span></a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Rectangle</span><span class="p">:</span>
-</span><span id="TableCell-83"><a href="#TableCell-83"><span class="linenos"> 83</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The tight bounding box of this cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell-84"><a href="#TableCell-84"><span class="linenos"> 84</span></a>        <span class="k">return</span> <span class="n">Rectangle</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span>   <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
-</span><span id="TableCell-85"><a href="#TableCell-85"><span class="linenos"> 85</span></a>                         <span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
-</span><span id="TableCell-86"><a href="#TableCell-86"><span class="linenos"> 86</span></a>                         <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span>  <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
-</span><span id="TableCell-87"><a href="#TableCell-87"><span class="linenos"> 87</span></a>                         <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span>    <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">))</span>
-</span><span id="TableCell-88"><a href="#TableCell-88"><span class="linenos"> 88</span></a>
-</span><span id="TableCell-89"><a href="#TableCell-89"><span class="linenos"> 89</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-90"><a href="#TableCell-90"><span class="linenos"> 90</span></a>    <span class="k">def</span> <span class="nf">lines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">CharLine</span><span class="p">]:</span>
-</span><span id="TableCell-91"><a href="#TableCell-91"><span class="linenos"> 91</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The character lines in this cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell-92"><a href="#TableCell-92"><span class="linenos"> 92</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">charlines_in_area</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
-</span><span id="TableCell-93"><a href="#TableCell-93"><span class="linenos"> 93</span></a>
-</span><span id="TableCell-94"><a href="#TableCell-94"><span class="linenos"> 94</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-95"><a href="#TableCell-95"><span class="linenos"> 95</span></a>    <span class="k">def</span> <span class="nf">content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="TableCell-96"><a href="#TableCell-96"><span class="linenos"> 96</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The concatenated text content of the table cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell-97"><a href="#TableCell-97"><span class="linenos"> 97</span></a>        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">char</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">chars</span><span class="p">)</span>
-</span><span id="TableCell-98"><a href="#TableCell-98"><span class="linenos"> 98</span></a>
-</span><span id="TableCell-99"><a href="#TableCell-99"><span class="linenos"> 99</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-100"><a href="#TableCell-100"><span class="linenos">100</span></a>    <span class="k">def</span> <span class="nf">is_left_aligned</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="TableCell-101"><a href="#TableCell-101"><span class="linenos">101</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is the text in the cell left aligned?&quot;&quot;&quot;</span>
-</span><span id="TableCell-102"><a href="#TableCell-102"><span class="linenos">102</span></a>        <span class="n">x_em</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">_spacing</span><span class="p">[</span><span class="s2">&quot;x_em&quot;</span><span class="p">]</span>
-</span><span id="TableCell-103"><a href="#TableCell-103"><span class="linenos">103</span></a>        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
-</span><span id="TableCell-104"><a href="#TableCell-104"><span class="linenos">104</span></a>            <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">x_em</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">):</span>
-</span><span id="TableCell-105"><a href="#TableCell-105"><span class="linenos">105</span></a>                <span class="k">return</span> <span class="kc">True</span>
-</span><span id="TableCell-106"><a href="#TableCell-106"><span class="linenos">106</span></a>        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="TableCell-107"><a href="#TableCell-107"><span class="linenos">107</span></a>
-</span><span id="TableCell-108"><a href="#TableCell-108"><span class="linenos">108</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell-109"><a href="#TableCell-109"><span class="linenos">109</span></a>    <span class="k">def</span> <span class="nf">ast</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span>
-</span><span id="TableCell-110"><a href="#TableCell-110"><span class="linenos">110</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The abstract syntax tree of the cell without graphics.&quot;&quot;&quot;</span>
-</span><span id="TableCell-111"><a href="#TableCell-111"><span class="linenos">111</span></a>        <span class="n">ast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">ast_in_area</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">,</span> <span class="n">with_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="TableCell-112"><a href="#TableCell-112"><span class="linenos">112</span></a>                                            <span class="n">ignore_xpos</span><span class="o">=</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_left_aligned</span><span class="p">,</span>
-</span><span id="TableCell-113"><a href="#TableCell-113"><span class="linenos">113</span></a>                                            <span class="n">with_bits</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_notes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="TableCell-114"><a href="#TableCell-114"><span class="linenos">114</span></a>        <span class="n">ast</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cell&quot;</span>
-</span><span id="TableCell-115"><a href="#TableCell-115"><span class="linenos">115</span></a>        <span class="k">return</span> <span class="n">ast</span>
-</span><span id="TableCell-116"><a href="#TableCell-116"><span class="linenos">116</span></a>
-</span><span id="TableCell-117"><a href="#TableCell-117"><span class="linenos">117</span></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="TableCell-118"><a href="#TableCell-118"><span class="linenos">118</span></a>        <span class="n">positions</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
-</span><span id="TableCell-119"><a href="#TableCell-119"><span class="linenos">119</span></a>        <span class="n">borders</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-</span><span id="TableCell-120"><a href="#TableCell-120"><span class="linenos">120</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">l</span><span class="p">:</span> <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;[&quot;</span>
-</span><span id="TableCell-121"><a href="#TableCell-121"><span class="linenos">121</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">b</span><span class="p">:</span> <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;_&quot;</span>
-</span><span id="TableCell-122"><a href="#TableCell-122"><span class="linenos">122</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">t</span><span class="p">:</span> <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;^&quot;</span>
-</span><span id="TableCell-123"><a href="#TableCell-123"><span class="linenos">123</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">r</span><span class="p">:</span> <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;]&quot;</span>
-</span><span id="TableCell-124"><a href="#TableCell-124"><span class="linenos">124</span></a>        <span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;CellH&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span> <span class="k">else</span> <span class="s2">&quot;Cell&quot;</span>
-</span><span id="TableCell-125"><a href="#TableCell-125"><span class="linenos">125</span></a>        <span class="k">return</span> <span class="n">start</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">positions</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">borders</span><span class="si">}</span><span class="s2">&quot;</span>
+    <a class="headerlink" href="#Cell"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell-22"><a href="#Cell-22"><span class="linenos"> 22</span></a><span class="k">class</span> <span class="nc">Cell</span><span class="p">:</span>
+</span><span id="Cell-23"><a href="#Cell-23"><span class="linenos"> 23</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">bbox</span><span class="p">:</span> <span class="n">Rectangle</span><span class="p">,</span> <span class="n">borders</span><span class="p">:</span> <span class="n">Borders</span><span class="p">,</span> <span class="n">is_simple</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="Cell-24"><a href="#Cell-24"><span class="linenos"> 24</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">table</span>
+</span><span id="Cell-25"><a href="#Cell-25"><span class="linenos"> 25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
+</span><span id="Cell-26"><a href="#Cell-26"><span class="linenos"> 26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_is_simple</span> <span class="o">=</span> <span class="n">is_simple</span>
+</span><span id="Cell-27"><a href="#Cell-27"><span class="linenos"> 27</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="p">:</span> <span class="n">Borders</span> <span class="o">=</span> <span class="n">borders</span>
+</span><span id="Cell-28"><a href="#Cell-28"><span class="linenos"> 28</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Borders of the cell&quot;&quot;&quot;</span>
+</span><span id="Cell-29"><a href="#Cell-29"><span class="linenos"> 29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Point</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">position</span><span class="p">]</span>
+</span><span id="Cell-30"><a href="#Cell-30"><span class="linenos"> 30</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Index positions of the cell&quot;&quot;&quot;</span>
+</span><span id="Cell-31"><a href="#Cell-31"><span class="linenos"> 31</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="Cell-32"><a href="#Cell-32"><span class="linenos"> 32</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is this cell a header?&quot;&quot;&quot;</span>
+</span><span id="Cell-33"><a href="#Cell-33"><span class="linenos"> 33</span></a>
+</span><span id="Cell-34"><a href="#Cell-34"><span class="linenos"> 34</span></a>    <span class="k">def</span> <span class="nf">_merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+</span><span id="Cell-35"><a href="#Cell-35"><span class="linenos"> 35</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
+</span><span id="Cell-36"><a href="#Cell-36"><span class="linenos"> 36</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span id="Cell-37"><a href="#Cell-37"><span class="linenos"> 37</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
+</span><span id="Cell-38"><a href="#Cell-38"><span class="linenos"> 38</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
+</span><span id="Cell-39"><a href="#Cell-39"><span class="linenos"> 39</span></a>
+</span><span id="Cell-40"><a href="#Cell-40"><span class="linenos"> 40</span></a>    <span class="k">def</span> <span class="nf">_move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span id="Cell-41"><a href="#Cell-41"><span class="linenos"> 41</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">py</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">px</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">py</span><span class="p">,</span> <span class="n">px</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">]</span>
+</span><span id="Cell-42"><a href="#Cell-42"><span class="linenos"> 42</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span id="Cell-43"><a href="#Cell-43"><span class="linenos"> 43</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
+</span><span id="Cell-44"><a href="#Cell-44"><span class="linenos"> 44</span></a>
+</span><span id="Cell-45"><a href="#Cell-45"><span class="linenos"> 45</span></a>    <span class="k">def</span> <span class="nf">_expand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+</span><span id="Cell-46"><a href="#Cell-46"><span class="linenos"> 46</span></a>        <span class="n">ymax</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="Cell-47"><a href="#Cell-47"><span class="linenos"> 47</span></a>        <span class="k">for</span> <span class="n">yi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ymax</span><span class="p">,</span> <span class="n">ymax</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="Cell-48"><a href="#Cell-48"><span class="linenos"> 48</span></a>            <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">xmax</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="Cell-49"><a href="#Cell-49"><span class="linenos"> 49</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">yi</span><span class="p">,</span> <span class="n">xi</span><span class="p">))</span>
+</span><span id="Cell-50"><a href="#Cell-50"><span class="linenos"> 50</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span id="Cell-51"><a href="#Cell-51"><span class="linenos"> 51</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_invalidate</span><span class="p">()</span>
+</span><span id="Cell-52"><a href="#Cell-52"><span class="linenos"> 52</span></a>
+</span><span id="Cell-53"><a href="#Cell-53"><span class="linenos"> 53</span></a>    <span class="k">def</span> <span class="nf">_invalidate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Cell-54"><a href="#Cell-54"><span class="linenos"> 54</span></a>        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="Cell-55"><a href="#Cell-55"><span class="linenos"> 55</span></a>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">cached_property</span><span class="p">):</span>
+</span><span id="Cell-56"><a href="#Cell-56"><span class="linenos"> 56</span></a>                <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="Cell-57"><a href="#Cell-57"><span class="linenos"> 57</span></a>
+</span><span id="Cell-58"><a href="#Cell-58"><span class="linenos"> 58</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-59"><a href="#Cell-59"><span class="linenos"> 59</span></a>    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell-60"><a href="#Cell-60"><span class="linenos"> 60</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal position of the cell.&quot;&quot;&quot;</span>
+</span><span id="Cell-61"><a href="#Cell-61"><span class="linenos"> 61</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="Cell-62"><a href="#Cell-62"><span class="linenos"> 62</span></a>
+</span><span id="Cell-63"><a href="#Cell-63"><span class="linenos"> 63</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-64"><a href="#Cell-64"><span class="linenos"> 64</span></a>    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell-65"><a href="#Cell-65"><span class="linenos"> 65</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical position of the cell.&quot;&quot;&quot;</span>
+</span><span id="Cell-66"><a href="#Cell-66"><span class="linenos"> 66</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="Cell-67"><a href="#Cell-67"><span class="linenos"> 67</span></a>
+</span><span id="Cell-68"><a href="#Cell-68"><span class="linenos"> 68</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-69"><a href="#Cell-69"><span class="linenos"> 69</span></a>    <span class="k">def</span> <span class="nf">xspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell-70"><a href="#Cell-70"><span class="linenos"> 70</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal span of the cell.&quot;&quot;&quot;</span>
+</span><span id="Cell-71"><a href="#Cell-71"><span class="linenos"> 71</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="Cell-72"><a href="#Cell-72"><span class="linenos"> 72</span></a>
+</span><span id="Cell-73"><a href="#Cell-73"><span class="linenos"> 73</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-74"><a href="#Cell-74"><span class="linenos"> 74</span></a>    <span class="k">def</span> <span class="nf">yspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell-75"><a href="#Cell-75"><span class="linenos"> 75</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical span of the cell.&quot;&quot;&quot;</span>
+</span><span id="Cell-76"><a href="#Cell-76"><span class="linenos"> 76</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="Cell-77"><a href="#Cell-77"><span class="linenos"> 77</span></a>
+</span><span id="Cell-78"><a href="#Cell-78"><span class="linenos"> 78</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-79"><a href="#Cell-79"><span class="linenos"> 79</span></a>    <span class="k">def</span> <span class="nf">rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell-80"><a href="#Cell-80"><span class="linenos"> 80</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The rotation of the cell text.&quot;&quot;&quot;</span>
+</span><span id="Cell-81"><a href="#Cell-81"><span class="linenos"> 81</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+</span><span id="Cell-82"><a href="#Cell-82"><span class="linenos"> 82</span></a>            <span class="k">return</span> <span class="mi">0</span>
+</span><span id="Cell-83"><a href="#Cell-83"><span class="linenos"> 83</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rotation</span>
+</span><span id="Cell-84"><a href="#Cell-84"><span class="linenos"> 84</span></a>
+</span><span id="Cell-85"><a href="#Cell-85"><span class="linenos"> 85</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-86"><a href="#Cell-86"><span class="linenos"> 86</span></a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Rectangle</span><span class="p">:</span>
+</span><span id="Cell-87"><a href="#Cell-87"><span class="linenos"> 87</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The tight bounding box of this cell.&quot;&quot;&quot;</span>
+</span><span id="Cell-88"><a href="#Cell-88"><span class="linenos"> 88</span></a>        <span class="k">return</span> <span class="n">Rectangle</span><span class="p">(</span>
+</span><span id="Cell-89"><a href="#Cell-89"><span class="linenos"> 89</span></a>            <span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="Cell-90"><a href="#Cell-90"><span class="linenos"> 90</span></a>            <span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="Cell-91"><a href="#Cell-91"><span class="linenos"> 91</span></a>            <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="Cell-92"><a href="#Cell-92"><span class="linenos"> 92</span></a>            <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="Cell-93"><a href="#Cell-93"><span class="linenos"> 93</span></a>        <span class="p">)</span>
+</span><span id="Cell-94"><a href="#Cell-94"><span class="linenos"> 94</span></a>
+</span><span id="Cell-95"><a href="#Cell-95"><span class="linenos"> 95</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-96"><a href="#Cell-96"><span class="linenos"> 96</span></a>    <span class="k">def</span> <span class="nf">lines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">CharLine</span><span class="p">]:</span>
+</span><span id="Cell-97"><a href="#Cell-97"><span class="linenos"> 97</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The character lines in this cell.&quot;&quot;&quot;</span>
+</span><span id="Cell-98"><a href="#Cell-98"><span class="linenos"> 98</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">charlines_in_area</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
+</span><span id="Cell-99"><a href="#Cell-99"><span class="linenos"> 99</span></a>
+</span><span id="Cell-100"><a href="#Cell-100"><span class="linenos">100</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-101"><a href="#Cell-101"><span class="linenos">101</span></a>    <span class="k">def</span> <span class="nf">content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Cell-102"><a href="#Cell-102"><span class="linenos">102</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The concatenated text content of the table cell.&quot;&quot;&quot;</span>
+</span><span id="Cell-103"><a href="#Cell-103"><span class="linenos">103</span></a>        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">char</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">chars</span><span class="p">)</span>
+</span><span id="Cell-104"><a href="#Cell-104"><span class="linenos">104</span></a>
+</span><span id="Cell-105"><a href="#Cell-105"><span class="linenos">105</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-106"><a href="#Cell-106"><span class="linenos">106</span></a>    <span class="k">def</span> <span class="nf">is_left_aligned</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="Cell-107"><a href="#Cell-107"><span class="linenos">107</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is the text in the cell left aligned?&quot;&quot;&quot;</span>
+</span><span id="Cell-108"><a href="#Cell-108"><span class="linenos">108</span></a>        <span class="n">x_em</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">_spacing</span><span class="p">[</span><span class="s2">&quot;x_em&quot;</span><span class="p">]</span>
+</span><span id="Cell-109"><a href="#Cell-109"><span class="linenos">109</span></a>        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+</span><span id="Cell-110"><a href="#Cell-110"><span class="linenos">110</span></a>            <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">x_em</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">):</span>
+</span><span id="Cell-111"><a href="#Cell-111"><span class="linenos">111</span></a>                <span class="k">return</span> <span class="kc">True</span>
+</span><span id="Cell-112"><a href="#Cell-112"><span class="linenos">112</span></a>        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="Cell-113"><a href="#Cell-113"><span class="linenos">113</span></a>
+</span><span id="Cell-114"><a href="#Cell-114"><span class="linenos">114</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell-115"><a href="#Cell-115"><span class="linenos">115</span></a>    <span class="k">def</span> <span class="nf">ast</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span>
+</span><span id="Cell-116"><a href="#Cell-116"><span class="linenos">116</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The abstract syntax tree of the cell without graphics.&quot;&quot;&quot;</span>
+</span><span id="Cell-117"><a href="#Cell-117"><span class="linenos">117</span></a>        <span class="n">ast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">ast_in_area</span><span class="p">(</span>
+</span><span id="Cell-118"><a href="#Cell-118"><span class="linenos">118</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">,</span> <span class="n">with_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignore_xpos</span><span class="o">=</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_left_aligned</span><span class="p">,</span> <span class="n">with_bits</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_notes</span><span class="o">=</span><span class="kc">False</span>
+</span><span id="Cell-119"><a href="#Cell-119"><span class="linenos">119</span></a>        <span class="p">)</span>
+</span><span id="Cell-120"><a href="#Cell-120"><span class="linenos">120</span></a>        <span class="n">ast</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cell&quot;</span>
+</span><span id="Cell-121"><a href="#Cell-121"><span class="linenos">121</span></a>        <span class="k">return</span> <span class="n">ast</span>
+</span><span id="Cell-122"><a href="#Cell-122"><span class="linenos">122</span></a>
+</span><span id="Cell-123"><a href="#Cell-123"><span class="linenos">123</span></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Cell-124"><a href="#Cell-124"><span class="linenos">124</span></a>        <span class="n">positions</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span>
+</span><span id="Cell-125"><a href="#Cell-125"><span class="linenos">125</span></a>        <span class="n">borders</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span id="Cell-126"><a href="#Cell-126"><span class="linenos">126</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+</span><span id="Cell-127"><a href="#Cell-127"><span class="linenos">127</span></a>            <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;[&quot;</span>
+</span><span id="Cell-128"><a href="#Cell-128"><span class="linenos">128</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="o">.</span><span class="n">bottom</span><span class="p">:</span>
+</span><span id="Cell-129"><a href="#Cell-129"><span class="linenos">129</span></a>            <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;_&quot;</span>
+</span><span id="Cell-130"><a href="#Cell-130"><span class="linenos">130</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="o">.</span><span class="n">top</span><span class="p">:</span>
+</span><span id="Cell-131"><a href="#Cell-131"><span class="linenos">131</span></a>            <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;^&quot;</span>
+</span><span id="Cell-132"><a href="#Cell-132"><span class="linenos">132</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+</span><span id="Cell-133"><a href="#Cell-133"><span class="linenos">133</span></a>            <span class="n">borders</span> <span class="o">+=</span> <span class="s2">&quot;]&quot;</span>
+</span><span id="Cell-134"><a href="#Cell-134"><span class="linenos">134</span></a>        <span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;CellH&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span> <span class="k">else</span> <span class="s2">&quot;Cell&quot;</span>
+</span><span id="Cell-135"><a href="#Cell-135"><span class="linenos">135</span></a>        <span class="k">return</span> <span class="n">start</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">positions</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">borders</span><span class="si">}</span><span class="s2">&quot;</span>
 </span></pre></div>
 
 
     
 
-                            <div id="TableCell.__init__" class="classattr">
-                                        <input id="TableCell.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.__init__" class="classattr">
+                                        <input id="Cell.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
             
-        <span class="name">TableCell</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">table</span>, </span><span class="param"><span class="n">position</span>, </span><span class="param"><span class="n">bbox</span>, </span><span class="param"><span class="n">borders</span>, </span><span class="param"><span class="n">is_simple</span><span class="o">=</span><span class="kc">False</span></span>)</span>
+        <span class="name">Cell</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">table</span>,</span><span class="param">	<span class="n">position</span><span class="p">:</span> <span class="n"><a href="../utils.html#Point">modm_data.utils.Point</a></span>,</span><span class="param">	<span class="n">bbox</span><span class="p">:</span> <span class="n"><a href="../utils.html#Rectangle">modm_data.utils.Rectangle</a></span>,</span><span class="param">	<span class="n">borders</span><span class="p">:</span> <span class="n"><a href="#Borders">Borders</a></span>,</span><span class="param">	<span class="n">is_simple</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></span>)</span>
 
-                <label class="view-source-button" for="TableCell.__init__-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.__init__-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.__init__-20"><a href="#TableCell.__init__-20"><span class="linenos">20</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">borders</span><span class="p">,</span> <span class="n">is_simple</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="TableCell.__init__-21"><a href="#TableCell.__init__-21"><span class="linenos">21</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">table</span>
-</span><span id="TableCell.__init__-22"><a href="#TableCell.__init__-22"><span class="linenos">22</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
-</span><span id="TableCell.__init__-23"><a href="#TableCell.__init__-23"><span class="linenos">23</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">borders</span>
-</span><span id="TableCell.__init__-24"><a href="#TableCell.__init__-24"><span class="linenos">24</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Borders of the cell&quot;&quot;&quot;</span>
-</span><span id="TableCell.__init__-25"><a href="#TableCell.__init__-25"><span class="linenos">25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="p">[</span><span class="n">position</span><span class="p">]</span>
-</span><span id="TableCell.__init__-26"><a href="#TableCell.__init__-26"><span class="linenos">26</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Index positions of the cell&quot;&quot;&quot;</span>
-</span><span id="TableCell.__init__-27"><a href="#TableCell.__init__-27"><span class="linenos">27</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="TableCell.__init__-28"><a href="#TableCell.__init__-28"><span class="linenos">28</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is this cell a header?&quot;&quot;&quot;</span>
-</span><span id="TableCell.__init__-29"><a href="#TableCell.__init__-29"><span class="linenos">29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_is_simple</span> <span class="o">=</span> <span class="n">is_simple</span>
+    <a class="headerlink" href="#Cell.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.__init__-23"><a href="#Cell.__init__-23"><span class="linenos">23</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">position</span><span class="p">:</span> <span class="n">Point</span><span class="p">,</span> <span class="n">bbox</span><span class="p">:</span> <span class="n">Rectangle</span><span class="p">,</span> <span class="n">borders</span><span class="p">:</span> <span class="n">Borders</span><span class="p">,</span> <span class="n">is_simple</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="Cell.__init__-24"><a href="#Cell.__init__-24"><span class="linenos">24</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">table</span>
+</span><span id="Cell.__init__-25"><a href="#Cell.__init__-25"><span class="linenos">25</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span> <span class="o">=</span> <span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
+</span><span id="Cell.__init__-26"><a href="#Cell.__init__-26"><span class="linenos">26</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_is_simple</span> <span class="o">=</span> <span class="n">is_simple</span>
+</span><span id="Cell.__init__-27"><a href="#Cell.__init__-27"><span class="linenos">27</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">borders</span><span class="p">:</span> <span class="n">Borders</span> <span class="o">=</span> <span class="n">borders</span>
+</span><span id="Cell.__init__-28"><a href="#Cell.__init__-28"><span class="linenos">28</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Borders of the cell&quot;&quot;&quot;</span>
+</span><span id="Cell.__init__-29"><a href="#Cell.__init__-29"><span class="linenos">29</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Point</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">position</span><span class="p">]</span>
+</span><span id="Cell.__init__-30"><a href="#Cell.__init__-30"><span class="linenos">30</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Index positions of the cell&quot;&quot;&quot;</span>
+</span><span id="Cell.__init__-31"><a href="#Cell.__init__-31"><span class="linenos">31</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">is_header</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="Cell.__init__-32"><a href="#Cell.__init__-32"><span class="linenos">32</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is this cell a header?&quot;&quot;&quot;</span>
 </span></pre></div>
 
 
     
 
                             </div>
-                            <div id="TableCell.b" class="classattr">
+                            <div id="Cell.borders" class="classattr">
                                 <div class="attr variable">
-            <span class="name">b</span>
+            <span class="name">borders</span><span class="annotation">: <a href="#Borders">Borders</a></span>
 
         
     </div>
-    <a class="headerlink" href="#TableCell.b"></a>
+    <a class="headerlink" href="#Cell.borders"></a>
     
             <div class="docstring"><p>Borders of the cell</p>
 </div>
 
 
                             </div>
-                            <div id="TableCell.positions" class="classattr">
+                            <div id="Cell.positions" class="classattr">
                                 <div class="attr variable">
-            <span class="name">positions</span>
+            <span class="name">positions</span><span class="annotation">: list[<a href="../utils.html#Point">modm_data.utils.Point</a>]</span>
 
         
     </div>
-    <a class="headerlink" href="#TableCell.positions"></a>
+    <a class="headerlink" href="#Cell.positions"></a>
     
             <div class="docstring"><p>Index positions of the cell</p>
 </div>
 
 
                             </div>
-                            <div id="TableCell.is_header" class="classattr">
+                            <div id="Cell.is_header" class="classattr">
                                 <div class="attr variable">
-            <span class="name">is_header</span>
+            <span class="name">is_header</span><span class="annotation">: bool</span>
 
         
     </div>
-    <a class="headerlink" href="#TableCell.is_header"></a>
+    <a class="headerlink" href="#Cell.is_header"></a>
     
             <div class="docstring"><p>Is this cell a header?</p>
 </div>
 
 
                             </div>
-                            <div id="TableCell.x" class="classattr">
-                                        <input id="TableCell.x-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.x" class="classattr">
+                                        <input id="Cell.x-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
             <span class="name">x</span><span class="annotation">: int</span>
 
-                <label class="view-source-button" for="TableCell.x-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.x-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.x"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.x-55"><a href="#TableCell.x-55"><span class="linenos">55</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.x-56"><a href="#TableCell.x-56"><span class="linenos">56</span></a>    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell.x-57"><a href="#TableCell.x-57"><span class="linenos">57</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal position of the cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell.x-58"><a href="#TableCell.x-58"><span class="linenos">58</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <a class="headerlink" href="#Cell.x"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.x-58"><a href="#Cell.x-58"><span class="linenos">58</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.x-59"><a href="#Cell.x-59"><span class="linenos">59</span></a>    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell.x-60"><a href="#Cell.x-60"><span class="linenos">60</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal position of the cell.&quot;&quot;&quot;</span>
+</span><span id="Cell.x-61"><a href="#Cell.x-61"><span class="linenos">61</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 </span></pre></div>
 
 
@@ -481,19 +574,19 @@
 
 
                             </div>
-                            <div id="TableCell.y" class="classattr">
-                                        <input id="TableCell.y-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.y" class="classattr">
+                                        <input id="Cell.y-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
             <span class="name">y</span><span class="annotation">: int</span>
 
-                <label class="view-source-button" for="TableCell.y-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.y-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.y"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.y-60"><a href="#TableCell.y-60"><span class="linenos">60</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.y-61"><a href="#TableCell.y-61"><span class="linenos">61</span></a>    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell.y-62"><a href="#TableCell.y-62"><span class="linenos">62</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical position of the cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell.y-63"><a href="#TableCell.y-63"><span class="linenos">63</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <a class="headerlink" href="#Cell.y"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.y-63"><a href="#Cell.y-63"><span class="linenos">63</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.y-64"><a href="#Cell.y-64"><span class="linenos">64</span></a>    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell.y-65"><a href="#Cell.y-65"><span class="linenos">65</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical position of the cell.&quot;&quot;&quot;</span>
+</span><span id="Cell.y-66"><a href="#Cell.y-66"><span class="linenos">66</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </span></pre></div>
 
 
@@ -502,19 +595,19 @@
 
 
                             </div>
-                            <div id="TableCell.xspan" class="classattr">
-                                        <input id="TableCell.xspan-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.xspan" class="classattr">
+                                        <input id="Cell.xspan-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
             <span class="name">xspan</span><span class="annotation">: int</span>
 
-                <label class="view-source-button" for="TableCell.xspan-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.xspan-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.xspan"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.xspan-65"><a href="#TableCell.xspan-65"><span class="linenos">65</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.xspan-66"><a href="#TableCell.xspan-66"><span class="linenos">66</span></a>    <span class="k">def</span> <span class="nf">xspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell.xspan-67"><a href="#TableCell.xspan-67"><span class="linenos">67</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal span of the cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell.xspan-68"><a href="#TableCell.xspan-68"><span class="linenos">68</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <a class="headerlink" href="#Cell.xspan"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.xspan-68"><a href="#Cell.xspan-68"><span class="linenos">68</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.xspan-69"><a href="#Cell.xspan-69"><span class="linenos">69</span></a>    <span class="k">def</span> <span class="nf">xspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell.xspan-70"><a href="#Cell.xspan-70"><span class="linenos">70</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The horizontal span of the cell.&quot;&quot;&quot;</span>
+</span><span id="Cell.xspan-71"><a href="#Cell.xspan-71"><span class="linenos">71</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
 </span></pre></div>
 
 
@@ -523,19 +616,19 @@
 
 
                             </div>
-                            <div id="TableCell.yspan" class="classattr">
-                                        <input id="TableCell.yspan-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.yspan" class="classattr">
+                                        <input id="Cell.yspan-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
             <span class="name">yspan</span><span class="annotation">: int</span>
 
-                <label class="view-source-button" for="TableCell.yspan-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.yspan-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.yspan"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.yspan-70"><a href="#TableCell.yspan-70"><span class="linenos">70</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.yspan-71"><a href="#TableCell.yspan-71"><span class="linenos">71</span></a>    <span class="k">def</span> <span class="nf">yspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell.yspan-72"><a href="#TableCell.yspan-72"><span class="linenos">72</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical span of the cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell.yspan-73"><a href="#TableCell.yspan-73"><span class="linenos">73</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <a class="headerlink" href="#Cell.yspan"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.yspan-73"><a href="#Cell.yspan-73"><span class="linenos">73</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.yspan-74"><a href="#Cell.yspan-74"><span class="linenos">74</span></a>    <span class="k">def</span> <span class="nf">yspan</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell.yspan-75"><a href="#Cell.yspan-75"><span class="linenos">75</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The vertical span of the cell.&quot;&quot;&quot;</span>
+</span><span id="Cell.yspan-76"><a href="#Cell.yspan-76"><span class="linenos">76</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
 </span></pre></div>
 
 
@@ -544,20 +637,21 @@
 
 
                             </div>
-                            <div id="TableCell.rotation" class="classattr">
-                                        <input id="TableCell.rotation-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.rotation" class="classattr">
+                                        <input id="Cell.rotation-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
             <span class="name">rotation</span><span class="annotation">: int</span>
 
-                <label class="view-source-button" for="TableCell.rotation-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.rotation-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.rotation"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.rotation-75"><a href="#TableCell.rotation-75"><span class="linenos">75</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.rotation-76"><a href="#TableCell.rotation-76"><span class="linenos">76</span></a>    <span class="k">def</span> <span class="nf">rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="TableCell.rotation-77"><a href="#TableCell.rotation-77"><span class="linenos">77</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The rotation of the cell text.&quot;&quot;&quot;</span>
-</span><span id="TableCell.rotation-78"><a href="#TableCell.rotation-78"><span class="linenos">78</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
-</span><span id="TableCell.rotation-79"><a href="#TableCell.rotation-79"><span class="linenos">79</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rotation</span>
+    <a class="headerlink" href="#Cell.rotation"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.rotation-78"><a href="#Cell.rotation-78"><span class="linenos">78</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.rotation-79"><a href="#Cell.rotation-79"><span class="linenos">79</span></a>    <span class="k">def</span> <span class="nf">rotation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="Cell.rotation-80"><a href="#Cell.rotation-80"><span class="linenos">80</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The rotation of the cell text.&quot;&quot;&quot;</span>
+</span><span id="Cell.rotation-81"><a href="#Cell.rotation-81"><span class="linenos">81</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+</span><span id="Cell.rotation-82"><a href="#Cell.rotation-82"><span class="linenos">82</span></a>            <span class="k">return</span> <span class="mi">0</span>
+</span><span id="Cell.rotation-83"><a href="#Cell.rotation-83"><span class="linenos">83</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rotation</span>
 </span></pre></div>
 
 
@@ -566,22 +660,24 @@
 
 
                             </div>
-                            <div id="TableCell.bbox" class="classattr">
-                                        <input id="TableCell.bbox-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.bbox" class="classattr">
+                                        <input id="Cell.bbox-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
-            <span class="name">bbox</span><span class="annotation">: <a href="../utils/math.html#Rectangle">modm_data.utils.math.Rectangle</a></span>
+            <span class="name">bbox</span><span class="annotation">: <a href="../utils.html#Rectangle">modm_data.utils.Rectangle</a></span>
 
-                <label class="view-source-button" for="TableCell.bbox-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.bbox-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.bbox"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.bbox-81"><a href="#TableCell.bbox-81"><span class="linenos">81</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.bbox-82"><a href="#TableCell.bbox-82"><span class="linenos">82</span></a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Rectangle</span><span class="p">:</span>
-</span><span id="TableCell.bbox-83"><a href="#TableCell.bbox-83"><span class="linenos">83</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The tight bounding box of this cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell.bbox-84"><a href="#TableCell.bbox-84"><span class="linenos">84</span></a>        <span class="k">return</span> <span class="n">Rectangle</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span>   <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
-</span><span id="TableCell.bbox-85"><a href="#TableCell.bbox-85"><span class="linenos">85</span></a>                         <span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
-</span><span id="TableCell.bbox-86"><a href="#TableCell.bbox-86"><span class="linenos">86</span></a>                         <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span>  <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
-</span><span id="TableCell.bbox-87"><a href="#TableCell.bbox-87"><span class="linenos">87</span></a>                         <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span>    <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">))</span>
+    <a class="headerlink" href="#Cell.bbox"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.bbox-85"><a href="#Cell.bbox-85"><span class="linenos">85</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.bbox-86"><a href="#Cell.bbox-86"><span class="linenos">86</span></a>    <span class="k">def</span> <span class="nf">bbox</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Rectangle</span><span class="p">:</span>
+</span><span id="Cell.bbox-87"><a href="#Cell.bbox-87"><span class="linenos">87</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The tight bounding box of this cell.&quot;&quot;&quot;</span>
+</span><span id="Cell.bbox-88"><a href="#Cell.bbox-88"><span class="linenos">88</span></a>        <span class="k">return</span> <span class="n">Rectangle</span><span class="p">(</span>
+</span><span id="Cell.bbox-89"><a href="#Cell.bbox-89"><span class="linenos">89</span></a>            <span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="Cell.bbox-90"><a href="#Cell.bbox-90"><span class="linenos">90</span></a>            <span class="nb">min</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">bottom</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="Cell.bbox-91"><a href="#Cell.bbox-91"><span class="linenos">91</span></a>            <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="Cell.bbox-92"><a href="#Cell.bbox-92"><span class="linenos">92</span></a>            <span class="nb">max</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">top</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bboxes</span><span class="p">),</span>
+</span><span id="Cell.bbox-93"><a href="#Cell.bbox-93"><span class="linenos">93</span></a>        <span class="p">)</span>
 </span></pre></div>
 
 
@@ -590,19 +686,19 @@
 
 
                             </div>
-                            <div id="TableCell.lines" class="classattr">
-                                        <input id="TableCell.lines-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.lines" class="classattr">
+                                        <input id="Cell.lines-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
             <span class="name">lines</span><span class="annotation">: list[<a href="line.html#CharLine">modm_data.pdf2html.line.CharLine</a>]</span>
 
-                <label class="view-source-button" for="TableCell.lines-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.lines-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.lines"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.lines-89"><a href="#TableCell.lines-89"><span class="linenos">89</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.lines-90"><a href="#TableCell.lines-90"><span class="linenos">90</span></a>    <span class="k">def</span> <span class="nf">lines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">CharLine</span><span class="p">]:</span>
-</span><span id="TableCell.lines-91"><a href="#TableCell.lines-91"><span class="linenos">91</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The character lines in this cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell.lines-92"><a href="#TableCell.lines-92"><span class="linenos">92</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">charlines_in_area</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
+    <a class="headerlink" href="#Cell.lines"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.lines-95"><a href="#Cell.lines-95"><span class="linenos">95</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.lines-96"><a href="#Cell.lines-96"><span class="linenos">96</span></a>    <span class="k">def</span> <span class="nf">lines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">CharLine</span><span class="p">]:</span>
+</span><span id="Cell.lines-97"><a href="#Cell.lines-97"><span class="linenos">97</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The character lines in this cell.&quot;&quot;&quot;</span>
+</span><span id="Cell.lines-98"><a href="#Cell.lines-98"><span class="linenos">98</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">charlines_in_area</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -611,19 +707,19 @@
 
 
                             </div>
-                            <div id="TableCell.content" class="classattr">
-                                        <input id="TableCell.content-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.content" class="classattr">
+                                        <input id="Cell.content-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
             <span class="name">content</span>
 
-                <label class="view-source-button" for="TableCell.content-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.content-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.content"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.content-94"><a href="#TableCell.content-94"><span class="linenos">94</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.content-95"><a href="#TableCell.content-95"><span class="linenos">95</span></a>    <span class="k">def</span> <span class="nf">content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="TableCell.content-96"><a href="#TableCell.content-96"><span class="linenos">96</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The concatenated text content of the table cell.&quot;&quot;&quot;</span>
-</span><span id="TableCell.content-97"><a href="#TableCell.content-97"><span class="linenos">97</span></a>        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">char</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">chars</span><span class="p">)</span>
+    <a class="headerlink" href="#Cell.content"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.content-100"><a href="#Cell.content-100"><span class="linenos">100</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.content-101"><a href="#Cell.content-101"><span class="linenos">101</span></a>    <span class="k">def</span> <span class="nf">content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Cell.content-102"><a href="#Cell.content-102"><span class="linenos">102</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The concatenated text content of the table cell.&quot;&quot;&quot;</span>
+</span><span id="Cell.content-103"><a href="#Cell.content-103"><span class="linenos">103</span></a>        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">char</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">chars</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -632,23 +728,23 @@
 
 
                             </div>
-                            <div id="TableCell.is_left_aligned" class="classattr">
-                                        <input id="TableCell.is_left_aligned-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.is_left_aligned" class="classattr">
+                                        <input id="Cell.is_left_aligned-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
             <span class="name">is_left_aligned</span><span class="annotation">: bool</span>
 
-                <label class="view-source-button" for="TableCell.is_left_aligned-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.is_left_aligned-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.is_left_aligned"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.is_left_aligned-99"><a href="#TableCell.is_left_aligned-99"><span class="linenos"> 99</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.is_left_aligned-100"><a href="#TableCell.is_left_aligned-100"><span class="linenos">100</span></a>    <span class="k">def</span> <span class="nf">is_left_aligned</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="TableCell.is_left_aligned-101"><a href="#TableCell.is_left_aligned-101"><span class="linenos">101</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is the text in the cell left aligned?&quot;&quot;&quot;</span>
-</span><span id="TableCell.is_left_aligned-102"><a href="#TableCell.is_left_aligned-102"><span class="linenos">102</span></a>        <span class="n">x_em</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">_spacing</span><span class="p">[</span><span class="s2">&quot;x_em&quot;</span><span class="p">]</span>
-</span><span id="TableCell.is_left_aligned-103"><a href="#TableCell.is_left_aligned-103"><span class="linenos">103</span></a>        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
-</span><span id="TableCell.is_left_aligned-104"><a href="#TableCell.is_left_aligned-104"><span class="linenos">104</span></a>            <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">x_em</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">):</span>
-</span><span id="TableCell.is_left_aligned-105"><a href="#TableCell.is_left_aligned-105"><span class="linenos">105</span></a>                <span class="k">return</span> <span class="kc">True</span>
-</span><span id="TableCell.is_left_aligned-106"><a href="#TableCell.is_left_aligned-106"><span class="linenos">106</span></a>        <span class="k">return</span> <span class="kc">False</span>
+    <a class="headerlink" href="#Cell.is_left_aligned"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.is_left_aligned-105"><a href="#Cell.is_left_aligned-105"><span class="linenos">105</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.is_left_aligned-106"><a href="#Cell.is_left_aligned-106"><span class="linenos">106</span></a>    <span class="k">def</span> <span class="nf">is_left_aligned</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="Cell.is_left_aligned-107"><a href="#Cell.is_left_aligned-107"><span class="linenos">107</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Is the text in the cell left aligned?&quot;&quot;&quot;</span>
+</span><span id="Cell.is_left_aligned-108"><a href="#Cell.is_left_aligned-108"><span class="linenos">108</span></a>        <span class="n">x_em</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">_spacing</span><span class="p">[</span><span class="s2">&quot;x_em&quot;</span><span class="p">]</span>
+</span><span id="Cell.is_left_aligned-109"><a href="#Cell.is_left_aligned-109"><span class="linenos">109</span></a>        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+</span><span id="Cell.is_left_aligned-110"><a href="#Cell.is_left_aligned-110"><span class="linenos">110</span></a>            <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">x_em</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span> <span class="o">-</span> <span class="n">line</span><span class="o">.</span><span class="n">bbox</span><span class="o">.</span><span class="n">right</span><span class="p">):</span>
+</span><span id="Cell.is_left_aligned-111"><a href="#Cell.is_left_aligned-111"><span class="linenos">111</span></a>                <span class="k">return</span> <span class="kc">True</span>
+</span><span id="Cell.is_left_aligned-112"><a href="#Cell.is_left_aligned-112"><span class="linenos">112</span></a>        <span class="k">return</span> <span class="kc">False</span>
 </span></pre></div>
 
 
@@ -657,120 +753,29 @@
 
 
                             </div>
-                            <div id="TableCell.ast" class="classattr">
-                                        <input id="TableCell.ast-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+                            <div id="Cell.ast" class="classattr">
+                                        <input id="Cell.ast-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr variable">
             <span class="name">ast</span><span class="annotation">: anytree.node.node.Node</span>
 
-                <label class="view-source-button" for="TableCell.ast-view-source"><span>View Source</span></label>
+                <label class="view-source-button" for="Cell.ast-view-source"><span>View Source</span></label>
 
     </div>
-    <a class="headerlink" href="#TableCell.ast"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.ast-108"><a href="#TableCell.ast-108"><span class="linenos">108</span></a>    <span class="nd">@cached_property</span>
-</span><span id="TableCell.ast-109"><a href="#TableCell.ast-109"><span class="linenos">109</span></a>    <span class="k">def</span> <span class="nf">ast</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span>
-</span><span id="TableCell.ast-110"><a href="#TableCell.ast-110"><span class="linenos">110</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The abstract syntax tree of the cell without graphics.&quot;&quot;&quot;</span>
-</span><span id="TableCell.ast-111"><a href="#TableCell.ast-111"><span class="linenos">111</span></a>        <span class="n">ast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">ast_in_area</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">,</span> <span class="n">with_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="TableCell.ast-112"><a href="#TableCell.ast-112"><span class="linenos">112</span></a>                                            <span class="n">ignore_xpos</span><span class="o">=</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_left_aligned</span><span class="p">,</span>
-</span><span id="TableCell.ast-113"><a href="#TableCell.ast-113"><span class="linenos">113</span></a>                                            <span class="n">with_bits</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_notes</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="TableCell.ast-114"><a href="#TableCell.ast-114"><span class="linenos">114</span></a>        <span class="n">ast</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cell&quot;</span>
-</span><span id="TableCell.ast-115"><a href="#TableCell.ast-115"><span class="linenos">115</span></a>        <span class="k">return</span> <span class="n">ast</span>
+    <a class="headerlink" href="#Cell.ast"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Cell.ast-114"><a href="#Cell.ast-114"><span class="linenos">114</span></a>    <span class="nd">@cached_property</span>
+</span><span id="Cell.ast-115"><a href="#Cell.ast-115"><span class="linenos">115</span></a>    <span class="k">def</span> <span class="nf">ast</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span>
+</span><span id="Cell.ast-116"><a href="#Cell.ast-116"><span class="linenos">116</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The abstract syntax tree of the cell without graphics.&quot;&quot;&quot;</span>
+</span><span id="Cell.ast-117"><a href="#Cell.ast-117"><span class="linenos">117</span></a>        <span class="n">ast</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">_page</span><span class="o">.</span><span class="n">ast_in_area</span><span class="p">(</span>
+</span><span id="Cell.ast-118"><a href="#Cell.ast-118"><span class="linenos">118</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">bbox</span><span class="p">,</span> <span class="n">with_graphics</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignore_xpos</span><span class="o">=</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_left_aligned</span><span class="p">,</span> <span class="n">with_bits</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_notes</span><span class="o">=</span><span class="kc">False</span>
+</span><span id="Cell.ast-119"><a href="#Cell.ast-119"><span class="linenos">119</span></a>        <span class="p">)</span>
+</span><span id="Cell.ast-120"><a href="#Cell.ast-120"><span class="linenos">120</span></a>        <span class="n">ast</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cell&quot;</span>
+</span><span id="Cell.ast-121"><a href="#Cell.ast-121"><span class="linenos">121</span></a>        <span class="k">return</span> <span class="n">ast</span>
 </span></pre></div>
 
 
             <div class="docstring"><p>The abstract syntax tree of the cell without graphics.</p>
 </div>
 
-
-                            </div>
-                </section>
-                <section id="TableCell.Borders">
-                            <input id="TableCell.Borders-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">TableCell.Borders</span>:
-
-                <label class="view-source-button" for="TableCell.Borders-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#TableCell.Borders"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.Borders-12"><a href="#TableCell.Borders-12"><span class="linenos">12</span></a>    <span class="k">class</span> <span class="nc">Borders</span><span class="p">:</span>
-</span><span id="TableCell.Borders-13"><a href="#TableCell.Borders-13"><span class="linenos">13</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;The four borders of a Cell&quot;&quot;&quot;</span>
-</span><span id="TableCell.Borders-14"><a href="#TableCell.Borders-14"><span class="linenos">14</span></a>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-</span><span id="TableCell.Borders-15"><a href="#TableCell.Borders-15"><span class="linenos">15</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">l</span> <span class="o">=</span> <span class="n">l</span>
-</span><span id="TableCell.Borders-16"><a href="#TableCell.Borders-16"><span class="linenos">16</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-</span><span id="TableCell.Borders-17"><a href="#TableCell.Borders-17"><span class="linenos">17</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-</span><span id="TableCell.Borders-18"><a href="#TableCell.Borders-18"><span class="linenos">18</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span>
-</span></pre></div>
-
-
-            <div class="docstring"><p>The four borders of a Cell</p>
-</div>
-
-
-                            <div id="TableCell.Borders.__init__" class="classattr">
-                                        <input id="TableCell.Borders.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr function">
-            
-        <span class="name">TableCell.Borders</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">l</span>, </span><span class="param"><span class="n">b</span>, </span><span class="param"><span class="n">r</span>, </span><span class="param"><span class="n">t</span></span>)</span>
-
-                <label class="view-source-button" for="TableCell.Borders.__init__-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#TableCell.Borders.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="TableCell.Borders.__init__-14"><a href="#TableCell.Borders.__init__-14"><span class="linenos">14</span></a>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-</span><span id="TableCell.Borders.__init__-15"><a href="#TableCell.Borders.__init__-15"><span class="linenos">15</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">l</span> <span class="o">=</span> <span class="n">l</span>
-</span><span id="TableCell.Borders.__init__-16"><a href="#TableCell.Borders.__init__-16"><span class="linenos">16</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
-</span><span id="TableCell.Borders.__init__-17"><a href="#TableCell.Borders.__init__-17"><span class="linenos">17</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
-</span><span id="TableCell.Borders.__init__-18"><a href="#TableCell.Borders.__init__-18"><span class="linenos">18</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span>
-</span></pre></div>
-
-
-    
-
-                            </div>
-                            <div id="TableCell.Borders.l" class="classattr">
-                                <div class="attr variable">
-            <span class="name">l</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TableCell.Borders.l"></a>
-    
-    
-
-                            </div>
-                            <div id="TableCell.Borders.b" class="classattr">
-                                <div class="attr variable">
-            <span class="name">b</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TableCell.Borders.b"></a>
-    
-    
-
-                            </div>
-                            <div id="TableCell.Borders.r" class="classattr">
-                                <div class="attr variable">
-            <span class="name">r</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TableCell.Borders.r"></a>
-    
-    
-
-                            </div>
-                            <div id="TableCell.Borders.t" class="classattr">
-                                <div class="attr variable">
-            <span class="name">t</span>
-
-        
-    </div>
-    <a class="headerlink" href="#TableCell.Borders.t"></a>
-    
-    
 
                             </div>
                 </section>

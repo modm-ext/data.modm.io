@@ -45,10 +45,72 @@
 
             <h2>Submodules</h2>
             <ul>
-                    <li><a href="owl/identifier.html">identifier</a></li>
                     <li><a href="owl/stmicro.html">stmicro</a></li>
-                    <li><a href="owl/store.html">store</a></li>
             </ul>
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="class" href="#Store">Store</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Store.__init__">Store</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Store.base_url">base_url</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Store.vendor">vendor</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Store.device">device</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Store.ontology">ontology</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Store.namespace">namespace</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Store.load">load</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Store.save">save</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Store.clear">clear</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#DeviceIdentifier">DeviceIdentifier</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#DeviceIdentifier.__init__">DeviceIdentifier</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#DeviceIdentifier.naming_schema">naming_schema</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#DeviceIdentifier.copy">copy</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#DeviceIdentifier.keys">keys</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#DeviceIdentifier.string">string</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#DeviceIdentifier.set">set</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#DeviceIdentifier.get">get</a>
+                        </li>
+                </ul>
+
+            </li>
+    </ul>
 
 
 
@@ -69,16 +131,477 @@
 
                         <label class="view-source-button" for="mod-owl-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.store</span> <span class="kn">import</span> <span class="n">Store</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a><span class="kn">from</span> <span class="nn">.identifier</span> <span class="kn">import</span> <span class="n">DeviceIdentifier</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos">6</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">stmicro</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span> <span class="nn">.store</span> <span class="kn">import</span> <span class="n">Store</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">from</span> <span class="nn">.identifier</span> <span class="kn">import</span> <span class="n">DeviceIdentifier</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">stmicro</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    <span class="s2">&quot;stmicro&quot;</span><span class="p">,</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>    <span class="s2">&quot;Store&quot;</span><span class="p">,</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>    <span class="s2">&quot;DeviceIdentifier&quot;</span><span class="p">,</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="p">]</span>
 </span></pre></div>
 
 
             </section>
+                <section id="Store">
+                            <input id="Store-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Store</span>:
+
+                <label class="view-source-button" for="Store-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Store"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Store-39"><a href="#Store-39"><span class="linenos">39</span></a><span class="k">class</span> <span class="nc">Store</span><span class="p">:</span>
+</span><span id="Store-40"><a href="#Store-40"><span class="linenos">40</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vendor</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+</span><span id="Store-41"><a href="#Store-41"><span class="linenos">41</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://data.modm.io/kg&quot;</span>
+</span><span id="Store-42"><a href="#Store-42"><span class="linenos">42</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vendor</span> <span class="o">=</span> <span class="n">vendor</span>
+</span><span id="Store-43"><a href="#Store-43"><span class="linenos">43</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
+</span><span id="Store-44"><a href="#Store-44"><span class="linenos">44</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">=</span> <span class="n">ext_path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vendor</span><span class="si">}</span><span class="s2">/owl&quot;</span><span class="p">)</span>
+</span><span id="Store-45"><a href="#Store-45"><span class="linenos">45</span></a>        <span class="c1"># Add the directory to the search path</span>
+</span><span id="Store-46"><a href="#Store-46"><span class="linenos">46</span></a>        <span class="n">owl</span><span class="o">.</span><span class="n">onto_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="p">)</span>
+</span><span id="Store-47"><a href="#Store-47"><span class="linenos">47</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span> <span class="o">=</span> <span class="n">owl</span><span class="o">.</span><span class="n">get_ontology</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">vendor</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">device</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Store-48"><a href="#Store-48"><span class="linenos">48</span></a>
+</span><span id="Store-49"><a href="#Store-49"><span class="linenos">49</span></a>    <span class="c1"># def set_device_iri(self, device):</span>
+</span><span id="Store-50"><a href="#Store-50"><span class="linenos">50</span></a>    <span class="c1">#     self.ontology.set_base_iri(f&quot;{self.base_url}/{self.vendor}/{device}&quot;, rename_entities=False)</span>
+</span><span id="Store-51"><a href="#Store-51"><span class="linenos">51</span></a>
+</span><span id="Store-52"><a href="#Store-52"><span class="linenos">52</span></a>    <span class="k">def</span> <span class="nf">namespace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="Store-53"><a href="#Store-53"><span class="linenos">53</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="o">.</span><span class="n">get_namespace</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vendor</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Store-54"><a href="#Store-54"><span class="linenos">54</span></a>
+</span><span id="Store-55"><a href="#Store-55"><span class="linenos">55</span></a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="Store-56"><a href="#Store-56"><span class="linenos">56</span></a>        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Store-57"><a href="#Store-57"><span class="linenos">57</span></a>            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ontology&quot;</span>
+</span><span id="Store-58"><a href="#Store-58"><span class="linenos">58</span></a>        <span class="n">fileobj</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.owl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+</span><span id="Store-59"><a href="#Store-59"><span class="linenos">59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">only_local</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fileobj</span><span class="o">=</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">reload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="Store-60"><a href="#Store-60"><span class="linenos">60</span></a>
+</span><span id="Store-61"><a href="#Store-61"><span class="linenos">61</span></a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="Store-62"><a href="#Store-62"><span class="linenos">62</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="Store-63"><a href="#Store-63"><span class="linenos">63</span></a>        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Store-64"><a href="#Store-64"><span class="linenos">64</span></a>            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ontology&quot;</span>
+</span><span id="Store-65"><a href="#Store-65"><span class="linenos">65</span></a>        <span class="n">file</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.owl&quot;</span><span class="p">)</span>
+</span><span id="Store-66"><a href="#Store-66"><span class="linenos">66</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">)</span>
+</span><span id="Store-67"><a href="#Store-67"><span class="linenos">67</span></a>
+</span><span id="Store-68"><a href="#Store-68"><span class="linenos">68</span></a>        <span class="c1"># dom = ET.parse(file)</span>
+</span><span id="Store-69"><a href="#Store-69"><span class="linenos">69</span></a>        <span class="c1"># xslt = ET.XML(XSLT_SORT)</span>
+</span><span id="Store-70"><a href="#Store-70"><span class="linenos">70</span></a>        <span class="c1"># transform = ET.XSLT(xslt)</span>
+</span><span id="Store-71"><a href="#Store-71"><span class="linenos">71</span></a>        <span class="c1"># newdom = transform(dom)</span>
+</span><span id="Store-72"><a href="#Store-72"><span class="linenos">72</span></a>        <span class="c1"># Path(file).write_bytes(ET.tostring(newdom, pretty_print=True))</span>
+</span><span id="Store-73"><a href="#Store-73"><span class="linenos">73</span></a>
+</span><span id="Store-74"><a href="#Store-74"><span class="linenos">74</span></a>        <span class="c1"># owl.default_world.set_backend(filename=str(self._path / f&quot;{name}.sqlite3&quot;))</span>
+</span><span id="Store-75"><a href="#Store-75"><span class="linenos">75</span></a>        <span class="c1"># owl.default_world.save()</span>
+</span><span id="Store-76"><a href="#Store-76"><span class="linenos">76</span></a>
+</span><span id="Store-77"><a href="#Store-77"><span class="linenos">77</span></a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Store-78"><a href="#Store-78"><span class="linenos">78</span></a>        <span class="c1"># self.ontology._destroy_cached_entities()</span>
+</span><span id="Store-79"><a href="#Store-79"><span class="linenos">79</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">_destroy_cached_entities</span><span class="p">()</span>
+</span><span id="Store-80"><a href="#Store-80"><span class="linenos">80</span></a>        <span class="c1"># self.ontology.destroy()</span>
+</span><span id="Store-81"><a href="#Store-81"><span class="linenos">81</span></a>        <span class="c1"># self.ontology = owl.get_ontology(f&quot;{self.base_url}/{self.vendor}&quot;)</span>
+</span><span id="Store-82"><a href="#Store-82"><span class="linenos">82</span></a>
+</span><span id="Store-83"><a href="#Store-83"><span class="linenos">83</span></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="Store-84"><a href="#Store-84"><span class="linenos">84</span></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Store(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vendor</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span></pre></div>
+
+
+    
+
+                            <div id="Store.__init__" class="classattr">
+                                        <input id="Store.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">Store</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">vendor</span>, </span><span class="param"><span class="n">device</span></span>)</span>
+
+                <label class="view-source-button" for="Store.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Store.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Store.__init__-40"><a href="#Store.__init__-40"><span class="linenos">40</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vendor</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+</span><span id="Store.__init__-41"><a href="#Store.__init__-41"><span class="linenos">41</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://data.modm.io/kg&quot;</span>
+</span><span id="Store.__init__-42"><a href="#Store.__init__-42"><span class="linenos">42</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">vendor</span> <span class="o">=</span> <span class="n">vendor</span>
+</span><span id="Store.__init__-43"><a href="#Store.__init__-43"><span class="linenos">43</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
+</span><span id="Store.__init__-44"><a href="#Store.__init__-44"><span class="linenos">44</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">=</span> <span class="n">ext_path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vendor</span><span class="si">}</span><span class="s2">/owl&quot;</span><span class="p">)</span>
+</span><span id="Store.__init__-45"><a href="#Store.__init__-45"><span class="linenos">45</span></a>        <span class="c1"># Add the directory to the search path</span>
+</span><span id="Store.__init__-46"><a href="#Store.__init__-46"><span class="linenos">46</span></a>        <span class="n">owl</span><span class="o">.</span><span class="n">onto_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="p">)</span>
+</span><span id="Store.__init__-47"><a href="#Store.__init__-47"><span class="linenos">47</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span> <span class="o">=</span> <span class="n">owl</span><span class="o">.</span><span class="n">get_ontology</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">vendor</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">device</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="Store.base_url" class="classattr">
+                                <div class="attr variable">
+            <span class="name">base_url</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Store.base_url"></a>
+    
+    
+
+                            </div>
+                            <div id="Store.vendor" class="classattr">
+                                <div class="attr variable">
+            <span class="name">vendor</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Store.vendor"></a>
+    
+    
+
+                            </div>
+                            <div id="Store.device" class="classattr">
+                                <div class="attr variable">
+            <span class="name">device</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Store.device"></a>
+    
+    
+
+                            </div>
+                            <div id="Store.ontology" class="classattr">
+                                <div class="attr variable">
+            <span class="name">ontology</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Store.ontology"></a>
+    
+    
+
+                            </div>
+                            <div id="Store.namespace" class="classattr">
+                                        <input id="Store.namespace-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">namespace</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">name</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="Store.namespace-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Store.namespace"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Store.namespace-52"><a href="#Store.namespace-52"><span class="linenos">52</span></a>    <span class="k">def</span> <span class="nf">namespace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="Store.namespace-53"><a href="#Store.namespace-53"><span class="linenos">53</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="o">.</span><span class="n">get_namespace</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">vendor</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="Store.load" class="classattr">
+                                        <input id="Store.load-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">load</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">name</span><span class="o">=</span><span class="kc">None</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="Store.load-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Store.load"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Store.load-55"><a href="#Store.load-55"><span class="linenos">55</span></a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="Store.load-56"><a href="#Store.load-56"><span class="linenos">56</span></a>        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Store.load-57"><a href="#Store.load-57"><span class="linenos">57</span></a>            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ontology&quot;</span>
+</span><span id="Store.load-58"><a href="#Store.load-58"><span class="linenos">58</span></a>        <span class="n">fileobj</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.owl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+</span><span id="Store.load-59"><a href="#Store.load-59"><span class="linenos">59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">only_local</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fileobj</span><span class="o">=</span><span class="n">fileobj</span><span class="p">,</span> <span class="n">reload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="Store.save" class="classattr">
+                                        <input id="Store.save-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">save</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">name</span><span class="o">=</span><span class="kc">None</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="Store.save-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Store.save"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Store.save-61"><a href="#Store.save-61"><span class="linenos">61</span></a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="Store.save-62"><a href="#Store.save-62"><span class="linenos">62</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="Store.save-63"><a href="#Store.save-63"><span class="linenos">63</span></a>        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Store.save-64"><a href="#Store.save-64"><span class="linenos">64</span></a>            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ontology&quot;</span>
+</span><span id="Store.save-65"><a href="#Store.save-65"><span class="linenos">65</span></a>        <span class="n">file</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.owl&quot;</span><span class="p">)</span>
+</span><span id="Store.save-66"><a href="#Store.save-66"><span class="linenos">66</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">)</span>
+</span><span id="Store.save-67"><a href="#Store.save-67"><span class="linenos">67</span></a>
+</span><span id="Store.save-68"><a href="#Store.save-68"><span class="linenos">68</span></a>        <span class="c1"># dom = ET.parse(file)</span>
+</span><span id="Store.save-69"><a href="#Store.save-69"><span class="linenos">69</span></a>        <span class="c1"># xslt = ET.XML(XSLT_SORT)</span>
+</span><span id="Store.save-70"><a href="#Store.save-70"><span class="linenos">70</span></a>        <span class="c1"># transform = ET.XSLT(xslt)</span>
+</span><span id="Store.save-71"><a href="#Store.save-71"><span class="linenos">71</span></a>        <span class="c1"># newdom = transform(dom)</span>
+</span><span id="Store.save-72"><a href="#Store.save-72"><span class="linenos">72</span></a>        <span class="c1"># Path(file).write_bytes(ET.tostring(newdom, pretty_print=True))</span>
+</span><span id="Store.save-73"><a href="#Store.save-73"><span class="linenos">73</span></a>
+</span><span id="Store.save-74"><a href="#Store.save-74"><span class="linenos">74</span></a>        <span class="c1"># owl.default_world.set_backend(filename=str(self._path / f&quot;{name}.sqlite3&quot;))</span>
+</span><span id="Store.save-75"><a href="#Store.save-75"><span class="linenos">75</span></a>        <span class="c1"># owl.default_world.save()</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="Store.clear" class="classattr">
+                                        <input id="Store.clear-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">clear</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="Store.clear-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Store.clear"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Store.clear-77"><a href="#Store.clear-77"><span class="linenos">77</span></a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Store.clear-78"><a href="#Store.clear-78"><span class="linenos">78</span></a>        <span class="c1"># self.ontology._destroy_cached_entities()</span>
+</span><span id="Store.clear-79"><a href="#Store.clear-79"><span class="linenos">79</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="o">.</span><span class="n">world</span><span class="o">.</span><span class="n">_destroy_cached_entities</span><span class="p">()</span>
+</span><span id="Store.clear-80"><a href="#Store.clear-80"><span class="linenos">80</span></a>        <span class="c1"># self.ontology.destroy()</span>
+</span><span id="Store.clear-81"><a href="#Store.clear-81"><span class="linenos">81</span></a>        <span class="c1"># self.ontology = owl.get_ontology(f&quot;{self.base_url}/{self.vendor}&quot;)</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                </section>
+                <section id="DeviceIdentifier">
+                            <input id="DeviceIdentifier-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">DeviceIdentifier</span>:
+
+                <label class="view-source-button" for="DeviceIdentifier-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#DeviceIdentifier"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DeviceIdentifier-10"><a href="#DeviceIdentifier-10"><span class="linenos">10</span></a><span class="k">class</span> <span class="nc">DeviceIdentifier</span><span class="p">:</span>
+</span><span id="DeviceIdentifier-11"><a href="#DeviceIdentifier-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naming_schema</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-12"><a href="#DeviceIdentifier-12"><span class="linenos">12</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span> <span class="o">=</span> <span class="n">naming_schema</span>
+</span><span id="DeviceIdentifier-13"><a href="#DeviceIdentifier-13"><span class="linenos">13</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+</span><span id="DeviceIdentifier-14"><a href="#DeviceIdentifier-14"><span class="linenos">14</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__string</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier-15"><a href="#DeviceIdentifier-15"><span class="linenos">15</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier-16"><a href="#DeviceIdentifier-16"><span class="linenos">16</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__hash</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier-17"><a href="#DeviceIdentifier-17"><span class="linenos">17</span></a>
+</span><span id="DeviceIdentifier-18"><a href="#DeviceIdentifier-18"><span class="linenos">18</span></a>    <span class="nd">@property</span>
+</span><span id="DeviceIdentifier-19"><a href="#DeviceIdentifier-19"><span class="linenos">19</span></a>    <span class="k">def</span> <span class="nf">_ustring</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-20"><a href="#DeviceIdentifier-20"><span class="linenos">20</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DeviceIdentifier-21"><a href="#DeviceIdentifier-21"><span class="linenos">21</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">k</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="o">.</span><span class="n">keys</span><span class="p">())])</span>
+</span><span id="DeviceIdentifier-22"><a href="#DeviceIdentifier-22"><span class="linenos">22</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span><span class="p">:</span>
+</span><span id="DeviceIdentifier-23"><a href="#DeviceIdentifier-23"><span class="linenos">23</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span>
+</span><span id="DeviceIdentifier-24"><a href="#DeviceIdentifier-24"><span class="linenos">24</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span>
+</span><span id="DeviceIdentifier-25"><a href="#DeviceIdentifier-25"><span class="linenos">25</span></a>
+</span><span id="DeviceIdentifier-26"><a href="#DeviceIdentifier-26"><span class="linenos">26</span></a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-27"><a href="#DeviceIdentifier-27"><span class="linenos">27</span></a>        <span class="n">identifier</span> <span class="o">=</span> <span class="n">DeviceIdentifier</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span><span class="p">)</span>
+</span><span id="DeviceIdentifier-28"><a href="#DeviceIdentifier-28"><span class="linenos">28</span></a>        <span class="n">identifier</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">)</span>
+</span><span id="DeviceIdentifier-29"><a href="#DeviceIdentifier-29"><span class="linenos">29</span></a>        <span class="n">identifier</span><span class="o">.</span><span class="n">__string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__string</span>
+</span><span id="DeviceIdentifier-30"><a href="#DeviceIdentifier-30"><span class="linenos">30</span></a>        <span class="n">identifier</span><span class="o">.</span><span class="n">__ustring</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span>
+</span><span id="DeviceIdentifier-31"><a href="#DeviceIdentifier-31"><span class="linenos">31</span></a>        <span class="n">identifier</span><span class="o">.</span><span class="n">__hash</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hash</span>
+</span><span id="DeviceIdentifier-32"><a href="#DeviceIdentifier-32"><span class="linenos">32</span></a>        <span class="k">return</span> <span class="n">identifier</span>
+</span><span id="DeviceIdentifier-33"><a href="#DeviceIdentifier-33"><span class="linenos">33</span></a>
+</span><span id="DeviceIdentifier-34"><a href="#DeviceIdentifier-34"><span class="linenos">34</span></a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-35"><a href="#DeviceIdentifier-35"><span class="linenos">35</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span><span id="DeviceIdentifier-36"><a href="#DeviceIdentifier-36"><span class="linenos">36</span></a>
+</span><span id="DeviceIdentifier-37"><a href="#DeviceIdentifier-37"><span class="linenos">37</span></a>    <span class="nd">@property</span>
+</span><span id="DeviceIdentifier-38"><a href="#DeviceIdentifier-38"><span class="linenos">38</span></a>    <span class="k">def</span> <span class="nf">string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-39"><a href="#DeviceIdentifier-39"><span class="linenos">39</span></a>        <span class="c1"># if no naming schema is available, throw up</span>
+</span><span id="DeviceIdentifier-40"><a href="#DeviceIdentifier-40"><span class="linenos">40</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DeviceIdentifier-41"><a href="#DeviceIdentifier-41"><span class="linenos">41</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Naming schema is missing!&quot;</span><span class="p">)</span>
+</span><span id="DeviceIdentifier-42"><a href="#DeviceIdentifier-42"><span class="linenos">42</span></a>        <span class="c1"># Use the naming schema to generate the string</span>
+</span><span id="DeviceIdentifier-43"><a href="#DeviceIdentifier-43"><span class="linenos">43</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__string</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DeviceIdentifier-44"><a href="#DeviceIdentifier-44"><span class="linenos">44</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">__string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Formatter</span><span class="p">()</span><span class="o">.</span><span class="n">vformat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span><span class="p">,</span> <span class="p">(),</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">))</span>
+</span><span id="DeviceIdentifier-45"><a href="#DeviceIdentifier-45"><span class="linenos">45</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__string</span>
+</span><span id="DeviceIdentifier-46"><a href="#DeviceIdentifier-46"><span class="linenos">46</span></a>
+</span><span id="DeviceIdentifier-47"><a href="#DeviceIdentifier-47"><span class="linenos">47</span></a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-48"><a href="#DeviceIdentifier-48"><span class="linenos">48</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__hash</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier-49"><a href="#DeviceIdentifier-49"><span class="linenos">49</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__string</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier-50"><a href="#DeviceIdentifier-50"><span class="linenos">50</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier-51"><a href="#DeviceIdentifier-51"><span class="linenos">51</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span><span id="DeviceIdentifier-52"><a href="#DeviceIdentifier-52"><span class="linenos">52</span></a>
+</span><span id="DeviceIdentifier-53"><a href="#DeviceIdentifier-53"><span class="linenos">53</span></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-54"><a href="#DeviceIdentifier-54"><span class="linenos">54</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+</span><span id="DeviceIdentifier-55"><a href="#DeviceIdentifier-55"><span class="linenos">55</span></a>
+</span><span id="DeviceIdentifier-56"><a href="#DeviceIdentifier-56"><span class="linenos">56</span></a>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-57"><a href="#DeviceIdentifier-57"><span class="linenos">57</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="DeviceIdentifier-58"><a href="#DeviceIdentifier-58"><span class="linenos">58</span></a>
+</span><span id="DeviceIdentifier-59"><a href="#DeviceIdentifier-59"><span class="linenos">59</span></a>    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-60"><a href="#DeviceIdentifier-60"><span class="linenos">60</span></a>        <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="DeviceIdentifier-61"><a href="#DeviceIdentifier-61"><span class="linenos">61</span></a>        <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DeviceIdentifier-62"><a href="#DeviceIdentifier-62"><span class="linenos">62</span></a>            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="bp">self</span><span class="si">!r}</span><span class="s2">&#39; has no property &#39;</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+</span><span id="DeviceIdentifier-63"><a href="#DeviceIdentifier-63"><span class="linenos">63</span></a>        <span class="k">return</span> <span class="n">val</span>
+</span><span id="DeviceIdentifier-64"><a href="#DeviceIdentifier-64"><span class="linenos">64</span></a>
+</span><span id="DeviceIdentifier-65"><a href="#DeviceIdentifier-65"><span class="linenos">65</span></a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-66"><a href="#DeviceIdentifier-66"><span class="linenos">66</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ustring</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_ustring</span>
+</span><span id="DeviceIdentifier-67"><a href="#DeviceIdentifier-67"><span class="linenos">67</span></a>
+</span><span id="DeviceIdentifier-68"><a href="#DeviceIdentifier-68"><span class="linenos">68</span></a>    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-69"><a href="#DeviceIdentifier-69"><span class="linenos">69</span></a>        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
+</span><span id="DeviceIdentifier-70"><a href="#DeviceIdentifier-70"><span class="linenos">70</span></a>
+</span><span id="DeviceIdentifier-71"><a href="#DeviceIdentifier-71"><span class="linenos">71</span></a>    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-72"><a href="#DeviceIdentifier-72"><span class="linenos">72</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hash</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DeviceIdentifier-73"><a href="#DeviceIdentifier-73"><span class="linenos">73</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">__hash</span> <span class="o">=</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ustring</span><span class="p">)</span>
+</span><span id="DeviceIdentifier-74"><a href="#DeviceIdentifier-74"><span class="linenos">74</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hash</span>
+</span><span id="DeviceIdentifier-75"><a href="#DeviceIdentifier-75"><span class="linenos">75</span></a>
+</span><span id="DeviceIdentifier-76"><a href="#DeviceIdentifier-76"><span class="linenos">76</span></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-77"><a href="#DeviceIdentifier-77"><span class="linenos">77</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">string</span>
+</span><span id="DeviceIdentifier-78"><a href="#DeviceIdentifier-78"><span class="linenos">78</span></a>
+</span><span id="DeviceIdentifier-79"><a href="#DeviceIdentifier-79"><span class="linenos">79</span></a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier-80"><a href="#DeviceIdentifier-80"><span class="linenos">80</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">string</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;DeviceId(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_ustring</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span></pre></div>
+
+
+    
+
+                            <div id="DeviceIdentifier.__init__" class="classattr">
+                                        <input id="DeviceIdentifier.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">DeviceIdentifier</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">naming_schema</span><span class="o">=</span><span class="kc">None</span></span>)</span>
+
+                <label class="view-source-button" for="DeviceIdentifier.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#DeviceIdentifier.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DeviceIdentifier.__init__-11"><a href="#DeviceIdentifier.__init__-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naming_schema</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="DeviceIdentifier.__init__-12"><a href="#DeviceIdentifier.__init__-12"><span class="linenos">12</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span> <span class="o">=</span> <span class="n">naming_schema</span>
+</span><span id="DeviceIdentifier.__init__-13"><a href="#DeviceIdentifier.__init__-13"><span class="linenos">13</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+</span><span id="DeviceIdentifier.__init__-14"><a href="#DeviceIdentifier.__init__-14"><span class="linenos">14</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__string</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier.__init__-15"><a href="#DeviceIdentifier.__init__-15"><span class="linenos">15</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier.__init__-16"><a href="#DeviceIdentifier.__init__-16"><span class="linenos">16</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__hash</span> <span class="o">=</span> <span class="kc">None</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="DeviceIdentifier.naming_schema" class="classattr">
+                                <div class="attr variable">
+            <span class="name">naming_schema</span>
+
+        
+    </div>
+    <a class="headerlink" href="#DeviceIdentifier.naming_schema"></a>
+    
+    
+
+                            </div>
+                            <div id="DeviceIdentifier.copy" class="classattr">
+                                        <input id="DeviceIdentifier.copy-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">copy</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="DeviceIdentifier.copy-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#DeviceIdentifier.copy"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DeviceIdentifier.copy-26"><a href="#DeviceIdentifier.copy-26"><span class="linenos">26</span></a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier.copy-27"><a href="#DeviceIdentifier.copy-27"><span class="linenos">27</span></a>        <span class="n">identifier</span> <span class="o">=</span> <span class="n">DeviceIdentifier</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span><span class="p">)</span>
+</span><span id="DeviceIdentifier.copy-28"><a href="#DeviceIdentifier.copy-28"><span class="linenos">28</span></a>        <span class="n">identifier</span><span class="o">.</span><span class="n">_properties</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">)</span>
+</span><span id="DeviceIdentifier.copy-29"><a href="#DeviceIdentifier.copy-29"><span class="linenos">29</span></a>        <span class="n">identifier</span><span class="o">.</span><span class="n">__string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__string</span>
+</span><span id="DeviceIdentifier.copy-30"><a href="#DeviceIdentifier.copy-30"><span class="linenos">30</span></a>        <span class="n">identifier</span><span class="o">.</span><span class="n">__ustring</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span>
+</span><span id="DeviceIdentifier.copy-31"><a href="#DeviceIdentifier.copy-31"><span class="linenos">31</span></a>        <span class="n">identifier</span><span class="o">.</span><span class="n">__hash</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__hash</span>
+</span><span id="DeviceIdentifier.copy-32"><a href="#DeviceIdentifier.copy-32"><span class="linenos">32</span></a>        <span class="k">return</span> <span class="n">identifier</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="DeviceIdentifier.keys" class="classattr">
+                                        <input id="DeviceIdentifier.keys-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">keys</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="DeviceIdentifier.keys-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#DeviceIdentifier.keys"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DeviceIdentifier.keys-34"><a href="#DeviceIdentifier.keys-34"><span class="linenos">34</span></a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier.keys-35"><a href="#DeviceIdentifier.keys-35"><span class="linenos">35</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="DeviceIdentifier.string" class="classattr">
+                                        <input id="DeviceIdentifier.string-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
+            <span class="name">string</span>
+
+                <label class="view-source-button" for="DeviceIdentifier.string-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#DeviceIdentifier.string"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DeviceIdentifier.string-37"><a href="#DeviceIdentifier.string-37"><span class="linenos">37</span></a>    <span class="nd">@property</span>
+</span><span id="DeviceIdentifier.string-38"><a href="#DeviceIdentifier.string-38"><span class="linenos">38</span></a>    <span class="k">def</span> <span class="nf">string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="DeviceIdentifier.string-39"><a href="#DeviceIdentifier.string-39"><span class="linenos">39</span></a>        <span class="c1"># if no naming schema is available, throw up</span>
+</span><span id="DeviceIdentifier.string-40"><a href="#DeviceIdentifier.string-40"><span class="linenos">40</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DeviceIdentifier.string-41"><a href="#DeviceIdentifier.string-41"><span class="linenos">41</span></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Naming schema is missing!&quot;</span><span class="p">)</span>
+</span><span id="DeviceIdentifier.string-42"><a href="#DeviceIdentifier.string-42"><span class="linenos">42</span></a>        <span class="c1"># Use the naming schema to generate the string</span>
+</span><span id="DeviceIdentifier.string-43"><a href="#DeviceIdentifier.string-43"><span class="linenos">43</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__string</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="DeviceIdentifier.string-44"><a href="#DeviceIdentifier.string-44"><span class="linenos">44</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">__string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Formatter</span><span class="p">()</span><span class="o">.</span><span class="n">vformat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span><span class="p">,</span> <span class="p">(),</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">))</span>
+</span><span id="DeviceIdentifier.string-45"><a href="#DeviceIdentifier.string-45"><span class="linenos">45</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__string</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="DeviceIdentifier.set" class="classattr">
+                                        <input id="DeviceIdentifier.set-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">set</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">key</span>, </span><span class="param"><span class="n">value</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="DeviceIdentifier.set-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#DeviceIdentifier.set"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DeviceIdentifier.set-47"><a href="#DeviceIdentifier.set-47"><span class="linenos">47</span></a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+</span><span id="DeviceIdentifier.set-48"><a href="#DeviceIdentifier.set-48"><span class="linenos">48</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__hash</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier.set-49"><a href="#DeviceIdentifier.set-49"><span class="linenos">49</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__string</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier.set-50"><a href="#DeviceIdentifier.set-50"><span class="linenos">50</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__ustring</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="DeviceIdentifier.set-51"><a href="#DeviceIdentifier.set-51"><span class="linenos">51</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="DeviceIdentifier.get" class="classattr">
+                                        <input id="DeviceIdentifier.get-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">get</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span>, </span><span class="param"><span class="n">key</span>, </span><span class="param"><span class="n">default</span><span class="o">=</span><span class="kc">None</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="DeviceIdentifier.get-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#DeviceIdentifier.get"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DeviceIdentifier.get-53"><a href="#DeviceIdentifier.get-53"><span class="linenos">53</span></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="DeviceIdentifier.get-54"><a href="#DeviceIdentifier.get-54"><span class="linenos">54</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                </section>
     </main>
 <script>
     function escapeHTML(html) {

@@ -43,11 +43,16 @@
                    pattern=".+" required>
 
 
-            <h2>Submodules</h2>
-            <ul>
-                    <li><a href="stmicro/datasheet.html">datasheet</a></li>
-                    <li><a href="stmicro/reference.html">reference</a></li>
-            </ul>
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="function" href="#memory_map_from_reference_manual">memory_map_from_reference_manual</a>
+            </li>
+            <li>
+                    <a class="function" href="#memory_map_from_datasheet">memory_map_from_datasheet</a>
+            </li>
+    </ul>
 
 
 
@@ -68,15 +73,134 @@
 
                         <label class="view-source-button" for="mod-stmicro-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.reference</span> <span class="kn">import</span> <span class="n">memory_map_from_reference_manual</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a><span class="kn">from</span> <span class="nn">.datasheet</span> <span class="kn">import</span> <span class="n">memory_map_from_datasheet</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span> <span class="nn">.reference</span> <span class="kn">import</span> <span class="n">memory_map_from_reference_manual</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">from</span> <span class="nn">.datasheet</span> <span class="kn">import</span> <span class="n">memory_map_from_datasheet</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>    <span class="s2">&quot;memory_map_from_reference_manual&quot;</span><span class="p">,</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    <span class="s2">&quot;memory_map_from_datasheet&quot;</span><span class="p">,</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="p">]</span>
 </span></pre></div>
 
 
             </section>
+                <section id="memory_map_from_reference_manual">
+                            <input id="memory_map_from_reference_manual-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">memory_map_from_reference_manual</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">rm</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="memory_map_from_reference_manual-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#memory_map_from_reference_manual"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="memory_map_from_reference_manual-361"><a href="#memory_map_from_reference_manual-361"><span class="linenos">361</span></a><span class="k">def</span> <span class="nf">memory_map_from_reference_manual</span><span class="p">(</span><span class="n">rm</span><span class="p">):</span>
+</span><span id="memory_map_from_reference_manual-362"><a href="#memory_map_from_reference_manual-362"><span class="linenos">362</span></a>    <span class="k">if</span> <span class="s2">&quot;RM0438&quot;</span> <span class="ow">in</span> <span class="n">rm</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="s2">&quot;RM0456&quot;</span> <span class="ow">in</span> <span class="n">rm</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+</span><span id="memory_map_from_reference_manual-363"><a href="#memory_map_from_reference_manual-363"><span class="linenos">363</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RM0438, RM0456 are ARMv8-M with two memory maps!&quot;</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-364"><a href="#memory_map_from_reference_manual-364"><span class="linenos">364</span></a>        <span class="k">return</span> <span class="p">[]</span>
+</span><span id="memory_map_from_reference_manual-365"><a href="#memory_map_from_reference_manual-365"><span class="linenos">365</span></a>
+</span><span id="memory_map_from_reference_manual-366"><a href="#memory_map_from_reference_manual-366"><span class="linenos">366</span></a>    <span class="n">all_chapters</span> <span class="o">=</span> <span class="n">rm</span><span class="o">.</span><span class="n">chapters</span><span class="p">()</span>
+</span><span id="memory_map_from_reference_manual-367"><a href="#memory_map_from_reference_manual-367"><span class="linenos">367</span></a>    <span class="n">type_chapters</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="memory_map_from_reference_manual-368"><a href="#memory_map_from_reference_manual-368"><span class="linenos">368</span></a>        <span class="n">rm</span><span class="o">.</span><span class="n">chapter</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chapter </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">pers</span> <span class="ow">in</span> <span class="n">rm</span><span class="o">.</span><span class="n">peripherals</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">for</span> <span class="n">locs</span> <span class="ow">in</span> <span class="n">pers</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">locs</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</span><span id="memory_map_from_reference_manual-369"><a href="#memory_map_from_reference_manual-369"><span class="linenos">369</span></a>    <span class="p">}</span>
+</span><span id="memory_map_from_reference_manual-370"><a href="#memory_map_from_reference_manual-370"><span class="linenos">370</span></a>    <span class="n">peripheral_types</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-371"><a href="#memory_map_from_reference_manual-371"><span class="linenos">371</span></a>    <span class="n">instance_offsets</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="memory_map_from_reference_manual-372"><a href="#memory_map_from_reference_manual-372"><span class="linenos">372</span></a>    <span class="k">for</span> <span class="n">chapter</span> <span class="ow">in</span> <span class="n">all_chapters</span><span class="p">:</span>
+</span><span id="memory_map_from_reference_manual-373"><a href="#memory_map_from_reference_manual-373"><span class="linenos">373</span></a>        <span class="nb">print</span><span class="p">()</span>
+</span><span id="memory_map_from_reference_manual-374"><a href="#memory_map_from_reference_manual-374"><span class="linenos">374</span></a>        <span class="n">peripheral_maps</span><span class="p">,</span> <span class="n">peripheral_offsets</span> <span class="o">=</span> <span class="n">rm</span><span class="o">.</span><span class="n">peripheral_maps</span><span class="p">(</span><span class="n">chapter</span><span class="p">,</span> <span class="n">assert_table</span><span class="o">=</span><span class="n">chapter</span> <span class="ow">in</span> <span class="n">type_chapters</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-375"><a href="#memory_map_from_reference_manual-375"><span class="linenos">375</span></a>        <span class="n">instance_offsets</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">peripheral_offsets</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-376"><a href="#memory_map_from_reference_manual-376"><span class="linenos">376</span></a>        <span class="n">peripheral_maps</span> <span class="o">=</span> <span class="n">_peripheral_map_to_tree</span><span class="p">(</span><span class="n">chapter</span><span class="p">,</span> <span class="n">peripheral_maps</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-377"><a href="#memory_map_from_reference_manual-377"><span class="linenos">377</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">_expand_register_offsets</span><span class="p">(</span><span class="n">peripheral_maps</span><span class="p">):</span>
+</span><span id="memory_map_from_reference_manual-378"><a href="#memory_map_from_reference_manual-378"><span class="linenos">378</span></a>            <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-379"><a href="#memory_map_from_reference_manual-379"><span class="linenos">379</span></a>        <span class="k">for</span> <span class="n">pmap</span> <span class="ow">in</span> <span class="n">peripheral_maps</span><span class="p">:</span>
+</span><span id="memory_map_from_reference_manual-380"><a href="#memory_map_from_reference_manual-380"><span class="linenos">380</span></a>            <span class="nb">print</span><span class="p">(</span><span class="n">pmap</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-381"><a href="#memory_map_from_reference_manual-381"><span class="linenos">381</span></a>            <span class="c1"># print(RenderTree(pmap, maxlevel=2))</span>
+</span><span id="memory_map_from_reference_manual-382"><a href="#memory_map_from_reference_manual-382"><span class="linenos">382</span></a>            <span class="n">peripheral_types</span><span class="p">[</span><span class="n">pmap</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pmap</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-383"><a href="#memory_map_from_reference_manual-383"><span class="linenos">383</span></a>
+</span><span id="memory_map_from_reference_manual-384"><a href="#memory_map_from_reference_manual-384"><span class="linenos">384</span></a>    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">pmaps</span> <span class="ow">in</span> <span class="n">peripheral_types</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="memory_map_from_reference_manual-385"><a href="#memory_map_from_reference_manual-385"><span class="linenos">385</span></a>        <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-386"><a href="#memory_map_from_reference_manual-386"><span class="linenos">386</span></a>        <span class="k">for</span> <span class="n">pmap</span> <span class="ow">in</span> <span class="n">pmaps</span><span class="p">:</span>
+</span><span id="memory_map_from_reference_manual-387"><a href="#memory_map_from_reference_manual-387"><span class="linenos">387</span></a>            <span class="nb">print</span><span class="p">(</span><span class="n">pmap</span><span class="o">.</span><span class="n">section</span><span class="p">,</span> <span class="n">pmap</span><span class="o">.</span><span class="n">_chapter</span><span class="o">.</span><span class="n">_relpath</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-388"><a href="#memory_map_from_reference_manual-388"><span class="linenos">388</span></a>            <span class="nb">print</span><span class="p">(</span><span class="n">RenderTree</span><span class="p">(</span><span class="n">pmap</span><span class="p">,</span> <span class="n">maxlevel</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</span><span id="memory_map_from_reference_manual-389"><a href="#memory_map_from_reference_manual-389"><span class="linenos">389</span></a>
+</span><span id="memory_map_from_reference_manual-390"><a href="#memory_map_from_reference_manual-390"><span class="linenos">390</span></a>    <span class="n">memtrees</span> <span class="o">=</span> <span class="n">_build_device_trees</span><span class="p">(</span><span class="n">rm</span><span class="p">,</span> <span class="n">peripheral_types</span><span class="p">,</span> <span class="n">instance_offsets</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-391"><a href="#memory_map_from_reference_manual-391"><span class="linenos">391</span></a>    <span class="c1"># for tree in memtrees:</span>
+</span><span id="memory_map_from_reference_manual-392"><a href="#memory_map_from_reference_manual-392"><span class="linenos">392</span></a>    <span class="c1">#     print(RenderTree(tree, maxlevel=2))</span>
+</span><span id="memory_map_from_reference_manual-393"><a href="#memory_map_from_reference_manual-393"><span class="linenos">393</span></a>    <span class="c1">#     exit(1)</span>
+</span><span id="memory_map_from_reference_manual-394"><a href="#memory_map_from_reference_manual-394"><span class="linenos">394</span></a>    <span class="n">memtrees</span> <span class="o">=</span> <span class="n">_compactify_device_trees</span><span class="p">(</span><span class="n">memtrees</span><span class="p">)</span>
+</span><span id="memory_map_from_reference_manual-395"><a href="#memory_map_from_reference_manual-395"><span class="linenos">395</span></a>    <span class="n">memtrees</span> <span class="o">=</span> <span class="p">[</span><span class="n">_normalize_order</span><span class="p">(</span><span class="n">memtree</span><span class="p">)</span> <span class="k">for</span> <span class="n">memtree</span> <span class="ow">in</span> <span class="n">memtrees</span><span class="p">]</span>
+</span><span id="memory_map_from_reference_manual-396"><a href="#memory_map_from_reference_manual-396"><span class="linenos">396</span></a>    <span class="k">return</span> <span class="n">memtrees</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="memory_map_from_datasheet">
+                            <input id="memory_map_from_datasheet-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">memory_map_from_datasheet</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">ds</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="memory_map_from_datasheet-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#memory_map_from_datasheet"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="memory_map_from_datasheet-361"><a href="#memory_map_from_datasheet-361"><span class="linenos">361</span></a><span class="k">def</span> <span class="nf">memory_map_from_datasheet</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
+</span><span id="memory_map_from_datasheet-362"><a href="#memory_map_from_datasheet-362"><span class="linenos">362</span></a>    <span class="n">register</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">chapter</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;chapter +\d+ +register +mapping&quot;</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-363"><a href="#memory_map_from_datasheet-363"><span class="linenos">363</span></a>    <span class="n">table</span> <span class="o">=</span> <span class="n">register</span><span class="o">.</span><span class="n">tables</span><span class="p">(</span><span class="s2">&quot;register&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="memory_map_from_datasheet-364"><a href="#memory_map_from_datasheet-364"><span class="linenos">364</span></a>    <span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-365"><a href="#memory_map_from_datasheet-365"><span class="linenos">365</span></a>    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">cell_rows</span><span class="p">():</span>
+</span><span id="memory_map_from_datasheet-366"><a href="#memory_map_from_datasheet-366"><span class="linenos">366</span></a>        <span class="n">cname</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">match_value</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+</span><span id="memory_map_from_datasheet-367"><a href="#memory_map_from_datasheet-367"><span class="linenos">367</span></a>        <span class="n">ctype</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">match_value</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+</span><span id="memory_map_from_datasheet-368"><a href="#memory_map_from_datasheet-368"><span class="linenos">368</span></a>        <span class="n">caddr</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">match_value</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;address.*?hex&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+</span><span id="memory_map_from_datasheet-369"><a href="#memory_map_from_datasheet-369"><span class="linenos">369</span></a>        <span class="n">cvalue</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">match_value</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;default&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+</span><span id="memory_map_from_datasheet-370"><a href="#memory_map_from_datasheet-370"><span class="linenos">370</span></a>        <span class="n">ccomment</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">match_value</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;comment&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+</span><span id="memory_map_from_datasheet-371"><a href="#memory_map_from_datasheet-371"><span class="linenos">371</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">ctype</span><span class="p">:</span>
+</span><span id="memory_map_from_datasheet-372"><a href="#memory_map_from_datasheet-372"><span class="linenos">372</span></a>            <span class="k">continue</span>
+</span><span id="memory_map_from_datasheet-373"><a href="#memory_map_from_datasheet-373"><span class="linenos">373</span></a>        <span class="n">cvalue</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cvalue</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">cvalue</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span>
+</span><span id="memory_map_from_datasheet-374"><a href="#memory_map_from_datasheet-374"><span class="linenos">374</span></a>        <span class="nb">print</span><span class="p">(</span><span class="n">cname</span><span class="p">,</span> <span class="n">ctype</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">caddr</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">cvalue</span><span class="p">,</span> <span class="n">ccomment</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-375"><a href="#memory_map_from_datasheet-375"><span class="linenos">375</span></a>
+</span><span id="memory_map_from_datasheet-376"><a href="#memory_map_from_datasheet-376"><span class="linenos">376</span></a>    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-377"><a href="#memory_map_from_datasheet-377"><span class="linenos">377</span></a>
+</span><span id="memory_map_from_datasheet-378"><a href="#memory_map_from_datasheet-378"><span class="linenos">378</span></a>    <span class="n">peripheral_types</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-379"><a href="#memory_map_from_datasheet-379"><span class="linenos">379</span></a>    <span class="n">instance_offsets</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="memory_map_from_datasheet-380"><a href="#memory_map_from_datasheet-380"><span class="linenos">380</span></a>    <span class="k">for</span> <span class="n">chapter</span> <span class="ow">in</span> <span class="n">all_chapters</span><span class="p">:</span>  <span class="c1"># noqa: F821</span>
+</span><span id="memory_map_from_datasheet-381"><a href="#memory_map_from_datasheet-381"><span class="linenos">381</span></a>        <span class="nb">print</span><span class="p">()</span>
+</span><span id="memory_map_from_datasheet-382"><a href="#memory_map_from_datasheet-382"><span class="linenos">382</span></a>        <span class="n">peripheral_maps</span><span class="p">,</span> <span class="n">peripheral_offsets</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">peripheral_maps</span><span class="p">(</span><span class="n">chapter</span><span class="p">,</span> <span class="n">assert_table</span><span class="o">=</span><span class="n">chapter</span> <span class="ow">in</span> <span class="n">type_chapters</span><span class="p">)</span>  <span class="c1"># noqa: F821</span>
+</span><span id="memory_map_from_datasheet-383"><a href="#memory_map_from_datasheet-383"><span class="linenos">383</span></a>        <span class="n">instance_offsets</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">peripheral_offsets</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-384"><a href="#memory_map_from_datasheet-384"><span class="linenos">384</span></a>        <span class="n">peripheral_maps</span> <span class="o">=</span> <span class="n">_peripheral_map_to_tree</span><span class="p">(</span><span class="n">chapter</span><span class="p">,</span> <span class="n">peripheral_maps</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-385"><a href="#memory_map_from_datasheet-385"><span class="linenos">385</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">_expand_register_offsets</span><span class="p">(</span><span class="n">peripheral_maps</span><span class="p">):</span>
+</span><span id="memory_map_from_datasheet-386"><a href="#memory_map_from_datasheet-386"><span class="linenos">386</span></a>            <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-387"><a href="#memory_map_from_datasheet-387"><span class="linenos">387</span></a>        <span class="k">for</span> <span class="n">pmap</span> <span class="ow">in</span> <span class="n">peripheral_maps</span><span class="p">:</span>
+</span><span id="memory_map_from_datasheet-388"><a href="#memory_map_from_datasheet-388"><span class="linenos">388</span></a>            <span class="nb">print</span><span class="p">(</span><span class="n">pmap</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-389"><a href="#memory_map_from_datasheet-389"><span class="linenos">389</span></a>            <span class="c1"># print(RenderTree(pmap, maxlevel=2))</span>
+</span><span id="memory_map_from_datasheet-390"><a href="#memory_map_from_datasheet-390"><span class="linenos">390</span></a>            <span class="n">peripheral_types</span><span class="p">[</span><span class="n">pmap</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">pmap</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-391"><a href="#memory_map_from_datasheet-391"><span class="linenos">391</span></a>
+</span><span id="memory_map_from_datasheet-392"><a href="#memory_map_from_datasheet-392"><span class="linenos">392</span></a>    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">pmaps</span> <span class="ow">in</span> <span class="n">peripheral_types</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="memory_map_from_datasheet-393"><a href="#memory_map_from_datasheet-393"><span class="linenos">393</span></a>        <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-394"><a href="#memory_map_from_datasheet-394"><span class="linenos">394</span></a>        <span class="k">for</span> <span class="n">pmap</span> <span class="ow">in</span> <span class="n">pmaps</span><span class="p">:</span>
+</span><span id="memory_map_from_datasheet-395"><a href="#memory_map_from_datasheet-395"><span class="linenos">395</span></a>            <span class="nb">print</span><span class="p">(</span><span class="n">pmap</span><span class="o">.</span><span class="n">section</span><span class="p">,</span> <span class="n">pmap</span><span class="o">.</span><span class="n">_chapter</span><span class="o">.</span><span class="n">_relpath</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-396"><a href="#memory_map_from_datasheet-396"><span class="linenos">396</span></a>            <span class="nb">print</span><span class="p">(</span><span class="n">RenderTree</span><span class="p">(</span><span class="n">pmap</span><span class="p">,</span> <span class="n">maxlevel</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</span><span id="memory_map_from_datasheet-397"><a href="#memory_map_from_datasheet-397"><span class="linenos">397</span></a>
+</span><span id="memory_map_from_datasheet-398"><a href="#memory_map_from_datasheet-398"><span class="linenos">398</span></a>    <span class="n">memtrees</span> <span class="o">=</span> <span class="n">_build_device_trees</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">peripheral_types</span><span class="p">,</span> <span class="n">instance_offsets</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-399"><a href="#memory_map_from_datasheet-399"><span class="linenos">399</span></a>    <span class="c1"># for tree in memtrees:</span>
+</span><span id="memory_map_from_datasheet-400"><a href="#memory_map_from_datasheet-400"><span class="linenos">400</span></a>    <span class="c1">#     print(RenderTree(tree, maxlevel=2))</span>
+</span><span id="memory_map_from_datasheet-401"><a href="#memory_map_from_datasheet-401"><span class="linenos">401</span></a>    <span class="c1">#     exit(1)</span>
+</span><span id="memory_map_from_datasheet-402"><a href="#memory_map_from_datasheet-402"><span class="linenos">402</span></a>    <span class="n">memtrees</span> <span class="o">=</span> <span class="n">_compactify_device_trees</span><span class="p">(</span><span class="n">memtrees</span><span class="p">)</span>
+</span><span id="memory_map_from_datasheet-403"><a href="#memory_map_from_datasheet-403"><span class="linenos">403</span></a>    <span class="n">memtrees</span> <span class="o">=</span> <span class="p">[</span><span class="n">_normalize_order</span><span class="p">(</span><span class="n">memtree</span><span class="p">)</span> <span class="k">for</span> <span class="n">memtree</span> <span class="ow">in</span> <span class="n">memtrees</span><span class="p">]</span>
+</span><span id="memory_map_from_datasheet-404"><a href="#memory_map_from_datasheet-404"><span class="linenos">404</span></a>    <span class="k">return</span> <span class="n">memtrees</span>
+</span></pre></div>
+
+
+    
+
+                </section>
     </main>
 <script>
     function escapeHTML(html) {

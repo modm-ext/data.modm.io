@@ -43,13 +43,46 @@
                    pattern=".+" required>
 
 
-            <h2>Submodules</h2>
-            <ul>
-                    <li><a href="stmicro/device.html">device</a></li>
-                    <li><a href="stmicro/identifier.html">identifier</a></li>
-                    <li><a href="stmicro/model.html">model</a></li>
-                    <li><a href="stmicro/ontology.html">ontology</a></li>
-            </ul>
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="function" href="#owls">owls</a>
+            </li>
+            <li>
+                    <a class="function" href="#owl_devices">owl_devices</a>
+            </li>
+            <li>
+                    <a class="function" href="#owl_device">owl_device</a>
+            </li>
+            <li>
+                    <a class="function" href="#load_owl_device">load_owl_device</a>
+            </li>
+            <li>
+                    <a class="function" href="#did_from_string">did_from_string</a>
+            </li>
+            <li>
+                    <a class="function" href="#create_ontology">create_ontology</a>
+            </li>
+            <li>
+                    <a class="function" href="#owl_from_datasheet">owl_from_datasheet</a>
+            </li>
+            <li>
+                    <a class="function" href="#owl_from_reference_manual">owl_from_reference_manual</a>
+            </li>
+            <li>
+                    <a class="function" href="#owl_from_doc">owl_from_doc</a>
+            </li>
+            <li>
+                    <a class="function" href="#owl_from_did">owl_from_did</a>
+            </li>
+            <li>
+                    <a class="function" href="#owl_from_cubemx">owl_from_cubemx</a>
+            </li>
+            <li>
+                    <a class="function" href="#owl_from_header">owl_from_header</a>
+            </li>
+    </ul>
 
 
 
@@ -70,17 +103,611 @@
 
                         <label class="view-source-button" for="mod-stmicro-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.device</span> <span class="kn">import</span> <span class="n">owls</span><span class="p">,</span> <span class="n">owl_devices</span><span class="p">,</span> <span class="n">owl_device</span><span class="p">,</span> <span class="n">load_owl_device</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a><span class="kn">from</span> <span class="nn">.identifier</span> <span class="kn">import</span> <span class="n">did_from_string</span>
-</span><span id="L-6"><a href="#L-6"><span class="linenos">6</span></a><span class="kn">from</span> <span class="nn">.ontology</span> <span class="kn">import</span> <span class="n">create_ontology</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos">7</span></a><span class="kn">from</span> <span class="nn">.model</span> <span class="kn">import</span> <span class="o">*</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span> <span class="nn">.device</span> <span class="kn">import</span> <span class="n">owls</span><span class="p">,</span> <span class="n">owl_devices</span><span class="p">,</span> <span class="n">owl_device</span><span class="p">,</span> <span class="n">load_owl_device</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">from</span> <span class="nn">.identifier</span> <span class="kn">import</span> <span class="n">did_from_string</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="kn">from</span> <span class="nn">.ontology</span> <span class="kn">import</span> <span class="n">create_ontology</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="kn">from</span> <span class="nn">.model</span> <span class="kn">import</span> <span class="p">(</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>    <span class="n">owl_from_datasheet</span><span class="p">,</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    <span class="n">owl_from_reference_manual</span><span class="p">,</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>    <span class="n">owl_from_doc</span><span class="p">,</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>    <span class="n">owl_from_did</span><span class="p">,</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>    <span class="n">owl_from_cubemx</span><span class="p">,</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>    <span class="n">owl_from_header</span><span class="p">,</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="p">)</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>    <span class="s2">&quot;owls&quot;</span><span class="p">,</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>    <span class="s2">&quot;owl_devices&quot;</span><span class="p">,</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>    <span class="s2">&quot;owl_device&quot;</span><span class="p">,</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>    <span class="s2">&quot;load_owl_device&quot;</span><span class="p">,</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="s2">&quot;did_from_string&quot;</span><span class="p">,</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="s2">&quot;create_ontology&quot;</span><span class="p">,</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="s2">&quot;owl_from_datasheet&quot;</span><span class="p">,</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>    <span class="s2">&quot;owl_from_reference_manual&quot;</span><span class="p">,</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>    <span class="s2">&quot;owl_from_doc&quot;</span><span class="p">,</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>    <span class="s2">&quot;owl_from_did&quot;</span><span class="p">,</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a>    <span class="s2">&quot;owl_from_cubemx&quot;</span><span class="p">,</span>
+</span><span id="L-28"><a href="#L-28"><span class="linenos">28</span></a>    <span class="s2">&quot;owl_from_header&quot;</span><span class="p">,</span>
+</span><span id="L-29"><a href="#L-29"><span class="linenos">29</span></a><span class="p">]</span>
 </span></pre></div>
 
 
             </section>
+                <section id="owls">
+                            <input id="owls-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">owls</span><span class="signature pdoc-code condensed">(<span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="owls-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#owls"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="owls-15"><a href="#owls-15"><span class="linenos">15</span></a><span class="k">def</span> <span class="nf">owls</span><span class="p">():</span>
+</span><span id="owls-16"><a href="#owls-16"><span class="linenos">16</span></a>    <span class="k">global</span> <span class="n">_OWL_FILES</span>
+</span><span id="owls-17"><a href="#owls-17"><span class="linenos">17</span></a>    <span class="k">if</span> <span class="n">_OWL_FILES</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="owls-18"><a href="#owls-18"><span class="linenos">18</span></a>        <span class="n">_OWL_FILES</span> <span class="o">=</span> <span class="n">cache_path</span><span class="p">(</span><span class="s2">&quot;stmicro-owl/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.owl&quot;</span><span class="p">)</span>
+</span><span id="owls-19"><a href="#owls-19"><span class="linenos">19</span></a>        <span class="n">_OWL_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">stem</span> <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">_OWL_FILES</span><span class="p">]</span>
+</span><span id="owls-20"><a href="#owls-20"><span class="linenos">20</span></a>    <span class="k">return</span> <span class="n">_OWL_FILES</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="owl_devices">
+                            <input id="owl_devices-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">owl_devices</span><span class="signature pdoc-code condensed">(<span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="owl_devices-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#owl_devices"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="owl_devices-23"><a href="#owl_devices-23"><span class="linenos">23</span></a><span class="k">def</span> <span class="nf">owl_devices</span><span class="p">():</span>
+</span><span id="owl_devices-24"><a href="#owl_devices-24"><span class="linenos">24</span></a>    <span class="k">global</span> <span class="n">_OWL_MAPPING</span><span class="p">,</span> <span class="n">_OWL_MAPPING_FILE</span>
+</span><span id="owl_devices-25"><a href="#owl_devices-25"><span class="linenos">25</span></a>    <span class="k">if</span> <span class="n">_OWL_MAPPING</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="owl_devices-26"><a href="#owl_devices-26"><span class="linenos">26</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">_OWL_MAPPING_FILE</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+</span><span id="owl_devices-27"><a href="#owl_devices-27"><span class="linenos">27</span></a>            <span class="n">_OWL_MAPPING</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="owl_devices-28"><a href="#owl_devices-28"><span class="linenos">28</span></a>            <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">owls</span><span class="p">():</span>
+</span><span id="owl_devices-29"><a href="#owl_devices-29"><span class="linenos">29</span></a>                <span class="k">if</span> <span class="n">ds</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;DS&quot;</span><span class="p">):</span>
+</span><span id="owl_devices-30"><a href="#owl_devices-30"><span class="linenos">30</span></a>                    <span class="n">owl</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+</span><span id="owl_devices-31"><a href="#owl_devices-31"><span class="linenos">31</span></a>                    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">owl</span><span class="o">.</span><span class="n">Device</span><span class="o">.</span><span class="n">instances</span><span class="p">()):</span>
+</span><span id="owl_devices-32"><a href="#owl_devices-32"><span class="linenos">32</span></a>                        <span class="n">_OWL_MAPPING</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span>
+</span><span id="owl_devices-33"><a href="#owl_devices-33"><span class="linenos">33</span></a>
+</span><span id="owl_devices-34"><a href="#owl_devices-34"><span class="linenos">34</span></a>            <span class="n">_OWL_MAPPING_FILE</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="owl_devices-35"><a href="#owl_devices-35"><span class="linenos">35</span></a>            <span class="k">with</span> <span class="n">_OWL_MAPPING_FILE</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+</span><span id="owl_devices-36"><a href="#owl_devices-36"><span class="linenos">36</span></a>                <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">_OWL_MAPPING</span><span class="p">,</span> <span class="n">fh</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span><span id="owl_devices-37"><a href="#owl_devices-37"><span class="linenos">37</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="owl_devices-38"><a href="#owl_devices-38"><span class="linenos">38</span></a>            <span class="k">with</span> <span class="n">_OWL_MAPPING_FILE</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+</span><span id="owl_devices-39"><a href="#owl_devices-39"><span class="linenos">39</span></a>                <span class="n">_OWL_MAPPING</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
+</span><span id="owl_devices-40"><a href="#owl_devices-40"><span class="linenos">40</span></a>    <span class="k">return</span> <span class="n">_OWL_MAPPING</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="owl_device">
+                            <input id="owl_device-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">owl_device</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">device</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="owl_device-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#owl_device"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="owl_device-43"><a href="#owl_device-43"><span class="linenos">43</span></a><span class="k">def</span> <span class="nf">owl_device</span><span class="p">(</span><span class="n">device</span><span class="p">):</span>
+</span><span id="owl_device-44"><a href="#owl_device-44"><span class="linenos">44</span></a>    <span class="k">return</span> <span class="n">owl_devices</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">device</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="load_owl_device">
+                            <input id="load_owl_device-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">load_owl_device</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">device</span></span><span class="return-annotation">) -> <span class="nb">bool</span>:</span></span>
+
+                <label class="view-source-button" for="load_owl_device-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#load_owl_device"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="load_owl_device-47"><a href="#load_owl_device-47"><span class="linenos">47</span></a><span class="k">def</span> <span class="nf">load_owl_device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="load_owl_device-48"><a href="#load_owl_device-48"><span class="linenos">48</span></a>    <span class="k">if</span> <span class="p">(</span><span class="n">dev</span> <span class="o">:=</span> <span class="n">owl_devices</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">device</span><span class="o">.</span><span class="n">string</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="load_owl_device-49"><a href="#load_owl_device-49"><span class="linenos">49</span></a>        <span class="n">owl</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
+</span><span id="load_owl_device-50"><a href="#load_owl_device-50"><span class="linenos">50</span></a>        <span class="k">return</span> <span class="kc">True</span>
+</span><span id="load_owl_device-51"><a href="#load_owl_device-51"><span class="linenos">51</span></a>    <span class="k">return</span> <span class="kc">False</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="did_from_string">
+                            <input id="did_from_string-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">did_from_string</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">string</span></span><span class="return-annotation">) -> <span class="n"><a href="../owl.html#DeviceIdentifier">modm_data.owl.DeviceIdentifier</a></span>:</span></span>
+
+                <label class="view-source-button" for="did_from_string-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#did_from_string"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="did_from_string-8"><a href="#did_from_string-8"><span class="linenos"> 8</span></a><span class="k">def</span> <span class="nf">did_from_string</span><span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DeviceIdentifier</span><span class="p">:</span>
+</span><span id="did_from_string-9"><a href="#did_from_string-9"><span class="linenos"> 9</span></a>    <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="did_from_string-10"><a href="#did_from_string-10"><span class="linenos">10</span></a>
+</span><span id="did_from_string-11"><a href="#did_from_string-11"><span class="linenos">11</span></a>    <span class="k">if</span> <span class="n">string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;stm32&quot;</span><span class="p">):</span>
+</span><span id="did_from_string-12"><a href="#did_from_string-12"><span class="linenos">12</span></a>        <span class="n">schema</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{platform}{family}{name}{pin}{size}{package}{temperature}{variant}</span><span class="s2">&quot;</span>
+</span><span id="did_from_string-13"><a href="#did_from_string-13"><span class="linenos">13</span></a>        <span class="k">if</span> <span class="s2">&quot;@&quot;</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+</span><span id="did_from_string-14"><a href="#did_from_string-14"><span class="linenos">14</span></a>            <span class="n">schema</span> <span class="o">+=</span> <span class="s2">&quot;@</span><span class="si">{core}</span><span class="s2">&quot;</span>
+</span><span id="did_from_string-15"><a href="#did_from_string-15"><span class="linenos">15</span></a>        <span class="n">i</span> <span class="o">=</span> <span class="n">DeviceIdentifier</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
+</span><span id="did_from_string-16"><a href="#did_from_string-16"><span class="linenos">16</span></a>        <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;platform&quot;</span><span class="p">,</span> <span class="s2">&quot;stm32&quot;</span><span class="p">)</span>
+</span><span id="did_from_string-17"><a href="#did_from_string-17"><span class="linenos">17</span></a>        <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;family&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span>
+</span><span id="did_from_string-18"><a href="#did_from_string-18"><span class="linenos">18</span></a>        <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+</span><span id="did_from_string-19"><a href="#did_from_string-19"><span class="linenos">19</span></a>        <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;pin&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span>
+</span><span id="did_from_string-20"><a href="#did_from_string-20"><span class="linenos">20</span></a>        <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
+</span><span id="did_from_string-21"><a href="#did_from_string-21"><span class="linenos">21</span></a>        <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;package&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">[</span><span class="mi">11</span><span class="p">])</span>
+</span><span id="did_from_string-22"><a href="#did_from_string-22"><span class="linenos">22</span></a>        <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">[</span><span class="mi">12</span><span class="p">])</span>
+</span><span id="did_from_string-23"><a href="#did_from_string-23"><span class="linenos">23</span></a>        <span class="k">if</span> <span class="s2">&quot;@&quot;</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+</span><span id="did_from_string-24"><a href="#did_from_string-24"><span class="linenos">24</span></a>            <span class="n">string</span><span class="p">,</span> <span class="n">core</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)</span>
+</span><span id="did_from_string-25"><a href="#did_from_string-25"><span class="linenos">25</span></a>            <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="n">core</span><span class="p">)</span>
+</span><span id="did_from_string-26"><a href="#did_from_string-26"><span class="linenos">26</span></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">14</span><span class="p">:</span>
+</span><span id="did_from_string-27"><a href="#did_from_string-27"><span class="linenos">27</span></a>            <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;variant&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">[</span><span class="mi">13</span><span class="p">])</span>
+</span><span id="did_from_string-28"><a href="#did_from_string-28"><span class="linenos">28</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="did_from_string-29"><a href="#did_from_string-29"><span class="linenos">29</span></a>            <span class="n">i</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;variant&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="did_from_string-30"><a href="#did_from_string-30"><span class="linenos">30</span></a>        <span class="k">return</span> <span class="n">i</span>
+</span><span id="did_from_string-31"><a href="#did_from_string-31"><span class="linenos">31</span></a>
+</span><span id="did_from_string-32"><a href="#did_from_string-32"><span class="linenos">32</span></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown identifier &#39;</span><span class="si">{</span><span class="n">string</span><span class="si">}</span><span class="s2">&#39;!&quot;</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="create_ontology">
+                            <input id="create_ontology-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">create_ontology</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">did</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="create_ontology-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#create_ontology"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="create_ontology-20"><a href="#create_ontology-20"><span class="linenos"> 20</span></a><span class="k">def</span> <span class="nf">create_ontology</span><span class="p">(</span><span class="n">did</span><span class="p">):</span>
+</span><span id="create_ontology-21"><a href="#create_ontology-21"><span class="linenos"> 21</span></a>    <span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">(</span><span class="s2">&quot;stmicro&quot;</span><span class="p">,</span> <span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+</span><span id="create_ontology-22"><a href="#create_ontology-22"><span class="linenos"> 22</span></a>    <span class="n">ontology</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">ontology</span>
+</span><span id="create_ontology-23"><a href="#create_ontology-23"><span class="linenos"> 23</span></a>
+</span><span id="create_ontology-24"><a href="#create_ontology-24"><span class="linenos"> 24</span></a>    <span class="c1"># --------------------------- DEVICE IDENTIFIER ---------------------------</span>
+</span><span id="create_ontology-25"><a href="#create_ontology-25"><span class="linenos"> 25</span></a>    <span class="k">class</span> <span class="nc">DeviceIdentifier</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">Thing</span><span class="p">):</span>
+</span><span id="create_ontology-26"><a href="#create_ontology-26"><span class="linenos"> 26</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-27"><a href="#create_ontology-27"><span class="linenos"> 27</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;The unique identifier (part number) of the device.&quot;</span>
+</span><span id="create_ontology-28"><a href="#create_ontology-28"><span class="linenos"> 28</span></a>
+</span><span id="create_ontology-29"><a href="#create_ontology-29"><span class="linenos"> 29</span></a>    <span class="k">class</span> <span class="nc">hasDeviceSchema</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-30"><a href="#create_ontology-30"><span class="linenos"> 30</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-31"><a href="#create_ontology-31"><span class="linenos"> 31</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;How to format the device identifier.&quot;</span>
+</span><span id="create_ontology-32"><a href="#create_ontology-32"><span class="linenos"> 32</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-33"><a href="#create_ontology-33"><span class="linenos"> 33</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-34"><a href="#create_ontology-34"><span class="linenos"> 34</span></a>
+</span><span id="create_ontology-35"><a href="#create_ontology-35"><span class="linenos"> 35</span></a>    <span class="k">class</span> <span class="nc">hasDevicePlatform</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-36"><a href="#create_ontology-36"><span class="linenos"> 36</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-37"><a href="#create_ontology-37"><span class="linenos"> 37</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-38"><a href="#create_ontology-38"><span class="linenos"> 38</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-39"><a href="#create_ontology-39"><span class="linenos"> 39</span></a>
+</span><span id="create_ontology-40"><a href="#create_ontology-40"><span class="linenos"> 40</span></a>    <span class="k">class</span> <span class="nc">hasDeviceFamily</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-41"><a href="#create_ontology-41"><span class="linenos"> 41</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-42"><a href="#create_ontology-42"><span class="linenos"> 42</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-43"><a href="#create_ontology-43"><span class="linenos"> 43</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-44"><a href="#create_ontology-44"><span class="linenos"> 44</span></a>
+</span><span id="create_ontology-45"><a href="#create_ontology-45"><span class="linenos"> 45</span></a>    <span class="k">class</span> <span class="nc">hasDeviceName</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-46"><a href="#create_ontology-46"><span class="linenos"> 46</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-47"><a href="#create_ontology-47"><span class="linenos"> 47</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-48"><a href="#create_ontology-48"><span class="linenos"> 48</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-49"><a href="#create_ontology-49"><span class="linenos"> 49</span></a>
+</span><span id="create_ontology-50"><a href="#create_ontology-50"><span class="linenos"> 50</span></a>    <span class="k">class</span> <span class="nc">hasDevicePin</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-51"><a href="#create_ontology-51"><span class="linenos"> 51</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-52"><a href="#create_ontology-52"><span class="linenos"> 52</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-53"><a href="#create_ontology-53"><span class="linenos"> 53</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-54"><a href="#create_ontology-54"><span class="linenos"> 54</span></a>
+</span><span id="create_ontology-55"><a href="#create_ontology-55"><span class="linenos"> 55</span></a>    <span class="k">class</span> <span class="nc">hasDeviceSize</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-56"><a href="#create_ontology-56"><span class="linenos"> 56</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-57"><a href="#create_ontology-57"><span class="linenos"> 57</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-58"><a href="#create_ontology-58"><span class="linenos"> 58</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-59"><a href="#create_ontology-59"><span class="linenos"> 59</span></a>
+</span><span id="create_ontology-60"><a href="#create_ontology-60"><span class="linenos"> 60</span></a>    <span class="k">class</span> <span class="nc">hasDevicePackage</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-61"><a href="#create_ontology-61"><span class="linenos"> 61</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-62"><a href="#create_ontology-62"><span class="linenos"> 62</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-63"><a href="#create_ontology-63"><span class="linenos"> 63</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-64"><a href="#create_ontology-64"><span class="linenos"> 64</span></a>
+</span><span id="create_ontology-65"><a href="#create_ontology-65"><span class="linenos"> 65</span></a>    <span class="k">class</span> <span class="nc">hasDeviceTemperature</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-66"><a href="#create_ontology-66"><span class="linenos"> 66</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-67"><a href="#create_ontology-67"><span class="linenos"> 67</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-68"><a href="#create_ontology-68"><span class="linenos"> 68</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-69"><a href="#create_ontology-69"><span class="linenos"> 69</span></a>
+</span><span id="create_ontology-70"><a href="#create_ontology-70"><span class="linenos"> 70</span></a>    <span class="k">class</span> <span class="nc">hasDeviceVariant</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-71"><a href="#create_ontology-71"><span class="linenos"> 71</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-72"><a href="#create_ontology-72"><span class="linenos"> 72</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-73"><a href="#create_ontology-73"><span class="linenos"> 73</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-74"><a href="#create_ontology-74"><span class="linenos"> 74</span></a>
+</span><span id="create_ontology-75"><a href="#create_ontology-75"><span class="linenos"> 75</span></a>    <span class="k">class</span> <span class="nc">hasDeviceCore</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-76"><a href="#create_ontology-76"><span class="linenos"> 76</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-77"><a href="#create_ontology-77"><span class="linenos"> 77</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-78"><a href="#create_ontology-78"><span class="linenos"> 78</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-79"><a href="#create_ontology-79"><span class="linenos"> 79</span></a>
+</span><span id="create_ontology-80"><a href="#create_ontology-80"><span class="linenos"> 80</span></a>    <span class="c1"># ------------------------------- MEMORIES --------------------------------</span>
+</span><span id="create_ontology-81"><a href="#create_ontology-81"><span class="linenos"> 81</span></a>    <span class="k">class</span> <span class="nc">Memory</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">Thing</span><span class="p">):</span>
+</span><span id="create_ontology-82"><a href="#create_ontology-82"><span class="linenos"> 82</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-83"><a href="#create_ontology-83"><span class="linenos"> 83</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;Internal memory.&quot;</span>
+</span><span id="create_ontology-84"><a href="#create_ontology-84"><span class="linenos"> 84</span></a>
+</span><span id="create_ontology-85"><a href="#create_ontology-85"><span class="linenos"> 85</span></a>    <span class="k">class</span> <span class="nc">hasMemoryStartAddress</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-86"><a href="#create_ontology-86"><span class="linenos"> 86</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-87"><a href="#create_ontology-87"><span class="linenos"> 87</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Memory</span><span class="p">]</span>
+</span><span id="create_ontology-88"><a href="#create_ontology-88"><span class="linenos"> 88</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</span><span id="create_ontology-89"><a href="#create_ontology-89"><span class="linenos"> 89</span></a>
+</span><span id="create_ontology-90"><a href="#create_ontology-90"><span class="linenos"> 90</span></a>    <span class="k">class</span> <span class="nc">hasMemorySize</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-91"><a href="#create_ontology-91"><span class="linenos"> 91</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-92"><a href="#create_ontology-92"><span class="linenos"> 92</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Memory</span><span class="p">]</span>
+</span><span id="create_ontology-93"><a href="#create_ontology-93"><span class="linenos"> 93</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</span><span id="create_ontology-94"><a href="#create_ontology-94"><span class="linenos"> 94</span></a>
+</span><span id="create_ontology-95"><a href="#create_ontology-95"><span class="linenos"> 95</span></a>    <span class="k">class</span> <span class="nc">hasMemoryAccess</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-96"><a href="#create_ontology-96"><span class="linenos"> 96</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-97"><a href="#create_ontology-97"><span class="linenos"> 97</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Memory</span><span class="p">]</span>
+</span><span id="create_ontology-98"><a href="#create_ontology-98"><span class="linenos"> 98</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-99"><a href="#create_ontology-99"><span class="linenos"> 99</span></a>
+</span><span id="create_ontology-100"><a href="#create_ontology-100"><span class="linenos">100</span></a>    <span class="k">class</span> <span class="nc">hasMemory</span><span class="p">(</span><span class="n">DeviceIdentifier</span> <span class="o">&gt;&gt;</span> <span class="n">Memory</span><span class="p">):</span>
+</span><span id="create_ontology-101"><a href="#create_ontology-101"><span class="linenos">101</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-102"><a href="#create_ontology-102"><span class="linenos">102</span></a>
+</span><span id="create_ontology-103"><a href="#create_ontology-103"><span class="linenos">103</span></a>    <span class="c1"># ------------------------------ INTERRUPTS -------------------------------</span>
+</span><span id="create_ontology-104"><a href="#create_ontology-104"><span class="linenos">104</span></a>    <span class="k">class</span> <span class="nc">InterruptVector</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">Thing</span><span class="p">):</span>
+</span><span id="create_ontology-105"><a href="#create_ontology-105"><span class="linenos">105</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-106"><a href="#create_ontology-106"><span class="linenos">106</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;Interrupt vector in the table.&quot;</span>
+</span><span id="create_ontology-107"><a href="#create_ontology-107"><span class="linenos">107</span></a>
+</span><span id="create_ontology-108"><a href="#create_ontology-108"><span class="linenos">108</span></a>    <span class="k">class</span> <span class="nc">hasInterruptVectorPosition</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-109"><a href="#create_ontology-109"><span class="linenos">109</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-110"><a href="#create_ontology-110"><span class="linenos">110</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">InterruptVector</span><span class="p">]</span>
+</span><span id="create_ontology-111"><a href="#create_ontology-111"><span class="linenos">111</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</span><span id="create_ontology-112"><a href="#create_ontology-112"><span class="linenos">112</span></a>
+</span><span id="create_ontology-113"><a href="#create_ontology-113"><span class="linenos">113</span></a>    <span class="k">class</span> <span class="nc">hasInterruptVector</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">ObjectProperty</span><span class="p">):</span>
+</span><span id="create_ontology-114"><a href="#create_ontology-114"><span class="linenos">114</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-115"><a href="#create_ontology-115"><span class="linenos">115</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-116"><a href="#create_ontology-116"><span class="linenos">116</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">InterruptVector</span><span class="p">]</span>
+</span><span id="create_ontology-117"><a href="#create_ontology-117"><span class="linenos">117</span></a>
+</span><span id="create_ontology-118"><a href="#create_ontology-118"><span class="linenos">118</span></a>    <span class="c1"># --------------------------------- PINS ----------------------------------</span>
+</span><span id="create_ontology-119"><a href="#create_ontology-119"><span class="linenos">119</span></a>    <span class="k">class</span> <span class="nc">Package</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">Thing</span><span class="p">):</span>
+</span><span id="create_ontology-120"><a href="#create_ontology-120"><span class="linenos">120</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-121"><a href="#create_ontology-121"><span class="linenos">121</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;A device package identifier&quot;</span>
+</span><span id="create_ontology-122"><a href="#create_ontology-122"><span class="linenos">122</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-123"><a href="#create_ontology-123"><span class="linenos">123</span></a>
+</span><span id="create_ontology-124"><a href="#create_ontology-124"><span class="linenos">124</span></a>    <span class="k">class</span> <span class="nc">hasPackagePinCount</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-125"><a href="#create_ontology-125"><span class="linenos">125</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-126"><a href="#create_ontology-126"><span class="linenos">126</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Package</span><span class="p">]</span>
+</span><span id="create_ontology-127"><a href="#create_ontology-127"><span class="linenos">127</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</span><span id="create_ontology-128"><a href="#create_ontology-128"><span class="linenos">128</span></a>
+</span><span id="create_ontology-129"><a href="#create_ontology-129"><span class="linenos">129</span></a>    <span class="k">class</span> <span class="nc">hasPackage</span><span class="p">(</span><span class="n">DeviceIdentifier</span> <span class="o">&gt;&gt;</span> <span class="n">Package</span><span class="p">):</span>
+</span><span id="create_ontology-130"><a href="#create_ontology-130"><span class="linenos">130</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-131"><a href="#create_ontology-131"><span class="linenos">131</span></a>
+</span><span id="create_ontology-132"><a href="#create_ontology-132"><span class="linenos">132</span></a>    <span class="k">class</span> <span class="nc">Pin</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">Thing</span><span class="p">):</span>
+</span><span id="create_ontology-133"><a href="#create_ontology-133"><span class="linenos">133</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-134"><a href="#create_ontology-134"><span class="linenos">134</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;A pin on a package.&quot;</span>
+</span><span id="create_ontology-135"><a href="#create_ontology-135"><span class="linenos">135</span></a>
+</span><span id="create_ontology-136"><a href="#create_ontology-136"><span class="linenos">136</span></a>    <span class="k">class</span> <span class="nc">hasPinType</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-137"><a href="#create_ontology-137"><span class="linenos">137</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-138"><a href="#create_ontology-138"><span class="linenos">138</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Pin</span><span class="p">]</span>
+</span><span id="create_ontology-139"><a href="#create_ontology-139"><span class="linenos">139</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-140"><a href="#create_ontology-140"><span class="linenos">140</span></a>
+</span><span id="create_ontology-141"><a href="#create_ontology-141"><span class="linenos">141</span></a>    <span class="k">class</span> <span class="nc">hasPinNumber</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-142"><a href="#create_ontology-142"><span class="linenos">142</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-143"><a href="#create_ontology-143"><span class="linenos">143</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Pin</span><span class="p">]</span>
+</span><span id="create_ontology-144"><a href="#create_ontology-144"><span class="linenos">144</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</span><span id="create_ontology-145"><a href="#create_ontology-145"><span class="linenos">145</span></a>
+</span><span id="create_ontology-146"><a href="#create_ontology-146"><span class="linenos">146</span></a>    <span class="k">class</span> <span class="nc">hasPort</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-147"><a href="#create_ontology-147"><span class="linenos">147</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-148"><a href="#create_ontology-148"><span class="linenos">148</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Pin</span><span class="p">]</span>
+</span><span id="create_ontology-149"><a href="#create_ontology-149"><span class="linenos">149</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-150"><a href="#create_ontology-150"><span class="linenos">150</span></a>
+</span><span id="create_ontology-151"><a href="#create_ontology-151"><span class="linenos">151</span></a>    <span class="k">class</span> <span class="nc">hasPin</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">ObjectProperty</span><span class="p">):</span>
+</span><span id="create_ontology-152"><a href="#create_ontology-152"><span class="linenos">152</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-153"><a href="#create_ontology-153"><span class="linenos">153</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Package</span><span class="p">]</span>
+</span><span id="create_ontology-154"><a href="#create_ontology-154"><span class="linenos">154</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">Pin</span><span class="p">]</span>
+</span><span id="create_ontology-155"><a href="#create_ontology-155"><span class="linenos">155</span></a>
+</span><span id="create_ontology-156"><a href="#create_ontology-156"><span class="linenos">156</span></a>    <span class="k">class</span> <span class="nc">pinPosition</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">AnnotationProperty</span><span class="p">):</span>
+</span><span id="create_ontology-157"><a href="#create_ontology-157"><span class="linenos">157</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-158"><a href="#create_ontology-158"><span class="linenos">158</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;The pin position attached to the [Package, hasPin, Pin] relation.&quot;</span>
+</span><span id="create_ontology-159"><a href="#create_ontology-159"><span class="linenos">159</span></a>
+</span><span id="create_ontology-160"><a href="#create_ontology-160"><span class="linenos">160</span></a>    <span class="c1"># -------------------------------- SIGNALS --------------------------------</span>
+</span><span id="create_ontology-161"><a href="#create_ontology-161"><span class="linenos">161</span></a>    <span class="k">class</span> <span class="nc">Signal</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">Thing</span><span class="p">):</span>
+</span><span id="create_ontology-162"><a href="#create_ontology-162"><span class="linenos">162</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-163"><a href="#create_ontology-163"><span class="linenos">163</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;Connects a pin with a peripheral function.&quot;</span>
+</span><span id="create_ontology-164"><a href="#create_ontology-164"><span class="linenos">164</span></a>
+</span><span id="create_ontology-165"><a href="#create_ontology-165"><span class="linenos">165</span></a>    <span class="k">class</span> <span class="nc">AlternateFunction</span><span class="p">(</span><span class="n">Signal</span><span class="p">):</span>
+</span><span id="create_ontology-166"><a href="#create_ontology-166"><span class="linenos">166</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-167"><a href="#create_ontology-167"><span class="linenos">167</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;Connects to a digital peripheral function via multiplexer.&quot;</span>
+</span><span id="create_ontology-168"><a href="#create_ontology-168"><span class="linenos">168</span></a>
+</span><span id="create_ontology-169"><a href="#create_ontology-169"><span class="linenos">169</span></a>    <span class="k">class</span> <span class="nc">AdditionalFunction</span><span class="p">(</span><span class="n">Signal</span><span class="p">):</span>
+</span><span id="create_ontology-170"><a href="#create_ontology-170"><span class="linenos">170</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-171"><a href="#create_ontology-171"><span class="linenos">171</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;Connects to an analog/special peripheral function.&quot;</span>
+</span><span id="create_ontology-172"><a href="#create_ontology-172"><span class="linenos">172</span></a>
+</span><span id="create_ontology-173"><a href="#create_ontology-173"><span class="linenos">173</span></a>    <span class="k">class</span> <span class="nc">hasSignal</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">ObjectProperty</span><span class="p">):</span>
+</span><span id="create_ontology-174"><a href="#create_ontology-174"><span class="linenos">174</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-175"><a href="#create_ontology-175"><span class="linenos">175</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Pin</span><span class="p">]</span>
+</span><span id="create_ontology-176"><a href="#create_ontology-176"><span class="linenos">176</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">Signal</span><span class="p">]</span>
+</span><span id="create_ontology-177"><a href="#create_ontology-177"><span class="linenos">177</span></a>
+</span><span id="create_ontology-178"><a href="#create_ontology-178"><span class="linenos">178</span></a>    <span class="k">class</span> <span class="nc">alternateFunction</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">AnnotationProperty</span><span class="p">):</span>
+</span><span id="create_ontology-179"><a href="#create_ontology-179"><span class="linenos">179</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-180"><a href="#create_ontology-180"><span class="linenos">180</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;The AF number attached to the [Pin, hasSignal, AlternateFunction] relation.&quot;</span>
+</span><span id="create_ontology-181"><a href="#create_ontology-181"><span class="linenos">181</span></a>
+</span><span id="create_ontology-182"><a href="#create_ontology-182"><span class="linenos">182</span></a>    <span class="c1"># ------------------------------ PERIPHERALS ------------------------------</span>
+</span><span id="create_ontology-183"><a href="#create_ontology-183"><span class="linenos">183</span></a>    <span class="k">class</span> <span class="nc">Peripheral</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">Thing</span><span class="p">):</span>
+</span><span id="create_ontology-184"><a href="#create_ontology-184"><span class="linenos">184</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-185"><a href="#create_ontology-185"><span class="linenos">185</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;Internal peripheral.&quot;</span>
+</span><span id="create_ontology-186"><a href="#create_ontology-186"><span class="linenos">186</span></a>
+</span><span id="create_ontology-187"><a href="#create_ontology-187"><span class="linenos">187</span></a>    <span class="k">class</span> <span class="nc">hasPeripheralInstance</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-188"><a href="#create_ontology-188"><span class="linenos">188</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-189"><a href="#create_ontology-189"><span class="linenos">189</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Peripheral</span><span class="p">]</span>
+</span><span id="create_ontology-190"><a href="#create_ontology-190"><span class="linenos">190</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</span><span id="create_ontology-191"><a href="#create_ontology-191"><span class="linenos">191</span></a>
+</span><span id="create_ontology-192"><a href="#create_ontology-192"><span class="linenos">192</span></a>    <span class="k">class</span> <span class="nc">hasPeripheralType</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-193"><a href="#create_ontology-193"><span class="linenos">193</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-194"><a href="#create_ontology-194"><span class="linenos">194</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Peripheral</span><span class="p">]</span>
+</span><span id="create_ontology-195"><a href="#create_ontology-195"><span class="linenos">195</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-196"><a href="#create_ontology-196"><span class="linenos">196</span></a>
+</span><span id="create_ontology-197"><a href="#create_ontology-197"><span class="linenos">197</span></a>    <span class="k">class</span> <span class="nc">hasPeripheral</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">ObjectProperty</span><span class="p">):</span>
+</span><span id="create_ontology-198"><a href="#create_ontology-198"><span class="linenos">198</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-199"><a href="#create_ontology-199"><span class="linenos">199</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">,</span> <span class="n">Signal</span><span class="p">]</span>
+</span><span id="create_ontology-200"><a href="#create_ontology-200"><span class="linenos">200</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">Peripheral</span><span class="p">]</span>
+</span><span id="create_ontology-201"><a href="#create_ontology-201"><span class="linenos">201</span></a>
+</span><span id="create_ontology-202"><a href="#create_ontology-202"><span class="linenos">202</span></a>    <span class="c1"># ----------------------------- FLASH LATENCY -----------------------------</span>
+</span><span id="create_ontology-203"><a href="#create_ontology-203"><span class="linenos">203</span></a>    <span class="k">class</span> <span class="nc">FlashWaitState</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">Thing</span><span class="p">):</span>
+</span><span id="create_ontology-204"><a href="#create_ontology-204"><span class="linenos">204</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-205"><a href="#create_ontology-205"><span class="linenos">205</span></a>        <span class="n">comment</span> <span class="o">=</span> <span class="s2">&quot;Flash Latency for minimum frequency.&quot;</span>
+</span><span id="create_ontology-206"><a href="#create_ontology-206"><span class="linenos">206</span></a>
+</span><span id="create_ontology-207"><a href="#create_ontology-207"><span class="linenos">207</span></a>    <span class="k">class</span> <span class="nc">hasWaitState</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-208"><a href="#create_ontology-208"><span class="linenos">208</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-209"><a href="#create_ontology-209"><span class="linenos">209</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">FlashWaitState</span><span class="p">]</span>
+</span><span id="create_ontology-210"><a href="#create_ontology-210"><span class="linenos">210</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</span><span id="create_ontology-211"><a href="#create_ontology-211"><span class="linenos">211</span></a>
+</span><span id="create_ontology-212"><a href="#create_ontology-212"><span class="linenos">212</span></a>    <span class="k">class</span> <span class="nc">hasMaxFrequency</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-213"><a href="#create_ontology-213"><span class="linenos">213</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-214"><a href="#create_ontology-214"><span class="linenos">214</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">FlashWaitState</span><span class="p">]</span>
+</span><span id="create_ontology-215"><a href="#create_ontology-215"><span class="linenos">215</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+</span><span id="create_ontology-216"><a href="#create_ontology-216"><span class="linenos">216</span></a>
+</span><span id="create_ontology-217"><a href="#create_ontology-217"><span class="linenos">217</span></a>    <span class="k">class</span> <span class="nc">hasMinOperatingVoltage</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-218"><a href="#create_ontology-218"><span class="linenos">218</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-219"><a href="#create_ontology-219"><span class="linenos">219</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">FlashWaitState</span><span class="p">]</span>
+</span><span id="create_ontology-220"><a href="#create_ontology-220"><span class="linenos">220</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+</span><span id="create_ontology-221"><a href="#create_ontology-221"><span class="linenos">221</span></a>
+</span><span id="create_ontology-222"><a href="#create_ontology-222"><span class="linenos">222</span></a>    <span class="k">class</span> <span class="nc">hasFlashWaitState</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">ObjectProperty</span><span class="p">):</span>
+</span><span id="create_ontology-223"><a href="#create_ontology-223"><span class="linenos">223</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-224"><a href="#create_ontology-224"><span class="linenos">224</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]</span>
+</span><span id="create_ontology-225"><a href="#create_ontology-225"><span class="linenos">225</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="n">FlashWaitState</span><span class="p">]</span>
+</span><span id="create_ontology-226"><a href="#create_ontology-226"><span class="linenos">226</span></a>
+</span><span id="create_ontology-227"><a href="#create_ontology-227"><span class="linenos">227</span></a>    <span class="c1"># -------------------------------- GENERAL --------------------------------</span>
+</span><span id="create_ontology-228"><a href="#create_ontology-228"><span class="linenos">228</span></a>    <span class="k">class</span> <span class="nc">hasName</span><span class="p">(</span><span class="n">owl</span><span class="o">.</span><span class="n">DataProperty</span><span class="p">,</span> <span class="n">owl</span><span class="o">.</span><span class="n">FunctionalProperty</span><span class="p">):</span>
+</span><span id="create_ontology-229"><a href="#create_ontology-229"><span class="linenos">229</span></a>        <span class="n">namespace</span> <span class="o">=</span> <span class="n">ontology</span>
+</span><span id="create_ontology-230"><a href="#create_ontology-230"><span class="linenos">230</span></a>        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span><span class="n">Memory</span><span class="p">,</span> <span class="n">Signal</span><span class="p">,</span> <span class="n">Peripheral</span><span class="p">,</span> <span class="n">Package</span><span class="p">,</span> <span class="n">Pin</span><span class="p">]</span>
+</span><span id="create_ontology-231"><a href="#create_ontology-231"><span class="linenos">231</span></a>        <span class="nb">range</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="create_ontology-232"><a href="#create_ontology-232"><span class="linenos">232</span></a>
+</span><span id="create_ontology-233"><a href="#create_ontology-233"><span class="linenos">233</span></a>    <span class="k">return</span> <span class="n">KeyDict</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="owl_from_datasheet">
+                            <input id="owl_from_datasheet-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">owl_from_datasheet</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">onto</span>, </span><span class="param"><span class="n">ds</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="owl_from_datasheet-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#owl_from_datasheet"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="owl_from_datasheet-9"><a href="#owl_from_datasheet-9"><span class="linenos"> 9</span></a><span class="k">def</span> <span class="nf">owl_from_datasheet</span><span class="p">(</span><span class="n">onto</span><span class="p">,</span> <span class="n">ds</span><span class="p">):</span>
+</span><span id="owl_from_datasheet-10"><a href="#owl_from_datasheet-10"><span class="linenos">10</span></a>    <span class="k">pass</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="owl_from_reference_manual">
+                            <input id="owl_from_reference_manual-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">owl_from_reference_manual</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">onto</span>, </span><span class="param"><span class="n">rm</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="owl_from_reference_manual-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#owl_from_reference_manual"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="owl_from_reference_manual-13"><a href="#owl_from_reference_manual-13"><span class="linenos">13</span></a><span class="k">def</span> <span class="nf">owl_from_reference_manual</span><span class="p">(</span><span class="n">onto</span><span class="p">,</span> <span class="n">rm</span><span class="p">):</span>
+</span><span id="owl_from_reference_manual-14"><a href="#owl_from_reference_manual-14"><span class="linenos">14</span></a>    <span class="n">odid</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">DeviceIdentifier</span><span class="p">(</span><span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</span><span id="owl_from_reference_manual-15"><a href="#owl_from_reference_manual-15"><span class="linenos">15</span></a>
+</span><span id="owl_from_reference_manual-16"><a href="#owl_from_reference_manual-16"><span class="linenos">16</span></a>    <span class="n">dfilter</span> <span class="o">=</span> <span class="n">find_device_filter</span><span class="p">(</span><span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="p">,</span> <span class="n">rm</span><span class="o">.</span><span class="n">flash_latencies</span><span class="p">)</span>
+</span><span id="owl_from_reference_manual-17"><a href="#owl_from_reference_manual-17"><span class="linenos">17</span></a>    <span class="n">table_data</span> <span class="o">=</span> <span class="n">rm</span><span class="o">.</span><span class="n">flash_latencies</span><span class="p">[</span><span class="n">dfilter</span><span class="p">]</span>
+</span><span id="owl_from_reference_manual-18"><a href="#owl_from_reference_manual-18"><span class="linenos">18</span></a>    <span class="nb">print</span><span class="p">(</span><span class="n">dfilter</span><span class="p">,</span> <span class="n">table_data</span><span class="p">)</span>
+</span><span id="owl_from_reference_manual-19"><a href="#owl_from_reference_manual-19"><span class="linenos">19</span></a>    <span class="k">for</span> <span class="n">min_voltage</span><span class="p">,</span> <span class="n">frequencies</span> <span class="ow">in</span> <span class="n">table_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="owl_from_reference_manual-20"><a href="#owl_from_reference_manual-20"><span class="linenos">20</span></a>        <span class="c1"># print(min_voltage, frequencies)</span>
+</span><span id="owl_from_reference_manual-21"><a href="#owl_from_reference_manual-21"><span class="linenos">21</span></a>        <span class="k">for</span> <span class="n">wait_state</span><span class="p">,</span> <span class="n">max_frequency</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">frequencies</span><span class="p">):</span>
+</span><span id="owl_from_reference_manual-22"><a href="#owl_from_reference_manual-22"><span class="linenos">22</span></a>            <span class="n">ofreq</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">FlashWaitState</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;WaitState_</span><span class="si">{</span><span class="n">wait_state</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">min_voltage</span><span class="si">}</span><span class="s2">mV&quot;</span><span class="p">)</span>
+</span><span id="owl_from_reference_manual-23"><a href="#owl_from_reference_manual-23"><span class="linenos">23</span></a>            <span class="n">ofreq</span><span class="o">.</span><span class="n">hasWaitState</span> <span class="o">=</span> <span class="n">wait_state</span>
+</span><span id="owl_from_reference_manual-24"><a href="#owl_from_reference_manual-24"><span class="linenos">24</span></a>            <span class="n">ofreq</span><span class="o">.</span><span class="n">hasMaxFrequency</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">max_frequency</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
+</span><span id="owl_from_reference_manual-25"><a href="#owl_from_reference_manual-25"><span class="linenos">25</span></a>            <span class="n">ofreq</span><span class="o">.</span><span class="n">hasMinOperatingVoltage</span> <span class="o">=</span> <span class="n">min_voltage</span> <span class="o">/</span> <span class="mf">1000.0</span>
+</span><span id="owl_from_reference_manual-26"><a href="#owl_from_reference_manual-26"><span class="linenos">26</span></a>            <span class="n">odid</span><span class="o">.</span><span class="n">hasFlashWaitState</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ofreq</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="owl_from_doc">
+                            <input id="owl_from_doc-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">owl_from_doc</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">onto</span>, </span><span class="param"><span class="n">doc</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="owl_from_doc-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#owl_from_doc"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="owl_from_doc-29"><a href="#owl_from_doc-29"><span class="linenos">29</span></a><span class="k">def</span> <span class="nf">owl_from_doc</span><span class="p">(</span><span class="n">onto</span><span class="p">,</span> <span class="n">doc</span><span class="p">):</span>
+</span><span id="owl_from_doc-30"><a href="#owl_from_doc-30"><span class="linenos">30</span></a>    <span class="k">if</span> <span class="n">doc</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;DS&quot;</span><span class="p">):</span>
+</span><span id="owl_from_doc-31"><a href="#owl_from_doc-31"><span class="linenos">31</span></a>        <span class="n">owl_from_datasheet</span><span class="p">(</span><span class="n">onto</span><span class="p">,</span> <span class="n">doc</span><span class="p">)</span>
+</span><span id="owl_from_doc-32"><a href="#owl_from_doc-32"><span class="linenos">32</span></a>    <span class="k">elif</span> <span class="n">doc</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;RM&quot;</span><span class="p">):</span>
+</span><span id="owl_from_doc-33"><a href="#owl_from_doc-33"><span class="linenos">33</span></a>        <span class="n">owl_from_reference_manual</span><span class="p">(</span><span class="n">onto</span><span class="p">,</span> <span class="n">doc</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="owl_from_did">
+                            <input id="owl_from_did-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">owl_from_did</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">onto</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="owl_from_did-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#owl_from_did"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="owl_from_did-36"><a href="#owl_from_did-36"><span class="linenos">36</span></a><span class="k">def</span> <span class="nf">owl_from_did</span><span class="p">(</span><span class="n">onto</span><span class="p">):</span>
+</span><span id="owl_from_did-37"><a href="#owl_from_did-37"><span class="linenos">37</span></a>    <span class="c1"># Add device identifiers</span>
+</span><span id="owl_from_did-38"><a href="#owl_from_did-38"><span class="linenos">38</span></a>    <span class="n">odid</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">DeviceIdentifier</span><span class="p">(</span><span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</span><span id="owl_from_did-39"><a href="#owl_from_did-39"><span class="linenos">39</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasDeviceSchema</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">naming_schema</span>
+</span><span id="owl_from_did-40"><a href="#owl_from_did-40"><span class="linenos">40</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasDevicePlatform</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">platform</span>
+</span><span id="owl_from_did-41"><a href="#owl_from_did-41"><span class="linenos">41</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasDeviceFamily</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">family</span>
+</span><span id="owl_from_did-42"><a href="#owl_from_did-42"><span class="linenos">42</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasDeviceName</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">name</span>
+</span><span id="owl_from_did-43"><a href="#owl_from_did-43"><span class="linenos">43</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasDevicePin</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">pin</span>
+</span><span id="owl_from_did-44"><a href="#owl_from_did-44"><span class="linenos">44</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasDeviceSize</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">size</span>
+</span><span id="owl_from_did-45"><a href="#owl_from_did-45"><span class="linenos">45</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasDevicePackage</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">package</span>
+</span><span id="owl_from_did-46"><a href="#owl_from_did-46"><span class="linenos">46</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasDeviceTemperature</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">temperature</span>
+</span><span id="owl_from_did-47"><a href="#owl_from_did-47"><span class="linenos">47</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasDeviceVariant</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">variant</span>
+</span><span id="owl_from_did-48"><a href="#owl_from_did-48"><span class="linenos">48</span></a>    <span class="k">if</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="owl_from_did-49"><a href="#owl_from_did-49"><span class="linenos">49</span></a>        <span class="n">odid</span><span class="o">.</span><span class="n">hasDeviceCore</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">core</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="owl_from_cubemx">
+                            <input id="owl_from_cubemx-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">owl_from_cubemx</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">onto</span>, </span><span class="param"><span class="n">data</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="owl_from_cubemx-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#owl_from_cubemx"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="owl_from_cubemx-52"><a href="#owl_from_cubemx-52"><span class="linenos"> 52</span></a><span class="k">def</span> <span class="nf">owl_from_cubemx</span><span class="p">(</span><span class="n">onto</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+</span><span id="owl_from_cubemx-53"><a href="#owl_from_cubemx-53"><span class="linenos"> 53</span></a>    <span class="n">odid</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">DeviceIdentifier</span><span class="p">(</span><span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</span><span id="owl_from_cubemx-54"><a href="#owl_from_cubemx-54"><span class="linenos"> 54</span></a>
+</span><span id="owl_from_cubemx-55"><a href="#owl_from_cubemx-55"><span class="linenos"> 55</span></a>    <span class="c1"># Add internal memories</span>
+</span><span id="owl_from_cubemx-56"><a href="#owl_from_cubemx-56"><span class="linenos"> 56</span></a>    <span class="k">for</span> <span class="n">memory</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;memories&quot;</span><span class="p">]:</span>
+</span><span id="owl_from_cubemx-57"><a href="#owl_from_cubemx-57"><span class="linenos"> 57</span></a>        <span class="n">omem</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">Memory</span><span class="p">(</span><span class="s2">&quot;Memory_&quot;</span> <span class="o">+</span> <span class="n">memory</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</span><span id="owl_from_cubemx-58"><a href="#owl_from_cubemx-58"><span class="linenos"> 58</span></a>        <span class="n">odid</span><span class="o">.</span><span class="n">hasMemory</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">omem</span><span class="p">)</span>
+</span><span id="owl_from_cubemx-59"><a href="#owl_from_cubemx-59"><span class="linenos"> 59</span></a>        <span class="n">omem</span><span class="o">.</span><span class="n">hasName</span> <span class="o">=</span> <span class="n">memory</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span id="owl_from_cubemx-60"><a href="#owl_from_cubemx-60"><span class="linenos"> 60</span></a>        <span class="n">omem</span><span class="o">.</span><span class="n">hasMemoryStartAddress</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">memory</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
+</span><span id="owl_from_cubemx-61"><a href="#owl_from_cubemx-61"><span class="linenos"> 61</span></a>        <span class="n">omem</span><span class="o">.</span><span class="n">hasMemorySize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">memory</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">])</span>
+</span><span id="owl_from_cubemx-62"><a href="#owl_from_cubemx-62"><span class="linenos"> 62</span></a>        <span class="n">omem</span><span class="o">.</span><span class="n">hasMemoryAccess</span> <span class="o">=</span> <span class="n">memory</span><span class="p">[</span><span class="s2">&quot;access&quot;</span><span class="p">]</span>
+</span><span id="owl_from_cubemx-63"><a href="#owl_from_cubemx-63"><span class="linenos"> 63</span></a>
+</span><span id="owl_from_cubemx-64"><a href="#owl_from_cubemx-64"><span class="linenos"> 64</span></a>    <span class="c1"># Add the peripherals and their type</span>
+</span><span id="owl_from_cubemx-65"><a href="#owl_from_cubemx-65"><span class="linenos"> 65</span></a>    <span class="k">for</span> <span class="n">pbase</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">ptype</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">stype</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;modules&quot;</span><span class="p">]:</span>
+</span><span id="owl_from_cubemx-66"><a href="#owl_from_cubemx-66"><span class="linenos"> 66</span></a>        <span class="n">oper</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">Peripheral</span><span class="p">(</span><span class="s2">&quot;Peripheral_&quot;</span> <span class="o">+</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</span><span id="owl_from_cubemx-67"><a href="#owl_from_cubemx-67"><span class="linenos"> 67</span></a>        <span class="n">odid</span><span class="o">.</span><span class="n">hasPeripheral</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">oper</span><span class="p">)</span>
+</span><span id="owl_from_cubemx-68"><a href="#owl_from_cubemx-68"><span class="linenos"> 68</span></a>        <span class="n">oper</span><span class="o">.</span><span class="n">hasName</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span id="owl_from_cubemx-69"><a href="#owl_from_cubemx-69"><span class="linenos"> 69</span></a>        <span class="k">if</span> <span class="n">pbase</span> <span class="o">!=</span> <span class="n">name</span><span class="p">:</span>
+</span><span id="owl_from_cubemx-70"><a href="#owl_from_cubemx-70"><span class="linenos"> 70</span></a>            <span class="n">oper</span><span class="o">.</span><span class="n">hasPeripheralInstance</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">pbase</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+</span><span id="owl_from_cubemx-71"><a href="#owl_from_cubemx-71"><span class="linenos"> 71</span></a>        <span class="n">oper</span><span class="o">.</span><span class="n">hasPeripheralType</span> <span class="o">=</span> <span class="n">pbase</span> <span class="o">+</span> <span class="n">ptype</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;stm32&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="owl_from_cubemx-72"><a href="#owl_from_cubemx-72"><span class="linenos"> 72</span></a>
+</span><span id="owl_from_cubemx-73"><a href="#owl_from_cubemx-73"><span class="linenos"> 73</span></a>    <span class="c1"># Add package</span>
+</span><span id="owl_from_cubemx-74"><a href="#owl_from_cubemx-74"><span class="linenos"> 74</span></a>    <span class="n">opack</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">Package</span><span class="p">(</span><span class="s2">&quot;Package_&quot;</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;package&quot;</span><span class="p">])</span>
+</span><span id="owl_from_cubemx-75"><a href="#owl_from_cubemx-75"><span class="linenos"> 75</span></a>    <span class="n">opack</span><span class="o">.</span><span class="n">hasName</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;package&quot;</span><span class="p">])</span>
+</span><span id="owl_from_cubemx-76"><a href="#owl_from_cubemx-76"><span class="linenos"> 76</span></a>    <span class="n">odid</span><span class="o">.</span><span class="n">hasPackage</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">opack</span><span class="p">)</span>
+</span><span id="owl_from_cubemx-77"><a href="#owl_from_cubemx-77"><span class="linenos"> 77</span></a>    <span class="n">opack</span><span class="o">.</span><span class="n">hasPackagePinCount</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;pin-count&quot;</span><span class="p">])</span>
+</span><span id="owl_from_cubemx-78"><a href="#owl_from_cubemx-78"><span class="linenos"> 78</span></a>
+</span><span id="owl_from_cubemx-79"><a href="#owl_from_cubemx-79"><span class="linenos"> 79</span></a>    <span class="c1"># Add pinout for package</span>
+</span><span id="owl_from_cubemx-80"><a href="#owl_from_cubemx-80"><span class="linenos"> 80</span></a>    <span class="n">io_pins</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="owl_from_cubemx-81"><a href="#owl_from_cubemx-81"><span class="linenos"> 81</span></a>    <span class="k">for</span> <span class="n">pin</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;pinout&quot;</span><span class="p">]:</span>
+</span><span id="owl_from_cubemx-82"><a href="#owl_from_cubemx-82"><span class="linenos"> 82</span></a>        <span class="n">opin</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="s2">&quot;Pin_&quot;</span> <span class="o">+</span> <span class="n">pin</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+</span><span id="owl_from_cubemx-83"><a href="#owl_from_cubemx-83"><span class="linenos"> 83</span></a>        <span class="n">opin</span><span class="o">.</span><span class="n">hasName</span> <span class="o">=</span> <span class="n">pin</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</span><span id="owl_from_cubemx-84"><a href="#owl_from_cubemx-84"><span class="linenos"> 84</span></a>        <span class="n">opin</span><span class="o">.</span><span class="n">hasPinType</span> <span class="o">=</span> <span class="n">pin</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>
+</span><span id="owl_from_cubemx-85"><a href="#owl_from_cubemx-85"><span class="linenos"> 85</span></a>        <span class="k">if</span> <span class="n">pin</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;I/O&quot;</span> <span class="ow">and</span> <span class="p">(</span><span class="n">number</span> <span class="o">:=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;P\w(\d+)&quot;</span><span class="p">,</span> <span class="n">pin</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])):</span>
+</span><span id="owl_from_cubemx-86"><a href="#owl_from_cubemx-86"><span class="linenos"> 86</span></a>            <span class="n">opin</span><span class="o">.</span><span class="n">hasPort</span> <span class="o">=</span> <span class="n">pin</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="owl_from_cubemx-87"><a href="#owl_from_cubemx-87"><span class="linenos"> 87</span></a>            <span class="n">opin</span><span class="o">.</span><span class="n">hasPinNumber</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</span><span id="owl_from_cubemx-88"><a href="#owl_from_cubemx-88"><span class="linenos"> 88</span></a>            <span class="n">io_pins</span><span class="p">[(</span><span class="n">opin</span><span class="o">.</span><span class="n">hasPort</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">opin</span><span class="o">.</span><span class="n">hasPinNumber</span><span class="p">)]</span> <span class="o">=</span> <span class="n">opin</span>
+</span><span id="owl_from_cubemx-89"><a href="#owl_from_cubemx-89"><span class="linenos"> 89</span></a>        <span class="n">opack</span><span class="o">.</span><span class="n">hasPin</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">opin</span><span class="p">)</span>
+</span><span id="owl_from_cubemx-90"><a href="#owl_from_cubemx-90"><span class="linenos"> 90</span></a>        <span class="n">onto</span><span class="o">.</span><span class="n">pinPosition</span><span class="p">[</span><span class="n">opack</span><span class="p">,</span> <span class="n">onto</span><span class="o">.</span><span class="n">hasPin</span><span class="p">,</span> <span class="n">opin</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pin</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
+</span><span id="owl_from_cubemx-91"><a href="#owl_from_cubemx-91"><span class="linenos"> 91</span></a>
+</span><span id="owl_from_cubemx-92"><a href="#owl_from_cubemx-92"><span class="linenos"> 92</span></a>    <span class="c1"># Add alternate and additional functions to pins</span>
+</span><span id="owl_from_cubemx-93"><a href="#owl_from_cubemx-93"><span class="linenos"> 93</span></a>    <span class="k">for</span> <span class="n">port</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">signals</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;gpios&quot;</span><span class="p">]:</span>
+</span><span id="owl_from_cubemx-94"><a href="#owl_from_cubemx-94"><span class="linenos"> 94</span></a>        <span class="n">opin</span> <span class="o">=</span> <span class="n">io_pins</span><span class="p">[(</span><span class="n">port</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">))]</span>
+</span><span id="owl_from_cubemx-95"><a href="#owl_from_cubemx-95"><span class="linenos"> 95</span></a>        <span class="k">for</span> <span class="n">signal</span> <span class="ow">in</span> <span class="n">signals</span><span class="p">:</span>
+</span><span id="owl_from_cubemx-96"><a href="#owl_from_cubemx-96"><span class="linenos"> 96</span></a>            <span class="n">peripheral</span> <span class="o">=</span> <span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="s2">&quot;driver&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="s2">&quot;instance&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="owl_from_cubemx-97"><a href="#owl_from_cubemx-97"><span class="linenos"> 97</span></a>            <span class="n">name</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span id="owl_from_cubemx-98"><a href="#owl_from_cubemx-98"><span class="linenos"> 98</span></a>            <span class="n">af</span> <span class="o">=</span> <span class="n">signal</span><span class="p">[</span><span class="s2">&quot;af&quot;</span><span class="p">]</span>
+</span><span id="owl_from_cubemx-99"><a href="#owl_from_cubemx-99"><span class="linenos"> 99</span></a>            <span class="n">signame</span> <span class="o">=</span> <span class="s2">&quot;Signal_&quot;</span> <span class="o">+</span> <span class="n">peripheral</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">name</span>
+</span><span id="owl_from_cubemx-100"><a href="#owl_from_cubemx-100"><span class="linenos">100</span></a>            <span class="n">osig</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">AlternateFunction</span><span class="p">(</span><span class="n">signame</span><span class="p">)</span> <span class="k">if</span> <span class="n">af</span> <span class="k">else</span> <span class="n">onto</span><span class="o">.</span><span class="n">AdditionalFunction</span><span class="p">(</span><span class="n">signame</span><span class="p">)</span>
+</span><span id="owl_from_cubemx-101"><a href="#owl_from_cubemx-101"><span class="linenos">101</span></a>            <span class="n">osig</span><span class="o">.</span><span class="n">hasPeripheral</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">onto</span><span class="o">.</span><span class="n">Peripheral</span><span class="p">(</span><span class="s2">&quot;Peripheral_&quot;</span> <span class="o">+</span> <span class="n">peripheral</span><span class="p">))</span>
+</span><span id="owl_from_cubemx-102"><a href="#owl_from_cubemx-102"><span class="linenos">102</span></a>            <span class="n">osig</span><span class="o">.</span><span class="n">hasName</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="owl_from_cubemx-103"><a href="#owl_from_cubemx-103"><span class="linenos">103</span></a>            <span class="n">opin</span><span class="o">.</span><span class="n">hasSignal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">osig</span><span class="p">)</span>
+</span><span id="owl_from_cubemx-104"><a href="#owl_from_cubemx-104"><span class="linenos">104</span></a>            <span class="k">if</span> <span class="n">af</span><span class="p">:</span>
+</span><span id="owl_from_cubemx-105"><a href="#owl_from_cubemx-105"><span class="linenos">105</span></a>                <span class="n">onto</span><span class="o">.</span><span class="n">alternateFunction</span><span class="p">[</span><span class="n">opin</span><span class="p">,</span> <span class="n">onto</span><span class="o">.</span><span class="n">hasSignal</span><span class="p">,</span> <span class="n">osig</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">af</span><span class="p">))</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="owl_from_header">
+                            <input id="owl_from_header-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">owl_from_header</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">onto</span>, </span><span class="param"><span class="n">header</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="owl_from_header-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#owl_from_header"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="owl_from_header-108"><a href="#owl_from_header-108"><span class="linenos">108</span></a><span class="k">def</span> <span class="nf">owl_from_header</span><span class="p">(</span><span class="n">onto</span><span class="p">,</span> <span class="n">header</span><span class="p">):</span>
+</span><span id="owl_from_header-109"><a href="#owl_from_header-109"><span class="linenos">109</span></a>    <span class="n">odid</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">DeviceIdentifier</span><span class="p">(</span><span class="n">onto</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</span><span id="owl_from_header-110"><a href="#owl_from_header-110"><span class="linenos">110</span></a>
+</span><span id="owl_from_header-111"><a href="#owl_from_header-111"><span class="linenos">111</span></a>    <span class="c1"># Add interrupt vector table</span>
+</span><span id="owl_from_header-112"><a href="#owl_from_header-112"><span class="linenos">112</span></a>    <span class="k">for</span> <span class="n">interrupt</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">interrupt_table</span><span class="p">:</span>
+</span><span id="owl_from_header-113"><a href="#owl_from_header-113"><span class="linenos">113</span></a>        <span class="k">if</span> <span class="n">interrupt</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="owl_from_header-114"><a href="#owl_from_header-114"><span class="linenos">114</span></a>            <span class="n">oint</span> <span class="o">=</span> <span class="n">onto</span><span class="o">.</span><span class="n">InterruptVector</span><span class="p">(</span><span class="s2">&quot;InterruptVector_&quot;</span> <span class="o">+</span> <span class="n">interrupt</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+</span><span id="owl_from_header-115"><a href="#owl_from_header-115"><span class="linenos">115</span></a>            <span class="n">oint</span><span class="o">.</span><span class="n">hasInterruptVectorPosition</span> <span class="o">=</span> <span class="n">interrupt</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
+</span><span id="owl_from_header-116"><a href="#owl_from_header-116"><span class="linenos">116</span></a>            <span class="n">odid</span><span class="o">.</span><span class="n">hasInterruptVector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">oint</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                </section>
     </main>
 <script>
     function escapeHTML(html) {

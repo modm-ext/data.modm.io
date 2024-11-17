@@ -43,11 +43,61 @@
                    pattern=".+" required>
 
 
-            <h2>Submodules</h2>
-            <ul>
-                    <li><a href="stmicro/header.html">header</a></li>
-                    <li><a href="stmicro/tree.html">tree</a></li>
-            </ul>
+
+            <h2>API Documentation</h2>
+                <ul class="memberlist">
+            <li>
+                    <a class="class" href="#Header">Header</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#Header.__init__">Header</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.did">did</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.family_folder">family_folder</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.cmsis_folder">cmsis_folder</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.family_header_file">family_header_file</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.family_defines">family_defines</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.define">define</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.is_valid">is_valid</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.header_file">header_file</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.device_map">device_map</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Header.get_defines">get_defines</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.memory_map_tree">memory_map_tree</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#Header.interrupt_table">interrupt_table</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="function" href="#getDefineForDevice">getDefineForDevice</a>
+            </li>
+            <li>
+                    <a class="function" href="#normalize_memory_map">normalize_memory_map</a>
+            </li>
+    </ul>
 
 
 
@@ -68,15 +118,668 @@
 
                         <label class="view-source-button" for="mod-stmicro-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="kn">from</span> <span class="nn">.header</span> <span class="kn">import</span> <span class="n">Header</span><span class="p">,</span> <span class="n">getDefineForDevice</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a><span class="kn">from</span> <span class="nn">.tree</span> <span class="kn">import</span> <span class="n">normalize_memory_map</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span> <span class="nn">.header</span> <span class="kn">import</span> <span class="n">Header</span><span class="p">,</span> <span class="n">getDefineForDevice</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="kn">from</span> <span class="nn">.tree</span> <span class="kn">import</span> <span class="n">normalize_memory_map</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    <span class="s2">&quot;Header&quot;</span><span class="p">,</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>    <span class="s2">&quot;getDefineForDevice&quot;</span><span class="p">,</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>    <span class="s2">&quot;normalize_memory_map&quot;</span><span class="p">,</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="p">]</span>
 </span></pre></div>
 
 
             </section>
+                <section id="Header">
+                            <input id="Header-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+            
+    <span class="def">class</span>
+    <span class="name">Header</span><wbr>(<span class="base">modm_data.header2svd.header.Header</span>):
+
+                <label class="view-source-button" for="Header-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Header"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Header-81"><a href="#Header-81"><span class="linenos"> 81</span></a><span class="k">class</span> <span class="nc">Header</span><span class="p">(</span><span class="n">CmsisHeader</span><span class="p">):</span>
+</span><span id="Header-82"><a href="#Header-82"><span class="linenos"> 82</span></a>    <span class="n">_HEADER_PATH</span> <span class="o">=</span> <span class="n">ext_path</span><span class="p">(</span><span class="s2">&quot;stmicro/header&quot;</span><span class="p">)</span>
+</span><span id="Header-83"><a href="#Header-83"><span class="linenos"> 83</span></a>    <span class="n">_CACHE_PATH</span> <span class="o">=</span> <span class="n">cache_path</span><span class="p">(</span><span class="s2">&quot;cmsis/stm32&quot;</span><span class="p">)</span>
+</span><span id="Header-84"><a href="#Header-84"><span class="linenos"> 84</span></a>    <span class="n">_CACHE_FAMILY</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+</span><span id="Header-85"><a href="#Header-85"><span class="linenos"> 85</span></a>    <span class="n">_BUILTINS</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="Header-86"><a href="#Header-86"><span class="linenos"> 86</span></a>        <span class="s2">&quot;const uint32_t&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+</span><span id="Header-87"><a href="#Header-87"><span class="linenos"> 87</span></a>        <span class="s2">&quot;const uint16_t&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span><span id="Header-88"><a href="#Header-88"><span class="linenos"> 88</span></a>        <span class="s2">&quot;const uint8_t&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="Header-89"><a href="#Header-89"><span class="linenos"> 89</span></a>        <span class="s2">&quot;uint32_t&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+</span><span id="Header-90"><a href="#Header-90"><span class="linenos"> 90</span></a>        <span class="s2">&quot;uint16_t&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span><span id="Header-91"><a href="#Header-91"><span class="linenos"> 91</span></a>        <span class="s2">&quot;uint8_t&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="Header-92"><a href="#Header-92"><span class="linenos"> 92</span></a>    <span class="p">}</span>
+</span><span id="Header-93"><a href="#Header-93"><span class="linenos"> 93</span></a>
+</span><span id="Header-94"><a href="#Header-94"><span class="linenos"> 94</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">did</span><span class="p">):</span>
+</span><span id="Header-95"><a href="#Header-95"><span class="linenos"> 95</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">did</span> <span class="o">=</span> <span class="n">did</span>
+</span><span id="Header-96"><a href="#Header-96"><span class="linenos"> 96</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">family_folder</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;stm32</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">family</span><span class="si">}</span><span class="s2">xx&quot;</span>
+</span><span id="Header-97"><a href="#Header-97"><span class="linenos"> 97</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cmsis_folder</span> <span class="o">=</span> <span class="n">Header</span><span class="o">.</span><span class="n">_HEADER_PATH</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">family_folder</span> <span class="o">/</span> <span class="s2">&quot;Include&quot;</span>
+</span><span id="Header-98"><a href="#Header-98"><span class="linenos"> 98</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">family_header_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">family_folder</span><span class="si">}</span><span class="s2">.h&quot;</span>
+</span><span id="Header-99"><a href="#Header-99"><span class="linenos"> 99</span></a>
+</span><span id="Header-100"><a href="#Header-100"><span class="linenos">100</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">family_defines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_family_defines</span><span class="p">()</span>
+</span><span id="Header-101"><a href="#Header-101"><span class="linenos">101</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">define</span> <span class="o">=</span> <span class="n">getDefineForDevice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">family_defines</span><span class="p">)</span>
+</span><span id="Header-102"><a href="#Header-102"><span class="linenos">102</span></a>        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">define</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="Header-103"><a href="#Header-103"><span class="linenos">103</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">is_valid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">define</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="Header-104"><a href="#Header-104"><span class="linenos">104</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_valid</span><span class="p">:</span>
+</span><span id="Header-105"><a href="#Header-105"><span class="linenos">105</span></a>            <span class="k">return</span>
+</span><span id="Header-106"><a href="#Header-106"><span class="linenos">106</span></a>
+</span><span id="Header-107"><a href="#Header-107"><span class="linenos">107</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">header_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">define</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.h&quot;</span>
+</span><span id="Header-108"><a href="#Header-108"><span class="linenos">108</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">device_map</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="Header-109"><a href="#Header-109"><span class="linenos">109</span></a>        <span class="n">substitutions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="Header-110"><a href="#Header-110"><span class="linenos">110</span></a>            <span class="c1"># r&quot;/\* +?(Legacy defines|Legacy aliases|Old .*? legacy purpose|Aliases for .*?) +?\*/.*?\n\n&quot;: &quot;&quot;,</span>
+</span><span id="Header-111"><a href="#Header-111"><span class="linenos">111</span></a>            <span class="sa">r</span><span class="s2">&quot;/\* +?Legacy (aliases|defines|registers naming) +?\*/.*?\n\n&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="Header-112"><a href="#Header-112"><span class="linenos">112</span></a>            <span class="sa">r</span><span class="s2">&quot;/\* +?Old .*? legacy purpose +?\*/.*?\n\n&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="Header-113"><a href="#Header-113"><span class="linenos">113</span></a>            <span class="sa">r</span><span class="s2">&quot;/\* +?Aliases for .*? +?\*/.*?\n\n&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="Header-114"><a href="#Header-114"><span class="linenos">114</span></a>            <span class="c1"># r&quot;( 0x[0-9A-F]+)\)                 &quot;: r&quot;\1U&quot;,</span>
+</span><span id="Header-115"><a href="#Header-115"><span class="linenos">115</span></a>            <span class="c1"># r&quot;#define.*?/\*!&lt;.*? Legacy .*?\*/\n&quot;: &quot;&quot;,</span>
+</span><span id="Header-116"><a href="#Header-116"><span class="linenos">116</span></a>        <span class="p">}</span>
+</span><span id="Header-117"><a href="#Header-117"><span class="linenos">117</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmsis_folder</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">header_file</span><span class="p">,</span> <span class="n">substitutions</span><span class="p">)</span>
+</span><span id="Header-118"><a href="#Header-118"><span class="linenos">118</span></a>
+</span><span id="Header-119"><a href="#Header-119"><span class="linenos">119</span></a>    <span class="k">def</span> <span class="nf">get_defines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header-120"><a href="#Header-120"><span class="linenos">120</span></a>        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;defines&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="Header-121"><a href="#Header-121"><span class="linenos">121</span></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">:</span>
+</span><span id="Header-122"><a href="#Header-122"><span class="linenos">122</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_defines</span><span class="p">()</span>
+</span><span id="Header-123"><a href="#Header-123"><span class="linenos">123</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</span><span id="Header-124"><a href="#Header-124"><span class="linenos">124</span></a>
+</span><span id="Header-125"><a href="#Header-125"><span class="linenos">125</span></a>    <span class="nd">@property</span>
+</span><span id="Header-126"><a href="#Header-126"><span class="linenos">126</span></a>    <span class="k">def</span> <span class="nf">_memory_map_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header-127"><a href="#Header-127"><span class="linenos">127</span></a>        <span class="k">return</span> <span class="s2">&quot;memmap&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="Header-128"><a href="#Header-128"><span class="linenos">128</span></a>
+</span><span id="Header-129"><a href="#Header-129"><span class="linenos">129</span></a>    <span class="nd">@property</span>
+</span><span id="Header-130"><a href="#Header-130"><span class="linenos">130</span></a>    <span class="k">def</span> <span class="nf">memory_map_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header-131"><a href="#Header-131"><span class="linenos">131</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_memory_map_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">:</span>
+</span><span id="Header-132"><a href="#Header-132"><span class="linenos">132</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_memory_map_key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_memmap</span><span class="p">()</span>
+</span><span id="Header-133"><a href="#Header-133"><span class="linenos">133</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_memory_map_key</span><span class="p">]</span>
+</span><span id="Header-134"><a href="#Header-134"><span class="linenos">134</span></a>
+</span><span id="Header-135"><a href="#Header-135"><span class="linenos">135</span></a>    <span class="nd">@property</span>
+</span><span id="Header-136"><a href="#Header-136"><span class="linenos">136</span></a>    <span class="k">def</span> <span class="nf">interrupt_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header-137"><a href="#Header-137"><span class="linenos">137</span></a>        <span class="k">if</span> <span class="s2">&quot;vectors&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">:</span>
+</span><span id="Header-138"><a href="#Header-138"><span class="linenos">138</span></a>            <span class="n">interrupt_enum</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">enums</span> <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;IRQn_Type&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="Header-139"><a href="#Header-139"><span class="linenos">139</span></a>            <span class="n">vectors</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="Header-140"><a href="#Header-140"><span class="linenos">140</span></a>                <span class="p">{</span><span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)),</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">5</span><span class="p">]}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">interrupt_enum</span>
+</span><span id="Header-141"><a href="#Header-141"><span class="linenos">141</span></a>            <span class="p">]</span>
+</span><span id="Header-142"><a href="#Header-142"><span class="linenos">142</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="s2">&quot;vectors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vectors</span>
+</span><span id="Header-143"><a href="#Header-143"><span class="linenos">143</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="s2">&quot;vectors&quot;</span><span class="p">]</span>
+</span><span id="Header-144"><a href="#Header-144"><span class="linenos">144</span></a>
+</span><span id="Header-145"><a href="#Header-145"><span class="linenos">145</span></a>    <span class="k">def</span> <span class="nf">_get_family_defines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header-146"><a href="#Header-146"><span class="linenos">146</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">family</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Header</span><span class="o">.</span><span class="n">_CACHE_FAMILY</span><span class="p">:</span>
+</span><span id="Header-147"><a href="#Header-147"><span class="linenos">147</span></a>            <span class="n">defines</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="Header-148"><a href="#Header-148"><span class="linenos">148</span></a>            <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
+</span><span id="Header-149"><a href="#Header-149"><span class="linenos">149</span></a>                <span class="sa">r</span><span class="s2">&quot;if defined\((?P&lt;define&gt;STM32[A-Z].....)\)&quot;</span><span class="p">,</span>
+</span><span id="Header-150"><a href="#Header-150"><span class="linenos">150</span></a>                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmsis_folder</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">family_header_file</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">),</span>
+</span><span id="Header-151"><a href="#Header-151"><span class="linenos">151</span></a>            <span class="p">)</span>
+</span><span id="Header-152"><a href="#Header-152"><span class="linenos">152</span></a>            <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+</span><span id="Header-153"><a href="#Header-153"><span class="linenos">153</span></a>                <span class="n">defines</span> <span class="o">=</span> <span class="n">match</span>
+</span><span id="Header-154"><a href="#Header-154"><span class="linenos">154</span></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="Header-155"><a href="#Header-155"><span class="linenos">155</span></a>                <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot find family defines for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+</span><span id="Header-156"><a href="#Header-156"><span class="linenos">156</span></a>            <span class="n">Header</span><span class="o">.</span><span class="n">_CACHE_FAMILY</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">family</span><span class="p">][</span><span class="s2">&quot;family_defines&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">defines</span>
+</span><span id="Header-157"><a href="#Header-157"><span class="linenos">157</span></a>        <span class="k">return</span> <span class="n">Header</span><span class="o">.</span><span class="n">_CACHE_FAMILY</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">family</span><span class="p">][</span><span class="s2">&quot;family_defines&quot;</span><span class="p">]</span>
+</span><span id="Header-158"><a href="#Header-158"><span class="linenos">158</span></a>
+</span><span id="Header-159"><a href="#Header-159"><span class="linenos">159</span></a>    <span class="k">def</span> <span class="nf">_get_filtered_defines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header-160"><a href="#Header-160"><span class="linenos">160</span></a>        <span class="n">defines</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="Header-161"><a href="#Header-161"><span class="linenos">161</span></a>        <span class="c1"># get all the non-empty defines</span>
+</span><span id="Header-162"><a href="#Header-162"><span class="linenos">162</span></a>        <span class="k">for</span> <span class="n">define</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">defines</span><span class="p">:</span>
+</span><span id="Header-163"><a href="#Header-163"><span class="linenos">163</span></a>            <span class="k">if</span> <span class="n">comment</span> <span class="o">:=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/\* *(.*?) *\*/&quot;</span><span class="p">,</span> <span class="n">define</span><span class="p">):</span>
+</span><span id="Header-164"><a href="#Header-164"><span class="linenos">164</span></a>                <span class="k">if</span> <span class="s2">&quot;legacy&quot;</span> <span class="ow">in</span> <span class="n">comment</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="Header-165"><a href="#Header-165"><span class="linenos">165</span></a>                    <span class="k">continue</span>
+</span><span id="Header-166"><a href="#Header-166"><span class="linenos">166</span></a>            <span class="n">define</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/\*.*?\*/&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">define</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="Header-167"><a href="#Header-167"><span class="linenos">167</span></a>            <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">parts</span> <span class="o">=</span> <span class="n">define</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</span><span id="Header-168"><a href="#Header-168"><span class="linenos">168</span></a>            <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">):</span>
+</span><span id="Header-169"><a href="#Header-169"><span class="linenos">169</span></a>                <span class="k">continue</span>
+</span><span id="Header-170"><a href="#Header-170"><span class="linenos">170</span></a>            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">i</span> <span class="ow">in</span> <span class="n">name</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;(&quot;</span><span class="p">]):</span>
+</span><span id="Header-171"><a href="#Header-171"><span class="linenos">171</span></a>                <span class="k">continue</span>
+</span><span id="Header-172"><a href="#Header-172"><span class="linenos">172</span></a>            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;_IRQn&quot;</span><span class="p">,</span> <span class="s2">&quot;_IRQHandler&quot;</span><span class="p">,</span> <span class="s2">&quot;_SUPPORT&quot;</span><span class="p">,</span> <span class="s2">&quot;_TypeDef&quot;</span><span class="p">]):</span>
+</span><span id="Header-173"><a href="#Header-173"><span class="linenos">173</span></a>                <span class="k">continue</span>
+</span><span id="Header-174"><a href="#Header-174"><span class="linenos">174</span></a>            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;IS_&quot;</span><span class="p">]):</span>
+</span><span id="Header-175"><a href="#Header-175"><span class="linenos">175</span></a>                <span class="k">continue</span>
+</span><span id="Header-176"><a href="#Header-176"><span class="linenos">176</span></a>            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span>
+</span><span id="Header-177"><a href="#Header-177"><span class="linenos">177</span></a>                <span class="s2">&quot;FLASH_SIZE&quot;</span><span class="p">,</span>
+</span><span id="Header-178"><a href="#Header-178"><span class="linenos">178</span></a>                <span class="s2">&quot;FLASH_BANK_SIZE&quot;</span><span class="p">,</span>
+</span><span id="Header-179"><a href="#Header-179"><span class="linenos">179</span></a>                <span class="s2">&quot;COMP1_COMMON&quot;</span><span class="p">,</span>
+</span><span id="Header-180"><a href="#Header-180"><span class="linenos">180</span></a>                <span class="s2">&quot;COMP12_COMMON_BASE&quot;</span><span class="p">,</span>
+</span><span id="Header-181"><a href="#Header-181"><span class="linenos">181</span></a>                <span class="s2">&quot;OPAMP12_COMMON_BASE&quot;</span><span class="p">,</span>
+</span><span id="Header-182"><a href="#Header-182"><span class="linenos">182</span></a>                <span class="s2">&quot;BL_ID&quot;</span><span class="p">,</span>
+</span><span id="Header-183"><a href="#Header-183"><span class="linenos">183</span></a>            <span class="p">]:</span>
+</span><span id="Header-184"><a href="#Header-184"><span class="linenos">184</span></a>                <span class="k">continue</span>
+</span><span id="Header-185"><a href="#Header-185"><span class="linenos">185</span></a>            <span class="n">defines</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="Header-186"><a href="#Header-186"><span class="linenos">186</span></a>        <span class="k">return</span> <span class="n">defines</span>
+</span><span id="Header-187"><a href="#Header-187"><span class="linenos">187</span></a>
+</span><span id="Header-188"><a href="#Header-188"><span class="linenos">188</span></a>    <span class="k">def</span> <span class="nf">_get_defines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header-189"><a href="#Header-189"><span class="linenos">189</span></a>        <span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span>
+</span><span id="Header-190"><a href="#Header-190"><span class="linenos">190</span></a>
+</span><span id="Header-191"><a href="#Header-191"><span class="linenos">191</span></a>        <span class="c1"># create the destination directory</span>
+</span><span id="Header-192"><a href="#Header-192"><span class="linenos">192</span></a>        <span class="n">destination</span> <span class="o">=</span> <span class="p">(</span><span class="n">Header</span><span class="o">.</span><span class="n">_CACHE_PATH</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">family_folder</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">header_file</span><span class="p">)</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.cpp&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+</span><span id="Header-193"><a href="#Header-193"><span class="linenos">193</span></a>        <span class="n">core</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="Header-194"><a href="#Header-194"><span class="linenos">194</span></a>        <span class="n">executable</span> <span class="o">=</span> <span class="n">destination</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">core</span> <span class="k">if</span> <span class="n">core</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="Header-195"><a href="#Header-195"><span class="linenos">195</span></a>        <span class="n">defines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_filtered_defines</span><span class="p">()</span>
+</span><span id="Header-196"><a href="#Header-196"><span class="linenos">196</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">executable</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+</span><span id="Header-197"><a href="#Header-197"><span class="linenos">197</span></a>            <span class="c1"># generate the cpp file from the template</span>
+</span><span id="Header-198"><a href="#Header-198"><span class="linenos">198</span></a>            <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generating </span><span class="si">{</span><span class="n">destination</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> ...&quot;</span><span class="p">)</span>
+</span><span id="Header-199"><a href="#Header-199"><span class="linenos">199</span></a>            <span class="n">substitutions</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;header&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">header_file</span><span class="p">,</span> <span class="s2">&quot;defines&quot;</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">defines</span><span class="p">)}</span>
+</span><span id="Header-200"><a href="#Header-200"><span class="linenos">200</span></a>            <span class="n">content</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">()</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">HEADER_TEMPLATE</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">substitutions</span><span class="p">)</span>
+</span><span id="Header-201"><a href="#Header-201"><span class="linenos">201</span></a>            <span class="c1"># write the cpp file into the cache</span>
+</span><span id="Header-202"><a href="#Header-202"><span class="linenos">202</span></a>            <span class="n">destination</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="Header-203"><a href="#Header-203"><span class="linenos">203</span></a>            <span class="n">destination</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</span><span id="Header-204"><a href="#Header-204"><span class="linenos">204</span></a>            <span class="n">header_defines</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">define</span><span class="p">]</span>
+</span><span id="Header-205"><a href="#Header-205"><span class="linenos">205</span></a>            <span class="k">if</span> <span class="n">core</span><span class="p">:</span>
+</span><span id="Header-206"><a href="#Header-206"><span class="linenos">206</span></a>                <span class="n">header_defines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CORE_C</span><span class="si">{</span><span class="n">core</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">=1&quot;</span><span class="p">)</span>
+</span><span id="Header-207"><a href="#Header-207"><span class="linenos">207</span></a>            <span class="c1"># compile file into an executable</span>
+</span><span id="Header-208"><a href="#Header-208"><span class="linenos">208</span></a>            <span class="n">includes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">Header</span><span class="o">.</span><span class="n">CMSIS_PATH</span><span class="o">.</span><span class="n">absolute</span><span class="p">()),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmsis_folder</span><span class="o">.</span><span class="n">absolute</span><span class="p">())]</span>
+</span><span id="Header-209"><a href="#Header-209"><span class="linenos">209</span></a>            <span class="n">gcc_command</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="Header-210"><a href="#Header-210"><span class="linenos">210</span></a>                <span class="s2">&quot;g++&quot;</span><span class="p">,</span>
+</span><span id="Header-211"><a href="#Header-211"><span class="linenos">211</span></a>                <span class="s2">&quot;-Wno-narrowing&quot;</span><span class="p">,</span>
+</span><span id="Header-212"><a href="#Header-212"><span class="linenos">212</span></a>                <span class="s2">&quot;-fms-extensions&quot;</span><span class="p">,</span>
+</span><span id="Header-213"><a href="#Header-213"><span class="linenos">213</span></a>                <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-I</span><span class="si">{</span><span class="n">incl</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">incl</span> <span class="ow">in</span> <span class="n">includes</span><span class="p">),</span>
+</span><span id="Header-214"><a href="#Header-214"><span class="linenos">214</span></a>                <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-D</span><span class="si">{</span><span class="n">define</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">define</span> <span class="ow">in</span> <span class="n">header_defines</span><span class="p">),</span>
+</span><span id="Header-215"><a href="#Header-215"><span class="linenos">215</span></a>                <span class="sa">f</span><span class="s2">&quot;-o </span><span class="si">{</span><span class="n">executable</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+</span><span id="Header-216"><a href="#Header-216"><span class="linenos">216</span></a>                <span class="nb">str</span><span class="p">(</span><span class="n">destination</span><span class="p">),</span>
+</span><span id="Header-217"><a href="#Header-217"><span class="linenos">217</span></a>            <span class="p">]</span>
+</span><span id="Header-218"><a href="#Header-218"><span class="linenos">218</span></a>            <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Compiling </span><span class="si">{</span><span class="n">destination</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> ...&quot;</span><span class="p">)</span>
+</span><span id="Header-219"><a href="#Header-219"><span class="linenos">219</span></a>            <span class="n">retval</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">gcc_command</span><span class="p">),</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="Header-220"><a href="#Header-220"><span class="linenos">220</span></a>            <span class="k">if</span> <span class="n">retval</span><span class="o">.</span><span class="n">returncode</span><span class="p">:</span>
+</span><span id="Header-221"><a href="#Header-221"><span class="linenos">221</span></a>                <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Header compilation failed! </span><span class="si">{</span><span class="n">retval</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Header-222"><a href="#Header-222"><span class="linenos">222</span></a>                <span class="k">return</span> <span class="kc">None</span>
+</span><span id="Header-223"><a href="#Header-223"><span class="linenos">223</span></a>        <span class="c1"># execute the file</span>
+</span><span id="Header-224"><a href="#Header-224"><span class="linenos">224</span></a>        <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running </span><span class="si">{</span><span class="n">executable</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> ...&quot;</span><span class="p">)</span>
+</span><span id="Header-225"><a href="#Header-225"><span class="linenos">225</span></a>        <span class="n">retval</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">executable</span><span class="p">)],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+</span><span id="Header-226"><a href="#Header-226"><span class="linenos">226</span></a>        <span class="k">if</span> <span class="n">retval</span><span class="o">.</span><span class="n">returncode</span><span class="p">:</span>
+</span><span id="Header-227"><a href="#Header-227"><span class="linenos">227</span></a>            <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Header execution failed! </span><span class="si">{</span><span class="n">retval</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Header-228"><a href="#Header-228"><span class="linenos">228</span></a>            <span class="k">return</span> <span class="kc">None</span>
+</span><span id="Header-229"><a href="#Header-229"><span class="linenos">229</span></a>        <span class="c1"># parse the printed values</span>
+</span><span id="Header-230"><a href="#Header-230"><span class="linenos">230</span></a>        <span class="n">localv</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="Header-231"><a href="#Header-231"><span class="linenos">231</span></a>        <span class="n">exec</span><span class="p">(</span><span class="n">retval</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="nb">globals</span><span class="p">(),</span> <span class="n">localv</span><span class="p">)</span>
+</span><span id="Header-232"><a href="#Header-232"><span class="linenos">232</span></a>        <span class="n">undefined</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">defines</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">localv</span><span class="p">[</span><span class="s2">&quot;cpp_defines&quot;</span><span class="p">]]</span>
+</span><span id="Header-233"><a href="#Header-233"><span class="linenos">233</span></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">undefined</span><span class="p">):</span>
+</span><span id="Header-234"><a href="#Header-234"><span class="linenos">234</span></a>            <span class="n">LOGGER</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Undefined macros: </span><span class="si">{</span><span class="n">undefined</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Header-235"><a href="#Header-235"><span class="linenos">235</span></a>        <span class="k">return</span> <span class="n">localv</span><span class="p">[</span><span class="s2">&quot;cpp_defines&quot;</span><span class="p">]</span>
+</span><span id="Header-236"><a href="#Header-236"><span class="linenos">236</span></a>
+</span><span id="Header-237"><a href="#Header-237"><span class="linenos">237</span></a>    <span class="k">def</span> <span class="nf">_get_memmap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header-238"><a href="#Header-238"><span class="linenos">238</span></a>        <span class="c1"># get the values of the definitions in this file</span>
+</span><span id="Header-239"><a href="#Header-239"><span class="linenos">239</span></a>        <span class="n">defines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_defines</span><span class="p">()</span>
+</span><span id="Header-240"><a href="#Header-240"><span class="linenos">240</span></a>
+</span><span id="Header-241"><a href="#Header-241"><span class="linenos">241</span></a>        <span class="c1"># get the mapping of peripheral to its type</span>
+</span><span id="Header-242"><a href="#Header-242"><span class="linenos">242</span></a>        <span class="n">peripheral_map</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="Header-243"><a href="#Header-243"><span class="linenos">243</span></a>        <span class="n">seen_defines</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="Header-244"><a href="#Header-244"><span class="linenos">244</span></a>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_filtered_defines</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="Header-245"><a href="#Header-245"><span class="linenos">245</span></a>            <span class="k">if</span> <span class="s2">&quot;*)&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+</span><span id="Header-246"><a href="#Header-246"><span class="linenos">246</span></a>                <span class="n">values</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;*)&quot;</span><span class="p">)</span>
+</span><span id="Header-247"><a href="#Header-247"><span class="linenos">247</span></a>                <span class="n">typedef</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span><span id="Header-248"><a href="#Header-248"><span class="linenos">248</span></a>                <span class="n">peripheral_map</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">typedef</span><span class="p">,</span> <span class="n">defines</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+</span><span id="Header-249"><a href="#Header-249"><span class="linenos">249</span></a>                <span class="n">LOGGER</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found peripheral (</span><span class="si">{</span><span class="n">typedef</span><span class="si">}</span><span class="s2"> *) </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> @ 0x</span><span class="si">{</span><span class="n">defines</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="si">:</span><span class="s2">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Header-250"><a href="#Header-250"><span class="linenos">250</span></a>
+</span><span id="Header-251"><a href="#Header-251"><span class="linenos">251</span></a>        <span class="c1"># build the array containing the peripheral types</span>
+</span><span id="Header-252"><a href="#Header-252"><span class="linenos">252</span></a>        <span class="n">raw_types</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="Header-253"><a href="#Header-253"><span class="linenos">253</span></a>            <span class="n">typedef</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="Header-254"><a href="#Header-254"><span class="linenos">254</span></a>                <span class="p">(</span>
+</span><span id="Header-255"><a href="#Header-255"><span class="linenos">255</span></a>                    <span class="n">v</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">],</span>
+</span><span id="Header-256"><a href="#Header-256"><span class="linenos">256</span></a>                    <span class="n">v</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+</span><span id="Header-257"><a href="#Header-257"><span class="linenos">257</span></a>                    <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s2">&quot;array_size&quot;</span><span class="p">],</span> <span class="mi">16</span> <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;array_size&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;0x&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;array&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="Header-258"><a href="#Header-258"><span class="linenos">258</span></a>                <span class="p">)</span>
+</span><span id="Header-259"><a href="#Header-259"><span class="linenos">259</span></a>                <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="s2">&quot;public&quot;</span><span class="p">]</span>
+</span><span id="Header-260"><a href="#Header-260"><span class="linenos">260</span></a>            <span class="p">]</span>
+</span><span id="Header-261"><a href="#Header-261"><span class="linenos">261</span></a>            <span class="k">for</span> <span class="n">typedef</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">classes</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span><span id="Header-262"><a href="#Header-262"><span class="linenos">262</span></a>        <span class="p">}</span>
+</span><span id="Header-263"><a href="#Header-263"><span class="linenos">263</span></a>
+</span><span id="Header-264"><a href="#Header-264"><span class="linenos">264</span></a>        <span class="c1"># function to recursively flatten the types</span>
+</span><span id="Header-265"><a href="#Header-265"><span class="linenos">265</span></a>        <span class="k">def</span> <span class="nf">_flatten_type</span><span class="p">(</span><span class="n">typedef</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+</span><span id="Header-266"><a href="#Header-266"><span class="linenos">266</span></a>            <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">raw_types</span><span class="p">[</span><span class="n">typedef</span><span class="p">]:</span>
+</span><span id="Header-267"><a href="#Header-267"><span class="linenos">267</span></a>                <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">Header</span><span class="o">.</span><span class="n">_BUILTINS</span><span class="p">:</span>
+</span><span id="Header-268"><a href="#Header-268"><span class="linenos">268</span></a>                    <span class="n">size</span> <span class="o">=</span> <span class="n">Header</span><span class="o">.</span><span class="n">_BUILTINS</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+</span><span id="Header-269"><a href="#Header-269"><span class="linenos">269</span></a>                    <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;RESERVED&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">n</span>
+</span><span id="Header-270"><a href="#Header-270"><span class="linenos">270</span></a>                    <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="Header-271"><a href="#Header-271"><span class="linenos">271</span></a>                        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="n">name</span> <span class="k">else</span> <span class="n">name</span><span class="p">))</span>
+</span><span id="Header-272"><a href="#Header-272"><span class="linenos">272</span></a>                    <span class="k">else</span><span class="p">:</span>
+</span><span id="Header-273"><a href="#Header-273"><span class="linenos">273</span></a>                        <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span><span class="p">:</span>
+</span><span id="Header-274"><a href="#Header-274"><span class="linenos">274</span></a>                            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">size</span> <span class="o">*</span> <span class="n">s</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+</span><span id="Header-275"><a href="#Header-275"><span class="linenos">275</span></a>                        <span class="k">else</span><span class="p">:</span>
+</span><span id="Header-276"><a href="#Header-276"><span class="linenos">276</span></a>                            <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">([(</span><span class="n">size</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}{</span><span class="n">name</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">ii</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">s</span><span class="p">)])</span>
+</span><span id="Header-277"><a href="#Header-277"><span class="linenos">277</span></a>                <span class="k">elif</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">raw_types</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span><span id="Header-278"><a href="#Header-278"><span class="linenos">278</span></a>                    <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="Header-279"><a href="#Header-279"><span class="linenos">279</span></a>                        <span class="n">_flatten_type</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prefix</span><span class="p">)</span>
+</span><span id="Header-280"><a href="#Header-280"><span class="linenos">280</span></a>                    <span class="k">else</span><span class="p">:</span>
+</span><span id="Header-281"><a href="#Header-281"><span class="linenos">281</span></a>                        <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span><span id="Header-282"><a href="#Header-282"><span class="linenos">282</span></a>                            <span class="n">_flatten_type</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">prefix</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">ii</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</span><span id="Header-283"><a href="#Header-283"><span class="linenos">283</span></a>                <span class="k">else</span><span class="p">:</span>
+</span><span id="Header-284"><a href="#Header-284"><span class="linenos">284</span></a>                    <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown type: </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</span><span id="Header-285"><a href="#Header-285"><span class="linenos">285</span></a>                    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="Header-286"><a href="#Header-286"><span class="linenos">286</span></a>
+</span><span id="Header-287"><a href="#Header-287"><span class="linenos">287</span></a>        <span class="c1"># flatten all types</span>
+</span><span id="Header-288"><a href="#Header-288"><span class="linenos">288</span></a>        <span class="n">flat_types</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span id="Header-289"><a href="#Header-289"><span class="linenos">289</span></a>        <span class="k">for</span> <span class="n">typedef</span> <span class="ow">in</span> <span class="n">raw_types</span><span class="p">:</span>
+</span><span id="Header-290"><a href="#Header-290"><span class="linenos">290</span></a>            <span class="n">_flatten_type</span><span class="p">(</span><span class="n">typedef</span><span class="p">,</span> <span class="n">flat_types</span><span class="p">[</span><span class="n">typedef</span><span class="p">])</span>
+</span><span id="Header-291"><a href="#Header-291"><span class="linenos">291</span></a>
+</span><span id="Header-292"><a href="#Header-292"><span class="linenos">292</span></a>        <span class="c1"># match the macro definitions to the type structures</span>
+</span><span id="Header-293"><a href="#Header-293"><span class="linenos">293</span></a>        <span class="n">matched_types</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span><span id="Header-294"><a href="#Header-294"><span class="linenos">294</span></a>        <span class="k">for</span> <span class="n">typedef</span><span class="p">,</span> <span class="n">pregs</span> <span class="ow">in</span> <span class="n">flat_types</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="Header-295"><a href="#Header-295"><span class="linenos">295</span></a>            <span class="c1"># print(typedef, pregs)</span>
+</span><span id="Header-296"><a href="#Header-296"><span class="linenos">296</span></a>            <span class="n">peri</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">typedef</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">isupper</span><span class="p">()])</span>
+</span><span id="Header-297"><a href="#Header-297"><span class="linenos">297</span></a>            <span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="Header-298"><a href="#Header-298"><span class="linenos">298</span></a>            <span class="k">for</span> <span class="n">reg</span> <span class="ow">in</span> <span class="n">pregs</span><span class="p">:</span>
+</span><span id="Header-299"><a href="#Header-299"><span class="linenos">299</span></a>                <span class="k">if</span> <span class="n">reg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Header-300"><a href="#Header-300"><span class="linenos">300</span></a>                    <span class="n">position</span> <span class="o">+=</span> <span class="n">reg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="Header-301"><a href="#Header-301"><span class="linenos">301</span></a>                    <span class="k">continue</span>
+</span><span id="Header-302"><a href="#Header-302"><span class="linenos">302</span></a>                <span class="n">sreg</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">reg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span> <span class="ow">or</span> <span class="n">r</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()]</span>
+</span><span id="Header-303"><a href="#Header-303"><span class="linenos">303</span></a>                <span class="n">prefix</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">_&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">peri</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sreg</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">isupper</span><span class="p">()]))]</span>
+</span><span id="Header-304"><a href="#Header-304"><span class="linenos">304</span></a>                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sreg</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="Header-305"><a href="#Header-305"><span class="linenos">305</span></a>                    <span class="k">if</span> <span class="n">sreg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span><span id="Header-306"><a href="#Header-306"><span class="linenos">306</span></a>                        <span class="n">parts</span> <span class="o">=</span> <span class="n">sreg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">)</span>
+</span><span id="Header-307"><a href="#Header-307"><span class="linenos">307</span></a>                        <span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">sreg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="Header-308"><a href="#Header-308"><span class="linenos">308</span></a>                        <span class="n">prefix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">_&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">peri</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)))</span>
+</span><span id="Header-309"><a href="#Header-309"><span class="linenos">309</span></a>                    <span class="k">elif</span> <span class="n">sreg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span><span id="Header-310"><a href="#Header-310"><span class="linenos">310</span></a>                        <span class="n">sreg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sreg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="Header-311"><a href="#Header-311"><span class="linenos">311</span></a>                        <span class="n">prefix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">_&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">peri</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sreg</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">isupper</span><span class="p">()])</span> <span class="o">+</span> <span class="n">sreg</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</span><span id="Header-312"><a href="#Header-312"><span class="linenos">312</span></a>                        <span class="n">prefix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">x_&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">peri</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sreg</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">isupper</span><span class="p">()])))</span>
+</span><span id="Header-313"><a href="#Header-313"><span class="linenos">313</span></a>                <span class="c1"># A bunch of aliases</span>
+</span><span id="Header-314"><a href="#Header-314"><span class="linenos">314</span></a>                <span class="k">if</span> <span class="s2">&quot;FSMC_BTCR_&quot;</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
+</span><span id="Header-315"><a href="#Header-315"><span class="linenos">315</span></a>                    <span class="n">prefix</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s2">&quot;FSMC_BCRx_&quot;</span><span class="p">,</span> <span class="s2">&quot;FSMC_BTRx_&quot;</span><span class="p">])</span>
+</span><span id="Header-316"><a href="#Header-316"><span class="linenos">316</span></a>                <span class="k">if</span> <span class="s2">&quot;ADC_TR_&quot;</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
+</span><span id="Header-317"><a href="#Header-317"><span class="linenos">317</span></a>                    <span class="n">prefix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;ADC_TR1_&quot;</span><span class="p">)</span>
+</span><span id="Header-318"><a href="#Header-318"><span class="linenos">318</span></a>                <span class="k">if</span> <span class="s2">&quot;DBGMCU_APB1FZ_&quot;</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
+</span><span id="Header-319"><a href="#Header-319"><span class="linenos">319</span></a>                    <span class="n">prefix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;DBGMCU_APB1_FZ_&quot;</span><span class="p">)</span>
+</span><span id="Header-320"><a href="#Header-320"><span class="linenos">320</span></a>                <span class="k">if</span> <span class="s2">&quot;DBGMCU_APB2FZ_&quot;</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
+</span><span id="Header-321"><a href="#Header-321"><span class="linenos">321</span></a>                    <span class="n">prefix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;DBGMCU_APB2_FZ_&quot;</span><span class="p">)</span>
+</span><span id="Header-322"><a href="#Header-322"><span class="linenos">322</span></a>                <span class="c1"># if &quot;FLASH_KEYR_&quot; in prefix: prefix.extend([&quot;FLASH_KEY1_&quot;, &quot;FLASH_KEY2_&quot;])</span>
+</span><span id="Header-323"><a href="#Header-323"><span class="linenos">323</span></a>                <span class="c1"># if &quot;FLASH_OPTKEYR_&quot; in prefix: prefix.extend([&quot;FLASH_OPTKEY1_&quot;, &quot;FLASH_OPTKEY2_&quot;])</span>
+</span><span id="Header-324"><a href="#Header-324"><span class="linenos">324</span></a>                <span class="k">if</span> <span class="s2">&quot;GPIO_AFR1_&quot;</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
+</span><span id="Header-325"><a href="#Header-325"><span class="linenos">325</span></a>                    <span class="n">prefix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;GPIO_AFRL_&quot;</span><span class="p">)</span>
+</span><span id="Header-326"><a href="#Header-326"><span class="linenos">326</span></a>                <span class="k">if</span> <span class="s2">&quot;GPIO_AFR2_&quot;</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
+</span><span id="Header-327"><a href="#Header-327"><span class="linenos">327</span></a>                    <span class="n">prefix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;GPIO_AFRH_&quot;</span><span class="p">)</span>
+</span><span id="Header-328"><a href="#Header-328"><span class="linenos">328</span></a>                <span class="k">if</span> <span class="s2">&quot;SAI_Block&quot;</span> <span class="ow">in</span> <span class="n">typedef</span><span class="p">:</span>
+</span><span id="Header-329"><a href="#Header-329"><span class="linenos">329</span></a>                    <span class="n">prefix</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;SAI_&quot;</span><span class="p">,</span> <span class="s2">&quot;SAI_x&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">]</span>
+</span><span id="Header-330"><a href="#Header-330"><span class="linenos">330</span></a>
+</span><span id="Header-331"><a href="#Header-331"><span class="linenos">331</span></a>                <span class="n">regmap</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="Header-332"><a href="#Header-332"><span class="linenos">332</span></a>                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prefix</span><span class="p">:</span>
+</span><span id="Header-333"><a href="#Header-333"><span class="linenos">333</span></a>                    <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">defines</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span>
+</span><span id="Header-334"><a href="#Header-334"><span class="linenos">334</span></a>                    <span class="n">seen_defines</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+</span><span id="Header-335"><a href="#Header-335"><span class="linenos">335</span></a>                    <span class="n">regmap</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">):</span> <span class="n">defines</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">})</span>
+</span><span id="Header-336"><a href="#Header-336"><span class="linenos">336</span></a>                <span class="k">if</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">regmap</span><span class="p">):</span>
+</span><span id="Header-337"><a href="#Header-337"><span class="linenos">337</span></a>                    <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Empty: </span><span class="si">{</span><span class="n">typedef</span><span class="si">:</span><span class="s2">30</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">peri</span><span class="si">}</span><span class="s2">-&gt;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">reg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> &gt;&gt; </span><span class="si">{</span><span class="n">sreg</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</span><span id="Header-338"><a href="#Header-338"><span class="linenos">338</span></a>
+</span><span id="Header-339"><a href="#Header-339"><span class="linenos">339</span></a>                <span class="c1"># convert macro names to positional arguments</span>
+</span><span id="Header-340"><a href="#Header-340"><span class="linenos">340</span></a>                <span class="n">fields</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">r</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">regmap</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_Pos&quot;</span><span class="p">)])))</span>
+</span><span id="Header-341"><a href="#Header-341"><span class="linenos">341</span></a>                <span class="n">registers</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="Header-342"><a href="#Header-342"><span class="linenos">342</span></a>                <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+</span><span id="Header-343"><a href="#Header-343"><span class="linenos">343</span></a>                    <span class="n">regs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">regmap</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">field</span> <span class="ow">or</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">field</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span><span class="p">)}</span>
+</span><span id="Header-344"><a href="#Header-344"><span class="linenos">344</span></a>                    <span class="n">val</span> <span class="o">=</span> <span class="n">regs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="Header-345"><a href="#Header-345"><span class="linenos">345</span></a>                    <span class="n">pos</span> <span class="o">=</span> <span class="n">regs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">field</span> <span class="o">+</span> <span class="s2">&quot;_Pos&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="Header-346"><a href="#Header-346"><span class="linenos">346</span></a>                    <span class="n">msk</span> <span class="o">=</span> <span class="n">regs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">field</span> <span class="o">+</span> <span class="s2">&quot;_Msk&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="Header-347"><a href="#Header-347"><span class="linenos">347</span></a>                    <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Header-348"><a href="#Header-348"><span class="linenos">348</span></a>                        <span class="n">LOGGER</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2"> not found: </span><span class="si">{</span><span class="n">regs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Header-349"><a href="#Header-349"><span class="linenos">349</span></a>                        <span class="k">continue</span>
+</span><span id="Header-350"><a href="#Header-350"><span class="linenos">350</span></a>                    <span class="k">if</span> <span class="n">pos</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Header-351"><a href="#Header-351"><span class="linenos">351</span></a>                        <span class="n">LOGGER</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">_Pos not found: </span><span class="si">{</span><span class="n">regs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Header-352"><a href="#Header-352"><span class="linenos">352</span></a>                        <span class="k">continue</span>
+</span><span id="Header-353"><a href="#Header-353"><span class="linenos">353</span></a>                    <span class="k">if</span> <span class="n">msk</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Header-354"><a href="#Header-354"><span class="linenos">354</span></a>                        <span class="n">LOGGER</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">_Msk not found: </span><span class="si">{</span><span class="n">regs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Header-355"><a href="#Header-355"><span class="linenos">355</span></a>                        <span class="k">continue</span>
+</span><span id="Header-356"><a href="#Header-356"><span class="linenos">356</span></a>
+</span><span id="Header-357"><a href="#Header-357"><span class="linenos">357</span></a>                    <span class="n">rem</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">field</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">):</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">regs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</span><span id="Header-358"><a href="#Header-358"><span class="linenos">358</span></a>                    <span class="n">mask</span> <span class="o">=</span> <span class="n">msk</span> <span class="o">&gt;&gt;</span> <span class="n">pos</span>
+</span><span id="Header-359"><a href="#Header-359"><span class="linenos">359</span></a>                    <span class="n">width</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="Header-360"><a href="#Header-360"><span class="linenos">360</span></a>                    <span class="k">while</span> <span class="n">mask</span><span class="p">:</span>
+</span><span id="Header-361"><a href="#Header-361"><span class="linenos">361</span></a>                        <span class="n">width</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="Header-362"><a href="#Header-362"><span class="linenos">362</span></a>                        <span class="n">mask</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span>
+</span><span id="Header-363"><a href="#Header-363"><span class="linenos">363</span></a>                    <span class="n">registers</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">msk</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">rem</span><span class="p">)</span>
+</span><span id="Header-364"><a href="#Header-364"><span class="linenos">364</span></a>
+</span><span id="Header-365"><a href="#Header-365"><span class="linenos">365</span></a>                <span class="c1"># print(registers)</span>
+</span><span id="Header-366"><a href="#Header-366"><span class="linenos">366</span></a>                <span class="c1"># Store in map</span>
+</span><span id="Header-367"><a href="#Header-367"><span class="linenos">367</span></a>                <span class="n">matched_types</span><span class="p">[</span><span class="n">typedef</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">position</span><span class="p">,</span> <span class="n">reg</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">registers</span><span class="p">))</span>
+</span><span id="Header-368"><a href="#Header-368"><span class="linenos">368</span></a>                <span class="n">position</span> <span class="o">+=</span> <span class="n">reg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="Header-369"><a href="#Header-369"><span class="linenos">369</span></a>
+</span><span id="Header-370"><a href="#Header-370"><span class="linenos">370</span></a>        <span class="c1"># print the remaining</span>
+</span><span id="Header-371"><a href="#Header-371"><span class="linenos">371</span></a>        <span class="n">remaining_defines</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">defines</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen_defines</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">d</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_BASE&quot;</span><span class="p">)]</span>
+</span><span id="Header-372"><a href="#Header-372"><span class="linenos">372</span></a>        <span class="k">for</span> <span class="n">typedef</span> <span class="ow">in</span> <span class="n">matched_types</span><span class="p">:</span>
+</span><span id="Header-373"><a href="#Header-373"><span class="linenos">373</span></a>            <span class="n">peri</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">typedef</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">isupper</span><span class="p">()])</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span>
+</span><span id="Header-374"><a href="#Header-374"><span class="linenos">374</span></a>            <span class="n">rem</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">remaining_defines</span> <span class="k">if</span> <span class="n">d</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">peri</span><span class="p">)]</span>
+</span><span id="Header-375"><a href="#Header-375"><span class="linenos">375</span></a>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rem</span><span class="p">):</span>
+</span><span id="Header-376"><a href="#Header-376"><span class="linenos">376</span></a>                <span class="n">LOGGER</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unassigned defines for (</span><span class="si">{</span><span class="n">typedef</span><span class="si">}</span><span class="s2"> *) </span><span class="si">{</span><span class="n">peri</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rem</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Header-377"><a href="#Header-377"><span class="linenos">377</span></a>                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">rem</span><span class="p">:</span>
+</span><span id="Header-378"><a href="#Header-378"><span class="linenos">378</span></a>                    <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">defines</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="Header-379"><a href="#Header-379"><span class="linenos">379</span></a>
+</span><span id="Header-380"><a href="#Header-380"><span class="linenos">380</span></a>        <span class="c1"># for typedef, registers in matched_types.items():</span>
+</span><span id="Header-381"><a href="#Header-381"><span class="linenos">381</span></a>        <span class="c1">#     print(typedef)</span>
+</span><span id="Header-382"><a href="#Header-382"><span class="linenos">382</span></a>        <span class="c1">#     for reg in registers:</span>
+</span><span id="Header-383"><a href="#Header-383"><span class="linenos">383</span></a>        <span class="c1">#         print(f&quot;    {reg[0]:03x}: {reg[2]}&quot;)</span>
+</span><span id="Header-384"><a href="#Header-384"><span class="linenos">384</span></a>
+</span><span id="Header-385"><a href="#Header-385"><span class="linenos">385</span></a>        <span class="n">device</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">Device</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+</span><span id="Header-386"><a href="#Header-386"><span class="linenos">386</span></a>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">typedef</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span> <span class="ow">in</span> <span class="n">peripheral_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="Header-387"><a href="#Header-387"><span class="linenos">387</span></a>            <span class="n">svd</span><span class="o">.</span><span class="n">Peripheral</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">typedef</span><span class="p">,</span> <span class="n">defines</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">parent</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+</span><span id="Header-388"><a href="#Header-388"><span class="linenos">388</span></a>
+</span><span id="Header-389"><a href="#Header-389"><span class="linenos">389</span></a>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">registers</span> <span class="ow">in</span> <span class="n">matched_types</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="Header-390"><a href="#Header-390"><span class="linenos">390</span></a>            <span class="n">peripheral</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">PeripheralType</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+</span><span id="Header-391"><a href="#Header-391"><span class="linenos">391</span></a>            <span class="k">for</span> <span class="n">offset</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bitfields</span> <span class="ow">in</span> <span class="n">registers</span><span class="p">:</span>
+</span><span id="Header-392"><a href="#Header-392"><span class="linenos">392</span></a>                <span class="n">register</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">Register</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">peripheral</span><span class="p">)</span>
+</span><span id="Header-393"><a href="#Header-393"><span class="linenos">393</span></a>                <span class="k">for</span> <span class="n">pos</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="n">bitfields</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="Header-394"><a href="#Header-394"><span class="linenos">394</span></a>                    <span class="n">svd</span><span class="o">.</span><span class="n">BitField</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">register</span><span class="p">)</span>
+</span><span id="Header-395"><a href="#Header-395"><span class="linenos">395</span></a>
+</span><span id="Header-396"><a href="#Header-396"><span class="linenos">396</span></a>        <span class="k">return</span> <span class="n">device</span>
+</span><span id="Header-397"><a href="#Header-397"><span class="linenos">397</span></a>        <span class="c1"># return (peripheral_map, matched_types)</span>
+</span></pre></div>
+
+
+    
+
+                            <div id="Header.__init__" class="classattr">
+                                        <input id="Header.__init__-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="name">Header</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">did</span></span>)</span>
+
+                <label class="view-source-button" for="Header.__init__-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Header.__init__"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Header.__init__-94"><a href="#Header.__init__-94"><span class="linenos"> 94</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">did</span><span class="p">):</span>
+</span><span id="Header.__init__-95"><a href="#Header.__init__-95"><span class="linenos"> 95</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">did</span> <span class="o">=</span> <span class="n">did</span>
+</span><span id="Header.__init__-96"><a href="#Header.__init__-96"><span class="linenos"> 96</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">family_folder</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;stm32</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">family</span><span class="si">}</span><span class="s2">xx&quot;</span>
+</span><span id="Header.__init__-97"><a href="#Header.__init__-97"><span class="linenos"> 97</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cmsis_folder</span> <span class="o">=</span> <span class="n">Header</span><span class="o">.</span><span class="n">_HEADER_PATH</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">family_folder</span> <span class="o">/</span> <span class="s2">&quot;Include&quot;</span>
+</span><span id="Header.__init__-98"><a href="#Header.__init__-98"><span class="linenos"> 98</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">family_header_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">family_folder</span><span class="si">}</span><span class="s2">.h&quot;</span>
+</span><span id="Header.__init__-99"><a href="#Header.__init__-99"><span class="linenos"> 99</span></a>
+</span><span id="Header.__init__-100"><a href="#Header.__init__-100"><span class="linenos">100</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">family_defines</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_family_defines</span><span class="p">()</span>
+</span><span id="Header.__init__-101"><a href="#Header.__init__-101"><span class="linenos">101</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">define</span> <span class="o">=</span> <span class="n">getDefineForDevice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">family_defines</span><span class="p">)</span>
+</span><span id="Header.__init__-102"><a href="#Header.__init__-102"><span class="linenos">102</span></a>        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">define</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="Header.__init__-103"><a href="#Header.__init__-103"><span class="linenos">103</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">is_valid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">define</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="Header.__init__-104"><a href="#Header.__init__-104"><span class="linenos">104</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_valid</span><span class="p">:</span>
+</span><span id="Header.__init__-105"><a href="#Header.__init__-105"><span class="linenos">105</span></a>            <span class="k">return</span>
+</span><span id="Header.__init__-106"><a href="#Header.__init__-106"><span class="linenos">106</span></a>
+</span><span id="Header.__init__-107"><a href="#Header.__init__-107"><span class="linenos">107</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">header_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">define</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.h&quot;</span>
+</span><span id="Header.__init__-108"><a href="#Header.__init__-108"><span class="linenos">108</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">device_map</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="Header.__init__-109"><a href="#Header.__init__-109"><span class="linenos">109</span></a>        <span class="n">substitutions</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="Header.__init__-110"><a href="#Header.__init__-110"><span class="linenos">110</span></a>            <span class="c1"># r&quot;/\* +?(Legacy defines|Legacy aliases|Old .*? legacy purpose|Aliases for .*?) +?\*/.*?\n\n&quot;: &quot;&quot;,</span>
+</span><span id="Header.__init__-111"><a href="#Header.__init__-111"><span class="linenos">111</span></a>            <span class="sa">r</span><span class="s2">&quot;/\* +?Legacy (aliases|defines|registers naming) +?\*/.*?\n\n&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="Header.__init__-112"><a href="#Header.__init__-112"><span class="linenos">112</span></a>            <span class="sa">r</span><span class="s2">&quot;/\* +?Old .*? legacy purpose +?\*/.*?\n\n&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="Header.__init__-113"><a href="#Header.__init__-113"><span class="linenos">113</span></a>            <span class="sa">r</span><span class="s2">&quot;/\* +?Aliases for .*? +?\*/.*?\n\n&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="Header.__init__-114"><a href="#Header.__init__-114"><span class="linenos">114</span></a>            <span class="c1"># r&quot;( 0x[0-9A-F]+)\)                 &quot;: r&quot;\1U&quot;,</span>
+</span><span id="Header.__init__-115"><a href="#Header.__init__-115"><span class="linenos">115</span></a>            <span class="c1"># r&quot;#define.*?/\*!&lt;.*? Legacy .*?\*/\n&quot;: &quot;&quot;,</span>
+</span><span id="Header.__init__-116"><a href="#Header.__init__-116"><span class="linenos">116</span></a>        <span class="p">}</span>
+</span><span id="Header.__init__-117"><a href="#Header.__init__-117"><span class="linenos">117</span></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmsis_folder</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">header_file</span><span class="p">,</span> <span class="n">substitutions</span><span class="p">)</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="Header.did" class="classattr">
+                                <div class="attr variable">
+            <span class="name">did</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Header.did"></a>
+    
+    
+
+                            </div>
+                            <div id="Header.family_folder" class="classattr">
+                                <div class="attr variable">
+            <span class="name">family_folder</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Header.family_folder"></a>
+    
+    
+
+                            </div>
+                            <div id="Header.cmsis_folder" class="classattr">
+                                <div class="attr variable">
+            <span class="name">cmsis_folder</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Header.cmsis_folder"></a>
+    
+    
+
+                            </div>
+                            <div id="Header.family_header_file" class="classattr">
+                                <div class="attr variable">
+            <span class="name">family_header_file</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Header.family_header_file"></a>
+    
+    
+
+                            </div>
+                            <div id="Header.family_defines" class="classattr">
+                                <div class="attr variable">
+            <span class="name">family_defines</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Header.family_defines"></a>
+    
+    
+
+                            </div>
+                            <div id="Header.define" class="classattr">
+                                <div class="attr variable">
+            <span class="name">define</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Header.define"></a>
+    
+    
+
+                            </div>
+                            <div id="Header.is_valid" class="classattr">
+                                <div class="attr variable">
+            <span class="name">is_valid</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Header.is_valid"></a>
+    
+    
+
+                            </div>
+                            <div id="Header.header_file" class="classattr">
+                                <div class="attr variable">
+            <span class="name">header_file</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Header.header_file"></a>
+    
+    
+
+                            </div>
+                            <div id="Header.device_map" class="classattr">
+                                <div class="attr variable">
+            <span class="name">device_map</span>
+
+        
+    </div>
+    <a class="headerlink" href="#Header.device_map"></a>
+    
+    
+
+                            </div>
+                            <div id="Header.get_defines" class="classattr">
+                                        <input id="Header.get_defines-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">get_defines</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">self</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="Header.get_defines-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Header.get_defines"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Header.get_defines-119"><a href="#Header.get_defines-119"><span class="linenos">119</span></a>    <span class="k">def</span> <span class="nf">get_defines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header.get_defines-120"><a href="#Header.get_defines-120"><span class="linenos">120</span></a>        <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;defines&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="Header.get_defines-121"><a href="#Header.get_defines-121"><span class="linenos">121</span></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">:</span>
+</span><span id="Header.get_defines-122"><a href="#Header.get_defines-122"><span class="linenos">122</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_defines</span><span class="p">()</span>
+</span><span id="Header.get_defines-123"><a href="#Header.get_defines-123"><span class="linenos">123</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="Header.memory_map_tree" class="classattr">
+                                        <input id="Header.memory_map_tree-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
+            <span class="name">memory_map_tree</span>
+
+                <label class="view-source-button" for="Header.memory_map_tree-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Header.memory_map_tree"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Header.memory_map_tree-129"><a href="#Header.memory_map_tree-129"><span class="linenos">129</span></a>    <span class="nd">@property</span>
+</span><span id="Header.memory_map_tree-130"><a href="#Header.memory_map_tree-130"><span class="linenos">130</span></a>    <span class="k">def</span> <span class="nf">memory_map_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header.memory_map_tree-131"><a href="#Header.memory_map_tree-131"><span class="linenos">131</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_memory_map_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">:</span>
+</span><span id="Header.memory_map_tree-132"><a href="#Header.memory_map_tree-132"><span class="linenos">132</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_memory_map_key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_memmap</span><span class="p">()</span>
+</span><span id="Header.memory_map_tree-133"><a href="#Header.memory_map_tree-133"><span class="linenos">133</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_memory_map_key</span><span class="p">]</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div id="Header.interrupt_table" class="classattr">
+                                        <input id="Header.interrupt_table-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr variable">
+            <span class="name">interrupt_table</span>
+
+                <label class="view-source-button" for="Header.interrupt_table-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Header.interrupt_table"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Header.interrupt_table-135"><a href="#Header.interrupt_table-135"><span class="linenos">135</span></a>    <span class="nd">@property</span>
+</span><span id="Header.interrupt_table-136"><a href="#Header.interrupt_table-136"><span class="linenos">136</span></a>    <span class="k">def</span> <span class="nf">interrupt_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Header.interrupt_table-137"><a href="#Header.interrupt_table-137"><span class="linenos">137</span></a>        <span class="k">if</span> <span class="s2">&quot;vectors&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">:</span>
+</span><span id="Header.interrupt_table-138"><a href="#Header.interrupt_table-138"><span class="linenos">138</span></a>            <span class="n">interrupt_enum</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">enums</span> <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;IRQn_Type&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="Header.interrupt_table-139"><a href="#Header.interrupt_table-139"><span class="linenos">139</span></a>            <span class="n">vectors</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="Header.interrupt_table-140"><a href="#Header.interrupt_table-140"><span class="linenos">140</span></a>                <span class="p">{</span><span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)),</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">5</span><span class="p">]}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">interrupt_enum</span>
+</span><span id="Header.interrupt_table-141"><a href="#Header.interrupt_table-141"><span class="linenos">141</span></a>            <span class="p">]</span>
+</span><span id="Header.interrupt_table-142"><a href="#Header.interrupt_table-142"><span class="linenos">142</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="s2">&quot;vectors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vectors</span>
+</span><span id="Header.interrupt_table-143"><a href="#Header.interrupt_table-143"><span class="linenos">143</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="s2">&quot;vectors&quot;</span><span class="p">]</span>
+</span></pre></div>
+
+
+    
+
+                            </div>
+                            <div class="inherited">
+                                <h5>Inherited Members</h5>
+                                <dl>
+                                    <div><dt>modm_data.header2svd.header.Header</dt>
+                                <dd id="Header.CMSIS_PATH" class="variable">CMSIS_PATH</dd>
+                <dd id="Header.filename" class="variable">filename</dd>
+                <dd id="Header.substitutions" class="variable">substitutions</dd>
+                <dd id="Header.header" class="variable">header</dd>
+
+            </div>
+                                </dl>
+                            </div>
+                </section>
+                <section id="getDefineForDevice">
+                            <input id="getDefineForDevice-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">getDefineForDevice</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">device_id</span>, </span><span class="param"><span class="n">familyDefines</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="getDefineForDevice-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#getDefineForDevice"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="getDefineForDevice-37"><a href="#getDefineForDevice-37"><span class="linenos">37</span></a><span class="k">def</span> <span class="nf">getDefineForDevice</span><span class="p">(</span><span class="n">device_id</span><span class="p">,</span> <span class="n">familyDefines</span><span class="p">):</span>
+</span><span id="getDefineForDevice-38"><a href="#getDefineForDevice-38"><span class="linenos">38</span></a>    <span class="c1"># get all defines for this device name</span>
+</span><span id="getDefineForDevice-39"><a href="#getDefineForDevice-39"><span class="linenos">39</span></a>    <span class="n">devName</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;STM32</span><span class="si">{</span><span class="n">device_id</span><span class="o">.</span><span class="n">family</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="n">device_id</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="getDefineForDevice-40"><a href="#getDefineForDevice-40"><span class="linenos">40</span></a>
+</span><span id="getDefineForDevice-41"><a href="#getDefineForDevice-41"><span class="linenos">41</span></a>    <span class="c1"># Map STM32F7x8 -&gt; STM32F7x7</span>
+</span><span id="getDefineForDevice-42"><a href="#getDefineForDevice-42"><span class="linenos">42</span></a>    <span class="k">if</span> <span class="n">device_id</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="s2">&quot;f7&quot;</span> <span class="ow">and</span> <span class="n">devName</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;8&quot;</span><span class="p">:</span>
+</span><span id="getDefineForDevice-43"><a href="#getDefineForDevice-43"><span class="linenos">43</span></a>        <span class="n">devName</span> <span class="o">=</span> <span class="n">devName</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;7&quot;</span>
+</span><span id="getDefineForDevice-44"><a href="#getDefineForDevice-44"><span class="linenos">44</span></a>
+</span><span id="getDefineForDevice-45"><a href="#getDefineForDevice-45"><span class="linenos">45</span></a>    <span class="n">deviceDefines</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">define</span> <span class="k">for</span> <span class="n">define</span> <span class="ow">in</span> <span class="n">familyDefines</span> <span class="k">if</span> <span class="n">define</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">devName</span><span class="p">)])</span>
+</span><span id="getDefineForDevice-46"><a href="#getDefineForDevice-46"><span class="linenos">46</span></a>    <span class="c1"># if there is only one define thats the one</span>
+</span><span id="getDefineForDevice-47"><a href="#getDefineForDevice-47"><span class="linenos">47</span></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">deviceDefines</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="getDefineForDevice-48"><a href="#getDefineForDevice-48"><span class="linenos">48</span></a>        <span class="k">return</span> <span class="n">deviceDefines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="getDefineForDevice-49"><a href="#getDefineForDevice-49"><span class="linenos">49</span></a>
+</span><span id="getDefineForDevice-50"><a href="#getDefineForDevice-50"><span class="linenos">50</span></a>    <span class="c1"># sort with respecting variants</span>
+</span><span id="getDefineForDevice-51"><a href="#getDefineForDevice-51"><span class="linenos">51</span></a>    <span class="n">minlen</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">deviceDefines</span><span class="p">)</span>
+</span><span id="getDefineForDevice-52"><a href="#getDefineForDevice-52"><span class="linenos">52</span></a>    <span class="n">deviceDefines</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">(</span><span class="n">d</span><span class="p">[:</span><span class="n">minlen</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">minlen</span><span class="p">:]))</span>
+</span><span id="getDefineForDevice-53"><a href="#getDefineForDevice-53"><span class="linenos">53</span></a>
+</span><span id="getDefineForDevice-54"><a href="#getDefineForDevice-54"><span class="linenos">54</span></a>    <span class="c1"># now we match for the size-id (and variant-id if applicable).</span>
+</span><span id="getDefineForDevice-55"><a href="#getDefineForDevice-55"><span class="linenos">55</span></a>    <span class="k">if</span> <span class="n">device_id</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="s2">&quot;h7&quot;</span><span class="p">:</span>
+</span><span id="getDefineForDevice-56"><a href="#getDefineForDevice-56"><span class="linenos">56</span></a>        <span class="n">devNameMatch</span> <span class="o">=</span> <span class="n">devName</span> <span class="o">+</span> <span class="s2">&quot;xx&quot;</span>
+</span><span id="getDefineForDevice-57"><a href="#getDefineForDevice-57"><span class="linenos">57</span></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="getDefineForDevice-58"><a href="#getDefineForDevice-58"><span class="linenos">58</span></a>        <span class="n">devNameMatch</span> <span class="o">=</span> <span class="n">devName</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;x</span><span class="si">{</span><span class="n">device_id</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="getDefineForDevice-59"><a href="#getDefineForDevice-59"><span class="linenos">59</span></a>    <span class="k">if</span> <span class="n">device_id</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="s2">&quot;l1&quot;</span><span class="p">:</span>
+</span><span id="getDefineForDevice-60"><a href="#getDefineForDevice-60"><span class="linenos">60</span></a>        <span class="c1"># Map STM32L1xxQC and STM32L1xxZC -&gt; STM32L162QCxA variants</span>
+</span><span id="getDefineForDevice-61"><a href="#getDefineForDevice-61"><span class="linenos">61</span></a>        <span class="k">if</span> <span class="n">device_id</span><span class="o">.</span><span class="n">pin</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;q&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">device_id</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+</span><span id="getDefineForDevice-62"><a href="#getDefineForDevice-62"><span class="linenos">62</span></a>            <span class="n">devNameMatch</span> <span class="o">+=</span> <span class="s2">&quot;A&quot;</span>
+</span><span id="getDefineForDevice-63"><a href="#getDefineForDevice-63"><span class="linenos">63</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="getDefineForDevice-64"><a href="#getDefineForDevice-64"><span class="linenos">64</span></a>            <span class="n">devNameMatch</span> <span class="o">+=</span> <span class="n">device_id</span><span class="o">.</span><span class="n">variant</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span id="getDefineForDevice-65"><a href="#getDefineForDevice-65"><span class="linenos">65</span></a>    <span class="k">elif</span> <span class="n">device_id</span><span class="o">.</span><span class="n">family</span> <span class="o">==</span> <span class="s2">&quot;h7&quot;</span><span class="p">:</span>
+</span><span id="getDefineForDevice-66"><a href="#getDefineForDevice-66"><span class="linenos">66</span></a>        <span class="k">if</span> <span class="n">device_id</span><span class="o">.</span><span class="n">variant</span><span class="p">:</span>
+</span><span id="getDefineForDevice-67"><a href="#getDefineForDevice-67"><span class="linenos">67</span></a>            <span class="n">devNameMatch</span> <span class="o">+=</span> <span class="n">device_id</span><span class="o">.</span><span class="n">variant</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span id="getDefineForDevice-68"><a href="#getDefineForDevice-68"><span class="linenos">68</span></a>    <span class="k">for</span> <span class="n">define</span> <span class="ow">in</span> <span class="n">deviceDefines</span><span class="p">:</span>
+</span><span id="getDefineForDevice-69"><a href="#getDefineForDevice-69"><span class="linenos">69</span></a>        <span class="k">if</span> <span class="n">devNameMatch</span> <span class="o">&lt;=</span> <span class="n">define</span><span class="p">:</span>
+</span><span id="getDefineForDevice-70"><a href="#getDefineForDevice-70"><span class="linenos">70</span></a>            <span class="k">return</span> <span class="n">define</span>
+</span><span id="getDefineForDevice-71"><a href="#getDefineForDevice-71"><span class="linenos">71</span></a>
+</span><span id="getDefineForDevice-72"><a href="#getDefineForDevice-72"><span class="linenos">72</span></a>    <span class="c1"># now we match for the pin-id.</span>
+</span><span id="getDefineForDevice-73"><a href="#getDefineForDevice-73"><span class="linenos">73</span></a>    <span class="n">devNameMatch</span> <span class="o">=</span> <span class="n">devName</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">device_id</span><span class="o">.</span><span class="n">pin</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">x&quot;</span>
+</span><span id="getDefineForDevice-74"><a href="#getDefineForDevice-74"><span class="linenos">74</span></a>    <span class="k">for</span> <span class="n">define</span> <span class="ow">in</span> <span class="n">deviceDefines</span><span class="p">:</span>
+</span><span id="getDefineForDevice-75"><a href="#getDefineForDevice-75"><span class="linenos">75</span></a>        <span class="k">if</span> <span class="n">devNameMatch</span> <span class="o">&lt;=</span> <span class="n">define</span><span class="p">:</span>
+</span><span id="getDefineForDevice-76"><a href="#getDefineForDevice-76"><span class="linenos">76</span></a>            <span class="k">return</span> <span class="n">define</span>
+</span><span id="getDefineForDevice-77"><a href="#getDefineForDevice-77"><span class="linenos">77</span></a>
+</span><span id="getDefineForDevice-78"><a href="#getDefineForDevice-78"><span class="linenos">78</span></a>    <span class="k">return</span> <span class="kc">None</span>
+</span></pre></div>
+
+
+    
+
+                </section>
+                <section id="normalize_memory_map">
+                            <input id="normalize_memory_map-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">normalize_memory_map</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">memtree</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="normalize_memory_map-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#normalize_memory_map"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="normalize_memory_map-164"><a href="#normalize_memory_map-164"><span class="linenos">164</span></a><span class="k">def</span> <span class="nf">normalize_memory_map</span><span class="p">(</span><span class="n">memtree</span><span class="p">):</span>
+</span><span id="normalize_memory_map-165"><a href="#normalize_memory_map-165"><span class="linenos">165</span></a>    <span class="c1"># print(RenderTree(memtree, maxlevel=2))</span>
+</span><span id="normalize_memory_map-166"><a href="#normalize_memory_map-166"><span class="linenos">166</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_subtypes</span><span class="p">(</span><span class="n">memtree</span><span class="p">,</span> <span class="s2">&quot;DMA_TypeDef&quot;</span><span class="p">,</span> <span class="s2">&quot;DMA_Channel_TypeDef&quot;</span><span class="p">,</span> <span class="s2">&quot;DMA_Stream_TypeDef&quot;</span><span class="p">)</span>
+</span><span id="normalize_memory_map-167"><a href="#normalize_memory_map-167"><span class="linenos">167</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_subtypes</span><span class="p">(</span><span class="n">memtree</span><span class="p">,</span> <span class="s2">&quot;MDMA_TypeDef&quot;</span><span class="p">,</span> <span class="s2">&quot;MDMA_Channel_TypeDef&quot;</span><span class="p">)</span>
+</span><span id="normalize_memory_map-168"><a href="#normalize_memory_map-168"><span class="linenos">168</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_subtypes</span><span class="p">(</span><span class="n">memtree</span><span class="p">,</span> <span class="s2">&quot;BDMA_TypeDef&quot;</span><span class="p">,</span> <span class="s2">&quot;BDMA_Channel_TypeDef&quot;</span><span class="p">)</span>
+</span><span id="normalize_memory_map-169"><a href="#normalize_memory_map-169"><span class="linenos">169</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_subtypes</span><span class="p">(</span><span class="n">memtree</span><span class="p">,</span> <span class="s2">&quot;LTDC_TypeDef&quot;</span><span class="p">,</span> <span class="s2">&quot;LTDC_Layer_TypeDef&quot;</span><span class="p">)</span>
+</span><span id="normalize_memory_map-170"><a href="#normalize_memory_map-170"><span class="linenos">170</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_subtypes</span><span class="p">(</span><span class="n">memtree</span><span class="p">,</span> <span class="s2">&quot;SAI_TypeDef&quot;</span><span class="p">,</span> <span class="s2">&quot;SAI_Block_TypeDef&quot;</span><span class="p">)</span>
+</span><span id="normalize_memory_map-171"><a href="#normalize_memory_map-171"><span class="linenos">171</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_subtypes</span><span class="p">(</span><span class="n">memtree</span><span class="p">,</span> <span class="s2">&quot;RAMECC_TypeDef&quot;</span><span class="p">,</span> <span class="s2">&quot;RAMECC_MonitorTypeDef&quot;</span><span class="p">)</span>
+</span><span id="normalize_memory_map-172"><a href="#normalize_memory_map-172"><span class="linenos">172</span></a>
+</span><span id="normalize_memory_map-173"><a href="#normalize_memory_map-173"><span class="linenos">173</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_dfsdm</span><span class="p">(</span><span class="n">memtree</span><span class="p">)</span>
+</span><span id="normalize_memory_map-174"><a href="#normalize_memory_map-174"><span class="linenos">174</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_dmamux</span><span class="p">(</span><span class="n">memtree</span><span class="p">)</span>
+</span><span id="normalize_memory_map-175"><a href="#normalize_memory_map-175"><span class="linenos">175</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_adc_common</span><span class="p">(</span><span class="n">memtree</span><span class="p">)</span>
+</span><span id="normalize_memory_map-176"><a href="#normalize_memory_map-176"><span class="linenos">176</span></a>
+</span><span id="normalize_memory_map-177"><a href="#normalize_memory_map-177"><span class="linenos">177</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_duplicates</span><span class="p">(</span><span class="n">memtree</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="s2">&quot;_COMMON&quot;</span> <span class="ow">in</span> <span class="n">n</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="s2">&quot;_COMMON&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">n</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span><span id="normalize_memory_map-178"><a href="#normalize_memory_map-178"><span class="linenos">178</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_duplicates</span><span class="p">(</span><span class="n">memtree</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="s2">&quot;OPAMP&quot;</span> <span class="o">==</span> <span class="n">n</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;OPAMP\d$&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+</span><span id="normalize_memory_map-179"><a href="#normalize_memory_map-179"><span class="linenos">179</span></a>
+</span><span id="normalize_memory_map-180"><a href="#normalize_memory_map-180"><span class="linenos">180</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_instances</span><span class="p">(</span><span class="n">memtree</span><span class="p">)</span>
+</span><span id="normalize_memory_map-181"><a href="#normalize_memory_map-181"><span class="linenos">181</span></a>    <span class="n">memtree</span> <span class="o">=</span> <span class="n">_normalize_order</span><span class="p">(</span><span class="n">memtree</span><span class="p">)</span>
+</span><span id="normalize_memory_map-182"><a href="#normalize_memory_map-182"><span class="linenos">182</span></a>    <span class="k">return</span> <span class="n">memtree</span>
+</span></pre></div>
+
+
+    
+
+                </section>
     </main>
 <script>
     function escapeHTML(html) {
