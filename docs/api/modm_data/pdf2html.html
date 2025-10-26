@@ -63,9 +63,6 @@
             <h2>API Documentation</h2>
                 <ul class="memberlist">
             <li>
-                    <a class="variable" href="#ti">ti</a>
-            </li>
-            <li>
                     <a class="function" href="#convert">convert</a>
             </li>
             <li>
@@ -110,40 +107,28 @@
 </span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="sd"># PDF to HTML Pipeline</span>
 </span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>
-</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="kn">from</span> <span class="nn">.render</span> <span class="kn">import</span> <span class="n">annotate_debug_info</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="kn">from</span> <span class="nn">.convert</span> <span class="kn">import</span> <span class="n">convert</span><span class="p">,</span> <span class="n">patch</span>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="kn">from</span> <span class="nn">.html</span> <span class="kn">import</span> <span class="n">format_document</span><span class="p">,</span> <span class="n">write_html</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.render</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotate_debug_info</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.convert</span><span class="w"> </span><span class="kn">import</span> <span class="n">convert</span><span class="p">,</span> <span class="n">patch</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.html</span><span class="w"> </span><span class="kn">import</span> <span class="n">format_document</span><span class="p">,</span> <span class="n">write_html</span>
 </span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>
 </span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 </span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>    <span class="s2">&quot;stmicro&quot;</span><span class="p">,</span>
-</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>    <span class="s2">&quot;ti&quot;</span><span class="p">,</span>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>    <span class="s2">&quot;convert&quot;</span><span class="p">,</span>
-</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>    <span class="s2">&quot;annotate_debug_info&quot;</span><span class="p">,</span>
-</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>    <span class="s2">&quot;format_document&quot;</span><span class="p">,</span>
-</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>    <span class="s2">&quot;write_html&quot;</span><span class="p">,</span>
-</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>    <span class="s2">&quot;patch&quot;</span><span class="p">,</span>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>    <span class="s2">&quot;ast&quot;</span><span class="p">,</span>
-</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="s2">&quot;cell&quot;</span><span class="p">,</span>
-</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="s2">&quot;figure&quot;</span><span class="p">,</span>
-</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="s2">&quot;line&quot;</span><span class="p">,</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>    <span class="s2">&quot;page&quot;</span><span class="p">,</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>    <span class="s2">&quot;table&quot;</span><span class="p">,</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="p">]</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>    <span class="s2">&quot;convert&quot;</span><span class="p">,</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>    <span class="s2">&quot;annotate_debug_info&quot;</span><span class="p">,</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>    <span class="s2">&quot;format_document&quot;</span><span class="p">,</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>    <span class="s2">&quot;write_html&quot;</span><span class="p">,</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>    <span class="s2">&quot;patch&quot;</span><span class="p">,</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>    <span class="s2">&quot;ast&quot;</span><span class="p">,</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>    <span class="s2">&quot;cell&quot;</span><span class="p">,</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="s2">&quot;figure&quot;</span><span class="p">,</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="s2">&quot;line&quot;</span><span class="p">,</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="s2">&quot;page&quot;</span><span class="p">,</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>    <span class="s2">&quot;table&quot;</span><span class="p">,</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a><span class="p">]</span>
 </span></pre></div>
 
 
             </section>
-                <section id="ti">
-                    <div class="attr variable">
-            <span class="name">ti</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ti"></a>
-    
-    
-
-                </section>
                 <section id="convert">
                             <input id="convert-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
@@ -155,7 +140,7 @@
 
     </div>
     <a class="headerlink" href="#convert"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="convert-16"><a href="#convert-16"><span class="linenos">16</span></a><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="convert-16"><a href="#convert-16"><span class="linenos">16</span></a><span class="k">def</span><span class="w"> </span><span class="nf">convert</span><span class="p">(</span>
 </span><span id="convert-17"><a href="#convert-17"><span class="linenos">17</span></a>    <span class="n">doc</span><span class="p">:</span> <span class="n">pp</span><span class="o">.</span><span class="n">PdfDocument</span><span class="p">,</span>
 </span><span id="convert-18"><a href="#convert-18"><span class="linenos">18</span></a>    <span class="n">page_range</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
 </span><span id="convert-19"><a href="#convert-19"><span class="linenos">19</span></a>    <span class="n">output_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
@@ -240,7 +225,7 @@
 
     </div>
     <a class="headerlink" href="#annotate_debug_info"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="annotate_debug_info-11"><a href="#annotate_debug_info-11"><span class="linenos"> 11</span></a><span class="k">def</span> <span class="nf">annotate_debug_info</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">,</span> <span class="n">new_doc</span><span class="p">:</span> <span class="n">pp</span><span class="o">.</span><span class="n">PdfDocument</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pp</span><span class="o">.</span><span class="n">PdfDocument</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="annotate_debug_info-11"><a href="#annotate_debug_info-11"><span class="linenos"> 11</span></a><span class="k">def</span><span class="w"> </span><span class="nf">annotate_debug_info</span><span class="p">(</span><span class="n">page</span><span class="p">:</span> <span class="n">Page</span><span class="p">,</span> <span class="n">new_doc</span><span class="p">:</span> <span class="n">pp</span><span class="o">.</span><span class="n">PdfDocument</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pp</span><span class="o">.</span><span class="n">PdfDocument</span><span class="p">:</span>
 </span><span id="annotate_debug_info-12"><a href="#annotate_debug_info-12"><span class="linenos"> 12</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="annotate_debug_info-13"><a href="#annotate_debug_info-13"><span class="linenos"> 13</span></a><span class="sd">    Copies each page into a new or existing PDF document and overlays the internal information on top of the content.</span>
 </span><span id="annotate_debug_info-14"><a href="#annotate_debug_info-14"><span class="linenos"> 14</span></a><span class="sd">    In addition to the information overlayed in `modm_data.pdf.annotate_debug_info`, this function:</span>
@@ -381,7 +366,7 @@ In addition to the information overlayed in <code><a href="pdf.html#annotate_deb
 
     </div>
     <a class="headerlink" href="#format_document"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="format_document-261"><a href="#format_document-261"><span class="linenos">261</span></a><span class="k">def</span> <span class="nf">format_document</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="format_document-261"><a href="#format_document-261"><span class="linenos">261</span></a><span class="k">def</span><span class="w"> </span><span class="nf">format_document</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
 </span><span id="format_document-262"><a href="#format_document-262"><span class="linenos">262</span></a>    <span class="n">html</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;html&quot;</span><span class="p">)</span>
 </span><span id="format_document-263"><a href="#format_document-263"><span class="linenos">263</span></a>
 </span><span id="format_document-264"><a href="#format_document-264"><span class="linenos">264</span></a>    <span class="n">head</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;head&quot;</span><span class="p">)</span>
@@ -416,7 +401,7 @@ In addition to the information overlayed in <code><a href="pdf.html#annotate_deb
 
     </div>
     <a class="headerlink" href="#write_html"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="write_html-281"><a href="#write_html-281"><span class="linenos">281</span></a><span class="k">def</span> <span class="nf">write_html</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">pretty</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="write_html-281"><a href="#write_html-281"><span class="linenos">281</span></a><span class="k">def</span><span class="w"> </span><span class="nf">write_html</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">pretty</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 </span><span id="write_html-282"><a href="#write_html-282"><span class="linenos">282</span></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 </span><span id="write_html-283"><a href="#write_html-283"><span class="linenos">283</span></a>        <span class="n">html</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">pretty_print</span><span class="o">=</span><span class="n">pretty</span><span class="p">,</span> <span class="n">doctype</span><span class="o">=</span><span class="s2">&quot;&lt;!DOCTYPE html&gt;&quot;</span><span class="p">)</span>
 </span></pre></div>
@@ -436,7 +421,7 @@ In addition to the information overlayed in <code><a href="pdf.html#annotate_deb
 
     </div>
     <a class="headerlink" href="#patch"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="patch-86"><a href="#patch-86"><span class="linenos">86</span></a><span class="k">def</span> <span class="nf">patch</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">data_module</span><span class="p">,</span> <span class="n">output_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">patch_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="patch-86"><a href="#patch-86"><span class="linenos">86</span></a><span class="k">def</span><span class="w"> </span><span class="nf">patch</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">data_module</span><span class="p">,</span> <span class="n">output_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">patch_file</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span><span id="patch-87"><a href="#patch-87"><span class="linenos">87</span></a>    <span class="k">if</span> <span class="n">patch_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="patch-88"><a href="#patch-88"><span class="linenos">88</span></a>        <span class="c1"># First try the patch file for the specific version</span>
 </span><span id="patch-89"><a href="#patch-89"><span class="linenos">89</span></a>        <span class="n">patch_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">doc</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.patch&quot;</span>

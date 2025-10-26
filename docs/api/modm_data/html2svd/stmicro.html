@@ -76,8 +76,8 @@
                         <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="c1"># Copyright 2022, Niklas Hauser</span>
 </span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="c1"># SPDX-License-Identifier: MPL-2.0</span>
 </span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span> <span class="nn">.reference</span> <span class="kn">import</span> <span class="n">memory_map_from_reference_manual</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">from</span> <span class="nn">.datasheet</span> <span class="kn">import</span> <span class="n">memory_map_from_datasheet</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.reference</span><span class="w"> </span><span class="kn">import</span> <span class="n">memory_map_from_reference_manual</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.datasheet</span><span class="w"> </span><span class="kn">import</span> <span class="n">memory_map_from_datasheet</span>
 </span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>
 </span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 </span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>    <span class="s2">&quot;memory_map_from_reference_manual&quot;</span><span class="p">,</span>
@@ -98,7 +98,7 @@
 
     </div>
     <a class="headerlink" href="#memory_map_from_reference_manual"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="memory_map_from_reference_manual-361"><a href="#memory_map_from_reference_manual-361"><span class="linenos">361</span></a><span class="k">def</span> <span class="nf">memory_map_from_reference_manual</span><span class="p">(</span><span class="n">rm</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="memory_map_from_reference_manual-361"><a href="#memory_map_from_reference_manual-361"><span class="linenos">361</span></a><span class="k">def</span><span class="w"> </span><span class="nf">memory_map_from_reference_manual</span><span class="p">(</span><span class="n">rm</span><span class="p">):</span>
 </span><span id="memory_map_from_reference_manual-362"><a href="#memory_map_from_reference_manual-362"><span class="linenos">362</span></a>    <span class="k">if</span> <span class="s2">&quot;RM0438&quot;</span> <span class="ow">in</span> <span class="n">rm</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="s2">&quot;RM0456&quot;</span> <span class="ow">in</span> <span class="n">rm</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
 </span><span id="memory_map_from_reference_manual-363"><a href="#memory_map_from_reference_manual-363"><span class="linenos">363</span></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RM0438, RM0456 are ARMv8-M with two memory maps!&quot;</span><span class="p">)</span>
 </span><span id="memory_map_from_reference_manual-364"><a href="#memory_map_from_reference_manual-364"><span class="linenos">364</span></a>        <span class="k">return</span> <span class="p">[]</span>
@@ -151,7 +151,7 @@
 
     </div>
     <a class="headerlink" href="#memory_map_from_datasheet"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="memory_map_from_datasheet-361"><a href="#memory_map_from_datasheet-361"><span class="linenos">361</span></a><span class="k">def</span> <span class="nf">memory_map_from_datasheet</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="memory_map_from_datasheet-361"><a href="#memory_map_from_datasheet-361"><span class="linenos">361</span></a><span class="k">def</span><span class="w"> </span><span class="nf">memory_map_from_datasheet</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
 </span><span id="memory_map_from_datasheet-362"><a href="#memory_map_from_datasheet-362"><span class="linenos">362</span></a>    <span class="n">register</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">chapter</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;chapter +\d+ +register +mapping&quot;</span><span class="p">)</span>
 </span><span id="memory_map_from_datasheet-363"><a href="#memory_map_from_datasheet-363"><span class="linenos">363</span></a>    <span class="n">table</span> <span class="o">=</span> <span class="n">register</span><span class="o">.</span><span class="n">tables</span><span class="p">(</span><span class="s2">&quot;register&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </span><span id="memory_map_from_datasheet-364"><a href="#memory_map_from_datasheet-364"><span class="linenos">364</span></a>    <span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
