@@ -1,0 +1,2238 @@
+{
+  "devices": {
+    "nrf52820-xxaa": {
+      "chip_id": "nrf52820-xxaa",
+      "package": {
+        "name": "WLCSP",
+        "pins": [
+          {
+            "position": "A1",
+            "row_id": 0,
+            "row_ids": [
+              0
+            ],
+            "short_name": "XC1",
+            "type": "io"
+          },
+          {
+            "position": "A2",
+            "row_id": 1,
+            "row_ids": [
+              1
+            ],
+            "short_name": "XC2",
+            "type": "io"
+          },
+          {
+            "position": "A3",
+            "row_id": 2,
+            "row_ids": [
+              2
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "A4",
+            "row_id": 3,
+            "row_ids": [
+              3
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "A5",
+            "row_id": 4,
+            "row_ids": [
+              4
+            ],
+            "short_name": "DEC4",
+            "type": "power"
+          },
+          {
+            "position": "A6",
+            "row_id": 5,
+            "row_ids": [
+              5
+            ],
+            "short_name": "DCC",
+            "type": "power"
+          },
+          {
+            "position": "A7",
+            "row_id": 6,
+            "row_ids": [
+              6
+            ],
+            "short_name": "DEC1",
+            "type": "power"
+          },
+          {
+            "position": "B3",
+            "row_id": 7,
+            "row_ids": [
+              7
+            ],
+            "short_name": "P0.08",
+            "type": "io"
+          },
+          {
+            "position": "B4",
+            "row_id": 8,
+            "row_ids": [
+              8
+            ],
+            "short_name": "P0.30",
+            "type": "io"
+          },
+          {
+            "position": "B5",
+            "row_id": 9,
+            "row_ids": [
+              9
+            ],
+            "short_name": "P0.03",
+            "type": "io"
+          },
+          {
+            "position": "B6",
+            "row_id": 10,
+            "row_ids": [
+              10
+            ],
+            "short_name": "P0.02",
+            "type": "io"
+          },
+          {
+            "position": "B7",
+            "row_id": 11,
+            "row_ids": [
+              11
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "C1",
+            "row_id": 12,
+            "row_ids": [
+              12
+            ],
+            "short_name": "VSS_PA",
+            "type": "power"
+          },
+          {
+            "position": "C2",
+            "row_id": 13,
+            "row_ids": [
+              13
+            ],
+            "short_name": "DEC6",
+            "type": "power"
+          },
+          {
+            "position": "C4",
+            "row_id": 14,
+            "row_ids": [
+              14
+            ],
+            "short_name": "P0.29",
+            "type": "io"
+          },
+          {
+            "position": "C5",
+            "row_id": 15,
+            "row_ids": [
+              15
+            ],
+            "short_name": "P0.28",
+            "type": "io"
+          },
+          {
+            "position": "C6",
+            "row_id": 16,
+            "row_ids": [
+              16
+            ],
+            "short_name": "P0.04",
+            "type": "io"
+          },
+          {
+            "position": "C7",
+            "row_id": 17,
+            "row_ids": [
+              17
+            ],
+            "short_name": "P0.00",
+            "type": "io"
+          },
+          {
+            "position": "D3",
+            "row_id": 18,
+            "row_ids": [
+              18
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D4",
+            "row_id": 19,
+            "row_ids": [
+              19
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D5",
+            "row_id": 20,
+            "row_ids": [
+              20
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D6",
+            "row_id": 21,
+            "row_ids": [
+              21
+            ],
+            "short_name": "P0.05",
+            "type": "io"
+          },
+          {
+            "position": "D7",
+            "row_id": 22,
+            "row_ids": [
+              22
+            ],
+            "short_name": "P0.01",
+            "type": "io"
+          },
+          {
+            "position": "E1",
+            "row_id": 23,
+            "row_ids": [
+              23
+            ],
+            "short_name": "ANT",
+            "type": "io"
+          },
+          {
+            "position": "E2",
+            "row_id": 24,
+            "row_ids": [
+              24
+            ],
+            "short_name": "P0.17",
+            "type": "io"
+          },
+          {
+            "position": "E3",
+            "row_id": 25,
+            "row_ids": [
+              25
+            ],
+            "short_name": "P0.16",
+            "type": "io"
+          },
+          {
+            "position": "E4",
+            "row_id": 26,
+            "row_ids": [
+              26
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "E5",
+            "row_id": 27,
+            "row_ids": [
+              27
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "E6",
+            "row_id": 28,
+            "row_ids": [
+              28
+            ],
+            "short_name": "P0.06",
+            "type": "io"
+          },
+          {
+            "position": "E7",
+            "row_id": 29,
+            "row_ids": [
+              29
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "F1",
+            "row_id": 30,
+            "row_ids": [
+              30
+            ],
+            "short_name": "DEC5",
+            "type": "power"
+          },
+          {
+            "position": "F2",
+            "row_id": 31,
+            "row_ids": [
+              31
+            ],
+            "short_name": "P0.20",
+            "type": "io"
+          },
+          {
+            "position": "F3",
+            "row_id": 32,
+            "row_ids": [
+              32
+            ],
+            "short_name": "P0.15",
+            "type": "io"
+          },
+          {
+            "position": "F4",
+            "row_id": 33,
+            "row_ids": [
+              33
+            ],
+            "short_name": "P0.14",
+            "type": "io"
+          },
+          {
+            "position": "F5",
+            "row_id": 34,
+            "row_ids": [
+              34
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "F6",
+            "row_id": 35,
+            "row_ids": [
+              35
+            ],
+            "short_name": "P0.07",
+            "type": "io"
+          },
+          {
+            "position": "F7",
+            "row_id": 36,
+            "row_ids": [
+              36
+            ],
+            "short_name": "VDDH",
+            "type": "power"
+          },
+          {
+            "position": "G1",
+            "row_id": 37,
+            "row_ids": [
+              37
+            ],
+            "short_name": "SWDIO",
+            "type": "io"
+          },
+          {
+            "position": "G2",
+            "row_id": 38,
+            "row_ids": [
+              38
+            ],
+            "short_name": "SWDCLK",
+            "type": "io"
+          },
+          {
+            "position": "G3",
+            "row_id": 39,
+            "row_ids": [
+              39
+            ],
+            "short_name": "P0.18",
+            "type": "io"
+          },
+          {
+            "position": "G4",
+            "row_id": 40,
+            "row_ids": [
+              40
+            ],
+            "short_name": "D-",
+            "type": "io"
+          },
+          {
+            "position": "G5",
+            "row_id": 41,
+            "row_ids": [
+              41
+            ],
+            "short_name": "D+",
+            "type": "io"
+          },
+          {
+            "position": "G6",
+            "row_id": 42,
+            "row_ids": [
+              42
+            ],
+            "short_name": "DECUSB",
+            "type": "power"
+          },
+          {
+            "position": "G7",
+            "row_id": 43,
+            "row_ids": [
+              43
+            ],
+            "short_name": "VBUS",
+            "type": "power"
+          }
+        ]
+      },
+      "partname": "nrf52820-xxaa",
+      "pin_count": 44,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "A1 XC1",
+          "position": "A1",
+          "row_id": 0,
+          "short_name": "XC1"
+        },
+        {
+          "functions": [],
+          "pin_label": "A2 XC2",
+          "position": "A2",
+          "row_id": 1,
+          "short_name": "XC2"
+        },
+        {
+          "functions": [],
+          "pin_label": "A3 VDD",
+          "position": "A3",
+          "row_id": 2,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [],
+          "pin_label": "A4 VSS",
+          "position": "A4",
+          "row_id": 3,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "A5 DEC4",
+          "position": "A5",
+          "row_id": 4,
+          "short_name": "DEC4"
+        },
+        {
+          "functions": [],
+          "pin_label": "A6 DCC",
+          "position": "A6",
+          "row_id": 5,
+          "short_name": "DCC"
+        },
+        {
+          "functions": [],
+          "pin_label": "A7 DEC1",
+          "position": "A7",
+          "row_id": 6,
+          "short_name": "DEC1"
+        },
+        {
+          "functions": [],
+          "pin_label": "B3 P0.08",
+          "position": "B3",
+          "row_id": 7,
+          "short_name": "P0.08"
+        },
+        {
+          "functions": [],
+          "pin_label": "B4 P0.30",
+          "position": "B4",
+          "row_id": 8,
+          "short_name": "P0.30"
+        },
+        {
+          "functions": [],
+          "pin_label": "B5 P0.03",
+          "position": "B5",
+          "row_id": 9,
+          "short_name": "P0.03"
+        },
+        {
+          "functions": [],
+          "pin_label": "B6 P0.02",
+          "position": "B6",
+          "row_id": 10,
+          "short_name": "P0.02"
+        },
+        {
+          "functions": [],
+          "pin_label": "B7 VDD",
+          "position": "B7",
+          "row_id": 11,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [],
+          "pin_label": "C1 VSS_PA",
+          "position": "C1",
+          "row_id": 12,
+          "short_name": "VSS_PA"
+        },
+        {
+          "functions": [],
+          "pin_label": "C2 DEC6",
+          "position": "C2",
+          "row_id": 13,
+          "short_name": "DEC6"
+        },
+        {
+          "functions": [],
+          "pin_label": "C4 P0.29",
+          "position": "C4",
+          "row_id": 14,
+          "short_name": "P0.29"
+        },
+        {
+          "functions": [],
+          "pin_label": "C5 P0.28",
+          "position": "C5",
+          "row_id": 15,
+          "short_name": "P0.28"
+        },
+        {
+          "functions": [],
+          "pin_label": "C6 P0.04",
+          "position": "C6",
+          "row_id": 16,
+          "short_name": "P0.04"
+        },
+        {
+          "functions": [],
+          "pin_label": "C7 P0.00",
+          "position": "C7",
+          "row_id": 17,
+          "short_name": "P0.00"
+        },
+        {
+          "functions": [],
+          "pin_label": "D3 VSS",
+          "position": "D3",
+          "row_id": 18,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "D4 VSS",
+          "position": "D4",
+          "row_id": 19,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "D5 VSS",
+          "position": "D5",
+          "row_id": 20,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "D6 P0.05",
+          "position": "D6",
+          "row_id": 21,
+          "short_name": "P0.05"
+        },
+        {
+          "functions": [],
+          "pin_label": "D7 P0.01",
+          "position": "D7",
+          "row_id": 22,
+          "short_name": "P0.01"
+        },
+        {
+          "functions": [],
+          "pin_label": "E1 ANT",
+          "position": "E1",
+          "row_id": 23,
+          "short_name": "ANT"
+        },
+        {
+          "functions": [],
+          "pin_label": "E2 P0.17",
+          "position": "E2",
+          "row_id": 24,
+          "short_name": "P0.17"
+        },
+        {
+          "functions": [],
+          "pin_label": "E3 P0.16",
+          "position": "E3",
+          "row_id": 25,
+          "short_name": "P0.16"
+        },
+        {
+          "functions": [],
+          "pin_label": "E4 VSS",
+          "position": "E4",
+          "row_id": 26,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "E5 VSS",
+          "position": "E5",
+          "row_id": 27,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "E6 P0.06",
+          "position": "E6",
+          "row_id": 28,
+          "short_name": "P0.06"
+        },
+        {
+          "functions": [],
+          "pin_label": "E7 VDD",
+          "position": "E7",
+          "row_id": 29,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [],
+          "pin_label": "F1 DEC5",
+          "position": "F1",
+          "row_id": 30,
+          "short_name": "DEC5"
+        },
+        {
+          "functions": [],
+          "pin_label": "F2 P0.20",
+          "position": "F2",
+          "row_id": 31,
+          "short_name": "P0.20"
+        },
+        {
+          "functions": [],
+          "pin_label": "F3 P0.15",
+          "position": "F3",
+          "row_id": 32,
+          "short_name": "P0.15"
+        },
+        {
+          "functions": [],
+          "pin_label": "F4 P0.14",
+          "position": "F4",
+          "row_id": 33,
+          "short_name": "P0.14"
+        },
+        {
+          "functions": [],
+          "pin_label": "F5 VSS",
+          "position": "F5",
+          "row_id": 34,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "F6 P0.07",
+          "position": "F6",
+          "row_id": 35,
+          "short_name": "P0.07"
+        },
+        {
+          "functions": [],
+          "pin_label": "F7 VDDH",
+          "position": "F7",
+          "row_id": 36,
+          "short_name": "VDDH"
+        },
+        {
+          "functions": [],
+          "pin_label": "G1 SWDIO",
+          "position": "G1",
+          "row_id": 37,
+          "short_name": "SWDIO"
+        },
+        {
+          "functions": [],
+          "pin_label": "G2 SWDCLK",
+          "position": "G2",
+          "row_id": 38,
+          "short_name": "SWDCLK"
+        },
+        {
+          "functions": [],
+          "pin_label": "G3 P0.18",
+          "position": "G3",
+          "row_id": 39,
+          "short_name": "P0.18"
+        },
+        {
+          "functions": [],
+          "pin_label": "G4 D-",
+          "position": "G4",
+          "row_id": 40,
+          "short_name": "D-"
+        },
+        {
+          "functions": [],
+          "pin_label": "G5 D+",
+          "position": "G5",
+          "row_id": 41,
+          "short_name": "D+"
+        },
+        {
+          "functions": [],
+          "pin_label": "G6 DECUSB",
+          "position": "G6",
+          "row_id": 42,
+          "short_name": "DECUSB"
+        },
+        {
+          "functions": [],
+          "pin_label": "G7 VBUS",
+          "position": "G7",
+          "row_id": 43,
+          "short_name": "VBUS"
+        }
+      ]
+    },
+    "nrf52840-xxaa": {
+      "chip_id": "nrf52840-xxaa",
+      "package": {
+        "name": "WLCSP",
+        "pins": [
+          {
+            "position": "A1",
+            "row_id": 0,
+            "row_ids": [
+              0
+            ],
+            "short_name": "XC1",
+            "type": "io"
+          },
+          {
+            "position": "A10",
+            "row_id": 1,
+            "row_ids": [
+              1
+            ],
+            "short_name": "DEC1",
+            "type": "power"
+          },
+          {
+            "position": "A2",
+            "row_id": 2,
+            "row_ids": [
+              2
+            ],
+            "short_name": "XC2",
+            "type": "io"
+          },
+          {
+            "position": "A3",
+            "row_id": 3,
+            "row_ids": [
+              3
+            ],
+            "short_name": "P1.11",
+            "type": "io"
+          },
+          {
+            "position": "A4",
+            "row_id": 4,
+            "row_ids": [
+              4
+            ],
+            "short_name": "P1.13",
+            "type": "io"
+          },
+          {
+            "position": "A5",
+            "row_id": 5,
+            "row_ids": [
+              5
+            ],
+            "short_name": "P0.03",
+            "type": "io"
+          },
+          {
+            "position": "A6",
+            "row_id": 6,
+            "row_ids": [
+              6
+            ],
+            "short_name": "P0.28",
+            "type": "io"
+          },
+          {
+            "position": "A7",
+            "row_id": 7,
+            "row_ids": [
+              7
+            ],
+            "short_name": "P0.30",
+            "type": "io"
+          },
+          {
+            "position": "A8",
+            "row_id": 8,
+            "row_ids": [
+              8
+            ],
+            "short_name": "DEC4",
+            "type": "power"
+          },
+          {
+            "position": "A9",
+            "row_id": 9,
+            "row_ids": [
+              9
+            ],
+            "short_name": "DCC",
+            "type": "power"
+          },
+          {
+            "position": "B10",
+            "row_id": 10,
+            "row_ids": [
+              10
+            ],
+            "short_name": "P0.01",
+            "type": "io"
+          },
+          {
+            "position": "B3",
+            "row_id": 11,
+            "row_ids": [
+              11
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "B4",
+            "row_id": 12,
+            "row_ids": [
+              12
+            ],
+            "short_name": "P1.10",
+            "type": "io"
+          },
+          {
+            "position": "B5",
+            "row_id": 13,
+            "row_ids": [
+              13
+            ],
+            "short_name": "P1.14",
+            "type": "io"
+          },
+          {
+            "position": "B6",
+            "row_id": 14,
+            "row_ids": [
+              14
+            ],
+            "short_name": "P0.02",
+            "type": "io"
+          },
+          {
+            "position": "B7",
+            "row_id": 15,
+            "row_ids": [
+              15
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "B8",
+            "row_id": 16,
+            "row_ids": [
+              16
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "B9",
+            "row_id": 17,
+            "row_ids": [
+              17
+            ],
+            "short_name": "P0.00",
+            "type": "io"
+          },
+          {
+            "position": "C1",
+            "row_id": 18,
+            "row_ids": [
+              18
+            ],
+            "short_name": "VSS_PA",
+            "type": "power"
+          },
+          {
+            "position": "C10",
+            "row_id": 19,
+            "row_ids": [
+              19
+            ],
+            "short_name": "P0.04",
+            "type": "io"
+          },
+          {
+            "position": "C2",
+            "row_id": 20,
+            "row_ids": [
+              20
+            ],
+            "short_name": "DEC6",
+            "type": "power"
+          },
+          {
+            "position": "C4",
+            "row_id": 21,
+            "row_ids": [
+              21
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "C5",
+            "row_id": 22,
+            "row_ids": [
+              22
+            ],
+            "short_name": "P1.12",
+            "type": "io"
+          },
+          {
+            "position": "C6",
+            "row_id": 23,
+            "row_ids": [
+              23
+            ],
+            "short_name": "P1.15",
+            "type": "io"
+          },
+          {
+            "position": "C7",
+            "row_id": 24,
+            "row_ids": [
+              24
+            ],
+            "short_name": "P0.29",
+            "type": "io"
+          },
+          {
+            "position": "C8",
+            "row_id": 25,
+            "row_ids": [
+              25
+            ],
+            "short_name": "P0.31",
+            "type": "io"
+          },
+          {
+            "position": "C9",
+            "row_id": 26,
+            "row_ids": [
+              26
+            ],
+            "short_name": "P0.26",
+            "type": "io"
+          },
+          {
+            "position": "D10",
+            "row_id": 27,
+            "row_ids": [
+              27
+            ],
+            "short_name": "P0.05",
+            "type": "io"
+          },
+          {
+            "position": "D3",
+            "row_id": 28,
+            "row_ids": [
+              28
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D4",
+            "row_id": 29,
+            "row_ids": [
+              29
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D5",
+            "row_id": 30,
+            "row_ids": [
+              30
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D6",
+            "row_id": 31,
+            "row_ids": [
+              31
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D7",
+            "row_id": 32,
+            "row_ids": [
+              32
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D8",
+            "row_id": 33,
+            "row_ids": [
+              33
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D9",
+            "row_id": 34,
+            "row_ids": [
+              34
+            ],
+            "short_name": "P0.27",
+            "type": "io"
+          },
+          {
+            "position": "E1",
+            "row_id": 35,
+            "row_ids": [
+              35
+            ],
+            "short_name": "ANT",
+            "type": "io"
+          },
+          {
+            "position": "E10",
+            "row_id": 36,
+            "row_ids": [
+              36
+            ],
+            "short_name": "P0.08",
+            "type": "io"
+          },
+          {
+            "position": "E2",
+            "row_id": 37,
+            "row_ids": [
+              37
+            ],
+            "short_name": "P0.10",
+            "type": "io"
+          },
+          {
+            "position": "E3",
+            "row_id": 38,
+            "row_ids": [
+              38
+            ],
+            "short_name": "P1.06",
+            "type": "io"
+          },
+          {
+            "position": "E4",
+            "row_id": 39,
+            "row_ids": [
+              39
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "E5",
+            "row_id": 40,
+            "row_ids": [
+              40
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "E6",
+            "row_id": 41,
+            "row_ids": [
+              41
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "E7",
+            "row_id": 42,
+            "row_ids": [
+              42
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "E8",
+            "row_id": 43,
+            "row_ids": [
+              43
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "E9",
+            "row_id": 44,
+            "row_ids": [
+              44
+            ],
+            "short_name": "P0.06",
+            "type": "io"
+          },
+          {
+            "position": "F1",
+            "row_id": 45,
+            "row_ids": [
+              45
+            ],
+            "short_name": "P0.09",
+            "type": "io"
+          },
+          {
+            "position": "F10",
+            "row_id": 46,
+            "row_ids": [
+              46
+            ],
+            "short_name": "P1.09",
+            "type": "io"
+          },
+          {
+            "position": "F2",
+            "row_id": 47,
+            "row_ids": [
+              47
+            ],
+            "short_name": "DEC5",
+            "type": "power"
+          },
+          {
+            "position": "F3",
+            "row_id": 48,
+            "row_ids": [
+              48
+            ],
+            "short_name": "P1.03",
+            "type": "io"
+          },
+          {
+            "position": "F4",
+            "row_id": 49,
+            "row_ids": [
+              49
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "F5",
+            "row_id": 50,
+            "row_ids": [
+              50
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "F6",
+            "row_id": 51,
+            "row_ids": [
+              51
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "F7",
+            "row_id": 52,
+            "row_ids": [
+              52
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "F8",
+            "row_id": 53,
+            "row_ids": [
+              53
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "F9",
+            "row_id": 54,
+            "row_ids": [
+              54
+            ],
+            "short_name": "P0.07",
+            "type": "io"
+          },
+          {
+            "position": "G1",
+            "row_id": 55,
+            "row_ids": [
+              55
+            ],
+            "short_name": "P1.07",
+            "type": "io"
+          },
+          {
+            "position": "G10",
+            "row_id": 56,
+            "row_ids": [
+              56
+            ],
+            "short_name": "P0.12",
+            "type": "io"
+          },
+          {
+            "position": "G2",
+            "row_id": 57,
+            "row_ids": [
+              57
+            ],
+            "short_name": "P1.05",
+            "type": "io"
+          },
+          {
+            "position": "G3",
+            "row_id": 58,
+            "row_ids": [
+              58
+            ],
+            "short_name": "P1.02",
+            "type": "io"
+          },
+          {
+            "position": "G4",
+            "row_id": 59,
+            "row_ids": [
+              59
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "G5",
+            "row_id": 60,
+            "row_ids": [
+              60
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "G6",
+            "row_id": 61,
+            "row_ids": [
+              61
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "G7",
+            "row_id": 62,
+            "row_ids": [
+              62
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "G8",
+            "row_id": 63,
+            "row_ids": [
+              63
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "G9",
+            "row_id": 64,
+            "row_ids": [
+              64
+            ],
+            "short_name": "P1.08",
+            "type": "io"
+          },
+          {
+            "position": "H1",
+            "row_id": 65,
+            "row_ids": [
+              65
+            ],
+            "short_name": "P1.04",
+            "type": "io"
+          },
+          {
+            "position": "H10",
+            "row_id": 66,
+            "row_ids": [
+              66
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "H2",
+            "row_id": 67,
+            "row_ids": [
+              67
+            ],
+            "short_name": "SWDCLK",
+            "type": "io"
+          },
+          {
+            "position": "H4",
+            "row_id": 68,
+            "row_ids": [
+              68
+            ],
+            "short_name": "P0.24",
+            "type": "io"
+          },
+          {
+            "position": "H5",
+            "row_id": 69,
+            "row_ids": [
+              69
+            ],
+            "short_name": "P0.23",
+            "type": "io"
+          },
+          {
+            "position": "H6",
+            "row_id": 70,
+            "row_ids": [
+              70
+            ],
+            "short_name": "P0.16",
+            "type": "io"
+          },
+          {
+            "position": "H7",
+            "row_id": 71,
+            "row_ids": [
+              71
+            ],
+            "short_name": "P0.13",
+            "type": "io"
+          },
+          {
+            "position": "H8",
+            "row_id": 72,
+            "row_ids": [
+              72
+            ],
+            "short_name": "P0.11",
+            "type": "io"
+          },
+          {
+            "position": "H9",
+            "row_id": 73,
+            "row_ids": [
+              73
+            ],
+            "short_name": "DCCH",
+            "type": "power"
+          },
+          {
+            "position": "J1",
+            "row_id": 74,
+            "row_ids": [
+              74
+            ],
+            "short_name": "P1.01",
+            "type": "io"
+          },
+          {
+            "position": "J10",
+            "row_id": 75,
+            "row_ids": [
+              75
+            ],
+            "short_name": "VDDH",
+            "type": "power"
+          },
+          {
+            "position": "J2",
+            "row_id": 76,
+            "row_ids": [
+              76
+            ],
+            "short_name": "SWDIO",
+            "type": "io"
+          },
+          {
+            "position": "J3",
+            "row_id": 77,
+            "row_ids": [
+              77
+            ],
+            "short_name": "P1.00",
+            "type": "io"
+          },
+          {
+            "position": "J4",
+            "row_id": 78,
+            "row_ids": [
+              78
+            ],
+            "short_name": "P0.21",
+            "type": "io"
+          },
+          {
+            "position": "J5",
+            "row_id": 79,
+            "row_ids": [
+              79
+            ],
+            "short_name": "P0.20",
+            "type": "io"
+          },
+          {
+            "position": "J6",
+            "row_id": 80,
+            "row_ids": [
+              80
+            ],
+            "short_name": "P0.17",
+            "type": "io"
+          },
+          {
+            "position": "J7",
+            "row_id": 81,
+            "row_ids": [
+              81
+            ],
+            "short_name": "P0.14",
+            "type": "io"
+          },
+          {
+            "position": "J8",
+            "row_id": 82,
+            "row_ids": [
+              82
+            ],
+            "short_name": "D-",
+            "type": "io"
+          },
+          {
+            "position": "J9",
+            "row_id": 83,
+            "row_ids": [
+              83
+            ],
+            "short_name": "VBUS",
+            "type": "power"
+          },
+          {
+            "position": "K1",
+            "row_id": 84,
+            "row_ids": [
+              84
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "K10",
+            "row_id": 85,
+            "row_ids": [
+              85
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "K2",
+            "row_id": 86,
+            "row_ids": [
+              86
+            ],
+            "short_name": "P0.25",
+            "type": "io"
+          },
+          {
+            "position": "K3",
+            "row_id": 87,
+            "row_ids": [
+              87
+            ],
+            "short_name": "P0.22",
+            "type": "io"
+          },
+          {
+            "position": "K4",
+            "row_id": 88,
+            "row_ids": [
+              88
+            ],
+            "short_name": "P0.19",
+            "type": "io"
+          },
+          {
+            "position": "K5",
+            "row_id": 89,
+            "row_ids": [
+              89
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "K6",
+            "row_id": 90,
+            "row_ids": [
+              90
+            ],
+            "short_name": "P0.18",
+            "type": "io"
+          },
+          {
+            "position": "K7",
+            "row_id": 91,
+            "row_ids": [
+              91
+            ],
+            "short_name": "P0.15",
+            "type": "io"
+          },
+          {
+            "position": "K8",
+            "row_id": 92,
+            "row_ids": [
+              92
+            ],
+            "short_name": "D+",
+            "type": "io"
+          },
+          {
+            "position": "K9",
+            "row_id": 93,
+            "row_ids": [
+              93
+            ],
+            "short_name": "DECUSB",
+            "type": "power"
+          }
+        ]
+      },
+      "partname": "nrf52840-xxaa",
+      "pin_count": 94,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "A1 XC1",
+          "position": "A1",
+          "row_id": 0,
+          "short_name": "XC1"
+        },
+        {
+          "functions": [],
+          "pin_label": "A10 DEC1",
+          "position": "A10",
+          "row_id": 1,
+          "short_name": "DEC1"
+        },
+        {
+          "functions": [],
+          "pin_label": "A2 XC2",
+          "position": "A2",
+          "row_id": 2,
+          "short_name": "XC2"
+        },
+        {
+          "functions": [],
+          "pin_label": "A3 P1.11",
+          "position": "A3",
+          "row_id": 3,
+          "short_name": "P1.11"
+        },
+        {
+          "functions": [],
+          "pin_label": "A4 P1.13",
+          "position": "A4",
+          "row_id": 4,
+          "short_name": "P1.13"
+        },
+        {
+          "functions": [],
+          "pin_label": "A5 P0.03",
+          "position": "A5",
+          "row_id": 5,
+          "short_name": "P0.03"
+        },
+        {
+          "functions": [],
+          "pin_label": "A6 P0.28",
+          "position": "A6",
+          "row_id": 6,
+          "short_name": "P0.28"
+        },
+        {
+          "functions": [],
+          "pin_label": "A7 P0.30",
+          "position": "A7",
+          "row_id": 7,
+          "short_name": "P0.30"
+        },
+        {
+          "functions": [],
+          "pin_label": "A8 DEC4",
+          "position": "A8",
+          "row_id": 8,
+          "short_name": "DEC4"
+        },
+        {
+          "functions": [],
+          "pin_label": "A9 DCC",
+          "position": "A9",
+          "row_id": 9,
+          "short_name": "DCC"
+        },
+        {
+          "functions": [],
+          "pin_label": "B10 P0.01",
+          "position": "B10",
+          "row_id": 10,
+          "short_name": "P0.01"
+        },
+        {
+          "functions": [],
+          "pin_label": "B3 VDD",
+          "position": "B3",
+          "row_id": 11,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [],
+          "pin_label": "B4 P1.10",
+          "position": "B4",
+          "row_id": 12,
+          "short_name": "P1.10"
+        },
+        {
+          "functions": [],
+          "pin_label": "B5 P1.14",
+          "position": "B5",
+          "row_id": 13,
+          "short_name": "P1.14"
+        },
+        {
+          "functions": [],
+          "pin_label": "B6 P0.02",
+          "position": "B6",
+          "row_id": 14,
+          "short_name": "P0.02"
+        },
+        {
+          "functions": [],
+          "pin_label": "B7 VSS",
+          "position": "B7",
+          "row_id": 15,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "B8 VDD",
+          "position": "B8",
+          "row_id": 16,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [],
+          "pin_label": "B9 P0.00",
+          "position": "B9",
+          "row_id": 17,
+          "short_name": "P0.00"
+        },
+        {
+          "functions": [],
+          "pin_label": "C1 VSS_PA",
+          "position": "C1",
+          "row_id": 18,
+          "short_name": "VSS_PA"
+        },
+        {
+          "functions": [],
+          "pin_label": "C10 P0.04",
+          "position": "C10",
+          "row_id": 19,
+          "short_name": "P0.04"
+        },
+        {
+          "functions": [],
+          "pin_label": "C2 DEC6",
+          "position": "C2",
+          "row_id": 20,
+          "short_name": "DEC6"
+        },
+        {
+          "functions": [],
+          "pin_label": "C4 VSS",
+          "position": "C4",
+          "row_id": 21,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "C5 P1.12",
+          "position": "C5",
+          "row_id": 22,
+          "short_name": "P1.12"
+        },
+        {
+          "functions": [],
+          "pin_label": "C6 P1.15",
+          "position": "C6",
+          "row_id": 23,
+          "short_name": "P1.15"
+        },
+        {
+          "functions": [],
+          "pin_label": "C7 P0.29",
+          "position": "C7",
+          "row_id": 24,
+          "short_name": "P0.29"
+        },
+        {
+          "functions": [],
+          "pin_label": "C8 P0.31",
+          "position": "C8",
+          "row_id": 25,
+          "short_name": "P0.31"
+        },
+        {
+          "functions": [],
+          "pin_label": "C9 P0.26",
+          "position": "C9",
+          "row_id": 26,
+          "short_name": "P0.26"
+        },
+        {
+          "functions": [],
+          "pin_label": "D10 P0.05",
+          "position": "D10",
+          "row_id": 27,
+          "short_name": "P0.05"
+        },
+        {
+          "functions": [],
+          "pin_label": "D3 VSS",
+          "position": "D3",
+          "row_id": 28,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "D4 VSS",
+          "position": "D4",
+          "row_id": 29,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "D5 VSS",
+          "position": "D5",
+          "row_id": 30,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "D6 VSS",
+          "position": "D6",
+          "row_id": 31,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "D7 VSS",
+          "position": "D7",
+          "row_id": 32,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "D8 VSS",
+          "position": "D8",
+          "row_id": 33,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "D9 P0.27",
+          "position": "D9",
+          "row_id": 34,
+          "short_name": "P0.27"
+        },
+        {
+          "functions": [],
+          "pin_label": "E1 ANT",
+          "position": "E1",
+          "row_id": 35,
+          "short_name": "ANT"
+        },
+        {
+          "functions": [],
+          "pin_label": "E10 P0.08",
+          "position": "E10",
+          "row_id": 36,
+          "short_name": "P0.08"
+        },
+        {
+          "functions": [],
+          "pin_label": "E2 P0.10",
+          "position": "E2",
+          "row_id": 37,
+          "short_name": "P0.10"
+        },
+        {
+          "functions": [],
+          "pin_label": "E3 P1.06",
+          "position": "E3",
+          "row_id": 38,
+          "short_name": "P1.06"
+        },
+        {
+          "functions": [],
+          "pin_label": "E4 VSS",
+          "position": "E4",
+          "row_id": 39,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "E5 VSS",
+          "position": "E5",
+          "row_id": 40,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "E6 VSS",
+          "position": "E6",
+          "row_id": 41,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "E7 VSS",
+          "position": "E7",
+          "row_id": 42,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "E8 VSS",
+          "position": "E8",
+          "row_id": 43,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "E9 P0.06",
+          "position": "E9",
+          "row_id": 44,
+          "short_name": "P0.06"
+        },
+        {
+          "functions": [],
+          "pin_label": "F1 P0.09",
+          "position": "F1",
+          "row_id": 45,
+          "short_name": "P0.09"
+        },
+        {
+          "functions": [],
+          "pin_label": "F10 P1.09",
+          "position": "F10",
+          "row_id": 46,
+          "short_name": "P1.09"
+        },
+        {
+          "functions": [],
+          "pin_label": "F2 DEC5",
+          "position": "F2",
+          "row_id": 47,
+          "short_name": "DEC5"
+        },
+        {
+          "functions": [],
+          "pin_label": "F3 P1.03",
+          "position": "F3",
+          "row_id": 48,
+          "short_name": "P1.03"
+        },
+        {
+          "functions": [],
+          "pin_label": "F4 VSS",
+          "position": "F4",
+          "row_id": 49,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "F5 VSS",
+          "position": "F5",
+          "row_id": 50,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "F6 VSS",
+          "position": "F6",
+          "row_id": 51,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "F7 VSS",
+          "position": "F7",
+          "row_id": 52,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "F8 VSS",
+          "position": "F8",
+          "row_id": 53,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "F9 P0.07",
+          "position": "F9",
+          "row_id": 54,
+          "short_name": "P0.07"
+        },
+        {
+          "functions": [],
+          "pin_label": "G1 P1.07",
+          "position": "G1",
+          "row_id": 55,
+          "short_name": "P1.07"
+        },
+        {
+          "functions": [],
+          "pin_label": "G10 P0.12",
+          "position": "G10",
+          "row_id": 56,
+          "short_name": "P0.12"
+        },
+        {
+          "functions": [],
+          "pin_label": "G2 P1.05",
+          "position": "G2",
+          "row_id": 57,
+          "short_name": "P1.05"
+        },
+        {
+          "functions": [],
+          "pin_label": "G3 P1.02",
+          "position": "G3",
+          "row_id": 58,
+          "short_name": "P1.02"
+        },
+        {
+          "functions": [],
+          "pin_label": "G4 VSS",
+          "position": "G4",
+          "row_id": 59,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "G5 VSS",
+          "position": "G5",
+          "row_id": 60,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "G6 VSS",
+          "position": "G6",
+          "row_id": 61,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "G7 VSS",
+          "position": "G7",
+          "row_id": 62,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "G8 VSS",
+          "position": "G8",
+          "row_id": 63,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "G9 P1.08",
+          "position": "G9",
+          "row_id": 64,
+          "short_name": "P1.08"
+        },
+        {
+          "functions": [],
+          "pin_label": "H1 P1.04",
+          "position": "H1",
+          "row_id": 65,
+          "short_name": "P1.04"
+        },
+        {
+          "functions": [],
+          "pin_label": "H10 VDD",
+          "position": "H10",
+          "row_id": 66,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [],
+          "pin_label": "H2 SWDCLK",
+          "position": "H2",
+          "row_id": 67,
+          "short_name": "SWDCLK"
+        },
+        {
+          "functions": [],
+          "pin_label": "H4 P0.24",
+          "position": "H4",
+          "row_id": 68,
+          "short_name": "P0.24"
+        },
+        {
+          "functions": [],
+          "pin_label": "H5 P0.23",
+          "position": "H5",
+          "row_id": 69,
+          "short_name": "P0.23"
+        },
+        {
+          "functions": [],
+          "pin_label": "H6 P0.16",
+          "position": "H6",
+          "row_id": 70,
+          "short_name": "P0.16"
+        },
+        {
+          "functions": [],
+          "pin_label": "H7 P0.13",
+          "position": "H7",
+          "row_id": 71,
+          "short_name": "P0.13"
+        },
+        {
+          "functions": [],
+          "pin_label": "H8 P0.11",
+          "position": "H8",
+          "row_id": 72,
+          "short_name": "P0.11"
+        },
+        {
+          "functions": [],
+          "pin_label": "H9 DCCH",
+          "position": "H9",
+          "row_id": 73,
+          "short_name": "DCCH"
+        },
+        {
+          "functions": [],
+          "pin_label": "J1 P1.01",
+          "position": "J1",
+          "row_id": 74,
+          "short_name": "P1.01"
+        },
+        {
+          "functions": [],
+          "pin_label": "J10 VDDH",
+          "position": "J10",
+          "row_id": 75,
+          "short_name": "VDDH"
+        },
+        {
+          "functions": [],
+          "pin_label": "J2 SWDIO",
+          "position": "J2",
+          "row_id": 76,
+          "short_name": "SWDIO"
+        },
+        {
+          "functions": [],
+          "pin_label": "J3 P1.00",
+          "position": "J3",
+          "row_id": 77,
+          "short_name": "P1.00"
+        },
+        {
+          "functions": [],
+          "pin_label": "J4 P0.21",
+          "position": "J4",
+          "row_id": 78,
+          "short_name": "P0.21"
+        },
+        {
+          "functions": [],
+          "pin_label": "J5 P0.20",
+          "position": "J5",
+          "row_id": 79,
+          "short_name": "P0.20"
+        },
+        {
+          "functions": [],
+          "pin_label": "J6 P0.17",
+          "position": "J6",
+          "row_id": 80,
+          "short_name": "P0.17"
+        },
+        {
+          "functions": [],
+          "pin_label": "J7 P0.14",
+          "position": "J7",
+          "row_id": 81,
+          "short_name": "P0.14"
+        },
+        {
+          "functions": [],
+          "pin_label": "J8 D-",
+          "position": "J8",
+          "row_id": 82,
+          "short_name": "D-"
+        },
+        {
+          "functions": [],
+          "pin_label": "J9 VBUS",
+          "position": "J9",
+          "row_id": 83,
+          "short_name": "VBUS"
+        },
+        {
+          "functions": [],
+          "pin_label": "K1 VDD",
+          "position": "K1",
+          "row_id": 84,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [],
+          "pin_label": "K10 VSS",
+          "position": "K10",
+          "row_id": 85,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "K2 P0.25",
+          "position": "K2",
+          "row_id": 86,
+          "short_name": "P0.25"
+        },
+        {
+          "functions": [],
+          "pin_label": "K3 P0.22",
+          "position": "K3",
+          "row_id": 87,
+          "short_name": "P0.22"
+        },
+        {
+          "functions": [],
+          "pin_label": "K4 P0.19",
+          "position": "K4",
+          "row_id": 88,
+          "short_name": "P0.19"
+        },
+        {
+          "functions": [],
+          "pin_label": "K5 VDD",
+          "position": "K5",
+          "row_id": 89,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [],
+          "pin_label": "K6 P0.18",
+          "position": "K6",
+          "row_id": 90,
+          "short_name": "P0.18"
+        },
+        {
+          "functions": [],
+          "pin_label": "K7 P0.15",
+          "position": "K7",
+          "row_id": 91,
+          "short_name": "P0.15"
+        },
+        {
+          "functions": [],
+          "pin_label": "K8 D+",
+          "position": "K8",
+          "row_id": 92,
+          "short_name": "D+"
+        },
+        {
+          "functions": [],
+          "pin_label": "K9 DECUSB",
+          "position": "K9",
+          "row_id": 93,
+          "short_name": "DECUSB"
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-05-16 18:52:43 UTC",
+  "source_xml": "nrf/nrf52820_840.xml"
+}

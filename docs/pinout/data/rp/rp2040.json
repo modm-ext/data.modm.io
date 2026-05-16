@@ -1,0 +1,579 @@
+{
+  "devices": {
+    "rp2040": {
+      "chip_id": "rp2040",
+      "package": null,
+      "partname": "rp2040",
+      "pin_count": 36,
+      "rows": [
+        {
+          "functions": [
+            "JTAG_TCK",
+            "SPI0_RX",
+            "UART0_TX",
+            "I2C0_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK00 0",
+          "position": "BANK00",
+          "row_id": 0,
+          "short_name": "0"
+        },
+        {
+          "functions": [
+            "JTAG_TMS",
+            "SPI0_SS_N",
+            "UART0_RX",
+            "I2C0_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK01 1",
+          "position": "BANK01",
+          "row_id": 1,
+          "short_name": "1"
+        },
+        {
+          "functions": [
+            "SPI1_SCLK",
+            "UART1_CTS",
+            "I2C1_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_EXTPHY_VM",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK010 10",
+          "position": "BANK010",
+          "row_id": 2,
+          "short_name": "10"
+        },
+        {
+          "functions": [
+            "SPI1_TX",
+            "UART1_RTS",
+            "I2C1_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_EXTPHY_SUSPND",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK011 11",
+          "position": "BANK011",
+          "row_id": 3,
+          "short_name": "11"
+        },
+        {
+          "functions": [
+            "SPI1_RX",
+            "UART0_TX",
+            "I2C0_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_EXTPHY_SPEED",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK012 12",
+          "position": "BANK012",
+          "row_id": 4,
+          "short_name": "12"
+        },
+        {
+          "functions": [
+            "SPI1_SS_N",
+            "UART0_RX",
+            "I2C0_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_EXTPHY_VPO",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK013 13",
+          "position": "BANK013",
+          "row_id": 5,
+          "short_name": "13"
+        },
+        {
+          "functions": [
+            "SPI1_SCLK",
+            "UART0_CTS",
+            "I2C1_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_EXTPHY_VMO",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK014 14",
+          "position": "BANK014",
+          "row_id": 6,
+          "short_name": "14"
+        },
+        {
+          "functions": [
+            "SPI1_TX",
+            "UART0_RTS",
+            "I2C1_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_DIGITAL_DP",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK015 15",
+          "position": "BANK015",
+          "row_id": 7,
+          "short_name": "15"
+        },
+        {
+          "functions": [
+            "SPI0_RX",
+            "UART0_TX",
+            "I2C0_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_DIGITAL_DM",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK016 16",
+          "position": "BANK016",
+          "row_id": 8,
+          "short_name": "16"
+        },
+        {
+          "functions": [
+            "SPI0_SS_N",
+            "UART0_RX",
+            "I2C0_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK017 17",
+          "position": "BANK017",
+          "row_id": 9,
+          "short_name": "17"
+        },
+        {
+          "functions": [
+            "SPI0_SCLK",
+            "UART0_CTS",
+            "I2C1_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK018 18",
+          "position": "BANK018",
+          "row_id": 10,
+          "short_name": "18"
+        },
+        {
+          "functions": [
+            "SPI0_TX",
+            "UART0_RTS",
+            "I2C1_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK019 19",
+          "position": "BANK019",
+          "row_id": 11,
+          "short_name": "19"
+        },
+        {
+          "functions": [
+            "JTAG_TDI",
+            "SPI0_SCLK",
+            "UART0_CTS",
+            "I2C1_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK02 2",
+          "position": "BANK02",
+          "row_id": 12,
+          "short_name": "2"
+        },
+        {
+          "functions": [
+            "SPI0_RX",
+            "UART1_TX",
+            "I2C0_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "CLOCKS_GPIN",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK020 20",
+          "position": "BANK020",
+          "row_id": 13,
+          "short_name": "20"
+        },
+        {
+          "functions": [
+            "SPI0_SS_N",
+            "UART1_RX",
+            "I2C0_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "CLOCKS_GPOUT",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK021 21",
+          "position": "BANK021",
+          "row_id": 14,
+          "short_name": "21"
+        },
+        {
+          "functions": [
+            "SPI0_SCLK",
+            "UART1_CTS",
+            "I2C1_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "CLOCKS_GPIN",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK022 22",
+          "position": "BANK022",
+          "row_id": 15,
+          "short_name": "22"
+        },
+        {
+          "functions": [
+            "SPI0_TX",
+            "UART1_RTS",
+            "I2C1_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "CLOCKS_GPOUT",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK023 23",
+          "position": "BANK023",
+          "row_id": 16,
+          "short_name": "23"
+        },
+        {
+          "functions": [
+            "SPI1_RX",
+            "UART1_TX",
+            "I2C0_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "CLOCKS_GPOUT",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK024 24",
+          "position": "BANK024",
+          "row_id": 17,
+          "short_name": "24"
+        },
+        {
+          "functions": [
+            "SPI1_SS_N",
+            "UART1_RX",
+            "I2C0_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "CLOCKS_GPOUT",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK025 25",
+          "position": "BANK025",
+          "row_id": 18,
+          "short_name": "25"
+        },
+        {
+          "functions": [
+            "ADC_IN0",
+            "SPI1_SCLK",
+            "UART1_CTS",
+            "I2C1_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK026 26",
+          "position": "BANK026",
+          "row_id": 19,
+          "short_name": "26"
+        },
+        {
+          "functions": [
+            "ADC_IN1",
+            "SPI1_TX",
+            "UART1_RTS",
+            "I2C1_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK027 27",
+          "position": "BANK027",
+          "row_id": 20,
+          "short_name": "27"
+        },
+        {
+          "functions": [
+            "ADC_IN2",
+            "SPI1_RX",
+            "UART0_TX",
+            "I2C0_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK028 28",
+          "position": "BANK028",
+          "row_id": 21,
+          "short_name": "28"
+        },
+        {
+          "functions": [
+            "ADC_IN3",
+            "SPI1_SS_N",
+            "UART0_RX",
+            "I2C0_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK029 29",
+          "position": "BANK029",
+          "row_id": 22,
+          "short_name": "29"
+        },
+        {
+          "functions": [
+            "JTAG_TDO",
+            "SPI0_TX",
+            "UART0_RTS",
+            "I2C1_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK03 3",
+          "position": "BANK03",
+          "row_id": 23,
+          "short_name": "3"
+        },
+        {
+          "functions": [
+            "SPI0_RX",
+            "UART1_TX",
+            "I2C0_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK04 4",
+          "position": "BANK04",
+          "row_id": 24,
+          "short_name": "4"
+        },
+        {
+          "functions": [
+            "SPI0_SS_N",
+            "UART1_RX",
+            "I2C0_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK05 5",
+          "position": "BANK05",
+          "row_id": 25,
+          "short_name": "5"
+        },
+        {
+          "functions": [
+            "SPI0_SCLK",
+            "UART1_CTS",
+            "I2C1_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_EXTPHY_SOFTCON",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK06 6",
+          "position": "BANK06",
+          "row_id": 26,
+          "short_name": "6"
+        },
+        {
+          "functions": [
+            "SPI0_TX",
+            "UART1_RTS",
+            "I2C1_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_EXTPHY_OE_N",
+            "USB_MUXING_VBUS_DETECT"
+          ],
+          "pin_label": "BANK07 7",
+          "position": "BANK07",
+          "row_id": 27,
+          "short_name": "7"
+        },
+        {
+          "functions": [
+            "SPI1_RX",
+            "UART1_TX",
+            "I2C0_SDA",
+            "PWM_A",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_EXTPHY_RCV",
+            "USB_MUXING_VBUS_EN"
+          ],
+          "pin_label": "BANK08 8",
+          "position": "BANK08",
+          "row_id": 28,
+          "short_name": "8"
+        },
+        {
+          "functions": [
+            "SPI1_SS_N",
+            "UART1_RX",
+            "I2C0_SCL",
+            "PWM_B",
+            "SIO_PAD",
+            "PIO0_PAD",
+            "PIO1_PAD",
+            "USB_MUXING_EXTPHY_VP",
+            "USB_MUXING_OVERCURR_DETECT"
+          ],
+          "pin_label": "BANK09 9",
+          "position": "BANK09",
+          "row_id": 29,
+          "short_name": "9"
+        },
+        {
+          "functions": [
+            "XIP_SCLK",
+            "SIO_PAD"
+          ],
+          "pin_label": "QSPI0 sclk",
+          "position": "QSPI0",
+          "row_id": 30,
+          "short_name": "sclk"
+        },
+        {
+          "functions": [
+            "XIP_SS_N",
+            "SIO_PAD"
+          ],
+          "pin_label": "QSPI1 ss",
+          "position": "QSPI1",
+          "row_id": 31,
+          "short_name": "ss"
+        },
+        {
+          "functions": [
+            "XIP_SD0",
+            "SIO_PAD"
+          ],
+          "pin_label": "QSPI2 sd0",
+          "position": "QSPI2",
+          "row_id": 32,
+          "short_name": "sd0"
+        },
+        {
+          "functions": [
+            "XIP_SD1",
+            "SIO_PAD"
+          ],
+          "pin_label": "QSPI3 sd1",
+          "position": "QSPI3",
+          "row_id": 33,
+          "short_name": "sd1"
+        },
+        {
+          "functions": [
+            "XIP_SD2",
+            "SIO_PAD"
+          ],
+          "pin_label": "QSPI4 sd2",
+          "position": "QSPI4",
+          "row_id": 34,
+          "short_name": "sd2"
+        },
+        {
+          "functions": [
+            "XIP_SD3",
+            "SIO_PAD"
+          ],
+          "pin_label": "QSPI5 sd3",
+          "position": "QSPI5",
+          "row_id": 35,
+          "short_name": "sd3"
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-05-16 18:52:43 UTC",
+  "source_xml": "rp/rp2040.xml"
+}

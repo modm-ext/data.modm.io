@@ -1,0 +1,686 @@
+{
+  "devices": {
+    "attiny20-ccu": {
+      "chip_id": "attiny20-ccu",
+      "package": null,
+      "partname": "attiny20-ccu",
+      "pin_count": 12,
+      "rows": [
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT0"
+          ],
+          "pin_label": "A0 PA0",
+          "position": "A0",
+          "row_id": 0,
+          "short_name": "PA0"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_1",
+            "EXINT_PCINT1"
+          ],
+          "pin_label": "A1 PA1",
+          "position": "A1",
+          "row_id": 1,
+          "short_name": "PA1"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "ADC_2",
+            "EXINT_PCINT2"
+          ],
+          "pin_label": "A2 PA2",
+          "position": "A2",
+          "row_id": 2,
+          "short_name": "PA2"
+        },
+        {
+          "functions": [
+            "ADC_3",
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "A3 PA3",
+          "position": "A3",
+          "row_id": 3,
+          "short_name": "PA3"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "A4 PA4",
+          "position": "A4",
+          "row_id": 4,
+          "short_name": "PA4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "A5 PA5",
+          "position": "A5",
+          "row_id": 5,
+          "short_name": "PA5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "EXINT_PCINT6",
+            "SPI_SS"
+          ],
+          "pin_label": "A6 PA6",
+          "position": "A6",
+          "row_id": 6,
+          "short_name": "PA6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "EXINT_PCINT7",
+            "SPI_SCK",
+            "TC0_OCB",
+            "TC1_ICP",
+            "TC1_T",
+            "TWI_SCL"
+          ],
+          "pin_label": "A7 PA7",
+          "position": "A7",
+          "row_id": 7,
+          "short_name": "PA7"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT8",
+            "TC0_T"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 8,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT9",
+            "SPI_MOSI",
+            "TC1_OCA",
+            "TWI_SDA"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 9,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "EXINT_PCINT10",
+            "SPI_MISO",
+            "TC0_OCA",
+            "TC1_OCB"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 10,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT11"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 11,
+          "short_name": "PB3"
+        }
+      ]
+    },
+    "attiny20-mmh": {
+      "chip_id": "attiny20-mmh",
+      "package": null,
+      "partname": "attiny20-mmh",
+      "pin_count": 12,
+      "rows": [
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT0"
+          ],
+          "pin_label": "A0 PA0",
+          "position": "A0",
+          "row_id": 0,
+          "short_name": "PA0"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_1",
+            "EXINT_PCINT1"
+          ],
+          "pin_label": "A1 PA1",
+          "position": "A1",
+          "row_id": 1,
+          "short_name": "PA1"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "ADC_2",
+            "EXINT_PCINT2"
+          ],
+          "pin_label": "A2 PA2",
+          "position": "A2",
+          "row_id": 2,
+          "short_name": "PA2"
+        },
+        {
+          "functions": [
+            "ADC_3",
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "A3 PA3",
+          "position": "A3",
+          "row_id": 3,
+          "short_name": "PA3"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "A4 PA4",
+          "position": "A4",
+          "row_id": 4,
+          "short_name": "PA4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "A5 PA5",
+          "position": "A5",
+          "row_id": 5,
+          "short_name": "PA5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "EXINT_PCINT6",
+            "SPI_SS"
+          ],
+          "pin_label": "A6 PA6",
+          "position": "A6",
+          "row_id": 6,
+          "short_name": "PA6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "EXINT_PCINT7",
+            "SPI_SCK",
+            "TC0_OCB",
+            "TC1_ICP",
+            "TC1_T",
+            "TWI_SCL"
+          ],
+          "pin_label": "A7 PA7",
+          "position": "A7",
+          "row_id": 7,
+          "short_name": "PA7"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT8",
+            "TC0_T"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 8,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT9",
+            "SPI_MOSI",
+            "TC1_OCA",
+            "TWI_SDA"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 9,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "EXINT_PCINT10",
+            "SPI_MISO",
+            "TC0_OCA",
+            "TC1_OCB"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 10,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT11"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 11,
+          "short_name": "PB3"
+        }
+      ]
+    },
+    "attiny20-ssu": {
+      "chip_id": "attiny20-ssu",
+      "package": null,
+      "partname": "attiny20-ssu",
+      "pin_count": 12,
+      "rows": [
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT0"
+          ],
+          "pin_label": "A0 PA0",
+          "position": "A0",
+          "row_id": 0,
+          "short_name": "PA0"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_1",
+            "EXINT_PCINT1"
+          ],
+          "pin_label": "A1 PA1",
+          "position": "A1",
+          "row_id": 1,
+          "short_name": "PA1"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "ADC_2",
+            "EXINT_PCINT2"
+          ],
+          "pin_label": "A2 PA2",
+          "position": "A2",
+          "row_id": 2,
+          "short_name": "PA2"
+        },
+        {
+          "functions": [
+            "ADC_3",
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "A3 PA3",
+          "position": "A3",
+          "row_id": 3,
+          "short_name": "PA3"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "A4 PA4",
+          "position": "A4",
+          "row_id": 4,
+          "short_name": "PA4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "A5 PA5",
+          "position": "A5",
+          "row_id": 5,
+          "short_name": "PA5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "EXINT_PCINT6",
+            "SPI_SS"
+          ],
+          "pin_label": "A6 PA6",
+          "position": "A6",
+          "row_id": 6,
+          "short_name": "PA6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "EXINT_PCINT7",
+            "SPI_SCK",
+            "TC0_OCB",
+            "TC1_ICP",
+            "TC1_T",
+            "TWI_SCL"
+          ],
+          "pin_label": "A7 PA7",
+          "position": "A7",
+          "row_id": 7,
+          "short_name": "PA7"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT8",
+            "TC0_T"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 8,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT9",
+            "SPI_MOSI",
+            "TC1_OCA",
+            "TWI_SDA"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 9,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "EXINT_PCINT10",
+            "SPI_MISO",
+            "TC0_OCA",
+            "TC1_OCB"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 10,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT11"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 11,
+          "short_name": "PB3"
+        }
+      ]
+    },
+    "attiny20-uur": {
+      "chip_id": "attiny20-uur",
+      "package": null,
+      "partname": "attiny20-uur",
+      "pin_count": 10,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_1",
+            "EXINT_PCINT1"
+          ],
+          "pin_label": "A1 PA1",
+          "position": "A1",
+          "row_id": 0,
+          "short_name": "PA1"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "ADC_2",
+            "EXINT_PCINT2"
+          ],
+          "pin_label": "A2 PA2",
+          "position": "A2",
+          "row_id": 1,
+          "short_name": "PA2"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "A4 PA4",
+          "position": "A4",
+          "row_id": 2,
+          "short_name": "PA4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "A5 PA5",
+          "position": "A5",
+          "row_id": 3,
+          "short_name": "PA5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "EXINT_PCINT6",
+            "SPI_SS"
+          ],
+          "pin_label": "A6 PA6",
+          "position": "A6",
+          "row_id": 4,
+          "short_name": "PA6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "EXINT_PCINT7",
+            "SPI_SCK",
+            "TC0_OCB",
+            "TC1_ICP",
+            "TC1_T",
+            "TWI_SCL"
+          ],
+          "pin_label": "A7 PA7",
+          "position": "A7",
+          "row_id": 5,
+          "short_name": "PA7"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT8",
+            "TC0_T"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 6,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT9",
+            "SPI_MOSI",
+            "TC1_OCA",
+            "TWI_SDA"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 7,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "EXINT_PCINT10",
+            "SPI_MISO",
+            "TC0_OCA",
+            "TC1_OCB"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 8,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT11"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 9,
+          "short_name": "PB3"
+        }
+      ]
+    },
+    "attiny20-xu": {
+      "chip_id": "attiny20-xu",
+      "package": null,
+      "partname": "attiny20-xu",
+      "pin_count": 12,
+      "rows": [
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT0"
+          ],
+          "pin_label": "A0 PA0",
+          "position": "A0",
+          "row_id": 0,
+          "short_name": "PA0"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_1",
+            "EXINT_PCINT1"
+          ],
+          "pin_label": "A1 PA1",
+          "position": "A1",
+          "row_id": 1,
+          "short_name": "PA1"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "ADC_2",
+            "EXINT_PCINT2"
+          ],
+          "pin_label": "A2 PA2",
+          "position": "A2",
+          "row_id": 2,
+          "short_name": "PA2"
+        },
+        {
+          "functions": [
+            "ADC_3",
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "A3 PA3",
+          "position": "A3",
+          "row_id": 3,
+          "short_name": "PA3"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "A4 PA4",
+          "position": "A4",
+          "row_id": 4,
+          "short_name": "PA4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "A5 PA5",
+          "position": "A5",
+          "row_id": 5,
+          "short_name": "PA5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "EXINT_PCINT6",
+            "SPI_SS"
+          ],
+          "pin_label": "A6 PA6",
+          "position": "A6",
+          "row_id": 6,
+          "short_name": "PA6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "EXINT_PCINT7",
+            "SPI_SCK",
+            "TC0_OCB",
+            "TC1_ICP",
+            "TC1_T",
+            "TWI_SCL"
+          ],
+          "pin_label": "A7 PA7",
+          "position": "A7",
+          "row_id": 7,
+          "short_name": "PA7"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT8",
+            "TC0_T"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 8,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT9",
+            "SPI_MOSI",
+            "TC1_OCA",
+            "TWI_SDA"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 9,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "EXINT_PCINT10",
+            "SPI_MISO",
+            "TC0_OCA",
+            "TC1_OCB"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 10,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT11"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 11,
+          "short_name": "PB3"
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-05-16 18:52:42 UTC",
+  "source_xml": "avr/attiny-20.xml"
+}

@@ -1,0 +1,2222 @@
+{
+  "devices": {
+    "atmega16u4-au": {
+      "chip_id": "atmega16u4-au",
+      "package": null,
+      "partname": "atmega16u4-au",
+      "pin_count": 26,
+      "rows": [
+        {
+          "functions": [
+            "EXINT_PCINT0",
+            "SPI_SS"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT1",
+            "SPI_SCK"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "SPI_MOSI",
+            "SPI_PDI"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "SPI_MISO",
+            "SPI_PDO"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_11",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_12",
+            "EXINT_PCINT5",
+            "TC1_OCA",
+            "TC4__OCB"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "ADC_13",
+            "EXINT_PCINT6",
+            "TC1_OCB",
+            "TC4_OCB"
+          ],
+          "pin_label": "B6 PB6",
+          "position": "B6",
+          "row_id": 6,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT7",
+            "TC0_OCA",
+            "TC1_OCC",
+            "USART1_RTS"
+          ],
+          "pin_label": "B7 PB7",
+          "position": "B7",
+          "row_id": 7,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [
+            "TC3_OCA",
+            "TC4__OCA"
+          ],
+          "pin_label": "C6 PC6",
+          "position": "C6",
+          "row_id": 8,
+          "short_name": "PC6"
+        },
+        {
+          "functions": [
+            "CORE_CLK0",
+            "TC3_ICP",
+            "TC4_OCA"
+          ],
+          "pin_label": "C7 PC7",
+          "position": "C7",
+          "row_id": 9,
+          "short_name": "PC7"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "TC0_OCB",
+            "TWI_SCL"
+          ],
+          "pin_label": "D0 PD0",
+          "position": "D0",
+          "row_id": 10,
+          "short_name": "PD0"
+        },
+        {
+          "functions": [
+            "EXINT_1",
+            "TWI_SDA"
+          ],
+          "pin_label": "D1 PD1",
+          "position": "D1",
+          "row_id": 11,
+          "short_name": "PD1"
+        },
+        {
+          "functions": [
+            "EXINT_2",
+            "USART1_RXD"
+          ],
+          "pin_label": "D2 PD2",
+          "position": "D2",
+          "row_id": 12,
+          "short_name": "PD2"
+        },
+        {
+          "functions": [
+            "EXINT_3",
+            "USART1_TXD"
+          ],
+          "pin_label": "D3 PD3",
+          "position": "D3",
+          "row_id": 13,
+          "short_name": "PD3"
+        },
+        {
+          "functions": [
+            "ADC_8",
+            "TC1_ICP"
+          ],
+          "pin_label": "D4 PD4",
+          "position": "D4",
+          "row_id": 14,
+          "short_name": "PD4"
+        },
+        {
+          "functions": [
+            "USART1_CTS",
+            "USART1_XCK"
+          ],
+          "pin_label": "D5 PD5",
+          "position": "D5",
+          "row_id": 15,
+          "short_name": "PD5"
+        },
+        {
+          "functions": [
+            "ADC_9",
+            "TC1_T",
+            "TC4__OCD"
+          ],
+          "pin_label": "D6 PD6",
+          "position": "D6",
+          "row_id": 16,
+          "short_name": "PD6"
+        },
+        {
+          "functions": [
+            "ADC_10",
+            "TC0_T",
+            "TC4_OCD"
+          ],
+          "pin_label": "D7 PD7",
+          "position": "D7",
+          "row_id": 17,
+          "short_name": "PD7"
+        },
+        {
+          "functions": [
+            "BOOT_LOAD_HWB"
+          ],
+          "pin_label": "E2 PE2",
+          "position": "E2",
+          "row_id": 18,
+          "short_name": "PE2"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_6"
+          ],
+          "pin_label": "E6 PE6",
+          "position": "E6",
+          "row_id": 19,
+          "short_name": "PE6"
+        },
+        {
+          "functions": [
+            "ADC_0"
+          ],
+          "pin_label": "F0 PF0",
+          "position": "F0",
+          "row_id": 20,
+          "short_name": "PF0"
+        },
+        {
+          "functions": [
+            "ADC_1"
+          ],
+          "pin_label": "F1 PF1",
+          "position": "F1",
+          "row_id": 21,
+          "short_name": "PF1"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "JTAG_TCK"
+          ],
+          "pin_label": "F4 PF4",
+          "position": "F4",
+          "row_id": 22,
+          "short_name": "PF4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "JTAG_TMS"
+          ],
+          "pin_label": "F5 PF5",
+          "position": "F5",
+          "row_id": 23,
+          "short_name": "PF5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "JTAG_TDO"
+          ],
+          "pin_label": "F6 PF6",
+          "position": "F6",
+          "row_id": 24,
+          "short_name": "PF6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "JTAG_TDI"
+          ],
+          "pin_label": "F7 PF7",
+          "position": "F7",
+          "row_id": 25,
+          "short_name": "PF7"
+        }
+      ]
+    },
+    "atmega16u4-mu": {
+      "chip_id": "atmega16u4-mu",
+      "package": null,
+      "partname": "atmega16u4-mu",
+      "pin_count": 26,
+      "rows": [
+        {
+          "functions": [
+            "EXINT_PCINT0",
+            "SPI_SS"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT1",
+            "SPI_SCK"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "SPI_MOSI",
+            "SPI_PDI"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "SPI_MISO",
+            "SPI_PDO"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_11",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_12",
+            "EXINT_PCINT5",
+            "TC1_OCA",
+            "TC4__OCB"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "ADC_13",
+            "EXINT_PCINT6",
+            "TC1_OCB",
+            "TC4_OCB"
+          ],
+          "pin_label": "B6 PB6",
+          "position": "B6",
+          "row_id": 6,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT7",
+            "TC0_OCA",
+            "TC1_OCC",
+            "USART1_RTS"
+          ],
+          "pin_label": "B7 PB7",
+          "position": "B7",
+          "row_id": 7,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [
+            "TC3_OCA",
+            "TC4__OCA"
+          ],
+          "pin_label": "C6 PC6",
+          "position": "C6",
+          "row_id": 8,
+          "short_name": "PC6"
+        },
+        {
+          "functions": [
+            "CORE_CLK0",
+            "TC3_ICP",
+            "TC4_OCA"
+          ],
+          "pin_label": "C7 PC7",
+          "position": "C7",
+          "row_id": 9,
+          "short_name": "PC7"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "TC0_OCB",
+            "TWI_SCL"
+          ],
+          "pin_label": "D0 PD0",
+          "position": "D0",
+          "row_id": 10,
+          "short_name": "PD0"
+        },
+        {
+          "functions": [
+            "EXINT_1",
+            "TWI_SDA"
+          ],
+          "pin_label": "D1 PD1",
+          "position": "D1",
+          "row_id": 11,
+          "short_name": "PD1"
+        },
+        {
+          "functions": [
+            "EXINT_2",
+            "USART1_RXD"
+          ],
+          "pin_label": "D2 PD2",
+          "position": "D2",
+          "row_id": 12,
+          "short_name": "PD2"
+        },
+        {
+          "functions": [
+            "EXINT_3",
+            "USART1_TXD"
+          ],
+          "pin_label": "D3 PD3",
+          "position": "D3",
+          "row_id": 13,
+          "short_name": "PD3"
+        },
+        {
+          "functions": [
+            "ADC_8",
+            "TC1_ICP"
+          ],
+          "pin_label": "D4 PD4",
+          "position": "D4",
+          "row_id": 14,
+          "short_name": "PD4"
+        },
+        {
+          "functions": [
+            "USART1_CTS",
+            "USART1_XCK"
+          ],
+          "pin_label": "D5 PD5",
+          "position": "D5",
+          "row_id": 15,
+          "short_name": "PD5"
+        },
+        {
+          "functions": [
+            "ADC_9",
+            "TC1_T",
+            "TC4__OCD"
+          ],
+          "pin_label": "D6 PD6",
+          "position": "D6",
+          "row_id": 16,
+          "short_name": "PD6"
+        },
+        {
+          "functions": [
+            "ADC_10",
+            "TC0_T",
+            "TC4_OCD"
+          ],
+          "pin_label": "D7 PD7",
+          "position": "D7",
+          "row_id": 17,
+          "short_name": "PD7"
+        },
+        {
+          "functions": [
+            "BOOT_LOAD_HWB"
+          ],
+          "pin_label": "E2 PE2",
+          "position": "E2",
+          "row_id": 18,
+          "short_name": "PE2"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_6"
+          ],
+          "pin_label": "E6 PE6",
+          "position": "E6",
+          "row_id": 19,
+          "short_name": "PE6"
+        },
+        {
+          "functions": [
+            "ADC_0"
+          ],
+          "pin_label": "F0 PF0",
+          "position": "F0",
+          "row_id": 20,
+          "short_name": "PF0"
+        },
+        {
+          "functions": [
+            "ADC_1"
+          ],
+          "pin_label": "F1 PF1",
+          "position": "F1",
+          "row_id": 21,
+          "short_name": "PF1"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "JTAG_TCK"
+          ],
+          "pin_label": "F4 PF4",
+          "position": "F4",
+          "row_id": 22,
+          "short_name": "PF4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "JTAG_TMS"
+          ],
+          "pin_label": "F5 PF5",
+          "position": "F5",
+          "row_id": 23,
+          "short_name": "PF5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "JTAG_TDO"
+          ],
+          "pin_label": "F6 PF6",
+          "position": "F6",
+          "row_id": 24,
+          "short_name": "PF6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "JTAG_TDI"
+          ],
+          "pin_label": "F7 PF7",
+          "position": "F7",
+          "row_id": 25,
+          "short_name": "PF7"
+        }
+      ]
+    },
+    "atmega16u4rc-au": {
+      "chip_id": "atmega16u4rc-au",
+      "package": null,
+      "partname": "atmega16u4rc-au",
+      "pin_count": 26,
+      "rows": [
+        {
+          "functions": [
+            "EXINT_PCINT0",
+            "SPI_SS"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT1",
+            "SPI_SCK"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "SPI_MOSI",
+            "SPI_PDI"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "SPI_MISO",
+            "SPI_PDO"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_11",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_12",
+            "EXINT_PCINT5",
+            "TC1_OCA",
+            "TC4__OCB"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "ADC_13",
+            "EXINT_PCINT6",
+            "TC1_OCB",
+            "TC4_OCB"
+          ],
+          "pin_label": "B6 PB6",
+          "position": "B6",
+          "row_id": 6,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT7",
+            "TC0_OCA",
+            "TC1_OCC",
+            "USART1_RTS"
+          ],
+          "pin_label": "B7 PB7",
+          "position": "B7",
+          "row_id": 7,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [
+            "TC3_OCA",
+            "TC4__OCA"
+          ],
+          "pin_label": "C6 PC6",
+          "position": "C6",
+          "row_id": 8,
+          "short_name": "PC6"
+        },
+        {
+          "functions": [
+            "CORE_CLK0",
+            "TC3_ICP",
+            "TC4_OCA"
+          ],
+          "pin_label": "C7 PC7",
+          "position": "C7",
+          "row_id": 9,
+          "short_name": "PC7"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "TC0_OCB",
+            "TWI_SCL"
+          ],
+          "pin_label": "D0 PD0",
+          "position": "D0",
+          "row_id": 10,
+          "short_name": "PD0"
+        },
+        {
+          "functions": [
+            "EXINT_1",
+            "TWI_SDA"
+          ],
+          "pin_label": "D1 PD1",
+          "position": "D1",
+          "row_id": 11,
+          "short_name": "PD1"
+        },
+        {
+          "functions": [
+            "EXINT_2",
+            "USART1_RXD"
+          ],
+          "pin_label": "D2 PD2",
+          "position": "D2",
+          "row_id": 12,
+          "short_name": "PD2"
+        },
+        {
+          "functions": [
+            "EXINT_3",
+            "USART1_TXD"
+          ],
+          "pin_label": "D3 PD3",
+          "position": "D3",
+          "row_id": 13,
+          "short_name": "PD3"
+        },
+        {
+          "functions": [
+            "ADC_8",
+            "TC1_ICP"
+          ],
+          "pin_label": "D4 PD4",
+          "position": "D4",
+          "row_id": 14,
+          "short_name": "PD4"
+        },
+        {
+          "functions": [
+            "USART1_CTS",
+            "USART1_XCK"
+          ],
+          "pin_label": "D5 PD5",
+          "position": "D5",
+          "row_id": 15,
+          "short_name": "PD5"
+        },
+        {
+          "functions": [
+            "ADC_9",
+            "TC1_T",
+            "TC4__OCD"
+          ],
+          "pin_label": "D6 PD6",
+          "position": "D6",
+          "row_id": 16,
+          "short_name": "PD6"
+        },
+        {
+          "functions": [
+            "ADC_10",
+            "TC0_T",
+            "TC4_OCD"
+          ],
+          "pin_label": "D7 PD7",
+          "position": "D7",
+          "row_id": 17,
+          "short_name": "PD7"
+        },
+        {
+          "functions": [
+            "BOOT_LOAD_HWB"
+          ],
+          "pin_label": "E2 PE2",
+          "position": "E2",
+          "row_id": 18,
+          "short_name": "PE2"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_6"
+          ],
+          "pin_label": "E6 PE6",
+          "position": "E6",
+          "row_id": 19,
+          "short_name": "PE6"
+        },
+        {
+          "functions": [
+            "ADC_0"
+          ],
+          "pin_label": "F0 PF0",
+          "position": "F0",
+          "row_id": 20,
+          "short_name": "PF0"
+        },
+        {
+          "functions": [
+            "ADC_1"
+          ],
+          "pin_label": "F1 PF1",
+          "position": "F1",
+          "row_id": 21,
+          "short_name": "PF1"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "JTAG_TCK"
+          ],
+          "pin_label": "F4 PF4",
+          "position": "F4",
+          "row_id": 22,
+          "short_name": "PF4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "JTAG_TMS"
+          ],
+          "pin_label": "F5 PF5",
+          "position": "F5",
+          "row_id": 23,
+          "short_name": "PF5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "JTAG_TDO"
+          ],
+          "pin_label": "F6 PF6",
+          "position": "F6",
+          "row_id": 24,
+          "short_name": "PF6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "JTAG_TDI"
+          ],
+          "pin_label": "F7 PF7",
+          "position": "F7",
+          "row_id": 25,
+          "short_name": "PF7"
+        }
+      ]
+    },
+    "atmega16u4rc-mu": {
+      "chip_id": "atmega16u4rc-mu",
+      "package": null,
+      "partname": "atmega16u4rc-mu",
+      "pin_count": 26,
+      "rows": [
+        {
+          "functions": [
+            "EXINT_PCINT0",
+            "SPI_SS"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT1",
+            "SPI_SCK"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "SPI_MOSI",
+            "SPI_PDI"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "SPI_MISO",
+            "SPI_PDO"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_11",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_12",
+            "EXINT_PCINT5",
+            "TC1_OCA",
+            "TC4__OCB"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "ADC_13",
+            "EXINT_PCINT6",
+            "TC1_OCB",
+            "TC4_OCB"
+          ],
+          "pin_label": "B6 PB6",
+          "position": "B6",
+          "row_id": 6,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT7",
+            "TC0_OCA",
+            "TC1_OCC",
+            "USART1_RTS"
+          ],
+          "pin_label": "B7 PB7",
+          "position": "B7",
+          "row_id": 7,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [
+            "TC3_OCA",
+            "TC4__OCA"
+          ],
+          "pin_label": "C6 PC6",
+          "position": "C6",
+          "row_id": 8,
+          "short_name": "PC6"
+        },
+        {
+          "functions": [
+            "CORE_CLK0",
+            "TC3_ICP",
+            "TC4_OCA"
+          ],
+          "pin_label": "C7 PC7",
+          "position": "C7",
+          "row_id": 9,
+          "short_name": "PC7"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "TC0_OCB",
+            "TWI_SCL"
+          ],
+          "pin_label": "D0 PD0",
+          "position": "D0",
+          "row_id": 10,
+          "short_name": "PD0"
+        },
+        {
+          "functions": [
+            "EXINT_1",
+            "TWI_SDA"
+          ],
+          "pin_label": "D1 PD1",
+          "position": "D1",
+          "row_id": 11,
+          "short_name": "PD1"
+        },
+        {
+          "functions": [
+            "EXINT_2",
+            "USART1_RXD"
+          ],
+          "pin_label": "D2 PD2",
+          "position": "D2",
+          "row_id": 12,
+          "short_name": "PD2"
+        },
+        {
+          "functions": [
+            "EXINT_3",
+            "USART1_TXD"
+          ],
+          "pin_label": "D3 PD3",
+          "position": "D3",
+          "row_id": 13,
+          "short_name": "PD3"
+        },
+        {
+          "functions": [
+            "ADC_8",
+            "TC1_ICP"
+          ],
+          "pin_label": "D4 PD4",
+          "position": "D4",
+          "row_id": 14,
+          "short_name": "PD4"
+        },
+        {
+          "functions": [
+            "USART1_CTS",
+            "USART1_XCK"
+          ],
+          "pin_label": "D5 PD5",
+          "position": "D5",
+          "row_id": 15,
+          "short_name": "PD5"
+        },
+        {
+          "functions": [
+            "ADC_9",
+            "TC1_T",
+            "TC4__OCD"
+          ],
+          "pin_label": "D6 PD6",
+          "position": "D6",
+          "row_id": 16,
+          "short_name": "PD6"
+        },
+        {
+          "functions": [
+            "ADC_10",
+            "TC0_T",
+            "TC4_OCD"
+          ],
+          "pin_label": "D7 PD7",
+          "position": "D7",
+          "row_id": 17,
+          "short_name": "PD7"
+        },
+        {
+          "functions": [
+            "BOOT_LOAD_HWB"
+          ],
+          "pin_label": "E2 PE2",
+          "position": "E2",
+          "row_id": 18,
+          "short_name": "PE2"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_6"
+          ],
+          "pin_label": "E6 PE6",
+          "position": "E6",
+          "row_id": 19,
+          "short_name": "PE6"
+        },
+        {
+          "functions": [
+            "ADC_0"
+          ],
+          "pin_label": "F0 PF0",
+          "position": "F0",
+          "row_id": 20,
+          "short_name": "PF0"
+        },
+        {
+          "functions": [
+            "ADC_1"
+          ],
+          "pin_label": "F1 PF1",
+          "position": "F1",
+          "row_id": 21,
+          "short_name": "PF1"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "JTAG_TCK"
+          ],
+          "pin_label": "F4 PF4",
+          "position": "F4",
+          "row_id": 22,
+          "short_name": "PF4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "JTAG_TMS"
+          ],
+          "pin_label": "F5 PF5",
+          "position": "F5",
+          "row_id": 23,
+          "short_name": "PF5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "JTAG_TDO"
+          ],
+          "pin_label": "F6 PF6",
+          "position": "F6",
+          "row_id": 24,
+          "short_name": "PF6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "JTAG_TDI"
+          ],
+          "pin_label": "F7 PF7",
+          "position": "F7",
+          "row_id": 25,
+          "short_name": "PF7"
+        }
+      ]
+    },
+    "atmega32u4-au": {
+      "chip_id": "atmega32u4-au",
+      "package": null,
+      "partname": "atmega32u4-au",
+      "pin_count": 26,
+      "rows": [
+        {
+          "functions": [
+            "EXINT_PCINT0",
+            "SPI_SS"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT1",
+            "SPI_SCK"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "SPI_MOSI",
+            "SPI_PDI"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "SPI_MISO",
+            "SPI_PDO"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_11",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_12",
+            "EXINT_PCINT5",
+            "TC1_OCA",
+            "TC4__OCB"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "ADC_13",
+            "EXINT_PCINT6",
+            "TC1_OCB",
+            "TC4_OCB"
+          ],
+          "pin_label": "B6 PB6",
+          "position": "B6",
+          "row_id": 6,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT7",
+            "TC0_OCA",
+            "TC1_OCC",
+            "USART1_RTS"
+          ],
+          "pin_label": "B7 PB7",
+          "position": "B7",
+          "row_id": 7,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [
+            "TC3_OCA",
+            "TC4__OCA"
+          ],
+          "pin_label": "C6 PC6",
+          "position": "C6",
+          "row_id": 8,
+          "short_name": "PC6"
+        },
+        {
+          "functions": [
+            "CORE_CLK0",
+            "TC3_ICP",
+            "TC4_OCA"
+          ],
+          "pin_label": "C7 PC7",
+          "position": "C7",
+          "row_id": 9,
+          "short_name": "PC7"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "TC0_OCB",
+            "TWI_SCL"
+          ],
+          "pin_label": "D0 PD0",
+          "position": "D0",
+          "row_id": 10,
+          "short_name": "PD0"
+        },
+        {
+          "functions": [
+            "EXINT_1",
+            "TWI_SDA"
+          ],
+          "pin_label": "D1 PD1",
+          "position": "D1",
+          "row_id": 11,
+          "short_name": "PD1"
+        },
+        {
+          "functions": [
+            "EXINT_2",
+            "USART1_RXD"
+          ],
+          "pin_label": "D2 PD2",
+          "position": "D2",
+          "row_id": 12,
+          "short_name": "PD2"
+        },
+        {
+          "functions": [
+            "EXINT_3",
+            "USART1_TXD"
+          ],
+          "pin_label": "D3 PD3",
+          "position": "D3",
+          "row_id": 13,
+          "short_name": "PD3"
+        },
+        {
+          "functions": [
+            "ADC_8",
+            "TC1_ICP"
+          ],
+          "pin_label": "D4 PD4",
+          "position": "D4",
+          "row_id": 14,
+          "short_name": "PD4"
+        },
+        {
+          "functions": [
+            "USART1_CTS",
+            "USART1_XCK"
+          ],
+          "pin_label": "D5 PD5",
+          "position": "D5",
+          "row_id": 15,
+          "short_name": "PD5"
+        },
+        {
+          "functions": [
+            "ADC_9",
+            "TC1_T",
+            "TC4__OCD"
+          ],
+          "pin_label": "D6 PD6",
+          "position": "D6",
+          "row_id": 16,
+          "short_name": "PD6"
+        },
+        {
+          "functions": [
+            "ADC_10",
+            "TC0_T",
+            "TC4_OCD"
+          ],
+          "pin_label": "D7 PD7",
+          "position": "D7",
+          "row_id": 17,
+          "short_name": "PD7"
+        },
+        {
+          "functions": [
+            "BOOT_LOAD_HWB"
+          ],
+          "pin_label": "E2 PE2",
+          "position": "E2",
+          "row_id": 18,
+          "short_name": "PE2"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_6"
+          ],
+          "pin_label": "E6 PE6",
+          "position": "E6",
+          "row_id": 19,
+          "short_name": "PE6"
+        },
+        {
+          "functions": [
+            "ADC_0"
+          ],
+          "pin_label": "F0 PF0",
+          "position": "F0",
+          "row_id": 20,
+          "short_name": "PF0"
+        },
+        {
+          "functions": [
+            "ADC_1"
+          ],
+          "pin_label": "F1 PF1",
+          "position": "F1",
+          "row_id": 21,
+          "short_name": "PF1"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "JTAG_TCK"
+          ],
+          "pin_label": "F4 PF4",
+          "position": "F4",
+          "row_id": 22,
+          "short_name": "PF4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "JTAG_TMS"
+          ],
+          "pin_label": "F5 PF5",
+          "position": "F5",
+          "row_id": 23,
+          "short_name": "PF5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "JTAG_TDO"
+          ],
+          "pin_label": "F6 PF6",
+          "position": "F6",
+          "row_id": 24,
+          "short_name": "PF6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "JTAG_TDI"
+          ],
+          "pin_label": "F7 PF7",
+          "position": "F7",
+          "row_id": 25,
+          "short_name": "PF7"
+        }
+      ]
+    },
+    "atmega32u4-mu": {
+      "chip_id": "atmega32u4-mu",
+      "package": null,
+      "partname": "atmega32u4-mu",
+      "pin_count": 26,
+      "rows": [
+        {
+          "functions": [
+            "EXINT_PCINT0",
+            "SPI_SS"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT1",
+            "SPI_SCK"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "SPI_MOSI",
+            "SPI_PDI"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "SPI_MISO",
+            "SPI_PDO"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_11",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_12",
+            "EXINT_PCINT5",
+            "TC1_OCA",
+            "TC4__OCB"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "ADC_13",
+            "EXINT_PCINT6",
+            "TC1_OCB",
+            "TC4_OCB"
+          ],
+          "pin_label": "B6 PB6",
+          "position": "B6",
+          "row_id": 6,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT7",
+            "TC0_OCA",
+            "TC1_OCC",
+            "USART1_RTS"
+          ],
+          "pin_label": "B7 PB7",
+          "position": "B7",
+          "row_id": 7,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [
+            "TC3_OCA",
+            "TC4__OCA"
+          ],
+          "pin_label": "C6 PC6",
+          "position": "C6",
+          "row_id": 8,
+          "short_name": "PC6"
+        },
+        {
+          "functions": [
+            "CORE_CLK0",
+            "TC3_ICP",
+            "TC4_OCA"
+          ],
+          "pin_label": "C7 PC7",
+          "position": "C7",
+          "row_id": 9,
+          "short_name": "PC7"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "TC0_OCB",
+            "TWI_SCL"
+          ],
+          "pin_label": "D0 PD0",
+          "position": "D0",
+          "row_id": 10,
+          "short_name": "PD0"
+        },
+        {
+          "functions": [
+            "EXINT_1",
+            "TWI_SDA"
+          ],
+          "pin_label": "D1 PD1",
+          "position": "D1",
+          "row_id": 11,
+          "short_name": "PD1"
+        },
+        {
+          "functions": [
+            "EXINT_2",
+            "USART1_RXD"
+          ],
+          "pin_label": "D2 PD2",
+          "position": "D2",
+          "row_id": 12,
+          "short_name": "PD2"
+        },
+        {
+          "functions": [
+            "EXINT_3",
+            "USART1_TXD"
+          ],
+          "pin_label": "D3 PD3",
+          "position": "D3",
+          "row_id": 13,
+          "short_name": "PD3"
+        },
+        {
+          "functions": [
+            "ADC_8",
+            "TC1_ICP"
+          ],
+          "pin_label": "D4 PD4",
+          "position": "D4",
+          "row_id": 14,
+          "short_name": "PD4"
+        },
+        {
+          "functions": [
+            "USART1_CTS",
+            "USART1_XCK"
+          ],
+          "pin_label": "D5 PD5",
+          "position": "D5",
+          "row_id": 15,
+          "short_name": "PD5"
+        },
+        {
+          "functions": [
+            "ADC_9",
+            "TC1_T",
+            "TC4__OCD"
+          ],
+          "pin_label": "D6 PD6",
+          "position": "D6",
+          "row_id": 16,
+          "short_name": "PD6"
+        },
+        {
+          "functions": [
+            "ADC_10",
+            "TC0_T",
+            "TC4_OCD"
+          ],
+          "pin_label": "D7 PD7",
+          "position": "D7",
+          "row_id": 17,
+          "short_name": "PD7"
+        },
+        {
+          "functions": [
+            "BOOT_LOAD_HWB"
+          ],
+          "pin_label": "E2 PE2",
+          "position": "E2",
+          "row_id": 18,
+          "short_name": "PE2"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_6"
+          ],
+          "pin_label": "E6 PE6",
+          "position": "E6",
+          "row_id": 19,
+          "short_name": "PE6"
+        },
+        {
+          "functions": [
+            "ADC_0"
+          ],
+          "pin_label": "F0 PF0",
+          "position": "F0",
+          "row_id": 20,
+          "short_name": "PF0"
+        },
+        {
+          "functions": [
+            "ADC_1"
+          ],
+          "pin_label": "F1 PF1",
+          "position": "F1",
+          "row_id": 21,
+          "short_name": "PF1"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "JTAG_TCK"
+          ],
+          "pin_label": "F4 PF4",
+          "position": "F4",
+          "row_id": 22,
+          "short_name": "PF4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "JTAG_TMS"
+          ],
+          "pin_label": "F5 PF5",
+          "position": "F5",
+          "row_id": 23,
+          "short_name": "PF5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "JTAG_TDO"
+          ],
+          "pin_label": "F6 PF6",
+          "position": "F6",
+          "row_id": 24,
+          "short_name": "PF6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "JTAG_TDI"
+          ],
+          "pin_label": "F7 PF7",
+          "position": "F7",
+          "row_id": 25,
+          "short_name": "PF7"
+        }
+      ]
+    },
+    "atmega32u4rc-au": {
+      "chip_id": "atmega32u4rc-au",
+      "package": null,
+      "partname": "atmega32u4rc-au",
+      "pin_count": 26,
+      "rows": [
+        {
+          "functions": [
+            "EXINT_PCINT0",
+            "SPI_SS"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT1",
+            "SPI_SCK"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "SPI_MOSI",
+            "SPI_PDI"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "SPI_MISO",
+            "SPI_PDO"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_11",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_12",
+            "EXINT_PCINT5",
+            "TC1_OCA",
+            "TC4__OCB"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "ADC_13",
+            "EXINT_PCINT6",
+            "TC1_OCB",
+            "TC4_OCB"
+          ],
+          "pin_label": "B6 PB6",
+          "position": "B6",
+          "row_id": 6,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT7",
+            "TC0_OCA",
+            "TC1_OCC",
+            "USART1_RTS"
+          ],
+          "pin_label": "B7 PB7",
+          "position": "B7",
+          "row_id": 7,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [
+            "TC3_OCA",
+            "TC4__OCA"
+          ],
+          "pin_label": "C6 PC6",
+          "position": "C6",
+          "row_id": 8,
+          "short_name": "PC6"
+        },
+        {
+          "functions": [
+            "CORE_CLK0",
+            "TC3_ICP",
+            "TC4_OCA"
+          ],
+          "pin_label": "C7 PC7",
+          "position": "C7",
+          "row_id": 9,
+          "short_name": "PC7"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "TC0_OCB",
+            "TWI_SCL"
+          ],
+          "pin_label": "D0 PD0",
+          "position": "D0",
+          "row_id": 10,
+          "short_name": "PD0"
+        },
+        {
+          "functions": [
+            "EXINT_1",
+            "TWI_SDA"
+          ],
+          "pin_label": "D1 PD1",
+          "position": "D1",
+          "row_id": 11,
+          "short_name": "PD1"
+        },
+        {
+          "functions": [
+            "EXINT_2",
+            "USART1_RXD"
+          ],
+          "pin_label": "D2 PD2",
+          "position": "D2",
+          "row_id": 12,
+          "short_name": "PD2"
+        },
+        {
+          "functions": [
+            "EXINT_3",
+            "USART1_TXD"
+          ],
+          "pin_label": "D3 PD3",
+          "position": "D3",
+          "row_id": 13,
+          "short_name": "PD3"
+        },
+        {
+          "functions": [
+            "ADC_8",
+            "TC1_ICP"
+          ],
+          "pin_label": "D4 PD4",
+          "position": "D4",
+          "row_id": 14,
+          "short_name": "PD4"
+        },
+        {
+          "functions": [
+            "USART1_CTS",
+            "USART1_XCK"
+          ],
+          "pin_label": "D5 PD5",
+          "position": "D5",
+          "row_id": 15,
+          "short_name": "PD5"
+        },
+        {
+          "functions": [
+            "ADC_9",
+            "TC1_T",
+            "TC4__OCD"
+          ],
+          "pin_label": "D6 PD6",
+          "position": "D6",
+          "row_id": 16,
+          "short_name": "PD6"
+        },
+        {
+          "functions": [
+            "ADC_10",
+            "TC0_T",
+            "TC4_OCD"
+          ],
+          "pin_label": "D7 PD7",
+          "position": "D7",
+          "row_id": 17,
+          "short_name": "PD7"
+        },
+        {
+          "functions": [
+            "BOOT_LOAD_HWB"
+          ],
+          "pin_label": "E2 PE2",
+          "position": "E2",
+          "row_id": 18,
+          "short_name": "PE2"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_6"
+          ],
+          "pin_label": "E6 PE6",
+          "position": "E6",
+          "row_id": 19,
+          "short_name": "PE6"
+        },
+        {
+          "functions": [
+            "ADC_0"
+          ],
+          "pin_label": "F0 PF0",
+          "position": "F0",
+          "row_id": 20,
+          "short_name": "PF0"
+        },
+        {
+          "functions": [
+            "ADC_1"
+          ],
+          "pin_label": "F1 PF1",
+          "position": "F1",
+          "row_id": 21,
+          "short_name": "PF1"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "JTAG_TCK"
+          ],
+          "pin_label": "F4 PF4",
+          "position": "F4",
+          "row_id": 22,
+          "short_name": "PF4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "JTAG_TMS"
+          ],
+          "pin_label": "F5 PF5",
+          "position": "F5",
+          "row_id": 23,
+          "short_name": "PF5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "JTAG_TDO"
+          ],
+          "pin_label": "F6 PF6",
+          "position": "F6",
+          "row_id": 24,
+          "short_name": "PF6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "JTAG_TDI"
+          ],
+          "pin_label": "F7 PF7",
+          "position": "F7",
+          "row_id": 25,
+          "short_name": "PF7"
+        }
+      ]
+    },
+    "atmega32u4rc-mu": {
+      "chip_id": "atmega32u4rc-mu",
+      "package": null,
+      "partname": "atmega32u4rc-mu",
+      "pin_count": 26,
+      "rows": [
+        {
+          "functions": [
+            "EXINT_PCINT0",
+            "SPI_SS"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT1",
+            "SPI_SCK"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "SPI_MOSI",
+            "SPI_PDI"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "SPI_MISO",
+            "SPI_PDO"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_11",
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_12",
+            "EXINT_PCINT5",
+            "TC1_OCA",
+            "TC4__OCB"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "ADC_13",
+            "EXINT_PCINT6",
+            "TC1_OCB",
+            "TC4_OCB"
+          ],
+          "pin_label": "B6 PB6",
+          "position": "B6",
+          "row_id": 6,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT7",
+            "TC0_OCA",
+            "TC1_OCC",
+            "USART1_RTS"
+          ],
+          "pin_label": "B7 PB7",
+          "position": "B7",
+          "row_id": 7,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [
+            "TC3_OCA",
+            "TC4__OCA"
+          ],
+          "pin_label": "C6 PC6",
+          "position": "C6",
+          "row_id": 8,
+          "short_name": "PC6"
+        },
+        {
+          "functions": [
+            "CORE_CLK0",
+            "TC3_ICP",
+            "TC4_OCA"
+          ],
+          "pin_label": "C7 PC7",
+          "position": "C7",
+          "row_id": 9,
+          "short_name": "PC7"
+        },
+        {
+          "functions": [
+            "EXINT_0",
+            "TC0_OCB",
+            "TWI_SCL"
+          ],
+          "pin_label": "D0 PD0",
+          "position": "D0",
+          "row_id": 10,
+          "short_name": "PD0"
+        },
+        {
+          "functions": [
+            "EXINT_1",
+            "TWI_SDA"
+          ],
+          "pin_label": "D1 PD1",
+          "position": "D1",
+          "row_id": 11,
+          "short_name": "PD1"
+        },
+        {
+          "functions": [
+            "EXINT_2",
+            "USART1_RXD"
+          ],
+          "pin_label": "D2 PD2",
+          "position": "D2",
+          "row_id": 12,
+          "short_name": "PD2"
+        },
+        {
+          "functions": [
+            "EXINT_3",
+            "USART1_TXD"
+          ],
+          "pin_label": "D3 PD3",
+          "position": "D3",
+          "row_id": 13,
+          "short_name": "PD3"
+        },
+        {
+          "functions": [
+            "ADC_8",
+            "TC1_ICP"
+          ],
+          "pin_label": "D4 PD4",
+          "position": "D4",
+          "row_id": 14,
+          "short_name": "PD4"
+        },
+        {
+          "functions": [
+            "USART1_CTS",
+            "USART1_XCK"
+          ],
+          "pin_label": "D5 PD5",
+          "position": "D5",
+          "row_id": 15,
+          "short_name": "PD5"
+        },
+        {
+          "functions": [
+            "ADC_9",
+            "TC1_T",
+            "TC4__OCD"
+          ],
+          "pin_label": "D6 PD6",
+          "position": "D6",
+          "row_id": 16,
+          "short_name": "PD6"
+        },
+        {
+          "functions": [
+            "ADC_10",
+            "TC0_T",
+            "TC4_OCD"
+          ],
+          "pin_label": "D7 PD7",
+          "position": "D7",
+          "row_id": 17,
+          "short_name": "PD7"
+        },
+        {
+          "functions": [
+            "BOOT_LOAD_HWB"
+          ],
+          "pin_label": "E2 PE2",
+          "position": "E2",
+          "row_id": 18,
+          "short_name": "PE2"
+        },
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_6"
+          ],
+          "pin_label": "E6 PE6",
+          "position": "E6",
+          "row_id": 19,
+          "short_name": "PE6"
+        },
+        {
+          "functions": [
+            "ADC_0"
+          ],
+          "pin_label": "F0 PF0",
+          "position": "F0",
+          "row_id": 20,
+          "short_name": "PF0"
+        },
+        {
+          "functions": [
+            "ADC_1"
+          ],
+          "pin_label": "F1 PF1",
+          "position": "F1",
+          "row_id": 21,
+          "short_name": "PF1"
+        },
+        {
+          "functions": [
+            "ADC_4",
+            "JTAG_TCK"
+          ],
+          "pin_label": "F4 PF4",
+          "position": "F4",
+          "row_id": 22,
+          "short_name": "PF4"
+        },
+        {
+          "functions": [
+            "ADC_5",
+            "JTAG_TMS"
+          ],
+          "pin_label": "F5 PF5",
+          "position": "F5",
+          "row_id": 23,
+          "short_name": "PF5"
+        },
+        {
+          "functions": [
+            "ADC_6",
+            "JTAG_TDO"
+          ],
+          "pin_label": "F6 PF6",
+          "position": "F6",
+          "row_id": 24,
+          "short_name": "PF6"
+        },
+        {
+          "functions": [
+            "ADC_7",
+            "JTAG_TDI"
+          ],
+          "pin_label": "F7 PF7",
+          "position": "F7",
+          "row_id": 25,
+          "short_name": "PF7"
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-05-16 18:52:42 UTC",
+  "source_xml": "avr/atmega-16_32-u4_u4rc.xml"
+}

@@ -1,0 +1,3384 @@
+{
+  "devices": {
+    "stm32f318c8t6": {
+      "chip_id": "stm32f318c8t6",
+      "package": {
+        "name": "LQFP48",
+        "pins": [
+          {
+            "position": "1",
+            "row_id": 0,
+            "row_ids": [
+              0
+            ],
+            "short_name": "VBAT",
+            "type": "power"
+          },
+          {
+            "position": "2",
+            "row_id": 1,
+            "row_ids": [
+              1
+            ],
+            "short_name": "PC13",
+            "type": "io"
+          },
+          {
+            "position": "3",
+            "row_id": 2,
+            "row_ids": [
+              2
+            ],
+            "short_name": "PC14 - OSC32_IN",
+            "type": "io"
+          },
+          {
+            "position": "4",
+            "row_id": 3,
+            "row_ids": [
+              3
+            ],
+            "short_name": "PC15 - OSC32_OUT",
+            "type": "io"
+          },
+          {
+            "position": "5",
+            "row_id": 4,
+            "row_ids": [
+              4
+            ],
+            "short_name": "PF0-OSC_IN",
+            "type": "io"
+          },
+          {
+            "position": "6",
+            "row_id": 5,
+            "row_ids": [
+              5
+            ],
+            "short_name": "PF1-OSC_OUT",
+            "type": "io"
+          },
+          {
+            "position": "7",
+            "row_id": 6,
+            "row_ids": [
+              6
+            ],
+            "short_name": "NRST",
+            "type": "reset"
+          },
+          {
+            "position": "8",
+            "row_id": 7,
+            "row_ids": [
+              7
+            ],
+            "short_name": "VSSA/VREF-",
+            "type": "power"
+          },
+          {
+            "position": "9",
+            "row_id": 8,
+            "row_ids": [
+              8
+            ],
+            "short_name": "VDDA/VREF+",
+            "type": "power"
+          },
+          {
+            "position": "10",
+            "row_id": 9,
+            "row_ids": [
+              9
+            ],
+            "short_name": "PA0",
+            "type": "io"
+          },
+          {
+            "position": "11",
+            "row_id": 10,
+            "row_ids": [
+              10
+            ],
+            "short_name": "PA1",
+            "type": "io"
+          },
+          {
+            "position": "12",
+            "row_id": 11,
+            "row_ids": [
+              11
+            ],
+            "short_name": "PA2",
+            "type": "io"
+          },
+          {
+            "position": "13",
+            "row_id": 12,
+            "row_ids": [
+              12
+            ],
+            "short_name": "PA3",
+            "type": "io"
+          },
+          {
+            "position": "14",
+            "row_id": 13,
+            "row_ids": [
+              13
+            ],
+            "short_name": "PA4",
+            "type": "io"
+          },
+          {
+            "position": "15",
+            "row_id": 14,
+            "row_ids": [
+              14
+            ],
+            "short_name": "PA5",
+            "type": "io"
+          },
+          {
+            "position": "16",
+            "row_id": 15,
+            "row_ids": [
+              15
+            ],
+            "short_name": "PA6",
+            "type": "io"
+          },
+          {
+            "position": "17",
+            "row_id": 16,
+            "row_ids": [
+              16
+            ],
+            "short_name": "PA7",
+            "type": "io"
+          },
+          {
+            "position": "18",
+            "row_id": 17,
+            "row_ids": [
+              17
+            ],
+            "short_name": "PB0",
+            "type": "io"
+          },
+          {
+            "position": "19",
+            "row_id": 18,
+            "row_ids": [
+              18
+            ],
+            "short_name": "PB1",
+            "type": "io"
+          },
+          {
+            "position": "20",
+            "row_id": 19,
+            "row_ids": [
+              19
+            ],
+            "short_name": "NPOR",
+            "type": "reset"
+          },
+          {
+            "position": "21",
+            "row_id": 20,
+            "row_ids": [
+              20
+            ],
+            "short_name": "PB10",
+            "type": "io"
+          },
+          {
+            "position": "22",
+            "row_id": 21,
+            "row_ids": [
+              21
+            ],
+            "short_name": "PB11",
+            "type": "io"
+          },
+          {
+            "position": "23",
+            "row_id": 22,
+            "row_ids": [
+              22
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "24",
+            "row_id": 23,
+            "row_ids": [
+              23
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "25",
+            "row_id": 24,
+            "row_ids": [
+              24
+            ],
+            "short_name": "PB12",
+            "type": "io"
+          },
+          {
+            "position": "26",
+            "row_id": 25,
+            "row_ids": [
+              25
+            ],
+            "short_name": "PB13",
+            "type": "io"
+          },
+          {
+            "position": "27",
+            "row_id": 26,
+            "row_ids": [
+              26
+            ],
+            "short_name": "PB14",
+            "type": "io"
+          },
+          {
+            "position": "28",
+            "row_id": 27,
+            "row_ids": [
+              27
+            ],
+            "short_name": "PB15",
+            "type": "io"
+          },
+          {
+            "position": "29",
+            "row_id": 28,
+            "row_ids": [
+              28
+            ],
+            "short_name": "PA8",
+            "type": "io"
+          },
+          {
+            "position": "30",
+            "row_id": 29,
+            "row_ids": [
+              29
+            ],
+            "short_name": "PA9",
+            "type": "io"
+          },
+          {
+            "position": "31",
+            "row_id": 30,
+            "row_ids": [
+              30
+            ],
+            "short_name": "PA10",
+            "type": "io"
+          },
+          {
+            "position": "32",
+            "row_id": 31,
+            "row_ids": [
+              31
+            ],
+            "short_name": "PA11",
+            "type": "io"
+          },
+          {
+            "position": "33",
+            "row_id": 32,
+            "row_ids": [
+              32
+            ],
+            "short_name": "PA12",
+            "type": "io"
+          },
+          {
+            "position": "34",
+            "row_id": 33,
+            "row_ids": [
+              33
+            ],
+            "short_name": "PA13",
+            "type": "io"
+          },
+          {
+            "position": "35",
+            "row_id": 34,
+            "row_ids": [
+              34
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "36",
+            "row_id": 35,
+            "row_ids": [
+              35
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "37",
+            "row_id": 36,
+            "row_ids": [
+              36
+            ],
+            "short_name": "PA14",
+            "type": "io"
+          },
+          {
+            "position": "38",
+            "row_id": 37,
+            "row_ids": [
+              37
+            ],
+            "short_name": "PA15",
+            "type": "io"
+          },
+          {
+            "position": "39",
+            "row_id": 38,
+            "row_ids": [
+              38
+            ],
+            "short_name": "PB3",
+            "type": "io"
+          },
+          {
+            "position": "40",
+            "row_id": 39,
+            "row_ids": [
+              39
+            ],
+            "short_name": "PB4",
+            "type": "io"
+          },
+          {
+            "position": "41",
+            "row_id": 40,
+            "row_ids": [
+              40
+            ],
+            "short_name": "PB5",
+            "type": "io"
+          },
+          {
+            "position": "42",
+            "row_id": 41,
+            "row_ids": [
+              41
+            ],
+            "short_name": "PB6",
+            "type": "io"
+          },
+          {
+            "position": "43",
+            "row_id": 42,
+            "row_ids": [
+              42
+            ],
+            "short_name": "PB7",
+            "type": "io"
+          },
+          {
+            "position": "44",
+            "row_id": 43,
+            "row_ids": [
+              43
+            ],
+            "short_name": "BOOT0",
+            "type": "boot"
+          },
+          {
+            "position": "45",
+            "row_id": 44,
+            "row_ids": [
+              44
+            ],
+            "short_name": "PB8",
+            "type": "io"
+          },
+          {
+            "position": "46",
+            "row_id": 45,
+            "row_ids": [
+              45
+            ],
+            "short_name": "PB9",
+            "type": "io"
+          },
+          {
+            "position": "47",
+            "row_id": 46,
+            "row_ids": [
+              46
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "48",
+            "row_id": 47,
+            "row_ids": [
+              47
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          }
+        ]
+      },
+      "partname": "stm32f318c8t6",
+      "pin_count": 48,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "1 VBAT",
+          "position": "1",
+          "row_id": 0,
+          "short_name": "VBAT"
+        },
+        {
+          "functions": [
+            "TIM1_CH1N",
+            "RTC_OUT_ALARM",
+            "RTC_OUT_CALIB",
+            "RTC_TAMP1",
+            "RTC_TS",
+            "SYS_WKUP2"
+          ],
+          "pin_label": "2 PC13",
+          "position": "2",
+          "row_id": 1,
+          "short_name": "PC13"
+        },
+        {
+          "functions": [
+            "RCC_OSC32_IN"
+          ],
+          "pin_label": "3 PC14 - OSC32_IN",
+          "position": "3",
+          "row_id": 2,
+          "short_name": "PC14 - OSC32_IN"
+        },
+        {
+          "functions": [
+            "RCC_OSC32_OUT"
+          ],
+          "pin_label": "4 PC15 - OSC32_OUT",
+          "position": "4",
+          "row_id": 3,
+          "short_name": "PC15 - OSC32_OUT"
+        },
+        {
+          "functions": [
+            "I2C2_SDA",
+            "I2S2_WS/SPI2_NSS",
+            "TIM1_CH3N",
+            "RCC_OSC_IN"
+          ],
+          "pin_label": "5 PF0-OSC_IN",
+          "position": "5",
+          "row_id": 4,
+          "short_name": "PF0-OSC_IN"
+        },
+        {
+          "functions": [
+            "I2C2_SCL",
+            "I2S2_CK/SPI2_SCK",
+            "RCC_OSC_OUT"
+          ],
+          "pin_label": "6 PF1-OSC_OUT",
+          "position": "6",
+          "row_id": 5,
+          "short_name": "PF1-OSC_OUT"
+        },
+        {
+          "functions": [],
+          "pin_label": "7 NRST",
+          "position": "7",
+          "row_id": 6,
+          "short_name": "NRST"
+        },
+        {
+          "functions": [],
+          "pin_label": "8 VSSA/VREF-",
+          "position": "8",
+          "row_id": 7,
+          "short_name": "VSSA/VREF-"
+        },
+        {
+          "functions": [],
+          "pin_label": "9 VDDA/VREF+",
+          "position": "9",
+          "row_id": 8,
+          "short_name": "VDDA/VREF+"
+        },
+        {
+          "functions": [
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_G1_IO1",
+            "USART2_CTS",
+            "ADC1_IN1",
+            "RTC_TAMP2",
+            "SYS_WKUP1"
+          ],
+          "pin_label": "10 PA0",
+          "position": "10",
+          "row_id": 9,
+          "short_name": "PA0"
+        },
+        {
+          "functions": [
+            "RTC_REFIN",
+            "TIM2_CH2",
+            "TSC_G1_IO2",
+            "USART2_DE/USART2_RTS",
+            "TIM15_CH1N",
+            "ADC1_IN2"
+          ],
+          "pin_label": "11 PA1",
+          "position": "11",
+          "row_id": 10,
+          "short_name": "PA1"
+        },
+        {
+          "functions": [
+            "TIM2_CH3",
+            "TSC_G1_IO3",
+            "USART2_TX",
+            "COMP2_OUT",
+            "TIM15_CH1",
+            "ADC1_IN3",
+            "COMP2_INM"
+          ],
+          "pin_label": "12 PA2",
+          "position": "12",
+          "row_id": 11,
+          "short_name": "PA2"
+        },
+        {
+          "functions": [
+            "TIM2_CH4",
+            "TSC_G1_IO4",
+            "USART2_RX",
+            "TIM15_CH2",
+            "ADC1_IN4"
+          ],
+          "pin_label": "13 PA3",
+          "position": "13",
+          "row_id": 12,
+          "short_name": "PA3"
+        },
+        {
+          "functions": [
+            "TSC_G2_IO1",
+            "I2S3_WS/SPI3_NSS",
+            "USART2_CK",
+            "ADC1_IN5",
+            "COMP2_INM",
+            "COMP4_INM",
+            "COMP6_INM",
+            "DAC_OUT1"
+          ],
+          "pin_label": "14 PA4",
+          "position": "14",
+          "row_id": 13,
+          "short_name": "PA4"
+        },
+        {
+          "functions": [
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_G2_IO2",
+            "OPAMP2_VINM",
+            "OPAMP2_VINM_SEC"
+          ],
+          "pin_label": "15 PA5",
+          "position": "15",
+          "row_id": 14,
+          "short_name": "PA5"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "TSC_G2_IO3",
+            "TIM1_BKIN",
+            "ADC1_IN10",
+            "OPAMP2_VOUT"
+          ],
+          "pin_label": "16 PA6",
+          "position": "16",
+          "row_id": 15,
+          "short_name": "PA6"
+        },
+        {
+          "functions": [
+            "TIM17_CH1",
+            "TSC_G2_IO4",
+            "TIM1_CH1N",
+            "ADC1_IN15",
+            "COMP2_INP",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "17 PA7",
+          "position": "17",
+          "row_id": 16,
+          "short_name": "PA7"
+        },
+        {
+          "functions": [
+            "TSC_G3_IO2",
+            "TIM1_CH2N",
+            "ADC1_IN11",
+            "COMP4_INP",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "18 PB0",
+          "position": "18",
+          "row_id": 17,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "TSC_G3_IO3",
+            "TIM1_CH3N",
+            "COMP4_OUT",
+            "ADC1_IN12"
+          ],
+          "pin_label": "19 PB1",
+          "position": "19",
+          "row_id": 18,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [],
+          "pin_label": "20 NPOR",
+          "position": "20",
+          "row_id": 19,
+          "short_name": "NPOR"
+        },
+        {
+          "functions": [
+            "TIM2_CH3",
+            "TSC_SYNC",
+            "USART3_TX"
+          ],
+          "pin_label": "21 PB10",
+          "position": "21",
+          "row_id": 20,
+          "short_name": "PB10"
+        },
+        {
+          "functions": [
+            "TIM2_CH4",
+            "TSC_G6_IO1",
+            "USART3_RX",
+            "ADC1_IN14",
+            "COMP6_INP"
+          ],
+          "pin_label": "22 PB11",
+          "position": "22",
+          "row_id": 21,
+          "short_name": "PB11"
+        },
+        {
+          "functions": [],
+          "pin_label": "23 VSS",
+          "position": "23",
+          "row_id": 22,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "24 VDD",
+          "position": "24",
+          "row_id": 23,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [
+            "TSC_G6_IO2",
+            "I2C2_SMBA",
+            "I2S2_WS/SPI2_NSS",
+            "TIM1_BKIN",
+            "USART3_CK"
+          ],
+          "pin_label": "25 PB12",
+          "position": "25",
+          "row_id": 24,
+          "short_name": "PB12"
+        },
+        {
+          "functions": [
+            "TSC_G6_IO3",
+            "I2S2_CK/SPI2_SCK",
+            "TIM1_CH1N",
+            "USART3_CTS",
+            "ADC1_IN13"
+          ],
+          "pin_label": "26 PB13",
+          "position": "26",
+          "row_id": 25,
+          "short_name": "PB13"
+        },
+        {
+          "functions": [
+            "TIM15_CH1",
+            "TSC_G6_IO4",
+            "I2S2_EXT_SD/SPI2_MISO",
+            "TIM1_CH2N",
+            "USART3_DE/USART3_RTS",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "27 PB14",
+          "position": "27",
+          "row_id": 26,
+          "short_name": "PB14"
+        },
+        {
+          "functions": [
+            "RTC_REFIN",
+            "TIM15_CH2",
+            "TIM15_CH1N",
+            "TIM1_CH3N",
+            "I2S2_SD/SPI2_MOSI",
+            "COMP6_INM"
+          ],
+          "pin_label": "28 PB15",
+          "position": "28",
+          "row_id": 27,
+          "short_name": "PB15"
+        },
+        {
+          "functions": [
+            "RCC_MCO",
+            "I2C3_SCL",
+            "I2C2_SMBA",
+            "I2S2_MCK",
+            "TIM1_CH1",
+            "USART1_CK"
+          ],
+          "pin_label": "29 PA8",
+          "position": "29",
+          "row_id": 28,
+          "short_name": "PA8"
+        },
+        {
+          "functions": [
+            "I2C3_SMBA",
+            "TSC_G4_IO1",
+            "I2C2_SCL",
+            "I2S3_MCK",
+            "TIM1_CH2",
+            "USART1_TX",
+            "TIM15_BKIN",
+            "TIM2_CH3"
+          ],
+          "pin_label": "30 PA9",
+          "position": "30",
+          "row_id": 29,
+          "short_name": "PA9"
+        },
+        {
+          "functions": [
+            "TIM17_BKIN",
+            "TSC_G4_IO2",
+            "I2C2_SDA",
+            "I2S2_EXT_SD/SPI2_MISO",
+            "TIM1_CH3",
+            "USART1_RX",
+            "COMP6_OUT",
+            "TIM2_CH4"
+          ],
+          "pin_label": "31 PA10",
+          "position": "31",
+          "row_id": 30,
+          "short_name": "PA10"
+        },
+        {
+          "functions": [
+            "I2S2_SD/SPI2_MOSI",
+            "TIM1_CH1N",
+            "USART1_CTS",
+            "TIM1_CH4",
+            "TIM1_BKIN2"
+          ],
+          "pin_label": "32 PA11",
+          "position": "32",
+          "row_id": 31,
+          "short_name": "PA11"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "I2S_CKIN",
+            "TIM1_CH2N",
+            "USART1_DE/USART1_RTS",
+            "COMP2_OUT",
+            "TIM1_ETR"
+          ],
+          "pin_label": "33 PA12",
+          "position": "33",
+          "row_id": 32,
+          "short_name": "PA12"
+        },
+        {
+          "functions": [
+            "SYS_JTMS/SYS_SWDIO",
+            "TIM16_CH1N",
+            "TSC_G4_IO3",
+            "IRTIM_OUT",
+            "USART3_CTS"
+          ],
+          "pin_label": "34 PA13",
+          "position": "34",
+          "row_id": 33,
+          "short_name": "PA13"
+        },
+        {
+          "functions": [],
+          "pin_label": "35 VSS",
+          "position": "35",
+          "row_id": 34,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "36 VDD",
+          "position": "36",
+          "row_id": 35,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [
+            "SYS_JTCK/SYS_SWCLK",
+            "TSC_G4_IO4",
+            "I2C1_SDA",
+            "TIM1_BKIN",
+            "USART2_TX"
+          ],
+          "pin_label": "37 PA14",
+          "position": "37",
+          "row_id": 36,
+          "short_name": "PA14"
+        },
+        {
+          "functions": [
+            "SYS_JTDI",
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_SYNC",
+            "I2C1_SCL",
+            "I2S3_WS/SPI3_NSS",
+            "USART2_RX",
+            "TIM1_BKIN"
+          ],
+          "pin_label": "38 PA15",
+          "position": "38",
+          "row_id": 37,
+          "short_name": "PA15"
+        },
+        {
+          "functions": [
+            "SYS_JTDO/SYS_TRACESWO",
+            "TIM2_CH2",
+            "TSC_G5_IO1",
+            "I2S3_CK/SPI3_SCK",
+            "USART2_TX"
+          ],
+          "pin_label": "39 PB3",
+          "position": "39",
+          "row_id": 38,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "SYS_NJTRST",
+            "TIM16_CH1",
+            "TSC_G5_IO2",
+            "I2S3_EXT_SD/SPI3_MISO",
+            "USART2_RX",
+            "TIM17_BKIN"
+          ],
+          "pin_label": "40 PB4",
+          "position": "40",
+          "row_id": 39,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "TIM16_BKIN",
+            "I2C1_SMBA",
+            "I2S3_SD/SPI3_MOSI",
+            "USART2_CK",
+            "I2C3_SDA",
+            "TIM17_CH1"
+          ],
+          "pin_label": "41 PB5",
+          "position": "41",
+          "row_id": 40,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "TIM16_CH1N",
+            "TSC_G5_IO3",
+            "I2C1_SCL",
+            "USART1_TX"
+          ],
+          "pin_label": "42 PB6",
+          "position": "42",
+          "row_id": 41,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "TIM17_CH1N",
+            "TSC_G5_IO4",
+            "I2C1_SDA",
+            "USART1_RX"
+          ],
+          "pin_label": "43 PB7",
+          "position": "43",
+          "row_id": 42,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [],
+          "pin_label": "44 BOOT0",
+          "position": "44",
+          "row_id": 43,
+          "short_name": "BOOT0"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "TSC_SYNC",
+            "I2C1_SCL",
+            "USART3_RX",
+            "TIM1_BKIN"
+          ],
+          "pin_label": "45 PB8",
+          "position": "45",
+          "row_id": 44,
+          "short_name": "PB8"
+        },
+        {
+          "functions": [
+            "TIM17_CH1",
+            "I2C1_SDA",
+            "IRTIM_OUT",
+            "USART3_TX",
+            "COMP2_OUT"
+          ],
+          "pin_label": "46 PB9",
+          "position": "46",
+          "row_id": 45,
+          "short_name": "PB9"
+        },
+        {
+          "functions": [],
+          "pin_label": "47 VSS",
+          "position": "47",
+          "row_id": 46,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "48 VDD",
+          "position": "48",
+          "row_id": 47,
+          "short_name": "VDD"
+        }
+      ]
+    },
+    "stm32f318c8y6": {
+      "chip_id": "stm32f318c8y6",
+      "package": {
+        "name": "WLCSP49",
+        "pins": [
+          {
+            "position": "A1",
+            "row_id": 0,
+            "row_ids": [
+              0
+            ],
+            "short_name": "PA14",
+            "type": "io"
+          },
+          {
+            "position": "A2",
+            "row_id": 1,
+            "row_ids": [
+              1
+            ],
+            "short_name": "PA15",
+            "type": "io"
+          },
+          {
+            "position": "A3",
+            "row_id": 2,
+            "row_ids": [
+              2
+            ],
+            "short_name": "PB3",
+            "type": "io"
+          },
+          {
+            "position": "A4",
+            "row_id": 3,
+            "row_ids": [
+              3
+            ],
+            "short_name": "PB4",
+            "type": "io"
+          },
+          {
+            "position": "A5",
+            "row_id": 4,
+            "row_ids": [
+              4
+            ],
+            "short_name": "BOOT0",
+            "type": "boot"
+          },
+          {
+            "position": "A6",
+            "row_id": 5,
+            "row_ids": [
+              5
+            ],
+            "short_name": "VDDA/VREF+",
+            "type": "power"
+          },
+          {
+            "position": "A7",
+            "row_id": 6,
+            "row_ids": [
+              6
+            ],
+            "short_name": "NC",
+            "type": "reset"
+          },
+          {
+            "position": "B1",
+            "row_id": 7,
+            "row_ids": [
+              7
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "B2",
+            "row_id": 8,
+            "row_ids": [
+              8
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "B3",
+            "row_id": 9,
+            "row_ids": [
+              9
+            ],
+            "short_name": "PA13",
+            "type": "io"
+          },
+          {
+            "position": "B4",
+            "row_id": 10,
+            "row_ids": [
+              10
+            ],
+            "short_name": "PB5",
+            "type": "io"
+          },
+          {
+            "position": "B5",
+            "row_id": 11,
+            "row_ids": [
+              11
+            ],
+            "short_name": "PB8",
+            "type": "io"
+          },
+          {
+            "position": "B6",
+            "row_id": 12,
+            "row_ids": [
+              12
+            ],
+            "short_name": "VBAT",
+            "type": "power"
+          },
+          {
+            "position": "B7",
+            "row_id": 13,
+            "row_ids": [
+              13
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "C1",
+            "row_id": 14,
+            "row_ids": [
+              14
+            ],
+            "short_name": "PA11",
+            "type": "io"
+          },
+          {
+            "position": "C2",
+            "row_id": 15,
+            "row_ids": [
+              15
+            ],
+            "short_name": "PA10",
+            "type": "io"
+          },
+          {
+            "position": "C3",
+            "row_id": 16,
+            "row_ids": [
+              16
+            ],
+            "short_name": "PA12",
+            "type": "io"
+          },
+          {
+            "position": "C4",
+            "row_id": 17,
+            "row_ids": [
+              17
+            ],
+            "short_name": "PB6",
+            "type": "io"
+          },
+          {
+            "position": "C5",
+            "row_id": 18,
+            "row_ids": [
+              18
+            ],
+            "short_name": "PB9",
+            "type": "io"
+          },
+          {
+            "position": "C6",
+            "row_id": 19,
+            "row_ids": [
+              19
+            ],
+            "short_name": "PC15 - OSC32_OUT",
+            "type": "io"
+          },
+          {
+            "position": "C7",
+            "row_id": 20,
+            "row_ids": [
+              20
+            ],
+            "short_name": "PC14 - OSC32_IN",
+            "type": "io"
+          },
+          {
+            "position": "D1",
+            "row_id": 21,
+            "row_ids": [
+              21
+            ],
+            "short_name": "PA8",
+            "type": "io"
+          },
+          {
+            "position": "D2",
+            "row_id": 22,
+            "row_ids": [
+              22
+            ],
+            "short_name": "PA9",
+            "type": "io"
+          },
+          {
+            "position": "D3",
+            "row_id": 23,
+            "row_ids": [
+              23
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "D4",
+            "row_id": 24,
+            "row_ids": [
+              24
+            ],
+            "short_name": "PB7",
+            "type": "io"
+          },
+          {
+            "position": "D5",
+            "row_id": 25,
+            "row_ids": [
+              25
+            ],
+            "short_name": "PC13",
+            "type": "io"
+          },
+          {
+            "position": "D6",
+            "row_id": 26,
+            "row_ids": [
+              26
+            ],
+            "short_name": "PF1-OSC_OUT",
+            "type": "io"
+          },
+          {
+            "position": "D7",
+            "row_id": 27,
+            "row_ids": [
+              27
+            ],
+            "short_name": "PF0-OSC_IN",
+            "type": "io"
+          },
+          {
+            "position": "E1",
+            "row_id": 28,
+            "row_ids": [
+              28
+            ],
+            "short_name": "PB15",
+            "type": "io"
+          },
+          {
+            "position": "E2",
+            "row_id": 29,
+            "row_ids": [
+              29
+            ],
+            "short_name": "PB12",
+            "type": "io"
+          },
+          {
+            "position": "E3",
+            "row_id": 30,
+            "row_ids": [
+              30
+            ],
+            "short_name": "PB10",
+            "type": "io"
+          },
+          {
+            "position": "E4",
+            "row_id": 31,
+            "row_ids": [
+              31
+            ],
+            "short_name": "PA3",
+            "type": "io"
+          },
+          {
+            "position": "E5",
+            "row_id": 32,
+            "row_ids": [
+              32
+            ],
+            "short_name": "PA2",
+            "type": "io"
+          },
+          {
+            "position": "E6",
+            "row_id": 33,
+            "row_ids": [
+              33
+            ],
+            "short_name": "VSSA/VREF-",
+            "type": "power"
+          },
+          {
+            "position": "E7",
+            "row_id": 34,
+            "row_ids": [
+              34
+            ],
+            "short_name": "NRST",
+            "type": "reset"
+          },
+          {
+            "position": "F1",
+            "row_id": 35,
+            "row_ids": [
+              35
+            ],
+            "short_name": "PB14",
+            "type": "io"
+          },
+          {
+            "position": "F2",
+            "row_id": 36,
+            "row_ids": [
+              36
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "F3",
+            "row_id": 37,
+            "row_ids": [
+              37
+            ],
+            "short_name": "PA7",
+            "type": "io"
+          },
+          {
+            "position": "F4",
+            "row_id": 38,
+            "row_ids": [
+              38
+            ],
+            "short_name": "PA6",
+            "type": "io"
+          },
+          {
+            "position": "F5",
+            "row_id": 39,
+            "row_ids": [
+              39
+            ],
+            "short_name": "PA5",
+            "type": "io"
+          },
+          {
+            "position": "F6",
+            "row_id": 40,
+            "row_ids": [
+              40
+            ],
+            "short_name": "PA0",
+            "type": "io"
+          },
+          {
+            "position": "F7",
+            "row_id": 41,
+            "row_ids": [
+              41
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "G1",
+            "row_id": 42,
+            "row_ids": [
+              42
+            ],
+            "short_name": "PB13",
+            "type": "io"
+          },
+          {
+            "position": "G2",
+            "row_id": 43,
+            "row_ids": [
+              43
+            ],
+            "short_name": "PB11",
+            "type": "io"
+          },
+          {
+            "position": "G3",
+            "row_id": 44,
+            "row_ids": [
+              44
+            ],
+            "short_name": "NPOR",
+            "type": "reset"
+          },
+          {
+            "position": "G4",
+            "row_id": 45,
+            "row_ids": [
+              45
+            ],
+            "short_name": "PB1",
+            "type": "io"
+          },
+          {
+            "position": "G5",
+            "row_id": 46,
+            "row_ids": [
+              46
+            ],
+            "short_name": "PB0",
+            "type": "io"
+          },
+          {
+            "position": "G6",
+            "row_id": 47,
+            "row_ids": [
+              47
+            ],
+            "short_name": "PA4",
+            "type": "io"
+          },
+          {
+            "position": "G7",
+            "row_id": 48,
+            "row_ids": [
+              48
+            ],
+            "short_name": "PA1",
+            "type": "io"
+          }
+        ]
+      },
+      "partname": "stm32f318c8y6",
+      "pin_count": 49,
+      "rows": [
+        {
+          "functions": [
+            "SYS_JTCK/SYS_SWCLK",
+            "TSC_G4_IO4",
+            "I2C1_SDA",
+            "TIM1_BKIN",
+            "USART2_TX"
+          ],
+          "pin_label": "A1 PA14",
+          "position": "A1",
+          "row_id": 0,
+          "short_name": "PA14"
+        },
+        {
+          "functions": [
+            "SYS_JTDI",
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_SYNC",
+            "I2C1_SCL",
+            "I2S3_WS/SPI3_NSS",
+            "USART2_RX",
+            "TIM1_BKIN"
+          ],
+          "pin_label": "A2 PA15",
+          "position": "A2",
+          "row_id": 1,
+          "short_name": "PA15"
+        },
+        {
+          "functions": [
+            "SYS_JTDO/SYS_TRACESWO",
+            "TIM2_CH2",
+            "TSC_G5_IO1",
+            "I2S3_CK/SPI3_SCK",
+            "USART2_TX"
+          ],
+          "pin_label": "A3 PB3",
+          "position": "A3",
+          "row_id": 2,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "SYS_NJTRST",
+            "TIM16_CH1",
+            "TSC_G5_IO2",
+            "I2S3_EXT_SD/SPI3_MISO",
+            "USART2_RX",
+            "TIM17_BKIN"
+          ],
+          "pin_label": "A4 PB4",
+          "position": "A4",
+          "row_id": 3,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [],
+          "pin_label": "A5 BOOT0",
+          "position": "A5",
+          "row_id": 4,
+          "short_name": "BOOT0"
+        },
+        {
+          "functions": [],
+          "pin_label": "A6 VDDA/VREF+",
+          "position": "A6",
+          "row_id": 5,
+          "short_name": "VDDA/VREF+"
+        },
+        {
+          "functions": [],
+          "pin_label": "A7 NC",
+          "position": "A7",
+          "row_id": 6,
+          "short_name": "NC"
+        },
+        {
+          "functions": [],
+          "pin_label": "B1 VSS",
+          "position": "B1",
+          "row_id": 7,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "B2 VDD",
+          "position": "B2",
+          "row_id": 8,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [
+            "SYS_JTMS/SYS_SWDIO",
+            "TIM16_CH1N",
+            "TSC_G4_IO3",
+            "IRTIM_OUT",
+            "USART3_CTS"
+          ],
+          "pin_label": "B3 PA13",
+          "position": "B3",
+          "row_id": 9,
+          "short_name": "PA13"
+        },
+        {
+          "functions": [
+            "TIM16_BKIN",
+            "I2C1_SMBA",
+            "I2S3_SD/SPI3_MOSI",
+            "USART2_CK",
+            "I2C3_SDA",
+            "TIM17_CH1"
+          ],
+          "pin_label": "B4 PB5",
+          "position": "B4",
+          "row_id": 10,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "TSC_SYNC",
+            "I2C1_SCL",
+            "USART3_RX",
+            "TIM1_BKIN"
+          ],
+          "pin_label": "B5 PB8",
+          "position": "B5",
+          "row_id": 11,
+          "short_name": "PB8"
+        },
+        {
+          "functions": [],
+          "pin_label": "B6 VBAT",
+          "position": "B6",
+          "row_id": 12,
+          "short_name": "VBAT"
+        },
+        {
+          "functions": [],
+          "pin_label": "B7 VDD",
+          "position": "B7",
+          "row_id": 13,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [
+            "I2S2_SD/SPI2_MOSI",
+            "TIM1_CH1N",
+            "USART1_CTS",
+            "TIM1_CH4",
+            "TIM1_BKIN2"
+          ],
+          "pin_label": "C1 PA11",
+          "position": "C1",
+          "row_id": 14,
+          "short_name": "PA11"
+        },
+        {
+          "functions": [
+            "TIM17_BKIN",
+            "TSC_G4_IO2",
+            "I2C2_SDA",
+            "I2S2_EXT_SD/SPI2_MISO",
+            "TIM1_CH3",
+            "USART1_RX",
+            "COMP6_OUT",
+            "TIM2_CH4"
+          ],
+          "pin_label": "C2 PA10",
+          "position": "C2",
+          "row_id": 15,
+          "short_name": "PA10"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "I2S_CKIN",
+            "TIM1_CH2N",
+            "USART1_DE/USART1_RTS",
+            "COMP2_OUT",
+            "TIM1_ETR"
+          ],
+          "pin_label": "C3 PA12",
+          "position": "C3",
+          "row_id": 16,
+          "short_name": "PA12"
+        },
+        {
+          "functions": [
+            "TIM16_CH1N",
+            "TSC_G5_IO3",
+            "I2C1_SCL",
+            "USART1_TX"
+          ],
+          "pin_label": "C4 PB6",
+          "position": "C4",
+          "row_id": 17,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [
+            "TIM17_CH1",
+            "I2C1_SDA",
+            "IRTIM_OUT",
+            "USART3_TX",
+            "COMP2_OUT"
+          ],
+          "pin_label": "C5 PB9",
+          "position": "C5",
+          "row_id": 18,
+          "short_name": "PB9"
+        },
+        {
+          "functions": [
+            "RCC_OSC32_OUT"
+          ],
+          "pin_label": "C6 PC15 - OSC32_OUT",
+          "position": "C6",
+          "row_id": 19,
+          "short_name": "PC15 - OSC32_OUT"
+        },
+        {
+          "functions": [
+            "RCC_OSC32_IN"
+          ],
+          "pin_label": "C7 PC14 - OSC32_IN",
+          "position": "C7",
+          "row_id": 20,
+          "short_name": "PC14 - OSC32_IN"
+        },
+        {
+          "functions": [
+            "RCC_MCO",
+            "I2C3_SCL",
+            "I2C2_SMBA",
+            "I2S2_MCK",
+            "TIM1_CH1",
+            "USART1_CK"
+          ],
+          "pin_label": "D1 PA8",
+          "position": "D1",
+          "row_id": 21,
+          "short_name": "PA8"
+        },
+        {
+          "functions": [
+            "I2C3_SMBA",
+            "TSC_G4_IO1",
+            "I2C2_SCL",
+            "I2S3_MCK",
+            "TIM1_CH2",
+            "USART1_TX",
+            "TIM15_BKIN",
+            "TIM2_CH3"
+          ],
+          "pin_label": "D2 PA9",
+          "position": "D2",
+          "row_id": 22,
+          "short_name": "PA9"
+        },
+        {
+          "functions": [],
+          "pin_label": "D3 VSS",
+          "position": "D3",
+          "row_id": 23,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [
+            "TIM17_CH1N",
+            "TSC_G5_IO4",
+            "I2C1_SDA",
+            "USART1_RX"
+          ],
+          "pin_label": "D4 PB7",
+          "position": "D4",
+          "row_id": 24,
+          "short_name": "PB7"
+        },
+        {
+          "functions": [
+            "TIM1_CH1N",
+            "RTC_OUT_ALARM",
+            "RTC_OUT_CALIB",
+            "RTC_TAMP1",
+            "RTC_TS",
+            "SYS_WKUP2"
+          ],
+          "pin_label": "D5 PC13",
+          "position": "D5",
+          "row_id": 25,
+          "short_name": "PC13"
+        },
+        {
+          "functions": [
+            "I2C2_SCL",
+            "I2S2_CK/SPI2_SCK",
+            "RCC_OSC_OUT"
+          ],
+          "pin_label": "D6 PF1-OSC_OUT",
+          "position": "D6",
+          "row_id": 26,
+          "short_name": "PF1-OSC_OUT"
+        },
+        {
+          "functions": [
+            "I2C2_SDA",
+            "I2S2_WS/SPI2_NSS",
+            "TIM1_CH3N",
+            "RCC_OSC_IN"
+          ],
+          "pin_label": "D7 PF0-OSC_IN",
+          "position": "D7",
+          "row_id": 27,
+          "short_name": "PF0-OSC_IN"
+        },
+        {
+          "functions": [
+            "RTC_REFIN",
+            "TIM15_CH2",
+            "TIM15_CH1N",
+            "TIM1_CH3N",
+            "I2S2_SD/SPI2_MOSI",
+            "COMP6_INM"
+          ],
+          "pin_label": "E1 PB15",
+          "position": "E1",
+          "row_id": 28,
+          "short_name": "PB15"
+        },
+        {
+          "functions": [
+            "TSC_G6_IO2",
+            "I2C2_SMBA",
+            "I2S2_WS/SPI2_NSS",
+            "TIM1_BKIN",
+            "USART3_CK"
+          ],
+          "pin_label": "E2 PB12",
+          "position": "E2",
+          "row_id": 29,
+          "short_name": "PB12"
+        },
+        {
+          "functions": [
+            "TIM2_CH3",
+            "TSC_SYNC",
+            "USART3_TX"
+          ],
+          "pin_label": "E3 PB10",
+          "position": "E3",
+          "row_id": 30,
+          "short_name": "PB10"
+        },
+        {
+          "functions": [
+            "TIM2_CH4",
+            "TSC_G1_IO4",
+            "USART2_RX",
+            "TIM15_CH2",
+            "ADC1_IN4"
+          ],
+          "pin_label": "E4 PA3",
+          "position": "E4",
+          "row_id": 31,
+          "short_name": "PA3"
+        },
+        {
+          "functions": [
+            "TIM2_CH3",
+            "TSC_G1_IO3",
+            "USART2_TX",
+            "COMP2_OUT",
+            "TIM15_CH1",
+            "ADC1_IN3",
+            "COMP2_INM"
+          ],
+          "pin_label": "E5 PA2",
+          "position": "E5",
+          "row_id": 32,
+          "short_name": "PA2"
+        },
+        {
+          "functions": [],
+          "pin_label": "E6 VSSA/VREF-",
+          "position": "E6",
+          "row_id": 33,
+          "short_name": "VSSA/VREF-"
+        },
+        {
+          "functions": [],
+          "pin_label": "E7 NRST",
+          "position": "E7",
+          "row_id": 34,
+          "short_name": "NRST"
+        },
+        {
+          "functions": [
+            "TIM15_CH1",
+            "TSC_G6_IO4",
+            "I2S2_EXT_SD/SPI2_MISO",
+            "TIM1_CH2N",
+            "USART3_DE/USART3_RTS",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "F1 PB14",
+          "position": "F1",
+          "row_id": 35,
+          "short_name": "PB14"
+        },
+        {
+          "functions": [],
+          "pin_label": "F2 VDD",
+          "position": "F2",
+          "row_id": 36,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [
+            "TIM17_CH1",
+            "TSC_G2_IO4",
+            "TIM1_CH1N",
+            "ADC1_IN15",
+            "COMP2_INP",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "F3 PA7",
+          "position": "F3",
+          "row_id": 37,
+          "short_name": "PA7"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "TSC_G2_IO3",
+            "TIM1_BKIN",
+            "ADC1_IN10",
+            "OPAMP2_VOUT"
+          ],
+          "pin_label": "F4 PA6",
+          "position": "F4",
+          "row_id": 38,
+          "short_name": "PA6"
+        },
+        {
+          "functions": [
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_G2_IO2",
+            "OPAMP2_VINM",
+            "OPAMP2_VINM_SEC"
+          ],
+          "pin_label": "F5 PA5",
+          "position": "F5",
+          "row_id": 39,
+          "short_name": "PA5"
+        },
+        {
+          "functions": [
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_G1_IO1",
+            "USART2_CTS",
+            "ADC1_IN1",
+            "RTC_TAMP2",
+            "SYS_WKUP1"
+          ],
+          "pin_label": "F6 PA0",
+          "position": "F6",
+          "row_id": 40,
+          "short_name": "PA0"
+        },
+        {
+          "functions": [],
+          "pin_label": "F7 VSS",
+          "position": "F7",
+          "row_id": 41,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [
+            "TSC_G6_IO3",
+            "I2S2_CK/SPI2_SCK",
+            "TIM1_CH1N",
+            "USART3_CTS",
+            "ADC1_IN13"
+          ],
+          "pin_label": "G1 PB13",
+          "position": "G1",
+          "row_id": 42,
+          "short_name": "PB13"
+        },
+        {
+          "functions": [
+            "TIM2_CH4",
+            "TSC_G6_IO1",
+            "USART3_RX",
+            "ADC1_IN14",
+            "COMP6_INP"
+          ],
+          "pin_label": "G2 PB11",
+          "position": "G2",
+          "row_id": 43,
+          "short_name": "PB11"
+        },
+        {
+          "functions": [],
+          "pin_label": "G3 NPOR",
+          "position": "G3",
+          "row_id": 44,
+          "short_name": "NPOR"
+        },
+        {
+          "functions": [
+            "TSC_G3_IO3",
+            "TIM1_CH3N",
+            "COMP4_OUT",
+            "ADC1_IN12"
+          ],
+          "pin_label": "G4 PB1",
+          "position": "G4",
+          "row_id": 45,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "TSC_G3_IO2",
+            "TIM1_CH2N",
+            "ADC1_IN11",
+            "COMP4_INP",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "G5 PB0",
+          "position": "G5",
+          "row_id": 46,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "TSC_G2_IO1",
+            "I2S3_WS/SPI3_NSS",
+            "USART2_CK",
+            "ADC1_IN5",
+            "COMP2_INM",
+            "COMP4_INM",
+            "COMP6_INM",
+            "DAC_OUT1"
+          ],
+          "pin_label": "G6 PA4",
+          "position": "G6",
+          "row_id": 47,
+          "short_name": "PA4"
+        },
+        {
+          "functions": [
+            "RTC_REFIN",
+            "TIM2_CH2",
+            "TSC_G1_IO2",
+            "USART2_DE/USART2_RTS",
+            "TIM15_CH1N",
+            "ADC1_IN2"
+          ],
+          "pin_label": "G7 PA1",
+          "position": "G7",
+          "row_id": 48,
+          "short_name": "PA1"
+        }
+      ]
+    },
+    "stm32f318k8u6": {
+      "chip_id": "stm32f318k8u6",
+      "package": {
+        "name": "UFQFPN32",
+        "pins": [
+          {
+            "position": "1",
+            "row_id": 0,
+            "row_ids": [
+              0
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "2",
+            "row_id": 1,
+            "row_ids": [
+              1
+            ],
+            "short_name": "PF0-OSC_IN",
+            "type": "io"
+          },
+          {
+            "position": "3",
+            "row_id": 2,
+            "row_ids": [
+              2
+            ],
+            "short_name": "PF1-OSC_OUT",
+            "type": "io"
+          },
+          {
+            "position": "4",
+            "row_id": 3,
+            "row_ids": [
+              3
+            ],
+            "short_name": "NRST",
+            "type": "reset"
+          },
+          {
+            "position": "5",
+            "row_id": 4,
+            "row_ids": [
+              4
+            ],
+            "short_name": "VDDA/VREF+",
+            "type": "power"
+          },
+          {
+            "position": "6",
+            "row_id": 5,
+            "row_ids": [
+              5
+            ],
+            "short_name": "VSSA/VREF-",
+            "type": "power"
+          },
+          {
+            "position": "7",
+            "row_id": 6,
+            "row_ids": [
+              6
+            ],
+            "short_name": "PA0",
+            "type": "io"
+          },
+          {
+            "position": "8",
+            "row_id": 7,
+            "row_ids": [
+              7
+            ],
+            "short_name": "PA1",
+            "type": "io"
+          },
+          {
+            "position": "9",
+            "row_id": 8,
+            "row_ids": [
+              8
+            ],
+            "short_name": "PA2",
+            "type": "io"
+          },
+          {
+            "position": "10",
+            "row_id": 9,
+            "row_ids": [
+              9
+            ],
+            "short_name": "PA3",
+            "type": "io"
+          },
+          {
+            "position": "11",
+            "row_id": 10,
+            "row_ids": [
+              10
+            ],
+            "short_name": "PA4",
+            "type": "io"
+          },
+          {
+            "position": "12",
+            "row_id": 11,
+            "row_ids": [
+              11
+            ],
+            "short_name": "PA5",
+            "type": "io"
+          },
+          {
+            "position": "13",
+            "row_id": 12,
+            "row_ids": [
+              12
+            ],
+            "short_name": "PA6",
+            "type": "io"
+          },
+          {
+            "position": "14",
+            "row_id": 13,
+            "row_ids": [
+              13
+            ],
+            "short_name": "PA7",
+            "type": "io"
+          },
+          {
+            "position": "15",
+            "row_id": 14,
+            "row_ids": [
+              14
+            ],
+            "short_name": "PB0",
+            "type": "io"
+          },
+          {
+            "position": "16",
+            "row_id": 15,
+            "row_ids": [
+              15
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "17",
+            "row_id": 16,
+            "row_ids": [
+              16
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "18",
+            "row_id": 17,
+            "row_ids": [
+              17
+            ],
+            "short_name": "PA8",
+            "type": "io"
+          },
+          {
+            "position": "19",
+            "row_id": 18,
+            "row_ids": [
+              18
+            ],
+            "short_name": "PA9",
+            "type": "io"
+          },
+          {
+            "position": "20",
+            "row_id": 19,
+            "row_ids": [
+              19
+            ],
+            "short_name": "PA10",
+            "type": "io"
+          },
+          {
+            "position": "21",
+            "row_id": 20,
+            "row_ids": [
+              20
+            ],
+            "short_name": "PA11",
+            "type": "io"
+          },
+          {
+            "position": "22",
+            "row_id": 21,
+            "row_ids": [
+              21
+            ],
+            "short_name": "PA12",
+            "type": "io"
+          },
+          {
+            "position": "23",
+            "row_id": 22,
+            "row_ids": [
+              22
+            ],
+            "short_name": "PA13",
+            "type": "io"
+          },
+          {
+            "position": "24",
+            "row_id": 23,
+            "row_ids": [
+              23
+            ],
+            "short_name": "PA14",
+            "type": "io"
+          },
+          {
+            "position": "25",
+            "row_id": 24,
+            "row_ids": [
+              24
+            ],
+            "short_name": "PA15",
+            "type": "io"
+          },
+          {
+            "position": "26",
+            "row_id": 25,
+            "row_ids": [
+              25
+            ],
+            "short_name": "PB3",
+            "type": "io"
+          },
+          {
+            "position": "27",
+            "row_id": 26,
+            "row_ids": [
+              26
+            ],
+            "short_name": "PB4",
+            "type": "io"
+          },
+          {
+            "position": "28",
+            "row_id": 27,
+            "row_ids": [
+              27
+            ],
+            "short_name": "PB5",
+            "type": "io"
+          },
+          {
+            "position": "29",
+            "row_id": 28,
+            "row_ids": [
+              28
+            ],
+            "short_name": "PB6",
+            "type": "io"
+          },
+          {
+            "position": "30",
+            "row_id": 29,
+            "row_ids": [
+              29
+            ],
+            "short_name": "NPOR",
+            "type": "reset"
+          },
+          {
+            "position": "31",
+            "row_id": 30,
+            "row_ids": [
+              30
+            ],
+            "short_name": "BOOT0",
+            "type": "boot"
+          },
+          {
+            "position": "32",
+            "row_id": 31,
+            "row_ids": [
+              31
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          }
+        ]
+      },
+      "partname": "stm32f318k8u6",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "1 VDD",
+          "position": "1",
+          "row_id": 0,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [
+            "I2C2_SDA",
+            "I2S2_WS/SPI2_NSS",
+            "TIM1_CH3N",
+            "RCC_OSC_IN"
+          ],
+          "pin_label": "2 PF0-OSC_IN",
+          "position": "2",
+          "row_id": 1,
+          "short_name": "PF0-OSC_IN"
+        },
+        {
+          "functions": [
+            "I2C2_SCL",
+            "I2S2_CK/SPI2_SCK",
+            "RCC_OSC_OUT"
+          ],
+          "pin_label": "3 PF1-OSC_OUT",
+          "position": "3",
+          "row_id": 2,
+          "short_name": "PF1-OSC_OUT"
+        },
+        {
+          "functions": [],
+          "pin_label": "4 NRST",
+          "position": "4",
+          "row_id": 3,
+          "short_name": "NRST"
+        },
+        {
+          "functions": [],
+          "pin_label": "5 VDDA/VREF+",
+          "position": "5",
+          "row_id": 4,
+          "short_name": "VDDA/VREF+"
+        },
+        {
+          "functions": [],
+          "pin_label": "6 VSSA/VREF-",
+          "position": "6",
+          "row_id": 5,
+          "short_name": "VSSA/VREF-"
+        },
+        {
+          "functions": [
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_G1_IO1",
+            "USART2_CTS",
+            "ADC1_IN1",
+            "RTC_TAMP2",
+            "SYS_WKUP1"
+          ],
+          "pin_label": "7 PA0",
+          "position": "7",
+          "row_id": 6,
+          "short_name": "PA0"
+        },
+        {
+          "functions": [
+            "RTC_REFIN",
+            "TIM2_CH2",
+            "TSC_G1_IO2",
+            "USART2_DE/USART2_RTS",
+            "TIM15_CH1N",
+            "ADC1_IN2"
+          ],
+          "pin_label": "8 PA1",
+          "position": "8",
+          "row_id": 7,
+          "short_name": "PA1"
+        },
+        {
+          "functions": [
+            "TIM2_CH3",
+            "TSC_G1_IO3",
+            "USART2_TX",
+            "COMP2_OUT",
+            "TIM15_CH1",
+            "ADC1_IN3",
+            "COMP2_INM"
+          ],
+          "pin_label": "9 PA2",
+          "position": "9",
+          "row_id": 8,
+          "short_name": "PA2"
+        },
+        {
+          "functions": [
+            "TIM2_CH4",
+            "TSC_G1_IO4",
+            "USART2_RX",
+            "TIM15_CH2",
+            "ADC1_IN4"
+          ],
+          "pin_label": "10 PA3",
+          "position": "10",
+          "row_id": 9,
+          "short_name": "PA3"
+        },
+        {
+          "functions": [
+            "TSC_G2_IO1",
+            "I2S3_WS/SPI3_NSS",
+            "USART2_CK",
+            "ADC1_IN5",
+            "COMP2_INM",
+            "COMP4_INM",
+            "DAC_OUT1"
+          ],
+          "pin_label": "11 PA4",
+          "position": "11",
+          "row_id": 10,
+          "short_name": "PA4"
+        },
+        {
+          "functions": [
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_G2_IO2",
+            "OPAMP2_VINM",
+            "OPAMP2_VINM_SEC"
+          ],
+          "pin_label": "12 PA5",
+          "position": "12",
+          "row_id": 11,
+          "short_name": "PA5"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "TSC_G2_IO3",
+            "TIM1_BKIN",
+            "ADC1_IN10",
+            "OPAMP2_VOUT"
+          ],
+          "pin_label": "13 PA6",
+          "position": "13",
+          "row_id": 12,
+          "short_name": "PA6"
+        },
+        {
+          "functions": [
+            "TIM17_CH1",
+            "TSC_G2_IO4",
+            "TIM1_CH1N",
+            "ADC1_IN15",
+            "COMP2_INP",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "14 PA7",
+          "position": "14",
+          "row_id": 13,
+          "short_name": "PA7"
+        },
+        {
+          "functions": [
+            "TSC_G3_IO2",
+            "TIM1_CH2N",
+            "ADC1_IN11",
+            "COMP4_INP",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "15 PB0",
+          "position": "15",
+          "row_id": 14,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [],
+          "pin_label": "16 VSS",
+          "position": "16",
+          "row_id": 15,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "17 VDD",
+          "position": "17",
+          "row_id": 16,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [
+            "RCC_MCO",
+            "I2C3_SCL",
+            "I2C2_SMBA",
+            "I2S2_MCK",
+            "TIM1_CH1",
+            "USART1_CK"
+          ],
+          "pin_label": "18 PA8",
+          "position": "18",
+          "row_id": 17,
+          "short_name": "PA8"
+        },
+        {
+          "functions": [
+            "I2C3_SMBA",
+            "TSC_G4_IO1",
+            "I2C2_SCL",
+            "I2S3_MCK",
+            "TIM1_CH2",
+            "USART1_TX",
+            "TIM15_BKIN",
+            "TIM2_CH3"
+          ],
+          "pin_label": "19 PA9",
+          "position": "19",
+          "row_id": 18,
+          "short_name": "PA9"
+        },
+        {
+          "functions": [
+            "TIM17_BKIN",
+            "TSC_G4_IO2",
+            "I2C2_SDA",
+            "I2S2_EXT_SD/SPI2_MISO",
+            "TIM1_CH3",
+            "USART1_RX",
+            "TIM2_CH4"
+          ],
+          "pin_label": "20 PA10",
+          "position": "20",
+          "row_id": 19,
+          "short_name": "PA10"
+        },
+        {
+          "functions": [
+            "I2S2_SD/SPI2_MOSI",
+            "TIM1_CH1N",
+            "USART1_CTS",
+            "TIM1_CH4",
+            "TIM1_BKIN2"
+          ],
+          "pin_label": "21 PA11",
+          "position": "21",
+          "row_id": 20,
+          "short_name": "PA11"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "I2S_CKIN",
+            "TIM1_CH2N",
+            "USART1_DE/USART1_RTS",
+            "COMP2_OUT",
+            "TIM1_ETR"
+          ],
+          "pin_label": "22 PA12",
+          "position": "22",
+          "row_id": 21,
+          "short_name": "PA12"
+        },
+        {
+          "functions": [
+            "SYS_JTMS/SYS_SWDIO",
+            "TIM16_CH1N",
+            "TSC_G4_IO3",
+            "IRTIM_OUT"
+          ],
+          "pin_label": "23 PA13",
+          "position": "23",
+          "row_id": 22,
+          "short_name": "PA13"
+        },
+        {
+          "functions": [
+            "SYS_JTCK/SYS_SWCLK",
+            "TSC_G4_IO4",
+            "I2C1_SDA",
+            "TIM1_BKIN",
+            "USART2_TX"
+          ],
+          "pin_label": "24 PA14",
+          "position": "24",
+          "row_id": 23,
+          "short_name": "PA14"
+        },
+        {
+          "functions": [
+            "SYS_JTDI",
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_SYNC",
+            "I2C1_SCL",
+            "I2S3_WS/SPI3_NSS",
+            "USART2_RX",
+            "TIM1_BKIN"
+          ],
+          "pin_label": "25 PA15",
+          "position": "25",
+          "row_id": 24,
+          "short_name": "PA15"
+        },
+        {
+          "functions": [
+            "SYS_JTDO/SYS_TRACESWO",
+            "TIM2_CH2",
+            "TSC_G5_IO1",
+            "I2S3_CK/SPI3_SCK",
+            "USART2_TX"
+          ],
+          "pin_label": "26 PB3",
+          "position": "26",
+          "row_id": 25,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "SYS_NJTRST",
+            "TIM16_CH1",
+            "TSC_G5_IO2",
+            "I2S3_EXT_SD/SPI3_MISO",
+            "USART2_RX",
+            "TIM17_BKIN"
+          ],
+          "pin_label": "27 PB4",
+          "position": "27",
+          "row_id": 26,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "TIM16_BKIN",
+            "I2C1_SMBA",
+            "I2S3_SD/SPI3_MOSI",
+            "USART2_CK",
+            "I2C3_SDA",
+            "TIM17_CH1"
+          ],
+          "pin_label": "28 PB5",
+          "position": "28",
+          "row_id": 27,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "TIM16_CH1N",
+            "TSC_G5_IO3",
+            "I2C1_SCL",
+            "USART1_TX"
+          ],
+          "pin_label": "29 PB6",
+          "position": "29",
+          "row_id": 28,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [],
+          "pin_label": "30 NPOR",
+          "position": "30",
+          "row_id": 29,
+          "short_name": "NPOR"
+        },
+        {
+          "functions": [],
+          "pin_label": "31 BOOT0",
+          "position": "31",
+          "row_id": 30,
+          "short_name": "BOOT0"
+        },
+        {
+          "functions": [],
+          "pin_label": "32 VSS",
+          "position": "32",
+          "row_id": 31,
+          "short_name": "VSS"
+        }
+      ]
+    },
+    "stm32f318k8u7": {
+      "chip_id": "stm32f318k8u7",
+      "package": {
+        "name": "UFQFPN32",
+        "pins": [
+          {
+            "position": "1",
+            "row_id": 0,
+            "row_ids": [
+              0
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "2",
+            "row_id": 1,
+            "row_ids": [
+              1
+            ],
+            "short_name": "PF0-OSC_IN",
+            "type": "io"
+          },
+          {
+            "position": "3",
+            "row_id": 2,
+            "row_ids": [
+              2
+            ],
+            "short_name": "PF1-OSC_OUT",
+            "type": "io"
+          },
+          {
+            "position": "4",
+            "row_id": 3,
+            "row_ids": [
+              3
+            ],
+            "short_name": "NRST",
+            "type": "reset"
+          },
+          {
+            "position": "5",
+            "row_id": 4,
+            "row_ids": [
+              4
+            ],
+            "short_name": "VDDA/VREF+",
+            "type": "power"
+          },
+          {
+            "position": "6",
+            "row_id": 5,
+            "row_ids": [
+              5
+            ],
+            "short_name": "VSSA/VREF-",
+            "type": "power"
+          },
+          {
+            "position": "7",
+            "row_id": 6,
+            "row_ids": [
+              6
+            ],
+            "short_name": "PA0",
+            "type": "io"
+          },
+          {
+            "position": "8",
+            "row_id": 7,
+            "row_ids": [
+              7
+            ],
+            "short_name": "PA1",
+            "type": "io"
+          },
+          {
+            "position": "9",
+            "row_id": 8,
+            "row_ids": [
+              8
+            ],
+            "short_name": "PA2",
+            "type": "io"
+          },
+          {
+            "position": "10",
+            "row_id": 9,
+            "row_ids": [
+              9
+            ],
+            "short_name": "PA3",
+            "type": "io"
+          },
+          {
+            "position": "11",
+            "row_id": 10,
+            "row_ids": [
+              10
+            ],
+            "short_name": "PA4",
+            "type": "io"
+          },
+          {
+            "position": "12",
+            "row_id": 11,
+            "row_ids": [
+              11
+            ],
+            "short_name": "PA5",
+            "type": "io"
+          },
+          {
+            "position": "13",
+            "row_id": 12,
+            "row_ids": [
+              12
+            ],
+            "short_name": "PA6",
+            "type": "io"
+          },
+          {
+            "position": "14",
+            "row_id": 13,
+            "row_ids": [
+              13
+            ],
+            "short_name": "PA7",
+            "type": "io"
+          },
+          {
+            "position": "15",
+            "row_id": 14,
+            "row_ids": [
+              14
+            ],
+            "short_name": "PB0",
+            "type": "io"
+          },
+          {
+            "position": "16",
+            "row_id": 15,
+            "row_ids": [
+              15
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          },
+          {
+            "position": "17",
+            "row_id": 16,
+            "row_ids": [
+              16
+            ],
+            "short_name": "VDD",
+            "type": "power"
+          },
+          {
+            "position": "18",
+            "row_id": 17,
+            "row_ids": [
+              17
+            ],
+            "short_name": "PA8",
+            "type": "io"
+          },
+          {
+            "position": "19",
+            "row_id": 18,
+            "row_ids": [
+              18
+            ],
+            "short_name": "PA9",
+            "type": "io"
+          },
+          {
+            "position": "20",
+            "row_id": 19,
+            "row_ids": [
+              19
+            ],
+            "short_name": "PA10",
+            "type": "io"
+          },
+          {
+            "position": "21",
+            "row_id": 20,
+            "row_ids": [
+              20
+            ],
+            "short_name": "PA11",
+            "type": "io"
+          },
+          {
+            "position": "22",
+            "row_id": 21,
+            "row_ids": [
+              21
+            ],
+            "short_name": "PA12",
+            "type": "io"
+          },
+          {
+            "position": "23",
+            "row_id": 22,
+            "row_ids": [
+              22
+            ],
+            "short_name": "PA13",
+            "type": "io"
+          },
+          {
+            "position": "24",
+            "row_id": 23,
+            "row_ids": [
+              23
+            ],
+            "short_name": "PA14",
+            "type": "io"
+          },
+          {
+            "position": "25",
+            "row_id": 24,
+            "row_ids": [
+              24
+            ],
+            "short_name": "PA15",
+            "type": "io"
+          },
+          {
+            "position": "26",
+            "row_id": 25,
+            "row_ids": [
+              25
+            ],
+            "short_name": "PB3",
+            "type": "io"
+          },
+          {
+            "position": "27",
+            "row_id": 26,
+            "row_ids": [
+              26
+            ],
+            "short_name": "PB4",
+            "type": "io"
+          },
+          {
+            "position": "28",
+            "row_id": 27,
+            "row_ids": [
+              27
+            ],
+            "short_name": "PB5",
+            "type": "io"
+          },
+          {
+            "position": "29",
+            "row_id": 28,
+            "row_ids": [
+              28
+            ],
+            "short_name": "PB6",
+            "type": "io"
+          },
+          {
+            "position": "30",
+            "row_id": 29,
+            "row_ids": [
+              29
+            ],
+            "short_name": "NPOR",
+            "type": "reset"
+          },
+          {
+            "position": "31",
+            "row_id": 30,
+            "row_ids": [
+              30
+            ],
+            "short_name": "BOOT0",
+            "type": "boot"
+          },
+          {
+            "position": "32",
+            "row_id": 31,
+            "row_ids": [
+              31
+            ],
+            "short_name": "VSS",
+            "type": "power"
+          }
+        ]
+      },
+      "partname": "stm32f318k8u7",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "1 VDD",
+          "position": "1",
+          "row_id": 0,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [
+            "I2C2_SDA",
+            "I2S2_WS/SPI2_NSS",
+            "TIM1_CH3N",
+            "RCC_OSC_IN"
+          ],
+          "pin_label": "2 PF0-OSC_IN",
+          "position": "2",
+          "row_id": 1,
+          "short_name": "PF0-OSC_IN"
+        },
+        {
+          "functions": [
+            "I2C2_SCL",
+            "I2S2_CK/SPI2_SCK",
+            "RCC_OSC_OUT"
+          ],
+          "pin_label": "3 PF1-OSC_OUT",
+          "position": "3",
+          "row_id": 2,
+          "short_name": "PF1-OSC_OUT"
+        },
+        {
+          "functions": [],
+          "pin_label": "4 NRST",
+          "position": "4",
+          "row_id": 3,
+          "short_name": "NRST"
+        },
+        {
+          "functions": [],
+          "pin_label": "5 VDDA/VREF+",
+          "position": "5",
+          "row_id": 4,
+          "short_name": "VDDA/VREF+"
+        },
+        {
+          "functions": [],
+          "pin_label": "6 VSSA/VREF-",
+          "position": "6",
+          "row_id": 5,
+          "short_name": "VSSA/VREF-"
+        },
+        {
+          "functions": [
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_G1_IO1",
+            "USART2_CTS",
+            "ADC1_IN1",
+            "RTC_TAMP2",
+            "SYS_WKUP1"
+          ],
+          "pin_label": "7 PA0",
+          "position": "7",
+          "row_id": 6,
+          "short_name": "PA0"
+        },
+        {
+          "functions": [
+            "RTC_REFIN",
+            "TIM2_CH2",
+            "TSC_G1_IO2",
+            "USART2_DE/USART2_RTS",
+            "TIM15_CH1N",
+            "ADC1_IN2"
+          ],
+          "pin_label": "8 PA1",
+          "position": "8",
+          "row_id": 7,
+          "short_name": "PA1"
+        },
+        {
+          "functions": [
+            "TIM2_CH3",
+            "TSC_G1_IO3",
+            "USART2_TX",
+            "COMP2_OUT",
+            "TIM15_CH1",
+            "ADC1_IN3",
+            "COMP2_INM"
+          ],
+          "pin_label": "9 PA2",
+          "position": "9",
+          "row_id": 8,
+          "short_name": "PA2"
+        },
+        {
+          "functions": [
+            "TIM2_CH4",
+            "TSC_G1_IO4",
+            "USART2_RX",
+            "TIM15_CH2",
+            "ADC1_IN4"
+          ],
+          "pin_label": "10 PA3",
+          "position": "10",
+          "row_id": 9,
+          "short_name": "PA3"
+        },
+        {
+          "functions": [
+            "TSC_G2_IO1",
+            "I2S3_WS/SPI3_NSS",
+            "USART2_CK",
+            "ADC1_IN5",
+            "COMP2_INM",
+            "COMP4_INM",
+            "DAC_OUT1"
+          ],
+          "pin_label": "11 PA4",
+          "position": "11",
+          "row_id": 10,
+          "short_name": "PA4"
+        },
+        {
+          "functions": [
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_G2_IO2",
+            "OPAMP2_VINM",
+            "OPAMP2_VINM_SEC"
+          ],
+          "pin_label": "12 PA5",
+          "position": "12",
+          "row_id": 11,
+          "short_name": "PA5"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "TSC_G2_IO3",
+            "TIM1_BKIN",
+            "ADC1_IN10",
+            "OPAMP2_VOUT"
+          ],
+          "pin_label": "13 PA6",
+          "position": "13",
+          "row_id": 12,
+          "short_name": "PA6"
+        },
+        {
+          "functions": [
+            "TIM17_CH1",
+            "TSC_G2_IO4",
+            "TIM1_CH1N",
+            "ADC1_IN15",
+            "COMP2_INP",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "14 PA7",
+          "position": "14",
+          "row_id": 13,
+          "short_name": "PA7"
+        },
+        {
+          "functions": [
+            "TSC_G3_IO2",
+            "TIM1_CH2N",
+            "ADC1_IN11",
+            "COMP4_INP",
+            "OPAMP2_VINP",
+            "OPAMP2_VINP_SEC"
+          ],
+          "pin_label": "15 PB0",
+          "position": "15",
+          "row_id": 14,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [],
+          "pin_label": "16 VSS",
+          "position": "16",
+          "row_id": 15,
+          "short_name": "VSS"
+        },
+        {
+          "functions": [],
+          "pin_label": "17 VDD",
+          "position": "17",
+          "row_id": 16,
+          "short_name": "VDD"
+        },
+        {
+          "functions": [
+            "RCC_MCO",
+            "I2C3_SCL",
+            "I2C2_SMBA",
+            "I2S2_MCK",
+            "TIM1_CH1",
+            "USART1_CK"
+          ],
+          "pin_label": "18 PA8",
+          "position": "18",
+          "row_id": 17,
+          "short_name": "PA8"
+        },
+        {
+          "functions": [
+            "I2C3_SMBA",
+            "TSC_G4_IO1",
+            "I2C2_SCL",
+            "I2S3_MCK",
+            "TIM1_CH2",
+            "USART1_TX",
+            "TIM15_BKIN",
+            "TIM2_CH3"
+          ],
+          "pin_label": "19 PA9",
+          "position": "19",
+          "row_id": 18,
+          "short_name": "PA9"
+        },
+        {
+          "functions": [
+            "TIM17_BKIN",
+            "TSC_G4_IO2",
+            "I2C2_SDA",
+            "I2S2_EXT_SD/SPI2_MISO",
+            "TIM1_CH3",
+            "USART1_RX",
+            "TIM2_CH4"
+          ],
+          "pin_label": "20 PA10",
+          "position": "20",
+          "row_id": 19,
+          "short_name": "PA10"
+        },
+        {
+          "functions": [
+            "I2S2_SD/SPI2_MOSI",
+            "TIM1_CH1N",
+            "USART1_CTS",
+            "TIM1_CH4",
+            "TIM1_BKIN2"
+          ],
+          "pin_label": "21 PA11",
+          "position": "21",
+          "row_id": 20,
+          "short_name": "PA11"
+        },
+        {
+          "functions": [
+            "TIM16_CH1",
+            "I2S_CKIN",
+            "TIM1_CH2N",
+            "USART1_DE/USART1_RTS",
+            "COMP2_OUT",
+            "TIM1_ETR"
+          ],
+          "pin_label": "22 PA12",
+          "position": "22",
+          "row_id": 21,
+          "short_name": "PA12"
+        },
+        {
+          "functions": [
+            "SYS_JTMS/SYS_SWDIO",
+            "TIM16_CH1N",
+            "TSC_G4_IO3",
+            "IRTIM_OUT"
+          ],
+          "pin_label": "23 PA13",
+          "position": "23",
+          "row_id": 22,
+          "short_name": "PA13"
+        },
+        {
+          "functions": [
+            "SYS_JTCK/SYS_SWCLK",
+            "TSC_G4_IO4",
+            "I2C1_SDA",
+            "TIM1_BKIN",
+            "USART2_TX"
+          ],
+          "pin_label": "24 PA14",
+          "position": "24",
+          "row_id": 23,
+          "short_name": "PA14"
+        },
+        {
+          "functions": [
+            "SYS_JTDI",
+            "TIM2_CH1/TIM2_ETR",
+            "TSC_SYNC",
+            "I2C1_SCL",
+            "I2S3_WS/SPI3_NSS",
+            "USART2_RX",
+            "TIM1_BKIN"
+          ],
+          "pin_label": "25 PA15",
+          "position": "25",
+          "row_id": 24,
+          "short_name": "PA15"
+        },
+        {
+          "functions": [
+            "SYS_JTDO/SYS_TRACESWO",
+            "TIM2_CH2",
+            "TSC_G5_IO1",
+            "I2S3_CK/SPI3_SCK",
+            "USART2_TX"
+          ],
+          "pin_label": "26 PB3",
+          "position": "26",
+          "row_id": 25,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "SYS_NJTRST",
+            "TIM16_CH1",
+            "TSC_G5_IO2",
+            "I2S3_EXT_SD/SPI3_MISO",
+            "USART2_RX",
+            "TIM17_BKIN"
+          ],
+          "pin_label": "27 PB4",
+          "position": "27",
+          "row_id": 26,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "TIM16_BKIN",
+            "I2C1_SMBA",
+            "I2S3_SD/SPI3_MOSI",
+            "USART2_CK",
+            "I2C3_SDA",
+            "TIM17_CH1"
+          ],
+          "pin_label": "28 PB5",
+          "position": "28",
+          "row_id": 27,
+          "short_name": "PB5"
+        },
+        {
+          "functions": [
+            "TIM16_CH1N",
+            "TSC_G5_IO3",
+            "I2C1_SCL",
+            "USART1_TX"
+          ],
+          "pin_label": "29 PB6",
+          "position": "29",
+          "row_id": 28,
+          "short_name": "PB6"
+        },
+        {
+          "functions": [],
+          "pin_label": "30 NPOR",
+          "position": "30",
+          "row_id": 29,
+          "short_name": "NPOR"
+        },
+        {
+          "functions": [],
+          "pin_label": "31 BOOT0",
+          "position": "31",
+          "row_id": 30,
+          "short_name": "BOOT0"
+        },
+        {
+          "functions": [],
+          "pin_label": "32 VSS",
+          "position": "32",
+          "row_id": 31,
+          "short_name": "VSS"
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-05-16 18:52:43 UTC",
+  "source_xml": "stm32/stm32f3-18.xml"
+}

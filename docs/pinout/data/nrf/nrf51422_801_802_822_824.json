@@ -1,0 +1,2094 @@
+{
+  "devices": {
+    "nrf51422-xxaa": {
+      "chip_id": "nrf51422-xxaa",
+      "package": null,
+      "partname": "nrf51422-xxaa",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "00 P00",
+          "position": "00",
+          "row_id": 0,
+          "short_name": "P00"
+        },
+        {
+          "functions": [],
+          "pin_label": "01 P01",
+          "position": "01",
+          "row_id": 1,
+          "short_name": "P01"
+        },
+        {
+          "functions": [],
+          "pin_label": "02 P02",
+          "position": "02",
+          "row_id": 2,
+          "short_name": "P02"
+        },
+        {
+          "functions": [],
+          "pin_label": "03 P03",
+          "position": "03",
+          "row_id": 3,
+          "short_name": "P03"
+        },
+        {
+          "functions": [],
+          "pin_label": "04 P04",
+          "position": "04",
+          "row_id": 4,
+          "short_name": "P04"
+        },
+        {
+          "functions": [],
+          "pin_label": "05 P05",
+          "position": "05",
+          "row_id": 5,
+          "short_name": "P05"
+        },
+        {
+          "functions": [],
+          "pin_label": "06 P06",
+          "position": "06",
+          "row_id": 6,
+          "short_name": "P06"
+        },
+        {
+          "functions": [],
+          "pin_label": "07 P07",
+          "position": "07",
+          "row_id": 7,
+          "short_name": "P07"
+        },
+        {
+          "functions": [],
+          "pin_label": "08 P08",
+          "position": "08",
+          "row_id": 8,
+          "short_name": "P08"
+        },
+        {
+          "functions": [],
+          "pin_label": "09 P09",
+          "position": "09",
+          "row_id": 9,
+          "short_name": "P09"
+        },
+        {
+          "functions": [],
+          "pin_label": "010 P010",
+          "position": "010",
+          "row_id": 10,
+          "short_name": "P010"
+        },
+        {
+          "functions": [],
+          "pin_label": "011 P011",
+          "position": "011",
+          "row_id": 11,
+          "short_name": "P011"
+        },
+        {
+          "functions": [],
+          "pin_label": "012 P012",
+          "position": "012",
+          "row_id": 12,
+          "short_name": "P012"
+        },
+        {
+          "functions": [],
+          "pin_label": "013 P013",
+          "position": "013",
+          "row_id": 13,
+          "short_name": "P013"
+        },
+        {
+          "functions": [],
+          "pin_label": "014 P014",
+          "position": "014",
+          "row_id": 14,
+          "short_name": "P014"
+        },
+        {
+          "functions": [],
+          "pin_label": "015 P015",
+          "position": "015",
+          "row_id": 15,
+          "short_name": "P015"
+        },
+        {
+          "functions": [],
+          "pin_label": "016 P016",
+          "position": "016",
+          "row_id": 16,
+          "short_name": "P016"
+        },
+        {
+          "functions": [],
+          "pin_label": "017 P017",
+          "position": "017",
+          "row_id": 17,
+          "short_name": "P017"
+        },
+        {
+          "functions": [],
+          "pin_label": "018 P018",
+          "position": "018",
+          "row_id": 18,
+          "short_name": "P018"
+        },
+        {
+          "functions": [],
+          "pin_label": "019 P019",
+          "position": "019",
+          "row_id": 19,
+          "short_name": "P019"
+        },
+        {
+          "functions": [],
+          "pin_label": "020 P020",
+          "position": "020",
+          "row_id": 20,
+          "short_name": "P020"
+        },
+        {
+          "functions": [],
+          "pin_label": "021 P021",
+          "position": "021",
+          "row_id": 21,
+          "short_name": "P021"
+        },
+        {
+          "functions": [],
+          "pin_label": "022 P022",
+          "position": "022",
+          "row_id": 22,
+          "short_name": "P022"
+        },
+        {
+          "functions": [],
+          "pin_label": "023 P023",
+          "position": "023",
+          "row_id": 23,
+          "short_name": "P023"
+        },
+        {
+          "functions": [],
+          "pin_label": "024 P024",
+          "position": "024",
+          "row_id": 24,
+          "short_name": "P024"
+        },
+        {
+          "functions": [],
+          "pin_label": "025 P025",
+          "position": "025",
+          "row_id": 25,
+          "short_name": "P025"
+        },
+        {
+          "functions": [],
+          "pin_label": "026 P026",
+          "position": "026",
+          "row_id": 26,
+          "short_name": "P026"
+        },
+        {
+          "functions": [],
+          "pin_label": "027 P027",
+          "position": "027",
+          "row_id": 27,
+          "short_name": "P027"
+        },
+        {
+          "functions": [],
+          "pin_label": "028 P028",
+          "position": "028",
+          "row_id": 28,
+          "short_name": "P028"
+        },
+        {
+          "functions": [],
+          "pin_label": "029 P029",
+          "position": "029",
+          "row_id": 29,
+          "short_name": "P029"
+        },
+        {
+          "functions": [],
+          "pin_label": "030 P030",
+          "position": "030",
+          "row_id": 30,
+          "short_name": "P030"
+        },
+        {
+          "functions": [],
+          "pin_label": "031 P031",
+          "position": "031",
+          "row_id": 31,
+          "short_name": "P031"
+        }
+      ]
+    },
+    "nrf51422-xxab": {
+      "chip_id": "nrf51422-xxab",
+      "package": null,
+      "partname": "nrf51422-xxab",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "00 P00",
+          "position": "00",
+          "row_id": 0,
+          "short_name": "P00"
+        },
+        {
+          "functions": [],
+          "pin_label": "01 P01",
+          "position": "01",
+          "row_id": 1,
+          "short_name": "P01"
+        },
+        {
+          "functions": [],
+          "pin_label": "02 P02",
+          "position": "02",
+          "row_id": 2,
+          "short_name": "P02"
+        },
+        {
+          "functions": [],
+          "pin_label": "03 P03",
+          "position": "03",
+          "row_id": 3,
+          "short_name": "P03"
+        },
+        {
+          "functions": [],
+          "pin_label": "04 P04",
+          "position": "04",
+          "row_id": 4,
+          "short_name": "P04"
+        },
+        {
+          "functions": [],
+          "pin_label": "05 P05",
+          "position": "05",
+          "row_id": 5,
+          "short_name": "P05"
+        },
+        {
+          "functions": [],
+          "pin_label": "06 P06",
+          "position": "06",
+          "row_id": 6,
+          "short_name": "P06"
+        },
+        {
+          "functions": [],
+          "pin_label": "07 P07",
+          "position": "07",
+          "row_id": 7,
+          "short_name": "P07"
+        },
+        {
+          "functions": [],
+          "pin_label": "08 P08",
+          "position": "08",
+          "row_id": 8,
+          "short_name": "P08"
+        },
+        {
+          "functions": [],
+          "pin_label": "09 P09",
+          "position": "09",
+          "row_id": 9,
+          "short_name": "P09"
+        },
+        {
+          "functions": [],
+          "pin_label": "010 P010",
+          "position": "010",
+          "row_id": 10,
+          "short_name": "P010"
+        },
+        {
+          "functions": [],
+          "pin_label": "011 P011",
+          "position": "011",
+          "row_id": 11,
+          "short_name": "P011"
+        },
+        {
+          "functions": [],
+          "pin_label": "012 P012",
+          "position": "012",
+          "row_id": 12,
+          "short_name": "P012"
+        },
+        {
+          "functions": [],
+          "pin_label": "013 P013",
+          "position": "013",
+          "row_id": 13,
+          "short_name": "P013"
+        },
+        {
+          "functions": [],
+          "pin_label": "014 P014",
+          "position": "014",
+          "row_id": 14,
+          "short_name": "P014"
+        },
+        {
+          "functions": [],
+          "pin_label": "015 P015",
+          "position": "015",
+          "row_id": 15,
+          "short_name": "P015"
+        },
+        {
+          "functions": [],
+          "pin_label": "016 P016",
+          "position": "016",
+          "row_id": 16,
+          "short_name": "P016"
+        },
+        {
+          "functions": [],
+          "pin_label": "017 P017",
+          "position": "017",
+          "row_id": 17,
+          "short_name": "P017"
+        },
+        {
+          "functions": [],
+          "pin_label": "018 P018",
+          "position": "018",
+          "row_id": 18,
+          "short_name": "P018"
+        },
+        {
+          "functions": [],
+          "pin_label": "019 P019",
+          "position": "019",
+          "row_id": 19,
+          "short_name": "P019"
+        },
+        {
+          "functions": [],
+          "pin_label": "020 P020",
+          "position": "020",
+          "row_id": 20,
+          "short_name": "P020"
+        },
+        {
+          "functions": [],
+          "pin_label": "021 P021",
+          "position": "021",
+          "row_id": 21,
+          "short_name": "P021"
+        },
+        {
+          "functions": [],
+          "pin_label": "022 P022",
+          "position": "022",
+          "row_id": 22,
+          "short_name": "P022"
+        },
+        {
+          "functions": [],
+          "pin_label": "023 P023",
+          "position": "023",
+          "row_id": 23,
+          "short_name": "P023"
+        },
+        {
+          "functions": [],
+          "pin_label": "024 P024",
+          "position": "024",
+          "row_id": 24,
+          "short_name": "P024"
+        },
+        {
+          "functions": [],
+          "pin_label": "025 P025",
+          "position": "025",
+          "row_id": 25,
+          "short_name": "P025"
+        },
+        {
+          "functions": [],
+          "pin_label": "026 P026",
+          "position": "026",
+          "row_id": 26,
+          "short_name": "P026"
+        },
+        {
+          "functions": [],
+          "pin_label": "027 P027",
+          "position": "027",
+          "row_id": 27,
+          "short_name": "P027"
+        },
+        {
+          "functions": [],
+          "pin_label": "028 P028",
+          "position": "028",
+          "row_id": 28,
+          "short_name": "P028"
+        },
+        {
+          "functions": [],
+          "pin_label": "029 P029",
+          "position": "029",
+          "row_id": 29,
+          "short_name": "P029"
+        },
+        {
+          "functions": [],
+          "pin_label": "030 P030",
+          "position": "030",
+          "row_id": 30,
+          "short_name": "P030"
+        },
+        {
+          "functions": [],
+          "pin_label": "031 P031",
+          "position": "031",
+          "row_id": 31,
+          "short_name": "P031"
+        }
+      ]
+    },
+    "nrf51422-xxac": {
+      "chip_id": "nrf51422-xxac",
+      "package": null,
+      "partname": "nrf51422-xxac",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "00 P00",
+          "position": "00",
+          "row_id": 0,
+          "short_name": "P00"
+        },
+        {
+          "functions": [],
+          "pin_label": "01 P01",
+          "position": "01",
+          "row_id": 1,
+          "short_name": "P01"
+        },
+        {
+          "functions": [],
+          "pin_label": "02 P02",
+          "position": "02",
+          "row_id": 2,
+          "short_name": "P02"
+        },
+        {
+          "functions": [],
+          "pin_label": "03 P03",
+          "position": "03",
+          "row_id": 3,
+          "short_name": "P03"
+        },
+        {
+          "functions": [],
+          "pin_label": "04 P04",
+          "position": "04",
+          "row_id": 4,
+          "short_name": "P04"
+        },
+        {
+          "functions": [],
+          "pin_label": "05 P05",
+          "position": "05",
+          "row_id": 5,
+          "short_name": "P05"
+        },
+        {
+          "functions": [],
+          "pin_label": "06 P06",
+          "position": "06",
+          "row_id": 6,
+          "short_name": "P06"
+        },
+        {
+          "functions": [],
+          "pin_label": "07 P07",
+          "position": "07",
+          "row_id": 7,
+          "short_name": "P07"
+        },
+        {
+          "functions": [],
+          "pin_label": "08 P08",
+          "position": "08",
+          "row_id": 8,
+          "short_name": "P08"
+        },
+        {
+          "functions": [],
+          "pin_label": "09 P09",
+          "position": "09",
+          "row_id": 9,
+          "short_name": "P09"
+        },
+        {
+          "functions": [],
+          "pin_label": "010 P010",
+          "position": "010",
+          "row_id": 10,
+          "short_name": "P010"
+        },
+        {
+          "functions": [],
+          "pin_label": "011 P011",
+          "position": "011",
+          "row_id": 11,
+          "short_name": "P011"
+        },
+        {
+          "functions": [],
+          "pin_label": "012 P012",
+          "position": "012",
+          "row_id": 12,
+          "short_name": "P012"
+        },
+        {
+          "functions": [],
+          "pin_label": "013 P013",
+          "position": "013",
+          "row_id": 13,
+          "short_name": "P013"
+        },
+        {
+          "functions": [],
+          "pin_label": "014 P014",
+          "position": "014",
+          "row_id": 14,
+          "short_name": "P014"
+        },
+        {
+          "functions": [],
+          "pin_label": "015 P015",
+          "position": "015",
+          "row_id": 15,
+          "short_name": "P015"
+        },
+        {
+          "functions": [],
+          "pin_label": "016 P016",
+          "position": "016",
+          "row_id": 16,
+          "short_name": "P016"
+        },
+        {
+          "functions": [],
+          "pin_label": "017 P017",
+          "position": "017",
+          "row_id": 17,
+          "short_name": "P017"
+        },
+        {
+          "functions": [],
+          "pin_label": "018 P018",
+          "position": "018",
+          "row_id": 18,
+          "short_name": "P018"
+        },
+        {
+          "functions": [],
+          "pin_label": "019 P019",
+          "position": "019",
+          "row_id": 19,
+          "short_name": "P019"
+        },
+        {
+          "functions": [],
+          "pin_label": "020 P020",
+          "position": "020",
+          "row_id": 20,
+          "short_name": "P020"
+        },
+        {
+          "functions": [],
+          "pin_label": "021 P021",
+          "position": "021",
+          "row_id": 21,
+          "short_name": "P021"
+        },
+        {
+          "functions": [],
+          "pin_label": "022 P022",
+          "position": "022",
+          "row_id": 22,
+          "short_name": "P022"
+        },
+        {
+          "functions": [],
+          "pin_label": "023 P023",
+          "position": "023",
+          "row_id": 23,
+          "short_name": "P023"
+        },
+        {
+          "functions": [],
+          "pin_label": "024 P024",
+          "position": "024",
+          "row_id": 24,
+          "short_name": "P024"
+        },
+        {
+          "functions": [],
+          "pin_label": "025 P025",
+          "position": "025",
+          "row_id": 25,
+          "short_name": "P025"
+        },
+        {
+          "functions": [],
+          "pin_label": "026 P026",
+          "position": "026",
+          "row_id": 26,
+          "short_name": "P026"
+        },
+        {
+          "functions": [],
+          "pin_label": "027 P027",
+          "position": "027",
+          "row_id": 27,
+          "short_name": "P027"
+        },
+        {
+          "functions": [],
+          "pin_label": "028 P028",
+          "position": "028",
+          "row_id": 28,
+          "short_name": "P028"
+        },
+        {
+          "functions": [],
+          "pin_label": "029 P029",
+          "position": "029",
+          "row_id": 29,
+          "short_name": "P029"
+        },
+        {
+          "functions": [],
+          "pin_label": "030 P030",
+          "position": "030",
+          "row_id": 30,
+          "short_name": "P030"
+        },
+        {
+          "functions": [],
+          "pin_label": "031 P031",
+          "position": "031",
+          "row_id": 31,
+          "short_name": "P031"
+        }
+      ]
+    },
+    "nrf51801-xxab": {
+      "chip_id": "nrf51801-xxab",
+      "package": null,
+      "partname": "nrf51801-xxab",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "00 P00",
+          "position": "00",
+          "row_id": 0,
+          "short_name": "P00"
+        },
+        {
+          "functions": [],
+          "pin_label": "01 P01",
+          "position": "01",
+          "row_id": 1,
+          "short_name": "P01"
+        },
+        {
+          "functions": [],
+          "pin_label": "02 P02",
+          "position": "02",
+          "row_id": 2,
+          "short_name": "P02"
+        },
+        {
+          "functions": [],
+          "pin_label": "03 P03",
+          "position": "03",
+          "row_id": 3,
+          "short_name": "P03"
+        },
+        {
+          "functions": [],
+          "pin_label": "04 P04",
+          "position": "04",
+          "row_id": 4,
+          "short_name": "P04"
+        },
+        {
+          "functions": [],
+          "pin_label": "05 P05",
+          "position": "05",
+          "row_id": 5,
+          "short_name": "P05"
+        },
+        {
+          "functions": [],
+          "pin_label": "06 P06",
+          "position": "06",
+          "row_id": 6,
+          "short_name": "P06"
+        },
+        {
+          "functions": [],
+          "pin_label": "07 P07",
+          "position": "07",
+          "row_id": 7,
+          "short_name": "P07"
+        },
+        {
+          "functions": [],
+          "pin_label": "08 P08",
+          "position": "08",
+          "row_id": 8,
+          "short_name": "P08"
+        },
+        {
+          "functions": [],
+          "pin_label": "09 P09",
+          "position": "09",
+          "row_id": 9,
+          "short_name": "P09"
+        },
+        {
+          "functions": [],
+          "pin_label": "010 P010",
+          "position": "010",
+          "row_id": 10,
+          "short_name": "P010"
+        },
+        {
+          "functions": [],
+          "pin_label": "011 P011",
+          "position": "011",
+          "row_id": 11,
+          "short_name": "P011"
+        },
+        {
+          "functions": [],
+          "pin_label": "012 P012",
+          "position": "012",
+          "row_id": 12,
+          "short_name": "P012"
+        },
+        {
+          "functions": [],
+          "pin_label": "013 P013",
+          "position": "013",
+          "row_id": 13,
+          "short_name": "P013"
+        },
+        {
+          "functions": [],
+          "pin_label": "014 P014",
+          "position": "014",
+          "row_id": 14,
+          "short_name": "P014"
+        },
+        {
+          "functions": [],
+          "pin_label": "015 P015",
+          "position": "015",
+          "row_id": 15,
+          "short_name": "P015"
+        },
+        {
+          "functions": [],
+          "pin_label": "016 P016",
+          "position": "016",
+          "row_id": 16,
+          "short_name": "P016"
+        },
+        {
+          "functions": [],
+          "pin_label": "017 P017",
+          "position": "017",
+          "row_id": 17,
+          "short_name": "P017"
+        },
+        {
+          "functions": [],
+          "pin_label": "018 P018",
+          "position": "018",
+          "row_id": 18,
+          "short_name": "P018"
+        },
+        {
+          "functions": [],
+          "pin_label": "019 P019",
+          "position": "019",
+          "row_id": 19,
+          "short_name": "P019"
+        },
+        {
+          "functions": [],
+          "pin_label": "020 P020",
+          "position": "020",
+          "row_id": 20,
+          "short_name": "P020"
+        },
+        {
+          "functions": [],
+          "pin_label": "021 P021",
+          "position": "021",
+          "row_id": 21,
+          "short_name": "P021"
+        },
+        {
+          "functions": [],
+          "pin_label": "022 P022",
+          "position": "022",
+          "row_id": 22,
+          "short_name": "P022"
+        },
+        {
+          "functions": [],
+          "pin_label": "023 P023",
+          "position": "023",
+          "row_id": 23,
+          "short_name": "P023"
+        },
+        {
+          "functions": [],
+          "pin_label": "024 P024",
+          "position": "024",
+          "row_id": 24,
+          "short_name": "P024"
+        },
+        {
+          "functions": [],
+          "pin_label": "025 P025",
+          "position": "025",
+          "row_id": 25,
+          "short_name": "P025"
+        },
+        {
+          "functions": [],
+          "pin_label": "026 P026",
+          "position": "026",
+          "row_id": 26,
+          "short_name": "P026"
+        },
+        {
+          "functions": [],
+          "pin_label": "027 P027",
+          "position": "027",
+          "row_id": 27,
+          "short_name": "P027"
+        },
+        {
+          "functions": [],
+          "pin_label": "028 P028",
+          "position": "028",
+          "row_id": 28,
+          "short_name": "P028"
+        },
+        {
+          "functions": [],
+          "pin_label": "029 P029",
+          "position": "029",
+          "row_id": 29,
+          "short_name": "P029"
+        },
+        {
+          "functions": [],
+          "pin_label": "030 P030",
+          "position": "030",
+          "row_id": 30,
+          "short_name": "P030"
+        },
+        {
+          "functions": [],
+          "pin_label": "031 P031",
+          "position": "031",
+          "row_id": 31,
+          "short_name": "P031"
+        }
+      ]
+    },
+    "nrf51802-xxaa": {
+      "chip_id": "nrf51802-xxaa",
+      "package": null,
+      "partname": "nrf51802-xxaa",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "00 P00",
+          "position": "00",
+          "row_id": 0,
+          "short_name": "P00"
+        },
+        {
+          "functions": [],
+          "pin_label": "01 P01",
+          "position": "01",
+          "row_id": 1,
+          "short_name": "P01"
+        },
+        {
+          "functions": [],
+          "pin_label": "02 P02",
+          "position": "02",
+          "row_id": 2,
+          "short_name": "P02"
+        },
+        {
+          "functions": [],
+          "pin_label": "03 P03",
+          "position": "03",
+          "row_id": 3,
+          "short_name": "P03"
+        },
+        {
+          "functions": [],
+          "pin_label": "04 P04",
+          "position": "04",
+          "row_id": 4,
+          "short_name": "P04"
+        },
+        {
+          "functions": [],
+          "pin_label": "05 P05",
+          "position": "05",
+          "row_id": 5,
+          "short_name": "P05"
+        },
+        {
+          "functions": [],
+          "pin_label": "06 P06",
+          "position": "06",
+          "row_id": 6,
+          "short_name": "P06"
+        },
+        {
+          "functions": [],
+          "pin_label": "07 P07",
+          "position": "07",
+          "row_id": 7,
+          "short_name": "P07"
+        },
+        {
+          "functions": [],
+          "pin_label": "08 P08",
+          "position": "08",
+          "row_id": 8,
+          "short_name": "P08"
+        },
+        {
+          "functions": [],
+          "pin_label": "09 P09",
+          "position": "09",
+          "row_id": 9,
+          "short_name": "P09"
+        },
+        {
+          "functions": [],
+          "pin_label": "010 P010",
+          "position": "010",
+          "row_id": 10,
+          "short_name": "P010"
+        },
+        {
+          "functions": [],
+          "pin_label": "011 P011",
+          "position": "011",
+          "row_id": 11,
+          "short_name": "P011"
+        },
+        {
+          "functions": [],
+          "pin_label": "012 P012",
+          "position": "012",
+          "row_id": 12,
+          "short_name": "P012"
+        },
+        {
+          "functions": [],
+          "pin_label": "013 P013",
+          "position": "013",
+          "row_id": 13,
+          "short_name": "P013"
+        },
+        {
+          "functions": [],
+          "pin_label": "014 P014",
+          "position": "014",
+          "row_id": 14,
+          "short_name": "P014"
+        },
+        {
+          "functions": [],
+          "pin_label": "015 P015",
+          "position": "015",
+          "row_id": 15,
+          "short_name": "P015"
+        },
+        {
+          "functions": [],
+          "pin_label": "016 P016",
+          "position": "016",
+          "row_id": 16,
+          "short_name": "P016"
+        },
+        {
+          "functions": [],
+          "pin_label": "017 P017",
+          "position": "017",
+          "row_id": 17,
+          "short_name": "P017"
+        },
+        {
+          "functions": [],
+          "pin_label": "018 P018",
+          "position": "018",
+          "row_id": 18,
+          "short_name": "P018"
+        },
+        {
+          "functions": [],
+          "pin_label": "019 P019",
+          "position": "019",
+          "row_id": 19,
+          "short_name": "P019"
+        },
+        {
+          "functions": [],
+          "pin_label": "020 P020",
+          "position": "020",
+          "row_id": 20,
+          "short_name": "P020"
+        },
+        {
+          "functions": [],
+          "pin_label": "021 P021",
+          "position": "021",
+          "row_id": 21,
+          "short_name": "P021"
+        },
+        {
+          "functions": [],
+          "pin_label": "022 P022",
+          "position": "022",
+          "row_id": 22,
+          "short_name": "P022"
+        },
+        {
+          "functions": [],
+          "pin_label": "023 P023",
+          "position": "023",
+          "row_id": 23,
+          "short_name": "P023"
+        },
+        {
+          "functions": [],
+          "pin_label": "024 P024",
+          "position": "024",
+          "row_id": 24,
+          "short_name": "P024"
+        },
+        {
+          "functions": [],
+          "pin_label": "025 P025",
+          "position": "025",
+          "row_id": 25,
+          "short_name": "P025"
+        },
+        {
+          "functions": [],
+          "pin_label": "026 P026",
+          "position": "026",
+          "row_id": 26,
+          "short_name": "P026"
+        },
+        {
+          "functions": [],
+          "pin_label": "027 P027",
+          "position": "027",
+          "row_id": 27,
+          "short_name": "P027"
+        },
+        {
+          "functions": [],
+          "pin_label": "028 P028",
+          "position": "028",
+          "row_id": 28,
+          "short_name": "P028"
+        },
+        {
+          "functions": [],
+          "pin_label": "029 P029",
+          "position": "029",
+          "row_id": 29,
+          "short_name": "P029"
+        },
+        {
+          "functions": [],
+          "pin_label": "030 P030",
+          "position": "030",
+          "row_id": 30,
+          "short_name": "P030"
+        },
+        {
+          "functions": [],
+          "pin_label": "031 P031",
+          "position": "031",
+          "row_id": 31,
+          "short_name": "P031"
+        }
+      ]
+    },
+    "nrf51822-xxaa": {
+      "chip_id": "nrf51822-xxaa",
+      "package": null,
+      "partname": "nrf51822-xxaa",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "00 P00",
+          "position": "00",
+          "row_id": 0,
+          "short_name": "P00"
+        },
+        {
+          "functions": [],
+          "pin_label": "01 P01",
+          "position": "01",
+          "row_id": 1,
+          "short_name": "P01"
+        },
+        {
+          "functions": [],
+          "pin_label": "02 P02",
+          "position": "02",
+          "row_id": 2,
+          "short_name": "P02"
+        },
+        {
+          "functions": [],
+          "pin_label": "03 P03",
+          "position": "03",
+          "row_id": 3,
+          "short_name": "P03"
+        },
+        {
+          "functions": [],
+          "pin_label": "04 P04",
+          "position": "04",
+          "row_id": 4,
+          "short_name": "P04"
+        },
+        {
+          "functions": [],
+          "pin_label": "05 P05",
+          "position": "05",
+          "row_id": 5,
+          "short_name": "P05"
+        },
+        {
+          "functions": [],
+          "pin_label": "06 P06",
+          "position": "06",
+          "row_id": 6,
+          "short_name": "P06"
+        },
+        {
+          "functions": [],
+          "pin_label": "07 P07",
+          "position": "07",
+          "row_id": 7,
+          "short_name": "P07"
+        },
+        {
+          "functions": [],
+          "pin_label": "08 P08",
+          "position": "08",
+          "row_id": 8,
+          "short_name": "P08"
+        },
+        {
+          "functions": [],
+          "pin_label": "09 P09",
+          "position": "09",
+          "row_id": 9,
+          "short_name": "P09"
+        },
+        {
+          "functions": [],
+          "pin_label": "010 P010",
+          "position": "010",
+          "row_id": 10,
+          "short_name": "P010"
+        },
+        {
+          "functions": [],
+          "pin_label": "011 P011",
+          "position": "011",
+          "row_id": 11,
+          "short_name": "P011"
+        },
+        {
+          "functions": [],
+          "pin_label": "012 P012",
+          "position": "012",
+          "row_id": 12,
+          "short_name": "P012"
+        },
+        {
+          "functions": [],
+          "pin_label": "013 P013",
+          "position": "013",
+          "row_id": 13,
+          "short_name": "P013"
+        },
+        {
+          "functions": [],
+          "pin_label": "014 P014",
+          "position": "014",
+          "row_id": 14,
+          "short_name": "P014"
+        },
+        {
+          "functions": [],
+          "pin_label": "015 P015",
+          "position": "015",
+          "row_id": 15,
+          "short_name": "P015"
+        },
+        {
+          "functions": [],
+          "pin_label": "016 P016",
+          "position": "016",
+          "row_id": 16,
+          "short_name": "P016"
+        },
+        {
+          "functions": [],
+          "pin_label": "017 P017",
+          "position": "017",
+          "row_id": 17,
+          "short_name": "P017"
+        },
+        {
+          "functions": [],
+          "pin_label": "018 P018",
+          "position": "018",
+          "row_id": 18,
+          "short_name": "P018"
+        },
+        {
+          "functions": [],
+          "pin_label": "019 P019",
+          "position": "019",
+          "row_id": 19,
+          "short_name": "P019"
+        },
+        {
+          "functions": [],
+          "pin_label": "020 P020",
+          "position": "020",
+          "row_id": 20,
+          "short_name": "P020"
+        },
+        {
+          "functions": [],
+          "pin_label": "021 P021",
+          "position": "021",
+          "row_id": 21,
+          "short_name": "P021"
+        },
+        {
+          "functions": [],
+          "pin_label": "022 P022",
+          "position": "022",
+          "row_id": 22,
+          "short_name": "P022"
+        },
+        {
+          "functions": [],
+          "pin_label": "023 P023",
+          "position": "023",
+          "row_id": 23,
+          "short_name": "P023"
+        },
+        {
+          "functions": [],
+          "pin_label": "024 P024",
+          "position": "024",
+          "row_id": 24,
+          "short_name": "P024"
+        },
+        {
+          "functions": [],
+          "pin_label": "025 P025",
+          "position": "025",
+          "row_id": 25,
+          "short_name": "P025"
+        },
+        {
+          "functions": [],
+          "pin_label": "026 P026",
+          "position": "026",
+          "row_id": 26,
+          "short_name": "P026"
+        },
+        {
+          "functions": [],
+          "pin_label": "027 P027",
+          "position": "027",
+          "row_id": 27,
+          "short_name": "P027"
+        },
+        {
+          "functions": [],
+          "pin_label": "028 P028",
+          "position": "028",
+          "row_id": 28,
+          "short_name": "P028"
+        },
+        {
+          "functions": [],
+          "pin_label": "029 P029",
+          "position": "029",
+          "row_id": 29,
+          "short_name": "P029"
+        },
+        {
+          "functions": [],
+          "pin_label": "030 P030",
+          "position": "030",
+          "row_id": 30,
+          "short_name": "P030"
+        },
+        {
+          "functions": [],
+          "pin_label": "031 P031",
+          "position": "031",
+          "row_id": 31,
+          "short_name": "P031"
+        }
+      ]
+    },
+    "nrf51822-xxab": {
+      "chip_id": "nrf51822-xxab",
+      "package": null,
+      "partname": "nrf51822-xxab",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "00 P00",
+          "position": "00",
+          "row_id": 0,
+          "short_name": "P00"
+        },
+        {
+          "functions": [],
+          "pin_label": "01 P01",
+          "position": "01",
+          "row_id": 1,
+          "short_name": "P01"
+        },
+        {
+          "functions": [],
+          "pin_label": "02 P02",
+          "position": "02",
+          "row_id": 2,
+          "short_name": "P02"
+        },
+        {
+          "functions": [],
+          "pin_label": "03 P03",
+          "position": "03",
+          "row_id": 3,
+          "short_name": "P03"
+        },
+        {
+          "functions": [],
+          "pin_label": "04 P04",
+          "position": "04",
+          "row_id": 4,
+          "short_name": "P04"
+        },
+        {
+          "functions": [],
+          "pin_label": "05 P05",
+          "position": "05",
+          "row_id": 5,
+          "short_name": "P05"
+        },
+        {
+          "functions": [],
+          "pin_label": "06 P06",
+          "position": "06",
+          "row_id": 6,
+          "short_name": "P06"
+        },
+        {
+          "functions": [],
+          "pin_label": "07 P07",
+          "position": "07",
+          "row_id": 7,
+          "short_name": "P07"
+        },
+        {
+          "functions": [],
+          "pin_label": "08 P08",
+          "position": "08",
+          "row_id": 8,
+          "short_name": "P08"
+        },
+        {
+          "functions": [],
+          "pin_label": "09 P09",
+          "position": "09",
+          "row_id": 9,
+          "short_name": "P09"
+        },
+        {
+          "functions": [],
+          "pin_label": "010 P010",
+          "position": "010",
+          "row_id": 10,
+          "short_name": "P010"
+        },
+        {
+          "functions": [],
+          "pin_label": "011 P011",
+          "position": "011",
+          "row_id": 11,
+          "short_name": "P011"
+        },
+        {
+          "functions": [],
+          "pin_label": "012 P012",
+          "position": "012",
+          "row_id": 12,
+          "short_name": "P012"
+        },
+        {
+          "functions": [],
+          "pin_label": "013 P013",
+          "position": "013",
+          "row_id": 13,
+          "short_name": "P013"
+        },
+        {
+          "functions": [],
+          "pin_label": "014 P014",
+          "position": "014",
+          "row_id": 14,
+          "short_name": "P014"
+        },
+        {
+          "functions": [],
+          "pin_label": "015 P015",
+          "position": "015",
+          "row_id": 15,
+          "short_name": "P015"
+        },
+        {
+          "functions": [],
+          "pin_label": "016 P016",
+          "position": "016",
+          "row_id": 16,
+          "short_name": "P016"
+        },
+        {
+          "functions": [],
+          "pin_label": "017 P017",
+          "position": "017",
+          "row_id": 17,
+          "short_name": "P017"
+        },
+        {
+          "functions": [],
+          "pin_label": "018 P018",
+          "position": "018",
+          "row_id": 18,
+          "short_name": "P018"
+        },
+        {
+          "functions": [],
+          "pin_label": "019 P019",
+          "position": "019",
+          "row_id": 19,
+          "short_name": "P019"
+        },
+        {
+          "functions": [],
+          "pin_label": "020 P020",
+          "position": "020",
+          "row_id": 20,
+          "short_name": "P020"
+        },
+        {
+          "functions": [],
+          "pin_label": "021 P021",
+          "position": "021",
+          "row_id": 21,
+          "short_name": "P021"
+        },
+        {
+          "functions": [],
+          "pin_label": "022 P022",
+          "position": "022",
+          "row_id": 22,
+          "short_name": "P022"
+        },
+        {
+          "functions": [],
+          "pin_label": "023 P023",
+          "position": "023",
+          "row_id": 23,
+          "short_name": "P023"
+        },
+        {
+          "functions": [],
+          "pin_label": "024 P024",
+          "position": "024",
+          "row_id": 24,
+          "short_name": "P024"
+        },
+        {
+          "functions": [],
+          "pin_label": "025 P025",
+          "position": "025",
+          "row_id": 25,
+          "short_name": "P025"
+        },
+        {
+          "functions": [],
+          "pin_label": "026 P026",
+          "position": "026",
+          "row_id": 26,
+          "short_name": "P026"
+        },
+        {
+          "functions": [],
+          "pin_label": "027 P027",
+          "position": "027",
+          "row_id": 27,
+          "short_name": "P027"
+        },
+        {
+          "functions": [],
+          "pin_label": "028 P028",
+          "position": "028",
+          "row_id": 28,
+          "short_name": "P028"
+        },
+        {
+          "functions": [],
+          "pin_label": "029 P029",
+          "position": "029",
+          "row_id": 29,
+          "short_name": "P029"
+        },
+        {
+          "functions": [],
+          "pin_label": "030 P030",
+          "position": "030",
+          "row_id": 30,
+          "short_name": "P030"
+        },
+        {
+          "functions": [],
+          "pin_label": "031 P031",
+          "position": "031",
+          "row_id": 31,
+          "short_name": "P031"
+        }
+      ]
+    },
+    "nrf51822-xxac": {
+      "chip_id": "nrf51822-xxac",
+      "package": null,
+      "partname": "nrf51822-xxac",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "00 P00",
+          "position": "00",
+          "row_id": 0,
+          "short_name": "P00"
+        },
+        {
+          "functions": [],
+          "pin_label": "01 P01",
+          "position": "01",
+          "row_id": 1,
+          "short_name": "P01"
+        },
+        {
+          "functions": [],
+          "pin_label": "02 P02",
+          "position": "02",
+          "row_id": 2,
+          "short_name": "P02"
+        },
+        {
+          "functions": [],
+          "pin_label": "03 P03",
+          "position": "03",
+          "row_id": 3,
+          "short_name": "P03"
+        },
+        {
+          "functions": [],
+          "pin_label": "04 P04",
+          "position": "04",
+          "row_id": 4,
+          "short_name": "P04"
+        },
+        {
+          "functions": [],
+          "pin_label": "05 P05",
+          "position": "05",
+          "row_id": 5,
+          "short_name": "P05"
+        },
+        {
+          "functions": [],
+          "pin_label": "06 P06",
+          "position": "06",
+          "row_id": 6,
+          "short_name": "P06"
+        },
+        {
+          "functions": [],
+          "pin_label": "07 P07",
+          "position": "07",
+          "row_id": 7,
+          "short_name": "P07"
+        },
+        {
+          "functions": [],
+          "pin_label": "08 P08",
+          "position": "08",
+          "row_id": 8,
+          "short_name": "P08"
+        },
+        {
+          "functions": [],
+          "pin_label": "09 P09",
+          "position": "09",
+          "row_id": 9,
+          "short_name": "P09"
+        },
+        {
+          "functions": [],
+          "pin_label": "010 P010",
+          "position": "010",
+          "row_id": 10,
+          "short_name": "P010"
+        },
+        {
+          "functions": [],
+          "pin_label": "011 P011",
+          "position": "011",
+          "row_id": 11,
+          "short_name": "P011"
+        },
+        {
+          "functions": [],
+          "pin_label": "012 P012",
+          "position": "012",
+          "row_id": 12,
+          "short_name": "P012"
+        },
+        {
+          "functions": [],
+          "pin_label": "013 P013",
+          "position": "013",
+          "row_id": 13,
+          "short_name": "P013"
+        },
+        {
+          "functions": [],
+          "pin_label": "014 P014",
+          "position": "014",
+          "row_id": 14,
+          "short_name": "P014"
+        },
+        {
+          "functions": [],
+          "pin_label": "015 P015",
+          "position": "015",
+          "row_id": 15,
+          "short_name": "P015"
+        },
+        {
+          "functions": [],
+          "pin_label": "016 P016",
+          "position": "016",
+          "row_id": 16,
+          "short_name": "P016"
+        },
+        {
+          "functions": [],
+          "pin_label": "017 P017",
+          "position": "017",
+          "row_id": 17,
+          "short_name": "P017"
+        },
+        {
+          "functions": [],
+          "pin_label": "018 P018",
+          "position": "018",
+          "row_id": 18,
+          "short_name": "P018"
+        },
+        {
+          "functions": [],
+          "pin_label": "019 P019",
+          "position": "019",
+          "row_id": 19,
+          "short_name": "P019"
+        },
+        {
+          "functions": [],
+          "pin_label": "020 P020",
+          "position": "020",
+          "row_id": 20,
+          "short_name": "P020"
+        },
+        {
+          "functions": [],
+          "pin_label": "021 P021",
+          "position": "021",
+          "row_id": 21,
+          "short_name": "P021"
+        },
+        {
+          "functions": [],
+          "pin_label": "022 P022",
+          "position": "022",
+          "row_id": 22,
+          "short_name": "P022"
+        },
+        {
+          "functions": [],
+          "pin_label": "023 P023",
+          "position": "023",
+          "row_id": 23,
+          "short_name": "P023"
+        },
+        {
+          "functions": [],
+          "pin_label": "024 P024",
+          "position": "024",
+          "row_id": 24,
+          "short_name": "P024"
+        },
+        {
+          "functions": [],
+          "pin_label": "025 P025",
+          "position": "025",
+          "row_id": 25,
+          "short_name": "P025"
+        },
+        {
+          "functions": [],
+          "pin_label": "026 P026",
+          "position": "026",
+          "row_id": 26,
+          "short_name": "P026"
+        },
+        {
+          "functions": [],
+          "pin_label": "027 P027",
+          "position": "027",
+          "row_id": 27,
+          "short_name": "P027"
+        },
+        {
+          "functions": [],
+          "pin_label": "028 P028",
+          "position": "028",
+          "row_id": 28,
+          "short_name": "P028"
+        },
+        {
+          "functions": [],
+          "pin_label": "029 P029",
+          "position": "029",
+          "row_id": 29,
+          "short_name": "P029"
+        },
+        {
+          "functions": [],
+          "pin_label": "030 P030",
+          "position": "030",
+          "row_id": 30,
+          "short_name": "P030"
+        },
+        {
+          "functions": [],
+          "pin_label": "031 P031",
+          "position": "031",
+          "row_id": 31,
+          "short_name": "P031"
+        }
+      ]
+    },
+    "nrf51824-xxaa": {
+      "chip_id": "nrf51824-xxaa",
+      "package": null,
+      "partname": "nrf51824-xxaa",
+      "pin_count": 32,
+      "rows": [
+        {
+          "functions": [],
+          "pin_label": "00 P00",
+          "position": "00",
+          "row_id": 0,
+          "short_name": "P00"
+        },
+        {
+          "functions": [],
+          "pin_label": "01 P01",
+          "position": "01",
+          "row_id": 1,
+          "short_name": "P01"
+        },
+        {
+          "functions": [],
+          "pin_label": "02 P02",
+          "position": "02",
+          "row_id": 2,
+          "short_name": "P02"
+        },
+        {
+          "functions": [],
+          "pin_label": "03 P03",
+          "position": "03",
+          "row_id": 3,
+          "short_name": "P03"
+        },
+        {
+          "functions": [],
+          "pin_label": "04 P04",
+          "position": "04",
+          "row_id": 4,
+          "short_name": "P04"
+        },
+        {
+          "functions": [],
+          "pin_label": "05 P05",
+          "position": "05",
+          "row_id": 5,
+          "short_name": "P05"
+        },
+        {
+          "functions": [],
+          "pin_label": "06 P06",
+          "position": "06",
+          "row_id": 6,
+          "short_name": "P06"
+        },
+        {
+          "functions": [],
+          "pin_label": "07 P07",
+          "position": "07",
+          "row_id": 7,
+          "short_name": "P07"
+        },
+        {
+          "functions": [],
+          "pin_label": "08 P08",
+          "position": "08",
+          "row_id": 8,
+          "short_name": "P08"
+        },
+        {
+          "functions": [],
+          "pin_label": "09 P09",
+          "position": "09",
+          "row_id": 9,
+          "short_name": "P09"
+        },
+        {
+          "functions": [],
+          "pin_label": "010 P010",
+          "position": "010",
+          "row_id": 10,
+          "short_name": "P010"
+        },
+        {
+          "functions": [],
+          "pin_label": "011 P011",
+          "position": "011",
+          "row_id": 11,
+          "short_name": "P011"
+        },
+        {
+          "functions": [],
+          "pin_label": "012 P012",
+          "position": "012",
+          "row_id": 12,
+          "short_name": "P012"
+        },
+        {
+          "functions": [],
+          "pin_label": "013 P013",
+          "position": "013",
+          "row_id": 13,
+          "short_name": "P013"
+        },
+        {
+          "functions": [],
+          "pin_label": "014 P014",
+          "position": "014",
+          "row_id": 14,
+          "short_name": "P014"
+        },
+        {
+          "functions": [],
+          "pin_label": "015 P015",
+          "position": "015",
+          "row_id": 15,
+          "short_name": "P015"
+        },
+        {
+          "functions": [],
+          "pin_label": "016 P016",
+          "position": "016",
+          "row_id": 16,
+          "short_name": "P016"
+        },
+        {
+          "functions": [],
+          "pin_label": "017 P017",
+          "position": "017",
+          "row_id": 17,
+          "short_name": "P017"
+        },
+        {
+          "functions": [],
+          "pin_label": "018 P018",
+          "position": "018",
+          "row_id": 18,
+          "short_name": "P018"
+        },
+        {
+          "functions": [],
+          "pin_label": "019 P019",
+          "position": "019",
+          "row_id": 19,
+          "short_name": "P019"
+        },
+        {
+          "functions": [],
+          "pin_label": "020 P020",
+          "position": "020",
+          "row_id": 20,
+          "short_name": "P020"
+        },
+        {
+          "functions": [],
+          "pin_label": "021 P021",
+          "position": "021",
+          "row_id": 21,
+          "short_name": "P021"
+        },
+        {
+          "functions": [],
+          "pin_label": "022 P022",
+          "position": "022",
+          "row_id": 22,
+          "short_name": "P022"
+        },
+        {
+          "functions": [],
+          "pin_label": "023 P023",
+          "position": "023",
+          "row_id": 23,
+          "short_name": "P023"
+        },
+        {
+          "functions": [],
+          "pin_label": "024 P024",
+          "position": "024",
+          "row_id": 24,
+          "short_name": "P024"
+        },
+        {
+          "functions": [],
+          "pin_label": "025 P025",
+          "position": "025",
+          "row_id": 25,
+          "short_name": "P025"
+        },
+        {
+          "functions": [],
+          "pin_label": "026 P026",
+          "position": "026",
+          "row_id": 26,
+          "short_name": "P026"
+        },
+        {
+          "functions": [],
+          "pin_label": "027 P027",
+          "position": "027",
+          "row_id": 27,
+          "short_name": "P027"
+        },
+        {
+          "functions": [],
+          "pin_label": "028 P028",
+          "position": "028",
+          "row_id": 28,
+          "short_name": "P028"
+        },
+        {
+          "functions": [],
+          "pin_label": "029 P029",
+          "position": "029",
+          "row_id": 29,
+          "short_name": "P029"
+        },
+        {
+          "functions": [],
+          "pin_label": "030 P030",
+          "position": "030",
+          "row_id": 30,
+          "short_name": "P030"
+        },
+        {
+          "functions": [],
+          "pin_label": "031 P031",
+          "position": "031",
+          "row_id": 31,
+          "short_name": "P031"
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-05-16 18:52:43 UTC",
+  "source_xml": "nrf/nrf51422_801_802_822_824.xml"
+}

@@ -1,0 +1,1413 @@
+{
+  "devices": {
+    "attiny13-20mmu": {
+      "chip_id": "attiny13-20mmu",
+      "package": null,
+      "partname": "attiny13-20mmu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13-20mu": {
+      "chip_id": "attiny13-20mu",
+      "package": null,
+      "partname": "attiny13-20mu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13-20pu": {
+      "chip_id": "attiny13-20pu",
+      "package": null,
+      "partname": "attiny13-20pu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13-20ssu": {
+      "chip_id": "attiny13-20ssu",
+      "package": null,
+      "partname": "attiny13-20ssu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13-20su": {
+      "chip_id": "attiny13-20su",
+      "package": null,
+      "partname": "attiny13-20su",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-mmf": {
+      "chip_id": "attiny13a-mmf",
+      "package": null,
+      "partname": "attiny13a-mmf",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-mmu": {
+      "chip_id": "attiny13a-mmu",
+      "package": null,
+      "partname": "attiny13a-mmu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-mu": {
+      "chip_id": "attiny13a-mu",
+      "package": null,
+      "partname": "attiny13a-mu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-pu": {
+      "chip_id": "attiny13a-pu",
+      "package": null,
+      "partname": "attiny13a-pu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-sf": {
+      "chip_id": "attiny13a-sf",
+      "package": null,
+      "partname": "attiny13a-sf",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-sh": {
+      "chip_id": "attiny13a-sh",
+      "package": null,
+      "partname": "attiny13a-sh",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-sn": {
+      "chip_id": "attiny13a-sn",
+      "package": null,
+      "partname": "attiny13a-sn",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-ss7": {
+      "chip_id": "attiny13a-ss7",
+      "package": null,
+      "partname": "attiny13a-ss7",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-ssh": {
+      "chip_id": "attiny13a-ssh",
+      "package": null,
+      "partname": "attiny13a-ssh",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-ssu": {
+      "chip_id": "attiny13a-ssu",
+      "package": null,
+      "partname": "attiny13a-ssu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13a-su": {
+      "chip_id": "attiny13a-su",
+      "package": null,
+      "partname": "attiny13a-su",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13v-10mmu": {
+      "chip_id": "attiny13v-10mmu",
+      "package": null,
+      "partname": "attiny13v-10mmu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13v-10mu": {
+      "chip_id": "attiny13v-10mu",
+      "package": null,
+      "partname": "attiny13v-10mu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13v-10pu": {
+      "chip_id": "attiny13v-10pu",
+      "package": null,
+      "partname": "attiny13v-10pu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13v-10ssu": {
+      "chip_id": "attiny13v-10ssu",
+      "package": null,
+      "partname": "attiny13v-10ssu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny13v-10su": {
+      "chip_id": "attiny13v-10su",
+      "package": null,
+      "partname": "attiny13v-10su",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "EXINT_PCINT0",
+            "TC0_OCA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OCB"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT2",
+            "TC0_T"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT4"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-05-16 18:52:42 UTC",
+  "source_xml": "avr/attiny-13.xml"
+}
