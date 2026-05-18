@@ -25,8 +25,16 @@
       <span id="save-status" class="save-status" aria-live="polite"></span>
     </section>
 
+    <div id="content-layout" class="content-layout">
 
-    <section id="pin-matrix"></section>
+      <section id="table-card" class="table-card" aria-labelledby="table-title">
+        <div class="table-card-header">
+          <h2 id="table-title" class="section-title">Pin Matrix</h2>
+          <div id="table-view-controls" class="table-view-controls" aria-label="Table view controls"></div>
+        </div>
+        <div id="pin-matrix"></div>
+      </section>
+    </div>
 
     <p class="hint">
       The first two columns show the available pin identifiers and names derived from the device data. Manual Selection supports multi-select using merged alternate+additional functions.
