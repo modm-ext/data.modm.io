@@ -63,6 +63,9 @@
             <li>
                     <a class="function" href="#cubemx_device_list">cubemx_device_list</a>
             </li>
+            <li>
+                    <a class="function" href="#temperature_codes">temperature_codes</a>
+            </li>
     </ul>
 
 
@@ -93,14 +96,21 @@
 </span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="sd"># STMicro STM32CubeMX Database</span>
 </span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>
-</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.device_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">devices_from_family</span><span class="p">,</span> <span class="n">devices_from_prefix</span><span class="p">,</span> <span class="n">devices_from_partname</span><span class="p">,</span> <span class="n">cubemx_device_list</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>    <span class="s2">&quot;devices_from_family&quot;</span><span class="p">,</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>    <span class="s2">&quot;devices_from_prefix&quot;</span><span class="p">,</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>    <span class="s2">&quot;devices_from_partname&quot;</span><span class="p">,</span>
-</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>    <span class="s2">&quot;cubemx_device_list&quot;</span><span class="p">,</span>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="p">]</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.device_data</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    <span class="n">devices_from_family</span><span class="p">,</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>    <span class="n">devices_from_prefix</span><span class="p">,</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>    <span class="n">devices_from_partname</span><span class="p">,</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>    <span class="n">cubemx_device_list</span><span class="p">,</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>    <span class="n">temperature_codes</span><span class="p">,</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="p">)</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>    <span class="s2">&quot;devices_from_family&quot;</span><span class="p">,</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>    <span class="s2">&quot;devices_from_prefix&quot;</span><span class="p">,</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>    <span class="s2">&quot;devices_from_partname&quot;</span><span class="p">,</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>    <span class="s2">&quot;cubemx_device_list&quot;</span><span class="p">,</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="s2">&quot;temperature_codes&quot;</span><span class="p">,</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a><span class="p">]</span>
 </span></pre></div>
 
 
@@ -193,30 +203,30 @@
 
     </div>
     <a class="headerlink" href="#devices_from_partname"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="devices_from_partname-71"><a href="#devices_from_partname-71"><span class="linenos">71</span></a><span class="k">def</span><span class="w"> </span><span class="nf">devices_from_partname</span><span class="p">(</span><span class="n">partname</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
-</span><span id="devices_from_partname-72"><a href="#devices_from_partname-72"><span class="linenos">72</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="devices_from_partname-73"><a href="#devices_from_partname-73"><span class="linenos">73</span></a><span class="sd">    Find the STM32 device name in the STM32CubeMX database and convert the data</span>
-</span><span id="devices_from_partname-74"><a href="#devices_from_partname-74"><span class="linenos">74</span></a><span class="sd">    into a device specific key-value mapping describing the hardware.</span>
-</span><span id="devices_from_partname-75"><a href="#devices_from_partname-75"><span class="linenos">75</span></a>
-</span><span id="devices_from_partname-76"><a href="#devices_from_partname-76"><span class="linenos">76</span></a><span class="sd">    .. note::</span>
-</span><span id="devices_from_partname-77"><a href="#devices_from_partname-77"><span class="linenos">77</span></a><span class="sd">       One partname may contain multiple devices, for example, multiple</span>
-</span><span id="devices_from_partname-78"><a href="#devices_from_partname-78"><span class="linenos">78</span></a><span class="sd">       asymmetric CPU cores like in the STM32H745 device.</span>
-</span><span id="devices_from_partname-79"><a href="#devices_from_partname-79"><span class="linenos">79</span></a>
-</span><span id="devices_from_partname-80"><a href="#devices_from_partname-80"><span class="linenos">80</span></a><span class="sd">    :param partname: A full STM32 device name.</span>
-</span><span id="devices_from_partname-81"><a href="#devices_from_partname-81"><span class="linenos">81</span></a><span class="sd">    :return: a list of dictionaries containing a device specific data structure.</span>
-</span><span id="devices_from_partname-82"><a href="#devices_from_partname-82"><span class="linenos">82</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="devices_from_partname-83"><a href="#devices_from_partname-83"><span class="linenos">83</span></a>    <span class="n">deviceNames</span> <span class="o">=</span> <span class="n">_family_file</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;//Family/SubFamily/Mcu[starts-with(@RefName,&quot;</span><span class="si">{</span><span class="n">partname</span><span class="si">}</span><span class="s1">&quot;)]&#39;</span><span class="p">)</span>
-</span><span id="devices_from_partname-84"><a href="#devices_from_partname-84"><span class="linenos">84</span></a>    <span class="n">comboDeviceName</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">deviceNames</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="devices_from_partname-85"><a href="#devices_from_partname-85"><span class="linenos">85</span></a>    <span class="n">device_file</span> <span class="o">=</span> <span class="n">XmlReader</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_MCU_PATH</span><span class="p">,</span> <span class="n">comboDeviceName</span> <span class="o">+</span> <span class="s2">&quot;.xml&quot;</span><span class="p">))</span>
-</span><span id="devices_from_partname-86"><a href="#devices_from_partname-86"><span class="linenos">86</span></a>    <span class="n">did</span> <span class="o">=</span> <span class="n">did_from_string</span><span class="p">(</span><span class="n">partname</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-</span><span id="devices_from_partname-87"><a href="#devices_from_partname-87"><span class="linenos">87</span></a>    <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parsing &#39;</span><span class="si">{</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-</span><span id="devices_from_partname-88"><a href="#devices_from_partname-88"><span class="linenos">88</span></a>
-</span><span id="devices_from_partname-89"><a href="#devices_from_partname-89"><span class="linenos">89</span></a>    <span class="c1"># information about the core and architecture</span>
-</span><span id="devices_from_partname-90"><a href="#devices_from_partname-90"><span class="linenos">90</span></a>    <span class="n">cores</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;arm &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;plus&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">device_file</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;//Core&quot;</span><span class="p">)]</span>
-</span><span id="devices_from_partname-91"><a href="#devices_from_partname-91"><span class="linenos">91</span></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cores</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="devices_from_partname-92"><a href="#devices_from_partname-92"><span class="linenos">92</span></a>        <span class="n">did</span><span class="o">.</span><span class="n">naming_schema</span> <span class="o">+=</span> <span class="s2">&quot;@</span><span class="si">{core}</span><span class="s2">&quot;</span>
-</span><span id="devices_from_partname-93"><a href="#devices_from_partname-93"><span class="linenos">93</span></a>    <span class="n">devices</span> <span class="o">=</span> <span class="p">[</span><span class="n">_properties_from_id</span><span class="p">(</span><span class="n">partname</span><span class="p">,</span> <span class="n">comboDeviceName</span><span class="p">,</span> <span class="n">device_file</span><span class="p">,</span> <span class="n">did</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cores</span><span class="p">]</span>
-</span><span id="devices_from_partname-94"><a href="#devices_from_partname-94"><span class="linenos">94</span></a>    <span class="k">return</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">devices</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="devices_from_partname-92"><a href="#devices_from_partname-92"><span class="linenos"> 92</span></a><span class="k">def</span><span class="w"> </span><span class="nf">devices_from_partname</span><span class="p">(</span><span class="n">partname</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+</span><span id="devices_from_partname-93"><a href="#devices_from_partname-93"><span class="linenos"> 93</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="devices_from_partname-94"><a href="#devices_from_partname-94"><span class="linenos"> 94</span></a><span class="sd">    Find the STM32 device name in the STM32CubeMX database and convert the data</span>
+</span><span id="devices_from_partname-95"><a href="#devices_from_partname-95"><span class="linenos"> 95</span></a><span class="sd">    into a device specific key-value mapping describing the hardware.</span>
+</span><span id="devices_from_partname-96"><a href="#devices_from_partname-96"><span class="linenos"> 96</span></a>
+</span><span id="devices_from_partname-97"><a href="#devices_from_partname-97"><span class="linenos"> 97</span></a><span class="sd">    .. note::</span>
+</span><span id="devices_from_partname-98"><a href="#devices_from_partname-98"><span class="linenos"> 98</span></a><span class="sd">       One partname may contain multiple devices, for example, multiple</span>
+</span><span id="devices_from_partname-99"><a href="#devices_from_partname-99"><span class="linenos"> 99</span></a><span class="sd">       asymmetric CPU cores like in the STM32H745 device.</span>
+</span><span id="devices_from_partname-100"><a href="#devices_from_partname-100"><span class="linenos">100</span></a>
+</span><span id="devices_from_partname-101"><a href="#devices_from_partname-101"><span class="linenos">101</span></a><span class="sd">    :param partname: A full STM32 device name.</span>
+</span><span id="devices_from_partname-102"><a href="#devices_from_partname-102"><span class="linenos">102</span></a><span class="sd">    :return: a list of dictionaries containing a device specific data structure.</span>
+</span><span id="devices_from_partname-103"><a href="#devices_from_partname-103"><span class="linenos">103</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="devices_from_partname-104"><a href="#devices_from_partname-104"><span class="linenos">104</span></a>    <span class="n">deviceNames</span> <span class="o">=</span> <span class="n">_family_file</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;//Family/SubFamily/Mcu[starts-with(@RefName,&quot;</span><span class="si">{</span><span class="n">partname</span><span class="si">}</span><span class="s1">&quot;)]&#39;</span><span class="p">)</span>
+</span><span id="devices_from_partname-105"><a href="#devices_from_partname-105"><span class="linenos">105</span></a>    <span class="n">comboDeviceName</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">deviceNames</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="devices_from_partname-106"><a href="#devices_from_partname-106"><span class="linenos">106</span></a>    <span class="n">device_file</span> <span class="o">=</span> <span class="n">XmlReader</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_MCU_PATH</span><span class="p">,</span> <span class="n">comboDeviceName</span> <span class="o">+</span> <span class="s2">&quot;.xml&quot;</span><span class="p">))</span>
+</span><span id="devices_from_partname-107"><a href="#devices_from_partname-107"><span class="linenos">107</span></a>    <span class="n">did</span> <span class="o">=</span> <span class="n">did_from_string</span><span class="p">(</span><span class="n">partname</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</span><span id="devices_from_partname-108"><a href="#devices_from_partname-108"><span class="linenos">108</span></a>    <span class="n">LOGGER</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parsing &#39;</span><span class="si">{</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+</span><span id="devices_from_partname-109"><a href="#devices_from_partname-109"><span class="linenos">109</span></a>
+</span><span id="devices_from_partname-110"><a href="#devices_from_partname-110"><span class="linenos">110</span></a>    <span class="c1"># information about the core and architecture</span>
+</span><span id="devices_from_partname-111"><a href="#devices_from_partname-111"><span class="linenos">111</span></a>    <span class="n">cores</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;arm &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;plus&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">device_file</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;//Core&quot;</span><span class="p">)]</span>
+</span><span id="devices_from_partname-112"><a href="#devices_from_partname-112"><span class="linenos">112</span></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cores</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="devices_from_partname-113"><a href="#devices_from_partname-113"><span class="linenos">113</span></a>        <span class="n">did</span><span class="o">.</span><span class="n">naming_schema</span> <span class="o">+=</span> <span class="s2">&quot;@</span><span class="si">{core}</span><span class="s2">&quot;</span>
+</span><span id="devices_from_partname-114"><a href="#devices_from_partname-114"><span class="linenos">114</span></a>    <span class="n">devices</span> <span class="o">=</span> <span class="p">[</span><span class="n">_properties_from_id</span><span class="p">(</span><span class="n">partname</span><span class="p">,</span> <span class="n">comboDeviceName</span><span class="p">,</span> <span class="n">device_file</span><span class="p">,</span> <span class="n">did</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cores</span><span class="p">]</span>
+</span><span id="devices_from_partname-115"><a href="#devices_from_partname-115"><span class="linenos">115</span></a>    <span class="k">return</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">devices</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
 </span></pre></div>
 
 
@@ -256,11 +266,11 @@ asymmetric CPU cores like in the STM32H745 device.</p>
 
     </div>
     <a class="headerlink" href="#cubemx_device_list"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="cubemx_device_list-63"><a href="#cubemx_device_list-63"><span class="linenos">63</span></a><span class="k">def</span><span class="w"> </span><span class="nf">cubemx_device_list</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
-</span><span id="cubemx_device_list-64"><a href="#cubemx_device_list-64"><span class="linenos">64</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="cubemx_device_list-65"><a href="#cubemx_device_list-65"><span class="linenos">65</span></a><span class="sd">    :return: A list of all STM32 device identifiers.</span>
-</span><span id="cubemx_device_list-66"><a href="#cubemx_device_list-66"><span class="linenos">66</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="cubemx_device_list-67"><a href="#cubemx_device_list-67"><span class="linenos">67</span></a>    <span class="k">return</span> <span class="p">[</span><span class="n">did_from_string</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">devices_from_prefix</span><span class="p">(</span><span class="s2">&quot;STM32&quot;</span><span class="p">)]</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="cubemx_device_list-84"><a href="#cubemx_device_list-84"><span class="linenos">84</span></a><span class="k">def</span><span class="w"> </span><span class="nf">cubemx_device_list</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">DeviceIdentifier</span><span class="p">]:</span>
+</span><span id="cubemx_device_list-85"><a href="#cubemx_device_list-85"><span class="linenos">85</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="cubemx_device_list-86"><a href="#cubemx_device_list-86"><span class="linenos">86</span></a><span class="sd">    :return: A list of all STM32 device identifiers.</span>
+</span><span id="cubemx_device_list-87"><a href="#cubemx_device_list-87"><span class="linenos">87</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="cubemx_device_list-88"><a href="#cubemx_device_list-88"><span class="linenos">88</span></a>    <span class="k">return</span> <span class="p">[</span><span class="n">did_from_string</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">devices_from_prefix</span><span class="p">(</span><span class="s2">&quot;STM32&quot;</span><span class="p">)]</span>
 </span></pre></div>
 
 
@@ -268,6 +278,55 @@ asymmetric CPU cores like in the STM32H745 device.</p>
 
 <blockquote>
   <p>A list of all STM32 device identifiers.</p>
+</blockquote>
+</div>
+
+
+                </section>
+                <section id="temperature_codes">
+                            <input id="temperature_codes-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">temperature_codes</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">partname</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>:</span></span>
+
+                <label class="view-source-button" for="temperature_codes-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#temperature_codes"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="temperature_codes-66"><a href="#temperature_codes-66"><span class="linenos">66</span></a><span class="k">def</span><span class="w"> </span><span class="nf">temperature_codes</span><span class="p">(</span><span class="n">partname</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+</span><span id="temperature_codes-67"><a href="#temperature_codes-67"><span class="linenos">67</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="temperature_codes-68"><a href="#temperature_codes-68"><span class="linenos">68</span></a><span class="sd">    CubeMX uses `x` as placeholder for the temperature range in the device name.</span>
+</span><span id="temperature_codes-69"><a href="#temperature_codes-69"><span class="linenos">69</span></a><span class="sd">    This function computes the temperature codes from the maximum operating</span>
+</span><span id="temperature_codes-70"><a href="#temperature_codes-70"><span class="linenos">70</span></a><span class="sd">    temperature, since every higher range also supports all the lower ranges.</span>
+</span><span id="temperature_codes-71"><a href="#temperature_codes-71"><span class="linenos">71</span></a>
+</span><span id="temperature_codes-72"><a href="#temperature_codes-72"><span class="linenos">72</span></a><span class="sd">    :param partname: A STM32 device name with temperature placeholder.</span>
+</span><span id="temperature_codes-73"><a href="#temperature_codes-73"><span class="linenos">73</span></a><span class="sd">    :return: A sorted list of temperature codes, for example, `[&quot;3&quot;, &quot;6&quot;, &quot;7&quot;]`.</span>
+</span><span id="temperature_codes-74"><a href="#temperature_codes-74"><span class="linenos">74</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="temperature_codes-75"><a href="#temperature_codes-75"><span class="linenos">75</span></a>    <span class="n">codes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="temperature_codes-76"><a href="#temperature_codes-76"><span class="linenos">76</span></a>    <span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">_family_file</span><span class="p">()</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;//Family/SubFamily/Mcu[@RefName=&quot;</span><span class="si">{</span><span class="n">partname</span><span class="si">}</span><span class="s1">&quot;]&#39;</span><span class="p">):</span>
+</span><span id="temperature_codes-77"><a href="#temperature_codes-77"><span class="linenos">77</span></a>        <span class="n">temp_max</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Temperature&quot;</span><span class="p">)</span>
+</span><span id="temperature_codes-78"><a href="#temperature_codes-78"><span class="linenos">78</span></a>        <span class="n">temp_max</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="n">temp_max</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">temp_max</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">)</span>
+</span><span id="temperature_codes-79"><a href="#temperature_codes-79"><span class="linenos">79</span></a>        <span class="n">temp_max</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">temp_max</span><span class="p">))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_max</span><span class="p">)</span> <span class="k">else</span> <span class="nb">min</span><span class="p">(</span><span class="n">_TEMPERATURE_CODES</span><span class="p">)</span>
+</span><span id="temperature_codes-80"><a href="#temperature_codes-80"><span class="linenos">80</span></a>        <span class="n">codes</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">code</span> <span class="k">for</span> <span class="n">temp</span><span class="p">,</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">_TEMPERATURE_CODES</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">temp_max</span> <span class="o">&gt;=</span> <span class="n">temp</span><span class="p">)</span>
+</span><span id="temperature_codes-81"><a href="#temperature_codes-81"><span class="linenos">81</span></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>CubeMX uses <code>x</code> as placeholder for the temperature range in the device name.
+This function computes the temperature codes from the maximum operating
+temperature, since every higher range also supports all the lower ranges.</p>
+
+<h6 id="parameters">Parameters</h6>
+
+<ul>
+<li><strong>partname</strong>:  A STM32 device name with temperature placeholder.</li>
+</ul>
+
+<h6 id="returns">Returns</h6>
+
+<blockquote>
+  <p>A sorted list of temperature codes, for example, <code>["3", "6", "7"]</code>.</p>
 </blockquote>
 </div>
 
