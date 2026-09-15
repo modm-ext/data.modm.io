@@ -57,6 +57,72 @@
             <li>
                     <a class="function" href="#read_bdma_request_map">read_bdma_request_map</a>
             </li>
+            <li>
+                    <a class="function" href="#read_header">read_header</a>
+            </li>
+            <li>
+                    <a class="class" href="#RegisterAccess">RegisterAccess</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#RegisterAccess.__init__">RegisterAccess</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#RegisterAccess.kind">kind</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#RegisterAccess.member">member</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#RegisterAccess.types">types</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#RegisterAccess.variable">variable</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#RegisterAccess.masks">masks</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="class" href="#LLFunction">LLFunction</a>
+                            <ul class="memberlist">
+                        <li>
+                                <a class="function" href="#LLFunction.__init__">LLFunction</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LLFunction.name">name</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LLFunction.file">file</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LLFunction.typedef">typedef</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LLFunction.rmtoll">rmtoll</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LLFunction.values">values</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LLFunction.instance_macros">instance_macros</a>
+                        </li>
+                        <li>
+                                <a class="variable" href="#LLFunction.accesses">accesses</a>
+                        </li>
+                </ul>
+
+            </li>
+            <li>
+                    <a class="function" href="#register_accesses">register_accesses</a>
+            </li>
+            <li>
+                    <a class="function" href="#ll_functions">ll_functions</a>
+            </li>
+            <li>
+                    <a class="function" href="#ll_descriptions">ll_descriptions</a>
+            </li>
     </ul>
 
 
@@ -100,8 +166,19 @@
 </span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>
 </span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.dmamux_requests</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_request_map</span><span class="p">,</span> <span class="n">read_bdma_request_map</span>
-</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;read_request_map&quot;</span><span class="p">,</span> <span class="s2">&quot;read_bdma_request_map&quot;</span><span class="p">]</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.header</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_header</span>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.registers</span><span class="w"> </span><span class="kn">import</span> <span class="n">RegisterAccess</span><span class="p">,</span> <span class="n">LLFunction</span><span class="p">,</span> <span class="n">register_accesses</span><span class="p">,</span> <span class="n">ll_functions</span><span class="p">,</span> <span class="n">ll_descriptions</span>
+</span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>
+</span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>    <span class="s2">&quot;read_request_map&quot;</span><span class="p">,</span>
+</span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>    <span class="s2">&quot;read_bdma_request_map&quot;</span><span class="p">,</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>    <span class="s2">&quot;read_header&quot;</span><span class="p">,</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="s2">&quot;RegisterAccess&quot;</span><span class="p">,</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="s2">&quot;LLFunction&quot;</span><span class="p">,</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="s2">&quot;register_accesses&quot;</span><span class="p">,</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>    <span class="s2">&quot;ll_functions&quot;</span><span class="p">,</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>    <span class="s2">&quot;ll_descriptions&quot;</span><span class="p">,</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="p">]</span>
 </span></pre></div>
 
 
@@ -177,6 +254,437 @@
 
 
     
+
+                </section>
+                <section id="read_header">
+                            <input id="read_header-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">read_header</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">did</span></span><span class="return-annotation">):</span></span>
+
+                <label class="view-source-button" for="read_header-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#read_header"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="read_header-253"><a href="#read_header-253"><span class="linenos">253</span></a><span class="k">def</span><span class="w"> </span><span class="nf">read_header</span><span class="p">(</span><span class="n">did</span><span class="p">):</span>
+</span><span id="read_header-254"><a href="#read_header-254"><span class="linenos">254</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="read_header-255"><a href="#read_header-255"><span class="linenos">255</span></a><span class="sd">    Finds all register and bit names in the CMSIS header file.</span>
+</span><span id="read_header-256"><a href="#read_header-256"><span class="linenos">256</span></a>
+</span><span id="read_header-257"><a href="#read_header-257"><span class="linenos">257</span></a><span class="sd">    :returns: a RegisterMap object that allows regex-ing for register names.</span>
+</span><span id="read_header-258"><a href="#read_header-258"><span class="linenos">258</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="read_header-259"><a href="#read_header-259"><span class="linenos">259</span></a>    <span class="n">family_folder</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;stm32</span><span class="si">{</span><span class="n">did</span><span class="o">.</span><span class="n">family</span><span class="si">}</span><span class="s2">xx&quot;</span>
+</span><span id="read_header-260"><a href="#read_header-260"><span class="linenos">260</span></a>    <span class="k">if</span> <span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;h7r&quot;</span><span class="p">,</span> <span class="s2">&quot;h7s&quot;</span><span class="p">]:</span>
+</span><span id="read_header-261"><a href="#read_header-261"><span class="linenos">261</span></a>        <span class="n">family_folder</span> <span class="o">=</span> <span class="s2">&quot;stm32h7rsxx&quot;</span>
+</span><span id="read_header-262"><a href="#read_header-262"><span class="linenos">262</span></a>    <span class="k">elif</span> <span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;wba&quot;</span><span class="p">:</span>
+</span><span id="read_header-263"><a href="#read_header-263"><span class="linenos">263</span></a>        <span class="n">family_folder</span> <span class="o">=</span> <span class="s2">&quot;stm32wbaxx&quot;</span>
+</span><span id="read_header-264"><a href="#read_header-264"><span class="linenos">264</span></a>    <span class="n">family_header</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">family_folder</span><span class="si">}</span><span class="s2">.h&quot;</span>
+</span><span id="read_header-265"><a href="#read_header-265"><span class="linenos">265</span></a>    <span class="k">if</span> <span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;wb0&quot;</span><span class="p">:</span>
+</span><span id="read_header-266"><a href="#read_header-266"><span class="linenos">266</span></a>        <span class="n">family_folder</span> <span class="o">=</span> <span class="s2">&quot;stm32wb0xx&quot;</span>
+</span><span id="read_header-267"><a href="#read_header-267"><span class="linenos">267</span></a>        <span class="n">family_header</span> <span class="o">=</span> <span class="s2">&quot;stm32wb0x.h&quot;</span>
+</span><span id="read_header-268"><a href="#read_header-268"><span class="linenos">268</span></a>    <span class="k">elif</span> <span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;wl3&quot;</span><span class="p">:</span>
+</span><span id="read_header-269"><a href="#read_header-269"><span class="linenos">269</span></a>        <span class="n">family_folder</span> <span class="o">=</span> <span class="s2">&quot;stm32wl3xx&quot;</span>
+</span><span id="read_header-270"><a href="#read_header-270"><span class="linenos">270</span></a>        <span class="n">family_header</span> <span class="o">=</span> <span class="s2">&quot;stm32wl3x.h&quot;</span>
+</span><span id="read_header-271"><a href="#read_header-271"><span class="linenos">271</span></a>    <span class="n">family_header</span> <span class="o">=</span> <span class="p">(</span><span class="n">_HEADER_PATH</span> <span class="o">/</span> <span class="n">family_folder</span> <span class="o">/</span> <span class="s2">&quot;Include&quot;</span> <span class="o">/</span> <span class="n">family_header</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span>
+</span><span id="read_header-272"><a href="#read_header-272"><span class="linenos">272</span></a>        <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span>
+</span><span id="read_header-273"><a href="#read_header-273"><span class="linenos">273</span></a>    <span class="p">)</span>
+</span><span id="read_header-274"><a href="#read_header-274"><span class="linenos">274</span></a>    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;if +defined\( *(STM32[A-Z][\w\d]+) *\)&quot;</span><span class="p">,</span> <span class="n">family_header</span><span class="p">)</span>
+</span><span id="read_header-275"><a href="#read_header-275"><span class="linenos">275</span></a>    <span class="k">assert</span> <span class="n">match</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;No CPP define match found for &#39;</span><span class="si">{</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="si">}</span><span class="s2">&#39;!&quot;</span>
+</span><span id="read_header-276"><a href="#read_header-276"><span class="linenos">276</span></a>    <span class="n">device_define</span> <span class="o">=</span> <span class="n">_get_define_for_device</span><span class="p">(</span><span class="n">did</span><span class="p">,</span> <span class="n">match</span><span class="p">)</span>
+</span><span id="read_header-277"><a href="#read_header-277"><span class="linenos">277</span></a>    <span class="k">assert</span> <span class="n">device_define</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;No device define found for &#39;</span><span class="si">{</span><span class="n">did</span><span class="o">.</span><span class="n">string</span><span class="si">}</span><span class="s2">&#39;!&quot;</span>
+</span><span id="read_header-278"><a href="#read_header-278"><span class="linenos">278</span></a>
+</span><span id="read_header-279"><a href="#read_header-279"><span class="linenos">279</span></a>    <span class="k">if</span> <span class="p">(</span><span class="n">pkl</span> <span class="o">:=</span> <span class="n">_CACHE_PATH</span> <span class="o">/</span> <span class="n">family_folder</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">device_define</span><span class="si">}</span><span class="s2">.pkl&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+</span><span id="read_header-280"><a href="#read_header-280"><span class="linenos">280</span></a>        <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">pkl</span><span class="o">.</span><span class="n">read_bytes</span><span class="p">())</span>
+</span><span id="read_header-281"><a href="#read_header-281"><span class="linenos">281</span></a>
+</span><span id="read_header-282"><a href="#read_header-282"><span class="linenos">282</span></a>    <span class="n">values</span> <span class="o">=</span> <span class="n">_read_header</span><span class="p">(</span><span class="n">device_define</span><span class="p">)</span>
+</span><span id="read_header-283"><a href="#read_header-283"><span class="linenos">283</span></a>    <span class="n">pkl</span><span class="o">.</span><span class="n">write_bytes</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">))</span>
+</span><span id="read_header-284"><a href="#read_header-284"><span class="linenos">284</span></a>    <span class="k">return</span> <span class="n">values</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Finds all register and bit names in the CMSIS header file.</p>
+
+<p>:returns: a RegisterMap object that allows regex-ing for register names.</p>
+</div>
+
+
+                </section>
+                <section id="RegisterAccess">
+                            <input id="RegisterAccess-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+                    <div class="decorator">@dataclass</div>
+
+    <span class="def">class</span>
+    <span class="name">RegisterAccess</span>:
+
+                <label class="view-source-button" for="RegisterAccess-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#RegisterAccess"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RegisterAccess-35"><a href="#RegisterAccess-35"><span class="linenos">35</span></a><span class="nd">@dataclass</span>
+</span><span id="RegisterAccess-36"><a href="#RegisterAccess-36"><span class="linenos">36</span></a><span class="k">class</span><span class="w"> </span><span class="nc">RegisterAccess</span><span class="p">:</span>
+</span><span id="RegisterAccess-37"><a href="#RegisterAccess-37"><span class="linenos">37</span></a>    <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="RegisterAccess-38"><a href="#RegisterAccess-38"><span class="linenos">38</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The access macro, e.g. `MODIFY_REG`.&quot;&quot;&quot;</span>
+</span><span id="RegisterAccess-39"><a href="#RegisterAccess-39"><span class="linenos">39</span></a>    <span class="n">member</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="RegisterAccess-40"><a href="#RegisterAccess-40"><span class="linenos">40</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The register member of the structure, e.g. `CR1`.&quot;&quot;&quot;</span>
+</span><span id="RegisterAccess-41"><a href="#RegisterAccess-41"><span class="linenos">41</span></a>    <span class="n">types</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="RegisterAccess-42"><a href="#RegisterAccess-42"><span class="linenos">42</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The possible structure types of the accessed variable.&quot;&quot;&quot;</span>
+</span><span id="RegisterAccess-43"><a href="#RegisterAccess-43"><span class="linenos">43</span></a>    <span class="n">variable</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="RegisterAccess-44"><a href="#RegisterAccess-44"><span class="linenos">44</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The name of the accessed variable or instance, e.g. `USARTx` or `RCC`.&quot;&quot;&quot;</span>
+</span><span id="RegisterAccess-45"><a href="#RegisterAccess-45"><span class="linenos">45</span></a>    <span class="n">masks</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</span><span id="RegisterAccess-46"><a href="#RegisterAccess-46"><span class="linenos">46</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The identifiers in the mask argument, e.g. `USART_CR1_UE`.&quot;&quot;&quot;</span>
+</span></pre></div>
+
+
+    
+
+                            <div id="RegisterAccess.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">RegisterAccess</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">kind</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">member</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">types</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>,</span><span class="param">	<span class="n">variable</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">masks</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#RegisterAccess.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="RegisterAccess.kind" class="classattr">
+                                <div class="attr variable">
+            <span class="name">kind</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#RegisterAccess.kind"></a>
+    
+            <div class="docstring"><p>The access macro, e.g. <code>MODIFY_REG</code>.</p>
+</div>
+
+
+                            </div>
+                            <div id="RegisterAccess.member" class="classattr">
+                                <div class="attr variable">
+            <span class="name">member</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#RegisterAccess.member"></a>
+    
+            <div class="docstring"><p>The register member of the structure, e.g. <code>CR1</code>.</p>
+</div>
+
+
+                            </div>
+                            <div id="RegisterAccess.types" class="classattr">
+                                <div class="attr variable">
+            <span class="name">types</span><span class="annotation">: set[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#RegisterAccess.types"></a>
+    
+            <div class="docstring"><p>The possible structure types of the accessed variable.</p>
+</div>
+
+
+                            </div>
+                            <div id="RegisterAccess.variable" class="classattr">
+                                <div class="attr variable">
+            <span class="name">variable</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#RegisterAccess.variable"></a>
+    
+            <div class="docstring"><p>The name of the accessed variable or instance, e.g. <code>USARTx</code> or <code>RCC</code>.</p>
+</div>
+
+
+                            </div>
+                            <div id="RegisterAccess.masks" class="classattr">
+                                <div class="attr variable">
+            <span class="name">masks</span><span class="annotation">: set[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#RegisterAccess.masks"></a>
+    
+            <div class="docstring"><p>The identifiers in the mask argument, e.g. <code>USART_CR1_UE</code>.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="LLFunction">
+                            <input id="LLFunction-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr class">
+                    <div class="decorator">@dataclass</div>
+
+    <span class="def">class</span>
+    <span class="name">LLFunction</span>:
+
+                <label class="view-source-button" for="LLFunction-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#LLFunction"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="LLFunction-49"><a href="#LLFunction-49"><span class="linenos">49</span></a><span class="nd">@dataclass</span>
+</span><span id="LLFunction-50"><a href="#LLFunction-50"><span class="linenos">50</span></a><span class="k">class</span><span class="w"> </span><span class="nc">LLFunction</span><span class="p">:</span>
+</span><span id="LLFunction-51"><a href="#LLFunction-51"><span class="linenos">51</span></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="LLFunction-52"><a href="#LLFunction-52"><span class="linenos">52</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The name of the function, e.g. `LL_USART_SetParity`.&quot;&quot;&quot;</span>
+</span><span id="LLFunction-53"><a href="#LLFunction-53"><span class="linenos">53</span></a>    <span class="n">file</span><span class="p">:</span> <span class="nb">str</span>
+</span><span id="LLFunction-54"><a href="#LLFunction-54"><span class="linenos">54</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The name of the header file.&quot;&quot;&quot;</span>
+</span><span id="LLFunction-55"><a href="#LLFunction-55"><span class="linenos">55</span></a>    <span class="n">typedef</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+</span><span id="LLFunction-56"><a href="#LLFunction-56"><span class="linenos">56</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The structure type of the instance parameter.&quot;&quot;&quot;</span>
+</span><span id="LLFunction-57"><a href="#LLFunction-57"><span class="linenos">57</span></a>    <span class="n">rmtoll</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+</span><span id="LLFunction-58"><a href="#LLFunction-58"><span class="linenos">58</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The register and bit field names in the reference manual.&quot;&quot;&quot;</span>
+</span><span id="LLFunction-59"><a href="#LLFunction-59"><span class="linenos">59</span></a>    <span class="n">values</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+</span><span id="LLFunction-60"><a href="#LLFunction-60"><span class="linenos">60</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The enumerated values of the parameter or return value.&quot;&quot;&quot;</span>
+</span><span id="LLFunction-61"><a href="#LLFunction-61"><span class="linenos">61</span></a>    <span class="n">instance_macros</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">set</span><span class="p">)</span>
+</span><span id="LLFunction-62"><a href="#LLFunction-62"><span class="linenos">62</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The `IS_*_INSTANCE` macros that check for instance support.&quot;&quot;&quot;</span>
+</span><span id="LLFunction-63"><a href="#LLFunction-63"><span class="linenos">63</span></a>    <span class="n">accesses</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">RegisterAccess</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+</span><span id="LLFunction-64"><a href="#LLFunction-64"><span class="linenos">64</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;The register accesses in the function body.&quot;&quot;&quot;</span>
+</span></pre></div>
+
+
+    
+
+                            <div id="LLFunction.__init__" class="classattr">
+                                <div class="attr function">
+            
+        <span class="name">LLFunction</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">name</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">file</span><span class="p">:</span> <span class="nb">str</span>,</span><span class="param">	<span class="n">typedef</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">rmtoll</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">factory</span><span class="o">&gt;</span>,</span><span class="param">	<span class="n">values</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">factory</span><span class="o">&gt;</span>,</span><span class="param">	<span class="n">instance_macros</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">factory</span><span class="o">&gt;</span>,</span><span class="param">	<span class="n">accesses</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n"><a href="#RegisterAccess">RegisterAccess</a></span><span class="p">]</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">factory</span><span class="o">&gt;</span></span>)</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LLFunction.__init__"></a>
+    
+    
+
+                            </div>
+                            <div id="LLFunction.name" class="classattr">
+                                <div class="attr variable">
+            <span class="name">name</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LLFunction.name"></a>
+    
+            <div class="docstring"><p>The name of the function, e.g. <code>LL_USART_SetParity</code>.</p>
+</div>
+
+
+                            </div>
+                            <div id="LLFunction.file" class="classattr">
+                                <div class="attr variable">
+            <span class="name">file</span><span class="annotation">: str</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LLFunction.file"></a>
+    
+            <div class="docstring"><p>The name of the header file.</p>
+</div>
+
+
+                            </div>
+                            <div id="LLFunction.typedef" class="classattr">
+                                <div class="attr variable">
+            <span class="name">typedef</span><span class="annotation">: str | None</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LLFunction.typedef"></a>
+    
+            <div class="docstring"><p>The structure type of the instance parameter.</p>
+</div>
+
+
+                            </div>
+                            <div id="LLFunction.rmtoll" class="classattr">
+                                <div class="attr variable">
+            <span class="name">rmtoll</span><span class="annotation">: list[tuple[str, str]]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LLFunction.rmtoll"></a>
+    
+            <div class="docstring"><p>The register and bit field names in the reference manual.</p>
+</div>
+
+
+                            </div>
+                            <div id="LLFunction.values" class="classattr">
+                                <div class="attr variable">
+            <span class="name">values</span><span class="annotation">: list[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LLFunction.values"></a>
+    
+            <div class="docstring"><p>The enumerated values of the parameter or return value.</p>
+</div>
+
+
+                            </div>
+                            <div id="LLFunction.instance_macros" class="classattr">
+                                <div class="attr variable">
+            <span class="name">instance_macros</span><span class="annotation">: set[str]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LLFunction.instance_macros"></a>
+    
+            <div class="docstring"><p>The <code>IS_*_INSTANCE</code> macros that check for instance support.</p>
+</div>
+
+
+                            </div>
+                            <div id="LLFunction.accesses" class="classattr">
+                                <div class="attr variable">
+            <span class="name">accesses</span><span class="annotation">: list[<a href="#RegisterAccess">RegisterAccess</a>]</span>
+
+        
+    </div>
+    <a class="headerlink" href="#LLFunction.accesses"></a>
+    
+            <div class="docstring"><p>The register accesses in the function body.</p>
+</div>
+
+
+                            </div>
+                </section>
+                <section id="register_accesses">
+                            <input id="register_accesses-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+                    <div class="decorator">@cache</div>
+
+        <span class="def">def</span>
+        <span class="name">register_accesses</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">path</span><span class="p">:</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span></span><span class="return-annotation">) -> <span class="nb">list</span><span class="p">[</span><span class="n"><a href="#RegisterAccess">RegisterAccess</a></span><span class="p">]</span>:</span></span>
+
+                <label class="view-source-button" for="register_accesses-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#register_accesses"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="register_accesses-118"><a href="#register_accesses-118"><span class="linenos">118</span></a><span class="nd">@cache</span>
+</span><span id="register_accesses-119"><a href="#register_accesses-119"><span class="linenos">119</span></a><span class="k">def</span><span class="w"> </span><span class="nf">register_accesses</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">RegisterAccess</span><span class="p">]:</span>
+</span><span id="register_accesses-120"><a href="#register_accesses-120"><span class="linenos">120</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="register_accesses-121"><a href="#register_accesses-121"><span class="linenos">121</span></a><span class="sd">    :param path: the CubeHAL folder of a family.</span>
+</span><span id="register_accesses-122"><a href="#register_accesses-122"><span class="linenos">122</span></a><span class="sd">    :return: all register accesses with a structure member in the HAL and LL source code.</span>
+</span><span id="register_accesses-123"><a href="#register_accesses-123"><span class="linenos">123</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="register_accesses-124"><a href="#register_accesses-124"><span class="linenos">124</span></a>    <span class="n">texts</span> <span class="o">=</span> <span class="p">{</span><span class="n">file</span><span class="p">:</span> <span class="n">_read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*/*.[ch]&quot;</span><span class="p">))}</span>
+</span><span id="register_accesses-125"><a href="#register_accesses-125"><span class="linenos">125</span></a>    <span class="c1"># Variables and handle members are declared per module, e.g. UART_HandleTypeDef::Instance in hal_uart.h</span>
+</span><span id="register_accesses-126"><a href="#register_accesses-126"><span class="linenos">126</span></a>    <span class="n">modules</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">))</span>
+</span><span id="register_accesses-127"><a href="#register_accesses-127"><span class="linenos">127</span></a>    <span class="k">for</span> <span class="n">file</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="register_accesses-128"><a href="#register_accesses-128"><span class="linenos">128</span></a>        <span class="n">module</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(_ex)?\.[ch]$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span><span id="register_accesses-129"><a href="#register_accesses-129"><span class="linenos">129</span></a>        <span class="k">for</span> <span class="n">typedef</span><span class="p">,</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b(\w+_TypeDef)\s*\*\s*(?:const\s+)?(\w+)&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+</span><span id="register_accesses-130"><a href="#register_accesses-130"><span class="linenos">130</span></a>            <span class="n">modules</span><span class="p">[</span><span class="n">module</span><span class="p">][</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">typedef</span><span class="p">)</span>
+</span><span id="register_accesses-131"><a href="#register_accesses-131"><span class="linenos">131</span></a>    <span class="n">accesses</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="register_accesses-132"><a href="#register_accesses-132"><span class="linenos">132</span></a>    <span class="k">for</span> <span class="n">file</span><span class="p">,</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="register_accesses-133"><a href="#register_accesses-133"><span class="linenos">133</span></a>        <span class="n">accesses</span> <span class="o">+=</span> <span class="n">_accesses</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">modules</span><span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(_ex)?\.[ch]$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)])</span>
+</span><span id="register_accesses-134"><a href="#register_accesses-134"><span class="linenos">134</span></a>    <span class="k">return</span> <span class="n">accesses</span>
+</span></pre></div>
+
+
+            <div class="docstring"><h6 id="parameters">Parameters</h6>
+
+<ul>
+<li><strong>path</strong>:  the CubeHAL folder of a family.</li>
+</ul>
+
+<h6 id="returns">Returns</h6>
+
+<blockquote>
+  <p>all register accesses with a structure member in the HAL and LL source code.</p>
+</blockquote>
+</div>
+
+
+                </section>
+                <section id="ll_functions">
+                            <input id="ll_functions-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+                    <div class="decorator">@cache</div>
+
+        <span class="def">def</span>
+        <span class="name">ll_functions</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">path</span><span class="p">:</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span></span><span class="return-annotation">) -> <span class="nb">list</span><span class="p">[</span><span class="n"><a href="#LLFunction">LLFunction</a></span><span class="p">]</span>:</span></span>
+
+                <label class="view-source-button" for="ll_functions-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#ll_functions"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ll_functions-137"><a href="#ll_functions-137"><span class="linenos">137</span></a><span class="nd">@cache</span>
+</span><span id="ll_functions-138"><a href="#ll_functions-138"><span class="linenos">138</span></a><span class="k">def</span><span class="w"> </span><span class="nf">ll_functions</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">LLFunction</span><span class="p">]:</span>
+</span><span id="ll_functions-139"><a href="#ll_functions-139"><span class="linenos">139</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="ll_functions-140"><a href="#ll_functions-140"><span class="linenos">140</span></a><span class="sd">    :param path: the CubeHAL folder of a family.</span>
+</span><span id="ll_functions-141"><a href="#ll_functions-141"><span class="linenos">141</span></a><span class="sd">    :return: all documented LL inline functions.</span>
+</span><span id="ll_functions-142"><a href="#ll_functions-142"><span class="linenos">142</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="ll_functions-143"><a href="#ll_functions-143"><span class="linenos">143</span></a>    <span class="n">functions</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="ll_functions-144"><a href="#ll_functions-144"><span class="linenos">144</span></a>    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">((</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;Inc&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*_ll_*.h&quot;</span><span class="p">)):</span>
+</span><span id="ll_functions-145"><a href="#ll_functions-145"><span class="linenos">145</span></a>        <span class="n">text</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span>
+</span><span id="ll_functions-146"><a href="#ll_functions-146"><span class="linenos">146</span></a>        <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">_FUNCTION</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+</span><span id="ll_functions-147"><a href="#ll_functions-147"><span class="linenos">147</span></a>            <span class="n">doc</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">parameters</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+</span><span id="ll_functions-148"><a href="#ll_functions-148"><span class="linenos">148</span></a>            <span class="n">body</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">()</span> <span class="p">:</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">}&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">())]</span>
+</span><span id="ll_functions-149"><a href="#ll_functions-149"><span class="linenos">149</span></a>            <span class="n">typedef</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\w+_TypeDef)\s*\*\s*(\w+)&quot;</span><span class="p">,</span> <span class="n">parameters</span><span class="p">)</span>
+</span><span id="ll_functions-150"><a href="#ll_functions-150"><span class="linenos">150</span></a>            <span class="n">function</span> <span class="o">=</span> <span class="n">LLFunction</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">typedef</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">typedef</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="ll_functions-151"><a href="#ll_functions-151"><span class="linenos">151</span></a>            <span class="k">for</span> <span class="n">rmtoll</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;@rmtoll\s+(.*?)(?=@param|@retval|@note|@brief|$)&quot;</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">):</span>
+</span><span id="ll_functions-152"><a href="#ll_functions-152"><span class="linenos">152</span></a>                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">rmtoll</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n&quot;</span><span class="p">):</span>
+</span><span id="ll_functions-153"><a href="#ll_functions-153"><span class="linenos">153</span></a>                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span> <span class="o">:=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+</span><span id="ll_functions-154"><a href="#ll_functions-154"><span class="linenos">154</span></a>                        <span class="n">function</span><span class="o">.</span><span class="n">rmtoll</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</span><span id="ll_functions-155"><a href="#ll_functions-155"><span class="linenos">155</span></a>            <span class="n">function</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;@arg\s+@ref\s+(LL_\w+)&quot;</span><span class="p">,</span> <span class="n">doc</span><span class="p">)</span>
+</span><span id="ll_functions-156"><a href="#ll_functions-156"><span class="linenos">156</span></a>            <span class="n">function</span><span class="o">.</span><span class="n">instance_macros</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b(IS_\w+_INSTANCE)\b&quot;</span><span class="p">,</span> <span class="n">doc</span><span class="p">))</span>
+</span><span id="ll_functions-157"><a href="#ll_functions-157"><span class="linenos">157</span></a>            <span class="n">types</span> <span class="o">=</span> <span class="p">{</span><span class="n">typedef</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="p">{</span><span class="n">typedef</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)}}</span> <span class="k">if</span> <span class="n">typedef</span> <span class="k">else</span> <span class="p">{}</span>
+</span><span id="ll_functions-158"><a href="#ll_functions-158"><span class="linenos">158</span></a>            <span class="n">function</span><span class="o">.</span><span class="n">accesses</span> <span class="o">=</span> <span class="n">_accesses</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">types</span><span class="p">)</span>
+</span><span id="ll_functions-159"><a href="#ll_functions-159"><span class="linenos">159</span></a>            <span class="n">functions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">function</span><span class="p">)</span>
+</span><span id="ll_functions-160"><a href="#ll_functions-160"><span class="linenos">160</span></a>    <span class="k">return</span> <span class="n">functions</span>
+</span></pre></div>
+
+
+            <div class="docstring"><h6 id="parameters">Parameters</h6>
+
+<ul>
+<li><strong>path</strong>:  the CubeHAL folder of a family.</li>
+</ul>
+
+<h6 id="returns">Returns</h6>
+
+<blockquote>
+  <p>all documented LL inline functions.</p>
+</blockquote>
+</div>
+
+
+                </section>
+                <section id="ll_descriptions">
+                            <input id="ll_descriptions-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+                    <div class="decorator">@cache</div>
+
+        <span class="def">def</span>
+        <span class="name">ll_descriptions</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">path</span><span class="p">:</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span></span><span class="return-annotation">) -> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>:</span></span>
+
+                <label class="view-source-button" for="ll_descriptions-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#ll_descriptions"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="ll_descriptions-163"><a href="#ll_descriptions-163"><span class="linenos">163</span></a><span class="nd">@cache</span>
+</span><span id="ll_descriptions-164"><a href="#ll_descriptions-164"><span class="linenos">164</span></a><span class="k">def</span><span class="w"> </span><span class="nf">ll_descriptions</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+</span><span id="ll_descriptions-165"><a href="#ll_descriptions-165"><span class="linenos">165</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;:return: the descriptions of all LL macros, e.g. `LL_USART_PARITY_EVEN`.&quot;&quot;&quot;</span>
+</span><span id="ll_descriptions-166"><a href="#ll_descriptions-166"><span class="linenos">166</span></a>    <span class="n">descriptions</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="ll_descriptions-167"><a href="#ll_descriptions-167"><span class="linenos">167</span></a>    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">((</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;Inc&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*_ll_*.h&quot;</span><span class="p">)):</span>
+</span><span id="ll_descriptions-168"><a href="#ll_descriptions-168"><span class="linenos">168</span></a>        <span class="n">text</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span>
+</span><span id="ll_descriptions-169"><a href="#ll_descriptions-169"><span class="linenos">169</span></a>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;#define\s+(LL_\w+)\s+[^\n]*?/\*!&lt;\s*(.*?)\s*\*/&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+</span><span id="ll_descriptions-170"><a href="#ll_descriptions-170"><span class="linenos">170</span></a>            <span class="n">descriptions</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">description</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span><span id="ll_descriptions-171"><a href="#ll_descriptions-171"><span class="linenos">171</span></a>    <span class="k">return</span> <span class="n">descriptions</span>
+</span></pre></div>
+
+
+            <div class="docstring"><h6 id="returns">Returns</h6>
+
+<blockquote>
+  <p>the descriptions of all LL macros, e.g. <code>LL_USART_PARITY_EVEN</code>.</p>
+</blockquote>
+</div>
+
 
                 </section>
     </main>

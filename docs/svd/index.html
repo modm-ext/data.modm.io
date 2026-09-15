@@ -1,0 +1,2497 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVD Register Explorer</title>
+<meta name="description" content="Pick or open a CMSIS-SVD file and browse peripherals, registers, bit fields and enumerated values as a table or as a zoomable address space map.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground: #F3F5F4;
+    --surface: #FFFFFF;
+    --band: #F8FAF9;
+    --ink: #16201C;
+    --muted: #5B6863;
+    --faint: #85918C;
+    --rule: #DDE3E0;
+    --rule-strong: #C3CCC8;
+    --accent: #1C6B56;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E2EFEA;
+    --hover: #EEF4F1;
+    --mark: #FBE3A0;
+    --mark-ink: #16201C;
+    --error: #B42318;
+    --periph: #F1F4F2;
+    --hatch: #CDD6D2;
+    --reg-rw: #D3E8DF;
+    --reg-rw-line: #2F7A64;
+    --reg-ro: #DCE4EF;
+    --reg-ro-line: #4A6A90;
+    --reg-wo: #F2E6CF;
+    --reg-wo-line: #946524;
+    --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0E1311;
+      --surface: #141A18;
+      --band: #111715;
+      --ink: #E2E8E5;
+      --muted: #9AA8A2;
+      --faint: #6E7B76;
+      --rule: #232D29;
+      --rule-strong: #34403B;
+      --accent: #5FC0A0;
+      --accent-ink: #0B1512;
+      --accent-soft: #16302A;
+      --hover: #19231F;
+      --mark: #6A5616;
+      --mark-ink: #FFF4D1;
+      --error: #F4A39B;
+      --periph: #111916;
+      --hatch: #2A3531;
+      --reg-rw: #1C3A31;
+      --reg-rw-line: #5FC0A0;
+      --reg-ro: #1D2837;
+      --reg-ro-line: #8FB1D9;
+      --reg-wo: #35291A;
+      --reg-wo-line: #D8A85A;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0E1311;
+    --surface: #141A18;
+    --band: #111715;
+    --ink: #E2E8E5;
+    --muted: #9AA8A2;
+    --faint: #6E7B76;
+    --rule: #232D29;
+    --rule-strong: #34403B;
+    --accent: #5FC0A0;
+    --accent-ink: #0B1512;
+    --accent-soft: #16302A;
+    --hover: #19231F;
+    --mark: #6A5616;
+    --mark-ink: #FFF4D1;
+    --error: #F4A39B;
+    --periph: #111916;
+    --hatch: #2A3531;
+    --reg-rw: #1C3A31;
+    --reg-rw-line: #5FC0A0;
+    --reg-ro: #1D2837;
+    --reg-ro-line: #8FB1D9;
+    --reg-wo: #35291A;
+    --reg-wo-line: #D8A85A;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 14px/1.45 var(--font-sans);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-inline: clamp(16px, 3vw, 32px);
+    padding-block: 18px 16px;
+    height: 100dvh;
+  }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+
+  /* Top bar */
+  .top {
+    display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 10px 24px;
+  }
+  .brand { display: grid; gap: 2px; min-width: 0; }
+  h1 {
+    margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  .file-line {
+    margin: 0; color: var(--muted); font-size: 13px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px;
+  }
+  .file-line .dev { font-family: var(--font-mono); color: var(--ink); font-weight: 500; }
+  .file-line .sep { color: var(--faint); }
+  .chip {
+    font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 1px 6px;
+  }
+  .open { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .hint { color: var(--faint); font-size: 12.5px; }
+
+  .btn {
+    font: 500 13px/1 var(--font-sans); color: var(--ink);
+    background: var(--surface); border: 1px solid var(--rule-strong); border-radius: 6px;
+    padding: 7px 12px; cursor: pointer; white-space: nowrap;
+  }
+  .btn:hover { background: var(--hover); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn.primary:hover { filter: brightness(1.08); }
+  .btn.icon { width: 30px; padding-inline: 0; text-align: center; font-size: 15px; }
+  .btn:focus-visible, .tw:focus-visible, .check input:focus-visible, .check select:focus-visible,
+  .tab:focus-visible, .crumb:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  #file-input:focus-visible + .btn { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* Layout */
+  .layout {
+    flex: 1; min-height: 0;
+    display: grid; grid-template-columns: minmax(210px, 250px) minmax(0, 1fr); gap: 16px;
+  }
+  .main { min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: 12px; }
+  .panel { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+
+  /* File menu */
+  .menu {
+    min-height: 0; display: flex; flex-direction: column; gap: 8px;
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding-top: 11px;
+  }
+  .menu-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding-inline: 12px; }
+  .menu h2 {
+    margin: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted);
+  }
+  .menu-count { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .menu .search { flex: none; margin-inline: 10px; font-size: 13px; padding-inline: 8px; }
+  .menu .search input { padding: 6px 4px; }
+  .menu-list { list-style: none; margin: 0; padding: 0 0 8px; overflow: auto; flex: 1; min-height: 0; }
+  .menu-group {
+    position: sticky; top: 0; background: var(--surface);
+    padding: 9px 14px 3px; font-size: 11px; letter-spacing: 0.07em; color: var(--faint);
+  }
+  .menu-item {
+    display: block; width: 100%; text-align: left; border: 0; background: transparent; cursor: pointer;
+    color: var(--ink); font: 13px/1.35 var(--font-mono); padding: 3px 14px;
+  }
+  .menu-item:hover { background: var(--hover); }
+  .menu-item[aria-current="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 500; }
+  .menu-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .menu-note { padding: 10px 14px; color: var(--muted); font-size: 12.5px; display: grid; gap: 6px; }
+  .menu-note p { margin: 0; }
+  .menu-note code {
+    font-family: var(--font-mono); font-size: 11.5px; color: var(--ink); overflow-wrap: anywhere;
+    background: var(--band); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 4px;
+  }
+
+  /* Tools */
+  .tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+  .tabs { display: inline-flex; border: 1px solid var(--rule-strong); border-radius: 6px; overflow: hidden; background: var(--surface); }
+  .tab {
+    font: 500 13px/1 var(--font-sans); color: var(--muted); background: transparent; border: 0;
+    padding: 8px 14px; cursor: pointer;
+  }
+  .tab + .tab { border-left: 1px solid var(--rule-strong); }
+  .tab:hover { color: var(--ink); background: var(--hover); }
+  .tab[aria-selected="true"] { color: var(--accent); background: var(--accent-soft); }
+  .search {
+    flex: 1 1 320px; min-width: 0; display: flex; align-items: center;
+    background: var(--surface); border: 1px solid var(--rule-strong); border-radius: 6px;
+    font-family: var(--font-mono); font-size: 14px; padding-inline: 10px;
+  }
+  .search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .search.invalid { border-color: var(--error); box-shadow: 0 0 0 1px var(--error); }
+  .delim { color: var(--faint); user-select: none; }
+  .search input {
+    flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink);
+    font: inherit; padding: 7px 4px;
+  }
+  .search input::placeholder { color: var(--faint); }
+  .check { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; cursor: pointer; }
+  .check input { accent-color: var(--accent); margin: 0; }
+  .check select {
+    font: 13px var(--font-sans); color: var(--ink); background: var(--surface);
+    border: 1px solid var(--rule-strong); border-radius: 5px; padding: 3px 4px;
+  }
+  .actions { display: flex; gap: 6px; }
+  .status { margin: 0; flex-basis: 100%; color: var(--muted); font-size: 12.5px; min-height: 1.45em; }
+  .status code { font-family: var(--font-mono); color: var(--ink); }
+  .status.error { color: var(--error); }
+
+  .message {
+    margin: 0; padding: 8px 12px; border: 1px solid var(--error); border-radius: 6px;
+    color: var(--error); background: var(--surface);
+  }
+
+  /* Table */
+  .table-wrap {
+    flex: 1; min-height: 220px; overflow: auto;
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 8px;
+  }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+  th {
+    position: sticky; top: 0; z-index: 1; background: var(--surface);
+    text-align: left; font-weight: 500; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--muted); padding: 9px 12px; border-bottom: 1px solid var(--rule-strong); white-space: nowrap;
+  }
+  td { padding: 4px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; white-space: nowrap; }
+  tbody tr:hover td { background: var(--hover); }
+  .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  .off { color: var(--faint); margin-left: 6px; }
+  td.c-name { padding-left: calc(6px + var(--d, 0) * 20px); }
+  td.c-desc { white-space: normal; min-width: 260px; max-width: 70ch; color: var(--muted); }
+  .nm { font-family: var(--font-mono); }
+
+  .tw {
+    width: 20px; height: 20px; padding: 0; margin: 0 2px 0 0; border: 0; border-radius: 4px;
+    background: transparent; color: var(--muted); cursor: pointer; vertical-align: middle;
+    display: inline-grid; place-items: center;
+  }
+  .tw:hover { color: var(--ink); background: var(--accent-soft); }
+  .tw::before {
+    content: ""; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.5px 1.5px 0;
+    transform: translateX(-1px) rotate(-45deg); transition: transform 120ms ease;
+  }
+  .tw[aria-expanded="true"]::before { transform: translateY(-1px) rotate(45deg); }
+  .tw-gap { display: inline-block; width: 22px; }
+
+  .locate {
+    position: relative; width: 16px; height: 16px; padding: 0; margin: 0 6px 0 -4px; border: 0; border-radius: 50%;
+    background: transparent; color: var(--accent); cursor: pointer; vertical-align: -3px; opacity: 0;
+  }
+  .locate::before { content: ""; position: absolute; inset: 3px; border: 1.5px solid currentColor; border-radius: 50%; }
+  .locate::after { content: ""; position: absolute; left: 7px; top: 7px; width: 2px; height: 2px; border-radius: 50%; background: currentColor; }
+  tbody tr:hover .locate, .locate:focus-visible { opacity: 1; }
+  .locate:hover { background: var(--accent-soft); }
+  .locate:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  @media (hover: none) { .locate { opacity: 0.7; } }
+  .locate-gap { display: inline-block; width: 16px; margin: 0 6px 0 -4px; }
+
+  tr.lv-peripheral td { background: var(--band); border-bottom-color: var(--rule-strong); }
+  tr.lv-peripheral .nm { font-weight: 600; font-size: 13.5px; }
+  tr.lv-cluster .nm { font-weight: 600; }
+  tr.lv-register .nm { font-weight: 500; }
+  tr.lv-field td.c-bits { color: var(--ink); }
+  tr.lv-enum td { color: var(--muted); }
+  tr.lv-enum .nm { color: var(--ink); }
+  tr.flash td { animation: flash 1.6s ease-out; }
+  @keyframes flash { from { background: var(--mark); } }
+
+  mark { background: var(--mark); color: var(--mark-ink); border-radius: 2px; padding: 0 1px; }
+
+  .tag {
+    display: inline-block; margin-left: 8px; padding: 0 5px; border: 1px solid var(--rule-strong); border-radius: 4px;
+    font: 11px/1.5 var(--font-mono); color: var(--muted); white-space: nowrap; vertical-align: 1px;
+  }
+  td.c-desc .tag:first-child { margin-left: 0; }
+
+  .acc {
+    display: inline-block; padding: 0 6px; border-radius: 4px; border: 1px solid var(--rule-strong);
+    font: 11px/1.6 var(--font-mono); color: var(--muted);
+  }
+  .acc-ro { border-color: transparent; background: var(--accent-soft); color: var(--accent); }
+  .acc-wo { border-style: dashed; }
+
+  .bar {
+    display: inline-block; width: 64px; height: 7px; margin-left: 10px; vertical-align: 1px; border-radius: 1px;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 calc(25% - 1px), var(--surface) calc(25% - 1px) 25%),
+      linear-gradient(90deg, transparent var(--l), var(--accent) var(--l) calc(var(--l) + var(--w)), transparent calc(var(--l) + var(--w))),
+      var(--rule);
+  }
+  .empty td { padding: 28px 16px; color: var(--muted); white-space: normal; }
+  .more { margin: 0; color: var(--muted); font-size: 12.5px; }
+
+  /* Map */
+  .map-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+  .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; font: 13px var(--font-mono); min-width: 0; }
+  .crumb {
+    font: inherit; color: var(--muted); background: transparent; border: 0; border-radius: 4px;
+    padding: 3px 5px; cursor: pointer;
+  }
+  .crumb:hover { color: var(--ink); background: var(--hover); }
+  .crumb[aria-current="true"] { color: var(--ink); font-weight: 600; }
+  .crumb-sep { color: var(--faint); }
+  .map-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+  .map-frame {
+    position: relative; flex: 1; min-height: 320px; overflow: hidden;
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 8px;
+  }
+  #map { position: absolute; left: 0; top: 0; touch-action: none; cursor: grab; }
+  #map.dragging { cursor: grabbing; }
+  #map:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  #overview { position: absolute; right: 0; top: 0; border-left: 1px solid var(--rule); cursor: pointer; touch-action: none; }
+  .map-tip {
+    position: absolute; z-index: 2; pointer-events: none; display: grid; gap: 1px; max-width: 360px;
+    padding: 5px 8px; border-radius: 5px; background: var(--ink); color: var(--surface); font-size: 12px;
+  }
+  .map-tip strong { font: 500 12px var(--font-mono); overflow-wrap: anywhere; }
+  .map-tip span { opacity: 0.8; font-family: var(--font-mono); font-size: 11.5px; }
+  .map-card {
+    position: absolute; z-index: 3; right: 68px; bottom: 12px; width: min(330px, calc(100% - 92px));
+    max-height: calc(100% - 24px); overflow: auto; display: grid; gap: 8px;
+    padding: 12px 14px; background: var(--surface); border: 1px solid var(--rule-strong); border-radius: 8px;
+    box-shadow: 0 8px 28px rgb(0 0 0 / 0.14);
+  }
+  .card-head { display: flex; align-items: center; justify-content: space-between; }
+  .kind { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+  .card-close {
+    width: 24px; height: 24px; border: 0; border-radius: 4px; background: transparent; color: var(--muted);
+    font-size: 18px; line-height: 1; cursor: pointer;
+  }
+  .card-close:hover { background: var(--hover); color: var(--ink); }
+  .card-name { margin: 0; font: 600 14px var(--font-mono); overflow-wrap: anywhere; }
+  .map-card dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-size: 12.5px; }
+  .map-card dl div { display: contents; }
+  .map-card dt { color: var(--muted); }
+  .map-card dd { margin: 0; overflow-wrap: anywhere; }
+  .card-desc { margin: 0; color: var(--muted); font-size: 13px; }
+  .card-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+  .map-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; }
+  .map-hint { margin: 0; color: var(--faint); font-size: 12.5px; }
+  .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; color: var(--muted); font-size: 12.5px; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .key { width: 14px; height: 10px; border: 1px solid; border-radius: 2px; }
+  .key-rw { background: var(--reg-rw); border-color: var(--reg-rw-line); }
+  .key-ro { background: var(--reg-ro); border-color: var(--reg-ro-line); }
+  .key-wo { background: var(--reg-wo); border-color: var(--reg-wo-line); }
+  .key-free {
+    border-color: var(--rule-strong);
+    background: repeating-linear-gradient(135deg, var(--hatch) 0 1px, var(--periph) 1px 4px);
+  }
+
+  /* Drop overlay */
+  .drop {
+    position: fixed; inset: 0; z-index: 10; display: grid; place-items: center;
+    background: color-mix(in srgb, var(--ground) 82%, transparent);
+  }
+  .drop > div {
+    padding: 36px 52px; border: 2px dashed var(--accent); border-radius: 12px;
+    background: var(--surface); font-size: 16px; font-weight: 500;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tw::before { transition: none; }
+    tr.flash td { animation: none; background: var(--mark); }
+  }
+  @media (max-width: 800px) {
+    body { height: auto; min-height: 100dvh; }
+    .layout { grid-template-columns: minmax(0, 1fr); }
+    .menu-list { max-height: 32vh; }
+    .table-wrap { min-height: 65vh; }
+    .map-frame { min-height: 70vh; }
+  }
+</style>
+
+<header class="top">
+  <div class="brand">
+    <h1>SVD Register Explorer</h1>
+    <p class="file-line" id="file-line">No file loaded</p>
+  </div>
+  <div class="open">
+    <input id="file-input" class="visually-hidden" type="file" accept=".svd,.xml,text/xml,application/xml">
+    <label class="btn primary" for="file-input">Open SVD file</label>
+    <span class="hint">or drop one anywhere on the page</span>
+  </div>
+</header>
+
+<div class="layout">
+<nav class="menu" aria-labelledby="menu-title">
+  <div class="menu-head">
+    <h2 id="menu-title">SVD files</h2>
+    <span class="menu-count" id="menu-count"></span>
+  </div>
+  <label for="menu-query" class="visually-hidden">Filter SVD files by regular expression</label>
+  <div class="search" id="menu-search">
+    <span class="delim" aria-hidden="true">/</span>
+    <input id="menu-query" type="search" spellcheck="false" autocomplete="off" placeholder="f4|h7.*cm7">
+    <span class="delim" aria-hidden="true">/i</span>
+  </div>
+  <ul class="menu-list" id="menu-list"></ul>
+</nav>
+
+<main class="main">
+<section class="tools" aria-label="View and filter">
+  <div class="tabs" role="tablist" aria-label="View" id="tabs">
+    <button class="tab" role="tab" type="button" id="tab-table" aria-controls="panel-table" aria-selected="true">Table</button>
+    <button class="tab" role="tab" type="button" id="tab-map" aria-controls="panel-map" aria-selected="false" tabindex="-1">Map</button>
+  </div>
+  <label for="query" class="visually-hidden">Filter by regular expression</label>
+  <div class="search" id="search">
+    <span class="delim" aria-hidden="true">/</span>
+    <input id="query" type="search" spellcheck="false" autocomplete="off"
+           placeholder="^USART\d+$ or CR1\.(RE|TE)">
+    <span class="delim" id="flags" aria-hidden="true">/i</span>
+  </div>
+  <label class="check"><input type="checkbox" id="scope-desc"> Descriptions</label>
+  <label class="check"><input type="checkbox" id="match-case"> Match case</label>
+  <div class="actions" id="table-actions">
+    <button class="btn" type="button" id="expand-all">Expand all</button>
+    <button class="btn" type="button" id="collapse-all">Collapse all</button>
+  </div>
+  <p class="status" id="status" role="status"></p>
+</section>
+
+<p class="message" id="message" role="alert" hidden></p>
+
+<section class="panel" id="panel-table" role="tabpanel" aria-labelledby="tab-table">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Bits</th>
+          <th scope="col">Access</th>
+          <th scope="col">Reset</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="more" id="more" hidden></p>
+</section>
+
+<section class="panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map" hidden>
+  <div class="map-bar">
+    <nav class="crumbs" id="crumbs" aria-label="Map location"></nav>
+    <div class="map-controls">
+      <label class="check"><input type="checkbox" id="map-dense"> Hide empty rows</label>
+      <label class="check">Words per row
+        <select id="map-row">
+          <option value="16">4</option>
+          <option value="32">8</option>
+          <option value="64" selected>16</option>
+          <option value="128">32</option>
+          <option value="256">64</option>
+        </select>
+      </label>
+      <div class="actions">
+        <button class="btn icon" type="button" id="zoom-out" aria-label="Zoom out">−</button>
+        <button class="btn icon" type="button" id="zoom-in" aria-label="Zoom in">+</button>
+        <button class="btn" type="button" id="zoom-fit">Fit width</button>
+      </div>
+    </div>
+  </div>
+  <div class="map-frame" id="map-frame">
+    <canvas id="map" tabindex="0" aria-describedby="map-hint"
+            aria-label="Address space map. Arrow keys move, plus and minus zoom, Escape clears the selection."></canvas>
+    <canvas id="overview" aria-hidden="true"></canvas>
+    <div class="map-tip" id="map-tip" hidden></div>
+    <aside class="map-card" id="map-card" aria-live="polite" hidden></aside>
+  </div>
+  <div class="map-foot">
+    <p class="map-hint" id="map-hint">Scroll to move · Ctrl or ⌘ + scroll, or pinch, to zoom · Double-click to zoom in · Click for details</p>
+    <div class="legend">
+      <span><i class="key key-rw"></i>read-write</span>
+      <span><i class="key key-ro"></i>read-only</span>
+      <span><i class="key key-wo"></i>write-only</span>
+      <span><i class="key key-free"></i>unused</span>
+    </div>
+  </div>
+</section>
+</main>
+</div>
+
+<div class="drop" id="drop" hidden><div>Drop the SVD file to open it</div></div>
+
+<script type="text/plain" id="example-svd"><?xml version="1.0" encoding="utf-8"?>
+<device schemaVersion="1.3">
+  <vendor>Example</vendor>
+  <name>EXAMPLE_MCU</name>
+  <version>1.0</version>
+  <description>Example device with a few typical peripherals</description>
+  <addressUnitBits>8</addressUnitBits>
+  <width>32</width>
+  <size>32</size>
+  <access>read-write</access>
+  <resetValue>0x00000000</resetValue>
+  <resetMask>0xFFFFFFFF</resetMask>
+  <peripherals>
+    <peripheral>
+      <name>TIM2</name>
+      <description>General-purpose timer</description>
+      <groupName>TIM</groupName>
+      <baseAddress>0x40000000</baseAddress>
+      <interrupt><name>TIM2</name><description>TIM2 global interrupt</description><value>28</value></interrupt>
+      <registers>
+        <register>
+          <name>CR1</name><description>Control register 1</description><addressOffset>0x00</addressOffset>
+          <fields>
+            <field><name>CEN</name><description>Counter enable</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>UDIS</name><description>Update disable</description><bitOffset>1</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>URS</name><description>Update request source</description><bitOffset>2</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>OPM</name><description>One-pulse mode</description><bitOffset>3</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>DIR</name><description>Direction</description><bitOffset>4</bitOffset><bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue><name>UP</name><description>Counter used as upcounter</description><value>0</value></enumeratedValue>
+                <enumeratedValue><name>DOWN</name><description>Counter used as downcounter</description><value>1</value></enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field><name>CMS</name><description>Center-aligned mode selection</description><bitRange>[6:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue><name>EDGE</name><description>Edge-aligned mode</description><value>0b00</value></enumeratedValue>
+                <enumeratedValue><name>CENTER_1</name><description>Center-aligned mode 1</description><value>0b01</value></enumeratedValue>
+                <enumeratedValue><name>CENTER_2</name><description>Center-aligned mode 2</description><value>0b10</value></enumeratedValue>
+                <enumeratedValue><name>CENTER_3</name><description>Center-aligned mode 3</description><value>0b11</value></enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field><name>ARPE</name><description>Auto-reload preload enable</description><bitOffset>7</bitOffset><bitWidth>1</bitWidth></field>
+          </fields>
+        </register>
+        <register>
+          <name>DIER</name><description>DMA and interrupt enable register</description><addressOffset>0x0C</addressOffset>
+          <fields>
+            <field><name>UIE</name><description>Update interrupt enable</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field>
+            <field><dim>4</dim><dimIncrement>1</dimIncrement><dimIndex>1-4</dimIndex><name>CC%sIE</name><description>Capture/compare interrupt enable</description><bitOffset>1</bitOffset><bitWidth>1</bitWidth></field>
+          </fields>
+        </register>
+        <register>
+          <name>SR</name><description>Status register</description><addressOffset>0x10</addressOffset>
+          <fields>
+            <field><name>UIF</name><description>Update interrupt flag</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth><modifiedWriteValues>zeroToClear</modifiedWriteValues></field>
+            <field><dim>4</dim><dimIncrement>1</dimIncrement><dimIndex>1-4</dimIndex><name>CC%sIF</name><description>Capture/compare interrupt flag</description><bitOffset>1</bitOffset><bitWidth>1</bitWidth><modifiedWriteValues>zeroToClear</modifiedWriteValues></field>
+          </fields>
+        </register>
+        <register>
+          <name>CNT</name><description>Counter</description><addressOffset>0x24</addressOffset>
+          <fields><field><name>CNT</name><description>Counter value</description><bitOffset>0</bitOffset><bitWidth>32</bitWidth></field></fields>
+        </register>
+        <register>
+          <name>ARR</name><description>Auto-reload register</description><addressOffset>0x2C</addressOffset><resetValue>0xFFFFFFFF</resetValue>
+          <fields><field><name>ARR</name><description>Auto-reload value</description><bitOffset>0</bitOffset><bitWidth>32</bitWidth></field></fields>
+        </register>
+        <register>
+          <dim>4</dim><dimIncrement>4</dimIncrement>
+          <name>CCR[%s]</name><description>Capture/compare register</description><addressOffset>0x34</addressOffset>
+          <fields><field><name>CCR</name><description>Capture/compare value</description><bitOffset>0</bitOffset><bitWidth>32</bitWidth></field></fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>USART1</name>
+      <description>Universal synchronous asynchronous receiver transmitter</description>
+      <groupName>USART</groupName>
+      <baseAddress>0x40013800</baseAddress>
+      <interrupt><name>USART1</name><description>USART1 global interrupt</description><value>37</value></interrupt>
+      <registers>
+        <register>
+          <name>CR1</name><description>Control register 1</description><addressOffset>0x00</addressOffset>
+          <fields>
+            <field><name>UE</name><description>USART enable</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>RE</name><description>Receiver enable</description><bitOffset>2</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>TE</name><description>Transmitter enable</description><bitOffset>3</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>RXNEIE</name><description>RXNE interrupt enable</description><bitOffset>5</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PS</name><description>Parity selection</description><bitOffset>9</bitOffset><bitWidth>1</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue><name>EVEN</name><description>Even parity</description><value>0</value></enumeratedValue>
+                <enumeratedValue><name>ODD</name><description>Odd parity</description><value>1</value></enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field><name>PCE</name><description>Parity control enable</description><bitOffset>10</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>M0</name><description>Word length, bit 0</description><lsb>12</lsb><msb>12</msb></field>
+            <field><name>OVER8</name><description>Oversampling mode</description><bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue><name>OVERSAMPLING_16</name><description>Oversampling by 16</description><value>0</value></enumeratedValue>
+                <enumeratedValue><name>OVERSAMPLING_8</name><description>Oversampling by 8</description><value>1</value></enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>BRR</name><description>Baud rate register</description><addressOffset>0x0C</addressOffset>
+          <fields><field><name>BRR</name><description>Baud rate divider</description><bitOffset>0</bitOffset><bitWidth>16</bitWidth></field></fields>
+        </register>
+        <register>
+          <name>ISR</name><description>Interrupt and status register</description><addressOffset>0x1C</addressOffset>
+          <access>read-only</access><resetValue>0x000000C0</resetValue>
+          <fields>
+            <field><name>ORE</name><description>Overrun error</description><bitOffset>3</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>RXNE</name><description>Read data register not empty</description><bitOffset>5</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>TC</name><description>Transmission complete</description><bitOffset>6</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>TXE</name><description>Transmit data register empty</description><bitOffset>7</bitOffset><bitWidth>1</bitWidth></field>
+          </fields>
+        </register>
+        <register>
+          <name>ICR</name><description>Interrupt flag clear register</description><addressOffset>0x20</addressOffset><access>write-only</access>
+          <fields>
+            <field><name>ORECF</name><description>Overrun error clear flag</description><bitOffset>3</bitOffset><bitWidth>1</bitWidth><modifiedWriteValues>oneToClear</modifiedWriteValues></field>
+            <field><name>TCCF</name><description>Transmission complete clear flag</description><bitOffset>6</bitOffset><bitWidth>1</bitWidth><modifiedWriteValues>oneToClear</modifiedWriteValues></field>
+          </fields>
+        </register>
+        <register>
+          <name>RDR</name><description>Receive data register</description><addressOffset>0x24</addressOffset><access>read-only</access>
+          <fields><field><name>RDR</name><description>Receive data value</description><bitOffset>0</bitOffset><bitWidth>9</bitWidth></field></fields>
+        </register>
+        <register>
+          <name>TDR</name><description>Transmit data register</description><addressOffset>0x28</addressOffset>
+          <fields><field><name>TDR</name><description>Transmit data value</description><bitOffset>0</bitOffset><bitWidth>9</bitWidth></field></fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>GPIOA</name>
+      <description>General-purpose I/O port A</description>
+      <groupName>GPIO</groupName>
+      <baseAddress>0x48000000</baseAddress>
+      <registers>
+        <register>
+          <name>MODER</name><description>Port mode register</description><addressOffset>0x00</addressOffset><resetValue>0xABFFFFFF</resetValue>
+          <fields>
+            <field><dim>16</dim><dimIncrement>2</dimIncrement><name>MODE%s</name><description>Pin mode</description><bitOffset>0</bitOffset><bitWidth>2</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue><name>INPUT</name><description>Input mode</description><value>0</value></enumeratedValue>
+                <enumeratedValue><name>OUTPUT</name><description>General-purpose output mode</description><value>1</value></enumeratedValue>
+                <enumeratedValue><name>ALTERNATE</name><description>Alternate function mode</description><value>2</value></enumeratedValue>
+                <enumeratedValue><name>ANALOG</name><description>Analog mode</description><value>3</value></enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>IDR</name><description>Port input data register</description><addressOffset>0x10</addressOffset><access>read-only</access>
+          <fields><field><dim>16</dim><dimIncrement>1</dimIncrement><name>ID%s</name><description>Port input data</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field></fields>
+        </register>
+        <register>
+          <name>ODR</name><description>Port output data register</description><addressOffset>0x14</addressOffset>
+          <fields><field><dim>16</dim><dimIncrement>1</dimIncrement><name>OD%s</name><description>Port output data</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field></fields>
+        </register>
+        <register>
+          <name>BSRR</name><description>Port bit set/reset register</description><addressOffset>0x18</addressOffset><access>write-only</access>
+          <fields>
+            <field><dim>16</dim><dimIncrement>1</dimIncrement><name>BR%s</name><description>Port reset bit</description><bitOffset>16</bitOffset><bitWidth>1</bitWidth></field>
+            <field><dim>16</dim><dimIncrement>1</dimIncrement><name>BS%s</name><description>Port set bit</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral derivedFrom="GPIOA">
+      <name>GPIOB</name>
+      <description>General-purpose I/O port B</description>
+      <baseAddress>0x48000400</baseAddress>
+    </peripheral>
+    <peripheral>
+      <name>ADC1</name>
+      <description>Analog-to-digital converter</description>
+      <groupName>ADC</groupName>
+      <baseAddress>0x50040000</baseAddress>
+      <interrupt><name>ADC1_2</name><description>ADC1 and ADC2 global interrupt</description><value>18</value></interrupt>
+      <registers>
+        <register>
+          <name>CR</name><description>Control register</description><addressOffset>0x08</addressOffset><resetValue>0x20000000</resetValue>
+          <fields>
+            <field><name>ADEN</name><description>ADC enable</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>ADDIS</name><description>ADC disable</description><bitOffset>1</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>ADSTART</name><description>ADC start of regular conversion</description><bitOffset>2</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>ADVREGEN</name><description>ADC voltage regulator enable</description><bitOffset>28</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>DEEPPWD</name><description>Deep-power-down enable</description><bitOffset>29</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>ADCAL</name><description>ADC calibration</description><bitOffset>31</bitOffset><bitWidth>1</bitWidth></field>
+          </fields>
+        </register>
+        <register>
+          <name>CFGR</name><description>Configuration register</description><addressOffset>0x0C</addressOffset><resetValue>0x80000000</resetValue>
+          <fields>
+            <field><name>RES</name><description>Data resolution</description><bitOffset>3</bitOffset><bitWidth>2</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue><name>RESOLUTION_12B</name><description>12-bit resolution</description><value>0</value></enumeratedValue>
+                <enumeratedValue><name>RESOLUTION_10B</name><description>10-bit resolution</description><value>1</value></enumeratedValue>
+                <enumeratedValue><name>RESOLUTION_8B</name><description>8-bit resolution</description><value>2</value></enumeratedValue>
+                <enumeratedValue><name>RESOLUTION_6B</name><description>6-bit resolution</description><value>3</value></enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field><name>ALIGN</name><description>Data alignment</description><bitOffset>5</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>CONT</name><description>Single or continuous conversion mode</description><bitOffset>13</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>JQDIS</name><description>Injected queue disable</description><bitOffset>31</bitOffset><bitWidth>1</bitWidth></field>
+          </fields>
+        </register>
+        <cluster>
+          <name>COMMON</name><description>Registers shared by ADC1 and ADC2</description><addressOffset>0x300</addressOffset>
+          <register>
+            <name>CSR</name><description>Common status register</description><addressOffset>0x00</addressOffset><access>read-only</access>
+            <fields>
+              <field><name>ADRDY_MST</name><description>Master ADC ready</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field>
+              <field><name>EOC_MST</name><description>End of regular conversion of the master ADC</description><bitOffset>2</bitOffset><bitWidth>1</bitWidth></field>
+            </fields>
+          </register>
+          <register>
+            <name>CCR</name><description>Common control register</description><addressOffset>0x08</addressOffset>
+            <fields>
+              <field><name>PRESC</name><description>ADC prescaler</description><bitOffset>18</bitOffset><bitWidth>4</bitWidth>
+                <enumeratedValues>
+                  <enumeratedValue><name>DIV1</name><description>Input clock not divided</description><value>0</value></enumeratedValue>
+                  <enumeratedValue><name>DIV2</name><description>Input clock divided by 2</description><value>1</value></enumeratedValue>
+                  <enumeratedValue><name>DIV4</name><description>Input clock divided by 4</description><value>2</value></enumeratedValue>
+                  <enumeratedValue><name>DIV256</name><description>Input clock divided by 256</description><value>11</value></enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field><name>VREFEN</name><description>VREFINT enable</description><bitOffset>22</bitOffset><bitWidth>1</bitWidth></field>
+              <field><name>TSEN</name><description>Temperature sensor enable</description><bitOffset>23</bitOffset><bitWidth>1</bitWidth></field>
+            </fields>
+          </register>
+        </cluster>
+      </registers>
+    </peripheral>
+  </peripherals>
+</device>
+</script>
+
+<script>
+(() => {
+  "use strict";
+
+  const ROW_LIMIT = 5000;
+  const MAX_DIM = 64;
+  const VIEW_KEY = "svd-explorer:view";
+  const MANIFEST = "svd-files.json";
+  const EXAMPLE = "example";
+  const ACCESS = { "read-write": "rw", "read-only": "ro", "write-only": "wo", "writeOnce": "w1", "read-writeOnce": "rw1" };
+  const WRITES = {
+    oneToClear: "w1c", oneToSet: "w1s", oneToToggle: "w1t", zeroToClear: "w0c",
+    zeroToSet: "w0s", zeroToToggle: "w0t", clear: "wc", set: "ws", modify: "wm",
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const els = {
+    fileInput: $("file-input"), fileLine: $("file-line"), query: $("query"), search: $("search"),
+    flags: $("flags"), desc: $("scope-desc"), cased: $("match-case"), expandAll: $("expand-all"),
+    collapseAll: $("collapse-all"), status: $("status"), message: $("message"), rows: $("rows"),
+    more: $("more"), drop: $("drop"), menuQuery: $("menu-query"), menuSearch: $("menu-search"),
+    menuList: $("menu-list"), menuCount: $("menu-count"), tabs: $("tabs"), tabTable: $("tab-table"),
+    tabMap: $("tab-map"), panelTable: $("panel-table"), panelMap: $("panel-map"), tableActions: $("table-actions"),
+    crumbs: $("crumbs"), mapDense: $("map-dense"), mapRow: $("map-row"), zoomIn: $("zoom-in"),
+    zoomOut: $("zoom-out"), zoomFit: $("zoom-fit"), mapFrame: $("map-frame"), map: $("map"),
+    overview: $("overview"), mapTip: $("map-tip"), mapCard: $("map-card"),
+  };
+
+  let model = null;
+  let expanded = new Set();   // open nodes without filter
+  let toggles = new Map();    // open state chosen by the user while filtering
+  let filter = null;          // { re, reG, useDesc, matched, keep, ancestors }
+  let currentView = "table";
+
+  /* ---------- XML helpers ---------- */
+  const kids = (el, tag) => (el ? Array.from(el.children).filter((c) => c.localName === tag) : []);
+  const kid = (el, tag) => (el ? Array.from(el.children).find((c) => c.localName === tag) || null : null);
+  const txt = (el, tag) => { const k = kid(el, tag); return k ? k.textContent.trim() : null; };
+  const clean = (s) => (s ? s.replace(/\s+/g, " ").trim() : "");
+
+  function num(value) {
+    if (value == null) return null;
+    let s = String(value).trim().toLowerCase();
+    if (s.startsWith("#")) { s = s.slice(1).replace(/x/g, "0"); return /^[01]+$/.test(s) ? parseInt(s, 2) : null; }
+    if (/^0x[0-9a-f]+$/.test(s)) return parseInt(s, 16);
+    if (/^0b[01]+$/.test(s)) return parseInt(s.slice(2), 2);
+    const m = s.match(/^(\d+)([kmg])?$/);
+    if (m) return parseInt(m[1], 10) * ({ k: 1024, m: 1048576, g: 1073741824 }[m[2]] || 1);
+    return null;
+  }
+  const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => String(a + i));
+
+  /* Expands dim arrays and lists, e.g. CCR[%s] or MODE%s */
+  function expand(el, name) {
+    const dim = num(txt(el, "dim"));
+    if (!dim || !name || !name.includes("%s")) return [{ name, step: 0, dim: 0 }];
+    const increment = num(txt(el, "dimIncrement")) || 0;
+    const raw = txt(el, "dimIndex");
+    let indices = null;
+    if (raw) {
+      const r = raw.match(/^\s*(\d+)\s*-\s*(\d+)\s*$/);
+      indices = r ? range(+r[1], +r[2]) : raw.split(",").map((s) => s.trim());
+    }
+    if (!indices || indices.length !== dim) indices = range(0, dim - 1);
+    if (dim > MAX_DIM) {
+      return [{ name: name.replace("%s", `${indices[0]}…${indices[dim - 1]}`), step: 0, dim, increment }];
+    }
+    return indices.map((index, i) => ({ name: name.replace("%s", index), step: i * increment, dim: 0 }));
+  }
+
+  /* ---------- SVD parser ---------- */
+  function parseSvd(text) {
+    const doc = new DOMParser().parseFromString(text, "application/xml");
+    if (doc.getElementsByTagName("parsererror").length) throw new Error("the file is not well-formed XML");
+    const device = doc.documentElement;
+    if (!device || device.localName !== "device") {
+      throw new Error("it has no <device> root element, so it is not a CMSIS-SVD file");
+    }
+
+    const nodes = [];
+    const stats = { peripheral: 0, cluster: 0, register: 0, field: 0, enum: 0 };
+    const make = (type, props) => {
+      const node = Object.assign({ id: nodes.length, type, children: [], parent: null }, props);
+      nodes.push(node);
+      stats[type]++;
+      return node;
+    };
+
+    const deviceProps = {
+      size: num(txt(device, "size")) ?? 32,
+      access: txt(device, "access"),
+      reset: num(txt(device, "resetValue")),
+    };
+    const peripheralEls = kids(kid(device, "peripherals"), "peripheral");
+    const byName = new Map(peripheralEls.map((p) => [txt(p, "name"), p]));
+
+    // Child element of a peripheral, falling back to the peripheral it is derived from
+    const inherited = (p, tag, seen = new Set()) => {
+      const own = kid(p, tag);
+      if (own || seen.has(p)) return own;
+      seen.add(p);
+      const base = byName.get(p.getAttribute("derivedFrom"));
+      return base ? inherited(base, tag, seen) : null;
+    };
+    const inheritedText = (p, tag) => { const k = inherited(p, tag); return k ? k.textContent.trim() : null; };
+
+    function parseFields(fieldsEl, register) {
+      const fields = [];
+      for (const f of kids(fieldsEl, "field")) {
+        let lsb = num(txt(f, "bitOffset"));
+        let width = num(txt(f, "bitWidth"));
+        if (lsb == null) {
+          const l = num(txt(f, "lsb")), m = num(txt(f, "msb"));
+          const r = (txt(f, "bitRange") || "").match(/\[\s*(\d+)\s*:\s*(\d+)\s*\]/);
+          if (l != null && m != null) { lsb = l; width = m - l + 1; }
+          else if (r) { lsb = +r[2]; width = +r[1] - +r[2] + 1; }
+        }
+        lsb = lsb ?? 0;
+        width = width ?? 1;
+        const access = txt(f, "access") ?? register.access;
+        const writes = txt(f, "modifiedWriteValues");
+        const readAction = txt(f, "readAction");
+        const desc = clean(txt(f, "description"));
+        for (const { name, step } of expand(f, txt(f, "name"))) {
+          const position = lsb + step;
+          const field = make("field", {
+            name, path: `${register.path}.${name}`, lsb: position, msb: position + width - 1, width,
+            registerSize: register.size, access, writes, readAction, desc,
+            reset: fieldValue(register.reset, position, width),
+          });
+          for (const values of kids(f, "enumeratedValues")) {
+            for (const v of kids(values, "enumeratedValue")) {
+              const isDefault = txt(v, "isDefault") === "true";
+              const vname = txt(v, "name") || (isDefault ? "default" : "?");
+              field.children.push(make("enum", {
+                name: vname, path: `${field.path}.${vname}`, raw: txt(v, "value"), value: num(txt(v, "value")),
+                isDefault, width, usage: txt(values, "usage"), desc: clean(txt(v, "description")),
+              }));
+            }
+          }
+          fields.push(field);
+        }
+      }
+      // Most significant bit first, as in reference manuals
+      return fields.sort((a, b) => b.msb - a.msb || b.lsb - a.lsb);
+    }
+
+    function parseBlock(container, parent, base, props) {
+      const children = [];
+      const siblings = new Map(kids(container, "register").map((r) => [txt(r, "name"), r]));
+      for (const el of Array.from(container.children)) {
+        if (el.localName === "register") children.push(...parseRegister(el, parent, base, props, siblings));
+        else if (el.localName === "cluster") children.push(...parseCluster(el, parent, base, props));
+      }
+      return children.sort((a, b) => a.offset - b.offset);
+    }
+
+    function parseRegister(el, parent, base, props, siblings) {
+      const derivedFrom = el.getAttribute("derivedFrom");
+      const source = derivedFrom ? siblings.get(derivedFrom) : null;
+      const get = (tag) => txt(el, tag) ?? (source ? txt(source, tag) : null);
+      const offset = num(get("addressOffset")) ?? 0;
+      const size = num(get("size")) ?? props.size ?? 32;
+      const access = get("access") ?? props.access;
+      const resetText = get("resetValue");
+      const reset = resetText != null ? num(resetText) : props.reset;
+      const desc = clean(get("description"));
+      const fieldsEl = kid(el, "fields") || (source ? kid(source, "fields") : null);
+      return expand(el, get("name")).map(({ name, step, dim, increment }) => {
+        const register = make("register", {
+          name, path: `${parent.path}.${name}`, address: base + offset + step, offset: offset + step,
+          size, access, reset, desc, derivedFrom, alternate: get("alternateRegister"), dim, increment,
+        });
+        if (fieldsEl) register.children = parseFields(fieldsEl, register);
+        return register;
+      });
+    }
+
+    function parseCluster(el, parent, base, props) {
+      const offset = num(txt(el, "addressOffset")) ?? 0;
+      const resetText = txt(el, "resetValue");
+      const clusterProps = {
+        size: num(txt(el, "size")) ?? props.size,
+        access: txt(el, "access") ?? props.access,
+        reset: resetText != null ? num(resetText) : props.reset,
+      };
+      return expand(el, txt(el, "name")).map(({ name, step, dim }) => {
+        const cluster = make("cluster", {
+          name, path: `${parent.path}.${name}`, address: base + offset + step, offset: offset + step,
+          desc: clean(txt(el, "description")), dim,
+        });
+        cluster.children = parseBlock(el, cluster, base + offset + step, clusterProps);
+        return cluster;
+      });
+    }
+
+    const peripherals = [];
+    for (const p of peripheralEls) {
+      const name = txt(p, "name");
+      const address = num(inheritedText(p, "baseAddress")) ?? 0;
+      const resetText = inheritedText(p, "resetValue");
+      const props = {
+        size: num(inheritedText(p, "size")) ?? deviceProps.size,
+        access: inheritedText(p, "access") ?? deviceProps.access,
+        reset: resetText != null ? num(resetText) : deviceProps.reset,
+      };
+      // Registers address blocks of reasonable size, large memory blocks are not drawn
+      const blocks = kids(p, "addressBlock").length ? kids(p, "addressBlock")
+        : kids(byName.get(p.getAttribute("derivedFrom")), "addressBlock");
+      let blockSize = 0;
+      for (const block of blocks) {
+        const usage = txt(block, "usage");
+        const end = (num(txt(block, "offset")) ?? 0) + (num(txt(block, "size")) ?? 0);
+        if ((!usage || usage === "registers") && end <= 0x10000) blockSize = Math.max(blockSize, end);
+      }
+      const peripheral = make("peripheral", {
+        name, path: name, address, offset: 0, blockSize,
+        desc: clean(inheritedText(p, "description")),
+        derivedFrom: p.getAttribute("derivedFrom"),
+        interrupts: kids(p, "interrupt").map((i) => ({ name: txt(i, "name"), value: txt(i, "value") })),
+      });
+      const registers = inherited(p, "registers");
+      if (registers) peripheral.children = parseBlock(registers, peripheral, address, props);
+      peripherals.push(peripheral);
+    }
+    peripherals.sort((a, b) => a.address - b.address || a.name.localeCompare(b.name));
+    const link = (node) => { for (const child of node.children) { child.parent = node; link(child); } };
+    peripherals.forEach(link);
+
+    return { name: txt(device, "name") || "Unnamed device", peripherals, nodes, stats };
+  }
+
+  function fieldValue(reset, lsb, width) {
+    if (reset == null) return null;
+    return Number((BigInt(reset) >> BigInt(lsb)) & ((1n << BigInt(width)) - 1n));
+  }
+
+  /* ---------- Formatting ---------- */
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const hex = (value, bits) => "0x" + value.toString(16).toUpperCase().padStart(Math.max(1, Math.ceil(bits / 4)), "0");
+  const offsetText = (value) => "+0x" + value.toString(16).toUpperCase().padStart(2, "0");
+  const bitsValue = (value, width) => {
+    if (width === 1) return String(value);
+    if (width <= 4) return "0b" + value.toString(2).padStart(width, "0");
+    return hex(value, width);
+  };
+  const bitRange = (field) => (field.msb === field.lsb ? `[${field.lsb}]` : `[${field.msb}:${field.lsb}]`);
+  const plural = (n, word) => `${n.toLocaleString()} ${word}${n === 1 ? "" : "s"}`;
+  const sizeText = (bytes) => {
+    if (bytes >= 1048576 && bytes % 1048576 === 0) return `${bytes / 1048576} MiB`;
+    if (bytes >= 1024 && bytes % 1024 === 0) return `${bytes / 1024} KiB`;
+    if (bytes >= 1024) return `${(bytes / 1024).toFixed(1)} KiB`;
+    return plural(bytes, "byte");
+  };
+  const clamp = (value, lo, hi) => Math.min(hi, Math.max(lo, value));
+
+  function highlight(text) {
+    if (!filter || !text) return esc(text);
+    let out = "", last = 0;
+    for (const m of text.matchAll(filter.reG)) {
+      if (!m[0].length) continue;
+      out += esc(text.slice(last, m.index)) + "<mark>" + esc(m[0]) + "</mark>";
+      last = m.index + m[0].length;
+    }
+    return out + esc(text.slice(last));
+  }
+
+  function accessHtml(node) {
+    const short = ACCESS[node.access] || node.access || "";
+    const extra = [node.readAction === "clear" ? "rc" : node.readAction, WRITES[node.writes] || node.writes];
+    const label = [short, ...extra].filter(Boolean).join(" ");
+    if (!label) return "";
+    const kind = short === "ro" ? "ro" : short === "wo" ? "wo" : "rw";
+    const title = [node.access, node.readAction && `read: ${node.readAction}`, node.writes].filter(Boolean).join(", ");
+    return `<span class="acc acc-${kind}" title="${esc(title)}">${esc(label)}</span>`;
+  }
+
+  /* ---------- Filter ---------- */
+  function nodeMatches(node) {
+    if (filter.re.test(node.name)) return true;
+    if (node.path.length > node.name.length) {
+      // Dotted paths like USART1.CR1.UE match when the match ends in the last segment
+      const start = node.path.length - node.name.length;
+      for (const m of node.path.matchAll(filter.reG)) {
+        if (m[0].length && m.index + m[0].length > start) return true;
+      }
+    }
+    return filter.useDesc && !!node.desc && filter.re.test(node.desc);
+  }
+
+  function computeFilter() {
+    const matched = new Set(), keep = new Set(), ancestors = new Set();
+    const visit = (node) => {
+      let childHit = false;
+      for (const child of node.children) if (visit(child)) childHit = true;
+      const hit = nodeMatches(node);
+      if (hit) matched.add(node.id);
+      if (childHit) ancestors.add(node.id);
+      if (hit || childHit) keep.add(node.id);
+      return hit || childHit;
+    };
+    model.peripherals.forEach(visit);
+    Object.assign(filter, { matched, keep, ancestors });
+  }
+
+  function applyQuery() {
+    const query = els.query.value;
+    const flags = els.cased.checked ? "" : "i";
+    els.flags.textContent = `/${flags}`;
+    toggles = new Map();
+    if (!query) {
+      filter = null;
+      els.search.classList.remove("invalid");
+      els.query.removeAttribute("aria-invalid");
+      render();
+      scheduleDraw();
+      return;
+    }
+    let re, reG;
+    try {
+      re = new RegExp(query, flags);
+      reG = new RegExp(query, flags + "g");
+    } catch (error) {
+      els.search.classList.add("invalid");
+      els.query.setAttribute("aria-invalid", "true");
+      setStatus(`${esc(error.message)}. Escape special characters like <code>\\.</code> or <code>\\[</code>.`, true);
+      return;
+    }
+    els.search.classList.remove("invalid");
+    els.query.removeAttribute("aria-invalid");
+    filter = { re, reG, useDesc: els.desc.checked };
+    if (model) computeFilter();
+    render();
+    scheduleDraw();
+  }
+
+  /* ---------- Table ---------- */
+  function isOpen(node, unfiltered) {
+    if (!filter) return expanded.has(node.id);
+    if (toggles.has(node.id)) return toggles.get(node.id);
+    return !unfiltered && filter.ancestors.has(node.id);
+  }
+
+  function rowHtml(node, depth, open) {
+    const hit = filter && filter.matched.has(node.id);
+    const name = hit ? highlight(node.name) : esc(node.name);
+    const desc = hit && filter.useDesc ? highlight(node.desc) : esc(node.desc);
+    const toggle = node.children.length
+      ? `<button class="tw" type="button" aria-expanded="${open}" aria-label="${open ? "Collapse" : "Expand"} ${esc(node.path)}"></button>`
+      : `<span class="tw-gap"></span>`;
+    const locate = node.type === "enum"
+      ? `<span class="locate-gap"></span>`
+      : `<button class="locate" type="button" data-locate="${node.id}" title="Show on map" aria-label="Show ${esc(node.path)} on the map"></button>`;
+    let address = "", bits = "", access = "", reset = "", nameTags = "", descTags = "";
+
+    switch (node.type) {
+      case "peripheral":
+        address = hex(node.address, 32);
+        if (node.derivedFrom) descTags += `<span class="tag">derived from ${esc(node.derivedFrom)}</span>`;
+        for (const irq of node.interrupts) descTags += `<span class="tag">IRQ ${esc(irq.value)} ${esc(irq.name)}</span>`;
+        break;
+      case "cluster":
+        address = `${hex(node.address, 32)}<span class="off">${offsetText(node.offset)}</span>`;
+        if (node.dim) nameTags += `<span class="tag">×${node.dim}</span>`;
+        break;
+      case "register":
+        address = `${hex(node.address, 32)}<span class="off">${offsetText(node.offset)}</span>`;
+        bits = String(node.size);
+        access = accessHtml(node);
+        reset = node.reset != null ? hex(node.reset, node.size) : "";
+        if (node.dim) nameTags += `<span class="tag">×${node.dim} +0x${node.increment.toString(16).toUpperCase()}</span>`;
+        if (node.alternate) descTags += `<span class="tag">alternate of ${esc(node.alternate)}</span>`;
+        if (node.derivedFrom) descTags += `<span class="tag">derived from ${esc(node.derivedFrom)}</span>`;
+        break;
+      case "field": {
+        const size = node.registerSize || 32;
+        const left = Math.max(0, ((size - 1 - node.msb) / size) * 100);
+        const width = Math.min(100, (node.width / size) * 100);
+        bits = bitRange(node) +
+          `<span class="bar" style="--l:${left.toFixed(3)}%;--w:${width.toFixed(3)}%" aria-hidden="true"></span>`;
+        access = accessHtml(node);
+        reset = node.reset != null ? bitsValue(node.reset, node.width) : "";
+        break;
+      }
+      case "enum":
+        bits = node.value != null ? bitsValue(node.value, node.width) : esc(node.raw ?? "");
+        if (node.isDefault) nameTags += `<span class="tag">default</span>`;
+        if (node.usage && node.usage !== "read-write") descTags += `<span class="tag">${esc(node.usage)}</span>`;
+        break;
+    }
+
+    const text = desc ? `<span class="text">${desc}</span>` : "";
+    return `<tr class="lv-${node.type}" data-id="${node.id}" data-open="${open ? 1 : 0}">` +
+      `<td class="c-name" style="--d:${depth}">${toggle}<span class="nm">${name}</span>${nameTags}</td>` +
+      `<td class="num">${locate}${address}</td><td class="c-bits num">${bits}</td><td>${access}</td>` +
+      `<td class="num">${reset}</td><td class="c-desc">${text}${descTags}</td></tr>`;
+  }
+
+  function render() {
+    if (!model) { els.rows.innerHTML = ""; return; }
+    const rows = [];
+    let total = 0;
+    const walk = (list, depth, unfiltered) => {
+      for (const node of list) {
+        if (filter && !unfiltered && !filter.keep.has(node.id)) continue;
+        const open = node.children.length > 0 && isOpen(node, unfiltered);
+        total++;
+        if (rows.length < ROW_LIMIT) rows.push(rowHtml(node, depth, open));
+        // A matched node without matching descendants shows all of its children when opened
+        if (open) walk(node.children, depth + 1, unfiltered || (filter && !filter.ancestors.has(node.id)));
+      }
+    };
+    walk(model.peripherals, 0, false);
+
+    if (filter && !filter.keep.size) {
+      els.rows.innerHTML = `<tr class="empty"><td colspan="6">Nothing in ${esc(model.name)} matches ` +
+        `<code class="num">/${esc(els.query.value)}/${els.cased.checked ? "" : "i"}</code>. ` +
+        `${filter.useDesc ? "" : "Turn on Descriptions to search the description text too."}</td></tr>`;
+    } else {
+      els.rows.innerHTML = rows.join("");
+    }
+    els.more.hidden = total <= ROW_LIMIT;
+    els.more.textContent = `Showing the first ${ROW_LIMIT.toLocaleString()} of ${total.toLocaleString()} rows. ` +
+      `Collapse some peripherals or narrow the filter to see the rest.`;
+
+    if (filter) {
+      const peripherals = model.peripherals.filter((p) => filter.keep.has(p.id)).length;
+      setStatus(`${plural(filter.matched.size, "match")} across ${plural(peripherals, "peripheral")}`);
+    } else {
+      setStatus(`Filter by name or by dotted path, for example <code>USART1\\.CR1\\.</code> or <code>^CC\\dIF$</code>`);
+    }
+  }
+
+  function setStatus(html, error = false) {
+    els.status.innerHTML = html;
+    els.status.classList.toggle("error", error);
+  }
+
+  function revealInTable(node) {
+    if (filter && !filter.keep.has(node.id)) {
+      els.query.value = "";
+      applyQuery();
+    }
+    for (let parent = node.parent; parent; parent = parent.parent) {
+      if (filter) toggles.set(parent.id, true);
+      else expanded.add(parent.id);
+    }
+    switchView("table");
+    render();
+    const row = els.rows.querySelector(`tr[data-id="${node.id}"]`);
+    if (!row) return;
+    row.scrollIntoView({ block: "center" });
+    row.classList.add("flash");
+    setTimeout(() => row.classList.remove("flash"), 1700);
+    row.querySelector(".tw, .locate")?.focus({ preventScroll: true });
+  }
+
+  function updateFileLine(fileName, size, example) {
+    const s = model.stats;
+    const parts = [
+      `<span class="dev">${esc(model.name)}</span>`,
+      `<span>${esc(fileName)}${size != null ? ` · ${formatBytes(size)}` : ""}</span>`,
+      `<span>${plural(s.peripheral, "peripheral")} · ${plural(s.register, "register")} · ${plural(s.field, "field")}</span>`,
+    ];
+    els.fileLine.innerHTML = parts.join(`<span class="sep" aria-hidden="true">/</span>`) +
+      (example ? `<span class="chip">Example file</span>` : "");
+  }
+
+  function formatBytes(bytes) {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1048576) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / 1048576).toFixed(1)} MB`;
+  }
+
+  /* ---------- Loading ---------- */
+  function load(text, fileName, size, example = false) {
+    let parsed;
+    try {
+      parsed = parseSvd(text);
+    } catch (error) {
+      els.message.textContent = `Could not open ${fileName}: ${error.message}.`;
+      els.message.hidden = false;
+      return false;
+    }
+    els.message.hidden = true;
+    model = parsed;
+    expanded = new Set();
+    updateFileLine(fileName, size, example);
+    resetMap();
+    return true;
+  }
+
+  async function loadFile(file) {
+    try {
+      const text = await file.text();
+      if (load(text, file.name, file.size)) {
+        current = null;
+        history.replaceState(null, "", location.pathname + location.search);
+        renderMenu();
+        applyQuery();
+        els.rows.closest(".table-wrap").scrollTop = 0;
+      }
+    } catch (error) {
+      els.message.textContent = `Could not read ${file.name}: ${error.message}.`;
+      els.message.hidden = false;
+    }
+  }
+
+  /* ---------- File menu ---------- */
+  let files = [];         // { file, name, group }
+  let menuNote = "<p>Looking for SVD files next to this page…</p>";
+  let current = null;     // file shown, EXAMPLE, or null for opened files
+  let loading = 0;
+
+  const displayName = (file) =>
+    decodeURIComponent(file.split(/[?#]/)[0].split("/").pop()).replace(/^header_/, "").replace(/\.svd$/i, "");
+  const groupName = (name) => (/^stm32/i.test(name) ? name.slice(0, 7).toUpperCase() : "Other");
+  const fileFromHash = () => (location.hash.length > 1 ? decodeURIComponent(location.hash.slice(1)) : EXAMPLE);
+
+  async function discoverFiles() {
+    const found = [];
+    // A list of file names, e.g. ["header_stm32f407xx.svd"], works on any static host
+    try {
+      const response = await fetch(MANIFEST, { cache: "no-cache" });
+      if (response.ok) {
+        for (const item of await response.json()) {
+          const file = typeof item === "string" ? item : item?.file;
+          if (file) found.push(file);
+        }
+      }
+    } catch { /* no list */ }
+    // Otherwise the directory listing of a local server, e.g. python3 -m http.server
+    if (!found.length) {
+      try {
+        const response = await fetch("./", { cache: "no-cache" });
+        if (response.ok && (response.headers.get("content-type") || "").includes("html")) {
+          const doc = new DOMParser().parseFromString(await response.text(), "text/html");
+          for (const link of doc.querySelectorAll("a[href]")) {
+            const href = link.getAttribute("href");
+            if (/\.svd$/i.test(href.split(/[?#]/)[0])) found.push(href);
+          }
+        }
+      } catch { /* no listing */ }
+    }
+
+    files = [...new Set(found)]
+      .map((file) => ({ file, name: displayName(file) }))
+      .sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0))
+      .map((entry) => ({ ...entry, group: groupName(entry.name) }));
+
+    const manifestCommand = `python3 -c "import glob, json; json.dump(sorted(glob.glob('*.svd')), open('${MANIFEST}', 'w'))"`;
+    if (files.length) {
+      menuNote = "";
+    } else if (location.protocol === "file:") {
+      menuNote = `<p>The browser cannot list the files next to a page opened from disk.</p>` +
+        `<p>Run <code>python3 -m http.server</code> in this folder and open <code>http://localhost:8000</code>.</p>`;
+    } else {
+      menuNote = `<p>No SVD files found next to this page.</p>` +
+        `<p>Put the SVD files into this folder and list them in <code>${MANIFEST}</code>:</p>` +
+        `<p><code>${esc(manifestCommand)}</code></p>`;
+    }
+    renderMenu();
+  }
+
+  function renderMenu() {
+    const query = els.menuQuery.value;
+    let re = null;
+    if (query) {
+      try { re = new RegExp(query, "i"); }
+      catch { els.menuSearch.classList.add("invalid"); els.menuQuery.setAttribute("aria-invalid", "true"); return; }
+    }
+    els.menuSearch.classList.remove("invalid");
+    els.menuQuery.removeAttribute("aria-invalid");
+
+    const mark = (text) => {
+      if (!re) return esc(text);
+      let out = "", last = 0;
+      for (const m of text.matchAll(new RegExp(re.source, "gi"))) {
+        if (!m[0].length) continue;
+        out += esc(text.slice(last, m.index)) + "<mark>" + esc(m[0]) + "</mark>";
+        last = m.index + m[0].length;
+      }
+      return out + esc(text.slice(last));
+    };
+    const item = (file, label) =>
+      `<li><button class="menu-item" type="button" data-file="${esc(file)}" aria-current="${file === current}">${label}</button></li>`;
+
+    const visible = files.filter((f) => !re || re.test(f.name));
+    let html = "";
+    if (!re || re.test("example")) html += `<li class="menu-group">BUILT-IN</li>` + item(EXAMPLE, mark("example"));
+    let group = null;
+    for (const f of visible) {
+      if (f.group !== group) { group = f.group; html += `<li class="menu-group">${esc(group)}</li>`; }
+      html += item(f.file, mark(f.name));
+    }
+    if (menuNote) html += `<li class="menu-note">${menuNote}</li>`;
+    else if (!visible.length && query) html += `<li class="menu-note"><p>No file name matches this expression.</p></li>`;
+    els.menuList.innerHTML = html;
+    els.menuCount.textContent = files.length ? (query ? `${visible.length} of ${files.length}` : `${files.length} files`) : "";
+  }
+
+  function loadExample() {
+    const example = $("example-svd").textContent.trim();
+    if (!load(example, "example.svd", new Blob([example]).size, true)) return false;
+    const usart = model.peripherals.find((p) => p.name === "USART1");
+    const cr1 = usart?.children.find((r) => r.name === "CR1");
+    const ps = cr1?.children.find((f) => f.name === "PS");
+    for (const node of [usart, cr1, ps]) if (node) expanded.add(node.id);
+    return true;
+  }
+
+  async function openFile(file) {
+    const token = ++loading;
+    const name = file === EXAMPLE ? "example.svd" : decodeURIComponent(file.split(/[?#]/)[0].split("/").pop());
+    let ok = false;
+    if (file === EXAMPLE) {
+      ok = loadExample();
+    } else {
+      setStatus(`Loading <code>${esc(name)}</code>…`);
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`the server answered ${response.status} ${response.statusText}`.trim());
+        const text = await response.text();
+        if (token !== loading) return false;
+        ok = load(text, name, Number(response.headers.get("content-length")) || new Blob([text]).size);
+      } catch (error) {
+        if (token !== loading) return false;
+        els.message.textContent = `Could not load ${name}: ${error.message}.`;
+        els.message.hidden = false;
+      }
+    }
+    if (ok) {
+      current = file;
+      applyQuery();
+      els.rows.closest(".table-wrap").scrollTop = 0;
+    } else {
+      render();
+    }
+    renderMenu();
+    return ok;
+  }
+
+  function navigate(file) {
+    const target = file === EXAMPLE ? location.pathname + location.search : `#${encodeURIComponent(file)}`;
+    if (fileFromHash() !== file) history.pushState(null, "", target);
+    openFile(file);
+  }
+
+  /* ---------- Views ---------- */
+  function switchView(view, focus = false) {
+    const isMap = view === "map";
+    currentView = isMap ? "map" : "table";
+    els.tabTable.setAttribute("aria-selected", String(!isMap));
+    els.tabMap.setAttribute("aria-selected", String(isMap));
+    els.tabTable.tabIndex = isMap ? -1 : 0;
+    els.tabMap.tabIndex = isMap ? 0 : -1;
+    els.panelTable.hidden = isMap;
+    els.panelMap.hidden = !isMap;
+    els.tableActions.hidden = isMap;
+    try { localStorage.setItem(VIEW_KEY, currentView); } catch { /* storage unavailable */ }
+    if (isMap) {
+      resizeMap();
+      ensureLayout();
+      scheduleDraw();
+    }
+    if (focus) (isMap ? els.tabMap : els.tabTable).focus();
+  }
+
+  /* ---------- Map ---------- */
+  const GUTTER = 168;          // address labels on the left
+  const OVERVIEW = 56;         // overview strip on the right
+  const ROW_UNITS = 1;         // row height in bytes, so a 32-bit register is 4:1 and a bit 8:1
+  const headerHeight = (h) => (h >= 44 ? 16 : 0);        // register name above the bit fields
+  const bitNumbersHeight = (h, bitW) => (bitW >= 15 && h >= 90 ? 14 : 0);
+  const MAX_GAP_BYTES = 0x800; // larger gaps between peripherals are folded
+  const FOLD_ROWS = 1.5;
+  const HIDDEN_ROWS = 0.5;     // marker height for hidden empty rows
+  const BLOCK = 0x400;         // assumed address block size without addressBlock
+  const K_MAX = 360;
+  const FONT_MONO = '"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace';
+  const FONT_SANS = '"IBM Plex Sans", system-ui, -apple-system, sans-serif';
+
+  const map = {
+    layout: null, rowBytes: 64, dense: false, k: 1, ox: GUTTER + 12, oy: 12, width: 0, height: 0, dpr: 1,
+    selected: null, hover: null, colors: null, hatch: null, frame: 0, anim: 0,
+  };
+  const mapCtx = els.map.getContext("2d");
+  const overviewCtx = els.overview.getContext("2d");
+
+  function resetMap() {
+    map.layout = null;
+    map.selected = null;
+    map.hover = null;
+    els.mapTip.hidden = true;
+    renderCard();
+    renderCrumbs();
+    if (currentView === "map") { ensureLayout(); scheduleDraw(); }
+  }
+
+  function readColors() {
+    const style = getComputedStyle(document.documentElement);
+    const v = (name) => style.getPropertyValue(name).trim();
+    map.colors = {
+      surface: v("--surface"), band: v("--band"), ink: v("--ink"), muted: v("--muted"), faint: v("--faint"),
+      rule: v("--rule"), ruleStrong: v("--rule-strong"), accent: v("--accent"), accentSoft: v("--accent-soft"),
+      mark: v("--mark"), periph: v("--periph"), hatch: v("--hatch"),
+      rw: [v("--reg-rw"), v("--reg-rw-line")], ro: [v("--reg-ro"), v("--reg-ro-line")], wo: [v("--reg-wo"), v("--reg-wo-line")],
+    };
+    const tile = document.createElement("canvas");
+    tile.width = tile.height = 8;
+    const t = tile.getContext("2d");
+    t.strokeStyle = map.colors.hatch;
+    t.lineWidth = 1.2;
+    t.beginPath();
+    t.moveTo(-1, 9); t.lineTo(9, -1);
+    t.moveTo(-1, 1); t.lineTo(1, -1);
+    t.moveTo(7, 9); t.lineTo(9, 7);
+    t.stroke();
+    map.hatch = mapCtx.createPattern(tile, "repeat");
+  }
+
+  const registerBytes = (node) => {
+    const bytes = Math.max(1, Math.ceil((node.size || 32) / 8));
+    return node.dim ? (node.dim - 1) * Math.max(node.increment || 0, bytes) + bytes : bytes;
+  };
+  const lastIndex = (list, key, value) => {
+    let lo = 0, hi = list.length;
+    while (lo < hi) { const mid = (lo + hi) >> 1; if (list[mid][key] <= value) lo = mid + 1; else hi = mid; }
+    return lo - 1;
+  };
+
+  function buildLayout() {
+    const R = map.rowBytes;
+    const pers = [];
+    for (const node of model.peripherals) {
+      const regs = [];
+      const visit = (parent) => {
+        for (const child of parent.children) {
+          if (child.type === "register") regs.push(child);
+          else if (child.type === "cluster") visit(child);
+        }
+      };
+      visit(node);
+      regs.sort((a, b) => a.address - b.address);
+      let registersEnd = node.address;
+      for (const r of regs) registersEnd = Math.max(registersEnd, r.address + registerBytes(r));
+      pers.push({ node, start: node.address, registersEnd, regs, inferred: !node.blockSize });
+    }
+    pers.sort((a, b) => a.start - b.start || a.registersEnd - b.registersEnd);
+    // The extent is the address block, or the registers rounded up to a block without overlapping the next peripheral
+    pers.forEach((P, i) => {
+      let end = P.node.blockSize ? P.start + P.node.blockSize : P.start + Math.ceil(Math.max(4, P.registersEnd - P.start) / BLOCK) * BLOCK;
+      const next = pers.slice(i + 1).find((o) => o.start > P.start);
+      if (P.inferred && next && next.start < end) end = Math.max(next.start, P.registersEnd);
+      P.end = Math.max(end, P.registersEnd, P.start + 4);
+    });
+
+    const segs = [], folds = [], regs = [];
+    if (!map.dense) {
+      let seg = null, segEnd = 0;
+      for (const P of pers) {
+        const rowAddress = Math.floor(P.start / R) * R;
+        const endAddress = Math.ceil(P.end / R) * R;
+        if (!seg) {
+          seg = { v: rowAddress, y: 0 };
+          segs.push(seg);
+          segEnd = endAddress;
+        } else if (rowAddress > segEnd && rowAddress - segEnd > MAX_GAP_BYTES) {
+          seg.rows = (segEnd - seg.v) / R;
+          const y = seg.y + seg.rows;
+          folds.push({ y, rows: FOLD_ROWS, from: segEnd, to: rowAddress });
+          seg = { v: rowAddress, y: y + FOLD_ROWS };
+          segs.push(seg);
+          segEnd = endAddress;
+        } else {
+          segEnd = Math.max(segEnd, endAddress);
+        }
+        P.v = P.start;
+        P.vend = P.end;
+        for (const r of P.regs) regs.push({ node: r, v: r.address, bytes: registerBytes(r), per: P });
+      }
+      if (seg) seg.rows = (segEnd - seg.v) / R;
+    } else {
+      // Only rows without any register are hidden, the space between registers is kept
+      const occupied = new Set();
+      for (const P of pers) {
+        P.v = P.start;
+        P.vend = P.end;
+        occupied.add(Math.floor(P.start / R) * R);
+        for (const r of P.regs) {
+          const bytes = registerBytes(r);
+          regs.push({ node: r, v: r.address, bytes, per: P });
+          for (let row = Math.floor(r.address / R) * R; row < r.address + bytes; row += R) occupied.add(row);
+        }
+      }
+      let seg = null;
+      for (const row of [...occupied].sort((a, b) => a - b)) {
+        if (seg && row === seg.v + seg.rows * R) { seg.rows++; continue; }
+        if (seg) {
+          const y = seg.y + seg.rows;
+          folds.push({ y, rows: HIDDEN_ROWS, from: seg.v + seg.rows * R, to: row, hidden: true });
+          seg = { v: row, y: y + HIDDEN_ROWS, rows: 1 };
+        } else {
+          seg = { v: row, y: 0, rows: 1 };
+        }
+        segs.push(seg);
+      }
+    }
+    regs.sort((a, b) => a.v - b.v || b.bytes - a.bytes);
+    const byNode = new Map();
+    for (const P of pers) byNode.set(P.node.id, P);
+    for (const r of regs) byNode.set(r.node.id, r);
+    const last = segs[segs.length - 1];
+    const layout = {
+      R, pers, regs, segs, folds, byNode, dense: map.dense,
+      rows: last ? last.y + last.rows : 0,
+      maxBytes: regs.reduce((max, r) => Math.max(max, r.bytes), 4),
+    };
+    // Visible rows of each peripheral
+    for (const P of pers) {
+      const rects = spanRects(P.v, P.vend - P.v, layout);
+      P.r0 = rects.length ? rects[0].row : 0;
+      P.r1 = rects.length ? rects[rects.length - 1].row + rects[rects.length - 1].rows : 0;
+      P.drawn = rects.length > 0;
+    }
+    return layout;
+  }
+
+  function ensureLayout() {
+    if (!model || map.layout) return;
+    map.layout = buildLayout();
+    fitWidth();
+  }
+
+  /* Geometry: columns are bytes, rows are multiples of rowBytes */
+  const sx = (col) => map.ox + col * map.k;
+  const sy = (row) => map.oy + row * ROW_UNITS * map.k;
+  function spanRects(v, len, L = map.layout) {
+    const R = L.R, rects = [];
+    const end = v + len;
+    let a = v;
+    while (a < end) {
+      const index = Math.max(0, lastIndex(L.segs, "v", a));
+      const s = L.segs[index];
+      if (a < s.v) { a = s.v; continue; }
+      const d = a - s.v, rowIndex = Math.floor(d / R), row = s.y + rowIndex, col = d % R;
+      // Continue with the next segment after folded or hidden rows
+      if (rowIndex >= s.rows) {
+        const next = L.segs[index + 1];
+        if (!next || next.v >= end) break;
+        a = next.v;
+        continue;
+      }
+      if (col === 0 && end - a >= 2 * R) {
+        const full = Math.min(Math.floor((end - a) / R), s.rows - rowIndex);
+        rects.push({ row, col: 0, rows: full, cols: R });
+        a += full * R;
+      } else {
+        const n = Math.min(end - a, R - col);
+        rects.push({ row, col, rows: 1, cols: n });
+        a += n;
+      }
+    }
+    return rects;
+  }
+
+  /* Outline of an address span, e.g. a peripheral that starts and ends within a row */
+  function spanPath(ctx, v, len) {
+    const rects = spanRects(v, len), R = map.layout.R;
+    ctx.beginPath();
+    const contiguous = rects.every((r, i) => !i || Math.abs(r.row - (rects[i - 1].row + rects[i - 1].rows)) < 1e-6);
+    if (rects.length === 1 || rects.length > 3 || !contiguous) {
+      for (const r of rects) ctx.rect(sx(r.col), sy(r.row), r.cols * map.k, r.rows * ROW_UNITS * map.k);
+      return rects;
+    }
+    const first = rects[0], last = rects[rects.length - 1];
+    const top = first.row, bottom = last.row + last.rows, startCol = first.col, endCol = last.col + last.cols;
+    ctx.moveTo(sx(startCol), sy(top));
+    ctx.lineTo(sx(R), sy(top));
+    if (endCol < R) {
+      ctx.lineTo(sx(R), sy(bottom - 1));
+      ctx.lineTo(sx(endCol), sy(bottom - 1));
+      ctx.lineTo(sx(endCol), sy(bottom));
+    } else {
+      ctx.lineTo(sx(R), sy(bottom));
+    }
+    ctx.lineTo(sx(0), sy(bottom));
+    if (startCol > 0) {
+      ctx.lineTo(sx(0), sy(top + 1));
+      ctx.lineTo(sx(startCol), sy(top + 1));
+    } else {
+      ctx.lineTo(sx(0), sy(top));
+    }
+    ctx.closePath();
+    return rects;
+  }
+
+  function spanOf(node) {
+    const L = map.layout;
+    if (!L || !node) return null;
+    if (node.type === "enum") node = node.parent;
+    if (node.type === "field") {
+      const item = L.byNode.get(node.parent.id);
+      return item ? { v: item.v, len: item.bytes, item, field: node } : null;
+    }
+    if (node.type === "cluster") {
+      let lo = Infinity, hi = -Infinity;
+      const visit = (parent) => {
+        for (const child of parent.children) {
+          const item = L.byNode.get(child.id);
+          if (child.type === "register" && item) { lo = Math.min(lo, item.v); hi = Math.max(hi, item.v + item.bytes); }
+          else if (child.type === "cluster") visit(child);
+        }
+      };
+      visit(node);
+      return lo < hi ? { v: lo, len: hi - lo } : null;
+    }
+    const item = L.byNode.get(node.id);
+    if (!item) return null;
+    return node.type === "peripheral" ? { v: item.v, len: item.vend - item.v, item } : { v: item.v, len: item.bytes, item };
+  }
+
+  const colorsFor = (access) => {
+    const short = ACCESS[access];
+    return short === "ro" ? map.colors.ro : short === "wo" ? map.colors.wo : map.colors.rw;
+  };
+
+  const widths = new Map();
+  function fitText(ctx, text, x, y, maxWidth) {
+    const key = ctx.font + "|" + text;
+    let width = widths.get(key);
+    if (width === undefined) {
+      width = ctx.measureText(text).width;
+      if (widths.size > 50000) widths.clear();
+      widths.set(key, width);
+    }
+    if (width > maxWidth) return false;
+    ctx.fillText(text, x, y);
+    return true;
+  }
+
+  function fitTextRotated(ctx, text, cx, cy, maxLength, maxThickness, fontSize) {
+    if (fontSize > maxThickness) return false;
+    const key = ctx.font + "|" + text;
+    let width = widths.get(key);
+    if (width === undefined) { width = ctx.measureText(text).width; widths.set(key, width); }
+    if (width > maxLength) return false;
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText(text, 0, 0);
+    ctx.restore();
+    return true;
+  }
+
+  function drawRegister(ctx, item) {
+    const C = map.colors, node = item.node, k = map.k, rowPx = ROW_UNITS * k;
+    const rects = spanRects(item.v, item.bytes);
+    const [fill, line] = colorsFor(node.access);
+    const dimmed = filter && !filter.keep.has(node.id);
+    const matched = filter && filter.matched.has(node.id);
+    const r = rects[0];
+    const x = sx(r.col), y = sy(r.row), w = r.cols * k, h = r.rows * rowPx;
+    const bits = item.bytes * 8;
+    const bitW = w / bits;
+    const showFields = rects.length === 1 && !node.dim && bitW >= 2.5 && node.children.length > 0 && h >= 6;
+    ctx.globalAlpha = dimmed ? 0.25 : 1;
+    for (const piece of rects) {
+      const px = sx(piece.col), py = sy(piece.row), pw = piece.cols * k, ph = piece.rows * rowPx;
+      // With bit fields, the register shows its unused bits like unused address space
+      ctx.fillStyle = showFields ? C.periph : matched ? C.mark : fill;
+      ctx.fillRect(px, py, pw, ph);
+      if (showFields && map.hatch) { ctx.fillStyle = map.hatch; ctx.fillRect(px, py, pw, ph); }
+      if (rowPx >= 4 && pw >= 3) {
+        ctx.strokeStyle = line;
+        ctx.lineWidth = 1;
+        ctx.strokeRect(px + 0.5, py + 0.5, Math.max(0, pw - 1), Math.max(0, ph - 1));
+      }
+    }
+    if (y > map.height || y + h < 0) { ctx.globalAlpha = 1; return; }
+
+    ctx.fillStyle = C.ink;
+    ctx.textBaseline = "middle";
+    if (showFields) {
+      const top = headerHeight(h), bottom = bitNumbersHeight(h, bitW);
+      const fy = y + top, fh = h - top;
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(x, y, w, h);
+      ctx.clip();
+      // The register name strip is not bit space
+      if (top) { ctx.fillStyle = C.periph; ctx.fillRect(x, y, w, top); }
+      for (const f of node.children) {
+        const fx = x + (bits - 1 - f.msb) * bitW, fw = f.width * bitW;
+        const fieldMatched = filter && filter.matched.has(f.id);
+        ctx.globalAlpha = dimmed || (filter && !filter.keep.has(f.id) && !matched) ? 0.35 : 1;
+        ctx.fillStyle = fieldMatched || matched ? C.mark : fill;
+        ctx.fillRect(fx, fy, fw, fh);
+        ctx.strokeStyle = line;
+        ctx.strokeRect(fx + 0.5, fy + 0.5, Math.max(0, fw - 1), Math.max(0, fh - 1));
+      }
+      ctx.globalAlpha = dimmed ? 0.25 : 1;
+      // The outline of the register stays on top of its bit fields
+      ctx.strokeStyle = line;
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(x + 0.75, y + 0.75, Math.max(0, w - 1.5), Math.max(0, h - 1.5));
+      if (top) {
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x, Math.round(fy) + 0.5);
+        ctx.lineTo(x + w, Math.round(fy) + 0.5);
+        ctx.stroke();
+      }
+      ctx.fillStyle = C.ink;
+      if (top) {
+        ctx.textAlign = "left";
+        ctx.font = `600 11px ${FONT_MONO}`;
+        fitText(ctx, node.name, x + 5, y + top / 2 + 0.5, w - 10);
+      }
+      // Field names are horizontal when they fit, otherwise rotated along the bits
+      const labelTop = fy, labelHeight = fh - bottom, mid = labelTop + labelHeight / 2;
+      ctx.textAlign = "center";
+      let labelled = false;
+      for (const f of node.children) {
+        const fx = x + (bits - 1 - f.msb) * bitW, fw = f.width * bitW, cx = fx + fw / 2;
+        if (fw < 7 || labelHeight < 9) continue;
+        ctx.font = `11px ${FONT_MONO}`;
+        if (labelHeight >= 14 && fitText(ctx, f.name, cx, mid, fw - 6)) { labelled = true; continue; }
+        if (fitTextRotated(ctx, f.name, cx, mid, labelHeight - 6, fw - 2, 11)) { labelled = true; continue; }
+        ctx.font = `9px ${FONT_MONO}`;
+        labelled = fitTextRotated(ctx, f.name, cx, mid, labelHeight - 4, fw - 1, 9) || labelled;
+      }
+      if (!top && !labelled && h >= 12) {
+        ctx.font = `500 11px ${FONT_MONO}`;
+        fitText(ctx, node.name, x + w / 2, y + h / 2, w - 4);
+      }
+      if (bottom) {
+        ctx.font = `9.5px ${FONT_MONO}`;
+        ctx.fillStyle = C.muted;
+        for (let b = 0; b < bits; b++) ctx.fillText(String(b), x + (bits - 1 - b + 0.5) * bitW, y + h - bottom / 2);
+      }
+      ctx.restore();
+    } else if (h >= 12 && w >= 16) {
+      ctx.textAlign = "center";
+      ctx.font = `${h >= 22 ? "500 11px" : "10px"} ${FONT_MONO}`;
+      fitText(ctx, node.name, x + w / 2, y + Math.min(h, rowPx) / 2, w - 4);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function outline(ctx, node, color, width) {
+    const span = spanOf(node);
+    if (!span) return;
+    if (span.field) {
+      const r = spanRects(span.v, span.len);
+      const x = sx(r[0].col), y = sy(r[0].row), w = r[0].cols * map.k, h = ROW_UNITS * map.k;
+      const bits = span.item.bytes * 8, bitW = w / bits, top = headerHeight(h);
+      ctx.beginPath();
+      if (r.length === 1 && bitW >= 2.5) ctx.rect(x + (bits - 1 - span.field.msb) * bitW, y + top, span.field.width * bitW, h - top);
+      else ctx.rect(x, y, w, h);
+    } else {
+      spanPath(ctx, span.v, span.len);
+    }
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width;
+    ctx.stroke();
+  }
+
+  function drawMap() {
+    map.frame = 0;
+    const L = map.layout, C = map.colors, ctx = mapCtx;
+    const W = map.width, H = map.height;
+    if (!W || !H || !C) return;
+    ctx.setTransform(map.dpr, 0, 0, map.dpr, 0, 0);
+    ctx.fillStyle = C.surface;
+    ctx.fillRect(0, 0, W, H);
+    if (!L || !L.rows) {
+      ctx.fillStyle = C.muted;
+      ctx.font = `13px ${FONT_SANS}`;
+      ctx.textBaseline = "middle";
+      ctx.textAlign = "left";
+      ctx.fillText(model ? "This file has no peripherals to draw." : "No file loaded.", 20, 28);
+      drawOverview();
+      return;
+    }
+    const k = map.k, rowPx = ROW_UNITS * k, R = L.R;
+    const rowTop = -map.oy / rowPx - 1, rowBottom = (H - map.oy) / rowPx + 1;
+    const visible = (row, rows) => row + rows >= rowTop && row <= rowBottom;
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(GUTTER, 0, W - GUTTER, H);
+    ctx.clip();
+
+    // Word grid of the address space
+    if (rowPx >= 10) {
+      ctx.strokeStyle = C.rule;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (const s of L.segs) {
+        if (!visible(s.y, s.rows)) continue;
+        const r0 = Math.max(0, Math.floor(rowTop - s.y)), r1 = Math.min(s.rows, Math.ceil(rowBottom - s.y));
+        for (let r = r0; r <= r1; r++) {
+          const y = Math.round(sy(s.y + r)) + 0.5;
+          ctx.moveTo(sx(0), y);
+          ctx.lineTo(sx(R), y);
+        }
+        const y0 = sy(s.y + r0), y1 = sy(s.y + r1);
+        for (let c = 0; c <= R; c += 4) {
+          const x = Math.round(sx(c)) + 0.5;
+          ctx.moveTo(x, y0);
+          ctx.lineTo(x, y1);
+        }
+      }
+      ctx.stroke();
+    }
+
+    // Folded gaps between peripherals
+    ctx.textBaseline = "middle";
+    for (const f of L.folds) {
+      if (!visible(f.y, f.rows)) continue;
+      const y0 = sy(f.y), y1 = sy(f.y + f.rows), mid = Math.round((y0 + y1) / 2) + 0.5;
+      ctx.strokeStyle = C.ruleStrong;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath();
+      ctx.moveTo(sx(0), mid);
+      ctx.lineTo(sx(R), mid);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      if (y1 - y0 >= 12) {
+        const label = f.hidden
+          ? `${plural((f.to - f.from) / R, "empty row")} hidden · ${hex(f.from, 32)} – ${hex(f.to - 1, 32)}`
+          : `unused ${hex(f.from, 32)} – ${hex(f.to - 1, 32)} · ${sizeText(f.to - f.from)}`;
+        ctx.font = `11px ${FONT_MONO}`;
+        ctx.textAlign = "center";
+        const cx = clamp(sx(R / 2), GUTTER + 160, W - 160);
+        const width = ctx.measureText(label).width + 12;
+        ctx.fillStyle = C.surface;
+        ctx.fillRect(cx - width / 2, mid - 8, width, 16);
+        ctx.fillStyle = C.muted;
+        ctx.fillText(label, cx, mid);
+      }
+    }
+
+    // Peripherals with their unused space
+    for (const P of L.pers) {
+      if (!P.drawn || !visible(P.r0, P.r1 - P.r0)) continue;
+      spanPath(ctx, P.v, P.vend - P.v);
+      ctx.globalAlpha = filter && !filter.keep.has(P.node.id) ? 0.45 : 1;
+      ctx.fillStyle = C.periph;
+      ctx.fill();
+      if (rowPx >= 3 && map.hatch) { ctx.fillStyle = map.hatch; ctx.fill(); }
+      ctx.strokeStyle = C.ruleStrong;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+
+    // Registers and bit fields
+    for (const s of L.segs) {
+      if (!visible(s.y, s.rows)) continue;
+      const vStart = s.v + Math.max(0, Math.floor(rowTop - s.y)) * R;
+      const vEnd = s.v + Math.min(s.rows, Math.ceil(rowBottom - s.y) + 1) * R;
+      for (let i = Math.max(0, lastIndex(L.regs, "v", vStart - L.maxBytes)); i < L.regs.length && L.regs[i].v < vEnd; i++) {
+        const item = L.regs[i];
+        if (item.v + item.bytes > vStart) drawRegister(ctx, item);
+      }
+    }
+
+    if (map.hover && map.hover !== map.selected) outline(ctx, map.hover, C.accent, 1.5);
+    if (map.selected) outline(ctx, map.selected, C.ink, 2);
+    ctx.restore();
+
+    // Gutter with peripheral names and row addresses
+    ctx.fillStyle = C.surface;
+    ctx.fillRect(0, 0, GUTTER, H);
+    ctx.fillStyle = C.rule;
+    ctx.fillRect(GUTTER - 1, 0, 1, H);
+    ctx.textBaseline = "middle";
+    const labelY = (row) => sy(row) + Math.min(rowPx, 18) / 2;
+    const step = rowPx >= 15 ? 1 : 2 ** Math.ceil(Math.log2(15 / rowPx));
+    ctx.font = `10.5px ${FONT_MONO}`;
+    ctx.textAlign = "right";
+    ctx.fillStyle = C.faint;
+    for (const s of L.segs) {
+      if (!visible(s.y, s.rows)) continue;
+      const from = Math.max(0, Math.floor(rowTop - s.y)), to = Math.min(s.rows - 1, Math.ceil(rowBottom - s.y));
+      for (let r = Math.ceil(from / step) * step; r <= to; r += step) {
+        ctx.fillText(hex(s.v + r * R, 32), GUTTER - 10, labelY(s.y + r));
+      }
+    }
+    for (const f of L.folds) {
+      if (!visible(f.y, f.rows)) continue;
+      ctx.fillText("⋮", GUTTER - 40, (sy(f.y) + sy(f.y + f.rows)) / 2);
+    }
+    ctx.textAlign = "left";
+    let lastLabel = -Infinity;
+    const selectedSpan = map.selected ? spanOf(map.selected) : null;
+    for (const P of L.pers) {
+      if (!P.drawn) continue;
+      const y = labelY(P.r0);
+      if (y < -12 || y > H + 12) continue;
+      const selected = selectedSpan?.item?.per === P || map.selected === P.node;
+      if (y - lastLabel < 15 && !selected) continue;
+      ctx.font = `600 11.5px ${FONT_SANS}`;
+      ctx.fillStyle = selected ? C.accent : filter && !filter.keep.has(P.node.id) ? C.faint : C.ink;
+      let name = P.node.name;
+      while (name.length > 3 && ctx.measureText(name).width > 76) name = name.slice(0, -2) + "…";
+      if (name !== P.node.name && !name.endsWith("…")) name += "…";
+      ctx.fillText(name, 10, y);
+      lastLabel = y;
+    }
+    drawOverview();
+  }
+
+  function drawOverview() {
+    const ctx = overviewCtx, L = map.layout, C = map.colors, H = map.height;
+    if (!H || !C) return;
+    ctx.setTransform(map.dpr, 0, 0, map.dpr, 0, 0);
+    ctx.fillStyle = C.band;
+    ctx.fillRect(0, 0, OVERVIEW, H);
+    if (!L || !L.rows) return;
+    const scale = (H - 8) / L.rows;
+    const selectedPeripheral = map.selected ? (spanOf(map.selected)?.item?.per ?? L.byNode.get(map.selected.id)) : null;
+    for (const P of L.pers) {
+      if (!P.drawn) continue;
+      const kept = !filter || filter.keep.has(P.node.id);
+      ctx.fillStyle = P === selectedPeripheral ? C.accent : filter && kept ? C.mark : kept ? C.ruleStrong : C.rule;
+      ctx.fillRect(10, 4 + P.r0 * scale, OVERVIEW - 20, Math.max(1, (P.r1 - P.r0) * scale - 0.5));
+    }
+    ctx.fillStyle = C.faint;
+    for (const f of L.folds) ctx.fillRect(18, 4 + (f.y + f.rows / 2) * scale, OVERVIEW - 36, 1);
+    const rowPx = ROW_UNITS * map.k;
+    const y0 = 4 + clamp(-map.oy / rowPx, 0, L.rows) * scale, y1 = 4 + clamp((H - map.oy) / rowPx, 0, L.rows) * scale;
+    ctx.globalAlpha = 0.25;
+    ctx.fillStyle = C.accent;
+    ctx.fillRect(3, y0, OVERVIEW - 6, Math.max(3, y1 - y0));
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = C.accent;
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(3.5, y0, OVERVIEW - 7, Math.max(3, y1 - y0));
+  }
+
+  function scheduleDraw() {
+    if (currentView !== "map" || map.frame || map.anim) return;
+    map.frame = requestAnimationFrame(drawMap);
+  }
+
+  function resizeMap() {
+    const rect = els.mapFrame.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    const W = Math.max(0, Math.floor(rect.width - 2 - OVERVIEW)), H = Math.max(0, Math.floor(rect.height - 2));
+    if (W === map.width && H === map.height && dpr === map.dpr) return false;
+    map.width = W;
+    map.height = H;
+    map.dpr = dpr;
+    for (const [canvas, width] of [[els.map, W], [els.overview, OVERVIEW]]) {
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(H * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${H}px`;
+    }
+    return true;
+  }
+
+  const minZoom = () => {
+    const L = map.layout;
+    if (!L || !L.rows) return 0.01;
+    return Math.min((map.width - GUTTER - 24) / L.R, (map.height - 24) / (L.rows * ROW_UNITS)) * 0.9;
+  };
+
+  function fitTarget() {
+    const L = map.layout;
+    return { k: L ? clamp((map.width - GUTTER - 24) / L.R, minZoom(), K_MAX) : map.k, ox: GUTTER + 12, oy: 12 };
+  }
+
+  function fitWidth() {
+    if (map.layout) Object.assign(map, fitTarget());
+  }
+
+  function clampView() {
+    const L = map.layout;
+    if (!L) return;
+    const W = map.width - GUTTER, H = map.height;
+    const contentW = L.R * map.k, contentH = L.rows * ROW_UNITS * map.k;
+    map.ox = clamp(map.ox, GUTTER + W / 2 - contentW, GUTTER + W / 2);
+    map.oy = clamp(map.oy, H / 2 - contentH, H / 2);
+  }
+
+  function zoomAt(px, py, factor) {
+    cancelAnimationFrame(map.anim);
+    map.anim = 0;
+    const k = clamp(map.k * factor, minZoom(), K_MAX), f = k / map.k;
+    map.ox = px - (px - map.ox) * f;
+    map.oy = py - (py - map.oy) * f;
+    map.k = k;
+    clampView();
+    scheduleDraw();
+  }
+
+  function animateTo(target, animate = true) {
+    cancelAnimationFrame(map.anim);
+    map.anim = 0;
+    const W = map.width - GUTTER, H = map.height;
+    if (!animate || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      Object.assign(map, target);
+      clampView();
+      scheduleDraw();
+      return;
+    }
+    const center = (s) => ({ x: (GUTTER + W / 2 - s.ox) / s.k, y: (H / 2 - s.oy) / s.k });
+    const from = { k: map.k, ...center(map) }, to = { k: target.k, ...center(target) };
+    const start = performance.now(), duration = 320;
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / duration), e = 1 - Math.pow(1 - t, 3);
+      const k = Math.exp(Math.log(from.k) + (Math.log(to.k) - Math.log(from.k)) * e);
+      map.k = k;
+      map.ox = GUTTER + W / 2 - (from.x + (to.x - from.x) * e) * k;
+      map.oy = H / 2 - (from.y + (to.y - from.y) * e) * k;
+      drawMap();
+      if (t < 1) { map.anim = requestAnimationFrame(step); }
+      else { map.anim = 0; clampView(); scheduleDraw(); }
+    };
+    map.anim = requestAnimationFrame(step);
+  }
+
+  function zoomTo(node, animate = true) {
+    const span = spanOf(node);
+    if (!span) return;
+    const rects = spanRects(span.v, span.len);
+    let x0 = Math.min(...rects.map((r) => r.col)), x1 = Math.max(...rects.map((r) => r.col + r.cols));
+    const y0 = rects[0].row, y1 = rects[rects.length - 1].row + rects[rects.length - 1].rows;
+    if (span.field && rects.length === 1) {
+      const bits = span.item.bytes * 8, byteW = (x1 - x0) / bits;
+      x0 = rects[0].col + (bits - 1 - span.field.msb) * byteW;
+      x1 = x0 + span.field.width * byteW;
+    }
+    const W = map.width - GUTTER, H = map.height;
+    const k = clamp(Math.min((W * 0.86) / Math.max(x1 - x0, 1e-3), (H * 0.62) / ((y1 - y0) * ROW_UNITS)), minZoom(), K_MAX);
+    const cx = (x0 + x1) / 2, cy = ((y0 + y1) / 2) * ROW_UNITS;
+    animateTo({ k, ox: GUTTER + W / 2 - cx * k, oy: H / 2 - cy * k }, animate);
+  }
+
+  function hitTest(px, py) {
+    const L = map.layout;
+    if (!L || px < GUTTER) return null;
+    const k = map.k, rowPx = ROW_UNITS * k;
+    const rowF = (py - map.oy) / rowPx, col = Math.floor((px - map.ox) / k);
+    if (col < 0 || col >= L.R || rowF < 0) return null;
+    const s = L.segs[lastIndex(L.segs, "y", rowF)];
+    if (!s || rowF >= s.y + s.rows) return null;
+    const v = s.v + Math.floor(rowF - s.y) * L.R + col;
+    for (let i = lastIndex(L.regs, "v", v); i >= 0 && L.regs[i].v > v - L.maxBytes; i--) {
+      const item = L.regs[i];
+      if (v < item.v || v >= item.v + item.bytes) continue;
+      const rects = spanRects(item.v, item.bytes);
+      if (rects.length === 1 && !item.node.dim) {
+        const bits = item.bytes * 8, bitW = (rects[0].cols * k) / bits;
+        const inHeader = py - sy(rects[0].row) < headerHeight(rowPx);
+        if (bitW >= 2.5 && !inHeader) {
+          const bit = bits - 1 - Math.floor((px - sx(rects[0].col)) / bitW);
+          const field = item.node.children.find((f) => bit >= f.lsb && bit <= f.msb);
+          if (field) return field;
+        }
+      }
+      return item.node;
+    }
+    let peripheral = null;
+    for (const P of L.pers) if (v >= P.v && v < P.vend) peripheral = P.node;
+    return peripheral;
+  }
+
+  function describe(node) {
+    const L = map.layout;
+    switch (node.type) {
+      case "peripheral": {
+        const P = L?.byNode.get(node.id);
+        return P ? `${hex(P.start, 32)} – ${hex(P.end - 1, 32)} · ${sizeText(P.end - P.start)}` : hex(node.address, 32);
+      }
+      case "cluster": return `${hex(node.address, 32)} · cluster`;
+      case "register":
+        return `${hex(node.address, 32)} · ${node.size} bits${node.access ? ` · ${ACCESS[node.access] || node.access}` : ""}`;
+      case "field":
+        return `${bitRange(node)} · ${plural(node.width, "bit")}${node.access ? ` · ${ACCESS[node.access] || node.access}` : ""}`;
+      default: return "";
+    }
+  }
+
+  const countOf = (node, type) => node.children.reduce((n, c) => n + (c.type === type ? 1 : 0) + countOf(c, type), 0);
+
+  function renderCard() {
+    const node = map.selected;
+    els.mapCard.hidden = !node;
+    if (!node) return;
+    const rows = [];
+    const add = (label, value, mono = true) => {
+      if (value !== "" && value != null) rows.push(`<div><dt>${label}</dt><dd${mono ? ' class="num"' : ""}>${value}</dd></div>`);
+    };
+    const P = map.layout?.byNode.get(node.id);
+    switch (node.type) {
+      case "peripheral":
+        if (P) {
+          add("Address", `${hex(P.start, 32)} – ${hex(P.end - 1, 32)}`);
+          add("Size", `${sizeText(P.end - P.start)}${P.inferred ? " (rounded up to 1 KiB, the file has no address block)" : ""}`, false);
+        }
+        add("Registers", countOf(node, "register").toLocaleString(), false);
+        if (node.derivedFrom) add("Derived from", esc(node.derivedFrom));
+        if (node.interrupts.length) add("Interrupts", node.interrupts.map((i) => `${esc(i.name)} (${esc(i.value)})`).join(", "));
+        break;
+      case "cluster":
+        add("Address", hex(node.address, 32));
+        add("Offset", offsetText(node.offset));
+        add("Registers", countOf(node, "register").toLocaleString(), false);
+        break;
+      case "register":
+        add("Address", hex(node.address, 32));
+        add("Offset", offsetText(node.offset));
+        add("Size", node.dim ? `${node.dim} × ${node.size} bits` : `${node.size} bits`, false);
+        add("Access", esc(ACCESS[node.access] || node.access || ""));
+        add("Reset", node.reset != null ? hex(node.reset, node.size) : "");
+        add("Bit fields", node.children.length ? node.children.length.toLocaleString() : "", false);
+        break;
+      case "field":
+        add("Bits", bitRange(node));
+        add("Width", plural(node.width, "bit"), false);
+        add("Access", esc([ACCESS[node.access] || node.access, WRITES[node.writes] || node.writes].filter(Boolean).join(" ")));
+        add("Reset", node.reset != null ? bitsValue(node.reset, node.width) : "");
+        add("Values", node.children.map((v) => `${esc(v.name)} = ${v.value != null ? bitsValue(v.value, v.width) : esc(v.raw)}`).join("<br>"));
+        break;
+    }
+    const kind = { peripheral: "Peripheral", cluster: "Cluster", register: "Register", field: "Bit field" }[node.type] || "";
+    els.mapCard.innerHTML =
+      `<div class="card-head"><span class="kind">${kind}</span>` +
+      `<button class="card-close" type="button" data-action="close" aria-label="Close details">×</button></div>` +
+      `<h3 class="card-name">${esc(node.path)}</h3>` +
+      (rows.length ? `<dl>${rows.join("")}</dl>` : "") +
+      (node.desc ? `<p class="card-desc">${esc(node.desc)}</p>` : "") +
+      `<div class="card-actions"><button class="btn" type="button" data-action="zoom">Zoom to</button>` +
+      `<button class="btn" type="button" data-action="table">Show in table</button></div>`;
+  }
+
+  function renderCrumbs() {
+    if (!model) { els.crumbs.innerHTML = ""; return; }
+    const chain = [];
+    for (let node = map.selected; node; node = node.parent) chain.unshift(node);
+    els.crumbs.innerHTML = `<button class="crumb" type="button" data-crumb="device" aria-current="${!chain.length}">${esc(model.name)}</button>` +
+      chain.map((node) => `<span class="crumb-sep" aria-hidden="true">/</span>` +
+        `<button class="crumb" type="button" data-crumb="${node.id}" aria-current="${node === map.selected}">${esc(node.name)}</button>`).join("");
+  }
+
+  function select(node) {
+    map.selected = node && node.type === "enum" ? node.parent : node;
+    renderCard();
+    renderCrumbs();
+    scheduleDraw();
+  }
+
+  function showOnMap(node) {
+    switchView("map");
+    ensureLayout();
+    select(node);
+    zoomTo(map.selected, false);
+  }
+
+  function rebuildMap() {
+    if (!model) return;
+    map.layout = buildLayout();
+    if (map.selected && spanOf(map.selected)) zoomTo(map.selected, false);
+    else { fitWidth(); scheduleDraw(); }
+  }
+
+  /* ---------- Map events ---------- */
+  const pointers = new Map();
+  let drag = null;
+  let pinch = null;
+
+  els.map.addEventListener("pointerdown", (e) => {
+    cancelAnimationFrame(map.anim);
+    map.anim = 0;
+    els.map.focus({ preventScroll: true });
+    els.map.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId, { x: e.offsetX, y: e.offsetY });
+    if (pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      pinch = { distance: Math.hypot(a.x - b.x, a.y - b.y) };
+      drag = null;
+    } else {
+      drag = { x: e.offsetX, y: e.offsetY, ox: map.ox, oy: map.oy, moved: false };
+    }
+  });
+  els.map.addEventListener("pointermove", (e) => {
+    if (pointers.has(e.pointerId)) pointers.set(e.pointerId, { x: e.offsetX, y: e.offsetY });
+    if (pinch && pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      const distance = Math.hypot(a.x - b.x, a.y - b.y);
+      if (pinch.distance > 0) zoomAt((a.x + b.x) / 2, (a.y + b.y) / 2, distance / pinch.distance);
+      pinch.distance = distance;
+      return;
+    }
+    if (drag && pointers.has(e.pointerId)) {
+      const dx = e.offsetX - drag.x, dy = e.offsetY - drag.y;
+      if (!drag.moved && Math.hypot(dx, dy) > 3) { drag.moved = true; els.map.classList.add("dragging"); els.mapTip.hidden = true; }
+      if (drag.moved) {
+        map.ox = drag.ox + dx;
+        map.oy = drag.oy + dy;
+        clampView();
+        scheduleDraw();
+      }
+      return;
+    }
+    const hit = hitTest(e.offsetX, e.offsetY);
+    if (hit !== map.hover) { map.hover = hit; scheduleDraw(); }
+    if (!hit) { els.mapTip.hidden = true; return; }
+    els.mapTip.innerHTML = `<strong>${esc(hit.path)}</strong><span>${esc(describe(hit))}</span>`;
+    els.mapTip.hidden = false;
+    const tipW = els.mapTip.offsetWidth, tipH = els.mapTip.offsetHeight;
+    els.mapTip.style.left = `${Math.min(e.offsetX + 14, map.width - tipW - 8)}px`;
+    els.mapTip.style.top = `${e.offsetY + 18 + tipH > map.height ? e.offsetY - tipH - 10 : e.offsetY + 18}px`;
+  });
+  const endPointer = (e) => {
+    const wasClick = drag && !drag.moved && pointers.size === 1 && e.type === "pointerup";
+    pointers.delete(e.pointerId);
+    if (pointers.size < 2) pinch = null;
+    els.map.classList.remove("dragging");
+    if (wasClick) select(hitTest(e.offsetX, e.offsetY));
+    drag = null;
+  };
+  els.map.addEventListener("pointerup", endPointer);
+  els.map.addEventListener("pointercancel", endPointer);
+  els.map.addEventListener("pointerleave", () => {
+    if (drag) return;
+    els.mapTip.hidden = true;
+    if (map.hover) { map.hover = null; scheduleDraw(); }
+  });
+  els.map.addEventListener("dblclick", (e) => {
+    const hit = hitTest(e.offsetX, e.offsetY);
+    if (hit) { select(hit); zoomTo(hit); }
+    else zoomAt(e.offsetX, e.offsetY, 2);
+  });
+  els.map.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const scale = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? map.height : 1;
+    if (e.ctrlKey || e.metaKey) {
+      zoomAt(e.offsetX, e.offsetY, Math.exp(-e.deltaY * scale * 0.0025));
+    } else {
+      cancelAnimationFrame(map.anim);
+      map.anim = 0;
+      map.ox -= (e.shiftKey && !e.deltaX ? e.deltaY : e.deltaX) * scale;
+      map.oy -= (e.shiftKey && !e.deltaX ? 0 : e.deltaY) * scale;
+      clampView();
+      scheduleDraw();
+    }
+  }, { passive: false });
+  els.map.addEventListener("keydown", (e) => {
+    const cx = GUTTER + (map.width - GUTTER) / 2, cy = map.height / 2;
+    switch (e.key) {
+      case "ArrowUp": map.oy += 80; break;
+      case "ArrowDown": map.oy -= 80; break;
+      case "ArrowLeft": map.ox += 80; break;
+      case "ArrowRight": map.ox -= 80; break;
+      case "PageUp": map.oy += map.height * 0.9; break;
+      case "PageDown": map.oy -= map.height * 0.9; break;
+      case "+": case "=": zoomAt(cx, cy, 1.5); break;
+      case "-": case "_": zoomAt(cx, cy, 1 / 1.5); break;
+      case "0": fitWidth(); break;
+      case "Enter": if (map.selected) zoomTo(map.selected); break;
+      case "Escape": select(null); break;
+      default: return;
+    }
+    e.preventDefault();
+    clampView();
+    scheduleDraw();
+  });
+
+  let overviewDrag = false;
+  const jump = (y) => {
+    const L = map.layout;
+    if (!L || !L.rows) return;
+    const row = clamp((y - 4) / (map.height - 8), 0, 1) * L.rows;
+    map.oy = map.height / 2 - row * ROW_UNITS * map.k;
+    clampView();
+    scheduleDraw();
+  };
+  els.overview.addEventListener("pointerdown", (e) => { els.overview.setPointerCapture(e.pointerId); overviewDrag = true; jump(e.offsetY); });
+  els.overview.addEventListener("pointermove", (e) => { if (overviewDrag) jump(e.offsetY); });
+  els.overview.addEventListener("pointerup", () => { overviewDrag = false; });
+  els.overview.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    map.oy -= e.deltaY * (e.deltaMode === 1 ? 16 : 1);
+    clampView();
+    scheduleDraw();
+  }, { passive: false });
+
+  els.mapCard.addEventListener("click", (e) => {
+    const action = e.target.closest("[data-action]")?.dataset.action;
+    if (!action || !map.selected) return;
+    if (action === "close") { select(null); els.map.focus(); }
+    else if (action === "zoom") zoomTo(map.selected);
+    else if (action === "table") revealInTable(map.selected);
+  });
+  els.crumbs.addEventListener("click", (e) => {
+    const crumb = e.target.closest("[data-crumb]");
+    if (!crumb) return;
+    if (crumb.dataset.crumb === "device") {
+      select(null);
+      animateTo(fitTarget());
+    } else {
+      const node = model.nodes[+crumb.dataset.crumb];
+      select(node);
+      zoomTo(node);
+    }
+  });
+  els.mapDense.addEventListener("change", () => { map.dense = els.mapDense.checked; rebuildMap(); });
+  els.mapRow.addEventListener("change", () => { map.rowBytes = +els.mapRow.value; rebuildMap(); });
+  els.zoomIn.addEventListener("click", () => zoomAt(GUTTER + (map.width - GUTTER) / 2, map.height / 2, 1.5));
+  els.zoomOut.addEventListener("click", () => zoomAt(GUTTER + (map.width - GUTTER) / 2, map.height / 2, 1 / 1.5));
+  els.zoomFit.addEventListener("click", () => {
+    // Keep the row at the top of the view
+    const top = Math.max(0, -map.oy / (ROW_UNITS * map.k));
+    const target = fitTarget();
+    target.oy = 12 - top * ROW_UNITS * target.k;
+    animateTo(target);
+  });
+
+  new ResizeObserver(() => {
+    if (currentView !== "map") return;
+    if (resizeMap()) {
+      if (!map.layout) ensureLayout();
+      clampView();
+      drawMap();
+    }
+  }).observe(els.mapFrame);
+
+  const refreshColors = () => { readColors(); scheduleDraw(); };
+  matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", refreshColors);
+  new MutationObserver(refreshColors).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  document.fonts?.ready.then(() => { widths.clear(); scheduleDraw(); });
+
+  /* ---------- Events ---------- */
+  els.menuList.addEventListener("click", (e) => {
+    const button = e.target.closest(".menu-item");
+    if (button) navigate(button.dataset.file);
+  });
+  let menuDebounce = 0;
+  els.menuQuery.addEventListener("input", () => { clearTimeout(menuDebounce); menuDebounce = setTimeout(renderMenu, 80); });
+  els.menuQuery.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const first = els.menuList.querySelector(".menu-item");
+      if (first) navigate(first.dataset.file);
+    } else if (e.key === "Escape" && els.menuQuery.value) {
+      els.menuQuery.value = "";
+      renderMenu();
+    }
+  });
+  window.addEventListener("popstate", () => { if (fileFromHash() !== current) openFile(fileFromHash()); });
+
+  els.tabs.addEventListener("click", (e) => {
+    const tab = e.target.closest('[role="tab"]');
+    if (tab) switchView(tab === els.tabMap ? "map" : "table");
+  });
+  els.tabs.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      switchView(currentView === "map" ? "table" : "map", true);
+    }
+  });
+
+  els.fileInput.addEventListener("change", () => {
+    const file = els.fileInput.files[0];
+    if (file) loadFile(file);
+    els.fileInput.value = "";
+  });
+
+  let debounce = 0;
+  els.query.addEventListener("input", () => { clearTimeout(debounce); debounce = setTimeout(applyQuery, 140); });
+  els.query.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && els.query.value) { els.query.value = ""; applyQuery(); }
+  });
+  els.desc.addEventListener("change", applyQuery);
+  els.cased.addEventListener("change", applyQuery);
+
+  document.addEventListener("keydown", (e) => {
+    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName);
+    if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey) { e.preventDefault(); els.query.focus(); els.query.select(); }
+  });
+
+  els.rows.addEventListener("click", (e) => {
+    const row = e.target.closest("tr[data-id]");
+    if (!row || !model) return;
+    const node = model.nodes[+row.dataset.id];
+    if (e.target.closest(".locate")) { showOnMap(node); return; }
+    const onToggle = e.target.closest(".tw");
+    const onName = e.target.closest("td.c-name");
+    if (!onToggle && !(onName && window.getSelection().isCollapsed)) return;
+    if (!node.children.length) return;
+    const open = row.dataset.open !== "1";
+    if (filter) toggles.set(node.id, open);
+    else if (open) expanded.add(node.id);
+    else expanded.delete(node.id);
+    render();
+    document.querySelector(`tr[data-id="${node.id}"] .tw`)?.focus({ preventScroll: true });
+  });
+
+  els.expandAll.addEventListener("click", () => {
+    if (!model) return;
+    for (const node of model.nodes) {
+      if (!node.children.length) continue;
+      if (filter) toggles.set(node.id, true);
+      else expanded.add(node.id);
+    }
+    render();
+  });
+  els.collapseAll.addEventListener("click", () => {
+    if (!model) return;
+    if (filter) { for (const node of model.nodes) if (node.children.length) toggles.set(node.id, false); }
+    else expanded.clear();
+    render();
+  });
+
+  const hasFiles = (e) => Array.from(e.dataTransfer?.types || []).includes("Files");
+  let dragDepth = 0;
+  window.addEventListener("dragenter", (e) => {
+    if (!hasFiles(e)) return;
+    e.preventDefault();
+    dragDepth++;
+    els.drop.hidden = false;
+  });
+  window.addEventListener("dragover", (e) => {
+    if (!hasFiles(e)) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "copy";
+  });
+  window.addEventListener("dragleave", (e) => {
+    if (!hasFiles(e)) return;
+    dragDepth = Math.max(0, dragDepth - 1);
+    if (!dragDepth) els.drop.hidden = true;
+  });
+  window.addEventListener("drop", (e) => {
+    if (!hasFiles(e)) return;
+    e.preventDefault();
+    dragDepth = 0;
+    els.drop.hidden = true;
+    const file = e.dataTransfer.files[0];
+    if (file) loadFile(file);
+  });
+
+  /* ---------- Start with the file in the URL or the example ---------- */
+  readColors();
+  renderMenu();
+  let savedView = "table";
+  try { savedView = localStorage.getItem(VIEW_KEY) || "table"; } catch { /* storage unavailable */ }
+  const initial = fileFromHash();
+  openFile(initial).then((ok) => {
+    if (!ok && initial !== EXAMPLE) return openFile(EXAMPLE);
+    return ok;
+  }).then(() => switchView(savedView));
+  discoverFiles();
+})();
+</script>

@@ -655,6 +655,33 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../svd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SVD Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -724,20 +751,53 @@
 
 
 <h1 id="cmsis-header-to-svd-pipeline">CMSIS Header to SVD Pipeline<a class="headerlink" href="#cmsis-header-to-svd-pipeline" title="Permanent link">&para;</a></h1>
+<p>The CMSIS device headers are compiled with <code>arm-none-eabi-gcc</code> to extract the
+numeric values of all macros and the layout of all peripheral structures. The
+bit field macros are then matched to the structure members to reconstruct the
+memory map of each device header, see <code>modm_data.header2svd.stmicro.memory_map</code>.</p>
+<p>The CMSIS headers are more accurate than the ST SVD files, since they are
+compiled and used by the HAL. The ST SVD files are therefore only used to find
+discrepancies, which need to be checked with the reference manual.</p>
 <h2 id="selective-conversion">Selective Conversion<a class="headerlink" href="#selective-conversion" title="Permanent link">&para;</a></h2>
-<p>The resulting SVD files are found in <code>ext/stmicro/svd</code>.
-Only takes a few minutes.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Convert a group of devices into SVD files</span>
-python3<span class="w"> </span>-m<span class="w"> </span>modm_data.header2svd.stmicro<span class="w"> </span>--device<span class="w"> </span>stm32f030c6t6<span class="w"> </span>--device<span class="w"> </span>stm32f030f4p6<span class="w"> </span>--device<span class="w"> </span>stm32f030k6t6
-<span class="c1"># Convert all CMSIS headers into SVD files</span>
-python3<span class="w"> </span>-m<span class="w"> </span>modm_data.header2svd.stmicro<span class="w"> </span>--all
+<p>The resulting SVD files are found in <code>ext/stmicro/svd/header_*.svd</code> and the
+reports in <code>log/stmicro/svd/header_*.txt</code>. The extracted header data is cached
+in <code>ext/cache/cmsis/header2svd</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Convert all headers matching the pattern into SVD files</span>
+python3<span class="w"> </span>-m<span class="w"> </span>modm_data.header2svd.stmicro<span class="w"> </span>--header<span class="w"> </span>stm32f4
+<span class="c1"># Convert all CMSIS headers and compare them with the ST SVD files</span>
+python3<span class="w"> </span>-m<span class="w"> </span>modm_data.header2svd.stmicro<span class="w"> </span>--all<span class="w"> </span>--compare
+</code></pre></div>
+<p>The CubeHAL source code in <code>ext/stmicro/cubehal</code> provides additional information,
+see <code>modm_data.header2svd.stmicro.cubehal</code>:</p>
+<ul>
+<li>Register accesses like <code>SET_BIT(USARTx-&gt;CR1, USART_CR1_UE)</code> pair registers
+  with bit field macros when the naming heuristics fail.</li>
+<li>The <code>IS_*_INSTANCE</code> macros documented in the LL functions remove the bit
+  fields and registers that are not supported by an instance of a shared
+  structure type, for example, the break and dead-time register of basic timers.</li>
+<li>The LL function parameters are evaluated as enumerated values of bit fields.</li>
+</ul>
+<p>The interrupts and the descriptions of peripherals, registers and bit fields
+are taken from the CMSIS header. Overlapping bit fields with a different layout
+are placed into alternate registers, for example, the input capture bit fields
+of <code>TIM_CCMR1</code> in <code>CCMR1_ALT</code>.</p>
+<p>The report lists the bit field macros that could not be assigned to a register,
+the registers without bit fields, the overlapping bit fields that were removed,
+the alternate registers, the registers paired by CubeHAL, the bit fields not
+supported by an instance, the unassigned interrupts and the differences to the
+ST SVD file.</p>
+<p>The SVD files are also published on the homepage with the
+<a href="https://gist.github.com/salkinium/12a18032caa303697c6583937f6fcd16">SVD Explorer</a>,
+which lists them from the <code>svd-files.json</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Convert all CMSIS headers into the documentation folder</span>
+python3<span class="w"> </span>-m<span class="w"> </span>modm_data.header2svd.stmicro<span class="w"> </span>--all<span class="w"> </span>--output<span class="w"> </span>docs/src/svd/
 </code></pre></div>
 <h2 id="automatic-conversion">Automatic Conversion<a class="headerlink" href="#automatic-conversion" title="Permanent link">&para;</a></h2>
 <p>To perform the steps automatically, you may also use <code>make</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Using make</span>
 make<span class="w"> </span>convert-stmicro-header-svd
 <span class="c1"># Remove all svd files</span>
-make<span class="w"> </span>clean-stmicro-svd
+make<span class="w"> </span>clean-stmicro-header-svd
 </code></pre></div>
 
 
