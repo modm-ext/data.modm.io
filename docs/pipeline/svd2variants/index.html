@@ -919,11 +919,27 @@ addressed, so the analysis runs in three modes:</p>
 <li><code>source</code>: elements are located by the <strong>name</strong> of their register, so a
   register may move as long as it keeps its name and its layout. This is what
   code written against a CMSIS header needs, since the structure member
-  abstracts the offset away.</li>
+  abstracts the offset away. A header abstracts the <em>position</em> of a bit field
+  just as much, so a bit field may move too, see
+  <code>modm_data.svd2variants.merge.relocations</code>.</li>
 <li><code>similar</code>: like <code>source</code>, but differences that only exist in the
   documentation are tolerated, see <code>modm_data.svd2variants.merge.documentation_only</code>.
   This is a heuristic for how many implementations are <em>essentially</em> the same.</li>
 </ul>
+<p>A bit field that keeps both its name and its register but sits at another
+position is <em>relocated</em> rather than in conflict, since a header hides the
+position behind its <code>_Pos</code> and <code>_Msk</code> macros exactly as it hides the offset of
+a register behind a structure member. This is the only difference between the
+two <code>IWDG</code> implementations: the early wake-up flag <code>IWDG_SR_EWIF</code> is bit 15 on
+the STM32WBA2 and bit 14 on the STM32WBA5, which the headers, the ST SVD files
+and RM0521 and RM0493 all agree on. Without this rule the flag alone splits
+every STM32 into two watchdogs.</p>
+<p>A bit field that is <em>permuted</em> inside its register is not relocated, since its
+position is what it means. Bit 9 of <code>GTZC_TZSC_SECCFGR1</code> is <code>USART2</code> on one
+device and <code>WWDG</code> on another, so a permutation renames every position it
+touches, while a relocation moves into bits that nobody else claims. The
+relocated fields are drawn at each of their positions in the explorer and
+listed per variant.</p>
 <p>Neither mode is strictly coarser than the other. Source compatibility merges
 the two GPIO implementations into one, because the STM32F1 <code>IDR</code> at <code>0x08</code> and
 the <code>IDR</code> at <code>0x10</code> of every other device have the same bit fields. But it

@@ -442,6 +442,7 @@ function renderVariant() {
   meta.append(legend(variant));
   if (Object.keys(variant.conflicts).length) meta.append(conflicts(variant));
   if (variant.renames.length) meta.append(renames(variant));
+  if (variant.relocated?.length) meta.append(relocated(variant));
   meta.append(devices(variant, state.data));
   meta.append(mapFilter());
   body.append(stage(variant));
@@ -537,6 +538,18 @@ function renames(variant) {
     const list = el("ul", "lines");
     for (const line of variant.renames.slice(0, 200)) list.append(el("li", null, line));
     if (variant.renames.length > 200) list.append(el("li", null, `… and ${variant.renames.length - 200} more`));
+    inner.append(list);
+  });
+}
+
+function relocated(variant) {
+  return details("Moved, but the same bit field", `${variant.relocated.length} relocation${variant.relocated.length === 1 ? "" : "s"}`, (inner) => {
+    inner.append(el("p", "note",
+      "Same name inside the same register, but at another bit position. A CMSIS header hides this "
+      + "behind its _Pos and _Msk macros, so these were merged and the field is drawn at every position."));
+    const list = el("ul", "lines");
+    for (const line of variant.relocated.slice(0, 200)) list.append(el("li", null, line));
+    if (variant.relocated.length > 200) list.append(el("li", null, `… and ${variant.relocated.length - 200} more`));
     inner.append(list);
   });
 }
@@ -881,7 +894,10 @@ function drawRegister(ctx, row, pattern) {
     ctx.fillRect(fx, fy, fw, fh);
     ctx.strokeStyle = field.feature < 0 ? C.coreLine : featureLine(field.feature);
     ctx.lineWidth = 1;
+    // A field that moved inside its register is drawn at every position it takes, dashed apart
+    if (field.relocated) ctx.setLineDash([3, 2]);
     if (fw >= 3 && fh >= 4) ctx.strokeRect(fx + 0.5, fy + 0.5, fw - 1, fh - 1);
+    ctx.setLineDash([]);
     if (showText) {
       ctx.fillStyle = field.feature < 0 ? C.ink : featureInk(field.feature);
       const name = field.names[0] || "";
@@ -963,7 +979,7 @@ function describe(target) {
   const variant = map.variant;
   const feature = f.feature < 0 ? "core" :
     `feature ${f.feature}${variant.features[f.feature].name ? ": " + variant.features[f.feature].name : ""}`;
-  return `[${range(f.position, f.width)}] · ${feature}`;
+  return `[${range(f.position, f.width)}] · ${feature}` + (f.relocated ? " · relocated" : "");
 }
 
 function label(target) {
