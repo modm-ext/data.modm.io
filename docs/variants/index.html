@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peripheral Variant Explorer</title>
+<meta name="description" content="How many different silicon implementations of each STM32 peripheral exist: the register maps of every peripheral instance of every device merged into a common core and its optional features.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground: #F3F5F4;
+    --surface: #FFFFFF;
+    --band: #F8FAF9;
+    --ink: #16201C;
+    --muted: #5B6863;
+    --faint: #85918C;
+    --rule: #DDE3E0;
+    --rule-strong: #C3CCC8;
+    --accent: #1C6B56;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E2EFEA;
+    --hover: #EEF4F1;
+    --mark: #FBE3A0;
+    --error: #B42318;
+    --hatch: #CDD6D2;
+    --core-bg: #E7ECEA;
+    --core-line: #8A9993;
+    --feat-s: 55%;
+    --feat-line-l: 38%;
+    --feat-bg-l: 88%;
+    --feat-ink-l: 24%;
+    --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0E1311;
+      --surface: #141A18;
+      --band: #111715;
+      --ink: #E2E8E5;
+      --muted: #9AA8A2;
+      --faint: #6E7B76;
+      --rule: #232D29;
+      --rule-strong: #34403B;
+      --accent: #5FC0A0;
+      --accent-ink: #0B1512;
+      --accent-soft: #16302A;
+      --hover: #19231F;
+      --mark: #6A5616;
+      --error: #F4A39B;
+      --hatch: #2A3531;
+      --core-bg: #1B2320;
+      --core-line: #4A5853;
+      --feat-s: 48%;
+      --feat-line-l: 58%;
+      --feat-bg-l: 22%;
+      --feat-ink-l: 78%;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0E1311;
+    --surface: #141A18;
+    --band: #111715;
+    --ink: #E2E8E5;
+    --muted: #9AA8A2;
+    --faint: #6E7B76;
+    --rule: #232D29;
+    --rule-strong: #34403B;
+    --accent: #5FC0A0;
+    --accent-ink: #0B1512;
+    --accent-soft: #16302A;
+    --hover: #19231F;
+    --mark: #6A5616;
+    --error: #F4A39B;
+    --hatch: #2A3531;
+    --core-bg: #1B2320;
+    --core-line: #4A5853;
+    --feat-s: 48%;
+    --feat-line-l: 58%;
+    --feat-bg-l: 22%;
+    --feat-ink-l: 78%;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font: 14px/1.45 var(--font-sans);
+    display: flex; flex-direction: column; gap: 10px;
+    padding-inline: clamp(16px, 3vw, 32px); padding-block: 12px 14px;
+    height: 100dvh;
+  }
+
+  /* Top bar */
+  .top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .links { display: flex; gap: 14px; font-size: 12px; color: var(--muted); }
+  .totals { display: flex; gap: 18px; font-variant-numeric: tabular-nums; }
+  .total { display: grid; gap: 1px; text-align: right; }
+  .total b { font: 600 17px/1.1 var(--font-mono); }
+  .total span { color: var(--faint); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* Shell */
+  .shell { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(200px, 250px) 1fr; gap: 12px; }
+  .panel {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
+    min-height: 0; display: flex; flex-direction: column; overflow: hidden;
+  }
+
+  /* Sidebar */
+  .side-head { padding: 10px; border-bottom: 1px solid var(--rule); display: grid; gap: 8px; }
+  .modes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
+  .modes button {
+    padding: 5px 4px; border: 1px solid var(--rule-strong); border-radius: 7px; cursor: pointer;
+    background: var(--band); color: var(--muted); font: 600 11px var(--font-sans); display: grid; gap: 1px;
+  }
+  .modes button span { font: 400 10px var(--font-mono); color: var(--faint); }
+  .modes button:hover { background: var(--hover); }
+  .modes button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .modes button[aria-pressed="true"] span { color: inherit; }
+  input[type="search"], input[type="text"] {
+    width: 100%; padding: 7px 9px; border: 1px solid var(--rule-strong); border-radius: 7px;
+    background: var(--band); color: var(--ink); font: 13px var(--font-mono);
+  }
+  input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  input.bad { border-color: var(--error); }
+  .side-list { overflow: auto; padding: 6px; }
+  .group-row {
+    display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: baseline;
+    width: 100%; text-align: left; padding: 5px 8px; border: 0; border-radius: 6px;
+    background: none; color: inherit; font: 13px var(--font-sans); cursor: pointer;
+  }
+  .group-row:hover { background: var(--hover); }
+  .group-row[aria-current="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .group-row .name { font-family: var(--font-mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .group-row .count { font: 600 12px var(--font-mono); font-variant-numeric: tabular-nums; }
+  .group-row .inst { color: var(--faint); font: 11px var(--font-mono); font-variant-numeric: tabular-nums; }
+  .empty { padding: 14px; color: var(--faint); font-size: 13px; }
+
+  /* Main */
+  .main { overflow: hidden; }
+  .main-head { padding: 12px 16px; border-bottom: 1px solid var(--rule); background: var(--band); position: sticky; top: 0; z-index: 3; }
+  .main-head h2 { margin: 0; font: 600 17px var(--font-mono); }
+  .main-head p { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+  .variants { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 16px 0; min-width: 0; }
+  .variant-tab {
+    display: grid; gap: 1px; text-align: left; padding: 7px 11px; cursor: pointer;
+    border: 1px solid var(--rule-strong); border-radius: 8px; background: var(--surface); color: inherit;
+    font: 13px var(--font-sans);
+  }
+  .variant-tab:hover { background: var(--hover); }
+  .variant-tab[aria-current="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .variant-tab b { font: 600 13px var(--font-mono); }
+  .variant-tab span { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .variant-tab[aria-current="true"] span { color: inherit; }
+  .variant-tab.match { box-shadow: inset 0 0 0 2px var(--mark); }
+
+  .body {
+    padding: 12px 16px 16px; flex: 1; min-height: 0; min-width: 0;
+    display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 10px;
+  }
+  .meta { display: grid; gap: 10px; align-content: start; overflow: auto; max-height: min(38vh, 380px); min-width: 0; }
+  .cards { display: flex; flex-wrap: wrap; gap: 10px; }
+  .card { border: 1px solid var(--rule); border-radius: 9px; padding: 9px 12px; min-width: 120px; }
+  .card b { display: block; font: 600 17px var(--font-mono); font-variant-numeric: tabular-nums; }
+  .card span { color: var(--faint); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  details { border: 1px solid var(--rule); border-radius: 9px; background: var(--band); }
+  details > summary {
+    cursor: pointer; padding: 8px 12px; font-weight: 600; font-size: 13px;
+    display: flex; gap: 8px; align-items: baseline;
+  }
+  details > summary::marker { color: var(--faint); }
+  details > summary em { font-style: normal; color: var(--faint); font-weight: 400; font-size: 12px; }
+  details > div { padding: 0 12px 12px; max-height: 230px; overflow: auto; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip {
+    font: 11px var(--font-mono); padding: 2px 6px; border-radius: 5px;
+    background: var(--surface); border: 1px solid var(--rule); color: var(--muted);
+  }
+  .chip.on { background: var(--mark); color: var(--ink); border-color: transparent; }
+  .lines { margin: 0; font: 12px/1.6 var(--font-mono); color: var(--muted); display: grid; gap: 1px; }
+  .lines li { list-style: none; }
+  .lines b { color: var(--ink); font-weight: 600; }
+
+  /* Feature legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; }
+  .feat {
+    display: flex; align-items: center; gap: 7px; padding: 5px 9px; cursor: pointer;
+    border: 1px solid var(--rule-strong); border-radius: 7px; background: var(--surface);
+    color: inherit; font: 12px var(--font-sans); text-align: left;
+  }
+  .feat:hover { background: var(--hover); }
+  .feat[aria-pressed="true"] { border-color: hsl(var(--h) var(--feat-s) var(--feat-line-l)); background: hsl(var(--h) var(--feat-s) var(--feat-bg-l)); }
+  .swatch { width: 11px; height: 11px; border-radius: 3px; flex: none;
+    background: hsl(var(--h) var(--feat-s) var(--feat-bg-l)); border: 1px solid hsl(var(--h) var(--feat-s) var(--feat-line-l)); }
+  .feat .num { font: 600 12px var(--font-mono); flex: none; }
+  .feat .label { max-width: 34ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .feat .meta { color: var(--faint); font: 11px var(--font-mono); font-variant-numeric: tabular-nums; }
+  .feat.core .swatch { background: var(--core-bg); border-color: var(--core-line); }
+
+  /* Register map */
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 300px); gap: 10px; min-height: 0; }
+  .canvas-wrap {
+    position: relative; border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; min-width: 0;
+    background: var(--surface); height: 100%; min-height: 320px;
+  }
+  canvas { display: block; width: 100%; height: 100%; min-width: 0; touch-action: none; cursor: default; }
+  canvas.dragging { cursor: grabbing; }
+  canvas:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .tip {
+    position: absolute; pointer-events: none; z-index: 5; max-width: 320px;
+    background: var(--surface); border: 1px solid var(--rule-strong); border-radius: 7px;
+    padding: 5px 8px; display: grid; gap: 1px; box-shadow: 0 6px 20px rgb(0 0 0 / 0.18);
+  }
+  .tip strong { font: 600 12px var(--font-mono); }
+  .tip span { color: var(--muted); font-size: 11px; }
+  .zoom { position: absolute; right: 8px; bottom: 8px; display: flex; gap: 4px; z-index: 4; }
+  .zoom button {
+    width: 28px; height: 28px; border: 1px solid var(--rule-strong); border-radius: 6px;
+    background: var(--surface); color: inherit; font: 15px var(--font-mono); cursor: pointer; line-height: 1;
+  }
+  .zoom button:hover { background: var(--hover); }
+  .hint {
+    position: absolute; left: 8px; bottom: 8px; z-index: 4; color: var(--faint);
+    font-size: 11px; background: var(--surface); border-radius: 6px; padding: 2px 7px;
+  }
+
+  /* Inspector */
+  .inspect {
+    border: 1px solid var(--rule); border-radius: 9px; background: var(--band);
+    padding: 10px 12px; display: grid; gap: 8px; align-content: start;
+    max-height: 100%; overflow: auto;
+  }
+  .inspect h3 { margin: 0; font: 600 14px var(--font-mono); overflow-wrap: anywhere; }
+  .inspect .sub { color: var(--muted); font: 12px var(--font-mono); }
+  .inspect p { margin: 0; font-size: 12px; color: var(--muted); }
+  .inspect .badge {
+    justify-self: start; font: 600 11px var(--font-mono); padding: 2px 7px; border-radius: 5px;
+    background: var(--core-bg); border: 1px solid var(--core-line);
+  }
+  .inspect .badge.opt {
+    background: hsl(var(--h) var(--feat-s) var(--feat-bg-l));
+    border-color: hsl(var(--h) var(--feat-s) var(--feat-line-l));
+    color: hsl(var(--h) var(--feat-s) var(--feat-ink-l));
+  }
+  .inspect dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; font-size: 12px; }
+  .inspect dt { color: var(--faint); }
+  .inspect dd { margin: 0; font-family: var(--font-mono); overflow-wrap: anywhere; }
+  .inspect hr { border: 0; border-top: 1px solid var(--rule); margin: 2px 0; width: 100%; }
+
+  @media (max-width: 1000px) {
+    .main { overflow: auto; }
+    .body { grid-template-rows: none; }
+    .meta { max-height: none; overflow: visible; }
+    .stage { grid-template-columns: 1fr; }
+    .canvas-wrap { height: 60vh; }
+    .inspect { max-height: none; }
+  }
+
+  @media (max-width: 720px) {
+    .shell { grid-template-columns: 1fr; grid-template-rows: minmax(120px, 28vh) 1fr; }
+    .reg { grid-template-columns: 62px 1fr; }
+    .reg .bits, .reg .scale { grid-column: 1 / -1; }
+  }
+</style>
+<header class="top">
+  <h1 class="visually-hidden">Peripheral Variant Explorer</h1>
+  <div class="links">
+    <a href="../svd/">SVD Register Explorer</a>
+    <a href="https://github.com/modm-io/modm-data">modm-data</a>
+  </div>
+  <div class="totals">
+    <div class="total"><b id="t-instances">–</b><span>instances</span></div>
+    <div class="total"><b id="t-shapes">–</b><span>register maps</span></div>
+    <div class="total"><b id="t-variants">–</b><span>variants</span></div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="panel" aria-label="Peripheral groups">
+    <div class="side-head">
+      <div class="modes" id="modes" role="group" aria-label="Compatibility mode">
+        <button type="button" data-mode="binary" aria-pressed="true">binary<span>by address</span></button>
+        <button type="button" data-mode="source" aria-pressed="false">source<span>by name</span></button>
+        <button type="button" data-mode="similar" aria-pressed="false">similar<span>docs aside</span></button>
+      </div>
+      <input id="filter" type="search" placeholder="filter groups, e.g. ^(TIM|GPIO)" aria-label="Filter peripheral groups by regular expression" autocomplete="off" spellcheck="false">
+      <input id="device" type="text" placeholder="highlight a device, e.g. F407" aria-label="Highlight the variants used by a device" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="side-list" id="groups"></div>
+  </nav>
+
+  <main class="panel main" id="main">
+    <div class="main-head">
+      <h2 id="g-name">Loading…</h2>
+      <p id="g-sub"></p>
+    </div>
+    <div class="variants" id="tabs"></div>
+    <div class="body" id="detail"></div>
+  </main>
+</div>
+<script>
+"use strict";
+
+const state = {all: null, index: null, mode: "binary", group: null, data: null,
+  variant: 0, feature: null, device: "", filter: "", map: ""};
+const $ = (id) => document.getElementById(id);
+const el = (tag, cls, text) => {
+  const node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (text !== undefined) node.textContent = text;
+  return node;
+};
+const num = (value) => value.toLocaleString("en-US");
+const clamp = (value, low, high) => Math.min(Math.max(value, low), high);
+// Golden angle keeps neighbouring features far apart in hue
+const hue = (index) => Math.round((index * 137.508 + 8) % 360);
+const hex = (value) => `0x${value.toString(16).padStart(3, "0")}`;
+const range = (position, width) => (width === 1 ? `${position}` : `${position + width - 1}:${position}`);
+
+function regex(pattern) {
+  if (!pattern) return null;
+  try { return new RegExp(pattern, "i"); } catch { return undefined; }
+}
+
+/* ---------------------------------------------------------------- groups */
+
+function renderGroups() {
+  const list = $("groups");
+  list.textContent = "";
+  const pattern = regex(state.filter);
+  $("filter").classList.toggle("bad", pattern === undefined);
+  const groups = state.index.groups.filter((g) => !pattern || pattern.test(g.name));
+  if (!groups.length) {
+    list.append(el("p", "empty", "No peripheral group matches."));
+    return;
+  }
+  for (const group of groups) {
+    const row = el("button", "group-row");
+    row.type = "button";
+    row.setAttribute("aria-current", String(group.name === state.group));
+    row.append(el("span", "name", group.name));
+    row.append(el("span", "inst", num(group.instances)));
+    const count = el("span", "count", String(group.variants.length));
+    count.title = `${group.variants.length} variants of ${group.shapes} distinct register maps`;
+    row.append(count);
+    row.addEventListener("click", () => selectGroup(group.name));
+    list.append(row);
+  }
+}
+
+/* --------------------------------------------------------------- loading */
+
+async function selectGroup(name, variant = 0) {
+  if (name !== state.group) view.meta = 0;
+  state.group = name;
+  state.variant = variant;
+  state.feature = null;
+  state.map = "";
+  renderGroups();
+  $("g-name").textContent = name;
+  $("g-sub").textContent = "Loading…";
+  $("tabs").textContent = "";
+  $("detail").textContent = "";
+  try {
+    const response = await fetch(`${state.mode}/${encodeURIComponent(name)}.json`);
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+    state.data = await response.json();
+  } catch (error) {
+    $("g-sub").textContent = `Could not load ${state.mode}/${name}.json: ${error.message}`;
+    return;
+  }
+  history.replaceState(null, "", `#${state.mode}/${name}/${variant}`);
+  renderGroup();
+}
+
+function renderGroup() {
+  const data = state.data;
+  const maps = data.variants.reduce((sum, v) => sum + v.members.length, 0);
+  $("g-name").textContent = data.name;
+  $("g-sub").textContent =
+    `${num(data.instances)} instances on ${num(data.devices.length)} devices, ` +
+    `${num(maps)} distinct register maps, ${data.variants.length} ` +
+    `${data.variants.length === 1 ? "variant" : "variants"}` +
+    (data.ignored && data.ignored.length ? ` · not compared: ${data.ignored.join(", ")}` : "");
+
+  const device = regex(state.device);
+  const tabs = $("tabs");
+  tabs.textContent = "";
+  data.variants.forEach((variant, index) => {
+    const tab = el("button", "variant-tab");
+    tab.type = "button";
+    tab.setAttribute("aria-current", String(index === state.variant));
+    if (device && variant.devices.some((d) => device.test(data.devices[d]))) tab.classList.add("match");
+    tab.append(el("b", null, `variant ${index}`));
+    tab.append(el("span", null,
+      `${num(variant.instances)} inst · ${variant.devices.length} dev · ${variant.members.length} maps`));
+    tab.addEventListener("click", () => {
+      state.variant = index;
+      state.feature = null;
+      history.replaceState(null, "", `#${state.mode}/${data.name}/${index}`);
+      renderGroup();
+    });
+    tabs.append(tab);
+  });
+  renderVariant();
+}
+
+/* -------------------------------------------------------------- variants */
+
+function renderVariant() {
+  const variant = state.data.variants[state.variant];
+  const body = $("detail");
+  const previous = body.querySelector(".meta");
+  if (previous) view.meta = previous.scrollTop;
+  body.textContent = "";
+  if (!variant) return;
+
+  const meta = el("div", "meta");
+  body.append(meta);
+  const core = variant.registers.reduce(
+    (sum, r) => sum + (r.feature < 0 ? 1 : 0) + r.fields.filter((f) => f.feature < 0).length, 0);
+  const total = variant.registers.reduce((sum, r) => sum + 1 + r.fields.length, 0);
+  meta.append(cards([
+    [num(variant.instances), "instances"],
+    [num(variant.devices.length), "devices"],
+    [num(variant.members.length), "register maps"],
+    [num(variant.registers.length), "registers"],
+    [`${num(core)}/${num(total)}`, "core elements"],
+    [num(variant.features.length), "features"],
+  ]));
+
+  meta.append(legend(variant));
+  if (Object.keys(variant.conflicts).length) meta.append(conflicts(variant));
+  if (variant.renames.length) meta.append(renames(variant));
+  meta.append(devices(variant, state.data));
+  meta.append(mapFilter());
+  body.append(stage(variant));
+}
+
+function cards(entries) {
+  const wrap = el("div", "cards");
+  for (const [value, label] of entries) {
+    const card = el("div", "card");
+    card.append(el("b", null, value));
+    card.append(el("span", null, label));
+    wrap.append(card);
+  }
+  return wrap;
+}
+
+function legend(variant) {
+  const wrap = el("div", "legend");
+  const all = el("button", "feat core");
+  all.type = "button";
+  all.setAttribute("aria-pressed", String(state.feature === null));
+  all.append(el("span", "swatch"));
+  all.append(el("span", "num", "core"));
+  all.append(el("span", "meta", "in every instance"));
+  all.addEventListener("click", () => { state.feature = null; select(null); redraw(); renderLegend(); });
+  wrap.append(all);
+
+  variant.features.forEach((feature, index) => {
+    const button = el("button", "feat");
+    button.type = "button";
+    button.style.setProperty("--h", hue(index));
+    button.setAttribute("aria-pressed", String(state.feature === index));
+    button.append(el("span", "swatch"));
+    button.append(el("span", "num", `${index}`));
+    if (feature.name) button.append(el("span", "label", feature.name));
+    button.append(el("span", "meta",
+      `${feature.elements} el · ${feature.members.length}/${variant.members.length} maps · ${feature.devices.length} dev`));
+    button.title =
+      `${feature.name ? feature.name + "\n" : ""}` +
+      `${feature.elements} elements in ${feature.registers} registers, ` +
+      `implemented by ${feature.instances} instances on ${feature.devices.length} devices`;
+    button.addEventListener("click", () => {
+      state.feature = state.feature === index ? null : index;
+      select(state.feature === null ? null : {kind: "feature", index});
+      redraw();
+      renderLegend();
+    });
+    wrap.append(button);
+  });
+  wrap.id = "legend";
+  return wrap;
+}
+
+function renderLegend() {
+  $("legend").replaceWith(legend(state.data.variants[state.variant]));
+}
+
+function details(summaryText, count, build, open = false) {
+  const box = el("details");
+  box.open = open;
+  const summary = el("summary");
+  summary.append(document.createTextNode(summaryText));
+  summary.append(el("em", null, count));
+  box.append(summary);
+  const inner = el("div");
+  build(inner);
+  box.append(inner);
+  return box;
+}
+
+function conflicts(variant) {
+  const entries = Object.entries(variant.conflicts);
+  const total = entries.reduce((sum, [, lines]) => sum + lines.length, 0);
+  return details("Why this is a separate variant", `${total} conflicts`, (inner) => {
+    inner.append(el("p", "note",
+      "These names sit at a different address in the other variant, so no single driver can address both."));
+    for (const [other, lines] of entries) {
+      const list = el("ul", "lines");
+      const head = el("li");
+      head.append(el("b", null, `vs variant ${other}`));
+      list.append(head);
+      for (const line of lines.slice(0, 40)) list.append(el("li", null, line));
+      if (lines.length > 40) list.append(el("li", null, `… and ${lines.length - 40} more`));
+      inner.append(list);
+    }
+  });
+}
+
+function renames(variant) {
+  return details("Renamed, but the same silicon", `${variant.renames.length} aliases`, (inner) => {
+    inner.append(el("p", "note",
+      "Same address, different name: these were merged and every name is kept as an alias."));
+    const list = el("ul", "lines");
+    for (const line of variant.renames.slice(0, 200)) list.append(el("li", null, line));
+    if (variant.renames.length > 200) list.append(el("li", null, `… and ${variant.renames.length - 200} more`));
+    inner.append(list);
+  });
+}
+
+function deviceChips(names) {
+  const pattern = regex(state.device);
+  const chips = el("div", "chips");
+  for (const name of names) {
+    const chip = el("span", "chip", name);
+    if (pattern && pattern.test(name)) chip.classList.add("on");
+    chips.append(chip);
+  }
+  return chips;
+}
+
+function devices(variant, data) {
+  return details("Devices and instances", `${variant.devices.length} devices`, (inner) => {
+    inner.append(deviceChips(variant.names));
+    inner.append(el("p", "note", "Implemented by these devices:"));
+    inner.append(deviceChips(variant.devices.map((index) => data.devices[index])));
+  }, true);
+}
+
+function mapFilter() {
+  const wrap = el("div");
+  const input = el("input");
+  input.type = "search";
+  input.value = state.map;
+  input.placeholder = "filter registers and bit fields, e.g. ^CCMR";
+  input.setAttribute("aria-label", "Filter the register map by regular expression");
+  input.autocomplete = "off";
+  input.spellcheck = false;
+  input.addEventListener("input", () => {
+    state.map = input.value;
+    input.classList.toggle("bad", regex(state.map) === undefined);
+    redraw();
+  });
+  wrap.append(input);
+  return wrap;
+}
+
+/* ---------------------------------------------------------- register map */
+
+const GUTTER = 150;            // fixed left column with the register names
+const ROW_RATIO = 2;           // a bit is this many times taller than it is wide
+const K_MIN = 1, K_MAX = 90;   // pixels per bit
+const FONT_MONO = '"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace';
+const FONT_SANS = '"IBM Plex Sans", system-ui, -apple-system, sans-serif';
+
+const map = {
+  variant: null, layout: null, k: 8, ox: GUTTER, oy: 0, width: 0, height: 0, dpr: 1,
+  hover: null, selected: null, colors: null, hatch: null, frame: 0, canvas: null, ctx: null,
+};
+const widths = new Map();
+const view = {group: null, k: null, ox: 0, oy: 0, meta: 0};
+
+function stage(variant) {
+  const wrap = el("div", "stage");
+  const holder = el("div", "canvas-wrap");
+  const canvas = el("canvas");
+  canvas.tabIndex = 0;
+  canvas.setAttribute("aria-label", "Zoomable register map, drag to pan and ctrl+scroll to zoom");
+  holder.append(canvas);
+  const tip = el("div", "tip");
+  tip.id = "tip";
+  tip.hidden = true;
+  holder.append(tip);
+  const zoom = el("div", "zoom");
+  for (const [label, factor] of [["−", 1 / 1.6], ["+", 1.6]]) {
+    const button = el("button", null, label);
+    button.type = "button";
+    button.title = label === "+" ? "Zoom in" : "Zoom out";
+    button.addEventListener("click", () => zoomAt(GUTTER + (map.width - GUTTER) / 2, map.height / 2, factor));
+    zoom.append(button);
+  }
+  holder.append(zoom);
+  holder.append(el("span", "hint", "drag to pan · ctrl+scroll to zoom · click for details"));
+  wrap.append(holder);
+
+  const inspect = el("div", "inspect");
+  inspect.id = "inspect";
+  wrap.append(inspect);
+
+  map.variant = variant;
+  map.canvas = canvas;
+  map.ctx = canvas.getContext("2d");
+  map.layout = buildLayout(variant);
+  map.hover = null;
+  map.selected = null;
+  attach(canvas);
+  requestAnimationFrame(() => {
+    resize();
+    // Keep the zoom everywhere, so that the shapes of peripherals and variants can be compared.
+    // Another peripheral starts at its first register, a variant of the same one where it was.
+    if (view.k) {
+      map.k = view.k;
+      map.ox = view.ox;
+      map.oy = view.group === state.group ? view.oy : 10;
+      clampView();
+      draw();
+    } else {
+      fitView();
+    }
+    const meta = $("detail").querySelector(".meta");
+    if (meta) meta.scrollTop = view.meta;
+    renderInspector();
+  });
+  return wrap;
+}
+
+function buildLayout(variant) {
+  const rows = [];
+  let y = 0;
+  for (const register of variant.registers) {
+    const bits = register.width * 8;
+    const lanes = [];
+    const items = [];
+    // Alternates of the same register overlap, so pack them into extra lanes
+    for (const field of [...register.fields].sort((a, b) => b.position - a.position || b.width - a.width)) {
+      const start = bits - (field.position + field.width);
+      let lane = lanes.findIndex((used) => used.every(([s, w]) => start >= s + w || start + field.width <= s));
+      if (lane < 0) lane = lanes.push([]) - 1;
+      lanes[lane].push([start, field.width]);
+      items.push({field, lane, start});
+    }
+    const height = Math.max(1, lanes.length);
+    rows.push({register, bits, y, height, items});
+    y += height;
+  }
+  return {rows, rowCount: Math.max(y, 1)};
+}
+
+function readColors() {
+  const style = getComputedStyle(document.documentElement);
+  const value = (name) => style.getPropertyValue(name).trim();
+  map.colors = {
+    surface: value("--surface"), band: value("--band"), ink: value("--ink"),
+    muted: value("--muted"), faint: value("--faint"), rule: value("--rule"),
+    ruleStrong: value("--rule-strong"), accent: value("--accent"), mark: value("--mark"),
+    coreBg: value("--core-bg"), coreLine: value("--core-line"),
+    s: value("--feat-s"), lineL: value("--feat-line-l"), bgL: value("--feat-bg-l"), inkL: value("--feat-ink-l"),
+  };
+  const tile = document.createElement("canvas");
+  tile.width = tile.height = 6;
+  const ctx = tile.getContext("2d");
+  ctx.strokeStyle = value("--hatch");
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(-1, 5); ctx.lineTo(5, -1);
+  ctx.moveTo(1, 7); ctx.lineTo(7, 1);
+  ctx.stroke();
+  map.hatch = map.ctx.createPattern(tile, "repeat");
+}
+
+const featureFill = (index) => `hsl(${hue(index)} ${map.colors.s} ${map.colors.bgL})`;
+const featureLine = (index) => `hsl(${hue(index)} ${map.colors.s} ${map.colors.lineL})`;
+const featureInk = (index) => `hsl(${hue(index)} ${map.colors.s} ${map.colors.inkL})`;
+
+const rowHeight = () => map.k * ROW_RATIO;
+const sx = (bit) => map.ox + bit * map.k;
+const sy = (row) => map.oy + row * rowHeight();
+
+function resize() {
+  const canvas = map.canvas;
+  if (!canvas) return;
+  const rect = canvas.getBoundingClientRect();
+  map.dpr = window.devicePixelRatio || 1;
+  map.width = rect.width;
+  map.height = rect.height;
+  canvas.width = Math.round(rect.width * map.dpr);
+  canvas.height = Math.round(rect.height * map.dpr);
+  readColors();
+  draw();
+}
+
+function minZoom() {
+  return K_MIN;
+}
+
+function fitView() {
+  map.k = clamp((map.width - GUTTER - 24) / 32, K_MIN, 56);
+  map.ox = GUTTER + 12;
+  map.oy = 10;
+  clampView();
+  draw();
+}
+
+function clampView() {
+  const width = map.width - GUTTER, height = map.height;
+  view.group = state.group;
+  const contentW = 32 * map.k, contentH = map.layout.rowCount * rowHeight();
+  map.ox = clamp(map.ox, GUTTER + Math.min(12, width - contentW), GUTTER + Math.max(12, width - contentW));
+  map.oy = clamp(map.oy, Math.min(10, height - contentH - 10), 10);
+  view.k = map.k;
+  view.ox = map.ox;
+  view.oy = map.oy;
+}
+
+function zoomAt(px, py, factor) {
+  const k = clamp(map.k * factor, minZoom(), K_MAX), f = k / map.k;
+  map.ox = px - (px - map.ox) * f;
+  map.oy = py - (py - map.oy) * f;
+  map.k = k;
+  clampView();
+  draw();
+}
+
+function redraw() { draw(); }
+
+function draw() {
+  if (!map.frame) map.frame = requestAnimationFrame(() => { map.frame = 0; paint(); });
+}
+
+/* ------------------------------------------------------------------ text */
+
+function textWidth(ctx, text) {
+  const key = `${ctx.font}|${text}`;
+  let width = widths.get(key);
+  if (width === undefined) { width = ctx.measureText(text).width; widths.set(key, width); }
+  return width;
+}
+
+function fitText(ctx, text, x, y, maxWidth) {
+  if (textWidth(ctx, text) > maxWidth) return false;
+  ctx.fillText(text, x, y);
+  return true;
+}
+
+function fitTextRotated(ctx, text, cx, cy, maxLength) {
+  if (textWidth(ctx, text) > maxLength) return false;
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText(text, 0, 0);
+  ctx.restore();
+  return true;
+}
+
+/* --------------------------------------------------------------- drawing */
+
+function paint() {
+  const ctx = map.ctx, C = map.colors, W = map.width, H = map.height;
+  if (!ctx || !C || !W) return;
+  const L = map.layout, variant = map.variant;
+  const pattern = regex(state.map);
+  const rowH = rowHeight();
+
+  ctx.setTransform(map.dpr, 0, 0, map.dpr, 0, 0);
+  ctx.fillStyle = C.surface;
+  ctx.fillRect(0, 0, W, H);
+  ctx.textBaseline = "middle";
+
+  const first = Math.max(0, Math.floor((-map.oy) / rowH) - 2);
+  const last = Math.min(L.rowCount, Math.ceil((H - map.oy) / rowH) + 2);
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(GUTTER, 0, W - GUTTER, H);
+  ctx.clip();
+  for (const row of L.rows) {
+    if (row.y + row.height < first || row.y > last) continue;
+    drawRegister(ctx, row, pattern);
+  }
+  if (map.hover && map.hover !== map.selected) outline(ctx, map.hover, C.accent, 1.5);
+  if (map.selected && map.selected.kind !== "feature") outline(ctx, map.selected, C.ink, 2);
+  ctx.restore();
+
+  // Gutter with the register names
+  ctx.fillStyle = C.surface;
+  ctx.fillRect(0, 0, GUTTER, H);
+  ctx.fillStyle = C.rule;
+  ctx.fillRect(GUTTER - 1, 0, 1, H);
+  // Zoomed out, the rows are thinner than a label, so only label as many as fit
+  let lastLabel = -Infinity;
+  const selectedRow = map.selected && map.selected.row;
+  for (const row of L.rows) {
+    if (row.y + row.height < first || row.y > last) continue;
+    const top = sy(row.y), height = row.height * rowH;
+    if (top > H || top + height < 0) continue;
+    const y = top + Math.min(height, 20) / 2;
+    const dimmed = pattern && !matches(pattern, row);
+    if (y - lastLabel < 14 && row !== selectedRow) continue;
+    lastLabel = y;
+    ctx.font = `10.5px ${FONT_MONO}`;
+    ctx.textAlign = "left";
+    ctx.fillStyle = dimmed ? C.faint : C.muted;
+    ctx.fillText((row.register.offsets ? "~" : "") + hex(row.register.offset), 10, y);
+    ctx.font = `600 11.5px ${FONT_SANS}`;
+    ctx.fillStyle = dimmed ? C.faint : row.register.feature < 0 ? C.ink : featureLine(row.register.feature);
+    let name = row.register.names[0] || "?";
+    const tag = accessTag(row.register);
+    const room = GUTTER - 68 - (tag ? 18 : 0);
+    while (name.length > 3 && textWidth(ctx, name) > room) name = name.slice(0, -2) + "…";
+    ctx.fillText(name, 58, y);
+    if (tag) {
+      ctx.font = `600 9px ${FONT_MONO}`;
+      ctx.fillStyle = C.faint;
+      ctx.textAlign = "right";
+      ctx.fillText(tag, GUTTER - 8, y);
+    }
+  }
+}
+
+const ACCESS = {"read-only": "ro", "write-only": "wo", "read-write": "rw"};
+
+// Almost every register is declared read-write, so only the exceptions are marked
+function accessTag(register) {
+  const access = register.access || [];
+  if (!access.length || (access.length === 1 && access[0] === "read-write")) return "";
+  return access.map((a) => ACCESS[a] || a).join("/");
+}
+
+function matches(pattern, row) {
+  return pattern.test(row.register.names.join(" ")) ||
+    row.items.some(({field}) => field.names.some((n) => pattern.test(n)));
+}
+
+function drawRegister(ctx, row, pattern) {
+  const C = map.colors, rowH = rowHeight();
+  const x = sx(32 - row.bits), y = sy(row.y);
+  const w = row.bits * map.k, h = row.height * rowH;
+  if (y > map.height || y + h < 0) return;
+  const dimmed = pattern && !matches(pattern, row);
+  ctx.globalAlpha = dimmed ? 0.25 : 1;
+
+  // The register itself, with the bits that no field covers left hatched. Too small for the
+  // hatching and the outline, the register is filled solid so that its extent stays visible.
+  const outlined = h >= 4;
+  ctx.fillStyle = outlined ? C.band : C.rule;
+  ctx.fillRect(x, y, w, h);
+  if (map.hatch && outlined) { ctx.fillStyle = map.hatch; ctx.fillRect(x, y, w, h); }
+
+  const showText = rowH >= 13;
+  for (const {field, lane, start} of row.items) {
+    const fx = sx(32 - row.bits + start), fy = y + lane * rowH;
+    const fw = field.width * map.k, fh = rowH;
+    const hit = pattern && field.names.some((n) => pattern.test(n));
+    if (state.feature !== null && field.feature !== state.feature) {
+      ctx.globalAlpha = dimmed ? 0.12 : 0.28;
+    }
+    ctx.fillStyle = hit ? C.mark : field.feature < 0 ? C.coreBg : featureFill(field.feature);
+    ctx.fillRect(fx, fy, fw, fh);
+    ctx.strokeStyle = field.feature < 0 ? C.coreLine : featureLine(field.feature);
+    ctx.lineWidth = 1;
+    if (fw >= 3 && fh >= 4) ctx.strokeRect(fx + 0.5, fy + 0.5, fw - 1, fh - 1);
+    if (showText) {
+      ctx.fillStyle = field.feature < 0 ? C.ink : featureInk(field.feature);
+      const name = field.names[0] || "";
+      ctx.textAlign = "center";
+      const size = clamp(Math.min(fw, fh) * 0.62, 7.5, 12);
+      ctx.font = `${size.toFixed(1)}px ${FONT_MONO}`;
+      // Bit fields are taller than they are wide, so their names read vertically
+      if (fh >= fw) {
+        if (fw >= 8 && !fitTextRotated(ctx, name, fx + fw / 2 + size / 3, fy + fh / 2, fh - 6)) {
+          fitText(ctx, name, fx + fw / 2, fy + fh / 2, fw - 4);
+        }
+      } else if (!fitText(ctx, name, fx + fw / 2, fy + fh / 2, fw - 5)) {
+        if (fw >= 8) fitTextRotated(ctx, name, fx + fw / 2 + size / 3, fy + fh / 2, fh - 6);
+      }
+    }
+    ctx.globalAlpha = dimmed ? 0.25 : 1;
+  }
+
+  if (outlined) {
+    ctx.strokeStyle = row.register.feature < 0 ? C.ruleStrong : featureLine(row.register.feature);
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(x + 0.75, y + 0.75, w - 1.5, h - 1.5);
+  }
+
+  // Bit numbers below the register once there is room for them
+  if (map.k >= 15 && rowH >= 56) {
+    ctx.font = `9.5px ${FONT_MONO}`;
+    ctx.fillStyle = C.faint;
+    ctx.textAlign = "center";
+    ctx.globalAlpha = dimmed ? 0.25 : 0.8;
+    for (let bit = 0; bit < row.bits; bit++) {
+      ctx.fillText(String(bit), sx(32 - 1 - bit) + map.k / 2, y + h - 7);
+    }
+  }
+  ctx.globalAlpha = 1;
+}
+
+function rectOf(target) {
+  const rowH = rowHeight();
+  const row = target.row;
+  if (target.kind === "register") {
+    return [sx(32 - row.bits), sy(row.y), row.bits * map.k, row.height * rowH];
+  }
+  return [sx(32 - row.bits + target.item.start), sy(row.y) + target.item.lane * rowH,
+    target.item.field.width * map.k, rowH];
+}
+
+function outline(ctx, target, color, width) {
+  const [x, y, w, h] = rectOf(target);
+  ctx.strokeStyle = color;
+  ctx.lineWidth = width;
+  ctx.strokeRect(x, y, w, h);
+}
+
+/* ------------------------------------------------------------ hit testing */
+
+function hitTest(px, py) {
+  if (px < GUTTER) return null;
+  const L = map.layout, rowH = rowHeight();
+  const rowIndex = (py - map.oy) / rowH;
+  const row = L.rows.find((r) => rowIndex >= r.y && rowIndex < r.y + r.height);
+  if (!row) return null;
+  const bit = (px - map.ox) / map.k;
+  if (bit < 32 - row.bits || bit > 32) return null;
+  const start = bit - (32 - row.bits);
+  const lane = Math.floor(rowIndex - row.y);
+  const item = row.items.find((i) => i.lane === lane && start >= i.start && start < i.start + i.field.width);
+  return item ? {kind: "field", row, item} : {kind: "register", row};
+}
+
+function describe(target) {
+  if (target.kind === "register") {
+    const r = target.row.register;
+    const tag = accessTag(r);
+    return `${(r.offsets || [r.offset]).map(hex).join("/")} · ${r.width * 8} bit · ${r.fields.length} fields` +
+      (tag ? ` · ${tag}` : "");
+  }
+  const f = target.item.field;
+  const variant = map.variant;
+  const feature = f.feature < 0 ? "core" :
+    `feature ${f.feature}${variant.features[f.feature].name ? ": " + variant.features[f.feature].name : ""}`;
+  return `[${range(f.position, f.width)}] · ${feature}`;
+}
+
+function label(target) {
+  return target.kind === "register"
+    ? target.row.register.names.join(" = ")
+    : target.item.field.names.join(" = ");
+}
+
+function select(target) {
+  map.selected = target;
+  renderInspector();
+  draw();
+}
+
+/* ------------------------------------------------------------- inspector */
+
+function renderInspector() {
+  const box = $("inspect");
+  if (!box) return;
+  box.textContent = "";
+  const variant = map.variant, data = state.data;
+  const target = map.selected;
+
+  if (target && target.kind === "feature") {
+    const feature = variant.features[target.index];
+    box.append(el("h3", null, feature.name || `Feature ${target.index}`));
+    box.append(el("div", "sub", `feature ${target.index}`));
+    const badge = el("span", "badge opt", "optional");
+    badge.style.setProperty("--h", hue(target.index));
+    box.append(badge);
+    box.append(el("p", null,
+      `${feature.elements} elements in ${feature.registers} registers that appear in exactly the same instances, ` +
+      `so they are enabled and disabled together.`));
+    box.append(facts([
+      ["register maps", `${feature.members.length} of ${variant.members.length}`],
+      ["instances", num(feature.instances)],
+      ["devices", num(feature.devices.length)],
+    ]));
+    box.append(el("hr"));
+    box.append(el("p", null, "Implemented by:"));
+    box.append(deviceChips(feature.devices.map((index) => data.devices[index])));
+    return;
+  }
+
+  if (!target) {
+    box.append(el("h3", null, `${data.name} variant ${state.variant}`));
+    box.append(el("p", null, "Click a register or a bit field in the map to see what it is and which devices have it."));
+    box.append(facts([
+      ["instances", num(variant.instances)],
+      ["devices", num(variant.devices.length)],
+      ["register maps", num(variant.members.length)],
+      ["registers", num(variant.registers.length)],
+      ["features", num(variant.features.length)],
+    ]));
+    box.append(el("hr"));
+    box.append(el("p", null, "Instance names:"));
+    box.append(deviceChips(variant.names));
+    return;
+  }
+
+  const isField = target.kind === "field";
+  const node = isField ? target.item.field : target.row.register;
+  const feature = node.feature;
+  box.append(el("h3", null, node.names[0] || "?"));
+  box.append(el("div", "sub",
+    isField
+      ? `${target.row.register.names[0]} [${range(node.position, node.width)}]`
+      : `${hex(node.offset)} · ${node.width * 8} bit`));
+  const badge = el("span", `badge${feature < 0 ? "" : " opt"}`, feature < 0 ? "core" : `feature ${feature}`);
+  if (feature >= 0) {
+    badge.style.setProperty("--h", hue(feature));
+    badge.title = variant.features[feature].name || "";
+  }
+  box.append(badge);
+  if (feature >= 0 && variant.features[feature].name) {
+    box.append(el("div", "sub", variant.features[feature].name));
+  }
+  if (node.description) box.append(el("p", null, node.description));
+
+  const facts_ = [];
+  if (node.names.length > 1) facts_.push(["also named", node.names.slice(1).join(", ")]);
+  if (isField) {
+    facts_.push(["bits", range(node.position, node.width)]);
+    facts_.push(["width", `${node.width} bit`]);
+    facts_.push(["register", target.row.register.names.join(" = ")]);
+    facts_.push([target.row.register.offsets ? "offsets" : "offset",
+      (target.row.register.offsets || [target.row.register.offset]).map(hex).join(", ")]);
+    if (target.row.register.access && target.row.register.access.length) {
+      facts_.push(["access", target.row.register.access.join(", ")]);
+    }
+  } else {
+    facts_.push(node.offsets ? ["offsets", node.offsets.map(hex).join(", ")] : ["offset", hex(node.offset)]);
+    facts_.push(["size", `${node.width * 8} bit`]);
+    if (node.access && node.access.length) facts_.push(["access", node.access.join(", ")]);
+    if (node.dim) facts_.push(["array", `${node.dim} entries`]);
+    facts_.push(["fields", String(node.fields.length)]);
+  }
+  box.append(facts(facts_));
+
+  box.append(el("hr"));
+  const devicesOf = feature < 0 ? variant.devices : variant.features[feature].devices;
+  const maps = feature < 0 ? variant.members.length : variant.features[feature].members.length;
+  box.append(el("p", null,
+    feature < 0
+      ? `Part of the core: present in all ${maps} register maps of this variant, on ${devicesOf.length} devices.`
+      : `Optional: present in ${maps} of ${variant.members.length} register maps, on ${devicesOf.length} devices.`));
+  box.append(deviceChips(devicesOf.map((index) => data.devices[index])));
+}
+
+function facts(entries) {
+  const list = el("dl");
+  for (const [key, value] of entries) {
+    list.append(el("dt", null, key));
+    list.append(el("dd", null, value));
+  }
+  return list;
+}
+
+/* ---------------------------------------------------------- interactions */
+
+function attach(canvas) {
+  const pointers = new Map();
+  let drag = null, pinch = null;
+
+  canvas.addEventListener("pointerdown", (event) => {
+    canvas.focus({preventScroll: true});
+    canvas.setPointerCapture(event.pointerId);
+    pointers.set(event.pointerId, {x: event.offsetX, y: event.offsetY});
+    if (pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      pinch = {distance: Math.hypot(a.x - b.x, a.y - b.y)};
+      drag = null;
+    } else {
+      drag = {x: event.offsetX, y: event.offsetY, ox: map.ox, oy: map.oy, moved: false};
+    }
+  });
+
+  canvas.addEventListener("pointermove", (event) => {
+    if (pointers.has(event.pointerId)) pointers.set(event.pointerId, {x: event.offsetX, y: event.offsetY});
+    if (pinch && pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      const distance = Math.hypot(a.x - b.x, a.y - b.y);
+      if (pinch.distance > 0) zoomAt((a.x + b.x) / 2, (a.y + b.y) / 2, distance / pinch.distance);
+      pinch.distance = distance;
+      return;
+    }
+    if (drag && pointers.has(event.pointerId)) {
+      const dx = event.offsetX - drag.x, dy = event.offsetY - drag.y;
+      if (!drag.moved && Math.hypot(dx, dy) > 3) {
+        drag.moved = true;
+        canvas.classList.add("dragging");
+        $("tip").hidden = true;
+      }
+      if (drag.moved) {
+        map.ox = drag.ox + dx;
+        map.oy = drag.oy + dy;
+        clampView();
+        draw();
+      }
+      return;
+    }
+    const hit = hitTest(event.offsetX, event.offsetY);
+    if (!same(hit, map.hover)) { map.hover = hit; draw(); }
+    const tip = $("tip");
+    if (!hit) { tip.hidden = true; return; }
+    tip.textContent = "";
+    tip.append(el("strong", null, label(hit)));
+    tip.append(el("span", null, describe(hit)));
+    tip.hidden = false;
+    tip.style.left = `${Math.min(event.offsetX + 14, map.width - tip.offsetWidth - 8)}px`;
+    tip.style.top = `${event.offsetY + 18 + tip.offsetHeight > map.height
+      ? event.offsetY - tip.offsetHeight - 10 : event.offsetY + 18}px`;
+  });
+
+  const end = (event) => {
+    const wasClick = drag && !drag.moved && pointers.size === 1 && event.type === "pointerup";
+    pointers.delete(event.pointerId);
+    if (pointers.size < 2) pinch = null;
+    canvas.classList.remove("dragging");
+    if (wasClick) select(hitTest(event.offsetX, event.offsetY));
+    drag = null;
+  };
+  canvas.addEventListener("pointerup", end);
+  canvas.addEventListener("pointercancel", end);
+  canvas.addEventListener("pointerleave", () => {
+    if (drag) return;
+    $("tip").hidden = true;
+    if (map.hover) { map.hover = null; draw(); }
+  });
+
+  canvas.addEventListener("dblclick", (event) => {
+    const hit = hitTest(event.offsetX, event.offsetY);
+    if (hit) { select(hit); zoomTo(hit); } else { zoomAt(event.offsetX, event.offsetY, 2); }
+  });
+
+  canvas.addEventListener("wheel", (event) => {
+    event.preventDefault();
+    const scale = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? map.height : 1;
+    if (event.ctrlKey || event.metaKey) {
+      zoomAt(event.offsetX, event.offsetY, Math.exp(-event.deltaY * scale * 0.0025));
+    } else {
+      map.ox -= (event.shiftKey && !event.deltaX ? event.deltaY : event.deltaX) * scale;
+      map.oy -= (event.shiftKey && !event.deltaX ? 0 : event.deltaY) * scale;
+      clampView();
+      draw();
+    }
+  }, {passive: false});
+
+  canvas.addEventListener("keydown", (event) => {
+    const cx = GUTTER + (map.width - GUTTER) / 2, cy = map.height / 2;
+    switch (event.key) {
+      case "ArrowUp": map.oy += 80; break;
+      case "ArrowDown": map.oy -= 80; break;
+      case "ArrowLeft": map.ox += 80; break;
+      case "ArrowRight": map.ox -= 80; break;
+      case "PageUp": map.oy += map.height * 0.9; break;
+      case "PageDown": map.oy -= map.height * 0.9; break;
+      case "+": case "=": zoomAt(cx, cy, 1.5); break;
+      case "-": case "_": zoomAt(cx, cy, 1 / 1.5); break;
+      case "0": fitView(); return;
+      case "Escape": select(null); return;
+      default: return;
+    }
+    event.preventDefault();
+    clampView();
+    draw();
+  });
+
+  new ResizeObserver(() => resize()).observe(canvas);
+}
+
+function same(a, b) {
+  if (a === b) return true;
+  if (!a || !b || a.kind !== b.kind || a.row !== b.row) return false;
+  return a.kind === "register" || a.item === b.item;
+}
+
+function zoomTo(target) {
+  const width = target.kind === "field" ? target.item.field.width : target.row.bits;
+  const k = clamp(((map.width - GUTTER) * 0.7) / width, minZoom(), K_MAX);
+  const bit = target.kind === "field"
+    ? 32 - target.row.bits + target.item.start + width / 2 : 32 - target.row.bits / 2;
+  const row = target.row.y + (target.kind === "field" ? target.item.lane + 0.5 : target.row.height / 2);
+  map.k = k;
+  map.ox = GUTTER + (map.width - GUTTER) / 2 - bit * k;
+  map.oy = map.height / 2 - row * rowHeight();
+  clampView();
+  draw();
+}
+
+/* ----------------------------------------------------------------- setup */
+
+$("filter").addEventListener("input", (event) => {
+  state.filter = event.target.value;
+  renderGroups();
+});
+$("device").addEventListener("input", (event) => {
+  state.device = event.target.value;
+  if (state.data) renderGroup();
+});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { readColors(); draw(); });
+$("modes").addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-mode]");
+  if (!button || button.dataset.mode === state.mode) return;
+  setMode(button.dataset.mode);
+  selectGroup(state.group);
+});
+
+function setMode(mode) {
+  state.mode = mode;
+  state.index = state.all.modes[mode];
+  state.index.groups.sort((a, b) => b.variants.length - a.variants.length || a.name.localeCompare(b.name));
+  for (const button of $("modes").querySelectorAll("button[data-mode]")) {
+    button.setAttribute("aria-pressed", String(button.dataset.mode === mode));
+  }
+  $("t-instances").textContent = num(state.index.instances);
+  $("t-shapes").textContent = num(state.index.shapes);
+  $("t-variants").textContent = num(state.index.variants);
+  renderGroups();
+}
+
+async function start() {
+  try {
+    const response = await fetch("variants.json");
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+    state.all = await response.json();
+  } catch (error) {
+    $("g-name").textContent = "Could not load variants.json";
+    $("g-sub").textContent = `${error.message}. Serve this folder over HTTP, the JSON files sit next to this page.`;
+    return;
+  }
+  const parts = decodeURIComponent(location.hash.slice(1)).split("/");
+  const [mode, name, variant] = parts.length > 2 ? parts : ["binary", ...parts];
+  setMode(state.all.modes[mode] ? mode : "binary");
+  const known = state.index.groups.find((g) => g.name === name);
+  selectGroup(known ? name : state.index.groups[0].name, known ? Number(variant) || 0 : 0);
+}
+
+start();
+</script>

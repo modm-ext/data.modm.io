@@ -12,6 +12,7 @@
     <peripheral>
       <name>SYSCFG</name>
       <description>System configuration controller (SYSCFG)</description>
+      <groupName>SYSCFG</groupName>
       <baseAddress>0x40000000</baseAddress>
       <registers>
         <register>
@@ -19,6 +20,7 @@
           <description>(@ 0x00000000) Die ID register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>REVISION</name>
@@ -42,6 +44,7 @@
           <description>(@ 0x00000004) JTAG ID register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MANUF_ID</name>
@@ -65,6 +68,7 @@
           <description>(@ 0x00000008) I2C Fast-Mode Plus pin capability control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>I2C1_PA0_FMP</name>
@@ -103,6 +107,7 @@
           <description>(@ 0x0000000C) I/O Interrupt detection type register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA0_DT</name>
@@ -271,6 +276,7 @@
           <description>(@ 0x00000010) I/O Interrupt Edge register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA0_IBE</name>
@@ -439,6 +445,7 @@
           <description>(@ 0x00000014) I/O Interrupt polarity event register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA0_IEV</name>
@@ -607,6 +614,7 @@
           <description>(@ 0x00000018) I/O Interrupt Enable register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA0_IE</name>
@@ -775,6 +783,7 @@
           <description>(@ 0x0000001C) I/O Interrupt Status and Clear register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA0_ISC</name>
@@ -943,6 +952,7 @@
           <description>(@ 0x00000020) Power Controller Interrupt Enable register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BORH_IE</name>
@@ -966,6 +976,7 @@
           <description>(@ 0x00000024) Power Controller Interrupt Status and Clear register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BORH_ISC</name>
@@ -989,6 +1000,7 @@
           <description>(@ 0x00000028) I/O analog switch control register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATB1_nPVD</name>
@@ -1002,6 +1014,7 @@
           <description>(@ 0x0000002C) Internal asynchronous interrupt detection type register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TX_DT</name>
@@ -1035,6 +1048,7 @@
           <description>(@ 0x00000030) Internal asynchronous interrupt edge register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TX_IBE</name>
@@ -1080,6 +1094,7 @@
           <description>(@ 0x00000034) Internal asynchronous interrupt polarity event register</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TX_IEV</name>
@@ -1125,6 +1140,7 @@
           <description>(@ 0x00000038) Internal asynchronous interrupt enable register</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TX_IE</name>
@@ -1158,6 +1174,7 @@
           <description>(@ 0x0000003C) Internal asynchronous interrupt detection status and clear register</description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TX_ISC</name>
@@ -1206,6 +1223,7 @@
           <description>(@ 0x00000040) SYSCFG status register 1</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RFIP_BUSY_STATUS</name>
@@ -1219,6 +1237,7 @@
     <peripheral>
       <name>FLASH</name>
       <description>FLASH (FLASH)</description>
+      <groupName>FLASH</groupName>
       <baseAddress>0x40001000</baseAddress>
       <interrupt>
         <name>FLASH</name>
@@ -1231,6 +1250,7 @@
           <description>(@ 0x00000000) Command register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>COMMAND</name>
@@ -1244,6 +1264,7 @@
           <description>(@ 0x00000004) Configuration register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>REMAP</name>
@@ -1272,6 +1293,7 @@
           <description>(@ 0x00000008) Interrupt status register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CMDDONE_MIS</name>
@@ -1305,6 +1327,7 @@
           <description>(@ 0x0000000C) Interrupt mask register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CMDDONEM</name>
@@ -1338,6 +1361,7 @@
           <description>(@ 0x00000010) Intertupt raw status register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CMDDONE_RIS</name>
@@ -1371,12 +1395,14 @@
           <description>(@ 0x00000014) SIZE register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
         </register>
         <register>
           <name>ADDRESS</name>
           <description>(@ 0x00000018) Address register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>YADDR</name>
@@ -1395,6 +1421,7 @@
           <description>(@ 0x00000024) LFSRVAL register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>LFSRVAL</name>
@@ -1408,6 +1435,7 @@
           <description>(@ 0x00000034) Main Flash page protection register 0</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SEG0</name>
@@ -1426,6 +1454,7 @@
           <description>(@ 0x00000038) Main Flash page protection register 1</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SEG2</name>
@@ -1444,6 +1473,7 @@
           <description>(@ 0x00000040) Data register 0</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DATA0</name>
@@ -1457,6 +1487,7 @@
           <description>(@ 0x00000044) Data register 1</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DATA1</name>
@@ -1470,6 +1501,7 @@
           <description>(@ 0x00000048) Data register 2</description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DATA2</name>
@@ -1483,6 +1515,7 @@
           <description>(@ 0x0000004C) Data register 3</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DATA3</name>
@@ -1496,6 +1529,7 @@
     <peripheral>
       <name>TIM2</name>
       <description>Advanced-timers (TIM)</description>
+      <groupName>TIM</groupName>
       <baseAddress>0x40002000</baseAddress>
       <interrupt>
         <name>TIM2</name>
@@ -1508,6 +1542,7 @@
           <description>(@ 0x00000000) Control register 1</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CEN</name>
@@ -1614,6 +1649,7 @@
           <description>(@ 0x00000004) Control register 2</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CCPC</name>
@@ -1706,6 +1742,7 @@
           <description>(@ 0x00000008) Slave mode control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SMS</name>
@@ -1776,6 +1813,7 @@
           <description>(@ 0x0000000C) DMA/Interrupt enable register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>UIE</name>
@@ -1864,6 +1902,7 @@
           <description>(@ 0x00000010) Status register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>UIF</name>
@@ -1932,6 +1971,7 @@
           <description>(@ 0x00000014) Event generation register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>UG</name>
@@ -1980,6 +2020,7 @@
           <description>(@ 0x00000018) Input capture and output compare mode register 1</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CC1S</name>
@@ -2049,6 +2090,7 @@
           <alternateRegister>CCMR1</alternateRegister>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CC1S</name>
@@ -2087,6 +2129,7 @@
           <description>(@ 0x0000001C) Input capture and output compare mode register 2</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CC3S</name>
@@ -2145,6 +2188,7 @@
           <description>(@ 0x00000020) Capture/compare enable register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CC1E</name>
@@ -2218,6 +2262,7 @@
           <description>(@ 0x00000024) Counter</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CNT</name>
@@ -2236,6 +2281,7 @@
           <description>(@ 0x00000028) Prescaler</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PSC</name>
@@ -2249,6 +2295,7 @@
           <description>(@ 0x0000002C) Auto-reload register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ARR</name>
@@ -2262,6 +2309,7 @@
           <description>(@ 0x00000030) Repetition counter register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>REP</name>
@@ -2275,6 +2323,7 @@
           <description>(@ 0x00000034) Capture/compare register 1</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CCR1</name>
@@ -2288,6 +2337,7 @@
           <description>(@ 0x00000038) Capture/compare register 2</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CCR2</name>
@@ -2301,6 +2351,7 @@
           <description>(@ 0x0000003C) Capture/compare register 3</description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CCR3</name>
@@ -2314,6 +2365,7 @@
           <description>(@ 0x00000040) Capture/compare register 4</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CCR4</name>
@@ -2327,6 +2379,7 @@
           <description>(@ 0x00000044) Break and dead-time register</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BKDSRM</name>
@@ -2340,6 +2393,7 @@
           <description>(@ 0x00000048) DMA control register</description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DBA</name>
@@ -2358,6 +2412,7 @@
           <description>(@ 0x0000004C) DMA address for full transfer</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAB</name>
@@ -2371,6 +2426,7 @@
           <description>(@ 0x00000050) Option register 1</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ETR_RMP</name>
@@ -2391,6 +2447,7 @@
           <description>(@ 0x00000060) TIM alternate function option register 1</description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BKINE</name>
@@ -2424,6 +2481,7 @@
           <description>(@ 0x00000068) Input selection register</description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TI1SEL</name>
@@ -2452,6 +2510,7 @@
     <peripheral>
       <name>IWDG</name>
       <description>Independent watchdog (IWDG)</description>
+      <groupName>IWDG</groupName>
       <baseAddress>0x40003000</baseAddress>
       <registers>
         <register>
@@ -2459,6 +2518,7 @@
           <description>(@ 0x00000000) Key register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -2472,6 +2532,7 @@
           <description>(@ 0x00000004) Prescaler register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PR</name>
@@ -2485,6 +2546,7 @@
           <description>(@ 0x00000008) Reload register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RL</name>
@@ -2498,6 +2560,7 @@
           <description>(@ 0x0000000C) Status register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PVU</name>
@@ -2521,6 +2584,7 @@
           <description>(@ 0x00000010) Window register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WIN</name>
@@ -2534,6 +2598,7 @@
     <peripheral>
       <name>RTC</name>
       <description>Real-time clock (RTC)</description>
+      <groupName>RTC</groupName>
       <baseAddress>0x40004000</baseAddress>
       <interrupt>
         <name>RTC</name>
@@ -2546,6 +2611,7 @@
           <description>(@ 0x00000000) Time register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SU</name>
@@ -2601,6 +2667,7 @@
           <description>(@ 0x00000004) Date register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DU</name>
@@ -2644,6 +2711,7 @@
           <description>(@ 0x00000008) Control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WUCKSEL</name>
@@ -2832,6 +2900,7 @@
           <description>(@ 0x0000000C) Initialization and status register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ALRAWF</name>
@@ -2910,6 +2979,7 @@
           <description>(@ 0x00000010) Prescaler register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PREDIV_S</name>
@@ -2928,6 +2998,7 @@
           <description>(@ 0x00000014) Wakeup timer register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WUT</name>
@@ -2941,6 +3012,7 @@
           <description>(@ 0x0000001C) Alarm A register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SU</name>
@@ -3031,6 +3103,7 @@
           <description>(@ 0x00000024) Write protection register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -3044,6 +3117,7 @@
           <description>(@ 0x00000028) Sub second register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SS</name>
@@ -3057,6 +3131,7 @@
           <description>(@ 0x0000002C) Shift control register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SUBFS</name>
@@ -3075,6 +3150,7 @@
           <description>(@ 0x00000030) Timestamp time register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SU</name>
@@ -3130,6 +3206,7 @@
           <description>(@ 0x00000034) Timestamp date register</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DU</name>
@@ -3163,6 +3240,7 @@
           <description>(@ 0x00000038) Timestamp sub second register</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SS</name>
@@ -3176,6 +3254,7 @@
           <description>(@ 0x0000003C) Calibration register</description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CALM</name>
@@ -3216,6 +3295,7 @@
           <description>(@ 0x00000040) Tamper configuration register</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TAMP1E</name>
@@ -3365,6 +3445,7 @@
           <description>(@ 0x00000044) Alarm A sub second register</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SS</name>
@@ -3383,6 +3464,7 @@
           <description>(@ 0x0000004C) Option register</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ALARMOUTTYPE</name>
@@ -3413,6 +3495,7 @@
           <description>(@ 0x00000050) Backup register 0</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BKP</name>
@@ -3426,6 +3509,7 @@
           <description>(@ 0x00000054) Backup register 1</description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BKP</name>
@@ -3439,6 +3523,7 @@
     <peripheral>
       <name>TIM16</name>
       <description>Advanced-timers (TIM)</description>
+      <groupName>TIM</groupName>
       <baseAddress>0x40005000</baseAddress>
       <interrupt>
         <name>TIM16</name>
@@ -3451,6 +3536,7 @@
           <description>(@ 0x00000000) Control register 1</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CEN</name>
@@ -3552,6 +3638,7 @@
           <description>(@ 0x00000004) Control register 2</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CCPC</name>
@@ -3656,6 +3743,7 @@
           <description>(@ 0x00000008) Slave mode control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SMS</name>
@@ -3706,6 +3794,7 @@
           <description>(@ 0x0000000C) DMA/Interrupt enable register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>UIE</name>
@@ -3764,6 +3853,7 @@
           <description>(@ 0x00000010) Status register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>UIF</name>
@@ -3802,6 +3892,7 @@
           <description>(@ 0x00000014) Event generation register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>UG</name>
@@ -3835,6 +3926,7 @@
           <description>(@ 0x00000018) Input capture and output compare mode register 1</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CC1S</name>
@@ -3874,6 +3966,7 @@
           <alternateRegister>CCMR1</alternateRegister>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CC1S</name>
@@ -3897,6 +3990,7 @@
           <description>(@ 0x00000020) Capture/compare enable register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CC1E</name>
@@ -3925,6 +4019,7 @@
           <description>(@ 0x00000024) Counter</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CNT</name>
@@ -3943,6 +4038,7 @@
           <description>(@ 0x00000028) Prescaler</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PSC</name>
@@ -3956,6 +4052,7 @@
           <description>(@ 0x0000002C) Auto-reload register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ARR</name>
@@ -3969,6 +4066,7 @@
           <description>(@ 0x00000030) Repetition counter register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>REP</name>
@@ -3982,6 +4080,7 @@
           <description>(@ 0x00000034) Capture/compare register 1</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CCR1</name>
@@ -3995,6 +4094,7 @@
           <description>(@ 0x00000044) Break and dead-time register</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DTG</name>
@@ -4075,6 +4175,7 @@
           <description>(@ 0x00000048) DMA control register</description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DBA</name>
@@ -4093,6 +4194,7 @@
           <description>(@ 0x0000004C) DMA address for full transfer</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAB</name>
@@ -4106,6 +4208,7 @@
           <description>(@ 0x00000050) Option register 1</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TI1_RMP</name>
@@ -4120,6 +4223,7 @@
           <description>(@ 0x00000060) TIM alternate function option register 1</description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BKINE</name>
@@ -4148,6 +4252,7 @@
           <description>(@ 0x00000068) Input selection register</description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TI1SEL</name>
@@ -4176,6 +4281,7 @@
     <peripheral>
       <name>DBGMCU</name>
       <description>MCU debug component (DBGMCU)</description>
+      <groupName>DBGMCU</groupName>
       <baseAddress>0x40008000</baseAddress>
       <registers>
         <register>
@@ -4183,6 +4289,7 @@
           <description>(@ 0x00000000) CR register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DBG_SLEEP</name>
@@ -4201,6 +4308,7 @@
           <description>(@ 0x00000004) DBG_APB0_FZ register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DBG_TIM2_STOP</name>
@@ -4229,6 +4337,7 @@
           <description>(@ 0x00000008) DBG_APB1_FZ register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DBG_I2C1_STOP</name>
@@ -4242,6 +4351,7 @@
     <peripheral>
       <name>I2C1</name>
       <description>Inter-integrated circuit (I2C)</description>
+      <groupName>I2C</groupName>
       <baseAddress>0x41000000</baseAddress>
       <interrupt>
         <name>I2C1</name>
@@ -4254,6 +4364,7 @@
           <description>(@ 0x00000000) Control register 1</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PE</name>
@@ -4357,6 +4468,7 @@
           <description>(@ 0x00000004) Control register 2</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SADD</name>
@@ -4456,6 +4568,7 @@
           <description>(@ 0x00000008) Own address register 1</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>OA1</name>
@@ -4479,6 +4592,7 @@
           <description>(@ 0x0000000C) Own address register 2</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>OA2</name>
@@ -4508,6 +4622,7 @@
           <description>(@ 0x00000010) Timing register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SCLL</name>
@@ -4541,6 +4656,7 @@
           <description>(@ 0x00000014) Timeout register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TIMEOUTA</name>
@@ -4584,6 +4700,7 @@
           <description>(@ 0x00000018) Interrupt and Status register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TXE</name>
@@ -4687,6 +4804,7 @@
           <description>(@ 0x0000001C) Interrupt clear register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ADDRCF</name>
@@ -4740,6 +4858,7 @@
           <description>(@ 0x00000020) PEC register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PEC</name>
@@ -4753,6 +4872,7 @@
           <description>(@ 0x00000024) Receive data register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RXDATA</name>
@@ -4766,6 +4886,7 @@
           <description>(@ 0x00000028) Transmit data register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TXDATA</name>
@@ -4779,6 +4900,7 @@
     <peripheral>
       <name>USART1</name>
       <description>Universal synchronous asynchronous receiver transmitter (USART)</description>
+      <groupName>USART</groupName>
       <baseAddress>0x41004000</baseAddress>
       <interrupt>
         <name>USART1</name>
@@ -4791,6 +4913,7 @@
           <description>(@ 0x00000000) Control register 1</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>UE</name>
@@ -4943,6 +5066,7 @@
           <description>(@ 0x00000004) Control register 2</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SLVEN</name>
@@ -5211,6 +5335,7 @@
           <description>(@ 0x00000008) Control register 3</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EIE</name>
@@ -5380,6 +5505,7 @@
           <description>(@ 0x0000000C) Baud rate register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BRR</name>
@@ -5393,6 +5519,7 @@
           <description>(@ 0x00000010) Guard time and prescaler register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PSC</name>
@@ -5411,6 +5538,7 @@
           <description>(@ 0x00000014) Receiver timeout register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RTO</name>
@@ -5429,6 +5557,7 @@
           <description>(@ 0x00000018) Request register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ABRRQ</name>
@@ -5462,6 +5591,7 @@
           <description>(@ 0x0000001C) Interrupt &amp; status register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PE</name>
@@ -5610,6 +5740,7 @@
           <description>(@ 0x00000020) Interrupt flag clear register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PECF</name>
@@ -5693,6 +5824,7 @@
           <description>(@ 0x00000024) Receive data register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RDR</name>
@@ -5706,6 +5838,7 @@
           <description>(@ 0x00000028) Transmit data register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TDR</name>
@@ -5719,6 +5852,7 @@
           <description>(@ 0x0000002C) Prescaler register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PRESCALER</name>
@@ -5787,6 +5921,7 @@
     <peripheral>
       <name>LPUART1</name>
       <description>Universal synchronous asynchronous receiver transmitter (USART)</description>
+      <groupName>USART</groupName>
       <baseAddress>0x41005000</baseAddress>
       <interrupt>
         <name>LPUART1</name>
@@ -5799,6 +5934,7 @@
           <description>(@ 0x00000000) Control register 1</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>UE</name>
@@ -5946,6 +6082,7 @@
           <description>(@ 0x00000004) Control register 2</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ADDM7</name>
@@ -6099,6 +6236,7 @@
           <description>(@ 0x00000008) Control register 3</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EIE</name>
@@ -6236,6 +6374,7 @@
           <description>(@ 0x0000000C) Baud rate register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BRR</name>
@@ -6249,6 +6388,7 @@
           <description>(@ 0x00000014) Receiver timeout register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RTO</name>
@@ -6267,6 +6407,7 @@
           <description>(@ 0x00000018) Request register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SBKRQ</name>
@@ -6295,6 +6436,7 @@
           <description>(@ 0x0000001C) Interrupt &amp; status register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PE</name>
@@ -6418,6 +6560,7 @@
           <description>(@ 0x00000020) Interrupt flag clear register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PECF</name>
@@ -6486,6 +6629,7 @@
           <description>(@ 0x00000024) Receive data register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RDR</name>
@@ -6499,6 +6643,7 @@
           <description>(@ 0x00000028) Transmit data register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TDR</name>
@@ -6512,6 +6657,7 @@
           <description>(@ 0x0000002C) Prescaler register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PRESCALER</name>
@@ -6580,6 +6726,7 @@
     <peripheral>
       <name>ADC1</name>
       <description>ADC (ADC)</description>
+      <groupName>ADC</groupName>
       <baseAddress>0x41006000</baseAddress>
       <interrupt>
         <name>ADC</name>
@@ -6592,6 +6739,7 @@
           <description>(@ 0x00000000) VERSION_ID register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>VERSION_ID</name>
@@ -6605,6 +6753,7 @@
           <description>(@ 0x00000004) ADC configuration register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CONT</name>
@@ -6695,6 +6844,7 @@
           <description>(@ 0x00000008) ADC control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ADC_ON_OFF</name>
@@ -6718,6 +6868,7 @@
           <description>(@ 0x00000014) ADC switch control for Input Selection</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SE_VIN_0</name>
@@ -6766,6 +6917,7 @@
           <description>(@ 0x0000001C) Downsampler configuration register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DS_RATIO</name>
@@ -6826,6 +6978,7 @@
           <description>(@ 0x00000020) ADC regular sequence programming register 1</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SEQ0</name>
@@ -6874,6 +7027,7 @@
           <description>(@ 0x00000024) ADC regular sequence programming register 2</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SEQ8</name>
@@ -6922,6 +7076,7 @@
           <description>(@ 0x00000028) ADC Gain &amp;</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>GAIN1</name>
@@ -6940,6 +7095,7 @@
           <description>(@ 0x0000002C) ADC Gain &amp;</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>GAIN2</name>
@@ -6958,6 +7114,7 @@
           <description>(@ 0x00000030) ADC Gain &amp;</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>GAIN3</name>
@@ -6976,6 +7133,7 @@
           <description>(@ 0x00000034) ADC Gain &amp;</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>GAIN4</name>
@@ -6994,6 +7152,7 @@
           <description>(@ 0x00000038) ADC Gain &amp;</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>OFFSET_GAIN0</name>
@@ -7047,6 +7206,7 @@
           <description>(@ 0x0000003C) ADC watchdog threshold register register</description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WD_LT</name>
@@ -7065,6 +7225,7 @@
           <description>(@ 0x00000040) ADC watchdog configuration register</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AWD_CHX</name>
@@ -7160,6 +7321,7 @@
           <description>(@ 0x00000044) Downsampler Data output register</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DS_DATA</name>
@@ -7173,6 +7335,7 @@
           <description>(@ 0x0000004C) Interrupt Status register</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EOC_IRQ</name>
@@ -7206,6 +7369,7 @@
           <description>(@ 0x00000050) Enable/disable Interrupts</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EOC_IRQ_ENA</name>
@@ -7239,6 +7403,7 @@
     <peripheral>
       <name>SPI3</name>
       <description>Serial peripheral interface/Inter-IC sound (SPI)</description>
+      <groupName>SPI</groupName>
       <baseAddress>0x41007000</baseAddress>
       <interrupt>
         <name>SPI3</name>
@@ -7251,6 +7416,7 @@
           <description>(@ 0x00000000) Control register 1</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CPHA</name>
@@ -7419,6 +7585,7 @@
           <description>(@ 0x00000004) Control register 2</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RXDMAEN</name>
@@ -7578,6 +7745,7 @@
           <description>(@ 0x00000008) Status register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RXNE</name>
@@ -7685,6 +7853,7 @@
           <description>(@ 0x0000000C) Data register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DR</name>
@@ -7698,6 +7867,7 @@
           <description>(@ 0x00000010) CRC polynomial register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CRCPOLY</name>
@@ -7711,6 +7881,7 @@
           <description>(@ 0x00000014) RX CRC register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RXCRC</name>
@@ -7724,6 +7895,7 @@
           <description>(@ 0x00000018) TX CRC register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TXCRC</name>
@@ -7737,6 +7909,7 @@
           <description>(@ 0x0000001C) I2S configuration register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CHLEN</name>
@@ -7824,6 +7997,7 @@
           <description>(@ 0x00000020) I2S prescaler register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>I2SDIV</name>
@@ -7847,6 +8021,7 @@
     <peripheral>
       <name>GPIOA</name>
       <description>General-purpose I/Os (GPIO)</description>
+      <groupName>GPIO</groupName>
       <baseAddress>0x48000000</baseAddress>
       <interrupt>
         <name>GPIOA</name>
@@ -7859,6 +8034,7 @@
           <description>(@ 0x00000000) GPIO port mode register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MODE0</name>
@@ -7947,6 +8123,7 @@
           <description>(@ 0x00000004) GPIO port output type register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>OT0</name>
@@ -8035,6 +8212,7 @@
           <description>(@ 0x00000008) GPIO port output speed register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>OSPEED0</name>
@@ -8123,6 +8301,7 @@
           <description>(@ 0x0000000C) GPIO port pull-up/pull-down register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PUPD0</name>
@@ -8211,6 +8390,7 @@
           <description>(@ 0x00000010) GPIO port input data register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ID0</name>
@@ -8299,6 +8479,7 @@
           <description>(@ 0x00000014) GPIO port output data register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>OD0</name>
@@ -8387,6 +8568,7 @@
           <description>(@ 0x00000018) GPIO port bit set/reset register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BS0</name>
@@ -8555,6 +8737,7 @@
           <description>(@ 0x0000001C) GPIO port configuration lock register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>LCK0</name>
@@ -8648,6 +8831,7 @@
           <description>(@ 0x00000020) GPIO alternate function register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AFSEL0</name>
@@ -8696,6 +8880,7 @@
           <description>(@ 0x00000020) GPIO alternate function register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AFSEL8</name>
@@ -8744,6 +8929,7 @@
           <description>(@ 0x00000028) GPIO bit reset register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BR0</name>
@@ -8832,6 +9018,7 @@
     <peripheral derivedFrom="GPIOA">
       <name>GPIOB</name>
       <description>General-purpose I/Os (GPIO)</description>
+      <groupName>GPIO</groupName>
       <baseAddress>0x48100000</baseAddress>
       <interrupt>
         <name>GPIOB</name>
@@ -8842,6 +9029,7 @@
     <peripheral>
       <name>CRC</name>
       <description>Cyclic redundancy check calculation unit (CRC)</description>
+      <groupName>CRC</groupName>
       <baseAddress>0x48200000</baseAddress>
       <registers>
         <register>
@@ -8849,6 +9037,7 @@
           <description>(@ 0x00000000) Data register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DR</name>
@@ -8862,6 +9051,7 @@
           <description>(@ 0x00000004) Independent data register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IDR</name>
@@ -8875,6 +9065,7 @@
           <description>(@ 0x00000008) Control register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RESET</name>
@@ -8959,6 +9150,7 @@
           <description>(@ 0x00000010) Initial CRC value</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CRC_INIT</name>
@@ -8972,6 +9164,7 @@
           <description>(@ 0x00000014) Polynomial</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>POL</name>
@@ -8985,6 +9178,7 @@
     <peripheral>
       <name>RCC</name>
       <description>Reset and clock control (RCC)</description>
+      <groupName>RCC</groupName>
       <baseAddress>0x48400000</baseAddress>
       <interrupt>
         <name>RCC</name>
@@ -8997,6 +9191,7 @@
           <description>(@ 0x00000000) CR register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>LSION</name>
@@ -9082,6 +9277,7 @@
           <description>(@ 0x00000004) ICSCR register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>LSITRIMEN</name>
@@ -9115,6 +9311,7 @@
           <description>(@ 0x00000008) CFGR register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>HSESEL</name>
@@ -9310,6 +9507,7 @@
           <description>(@ 0x0000000C) CSSWCR register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>LSISWTRIMEN</name>
@@ -9365,6 +9563,7 @@
           <description>(@ 0x00000010) KRMR register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KRM_EN</name>
@@ -9383,6 +9582,7 @@
           <description>(@ 0x00000018) CIER register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>LSIRDYIE</name>
@@ -9436,6 +9636,7 @@
           <description>(@ 0x0000001C) CIFR register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>LSIRDYF</name>
@@ -9489,6 +9690,7 @@
           <description>(@ 0x00000020) CSCMDR register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>REQUEST</name>
@@ -9556,6 +9758,7 @@
           <description>(@ 0x00000030) AHBRSTR register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMARST</name>
@@ -9594,6 +9797,7 @@
           <description>(@ 0x00000034) APB0RSTR register</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TIM2RST</name>
@@ -9632,6 +9836,7 @@
           <description>(@ 0x00000038) APB1RSTR register</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ADCRST</name>
@@ -9665,6 +9870,7 @@
           <description>(@ 0x00000040) APB2RSTR register</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MRSUBGRST</name>
@@ -9678,6 +9884,7 @@
           <description>(@ 0x00000050) AHBENR register</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAEN</name>
@@ -9716,6 +9923,7 @@
           <description>(@ 0x00000054) APB0ENR register</description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TIM2EN</name>
@@ -9754,6 +9962,7 @@
           <description>(@ 0x00000058) APB1ENR register</description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ADCDIGEN</name>
@@ -9792,6 +10001,7 @@
           <description>(@ 0x00000060) APB2ENR register</description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MRSUBGEN</name>
@@ -9805,6 +10015,7 @@
           <description>(@ 0x00000094) CSR register</description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RMVF</name>
@@ -9843,6 +10054,7 @@
           <description>(@ 0x00000098) RFSWHSECR register</description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>GMC</name>
@@ -9876,6 +10088,7 @@
           <description>(@ 0x0000009C) RFHSECR register</description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>XOTUNE</name>
@@ -9894,6 +10107,7 @@
           <description>(@ 0x000000A0) AHBSMENR register</description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMASMEN</name>
@@ -9942,6 +10156,7 @@
           <description>(@ 0x000000A4) APB0SMENR register</description>
           <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TIM2SMEN</name>
@@ -9980,6 +10195,7 @@
           <description>(@ 0x000000A8) APB1SMENR register</description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ADCDIGSMEN</name>
@@ -10018,6 +10234,7 @@
     <peripheral>
       <name>PWR</name>
       <description>Power control (PWR)</description>
+      <groupName>PWR</groupName>
       <baseAddress>0x48500000</baseAddress>
       <registers>
         <register>
@@ -10025,6 +10242,7 @@
           <description>(@ 0x00000000) CR1 register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>LPMS</name>
@@ -10070,6 +10288,7 @@
           <description>(@ 0x00000004) CR2 register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PVDE</name>
@@ -10185,6 +10404,7 @@
           <description>(@ 0x00000008) IEWU register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EIWL0</name>
@@ -10213,6 +10433,7 @@
           <description>(@ 0x0000000C) IWUP register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IWUP0</name>
@@ -10256,6 +10477,7 @@
           <description>(@ 0x00000010) IWUF register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IWUF0</name>
@@ -10299,6 +10521,7 @@
           <description>(@ 0x00000014) SR2 register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SMPSBYPR</name>
@@ -10347,6 +10570,7 @@
           <description>(@ 0x0000001C) CR5 register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SMPSLVL</name>
@@ -10545,6 +10769,7 @@
           <description>(@ 0x00000020) PUCRA register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA0</name>
@@ -10633,6 +10858,7 @@
           <description>(@ 0x00000024) PDCRA register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA0</name>
@@ -10721,6 +10947,7 @@
           <description>(@ 0x00000028) PUCRB register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PB0</name>
@@ -10809,6 +11036,7 @@
           <description>(@ 0x0000002C) PDCRB register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PB0</name>
@@ -10897,6 +11125,7 @@
           <description>(@ 0x00000030) EWUA register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EWU0</name>
@@ -10985,6 +11214,7 @@
           <description>(@ 0x00000034) WUPA register</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WUP0</name>
@@ -11073,6 +11303,7 @@
           <description>(@ 0x00000038) WUFA register</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WUF0</name>
@@ -11161,6 +11392,7 @@
           <description>(@ 0x00000040) EWUB register</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EWU0</name>
@@ -11249,6 +11481,7 @@
           <description>(@ 0x00000044) WUPB register</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WUP0</name>
@@ -11337,6 +11570,7 @@
           <description>(@ 0x00000048) WUFB register</description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WUF0</name>
@@ -11425,6 +11659,7 @@
           <description>(@ 0x0000004C) SDWN_WUEN register</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WUEN</name>
@@ -11438,6 +11673,7 @@
           <description>(@ 0x00000050) SDWN_WUPOL register</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WUPOL</name>
@@ -11451,6 +11687,7 @@
           <description>(@ 0x00000054) SDWN_WUF register</description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>WUF</name>
@@ -11464,6 +11701,7 @@
           <description>(@ 0x00000058) BOF_TUNE register</description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>BOF_TUNE</name>
@@ -11477,6 +11715,7 @@
           <description>(@ 0x00000084) DBGR register</description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DEEPSTOP2</name>
@@ -11490,6 +11729,7 @@
           <description>(@ 0x00000088) EXTSRR register</description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DEEPSTOPF</name>
@@ -11508,6 +11748,7 @@
           <description>(@ 0x0000008C) DBGSMPS register</description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DIS_ILIM</name>
@@ -11531,6 +11772,7 @@
           <description>(@ 0x00000090) TRIMR register</description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RFD_REG_TRIM</name>
@@ -11554,6 +11796,7 @@
           <description>(@ 0x00000094) ENGTRIM register</description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TRIMRFDREGEN</name>
@@ -11592,6 +11835,7 @@
           <description>(@ 0x000000A0) ENGTRIM register</description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TRIMRFDREGEN</name>
@@ -11630,6 +11874,7 @@
     <peripheral>
       <name>RNG</name>
       <description>Random number generator (RNG)</description>
+      <groupName>RNG</groupName>
       <baseAddress>0x48600000</baseAddress>
       <registers>
         <register>
@@ -11637,6 +11882,7 @@
           <description>(@ 0x00000000) Control register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RNG_DIS</name>
@@ -11655,6 +11901,7 @@
           <description>(@ 0x00000004) Status register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RNGRDY</name>
@@ -11678,6 +11925,7 @@
           <description>(@ 0x00000008) Data register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RANDOM_VALUE</name>
@@ -11691,6 +11939,7 @@
     <peripheral>
       <name>DMA1</name>
       <description>Direct memory access controller (DMA)</description>
+      <groupName>DMA</groupName>
       <baseAddress>0x48700000</baseAddress>
       <interrupt>
         <name>DMA</name>
@@ -11703,6 +11952,7 @@
           <description>(@ 0x00000000) Interrupt status register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>GIF1</name>
@@ -11871,6 +12121,7 @@
           <description>(@ 0x00000004) Interrupt flag clear register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CGIF1</name>
@@ -12039,6 +12290,7 @@
           <description>DMA channel x configuration register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN</name>
@@ -12107,6 +12359,7 @@
           <description>DMA channel x number of data register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>NDT</name>
@@ -12120,6 +12373,7 @@
           <description>DMA channel x peripheral address register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA</name>
@@ -12133,6 +12387,7 @@
           <description>DMA channel x memory address register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MA</name>
@@ -12146,6 +12401,7 @@
           <description>DMA channel x configuration register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN</name>
@@ -12214,6 +12470,7 @@
           <description>DMA channel x number of data register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>NDT</name>
@@ -12227,6 +12484,7 @@
           <description>DMA channel x peripheral address register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA</name>
@@ -12240,6 +12498,7 @@
           <description>DMA channel x memory address register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MA</name>
@@ -12253,6 +12512,7 @@
           <description>DMA channel x configuration register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN</name>
@@ -12321,6 +12581,7 @@
           <description>DMA channel x number of data register</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>NDT</name>
@@ -12334,6 +12595,7 @@
           <description>DMA channel x peripheral address register</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA</name>
@@ -12347,6 +12609,7 @@
           <description>DMA channel x memory address register</description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MA</name>
@@ -12360,6 +12623,7 @@
           <description>DMA channel x configuration register</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN</name>
@@ -12428,6 +12692,7 @@
           <description>DMA channel x number of data register</description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>NDT</name>
@@ -12441,6 +12706,7 @@
           <description>DMA channel x peripheral address register</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA</name>
@@ -12454,6 +12720,7 @@
           <description>DMA channel x memory address register</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MA</name>
@@ -12467,6 +12734,7 @@
           <description>DMA channel x configuration register</description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN</name>
@@ -12535,6 +12803,7 @@
           <description>DMA channel x number of data register</description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>NDT</name>
@@ -12548,6 +12817,7 @@
           <description>DMA channel x peripheral address register</description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA</name>
@@ -12561,6 +12831,7 @@
           <description>DMA channel x memory address register</description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MA</name>
@@ -12574,6 +12845,7 @@
           <description>DMA channel x configuration register</description>
           <addressOffset>0x6c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN</name>
@@ -12642,6 +12914,7 @@
           <description>DMA channel x number of data register</description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>NDT</name>
@@ -12655,6 +12928,7 @@
           <description>DMA channel x peripheral address register</description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA</name>
@@ -12668,6 +12942,7 @@
           <description>DMA channel x memory address register</description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MA</name>
@@ -12681,6 +12956,7 @@
           <description>DMA channel x configuration register</description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN</name>
@@ -12749,6 +13025,7 @@
           <description>DMA channel x number of data register</description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>NDT</name>
@@ -12762,6 +13039,7 @@
           <description>DMA channel x peripheral address register</description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA</name>
@@ -12775,6 +13053,7 @@
           <description>DMA channel x memory address register</description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MA</name>
@@ -12788,6 +13067,7 @@
           <description>DMA channel x configuration register</description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN</name>
@@ -12856,6 +13136,7 @@
           <description>DMA channel x number of data register</description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>NDT</name>
@@ -12869,6 +13150,7 @@
           <description>DMA channel x peripheral address register</description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA</name>
@@ -12882,6 +13164,7 @@
           <description>DMA channel x memory address register</description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>MA</name>
@@ -12895,6 +13178,7 @@
     <peripheral>
       <name>DMAMUX1</name>
       <description>DMA Multiplexer</description>
+      <groupName>DMAMUX_Channel</groupName>
       <baseAddress>0x48800000</baseAddress>
       <registers>
         <register>
@@ -12902,6 +13186,7 @@
           <description>DMA Multiplexer Channel x Control Register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAREQ_ID</name>
@@ -12915,6 +13200,7 @@
           <description>DMA Multiplexer Channel x Control Register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAREQ_ID</name>
@@ -12928,6 +13214,7 @@
           <description>DMA Multiplexer Channel x Control Register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAREQ_ID</name>
@@ -12941,6 +13228,7 @@
           <description>DMA Multiplexer Channel x Control Register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAREQ_ID</name>
@@ -12954,6 +13242,7 @@
           <description>DMA Multiplexer Channel x Control Register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAREQ_ID</name>
@@ -12967,6 +13256,7 @@
           <description>DMA Multiplexer Channel x Control Register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAREQ_ID</name>
@@ -12980,6 +13270,7 @@
           <description>DMA Multiplexer Channel x Control Register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAREQ_ID</name>
@@ -12993,6 +13284,7 @@
           <description>DMA Multiplexer Channel x Control Register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DMAREQ_ID</name>
@@ -13006,6 +13298,7 @@
     <peripheral>
       <name>AES</name>
       <description>Advanced encryption standard hardware accelerator (AES)</description>
+      <groupName>AES</groupName>
       <baseAddress>0x48900000</baseAddress>
       <interrupt>
         <name>AES</name>
@@ -13018,6 +13311,7 @@
           <description>(@ 0x00000000) Control Register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN</name>
@@ -13096,6 +13390,7 @@
           <description>(@ 0x00000004) Status Register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CCF</name>
@@ -13124,6 +13419,7 @@
           <description>(@ 0x00000008) Data Input register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DINR</name>
@@ -13137,6 +13433,7 @@
           <description>(@ 0x0000000C) Data Output register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DOUTR</name>
@@ -13150,6 +13447,7 @@
           <description>(@ 0x00000010) Key register 0</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -13163,6 +13461,7 @@
           <description>(@ 0x00000014) Key register 1</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -13176,6 +13475,7 @@
           <description>(@ 0x00000018) Key register 2</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -13189,6 +13489,7 @@
           <description>(@ 0x0000001C) Key register 3</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -13202,6 +13503,7 @@
           <description>(@ 0x00000020) Initialization vector register 0</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IVI</name>
@@ -13215,6 +13517,7 @@
           <description>(@ 0x00000024) Initialization vector register 1</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IVI</name>
@@ -13228,6 +13531,7 @@
           <description>(@ 0x00000028) Initialization vector register 2</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IVI</name>
@@ -13241,6 +13545,7 @@
           <description>(@ 0x0000002C) Initialization vector register 3</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IVI</name>
@@ -13254,6 +13559,7 @@
           <description>(@ 0x00000030) Key register 4</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -13267,6 +13573,7 @@
           <description>(@ 0x00000034) Key register 5</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -13280,6 +13587,7 @@
           <description>(@ 0x00000038) Key register 6</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -13293,6 +13601,7 @@
           <description>(@ 0x0000003C) Key register 7</description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>KEY</name>
@@ -13306,6 +13615,7 @@
           <description>(@ 0x00000040) Suspend register 0</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SUSP</name>
@@ -13319,6 +13629,7 @@
           <description>(@ 0x00000044) Suspend register 1</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SUSP</name>
@@ -13332,6 +13643,7 @@
           <description>(@ 0x00000048) Suspend register 2</description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SUSP</name>
@@ -13345,6 +13657,7 @@
           <description>(@ 0x0000004C) Suspend register 3</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SUSP</name>
@@ -13358,6 +13671,7 @@
           <description>(@ 0x00000050) Suspend register 4</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SUSP</name>
@@ -13371,6 +13685,7 @@
           <description>(@ 0x00000054) Suspend register 5</description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SUSP</name>
@@ -13384,6 +13699,7 @@
           <description>(@ 0x00000058) Suspend register 6</description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SUSP</name>
@@ -13397,6 +13713,7 @@
           <description>(@ 0x0000005C) Suspend register 7</description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SUSP</name>
@@ -13410,6 +13727,7 @@
     <peripheral>
       <name>MR_SUBG_RADIO</name>
       <description>MR_SUBG Radio</description>
+      <groupName>MR_SUBG_RADIO</groupName>
       <baseAddress>0x49000000</baseAddress>
       <registers>
         <register>
@@ -13417,6 +13735,7 @@
           <description>(@ 0x00000000) RF_FSM0_TIMEOUT register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ENA_RFREG_TIMER</name>
@@ -13430,6 +13749,7 @@
           <description>(@ 0x00000004) RF_FSM1_TIMEOUT register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SYNTH_SETUP_TIMER</name>
@@ -13443,6 +13763,7 @@
           <description>(@ 0x00000008) RF_FSM2_TIMEOUT register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>VCO_CALIB_LOCK_TIMER</name>
@@ -13456,6 +13777,7 @@
           <description>(@ 0x0000000C) RF_FSM3_TIMEOUT register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>VCO_LOCK_TIMER</name>
@@ -13469,6 +13791,7 @@
           <description>(@ 0x00000010) RF_FSM4_TIMEOUT register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN_RX_TIMER</name>
@@ -13482,6 +13805,7 @@
           <description>(@ 0x00000014) RF_FSM5_TIMEOUT register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN_PA_TIMER</name>
@@ -13495,6 +13819,7 @@
           <description>(@ 0x00000018) RF_FSM6_TIMEOUT register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA_DWN_ANA_TIMER</name>
@@ -13508,6 +13833,7 @@
           <description>(@ 0x0000001C) RF_FSM7_TIMEOUT register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>EN_LNA_TIMER</name>
@@ -13521,6 +13847,7 @@
           <description>(@ 0x00000020) AFC0_CONFIG register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AFC_SLOW_GAIN_LOG2</name>
@@ -13539,6 +13866,7 @@
           <description>(@ 0x00000024) AFC1_CONFIG register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AFC_FAST_PERIOD</name>
@@ -13552,6 +13880,7 @@
           <description>(@ 0x00000028) AFC2_CONFIG register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AFC_PD_LEAKAGE</name>
@@ -13580,6 +13909,7 @@
           <description>(@ 0x0000002C) AFC3_CONFIG register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AFC_INIT_MODE</name>
@@ -13608,6 +13938,7 @@
           <description>(@ 0x00000030) CLKREC_CTRL0 register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CLKREC_I_GAIN_FAST</name>
@@ -13631,6 +13962,7 @@
           <description>(@ 0x00000034) CLKREC_CTRL1 register</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CLKREC_I_GAIN_SLOW</name>
@@ -13654,6 +13986,7 @@
           <description>(@ 0x00000038) DCREM_CTRL0 register</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>START_GAIN</name>
@@ -13672,6 +14005,7 @@
           <description>(@ 0x0000003C) DCREM_CTRL1 register</description>
           <addressOffset>0x3c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>LN2TIME2SET</name>
@@ -13685,6 +14019,7 @@
           <description>(@ 0x00000040) IQC_CTRL0 register</description>
           <addressOffset>0x40</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>FAST_GAIN</name>
@@ -13703,6 +14038,7 @@
           <description>(@ 0x00000044) IQC_CTRL1 register</description>
           <addressOffset>0x44</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>QPD_ATTACK</name>
@@ -13716,6 +14052,7 @@
           <description>(@ 0x00000048) IQC_CTRL2 register</description>
           <addressOffset>0x48</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>QPD_DECAY</name>
@@ -13729,6 +14066,7 @@
           <description>(@ 0x0000004C) IQC_CTRL3 register</description>
           <addressOffset>0x4c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>FAST_TIME</name>
@@ -13742,6 +14080,7 @@
           <description>(@ 0x00000050) AGC_ANA_ENG register</description>
           <addressOffset>0x50</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>FORCE_AGC_GAINS</name>
@@ -13765,6 +14104,7 @@
           <description>(@ 0x00000054) AGC0_CTRL register</description>
           <addressOffset>0x54</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC_HOLD_TIME</name>
@@ -13788,6 +14128,7 @@
           <description>(@ 0x00000058) AGC1_CTRL register</description>
           <addressOffset>0x58</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC_MIN_THR</name>
@@ -13806,6 +14147,7 @@
           <description>(@ 0x0000005C) AGC2_CTRL register</description>
           <addressOffset>0x5c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC_MEAS_TIME</name>
@@ -13839,6 +14181,7 @@
           <description>(@ 0x00000060) AGC3_CTRL register</description>
           <addressOffset>0x60</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC_MIN_ATTEN</name>
@@ -13857,6 +14200,7 @@
           <description>(@ 0x00000064) AGC4_CTRL register</description>
           <addressOffset>0x64</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC_FREEZE_THR</name>
@@ -13870,6 +14214,7 @@
           <description>(@ 0x00000068) AGC_ATTEN0 register</description>
           <addressOffset>0x68</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_0</name>
@@ -13888,6 +14233,7 @@
           <description>(@ 0x0000006C) AGC_ATTEN1 register</description>
           <addressOffset>0x6c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_1</name>
@@ -13906,6 +14252,7 @@
           <description>(@ 0x00000070) AGC_ATTEN2 register</description>
           <addressOffset>0x70</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_2</name>
@@ -13924,6 +14271,7 @@
           <description>(@ 0x00000074) AGC_ATTEN3 register</description>
           <addressOffset>0x74</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_3</name>
@@ -13942,6 +14290,7 @@
           <description>(@ 0x00000078) AGC_ATTEN4 register</description>
           <addressOffset>0x78</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_4</name>
@@ -13960,6 +14309,7 @@
           <description>(@ 0x0000007C) AGC_ATTEN5 register</description>
           <addressOffset>0x7c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_5</name>
@@ -13978,6 +14328,7 @@
           <description>(@ 0x00000080) AGC_ATTEN6 register</description>
           <addressOffset>0x80</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_6</name>
@@ -13996,6 +14347,7 @@
           <description>(@ 0x00000084) AGC_ATTEN7 register</description>
           <addressOffset>0x84</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_7</name>
@@ -14014,6 +14366,7 @@
           <description>(@ 0x00000088) AGC_ATTEN8 register</description>
           <addressOffset>0x88</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_8</name>
@@ -14032,6 +14385,7 @@
           <description>(@ 0x0000008C) AGC_ATTEN9 register</description>
           <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ATTEN_AGCGAIN_9</name>
@@ -14050,6 +14404,7 @@
           <description>(@ 0x00000090) AGC1_ATTEN_TRIM register</description>
           <addressOffset>0x90</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC1_ATTEN_TRIM_IN</name>
@@ -14063,6 +14418,7 @@
           <description>(@ 0x00000094) AGC2_ATTEN_TRIM register</description>
           <addressOffset>0x94</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC2_ATTEN_TRIM_IN</name>
@@ -14076,6 +14432,7 @@
           <description>(@ 0x00000098) AGC3_ATTEN_TRIM register</description>
           <addressOffset>0x98</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC3_ATTEN_TRIM_IN</name>
@@ -14089,6 +14446,7 @@
           <description>(@ 0x0000009C) AGC4_ATTEN_TRIM register</description>
           <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC4_ATTEN_TRIM_IN</name>
@@ -14102,6 +14460,7 @@
           <description>(@ 0x000000A0) AGC_PGA_HWTRIM_OUT register</description>
           <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AGC_HW_PGA_TRIM</name>
@@ -14115,6 +14474,7 @@
           <description>(@ 0x000000A8) PA_REG register</description>
           <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CFG_FILT</name>
@@ -14133,6 +14493,7 @@
           <description>(@ 0x000000AC) PA_HWTRIM_OUT register</description>
           <addressOffset>0xac</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA_HW_DEGEN_TRIM</name>
@@ -14146,6 +14507,7 @@
           <description>(@ 0x000000BC) RSSI_FLT register</description>
           <addressOffset>0xbc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>OOK_PEAK_DECAY</name>
@@ -14169,6 +14531,7 @@
           <description>(@ 0x000000C8) SYNTH2_ANA_ENG register</description>
           <addressOffset>0xc8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RFD_PLL_VCO_ALC_AMP</name>
@@ -14187,6 +14550,7 @@
           <description>(@ 0x000000E8) RXADC_HWDELAYTRIM_OUT register</description>
           <addressOffset>0xe8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RXADC_HW_DELAYTRIM_I</name>
@@ -14205,6 +14569,7 @@
           <description>(@ 0x000000F4) RX_AAF_HWTRIM_OUT register</description>
           <addressOffset>0xf4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>AAF_HW_FCTRIM</name>
@@ -14218,6 +14583,7 @@
           <description>(@ 0x00000100) SINGEN_ANA_ENG register</description>
           <addressOffset>0x100</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RFD_SINGEN_ENA</name>
@@ -14241,6 +14607,7 @@
           <description>(@ 0x00000108) RF_INFO_OUT register</description>
           <addressOffset>0x108</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RFSUBG_ID</name>
@@ -14254,6 +14621,7 @@
           <description>(@ 0x0000010C) RFANA_PLL_IN register</description>
           <addressOffset>0x10c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DIV12_SEL</name>
@@ -14267,6 +14635,7 @@
           <description>(@ 0x00000124) RF_FSM8_TIMEOUT register</description>
           <addressOffset>0x124</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SYNTH_PDWN_TIMER</name>
@@ -14280,6 +14649,7 @@
           <description>(@ 0x00000128) RF_FSM9_TIMEOUT register</description>
           <addressOffset>0x128</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>END_RX_TIMER</name>
@@ -14293,6 +14663,7 @@
           <description>(@ 0x0000012C) RF_FSM10_TIMEOUT register</description>
           <addressOffset>0x12c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>END_TX_TIMER</name>
@@ -14306,6 +14677,7 @@
           <description>(@ 0x00000144) SUBG_DIG_CTRL0 register</description>
           <addressOffset>0x144</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>FORCE_GPIO_OUTPUT</name>
@@ -14319,6 +14691,7 @@
     <peripheral>
       <name>MR_SUBG_GLOB_STATIC</name>
       <description>MR_SUBG Global Static</description>
+      <groupName>MR_SUBG_GLOB_STATIC</groupName>
       <baseAddress>0x49000400</baseAddress>
       <registers>
         <register>
@@ -14326,6 +14699,7 @@
           <description>(@ 0x00000000) PCKT_CONFIG register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CRC_MODE</name>
@@ -14384,6 +14758,7 @@
           <description>(@ 0x00000004) SYNC register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SYNC</name>
@@ -14397,6 +14772,7 @@
           <description>(@ 0x00000008) SEC_SYNC register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SEC_SYNC</name>
@@ -14410,6 +14786,7 @@
           <description>(@ 0x0000000C) CRC_INIT register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CRC_INIT_VAL</name>
@@ -14423,6 +14800,7 @@
           <description>(@ 0x00000010) PCKT_CTRL register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PCKT_FORMAT</name>
@@ -14511,6 +14889,7 @@
           <description>(@ 0x00000014) DATABUFFER0_PTR register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DATABUFFER0_PTR</name>
@@ -14524,6 +14903,7 @@
           <description>(@ 0x00000018) DATABUFFER1_PTR register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DATABUFFER1_PTR</name>
@@ -14537,6 +14917,7 @@
           <description>(@ 0x0000001C) DATABUFFER_SIZE register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DATABUFFER_SIZE</name>
@@ -14550,6 +14931,7 @@
           <description>(@ 0x00000020) PA_LEVEL_3_0 register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA_LEVEL0</name>
@@ -14578,6 +14960,7 @@
           <description>(@ 0x00000024) PA_LEVEL_7_4 register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA_LEVEL4</name>
@@ -14606,6 +14989,7 @@
           <description>(@ 0x00000028) PA_CONFIG register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA_RAMP_STEP_WIDTH</name>
@@ -14654,6 +15038,7 @@
           <description>(@ 0x0000002C) IF_CTRL register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IF_OFFSET_DIG</name>
@@ -14677,6 +15062,7 @@
           <description>(@ 0x00000030) AS_QI_CTRL register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RSSI_THR</name>
@@ -14725,6 +15111,7 @@
           <description>(@ 0x00000034) IQC_CONFIG register</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IQC_CORRECT_IN</name>
@@ -14753,6 +15140,7 @@
           <description>(@ 0x00000038) DSSS_CTRL register</description>
           <addressOffset>0x38</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ACQ_WINDOW</name>
@@ -14786,6 +15174,7 @@
     <peripheral>
       <name>MR_SUBG_GLOB_DYNAMIC</name>
       <description>MR_SUBG Global Dynamic</description>
+      <groupName>MR_SUBG_GLOB_DYNAMIC</groupName>
       <baseAddress>0x49000500</baseAddress>
       <registers>
         <register>
@@ -14793,6 +15182,7 @@
           <description>(@ 0x00000000) PCKTLEN_CONFIG register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PCKTLEN</name>
@@ -14806,6 +15196,7 @@
           <description>(@ 0x00000004) MOD0_CONFIG register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DATARATE_M</name>
@@ -14844,6 +15235,7 @@
           <description>(@ 0x00000008) MOD1_CONFIG register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>FDEV_M</name>
@@ -14872,6 +15264,7 @@
           <description>(@ 0x0000000C) SYNTH_FREQ register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SYNTH_FRAC</name>
@@ -14895,6 +15288,7 @@
           <description>(@ 0x00000010) VCO_CAL_CONFIG register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>VCO_CALAMP_EXT</name>
@@ -14928,6 +15322,7 @@
           <description>(@ 0x00000014) RX_TIMER register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RX_TIMEOUT</name>
@@ -14961,6 +15356,7 @@
           <description>(@ 0x00000018) DATABUFFER_THR register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RX_ALMOST_FULL_THR</name>
@@ -14979,6 +15375,7 @@
           <description>(@ 0x0000001C) RFSEQ_IRQ_ENABLE register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TX_DONE_E</name>
@@ -15107,6 +15504,7 @@
           <description>(@ 0x00000020) ADDITIONAL_CTRL register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CH_NUM</name>
@@ -15140,6 +15538,7 @@
           <description>(@ 0x00000024) FAST_RX_TIMER register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>FAST_RX_TIMEOUT</name>
@@ -15158,6 +15557,7 @@
           <description>(@ 0x00000028) COMMAND register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>COMMAND_ID</name>
@@ -15181,6 +15581,7 @@
     <peripheral>
       <name>MR_SUBG_GLOB_STATUS</name>
       <description>MR_SUBG Global Status</description>
+      <groupName>MR_SUBG_GLOB_STATUS</groupName>
       <baseAddress>0x49000600</baseAddress>
       <registers>
         <register>
@@ -15188,6 +15589,7 @@
           <description>(@ 0x00000000) RFSEQ_IRQ_STATUS register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TX_DONE_F</name>
@@ -15316,6 +15718,7 @@
           <description>(@ 0x00000004) RFSEQ_STATUS_DETAIL register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>DBM_FIFO_ERROR_F</name>
@@ -15359,6 +15762,7 @@
           <description>(@ 0x00000008) RADIO_FSM_INFO register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RADIO_FSM_STATE</name>
@@ -15372,6 +15776,7 @@
           <description>(@ 0x0000000C) RX_INDICATOR register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RSSI_LEVEL_ON_SYNC</name>
@@ -15400,6 +15805,7 @@
           <description>(@ 0x00000010) RX_INFO_REG register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RX_PCKTLEN_OUT</name>
@@ -15413,6 +15819,7 @@
           <description>(@ 0x00000014) RX_CRC_REG register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RX_CRC_OUT</name>
@@ -15426,6 +15833,7 @@
           <description>(@ 0x00000018) QI_INFO register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PQI_INFO</name>
@@ -15454,6 +15862,7 @@
           <description>(@ 0x0000001C) DATABUFFER_INFO register</description>
           <addressOffset>0x1c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CURRENT_DATABUFFER_COUNT</name>
@@ -15477,6 +15886,7 @@
           <description>(@ 0x00000020) TIME_CAPTURE register</description>
           <addressOffset>0x20</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>TIME_CAPTURE</name>
@@ -15490,6 +15900,7 @@
           <description>(@ 0x00000024) IQC_CORRECTION_OUT register</description>
           <addressOffset>0x24</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>IQC_CORRECT_OUT</name>
@@ -15503,6 +15914,7 @@
           <description>(@ 0x00000028) PA_SAFEASK_OUT register</description>
           <addressOffset>0x28</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>PA_CODEMAX</name>
@@ -15516,6 +15928,7 @@
           <description>(@ 0x0000002C) VCO_CALIB_OUT register</description>
           <addressOffset>0x2c</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>VCO_CALFREQ_OUT</name>
@@ -15534,6 +15947,7 @@
           <description>(@ 0x00000030) SEQ_INFO register</description>
           <addressOffset>0x30</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SEQ_FSM_STATE</name>
@@ -15547,6 +15961,7 @@
           <description>(@ 0x00000034) SEQ_EVENT_STATUS register</description>
           <addressOffset>0x34</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SEQ_EVENT_STATUS</name>
@@ -15560,6 +15975,7 @@
     <peripheral>
       <name>MR_SUBG_GLOB_MISC</name>
       <description>MR_SUBG Global Misc</description>
+      <groupName>MR_SUBG_GLOB_MISC</groupName>
       <baseAddress>0x49000700</baseAddress>
       <registers>
         <register>
@@ -15567,6 +15983,7 @@
           <description>(@ 0x00000000) RFIP_VERSION register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>REVISION</name>
@@ -15590,6 +16007,7 @@
           <description>(@ 0x00000004) RRM_UDRA_CTRL register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RRM_CMD_REQ</name>
@@ -15603,6 +16021,7 @@
           <description>(@ 0x00000008) SEQUENCER_CTRL register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>GEN_SEQ_TRIGGER</name>
@@ -15621,6 +16040,7 @@
           <description>(@ 0x0000000C) ABSOLUTE_TIME register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>ABSOLUTE_TIME</name>
@@ -15634,6 +16054,7 @@
           <description>(@ 0x00000010) SCM_COUNTER_VAL register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SCM_COUNTER_CURRVAL</name>
@@ -15647,6 +16068,7 @@
           <description>(@ 0x00000014) SCM_MIN_MAX register</description>
           <addressOffset>0x14</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SCM_COUNTER_MINVAL</name>
@@ -15670,6 +16092,7 @@
           <description>(@ 0x00000018) WAKEUP_IRQ_STATUS register</description>
           <addressOffset>0x18</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CPU_WAKEUP_F</name>
@@ -15688,6 +16111,7 @@
     <peripheral>
       <name>MR_SUBG_GLOB_RETAINED</name>
       <description>MR_SUBG Global Retained</description>
+      <groupName>MR_SUBG_GLOB_RETAINED</groupName>
       <baseAddress>0x49000780</baseAddress>
       <registers>
         <register>
@@ -15695,6 +16119,7 @@
           <description>(@ 0x00000000) RFIP_WAKEUPTIME register</description>
           <addressOffset>0x0</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>RFIP_WAKEUPTIME</name>
@@ -15708,6 +16133,7 @@
           <description>(@ 0x00000004) CPU_WAKEUPTIME register</description>
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CPU_WAKEUPTIME</name>
@@ -15721,6 +16147,7 @@
           <description>(@ 0x00000008) WAKEUP_CTRL register</description>
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SOC_WAKEUP_OFFSET</name>
@@ -15744,6 +16171,7 @@
           <description>(@ 0x0000000C) RRM_CMDLIST_PTR register</description>
           <addressOffset>0xc</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>CMDLIST_PTR_OFFSET</name>
@@ -15762,6 +16190,7 @@
           <description>(@ 0x00000010) SEQ_GLOBALTABLE_PTR register</description>
           <addressOffset>0x10</addressOffset>
           <size>0x20</size>
+          <access>read-write</access>
           <fields>
             <field>
               <name>SEQ_GLOBALTABLE_PTR</name>
