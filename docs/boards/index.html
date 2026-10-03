@@ -2,8 +2,8 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NUCLEO Pinout Explorer</title>
-<meta name="description" content="The connector pinouts of all STM32 NUCLEO boards with their alternate functions: search pins and functions by regular expression and find the boards that are position compatible.">
+<title>Board Pinout Explorer</title>
+<meta name="description" content="The connector pinouts of the STM32 NUCLEO boards and Discovery kits with their alternate functions: search pins and functions by regular expression and find the boards that are position compatible.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -160,7 +160,8 @@
     font: 11px var(--font-mono); padding: 2px 6px; border-radius: 5px; cursor: pointer;
     background: var(--surface); border: 1px solid var(--rule); color: var(--muted);
   }
-  button.chip:hover { background: var(--hover); }
+  button.chip:hover, a.chip:hover { background: var(--hover); }
+  a.chip { text-decoration: none; cursor: pointer; margin-left: auto; }
   .chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
   .chip.on { background: var(--mark); color: var(--ink); border-color: transparent; }
   .chip.static { cursor: default; }
@@ -247,7 +248,7 @@
   }
 </style>
 <header class="top">
-  <h1 class="visually-hidden">NUCLEO Pinout Explorer</h1>
+  <h1 class="visually-hidden">Board Pinout Explorer</h1>
   <div class="links">
     <a href="../variants/">Peripheral Variant Explorer</a>
     <a href="../svd/">SVD Register Explorer</a>
@@ -264,7 +265,7 @@
   <nav class="panel" aria-label="Filter and compatible sets">
     <div class="side-head">
       <input id="filter" type="search" placeholder="pin, function, use or bridge, e.g. ^SPI\d_SCK$|PA5|RMII|^SB13$" aria-label="Filter pins and alternate functions by regular expression" autocomplete="off" spellcheck="false">
-      <input id="board" type="search" placeholder="boards, e.g. F4|L4" aria-label="Filter boards by regular expression" autocomplete="off" spellcheck="false">
+      <input id="board" type="search" placeholder="boards, e.g. F4|L4|DISCO|-DK" aria-label="Filter boards by regular expression" autocomplete="off" spellcheck="false">
       <label id="l-free">Pins</label>
       <div class="modes" id="free" role="group" aria-labelledby="l-free">
         <button type="button" data-free="" aria-pressed="true">all<span>on the headers</span></button>
@@ -302,6 +303,8 @@ const el = (tag, cls, text) => {
   if (text !== undefined) node.textContent = text;
   return node;
 };
+// These connectors count along one row and then along the other, instead of across
+const PAIRED = ["stmod", "pmod", "mikrobus"];
 const short = (board) => board.board.replace("NUCLEO-", "");
 
 function regex(pattern) {
@@ -314,9 +317,12 @@ function regex(pattern) {
 // All connectors of a board with their place on it, which makes them comparable between boards
 function connectors(board) {
   let nano = 0;
+  const counts = {};
   return Object.entries(board.connectors).map(([name, connector]) => {
     const spot = place(connector, () => nano++);
-    const position = spot ? `${connector.type} ${spot.side} ${spot.row}` : name;
+    // STMod+, Pmod and mikroBUS are standards too, but without a common place on the board
+    const index = (counts[connector.type] = (counts[connector.type] || 0) + 1);
+    const position = spot ? `${connector.type} ${spot.side} ${spot.row}` : PAIRED.includes(connector.type) ? `${connector.type} ${index}` : name;
     return {name, connector, spot, position};
   });
 }
@@ -442,8 +448,10 @@ function renderRows(board, name, connector, result, spot = {}) {
       rows.append(...(mirror ? cells.reverse() : cells));
     }
   } else {
-    for (let number = 1; number <= last; number += 2) {
-      rows.append(cell(number, "l"), el("div", "num", String(number)), el("div", "num", String(number + 1)), cell(number + 1, "r"));
+    const half = PAIRED.includes(connector.type) ? Math.ceil(last / 2) : 0;
+    for (let number = 1; number <= (half || last); number += half ? 1 : 2) {
+      const other = number + (half || 1);
+      rows.append(cell(number, "l"), el("div", "num", String(number)), el("div", "num", String(other)), cell(other, "r"));
     }
   }
   return {rows, count: single ? last : Math.ceil(last / 2)};
@@ -544,6 +552,13 @@ function render() {
       chips.append(chip);
     }
     header.append(title, chips);
+    if (current.board.pinout) {
+      // The pinout generator starts with what the board already uses its pins for
+      const link = el("a", "chip", "Pinout generator ↗");
+      link.href = `../pinout/${current.board.pinout}`;
+      link.title = `Configure the ${current.board.device} of the ${current.board.board}`;
+      chips.append(link);
+    }
     section.append(header, renderBoard(current.board, current.result));
     main.append(section);
   });
