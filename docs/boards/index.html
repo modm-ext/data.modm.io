@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NUCLEO Pinout Explorer</title>
+<meta name="description" content="The connector pinouts of all STM32 NUCLEO boards with their alternate functions: search pins and functions by regular expression and find the boards that are position compatible.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground: #F3F5F4;
+    --surface: #FFFFFF;
+    --band: #F8FAF9;
+    --ink: #16201C;
+    --muted: #5B6863;
+    --faint: #85918C;
+    --rule: #DDE3E0;
+    --rule-strong: #C3CCC8;
+    --accent: #1C6B56;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E2EFEA;
+    --hover: #EEF4F1;
+    --mark: #FBE3A0;
+    --mark-line: #C99A1B;
+    --used: #C2570C;
+    --error: #B42318;
+    --kind-s: 55%;
+    --kind-bg-l: 90%;
+    --kind-ink-l: 26%;
+    --nc-ink: #A9B3AF;
+    --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0E1311;
+      --surface: #141A18;
+      --band: #111715;
+      --ink: #E2E8E5;
+      --muted: #9AA8A2;
+      --faint: #6E7B76;
+      --rule: #232D29;
+      --rule-strong: #34403B;
+      --accent: #5FC0A0;
+      --accent-ink: #0B1512;
+      --accent-soft: #16302A;
+      --hover: #19231F;
+      --mark: #6A5616;
+      --mark-line: #D9B13F;
+      --used: #F08A45;
+      --error: #F4A39B;
+      --kind-s: 45%;
+      --kind-bg-l: 20%;
+      --kind-ink-l: 78%;
+      --nc-ink: #4A5853;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0E1311;
+    --surface: #141A18;
+    --band: #111715;
+    --ink: #E2E8E5;
+    --muted: #9AA8A2;
+    --faint: #6E7B76;
+    --rule: #232D29;
+    --rule-strong: #34403B;
+    --accent: #5FC0A0;
+    --accent-ink: #0B1512;
+    --accent-soft: #16302A;
+    --hover: #19231F;
+    --mark: #6A5616;
+    --mark-line: #D9B13F;
+    --used: #F08A45;
+    --error: #F4A39B;
+    --kind-s: 45%;
+    --kind-bg-l: 20%;
+    --kind-ink-l: 78%;
+    --nc-ink: #4A5853;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font: 14px/1.45 var(--font-sans);
+    display: flex; flex-direction: column; gap: 10px;
+    padding-inline: clamp(16px, 3vw, 32px); padding-block: 12px 14px;
+    height: 100dvh;
+  }
+  a { color: inherit; }
+
+  /* Top bar */
+  .top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .links { display: flex; gap: 14px; font-size: 12px; color: var(--muted); }
+  .totals { display: flex; gap: 18px; font-variant-numeric: tabular-nums; }
+  .total { display: grid; gap: 1px; text-align: right; }
+  .total b { font: 600 17px/1.1 var(--font-mono); }
+  .total span { color: var(--faint); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* Shell */
+  .shell {
+    flex: 1; min-height: 0; display: grid; gap: 12px;
+    grid-template-columns: minmax(220px, 270px) minmax(0, 1fr) minmax(230px, 290px);
+  }
+  .panel {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
+    min-height: 0; display: flex; flex-direction: column; overflow: hidden;
+  }
+
+  /* Sidebar */
+  .side-head { padding: 10px; border-bottom: 1px solid var(--rule); display: grid; gap: 8px; }
+  .side-head label { color: var(--faint); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .modes { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; }
+  .modes button {
+    padding: 5px 4px; border: 1px solid var(--rule-strong); border-radius: 7px; cursor: pointer;
+    background: var(--band); color: var(--muted); font: 600 11px var(--font-sans); display: grid; gap: 1px;
+  }
+  .modes button span { font: 400 10px var(--font-mono); color: var(--faint); }
+  .modes button:hover { background: var(--hover); }
+  .modes button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .modes button[aria-pressed="true"] span { color: inherit; }
+  input[type="search"] {
+    width: 100%; padding: 7px 9px; border: 1px solid var(--rule-strong); border-radius: 7px;
+    background: var(--band); color: var(--ink); font: 13px var(--font-mono);
+  }
+  input:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  input.bad { border-color: var(--error); }
+  .side-list { overflow: auto; padding: 6px; }
+  .group-row {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: baseline;
+    width: 100%; text-align: left; padding: 5px 8px; border: 0; border-radius: 6px;
+    background: none; color: inherit; font: 13px var(--font-sans); cursor: pointer;
+  }
+  .group-row:hover { background: var(--hover); }
+  .group-row .count { font: 600 12px var(--font-mono); font-variant-numeric: tabular-nums; min-width: 2ch; text-align: right; }
+  .group-row .name { font: 12px var(--font-mono); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .group-row .inst { color: var(--faint); font: 11px var(--font-mono); font-variant-numeric: tabular-nums; }
+  .empty { padding: 14px; color: var(--faint); font-size: 13px; }
+
+  /* Main */
+  .main-head { padding: 12px 16px; border-bottom: 1px solid var(--rule); background: var(--band); }
+  .main-head h2 { margin: 0; font: 600 17px var(--font-mono); }
+  .main-head p { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+  .groups { overflow: auto; padding: 12px 16px 16px; display: grid; gap: 12px; align-content: start; }
+  .group { border: 1px solid var(--rule); border-radius: 9px; background: var(--band); scroll-margin-top: 8px; }
+  .group > header { padding: 9px 12px; display: grid; gap: 6px; }
+  .group > header h3 { margin: 0; font: 600 13px var(--font-sans); display: flex; gap: 8px; align-items: baseline; }
+  .group > header h3 em { font-style: normal; color: var(--faint); font-weight: 400; font-size: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip {
+    font: 11px var(--font-mono); padding: 2px 6px; border-radius: 5px; cursor: pointer;
+    background: var(--surface); border: 1px solid var(--rule); color: var(--muted);
+  }
+  button.chip:hover { background: var(--hover); }
+  .chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .chip.on { background: var(--mark); color: var(--ink); border-color: transparent; }
+  .chip.static { cursor: default; }
+  .board { display: flex; flex-wrap: wrap; gap: 10px 22px; padding: 2px 12px 12px; align-items: start; overflow-x: auto; }
+
+  /* Physical layout: the ARDUINO and Zio headers sit between the morpho headers */
+  .phys { flex: none; display: grid; grid-template-columns: repeat(4, max-content); grid-auto-rows: 18px; column-gap: 10px; justify-content: start; }
+  .phys > b { grid-row: 1; font: 600 11px var(--font-mono); color: var(--muted); }
+  .phys > b span, .slot > i span { font-weight: 400; color: var(--faint); }
+  .slot { display: flex; gap: 4px; }
+  .slot > i {
+    writing-mode: vertical-rl; font: 600 10px/1 var(--font-mono); font-style: normal; color: var(--muted);
+    text-align: center; white-space: nowrap; overflow: hidden;
+  }
+
+  /* Connectors */
+  .conn { display: grid; gap: 3px; }
+  .conn > b { font: 600 11px var(--font-mono); color: var(--muted); }
+  .conn > b span { font-weight: 400; color: var(--faint); }
+  .rows { display: grid; gap: 1px; grid-template-columns: minmax(84px, auto) 20px 20px minmax(84px, auto); align-content: start; }
+  .rows.single { grid-template-columns: 20px minmax(84px, auto); }
+  .rows.single.mirror { grid-template-columns: minmax(84px, auto) 20px; }
+  .pin, .num { font: 11px/16px var(--font-mono); height: 17px; white-space: nowrap; padding: 0 5px; border-radius: 3px; }
+  .num { color: var(--faint); text-align: center; padding: 0; font-variant-numeric: tabular-nums; }
+  .pin {
+    border: 1px solid transparent; cursor: default; overflow: hidden; text-overflow: ellipsis; max-width: 230px;
+    background: var(--surface); border-color: var(--rule);
+  }
+  .pin.l { text-align: right; }
+  .pin small { font-size: 10px; color: var(--muted); }
+  .pin.power, .pin.ground, .pin.system {
+    background: hsl(var(--h) var(--kind-s) var(--kind-bg-l)); color: hsl(var(--h) var(--kind-s) var(--kind-ink-l));
+    border-color: transparent;
+  }
+  .pin.power { --h: 8; }
+  .pin.ground { --h: 215; }
+  .pin.system { --h: 275; }
+  .pin.nc { background: none; border-color: transparent; color: var(--nc-ink); }
+  .filtered .pin:not(.hit) { opacity: 0.38; }
+  .pin.hit { background: var(--mark); border-color: var(--mark-line); color: var(--ink); font-weight: 600; }
+  .pin.hit small { color: inherit; font-weight: 400; }
+  .inspect .bridge { display: grid; gap: 2px; font-size: 12px; }
+  .inspect .bridge > b { font: 600 12px var(--font-mono); }
+  .inspect .bridge > b span { font-weight: 400; color: var(--muted); }
+  .inspect .bridge p { display: grid; grid-template-columns: auto 1fr; gap: 0 8px; color: var(--muted); }
+  .inspect .bridge p code { font: 11px var(--font-mono); color: var(--faint); }
+  .inspect .bridge p.default { color: var(--ink); }
+  .inspect .bridge p.default code { color: var(--ink); font-weight: 600; }
+  /* Pins that the board itself already uses */
+  .pin.used.r { box-shadow: inset 3px 0 0 var(--used); }
+  .pin.used.l { box-shadow: inset -3px 0 0 var(--used); }
+  .pin.used small { color: var(--used); }
+  /* A solder bridge may free a used pin or change what a pin is connected to */
+  .pin.sb:not(.hit) { border-style: dashed; border-color: var(--muted); }
+  .pin.sb { position: relative; }
+  .pin.sb::after {
+    content: ""; position: absolute; top: 0; right: 0; border: 3px solid;
+    border-color: var(--muted) var(--muted) transparent transparent;
+  }
+  .pin.sb.l::after { right: auto; left: 0; border-color: var(--muted) transparent transparent var(--muted); }
+  .free .pin.used:not(.sb), .free-free .pin.used { opacity: 0.38; }
+  .pin.same { outline: 2px dashed var(--accent); outline-offset: -1px; opacity: 1 !important; }
+  .pin:hover, .pin.sel { outline: 2px solid var(--accent); outline-offset: -1px; opacity: 1 !important; }
+
+  /* Inspector */
+  .inspect { padding: 10px 12px; display: grid; gap: 8px; align-content: start; overflow: auto; }
+  .inspect h3 { margin: 0; font: 600 14px var(--font-mono); overflow-wrap: anywhere; }
+  .inspect .sub { color: var(--muted); font: 12px var(--font-mono); }
+  .inspect p { margin: 0; font-size: 12px; color: var(--muted); }
+  .inspect dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; font-size: 12px; }
+  .inspect dt { color: var(--faint); }
+  .inspect dd { margin: 0; font-family: var(--font-mono); overflow-wrap: anywhere; }
+  .inspect hr { border: 0; border-top: 1px solid var(--rule); margin: 2px 0; width: 100%; }
+  .inspect .chip { cursor: default; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px; }
+  .legend .pin { cursor: default; }
+
+  @media (max-width: 1100px) {
+    body { height: auto; }
+    .shell { grid-template-columns: 1fr; }
+    .side-list { max-height: 30vh; }
+    .groups { overflow: visible; }
+    .inspect { position: sticky; bottom: 0; max-height: 40vh; }
+  }
+</style>
+<header class="top">
+  <h1 class="visually-hidden">NUCLEO Pinout Explorer</h1>
+  <div class="links">
+    <a href="../variants/">Peripheral Variant Explorer</a>
+    <a href="../svd/">SVD Register Explorer</a>
+    <a href="https://github.com/modm-io/modm-data">modm-data</a>
+  </div>
+  <div class="totals">
+    <div class="total"><b id="t-boards">–</b><span>boards</span></div>
+    <div class="total"><b id="t-groups">–</b><span>compatible sets</span></div>
+    <div class="total"><b id="t-pins">–</b><span>matching pins</span></div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="panel" aria-label="Filter and compatible sets">
+    <div class="side-head">
+      <input id="filter" type="search" placeholder="pin, function, use or bridge, e.g. ^SPI\d_SCK$|PA5|RMII|^SB13$" aria-label="Filter pins and alternate functions by regular expression" autocomplete="off" spellcheck="false">
+      <input id="board" type="search" placeholder="boards, e.g. F4|L4" aria-label="Filter boards by regular expression" autocomplete="off" spellcheck="false">
+      <label id="l-free">Pins</label>
+      <div class="modes" id="free" role="group" aria-labelledby="l-free">
+        <button type="button" data-free="" aria-pressed="true">all<span>on the headers</span></button>
+        <button type="button" data-free="bridge" aria-pressed="false">freeable<span>free or bridge</span></button>
+        <button type="button" data-free="free" aria-pressed="false">free<span>not used</span></button>
+      </div>
+      <label id="l-compat">Compatible if matching pins have the same</label>
+      <div class="modes" id="compat" role="group" aria-labelledby="l-compat">
+        <button type="button" data-compat="name" aria-pressed="true">name<span>and position</span></button>
+        <button type="button" data-compat="function" aria-pressed="false">function<span>any instance</span></button>
+        <button type="button" data-compat="position" aria-pressed="false">position<span>only</span></button>
+      </div>
+    </div>
+    <div class="side-list" id="list"></div>
+  </nav>
+
+  <main class="panel">
+    <div class="main-head">
+      <h2 id="m-title">Loading…</h2>
+      <p id="m-sub"></p>
+    </div>
+    <div class="groups" id="groups"></div>
+  </main>
+
+  <aside class="panel inspect" id="inspect" aria-live="polite"></aside>
+</div>
+<script>
+"use strict";
+
+const state = {boards: [], filter: "", board: "", compat: "name", free: "", shown: new Map(), pinned: null};
+const $ = (id) => document.getElementById(id);
+const el = (tag, cls, text) => {
+  const node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (text !== undefined) node.textContent = text;
+  return node;
+};
+const short = (board) => board.board.replace("NUCLEO-", "");
+
+function regex(pattern) {
+  if (!pattern) return null;
+  try { return new RegExp(pattern, "i"); } catch { return undefined; }
+}
+
+/* -------------------------------------------------------------- matching */
+
+// All connectors of a board with their place on it, which makes them comparable between boards
+function connectors(board) {
+  let nano = 0;
+  return Object.entries(board.connectors).map(([name, connector]) => {
+    const spot = place(connector, () => nano++);
+    const position = spot ? `${connector.type} ${spot.side} ${spot.row}` : name;
+    return {name, connector, spot, position};
+  });
+}
+
+// What the board itself connects to the pin: ST-LINK, Ethernet PHY, crystal, LED, button, ...
+const used = (board, pin) => (pin.kind === "gpio" ? (board.uses || {})[pin.signal] : undefined);
+
+// The solder bridges and jumpers whose description mentions the pin
+const bridges = (board, pin) => (pin.kind === "gpio" ? (board.bridges || []).filter((b) => b.gpios.includes(pin.signal)) : []);
+
+// The bridges of a group that belong to this pin, if the manual tells them apart
+const own = (bridge, pin) => {
+  const ids = bridge.ids.filter((id) => (bridge.pins[id] || []).includes(pin.signal));
+  return ids.length ? ids : bridge.ids;
+};
+
+// A used pin still counts as available if a solder bridge may free it
+const taken = (board, pin) => state.free && used(board, pin) && (state.free === "free" || !bridges(board, pin).length);
+
+// The names of a pin that the filter matches: its signal, connector label, net and device functions
+function hits(board, pin, pattern) {
+  const use = used(board, pin) || {};
+  const names = [pin.signal, ...(pin.label || "").split(" / "), pin.net, use.label, use.signal, use.use,
+    ...bridges(board, pin).flatMap((b) => own(b, pin))].filter(Boolean);
+  const functions = pin.kind === "gpio" ? Object.keys(board.signals[pin.signal] || {}) : [];
+  return {
+    names: [...new Set(names)].filter((name) => pattern.test(name)),
+    functions: functions.filter((name) => pattern.test(name)),
+  };
+}
+
+// USART2_TX and USART1_TX are the same function on a different instance
+const generic = (name) => name.replace(/^([A-Z]+)\d+_/, "$1_");
+
+// Boards with the same key are position compatible
+function analyze(board, pattern) {
+  const key = [];
+  let count = 0;
+  const marks = new Map();
+  for (const {name, connector, position} of connectors(board)) {
+    for (const [number, pin] of Object.entries(connector.pins)) {
+      const occupied = taken(board, pin);
+      if (!pattern) {
+        key.push(`${position}.${number}=${occupied ? "used" : pin.signal}`);
+        continue;
+      }
+      if (occupied) continue;
+      const hit = hits(board, pin, pattern);
+      if (!hit.names.length && !hit.functions.length) continue;
+      count += 1;
+      marks.set(`${name}.${number}`, hit);
+      const what = {
+        name: [...hit.names.filter((n) => n === pin.signal), ...hit.functions].join("+") || pin.signal,
+        function: [...new Set(hit.functions.map(generic))].join("+") || pin.kind,
+        position: "",
+      }[state.compat];
+      key.push(`${position}.${number}=${what}`);
+    }
+  }
+  return {key: key.join("|"), count, marks};
+}
+
+/* ------------------------------------------------------------- rendering */
+
+function renderPin(board, name, number, pin, hit, side) {
+  const node = el("div", `pin ${pin.kind} ${side}`, pin.signal);
+  const use = used(board, pin);
+  if (use) node.classList.add("used");
+  const links = bridges(board, pin);
+  if (links.length) {
+    node.classList.add("sb");
+    node.dataset.bridges = links.flatMap((b) => b.ids).join(" ");
+  }
+  // The pin name stays next to the pin number, everything else goes on the outer side
+  const outside = (text) => (side === "l" ? node.prepend(el("small", "", text), " ") : node.append(" ", el("small", "", text)));
+  if (hit) {
+    node.classList.add("hit");
+    const extra = [...hit.names.filter((n) => n !== pin.signal), ...hit.functions];
+    if (extra.length) outside(extra.join(" "));
+  } else if (use) {
+    outside(use.label || use.signal);
+  }
+  node.dataset.pin = `${state.boards.indexOf(board)}|${name}|${number}`;
+  if (pin.kind === "gpio") node.dataset.signal = pin.signal;
+  node.title = `${name}-${number}`;
+  return node;
+}
+
+// The rows that the ARDUINO and Zio headers occupy next to the morpho headers. All boards use the
+// ARDUINO Uno footprint, where the right headers count from the bottom. Zio extends it downwards.
+function place(connector, nano) {
+  const count = Math.max(...Object.keys(connector.pins).map(Number));
+  const gpio = Object.values(connector.pins).some((pin) => pin.kind === "gpio");
+  if (connector.type === "arduino") {
+    if (count === 8 && !gpio) return {side: "left", row: 4};
+    if (count === 6) return {side: "left", row: 13};
+    if (count === 9 || count === 10) return {side: "right", row: 1, reverse: true, count: 10};
+    if (count === 8) return {side: "right", row: 11, reverse: true};
+    // The two ARDUINO Nano headers of the Nucleo-32 boards both count from the top
+    if (count === 15) return {side: nano() ? "right" : "left", row: 0};
+  }
+  if (connector.type === "zio") {
+    return {16: {side: "left", row: 4}, 30: {side: "left", row: 13}, 20: {side: "right", row: 1}, 34: {side: "right", row: 11}}[count];
+  }
+  return connector.side ? {side: connector.side, row: 0, morpho: true} : undefined;
+}
+
+function renderRows(board, name, connector, result, spot = {}) {
+  // ARDUINO Uno and Nano headers are a single row, morpho and Zio have an odd and an even row
+  const single = connector.type === "arduino";
+  const mirror = single && spot.side === "right";
+  const rows = el("div", `rows${single ? " single" : ""}${mirror ? " mirror" : ""}`);
+  const last = spot.count || Math.max(...Object.keys(connector.pins).map(Number));
+  const cell = (number, side) => {
+    const pin = connector.pins[number];
+    const mark = result.marks.get(`${name}.${number}`);
+    return pin ? renderPin(board, name, number, pin, mark, side) : el("div", "pin nc " + side, "?");
+  };
+  if (single) {
+    for (let index = 1; index <= last; index++) {
+      const number = spot.reverse ? last + 1 - index : index;
+      const cells = [el("div", "num", String(number)), cell(number, mirror ? "l" : "r")];
+      rows.append(...(mirror ? cells.reverse() : cells));
+    }
+  } else {
+    for (let number = 1; number <= last; number += 2) {
+      rows.append(cell(number, "l"), el("div", "num", String(number)), el("div", "num", String(number + 1)), cell(number + 1, "r"));
+    }
+  }
+  return {rows, count: single ? last : Math.ceil(last / 2)};
+}
+
+function renderBoard(board, result) {
+  const wrap = el("div", "board");
+  const phys = el("div", "phys");
+  const label = (tag, name, connector) => {
+    const node = el(tag, "", name);
+    node.append(" ", el("span", "", [connector.type, connector.side].filter(Boolean).join(" ")));
+    return node;
+  };
+  for (const {name, connector, spot} of connectors(board)) {
+    const {rows, count} = renderRows(board, name, connector, result, spot);
+    if (!spot) {
+      const block = el("div", "conn");
+      block.append(label("b", name, connector), rows);
+      wrap.append(block);
+      continue;
+    }
+    // Columns: left morpho, left inner, right inner, right morpho
+    const column = spot.morpho ? (spot.side === "left" ? 1 : 4) : spot.side === "left" ? 2 : 3;
+    const node = spot.morpho ? rows : el("div", "slot");
+    if (spot.morpho) {
+      const title = label("b", name, connector);
+      title.style.gridColumn = column;
+      phys.append(title);
+    } else {
+      const tag = label("i", name, connector);
+      node.append(...(spot.side === "left" ? [rows, tag] : [tag, rows]));
+    }
+    node.style.gridColumn = column;
+    node.style.gridRow = `${spot.row + 2} / span ${count}`;
+    phys.append(node);
+  }
+  if (phys.children.length) wrap.prepend(phys);
+  return wrap;
+}
+
+function render() {
+  const pattern = regex(state.filter);
+  const boardPattern = regex(state.board);
+  $("filter").classList.toggle("bad", pattern === undefined);
+  $("board").classList.toggle("bad", boardPattern === undefined);
+  if (pattern === undefined || boardPattern === undefined) return;
+
+  const groups = new Map();
+  const without = [];
+  let pins = 0;
+  for (const board of state.boards) {
+    if (boardPattern && !boardPattern.test(board.board) && !boardPattern.test(board.device || "")) continue;
+    const result = analyze(board, pattern);
+    if (pattern && !result.count) { without.push(board); continue; }
+    pins += result.count;
+    if (!groups.has(result.key)) groups.set(result.key, []);
+    groups.get(result.key).push({board, result});
+  }
+  const sorted = [...groups.values()].sort((a, b) => b.length - a.length || a[0].board.board.localeCompare(b[0].board.board));
+  const total = sorted.reduce((sum, group) => sum + group.length, 0);
+
+  $("t-boards").textContent = String(total);
+  $("t-groups").textContent = String(sorted.length);
+  $("t-pins").textContent = pattern ? String(pins) : "–";
+  $("m-title").textContent = pattern ? `/${state.filter}/i` : "All pins";
+  $("m-sub").textContent = pattern
+    ? `${total} boards have matching pins, in ${sorted.length} position compatible sets.`
+    : `${total} boards in ${sorted.length} sets with identical connectors.`;
+
+  const list = $("list");
+  const main = $("groups");
+  list.textContent = "";
+  main.textContent = "";
+  sorted.forEach((group, index) => {
+    const names = group.map(({board}) => short(board));
+    const row = el("button", "group-row");
+    row.type = "button";
+    row.append(el("span", "count", String(group.length)), el("span", "name", names.join(" ")));
+    if (pattern) row.append(el("span", "inst", `${group[0].result.count} pins`));
+    row.title = names.join(", ");
+    row.addEventListener("click", () => $(`g${index}`).scrollIntoView({behavior: "smooth", block: "start"}));
+    list.append(row);
+
+    const section = el("section", `group${pattern ? " filtered" : ""}${state.free ? ` free free-${state.free}` : ""}`);
+    section.id = `g${index}`;
+    const header = el("header");
+    const title = el("h3", "", group.length === 1 ? "1 board" : `${group.length} compatible boards`);
+    if (pattern) title.append(el("em", "", `${group[0].result.count} matching pins`));
+    const chips = el("div", "chips");
+    // One board stands for the whole set, the chips switch between them
+    const current = group.find(({board}) => board.board === state.shown.get(group[0].board.board)) || group[0];
+    for (const entry of group) {
+      const chip = el("button", "chip", short(entry.board));
+      chip.type = "button";
+      chip.title = `${entry.board.device || "unknown device"}, ${entry.board.document}`;
+      chip.setAttribute("aria-pressed", String(entry === current));
+      chip.addEventListener("click", () => { state.shown.set(group[0].board.board, entry.board.board); render(); });
+      chips.append(chip);
+    }
+    header.append(title, chips);
+    section.append(header, renderBoard(current.board, current.result));
+    main.append(section);
+  });
+
+  const rest = (boards, text) => {
+    if (!boards.length) return;
+    const section = el("section", "group");
+    const header = el("header");
+    header.append(el("h3", "", `${boards.length} boards ${text}`));
+    const chips = el("div", "chips");
+    for (const board of boards) chips.append(el("span", "chip static", short(board)));
+    header.append(chips);
+    section.append(header);
+    main.append(section);
+  };
+  if (!sorted.length) main.append(el("p", "empty", "No pin matches."));
+  rest(without, "without a matching pin");
+
+  const hash = new URLSearchParams();
+  if (state.filter) hash.set("q", state.filter);
+  if (state.board) hash.set("b", state.board);
+  hash.set("m", state.compat);
+  if (state.free) hash.set("f", state.free);
+  history.replaceState(null, "", "#" + hash);
+}
+
+/* ------------------------------------------------------------- inspector */
+
+function inspect(id) {
+  const panel = $("inspect");
+  panel.textContent = "";
+  if (!id) {
+    panel.append(el("h3", "", "Pin details"), el("p", "", "Hover a pin to see its alternate functions, click to keep it."));
+    const legend = el("div", "legend");
+    for (const kind of ["gpio", "power", "ground", "system", "nc"]) legend.append(el("span", `pin ${kind}`, kind));
+    legend.append(el("span", "pin used r", "used on board"), el("span", "pin used sb r", "used, has bridge"), el("span", "pin sb r", "has bridge"), el("span", "pin hit", "match"));
+    panel.append(legend);
+    return;
+  }
+  const [index, name, number] = id.split("|");
+  const board = state.boards[Number(index)];
+  const pin = board.connectors[name].pins[number];
+  const pattern = regex(state.filter);
+  panel.append(el("h3", "", `${pin.signal}`), el("div", "sub", `${board.board} ${name}-${number}`));
+  const list = el("dl");
+  const add = (term, value) => { if (value) list.append(el("dt", "", term), el("dd", "", value)); };
+  const use = used(board, pin);
+  add("kind", pin.kind);
+  if (use) {
+    add("used for", [use.use, use.label].filter(Boolean).join(": "));
+    add("used as", use.signal);
+    add("wired to", use.part);
+  }
+  add("label", pin.label);
+  add("net", pin.net);
+  add("function", pin.function);
+  add("bridge", pin.bridge);
+  add("remark", pin.remark);
+  add("manual", pin.pin);
+  add("device", board.device);
+  add("source", board.document);
+  panel.append(list);
+  for (const bridge of bridges(board, pin)) {
+    panel.append(el("hr"));
+    const block = el("div", "bridge");
+    const ids = own(bridge, pin);
+    const title = el("b", "", ids.join(", "));
+    const group = ids.length < bridge.ids.length ? `with ${bridge.ids.filter((id) => !ids.includes(id)).join(", ")}` : "";
+    title.append(" ", el("span", "", [bridge.name, group].filter(Boolean).join(" · ")));
+    title.title = bridge.source || "";
+    block.append(title);
+    for (const option of bridge.states) {
+      const line = el("p", option.default ? "default" : "");
+      line.append(el("code", "", option.state + (option.default ? (bridge.default_from ? ` default in ${bridge.default_from}` : " default") : "")), el("span", "", option.text));
+      block.append(line);
+    }
+    panel.append(block);
+  }
+  const functions = Object.entries(board.signals[pin.signal] || {});
+  if (functions.length) {
+    panel.append(el("hr"));
+    const chips = el("div", "chips");
+    for (const [signal, af] of functions) {
+      const chip = el("span", "chip", af === null ? signal : `AF${af} ${signal}`);
+      if (pattern && pattern.test(signal)) chip.classList.add("on");
+      chips.append(chip);
+    }
+    panel.append(chips);
+  } else if (pin.kind === "gpio") {
+    panel.append(el("p", "", "No alternate function data for this device."));
+  }
+}
+
+/* ----------------------------------------------------------------- start */
+
+function toggle(container, attribute, apply) {
+  container.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (!button) return;
+    apply(button.dataset[attribute]);
+    for (const other of container.querySelectorAll("button")) {
+      other.setAttribute("aria-pressed", String(other === button));
+    }
+    render();
+  });
+}
+
+async function start() {
+  try {
+    const response = await fetch("nucleo.json");
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+    state.boards = (await response.json()).boards;
+  } catch (error) {
+    $("m-title").textContent = "Could not load nucleo.json";
+    $("m-sub").textContent = `${error.message}. Serve this folder over HTTP, the JSON file sits next to this page.`;
+    return;
+  }
+
+  const hash = new URLSearchParams(location.hash.slice(1));
+  state.filter = hash.get("q") || "";
+  state.board = hash.get("b") || "";
+  if (["name", "function", "position"].includes(hash.get("m"))) state.compat = hash.get("m");
+  state.free = ["bridge", "free"].includes(hash.get("f")) ? hash.get("f") : "";
+  for (const button of $("free").querySelectorAll("button")) button.setAttribute("aria-pressed", String(button.dataset.free === state.free));
+  $("filter").value = state.filter;
+  $("board").value = state.board;
+  for (const button of $("compat").querySelectorAll("button")) button.setAttribute("aria-pressed", String(button.dataset.compat === state.compat));
+
+  let timer;
+  const later = (key) => (event) => {
+    state[key] = event.target.value.trim();
+    clearTimeout(timer);
+    timer = setTimeout(render, 150);
+  };
+  $("filter").addEventListener("input", later("filter"));
+  $("board").addEventListener("input", later("board"));
+  toggle($("compat"), "compat", (compat) => { state.compat = compat; });
+  toggle($("free"), "free", (free) => { state.free = free; });
+
+  const groups = $("groups");
+  groups.addEventListener("mouseover", (event) => {
+    const pin = event.target.closest("[data-pin]");
+    // The same GPIO is often routed to several headers
+    for (const old of groups.querySelectorAll(".pin.same")) old.classList.remove("same");
+    if (pin && pin.dataset.signal) {
+      for (const twin of pin.closest(".board").querySelectorAll(`[data-signal="${pin.dataset.signal}"]`)) {
+        if (twin !== pin) twin.classList.add("same");
+      }
+    }
+    // A solder bridge often changes several pins at once
+    for (const id of pin && pin.dataset.bridges ? pin.dataset.bridges.split(" ") : []) {
+      for (const twin of pin.closest(".board").querySelectorAll(`[data-bridges~="${id}"]`)) {
+        if (twin !== pin) twin.classList.add("same");
+      }
+    }
+    if (pin && !state.pinned) inspect(pin.dataset.pin);
+  });
+  groups.addEventListener("click", (event) => {
+    const pin = event.target.closest("[data-pin]");
+    for (const old of groups.querySelectorAll(".pin.sel")) old.classList.remove("sel");
+    state.pinned = pin && pin.dataset.pin !== state.pinned ? pin.dataset.pin : null;
+    if (state.pinned) pin.classList.add("sel");
+    inspect(state.pinned || (pin && pin.dataset.pin));
+  });
+
+  inspect(null);
+  render();
+}
+
+start();
+</script>

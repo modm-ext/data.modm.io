@@ -25014,7 +25014,19 @@
               <name>CCR5</name>
               <description>Capture/Compare 5 Value</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>31</bitWidth>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>GC5C1</name>
+              <description>Group Channel 5 and Channel 1</description>
+              <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>GC5C2</name>
+              <description>Group Channel 5 and Channel 2</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>GC5C3</name>

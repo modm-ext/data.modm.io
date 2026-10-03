@@ -4092,9 +4092,9 @@
 "shapes": 145,
 "variants": [
 {
-"instances": 1823,
+"instances": 1841,
 "devices": 207,
-"members": 86,
+"members": 87,
 "registers": 23,
 "core": 21,
 "features": 63
@@ -4116,12 +4116,12 @@
 "features": 14
 },
 {
-"instances": 21,
-"devices": 15,
-"members": 2,
+"instances": 3,
+"devices": 3,
+"members": 1,
 "registers": 23,
-"core": 183,
-"features": 1
+"core": 189,
+"features": 0
 }
 ]
 },
@@ -7811,9 +7811,9 @@
 "shapes": 145,
 "variants": [
 {
-"instances": 2772,
+"instances": 2790,
 "devices": 273,
-"members": 130,
+"members": 131,
 "registers": 27,
 "core": 21,
 "features": 72
@@ -7827,12 +7827,12 @@
 "features": 14
 },
 {
-"instances": 21,
-"devices": 15,
-"members": 2,
+"instances": 3,
+"devices": 3,
+"members": 1,
 "registers": 25,
-"core": 189,
-"features": 1
+"core": 195,
+"features": 0
 },
 {
 "instances": 2,
