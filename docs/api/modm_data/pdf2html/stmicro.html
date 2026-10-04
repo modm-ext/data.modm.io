@@ -227,10 +227,11 @@ of pypdfium.</p>
 
             </div>
             <div><dt>pypdfium2._helpers.document.PdfDocument</dt>
-                                <dd id="Document.formenv" class="variable">formenv</dd>
-                <dd id="Document.parent" class="variable">parent</dd>
+                                <dd id="Document.parent" class="variable">parent</dd>
                 <dd id="Document.new" class="function">new</dd>
+                <dd id="Document.formenv" class="variable">formenv</dd>
                 <dd id="Document.init_forms" class="function">init_forms</dd>
+                <dd id="Document.close_forms" class="function">close_forms</dd>
                 <dd id="Document.get_formtype" class="function">get_formtype</dd>
                 <dd id="Document.get_pagemode" class="function">get_pagemode</dd>
                 <dd id="Document.is_tagged" class="function">is_tagged</dd>
@@ -252,7 +253,6 @@ of pypdfium.</p>
                 <dd id="Document.get_page_label" class="function">get_page_label</dd>
                 <dd id="Document.page_as_xobject" class="function">page_as_xobject</dd>
                 <dd id="Document.get_toc" class="function">get_toc</dd>
-                <dd id="Document.render" class="function">render</dd>
 
             </div>
             <div><dt>pypdfium2.internal.bases.AutoCloseable</dt>
@@ -1379,7 +1379,10 @@ as well as allow searching for characters in an area instead of just text.</p>
 
             </div>
             <div><dt>pypdfium2._helpers.page.PdfPage</dt>
-                                <dd id="Page.parent" class="variable">parent</dd>
+                                <dd id="Page.raw" class="variable">raw</dd>
+                <dd id="Page.pdf" class="variable">pdf</dd>
+                <dd id="Page.formenv" class="variable">formenv</dd>
+                <dd id="Page.parent" class="variable">parent</dd>
                 <dd id="Page.get_width" class="function">get_width</dd>
                 <dd id="Page.get_height" class="function">get_height</dd>
                 <dd id="Page.get_size" class="function">get_size</dd>
@@ -1401,6 +1404,7 @@ as well as allow searching for characters in an area instead of just text.</p>
                 <dd id="Page.remove_obj" class="function">remove_obj</dd>
                 <dd id="Page.gen_content" class="function">gen_content</dd>
                 <dd id="Page.get_objects" class="function">get_objects</dd>
+                <dd id="Page.flatten" class="function">flatten</dd>
                 <dd id="Page.render" class="function">render</dd>
 
             </div>
