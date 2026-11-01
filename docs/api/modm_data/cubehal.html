@@ -58,6 +58,9 @@
                     <a class="function" href="#read_bdma_request_map">read_bdma_request_map</a>
             </li>
             <li>
+                    <a class="function" href="#read_dma3_request_map">read_dma3_request_map</a>
+            </li>
+            <li>
                     <a class="function" href="#read_header">read_header</a>
             </li>
             <li>
@@ -165,20 +168,21 @@
 </span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="sd">- Determine the map of register bit field values to names.</span>
 </span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.dmamux_requests</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_request_map</span><span class="p">,</span> <span class="n">read_bdma_request_map</span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.dmamux_requests</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_request_map</span><span class="p">,</span> <span class="n">read_bdma_request_map</span><span class="p">,</span> <span class="n">read_dma3_request_map</span>
 </span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.header</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_header</span>
 </span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.registers</span><span class="w"> </span><span class="kn">import</span> <span class="n">RegisterAccess</span><span class="p">,</span> <span class="n">LLFunction</span><span class="p">,</span> <span class="n">register_accesses</span><span class="p">,</span> <span class="n">ll_functions</span><span class="p">,</span> <span class="n">ll_descriptions</span>
 </span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>
 </span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 </span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a>    <span class="s2">&quot;read_request_map&quot;</span><span class="p">,</span>
 </span><span id="L-19"><a href="#L-19"><span class="linenos">19</span></a>    <span class="s2">&quot;read_bdma_request_map&quot;</span><span class="p">,</span>
-</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>    <span class="s2">&quot;read_header&quot;</span><span class="p">,</span>
-</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="s2">&quot;RegisterAccess&quot;</span><span class="p">,</span>
-</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="s2">&quot;LLFunction&quot;</span><span class="p">,</span>
-</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="s2">&quot;register_accesses&quot;</span><span class="p">,</span>
-</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>    <span class="s2">&quot;ll_functions&quot;</span><span class="p">,</span>
-</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>    <span class="s2">&quot;ll_descriptions&quot;</span><span class="p">,</span>
-</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a><span class="p">]</span>
+</span><span id="L-20"><a href="#L-20"><span class="linenos">20</span></a>    <span class="s2">&quot;read_dma3_request_map&quot;</span><span class="p">,</span>
+</span><span id="L-21"><a href="#L-21"><span class="linenos">21</span></a>    <span class="s2">&quot;read_header&quot;</span><span class="p">,</span>
+</span><span id="L-22"><a href="#L-22"><span class="linenos">22</span></a>    <span class="s2">&quot;RegisterAccess&quot;</span><span class="p">,</span>
+</span><span id="L-23"><a href="#L-23"><span class="linenos">23</span></a>    <span class="s2">&quot;LLFunction&quot;</span><span class="p">,</span>
+</span><span id="L-24"><a href="#L-24"><span class="linenos">24</span></a>    <span class="s2">&quot;register_accesses&quot;</span><span class="p">,</span>
+</span><span id="L-25"><a href="#L-25"><span class="linenos">25</span></a>    <span class="s2">&quot;ll_functions&quot;</span><span class="p">,</span>
+</span><span id="L-26"><a href="#L-26"><span class="linenos">26</span></a>    <span class="s2">&quot;ll_descriptions&quot;</span><span class="p">,</span>
+</span><span id="L-27"><a href="#L-27"><span class="linenos">27</span></a><span class="p">]</span>
 </span></pre></div>
 
 
@@ -254,6 +258,62 @@
 
 
     
+
+                </section>
+                <section id="read_dma3_request_map">
+                            <input id="read_dma3_request_map-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">read_dma3_request_map</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="n">did</span><span class="p">:</span> <span class="n"><a href="kg.html#DeviceIdentifier">modm_data.kg.DeviceIdentifier</a></span>,</span><span class="param">	<span class="n">controller</span><span class="p">:</span> <span class="nb">str</span></span><span class="return-annotation">) -> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>:</span></span>
+
+                <label class="view-source-button" for="read_dma3_request_map-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#read_dma3_request_map"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="read_dma3_request_map-46"><a href="#read_dma3_request_map-46"><span class="linenos">46</span></a><span class="k">def</span><span class="w"> </span><span class="nf">read_dma3_request_map</span><span class="p">(</span><span class="n">did</span><span class="p">:</span> <span class="n">DeviceIdentifier</span><span class="p">,</span> <span class="n">controller</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+</span><span id="read_dma3_request_map-47"><a href="#read_dma3_request_map-47"><span class="linenos">47</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="read_dma3_request_map-48"><a href="#read_dma3_request_map-48"><span class="linenos">48</span></a><span class="sd">    Reads the request mapping of the linked-list DMA controllers (GPDMA, HPDMA,</span>
+</span><span id="read_dma3_request_map-49"><a href="#read_dma3_request_map-49"><span class="linenos">49</span></a><span class="sd">    LPDMA) from the CubeHAL header. All instances of one controller type share</span>
+</span><span id="read_dma3_request_map-50"><a href="#read_dma3_request_map-50"><span class="linenos">50</span></a><span class="sd">    the same request numbers, so `controller` is the type, for example `gpdma`.</span>
+</span><span id="read_dma3_request_map-51"><a href="#read_dma3_request_map-51"><span class="linenos">51</span></a>
+</span><span id="read_dma3_request_map-52"><a href="#read_dma3_request_map-52"><span class="linenos">52</span></a><span class="sd">    :param did: Device to query for.</span>
+</span><span id="read_dma3_request_map-53"><a href="#read_dma3_request_map-53"><span class="linenos">53</span></a><span class="sd">    :param controller: The controller type: `gpdma`, `hpdma` or `lpdma`.</span>
+</span><span id="read_dma3_request_map-54"><a href="#read_dma3_request_map-54"><span class="linenos">54</span></a><span class="sd">    :return: A dictionary of DMA request name to request number.</span>
+</span><span id="read_dma3_request_map-55"><a href="#read_dma3_request_map-55"><span class="linenos">55</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="read_dma3_request_map-56"><a href="#read_dma3_request_map-56"><span class="linenos">56</span></a>    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">rf</span><span class="s2">&quot;^\s*#define\s+(?P&lt;name&gt;</span><span class="si">{</span><span class="n">controller</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">1_REQUEST_\w+)\s+(?P&lt;id&gt;[0-9]+)U&quot;</span><span class="p">)</span>
+</span><span id="read_dma3_request_map-57"><a href="#read_dma3_request_map-57"><span class="linenos">57</span></a>    <span class="n">request_map</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="read_dma3_request_map-58"><a href="#read_dma3_request_map-58"><span class="linenos">58</span></a>        <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_REQUEST_&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]:</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</span><span id="read_dma3_request_map-59"><a href="#read_dma3_request_map-59"><span class="linenos">59</span></a>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">_read_map</span><span class="p">(</span><span class="n">_get_hal_dma_header_path</span><span class="p">(</span><span class="n">did</span><span class="p">),</span> <span class="n">pattern</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span><span id="read_dma3_request_map-60"><a href="#read_dma3_request_map-60"><span class="linenos">60</span></a>    <span class="p">}</span>
+</span><span id="read_dma3_request_map-61"><a href="#read_dma3_request_map-61"><span class="linenos">61</span></a>    <span class="c1"># The names are used as is, the DMAMUX fixes would only add aliases.</span>
+</span><span id="read_dma3_request_map-62"><a href="#read_dma3_request_map-62"><span class="linenos">62</span></a>    <span class="c1"># The DCMI request is shared with the PSSI according to the reference manuals.</span>
+</span><span id="read_dma3_request_map-63"><a href="#read_dma3_request_map-63"><span class="linenos">63</span></a>    <span class="k">if</span> <span class="s2">&quot;DCMI_PSSI&quot;</span> <span class="ow">in</span> <span class="n">request_map</span><span class="p">:</span>
+</span><span id="read_dma3_request_map-64"><a href="#read_dma3_request_map-64"><span class="linenos">64</span></a>        <span class="n">request_map</span><span class="p">[</span><span class="s2">&quot;DCMI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">request_map</span><span class="p">[</span><span class="s2">&quot;PSSI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">request_map</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;DCMI_PSSI&quot;</span><span class="p">)</span>
+</span><span id="read_dma3_request_map-65"><a href="#read_dma3_request_map-65"><span class="linenos">65</span></a>    <span class="k">elif</span> <span class="s2">&quot;DCMI&quot;</span> <span class="ow">in</span> <span class="n">request_map</span><span class="p">:</span>
+</span><span id="read_dma3_request_map-66"><a href="#read_dma3_request_map-66"><span class="linenos">66</span></a>        <span class="n">request_map</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;PSSI&quot;</span><span class="p">,</span> <span class="n">request_map</span><span class="p">[</span><span class="s2">&quot;DCMI&quot;</span><span class="p">])</span>
+</span><span id="read_dma3_request_map-67"><a href="#read_dma3_request_map-67"><span class="linenos">67</span></a>    <span class="k">return</span> <span class="n">request_map</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Reads the request mapping of the linked-list DMA controllers (GPDMA, HPDMA,
+LPDMA) from the CubeHAL header. All instances of one controller type share
+the same request numbers, so <code>controller</code> is the type, for example <code>gpdma</code>.</p>
+
+<h6 id="parameters">Parameters</h6>
+
+<ul>
+<li><strong>did</strong>:  Device to query for.</li>
+<li><strong>controller: The controller type</strong>:  <code>gpdma</code>, <code>hpdma</code> or <code>lpdma</code>.</li>
+</ul>
+
+<h6 id="returns">Returns</h6>
+
+<blockquote>
+  <p>A dictionary of DMA request name to request number.</p>
+</blockquote>
+</div>
+
 
                 </section>
                 <section id="read_header">
