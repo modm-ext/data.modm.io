@@ -7744,28 +7744,87 @@
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>PLLMULL3</name>
-              <description>PLL input clock 3</description>
+              <name>PLLMULL</name>
+              <description>PLLMUL[3:0] bits (PLL multiplication factor)</description>
               <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PLLMULL4</name>
-              <description>PLL input clock 4</description>
-              <bitOffset>19</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PLLMULL6</name>
-              <description>PLL input clock 6</description>
-              <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PLLMULL10</name>
-              <description>PLL input clock10</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MUL_2</name>
+                  <description>PLL input clock*2</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_3</name>
+                  <description>PLL input clock*3</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_4</name>
+                  <description>PLL input clock*4</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_5</name>
+                  <description>PLL input clock*5</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_6</name>
+                  <description>PLL input clock*6</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_7</name>
+                  <description>PLL input clock*7</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_8</name>
+                  <description>PLL input clock*8</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_9</name>
+                  <description>PLL input clock*9</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_10</name>
+                  <description>PLL input clock*10</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_11</name>
+                  <description>PLL input clock*11</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_12</name>
+                  <description>PLL input clock*12</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_13</name>
+                  <description>PLL input clock*13</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_14</name>
+                  <description>PLL input clock*14</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_15</name>
+                  <description>PLL input clock*15</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_16</name>
+                  <description>PLL input clock*16</description>
+                  <value>14</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>MCO</name>

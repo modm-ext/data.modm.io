@@ -5,9 +5,9 @@
 {
 "name": "ADC",
 "ignored": [],
-"instances": 584,
-"devices": 287,
-"shapes": 50,
+"instances": 626,
+"devices": 304,
+"shapes": 54,
 "variants": [
 {
 "instances": 107,
@@ -48,6 +48,14 @@
 "registers": 15,
 "core": 65,
 "features": 12
+},
+{
+"instances": 42,
+"devices": 17,
+"members": 4,
+"registers": 48,
+"core": 164,
+"features": 3
 },
 {
 "instances": 40,
@@ -158,17 +166,17 @@
 {
 "name": "ADC_Common",
 "ignored": [],
-"instances": 203,
-"devices": 152,
-"shapes": 13,
+"instances": 222,
+"devices": 169,
+"shapes": 14,
 "variants": [
 {
-"instances": 130,
-"devices": 97,
-"members": 8,
+"instances": 149,
+"devices": 114,
+"members": 9,
 "registers": 4,
-"core": 6,
-"features": 9
+"core": 1,
+"features": 12
 },
 {
 "instances": 43,
@@ -197,11 +205,28 @@
 ]
 },
 {
+"name": "ADF",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 15,
+"core": 85,
+"features": 0
+}
+]
+},
+{
 "name": "AES",
 "ignored": [],
-"instances": 134,
-"devices": 81,
-"shapes": 10,
+"instances": 143,
+"devices": 87,
+"shapes": 13,
 "variants": [
 {
 "instances": 131,
@@ -212,20 +237,12 @@
 "features": 10
 },
 {
-"instances": 2,
-"devices": 2,
-"members": 1,
-"registers": 24,
-"core": 64,
-"features": 0
-},
-{
-"instances": 1,
-"devices": 1,
-"members": 1,
+"instances": 12,
+"devices": 9,
+"members": 5,
 "registers": 27,
-"core": 78,
-"features": 0
+"core": 59,
+"features": 5
 }
 ]
 },
@@ -284,6 +301,23 @@
 "members": 1,
 "registers": 1,
 "core": 3,
+"features": 0
+}
+]
+},
+{
+"name": "AXIM",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 52,
+"core": 135,
 "features": 0
 }
 ]
@@ -435,14 +469,14 @@
 {
 "name": "CCB",
 "ignored": [],
-"instances": 9,
-"devices": 6,
-"shapes": 2,
+"instances": 12,
+"devices": 9,
+"shapes": 3,
 "variants": [
 {
-"instances": 9,
-"devices": 6,
-"members": 2,
+"instances": 12,
+"devices": 9,
+"members": 3,
 "registers": 6,
 "core": 15,
 "features": 2
@@ -477,9 +511,9 @@
 {
 "name": "COMP",
 "ignored": [],
-"instances": 520,
-"devices": 181,
-"shapes": 44,
+"instances": 596,
+"devices": 198,
+"shapes": 48,
 "variants": [
 {
 "instances": 119,
@@ -490,9 +524,9 @@
 "features": 5
 },
 {
-"instances": 80,
-"devices": 34,
-"members": 3,
+"instances": 86,
+"devices": 37,
+"members": 4,
 "registers": 1,
 "core": 12,
 "features": 3
@@ -530,11 +564,27 @@
 "features": 0
 },
 {
+"instances": 48,
+"devices": 6,
+"members": 1,
+"registers": 2,
+"core": 16,
+"features": 0
+},
+{
 "instances": 30,
 "devices": 15,
 "members": 1,
 "registers": 1,
 "core": 12,
+"features": 0
+},
+{
+"instances": 16,
+"devices": 2,
+"members": 1,
+"registers": 4,
+"core": 22,
 "features": 0
 },
 {
@@ -546,18 +596,18 @@
 "features": 0
 },
 {
+"instances": 7,
+"devices": 7,
+"members": 2,
+"registers": 4,
+"core": 17,
+"features": 2
+},
+{
 "instances": 4,
 "devices": 2,
 "members": 1,
 "registers": 1,
-"core": 20,
-"features": 0
-},
-{
-"instances": 1,
-"devices": 1,
-"members": 1,
-"registers": 4,
 "core": 20,
 "features": 0
 }
@@ -600,9 +650,9 @@
 {
 "name": "COMP_Common",
 "ignored": [],
-"instances": 122,
-"devices": 110,
-"shapes": 14,
+"instances": 157,
+"devices": 121,
+"shapes": 17,
 "variants": [
 {
 "instances": 35,
@@ -619,6 +669,14 @@
 "registers": 2,
 "core": 22,
 "features": 2
+},
+{
+"instances": 24,
+"devices": 6,
+"members": 1,
+"registers": 2,
+"core": 26,
+"features": 0
 },
 {
 "instances": 22,
@@ -651,19 +709,35 @@
 "registers": 1,
 "core": 19,
 "features": 1
+},
+{
+"instances": 8,
+"devices": 2,
+"members": 1,
+"registers": 2,
+"core": 28,
+"features": 0
+},
+{
+"instances": 3,
+"devices": 3,
+"members": 1,
+"registers": 4,
+"core": 38,
+"features": 0
 }
 ]
 },
 {
 "name": "CORDIC",
 "ignored": [],
-"instances": 65,
-"devices": 44,
+"instances": 82,
+"devices": 61,
 "shapes": 1,
 "variants": [
 {
-"instances": 65,
-"devices": 44,
+"instances": 82,
+"devices": 61,
 "members": 1,
 "registers": 3,
 "core": 16,
@@ -674,14 +748,14 @@
 {
 "name": "CRC",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 8,
+"instances": 329,
+"devices": 304,
+"shapes": 9,
 "variants": [
 {
-"instances": 169,
-"devices": 144,
-"members": 4,
+"instances": 186,
+"devices": 161,
+"members": 5,
 "registers": 9,
 "core": 12,
 "features": 3
@@ -699,13 +773,13 @@
 {
 "name": "CRS",
 "ignored": [],
-"instances": 147,
-"devices": 122,
+"instances": 162,
+"devices": 137,
 "shapes": 2,
 "variants": [
 {
-"instances": 147,
-"devices": 122,
+"instances": 162,
+"devices": 137,
 "members": 2,
 "registers": 4,
 "core": 29,
@@ -758,9 +832,9 @@
 {
 "name": "DAC",
 "ignored": [],
-"instances": 382,
-"devices": 206,
-"shapes": 15,
+"instances": 447,
+"devices": 223,
+"shapes": 19,
 "variants": [
 {
 "instances": 199,
@@ -771,12 +845,20 @@
 "features": 11
 },
 {
-"instances": 182,
-"devices": 97,
+"instances": 143,
+"devices": 69,
 "members": 7,
+"registers": 27,
+"core": 33,
+"features": 8
+},
+{
+"instances": 104,
+"devices": 45,
+"members": 4,
 "registers": 24,
-"core": 39,
-"features": 6
+"core": 85,
+"features": 3
 },
 {
 "instances": 1,
@@ -808,25 +890,17 @@
 {
 "name": "DBGMCU",
 "ignored": [],
-"instances": 265,
-"devices": 265,
-"shapes": 91,
+"instances": 282,
+"devices": 282,
+"shapes": 98,
 "variants": [
 {
-"instances": 65,
-"devices": 65,
+"instances": 63,
+"devices": 63,
 "members": 24,
-"registers": 22,
+"registers": 23,
 "core": 7,
 "features": 34
-},
-{
-"instances": 42,
-"devices": 42,
-"members": 10,
-"registers": 35,
-"core": 6,
-"features": 23
 },
 {
 "instances": 31,
@@ -835,6 +909,14 @@
 "registers": 18,
 "core": 6,
 "features": 9
+},
+{
+"instances": 30,
+"devices": 30,
+"members": 9,
+"registers": 23,
+"core": 7,
+"features": 11
 },
 {
 "instances": 28,
@@ -848,9 +930,17 @@
 "instances": 26,
 "devices": 26,
 "members": 8,
-"registers": 5,
+"registers": 25,
 "core": 22,
-"features": 9
+"features": 19
+},
+{
+"instances": 25,
+"devices": 25,
+"members": 5,
+"registers": 31,
+"core": 7,
+"features": 6
 },
 {
 "instances": 19,
@@ -893,6 +983,14 @@
 "features": 2
 },
 {
+"instances": 6,
+"devices": 6,
+"members": 3,
+"registers": 20,
+"core": 85,
+"features": 2
+},
+{
 "instances": 2,
 "devices": 2,
 "members": 2,
@@ -905,17 +1003,17 @@
 {
 "name": "DCACHE",
 "ignored": [],
-"instances": 58,
-"devices": 23,
-"shapes": 2,
+"instances": 62,
+"devices": 27,
+"shapes": 3,
 "variants": [
 {
-"instances": 30,
-"devices": 15,
-"members": 1,
+"instances": 34,
+"devices": 19,
+"members": 2,
 "registers": 10,
 "core": 40,
-"features": 0
+"features": 1
 },
 {
 "instances": 28,
@@ -1032,13 +1130,13 @@
 {
 "name": "DLYB",
 "ignored": [],
-"instances": 277,
-"devices": 68,
+"instances": 288,
+"devices": 77,
 "shapes": 2,
 "variants": [
 {
-"instances": 269,
-"devices": 64,
+"instances": 280,
+"devices": 73,
 "members": 1,
 "registers": 2,
 "core": 8,
@@ -1057,9 +1155,9 @@
 {
 "name": "DMA",
 "ignored": [],
-"instances": 524,
-"devices": 287,
-"shapes": 35,
+"instances": 558,
+"devices": 304,
+"shapes": 42,
 "variants": [
 {
 "instances": 200,
@@ -1070,20 +1168,20 @@
 "features": 16
 },
 {
+"instances": 165,
+"devices": 70,
+"members": 22,
+"registers": 213,
+"core": 235,
+"features": 61
+},
+{
 "instances": 138,
 "devices": 69,
 "members": 5,
 "registers": 52,
 "core": 340,
 "features": 3
-},
-{
-"instances": 131,
-"devices": 53,
-"members": 15,
-"registers": 213,
-"core": 237,
-"features": 38
 },
 {
 "instances": 53,
@@ -1189,17 +1287,17 @@
 {
 "name": "DTS",
 "ignored": [],
-"instances": 43,
-"devices": 32,
-"shapes": 2,
+"instances": 51,
+"devices": 40,
+"shapes": 3,
 "variants": [
 {
-"instances": 39,
-"devices": 28,
-"members": 1,
+"instances": 47,
+"devices": 36,
+"members": 2,
 "registers": 9,
 "core": 41,
-"features": 0
+"features": 1
 },
 {
 "instances": 4,
@@ -1214,9 +1312,9 @@
 {
 "name": "ETH",
 "ignored": [],
-"instances": 66,
-"devices": 58,
-"shapes": 8,
+"instances": 69,
+"devices": 61,
+"shapes": 9,
 "variants": [
 {
 "instances": 30,
@@ -1249,15 +1347,40 @@
 "registers": 208,
 "core": 959,
 "features": 0
+},
+{
+"instances": 3,
+"devices": 3,
+"members": 1,
+"registers": 131,
+"core": 641,
+"features": 0
+}
+]
+},
+{
+"name": "EXITHDPLIB_pFunc",
+"ignored": [],
+"instances": 9,
+"devices": 9,
+"shapes": 1,
+"variants": [
+{
+"instances": 9,
+"devices": 9,
+"members": 1,
+"registers": 2,
+"core": 2,
+"features": 0
 }
 ]
 },
 {
 "name": "EXTI",
 "ignored": [],
-"instances": 306,
-"devices": 281,
-"shapes": 82,
+"instances": 323,
+"devices": 298,
+"shapes": 88,
 "variants": [
 {
 "instances": 163,
@@ -1268,20 +1391,20 @@
 "features": 48
 },
 {
-"instances": 93,
-"devices": 68,
-"members": 24,
+"instances": 108,
+"devices": 83,
+"members": 29,
 "registers": 32,
 "core": 102,
-"features": 78
+"features": 115
 },
 {
-"instances": 32,
-"devices": 32,
-"members": 5,
+"instances": 34,
+"devices": 34,
+"members": 6,
 "registers": 36,
-"core": 210,
-"features": 11
+"core": 208,
+"features": 15
 },
 {
 "instances": 5,
@@ -1369,13 +1492,13 @@
 {
 "name": "FDCAN_Config",
 "ignored": [],
-"instances": 77,
-"devices": 52,
+"instances": 91,
+"devices": 66,
 "shapes": 3,
 "variants": [
 {
-"instances": 77,
-"devices": 52,
+"instances": 91,
+"devices": 66,
 "members": 3,
 "registers": 6,
 "core": 2,
@@ -1386,13 +1509,13 @@
 {
 "name": "FDCAN_Global",
 "ignored": [],
-"instances": 198,
-"devices": 84,
+"instances": 228,
+"devices": 98,
 "shapes": 3,
 "variants": [
 {
-"instances": 124,
-"devices": 52,
+"instances": 154,
+"devices": 66,
 "members": 1,
 "registers": 36,
 "core": 195,
@@ -1428,9 +1551,9 @@
 {
 "name": "FLASH",
 "ignored": [],
-"instances": 308,
-"devices": 283,
-"shapes": 85,
+"instances": 325,
+"devices": 300,
+"shapes": 91,
 "variants": [
 {
 "instances": 33,
@@ -1545,12 +1668,28 @@
 "features": 3
 },
 {
+"instances": 9,
+"devices": 9,
+"members": 3,
+"registers": 36,
+"core": 139,
+"features": 4
+},
+{
 "instances": 8,
 "devices": 8,
 "members": 4,
 "registers": 69,
 "core": 351,
 "features": 8
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 2,
+"registers": 59,
+"core": 258,
+"features": 1
 },
 {
 "instances": 6,
@@ -1628,6 +1767,14 @@
 "instances": 2,
 "devices": 2,
 "members": 1,
+"registers": 54,
+"core": 280,
+"features": 0
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
 "registers": 7,
 "core": 41,
 "features": 0
@@ -1645,13 +1792,13 @@
 {
 "name": "FMAC",
 "ignored": [],
-"instances": 57,
-"devices": 38,
+"instances": 69,
+"devices": 46,
 "shapes": 1,
 "variants": [
 {
-"instances": 57,
-"devices": 38,
+"instances": 69,
+"devices": 46,
 "members": 1,
 "registers": 8,
 "core": 37,
@@ -1820,6 +1967,57 @@
 ]
 },
 {
+"name": "FMC_NAND",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 5,
+"core": 29,
+"features": 0
+}
+]
+},
+{
+"name": "FMC_NORSRAM",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 12,
+"core": 116,
+"features": 0
+}
+]
+},
+{
+"name": "FMC_SDRAM",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 7,
+"core": 50,
+"features": 0
+}
+]
+},
+{
 "name": "FMPI2C",
 "ignored": [],
 "instances": 10,
@@ -1949,13 +2147,13 @@
 {
 "name": "GPIO",
 "ignored": [],
-"instances": 2307,
-"devices": 287,
+"instances": 2433,
+"devices": 304,
 "shapes": 17,
 "variants": [
 {
-"instances": 2167,
-"devices": 268,
+"instances": 2293,
+"devices": 285,
 "members": 14,
 "registers": 19,
 "core": 43,
@@ -2007,17 +2205,17 @@
 {
 "name": "GTZC_MPCBB",
 "ignored": [],
-"instances": 259,
-"devices": 45,
-"shapes": 8,
+"instances": 275,
+"devices": 51,
+"shapes": 9,
 "variants": [
 {
-"instances": 251,
-"devices": 43,
-"members": 7,
+"instances": 267,
+"devices": 49,
+"members": 8,
 "registers": 107,
 "core": 4,
-"features": 15
+"features": 16
 },
 {
 "instances": 8,
@@ -2032,9 +2230,9 @@
 {
 "name": "GTZC_TZIC",
 "ignored": [],
-"instances": 77,
-"devices": 28,
-"shapes": 27,
+"instances": 83,
+"devices": 34,
+"shapes": 28,
 "variants": [
 {
 "instances": 48,
@@ -2051,6 +2249,14 @@
 "registers": 12,
 "core": 3,
 "features": 24
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 1,
+"registers": 12,
+"core": 12,
+"features": 0
 }
 ]
 },
@@ -2088,11 +2294,28 @@
 ]
 },
 {
+"name": "GTZC_TZSC_Periph",
+"ignored": [],
+"instances": 6,
+"devices": 6,
+"shapes": 1,
+"variants": [
+{
+"instances": 6,
+"devices": 6,
+"members": 1,
+"registers": 7,
+"core": 8,
+"features": 0
+}
+]
+},
+{
 "name": "HASH",
 "ignored": [],
-"instances": 111,
-"devices": 86,
-"shapes": 12,
+"instances": 128,
+"devices": 103,
+"shapes": 15,
 "variants": [
 {
 "instances": 53,
@@ -2103,29 +2326,29 @@
 "features": 6
 },
 {
+"instances": 40,
+"devices": 29,
+"members": 6,
+"registers": 156,
+"core": 36,
+"features": 9
+},
+{
 "instances": 35,
 "devices": 33,
 "members": 3,
 "registers": 72,
 "core": 77,
 "features": 2
-},
-{
-"instances": 23,
-"devices": 12,
-"members": 3,
-"registers": 107,
-"core": 36,
-"features": 4
 }
 ]
 },
 {
 "name": "HRTIM",
 "ignored": [],
-"instances": 20,
-"devices": 20,
-"shapes": 3,
+"instances": 28,
+"devices": 26,
+"shapes": 5,
 "variants": [
 {
 "instances": 20,
@@ -2134,6 +2357,14 @@
 "registers": 221,
 "core": 2370,
 "features": 3
+},
+{
+"instances": 8,
+"devices": 6,
+"members": 2,
+"registers": 252,
+"core": 3912,
+"features": 1
 }
 ]
 },
@@ -2165,9 +2396,9 @@
 {
 "name": "HSP",
 "ignored": [],
-"instances": 2,
-"devices": 2,
-"shapes": 1,
+"instances": 4,
+"devices": 4,
+"shapes": 2,
 "variants": [
 {
 "instances": 2,
@@ -2176,23 +2407,31 @@
 "registers": 74,
 "core": 421,
 "features": 0
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 74,
+"core": 419,
+"features": 0
 }
 ]
 },
 {
 "name": "I2C",
 "ignored": [],
-"instances": 928,
-"devices": 287,
-"shapes": 14,
+"instances": 969,
+"devices": 304,
+"shapes": 16,
 "variants": [
 {
-"instances": 781,
-"devices": 224,
-"members": 12,
+"instances": 822,
+"devices": 241,
+"members": 14,
 "registers": 12,
 "core": 68,
-"features": 5
+"features": 6
 },
 {
 "instances": 147,
@@ -2207,34 +2446,42 @@
 {
 "name": "I3C",
 "ignored": [],
-"instances": 64,
-"devices": 28,
-"shapes": 3,
+"instances": 81,
+"devices": 45,
+"shapes": 6,
 "variants": [
 {
-"instances": 64,
-"devices": 28,
-"members": 3,
-"registers": 31,
+"instances": 75,
+"devices": 39,
+"members": 5,
+"registers": 32,
 "core": 218,
-"features": 3
+"features": 5
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 1,
+"registers": 31,
+"core": 246,
+"features": 0
 }
 ]
 },
 {
 "name": "ICACHE",
 "ignored": [],
-"instances": 78,
-"devices": 53,
-"shapes": 2,
+"instances": 93,
+"devices": 68,
+"shapes": 5,
 "variants": [
 {
-"instances": 78,
-"devices": 53,
-"members": 2,
+"instances": 93,
+"devices": 68,
+"members": 5,
 "registers": 10,
 "core": 22,
-"features": 1
+"features": 3
 }
 ]
 },
@@ -2258,21 +2505,21 @@
 {
 "name": "IWDG",
 "ignored": [],
-"instances": 324,
-"devices": 287,
+"instances": 341,
+"devices": 304,
 "shapes": 6,
 "variants": [
 {
-"instances": 252,
-"devices": 238,
+"instances": 267,
+"devices": 253,
 "members": 4,
 "registers": 7,
 "core": 8,
 "features": 5
 },
 {
-"instances": 72,
-"devices": 49,
+"instances": 74,
+"devices": 51,
 "members": 2,
 "registers": 6,
 "core": 18,
@@ -2367,13 +2614,13 @@
 {
 "name": "LPTIM",
 "ignored": [],
-"instances": 590,
-"devices": 183,
+"instances": 615,
+"devices": 200,
 "shapes": 14,
 "variants": [
 {
-"instances": 302,
-"devices": 56,
+"instances": 327,
+"devices": 73,
 "members": 3,
 "registers": 15,
 "core": 92,
@@ -2603,13 +2850,13 @@
 {
 "name": "NSSLIB_pFunc",
 "ignored": [],
-"instances": 12,
-"devices": 12,
+"instances": 18,
+"devices": 18,
 "shapes": 1,
 "variants": [
 {
-"instances": 12,
-"devices": 12,
+"instances": 18,
+"devices": 18,
 "members": 1,
 "registers": 2,
 "core": 2,
@@ -2679,9 +2926,9 @@
 {
 "name": "OPAMP",
 "ignored": [],
-"instances": 401,
-"devices": 122,
-"shapes": 15,
+"instances": 416,
+"devices": 129,
+"shapes": 16,
 "variants": [
 {
 "instances": 164,
@@ -2714,6 +2961,14 @@
 "registers": 3,
 "core": 30,
 "features": 1
+},
+{
+"instances": 15,
+"devices": 7,
+"members": 1,
+"registers": 2,
+"core": 22,
+"features": 0
 }
 ]
 },
@@ -2745,14 +3000,14 @@
 {
 "name": "OTFDEC",
 "ignored": [],
-"instances": 55,
-"devices": 21,
-"shapes": 3,
+"instances": 57,
+"devices": 23,
+"shapes": 4,
 "variants": [
 {
-"instances": 55,
-"devices": 21,
-"members": 3,
+"instances": 57,
+"devices": 23,
+"members": 4,
 "registers": 46,
 "core": 14,
 "features": 3
@@ -2762,13 +3017,13 @@
 {
 "name": "PKA",
 "ignored": [],
-"instances": 81,
-"devices": 63,
-"shapes": 8,
+"instances": 90,
+"devices": 72,
+"shapes": 9,
 "variants": [
 {
-"instances": 62,
-"devices": 45,
+"instances": 68,
+"devices": 51,
 "members": 4,
 "registers": 4,
 "core": 17,
@@ -2781,6 +3036,14 @@
 "registers": 4,
 "core": 17,
 "features": 1
+},
+{
+"instances": 3,
+"devices": 3,
+"members": 1,
+"registers": 4,
+"core": 33,
+"features": 0
 },
 {
 "instances": 2,
@@ -2803,16 +3066,33 @@
 {
 "name": "PLAY",
 "ignored": [],
-"instances": 12,
-"devices": 6,
+"instances": 16,
+"devices": 10,
 "shapes": 1,
 "variants": [
 {
-"instances": 12,
-"devices": 6,
+"instances": 16,
+"devices": 10,
 "members": 1,
 "registers": 80,
 "core": 492,
+"features": 0
+}
+]
+},
+{
+"name": "POSENC",
+"ignored": [],
+"instances": 8,
+"devices": 4,
+"shapes": 1,
+"variants": [
+{
+"instances": 8,
+"devices": 4,
+"members": 1,
+"registers": 78,
+"core": 167,
 "features": 0
 }
 ]
@@ -2862,9 +3142,9 @@
 {
 "name": "PWR",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 110,
+"instances": 329,
+"devices": 304,
+"shapes": 116,
 "variants": [
 {
 "instances": 55,
@@ -2913,6 +3193,14 @@
 "registers": 42,
 "core": 331,
 "features": 5
+},
+{
+"instances": 15,
+"devices": 15,
+"members": 5,
+"registers": 18,
+"core": 43,
+"features": 6
 },
 {
 "instances": 14,
@@ -3033,6 +3321,14 @@
 "registers": 22,
 "core": 235,
 "features": 0
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 14,
+"core": 137,
+"features": 0
 }
 ]
 },
@@ -3081,9 +3377,9 @@
 {
 "name": "RAMCFG",
 "ignored": [],
-"instances": 96,
-"devices": 49,
-"shapes": 19,
+"instances": 111,
+"devices": 64,
+"shapes": 24,
 "variants": [
 {
 "instances": 24,
@@ -3092,6 +3388,14 @@
 "registers": 10,
 "core": 89,
 "features": 0
+},
+{
+"instances": 21,
+"devices": 21,
+"members": 7,
+"registers": 60,
+"core": 110,
+"features": 8
 },
 {
 "instances": 15,
@@ -3108,14 +3412,6 @@
 "registers": 24,
 "core": 54,
 "features": 2
-},
-{
-"instances": 12,
-"devices": 12,
-"members": 4,
-"registers": 60,
-"core": 267,
-"features": 3
 },
 {
 "instances": 8,
@@ -3140,6 +3436,14 @@
 "registers": 11,
 "core": 104,
 "features": 0
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 2,
+"registers": 24,
+"core": 176,
+"features": 1
 },
 {
 "instances": 4,
@@ -3195,17 +3499,17 @@
 {
 "name": "RAMECC",
 "ignored": [],
-"instances": 80,
-"devices": 32,
-"shapes": 6,
+"instances": 84,
+"devices": 34,
+"shapes": 8,
 "variants": [
 {
-"instances": 72,
-"devices": 28,
-"members": 4,
-"registers": 37,
-"core": 35,
-"features": 3
+"instances": 74,
+"devices": 30,
+"members": 5,
+"registers": 42,
+"core": 33,
+"features": 8
 },
 {
 "instances": 8,
@@ -3214,15 +3518,23 @@
 "registers": 31,
 "core": 22,
 "features": 1
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 6,
+"core": 21,
+"features": 0
 }
 ]
 },
 {
 "name": "RCC",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 249,
+"instances": 329,
+"devices": 304,
+"shapes": 262,
 "variants": [
 {
 "instances": 25,
@@ -3261,15 +3573,23 @@
 "devices": 22,
 "members": 19,
 "registers": 14,
-"core": 168,
+"core": 167,
 "features": 9
+},
+{
+"instances": 20,
+"devices": 20,
+"members": 20,
+"registers": 14,
+"core": 81,
+"features": 31
 },
 {
 "instances": 19,
 "devices": 19,
 "members": 18,
 "registers": 21,
-"core": 151,
+"core": 150,
 "features": 12
 },
 {
@@ -3287,14 +3607,6 @@
 "registers": 93,
 "core": 511,
 "features": 5
-},
-{
-"instances": 14,
-"devices": 14,
-"members": 14,
-"registers": 12,
-"core": 97,
-"features": 16
 },
 {
 "instances": 13,
@@ -3332,9 +3644,9 @@
 "instances": 9,
 "devices": 9,
 "members": 9,
-"registers": 14,
-"core": 99,
-"features": 11
+"registers": 34,
+"core": 261,
+"features": 5
 },
 {
 "instances": 8,
@@ -3359,6 +3671,14 @@
 "registers": 25,
 "core": 199,
 "features": 6
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 3,
+"registers": 46,
+"core": 379,
+"features": 2
 },
 {
 "instances": 6,
@@ -3441,6 +3761,14 @@
 "features": 2
 },
 {
+"instances": 3,
+"devices": 3,
+"members": 3,
+"registers": 13,
+"core": 129,
+"features": 2
+},
+{
 "instances": 2,
 "devices": 2,
 "members": 2,
@@ -3455,6 +3783,14 @@
 "registers": 13,
 "core": 159,
 "features": 1
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 61,
+"core": 536,
+"features": 0
 },
 {
 "instances": 2,
@@ -3528,13 +3864,13 @@
 {
 "name": "RNG",
 "ignored": [],
-"instances": 217,
-"devices": 192,
+"instances": 234,
+"devices": 209,
 "shapes": 12,
 "variants": [
 {
-"instances": 211,
-"devices": 186,
+"instances": 228,
+"devices": 203,
 "members": 10,
 "registers": 11,
 "core": 10,
@@ -3594,8 +3930,8 @@
 {
 "name": "RSSLIB_pFunc",
 "ignored": [],
-"instances": 51,
-"devices": 51,
+"instances": 57,
+"devices": 57,
 "shapes": 6,
 "variants": [
 {
@@ -3607,8 +3943,8 @@
 "features": 3
 },
 {
-"instances": 14,
-"devices": 14,
+"instances": 20,
+"devices": 20,
 "members": 2,
 "registers": 4,
 "core": 1,
@@ -3619,9 +3955,9 @@
 {
 "name": "RTC",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 45,
+"instances": 329,
+"devices": 304,
+"shapes": 48,
 "variants": [
 {
 "instances": 155,
@@ -3632,12 +3968,12 @@
 "features": 26
 },
 {
-"instances": 125,
-"devices": 102,
-"members": 16,
+"instances": 142,
+"devices": 119,
+"members": 19,
 "registers": 28,
 "core": 90,
-"features": 19
+"features": 21
 },
 {
 "instances": 14,
@@ -3702,25 +4038,33 @@
 {
 "name": "SBS",
 "ignored": [],
-"instances": 27,
-"devices": 16,
-"shapes": 7,
+"instances": 44,
+"devices": 33,
+"shapes": 13,
 "variants": [
 {
-"instances": 23,
-"devices": 12,
-"members": 6,
-"registers": 19,
-"core": 46,
-"features": 5
+"instances": 29,
+"devices": 18,
+"members": 8,
+"registers": 22,
+"core": 38,
+"features": 8
 },
 {
-"instances": 4,
-"devices": 4,
-"members": 1,
+"instances": 9,
+"devices": 9,
+"members": 3,
+"registers": 12,
+"core": 29,
+"features": 3
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 2,
 "registers": 17,
-"core": 79,
-"features": 0
+"core": 61,
+"features": 2
 }
 ]
 },
@@ -3761,9 +4105,9 @@
 {
 "name": "SDMMC",
 "ignored": [],
-"instances": 205,
-"devices": 100,
-"shapes": 8,
+"instances": 207,
+"devices": 102,
+"shapes": 9,
 "variants": [
 {
 "instances": 152,
@@ -3796,6 +4140,14 @@
 "registers": 24,
 "core": 146,
 "features": 0
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 38,
+"core": 178,
+"features": 0
 }
 ]
 },
@@ -3827,9 +4179,9 @@
 {
 "name": "SPI",
 "ignored": [],
-"instances": 1098,
-"devices": 287,
-"shapes": 20,
+"instances": 1150,
+"devices": 304,
+"shapes": 21,
 "variants": [
 {
 "instances": 641,
@@ -3840,12 +4192,12 @@
 "features": 11
 },
 {
-"instances": 457,
-"devices": 81,
-"members": 6,
+"instances": 509,
+"devices": 98,
+"members": 7,
 "registers": 15,
 "core": 84,
-"features": 6
+"features": 7
 }
 ]
 },
@@ -4030,9 +4382,9 @@
 {
 "name": "TAMP",
 "ignored": [],
-"instances": 123,
-"devices": 98,
-"shapes": 20,
+"instances": 140,
+"devices": 115,
+"shapes": 24,
 "variants": [
 {
 "instances": 59,
@@ -4043,6 +4395,14 @@
 "features": 21
 },
 {
+"instances": 33,
+"devices": 33,
+"members": 7,
+"registers": 50,
+"core": 115,
+"features": 26
+},
+{
 "instances": 30,
 "devices": 18,
 "members": 2,
@@ -4051,20 +4411,12 @@
 "features": 2
 },
 {
-"instances": 25,
-"devices": 25,
-"members": 4,
-"registers": 50,
-"core": 170,
-"features": 10
-},
-{
-"instances": 5,
-"devices": 5,
-"members": 1,
-"registers": 29,
-"core": 103,
-"features": 0
+"instances": 14,
+"devices": 14,
+"members": 2,
+"registers": 44,
+"core": 95,
+"features": 2
 },
 {
 "instances": 4,
@@ -4087,9 +4439,9 @@
 "OR3",
 "TISEL"
 ],
-"instances": 2969,
-"devices": 287,
-"shapes": 145,
+"instances": 3204,
+"devices": 304,
+"shapes": 150,
 "variants": [
 {
 "instances": 1841,
@@ -4100,12 +4452,12 @@
 "features": 63
 },
 {
-"instances": 951,
-"devices": 66,
-"members": 45,
-"registers": 25,
+"instances": 1186,
+"devices": 83,
+"members": 50,
+"registers": 30,
 "core": 60,
-"features": 30
+"features": 44
 },
 {
 "instances": 174,
@@ -4145,14 +4497,14 @@
 {
 "name": "UCPD",
 "ignored": [],
-"instances": 72,
-"devices": 45,
-"shapes": 5,
+"instances": 78,
+"devices": 51,
+"shapes": 7,
 "variants": [
 {
-"instances": 72,
-"devices": 45,
-"members": 5,
+"instances": 78,
+"devices": 51,
+"members": 7,
 "registers": 15,
 "core": 92,
 "features": 5
@@ -4162,22 +4514,22 @@
 {
 "name": "USART",
 "ignored": [],
-"instances": 1761,
-"devices": 287,
-"shapes": 75,
+"instances": 1880,
+"devices": 304,
+"shapes": 78,
 "variants": [
 {
-"instances": 758,
-"devices": 122,
-"members": 33,
+"instances": 780,
+"devices": 124,
+"members": 34,
 "registers": 12,
 "core": 77,
 "features": 20
 },
 {
-"instances": 604,
-"devices": 72,
-"members": 20,
+"instances": 701,
+"devices": 87,
+"members": 22,
 "registers": 13,
 "core": 98,
 "features": 11
@@ -4220,30 +4572,30 @@
 {
 "name": "USB_DRD",
 "ignored": [],
-"instances": 34,
-"devices": 25,
-"shapes": 4,
+"instances": 47,
+"devices": 38,
+"shapes": 6,
 "variants": [
 {
-"instances": 34,
-"devices": 25,
-"members": 4,
+"instances": 47,
+"devices": 38,
+"members": 6,
 "registers": 14,
 "core": 182,
-"features": 4
+"features": 6
 }
 ]
 },
 {
 "name": "USB_DRD_PMABuffDesc",
 "ignored": [],
-"instances": 34,
-"devices": 25,
+"instances": 47,
+"devices": 38,
 "shapes": 1,
 "variants": [
 {
-"instances": 34,
-"devices": 25,
+"instances": 47,
+"devices": 38,
 "members": 1,
 "registers": 2,
 "core": 2,
@@ -4271,9 +4623,9 @@
 {
 "name": "USB_OTG_Global",
 "ignored": [],
-"instances": 179,
-"devices": 108,
-"shapes": 22,
+"instances": 181,
+"devices": 110,
+"shapes": 23,
 "variants": [
 {
 "instances": 163,
@@ -4290,19 +4642,27 @@
 "registers": 301,
 "core": 2175,
 "features": 0
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 184,
+"core": 1303,
+"features": 0
 }
 ]
 },
 {
 "name": "VREFBUF",
 "ignored": [],
-"instances": 143,
-"devices": 118,
+"instances": 151,
+"devices": 126,
 "shapes": 3,
 "variants": [
 {
-"instances": 100,
-"devices": 77,
+"instances": 108,
+"devices": 85,
 "members": 2,
 "registers": 2,
 "core": 6,
@@ -4338,13 +4698,13 @@
 {
 "name": "WWDG",
 "ignored": [],
-"instances": 315,
-"devices": 278,
+"instances": 332,
+"devices": 295,
 "shapes": 2,
 "variants": [
 {
-"instances": 164,
-"devices": 127,
+"instances": 181,
+"devices": 144,
 "members": 1,
 "registers": 3,
 "core": 9,
@@ -4363,10 +4723,18 @@
 {
 "name": "XSPI",
 "ignored": [],
-"instances": 119,
-"devices": 40,
-"shapes": 9,
+"instances": 128,
+"devices": 49,
+"shapes": 11,
 "variants": [
+{
+"instances": 66,
+"devices": 32,
+"members": 7,
+"registers": 31,
+"core": 58,
+"features": 14
+},
 {
 "instances": 62,
 "devices": 25,
@@ -4374,14 +4742,6 @@
 "registers": 31,
 "core": 120,
 "features": 5
-},
-{
-"instances": 57,
-"devices": 23,
-"members": 5,
-"registers": 31,
-"core": 58,
-"features": 12
 }
 ]
 },
@@ -4403,18 +4763,18 @@
 ]
 }
 ],
-"instances": 22001,
-"shapes": 1808,
-"variants": 387
+"instances": 23428,
+"shapes": 1941,
+"variants": 423
 },
 "source": {
 "groups": [
 {
 "name": "ADC",
 "ignored": [],
-"instances": 584,
-"devices": 287,
-"shapes": 50,
+"instances": 626,
+"devices": 304,
+"shapes": 54,
 "variants": [
 {
 "instances": 122,
@@ -4423,6 +4783,14 @@
 "registers": 52,
 "core": 30,
 "features": 21
+},
+{
+"instances": 122,
+"devices": 49,
+"members": 8,
+"registers": 70,
+"core": 98,
+"features": 18
 },
 {
 "instances": 121,
@@ -4439,14 +4807,6 @@
 "registers": 37,
 "core": 23,
 "features": 27
-},
-{
-"instances": 80,
-"devices": 32,
-"members": 4,
-"registers": 61,
-"core": 111,
-"features": 6
 },
 {
 "instances": 42,
@@ -4501,17 +4861,17 @@
 {
 "name": "ADC_Common",
 "ignored": [],
-"instances": 203,
-"devices": 152,
-"shapes": 13,
+"instances": 222,
+"devices": 169,
+"shapes": 14,
 "variants": [
 {
-"instances": 197,
-"devices": 146,
-"members": 12,
+"instances": 216,
+"devices": 163,
+"members": 13,
 "registers": 4,
-"core": 2,
-"features": 15
+"core": 1,
+"features": 18
 },
 {
 "instances": 6,
@@ -4524,19 +4884,36 @@
 ]
 },
 {
-"name": "AES",
+"name": "ADF",
 "ignored": [],
-"instances": 134,
-"devices": 81,
-"shapes": 10,
+"instances": 2,
+"devices": 2,
+"shapes": 1,
 "variants": [
 {
-"instances": 134,
-"devices": 81,
-"members": 10,
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 15,
+"core": 85,
+"features": 0
+}
+]
+},
+{
+"name": "AES",
+"ignored": [],
+"instances": 143,
+"devices": 87,
+"shapes": 13,
+"variants": [
+{
+"instances": 143,
+"devices": 87,
+"members": 13,
 "registers": 43,
 "core": 12,
-"features": 14
+"features": 16
 }
 ]
 },
@@ -4595,6 +4972,23 @@
 "members": 1,
 "registers": 1,
 "core": 3,
+"features": 0
+}
+]
+},
+{
+"name": "AXIM",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 52,
+"core": 135,
 "features": 0
 }
 ]
@@ -4746,14 +5140,14 @@
 {
 "name": "CCB",
 "ignored": [],
-"instances": 9,
-"devices": 6,
-"shapes": 2,
+"instances": 12,
+"devices": 9,
+"shapes": 3,
 "variants": [
 {
-"instances": 9,
-"devices": 6,
-"members": 2,
+"instances": 12,
+"devices": 9,
+"members": 3,
 "registers": 6,
 "core": 15,
 "features": 2
@@ -4788,10 +5182,18 @@
 {
 "name": "COMP",
 "ignored": [],
-"instances": 520,
-"devices": 181,
-"shapes": 44,
+"instances": 596,
+"devices": 198,
+"shapes": 48,
 "variants": [
+{
+"instances": 127,
+"devices": 43,
+"members": 6,
+"registers": 7,
+"core": 0,
+"features": 12
+},
 {
 "instances": 119,
 "devices": 37,
@@ -4833,12 +5235,12 @@
 "features": 0
 },
 {
-"instances": 56,
-"devices": 28,
+"instances": 30,
+"devices": 9,
 "members": 2,
 "registers": 1,
-"core": 12,
-"features": 2
+"core": 15,
+"features": 0
 },
 {
 "instances": 30,
@@ -4846,14 +5248,6 @@
 "members": 1,
 "registers": 2,
 "core": 20,
-"features": 0
-},
-{
-"instances": 24,
-"devices": 6,
-"members": 1,
-"registers": 1,
-"core": 15,
 "features": 0
 },
 {
@@ -4869,14 +5263,6 @@
 "devices": 2,
 "members": 1,
 "registers": 1,
-"core": 20,
-"features": 0
-},
-{
-"instances": 1,
-"devices": 1,
-"members": 1,
-"registers": 4,
 "core": 20,
 "features": 0
 }
@@ -4919,9 +5305,9 @@
 {
 "name": "COMP_Common",
 "ignored": [],
-"instances": 122,
-"devices": 110,
-"shapes": 14,
+"instances": 157,
+"devices": 121,
+"shapes": 17,
 "variants": [
 {
 "instances": 35,
@@ -4938,6 +5324,14 @@
 "registers": 2,
 "core": 22,
 "features": 2
+},
+{
+"instances": 24,
+"devices": 6,
+"members": 1,
+"registers": 2,
+"core": 26,
+"features": 0
 },
 {
 "instances": 22,
@@ -4970,19 +5364,35 @@
 "registers": 1,
 "core": 19,
 "features": 1
+},
+{
+"instances": 8,
+"devices": 2,
+"members": 1,
+"registers": 2,
+"core": 28,
+"features": 0
+},
+{
+"instances": 3,
+"devices": 3,
+"members": 1,
+"registers": 4,
+"core": 38,
+"features": 0
 }
 ]
 },
 {
 "name": "CORDIC",
 "ignored": [],
-"instances": 65,
-"devices": 44,
+"instances": 82,
+"devices": 61,
 "shapes": 1,
 "variants": [
 {
-"instances": 65,
-"devices": 44,
+"instances": 82,
+"devices": 61,
 "members": 1,
 "registers": 3,
 "core": 16,
@@ -4993,14 +5403,14 @@
 {
 "name": "CRC",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 8,
+"instances": 329,
+"devices": 304,
+"shapes": 9,
 "variants": [
 {
-"instances": 169,
-"devices": 144,
-"members": 4,
+"instances": 186,
+"devices": 161,
+"members": 5,
 "registers": 9,
 "core": 12,
 "features": 3
@@ -5018,13 +5428,13 @@
 {
 "name": "CRS",
 "ignored": [],
-"instances": 147,
-"devices": 122,
+"instances": 162,
+"devices": 137,
 "shapes": 2,
 "variants": [
 {
-"instances": 147,
-"devices": 122,
+"instances": 162,
+"devices": 137,
 "members": 2,
 "registers": 4,
 "core": 29,
@@ -5077,10 +5487,18 @@
 {
 "name": "DAC",
 "ignored": [],
-"instances": 382,
-"devices": 206,
-"shapes": 15,
+"instances": 447,
+"devices": 223,
+"shapes": 19,
 "variants": [
+{
+"instances": 247,
+"devices": 114,
+"members": 11,
+"registers": 29,
+"core": 31,
+"features": 18
+},
 {
 "instances": 200,
 "devices": 109,
@@ -5088,14 +5506,6 @@
 "registers": 22,
 "core": 7,
 "features": 15
-},
-{
-"instances": 182,
-"devices": 97,
-"members": 7,
-"registers": 24,
-"core": 39,
-"features": 6
 }
 ]
 },
@@ -5119,33 +5529,41 @@
 {
 "name": "DBGMCU",
 "ignored": [],
-"instances": 265,
-"devices": 265,
-"shapes": 91,
+"instances": 282,
+"devices": 282,
+"shapes": 98,
 "variants": [
 {
-"instances": 134,
-"devices": 134,
-"members": 54,
-"registers": 31,
-"core": 2,
-"features": 68
+"instances": 117,
+"devices": 117,
+"members": 47,
+"registers": 6,
+"core": 6,
+"features": 51
 },
 {
-"instances": 52,
-"devices": 52,
-"members": 19,
+"instances": 47,
+"devices": 47,
+"members": 20,
 "registers": 35,
-"core": 4,
-"features": 49
+"core": 0,
+"features": 51
 },
 {
-"instances": 32,
-"devices": 32,
-"members": 6,
+"instances": 40,
+"devices": 40,
+"members": 9,
+"registers": 34,
+"core": 8,
+"features": 16
+},
+{
+"instances": 31,
+"devices": 31,
+"members": 10,
 "registers": 28,
-"core": 36,
-"features": 11
+"core": 16,
+"features": 23
 },
 {
 "instances": 28,
@@ -5168,17 +5586,17 @@
 {
 "name": "DCACHE",
 "ignored": [],
-"instances": 58,
-"devices": 23,
-"shapes": 2,
+"instances": 62,
+"devices": 27,
+"shapes": 3,
 "variants": [
 {
-"instances": 58,
-"devices": 23,
-"members": 2,
+"instances": 62,
+"devices": 27,
+"members": 3,
 "registers": 10,
 "core": 38,
-"features": 2
+"features": 3
 }
 ]
 },
@@ -5287,13 +5705,13 @@
 {
 "name": "DLYB",
 "ignored": [],
-"instances": 277,
-"devices": 68,
+"instances": 288,
+"devices": 77,
 "shapes": 2,
 "variants": [
 {
-"instances": 269,
-"devices": 64,
+"instances": 280,
+"devices": 73,
 "members": 1,
 "registers": 2,
 "core": 8,
@@ -5312,9 +5730,9 @@
 {
 "name": "DMA",
 "ignored": [],
-"instances": 524,
-"devices": 287,
-"shapes": 35,
+"instances": 558,
+"devices": 304,
+"shapes": 42,
 "variants": [
 {
 "instances": 200,
@@ -5325,20 +5743,20 @@
 "features": 20
 },
 {
+"instances": 165,
+"devices": 70,
+"members": 22,
+"registers": 213,
+"core": 235,
+"features": 61
+},
+{
 "instances": 138,
 "devices": 69,
 "members": 5,
 "registers": 52,
 "core": 340,
 "features": 3
-},
-{
-"instances": 131,
-"devices": 53,
-"members": 15,
-"registers": 213,
-"core": 237,
-"features": 38
 },
 {
 "instances": 53,
@@ -5420,17 +5838,17 @@
 {
 "name": "DTS",
 "ignored": [],
-"instances": 43,
-"devices": 32,
-"shapes": 2,
+"instances": 51,
+"devices": 40,
+"shapes": 3,
 "variants": [
 {
-"instances": 39,
-"devices": 28,
-"members": 1,
+"instances": 47,
+"devices": 36,
+"members": 2,
 "registers": 9,
 "core": 41,
-"features": 0
+"features": 1
 },
 {
 "instances": 4,
@@ -5445,9 +5863,9 @@
 {
 "name": "ETH",
 "ignored": [],
-"instances": 66,
-"devices": 58,
-"shapes": 8,
+"instances": 69,
+"devices": 61,
+"shapes": 9,
 "variants": [
 {
 "instances": 30,
@@ -5472,23 +5890,48 @@
 "registers": 249,
 "core": 442,
 "features": 5
+},
+{
+"instances": 3,
+"devices": 3,
+"members": 1,
+"registers": 133,
+"core": 660,
+"features": 0
+}
+]
+},
+{
+"name": "EXITHDPLIB_pFunc",
+"ignored": [],
+"instances": 9,
+"devices": 9,
+"shapes": 1,
+"variants": [
+{
+"instances": 9,
+"devices": 9,
+"members": 1,
+"registers": 2,
+"core": 2,
+"features": 0
 }
 ]
 },
 {
 "name": "EXTI",
 "ignored": [],
-"instances": 306,
-"devices": 281,
-"shapes": 82,
+"instances": 323,
+"devices": 298,
+"shapes": 88,
 "variants": [
 {
-"instances": 295,
-"devices": 270,
-"members": 76,
+"instances": 312,
+"devices": 287,
+"members": 82,
 "registers": 72,
 "core": 0,
-"features": 198
+"features": 234
 },
 {
 "instances": 3,
@@ -5552,13 +5995,13 @@
 {
 "name": "FDCAN_Config",
 "ignored": [],
-"instances": 77,
-"devices": 52,
+"instances": 91,
+"devices": 66,
 "shapes": 3,
 "variants": [
 {
-"instances": 77,
-"devices": 52,
+"instances": 91,
+"devices": 66,
 "members": 3,
 "registers": 6,
 "core": 2,
@@ -5569,13 +6012,13 @@
 {
 "name": "FDCAN_Global",
 "ignored": [],
-"instances": 198,
-"devices": 84,
+"instances": 228,
+"devices": 98,
 "shapes": 3,
 "variants": [
 {
-"instances": 124,
-"devices": 52,
+"instances": 154,
+"devices": 66,
 "members": 1,
 "registers": 36,
 "core": 195,
@@ -5611,9 +6054,9 @@
 {
 "name": "FLASH",
 "ignored": [],
-"instances": 308,
-"devices": 283,
-"shapes": 85,
+"instances": 325,
+"devices": 300,
+"shapes": 91,
 "variants": [
 {
 "instances": 43,
@@ -5696,12 +6139,20 @@
 "features": 3
 },
 {
-"instances": 10,
-"devices": 10,
-"members": 5,
-"registers": 10,
-"core": 42,
-"features": 3
+"instances": 12,
+"devices": 12,
+"members": 6,
+"registers": 62,
+"core": 8,
+"features": 5
+},
+{
+"instances": 9,
+"devices": 9,
+"members": 3,
+"registers": 36,
+"core": 139,
+"features": 4
 },
 {
 "instances": 7,
@@ -5709,6 +6160,14 @@
 "members": 2,
 "registers": 16,
 "core": 84,
+"features": 1
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 2,
+"registers": 59,
+"core": 258,
 "features": 1
 },
 {
@@ -5764,13 +6223,13 @@
 {
 "name": "FMAC",
 "ignored": [],
-"instances": 57,
-"devices": 38,
+"instances": 69,
+"devices": 46,
 "shapes": 1,
 "variants": [
 {
-"instances": 57,
-"devices": 38,
+"instances": 69,
+"devices": 46,
 "members": 1,
 "registers": 8,
 "core": 37,
@@ -5931,6 +6390,57 @@
 ]
 },
 {
+"name": "FMC_NAND",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 5,
+"core": 29,
+"features": 0
+}
+]
+},
+{
+"name": "FMC_NORSRAM",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 12,
+"core": 116,
+"features": 0
+}
+]
+},
+{
+"name": "FMC_SDRAM",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 7,
+"core": 50,
+"features": 0
+}
+]
+},
+{
 "name": "FMPI2C",
 "ignored": [],
 "instances": 10,
@@ -6052,13 +6562,13 @@
 {
 "name": "GPIO",
 "ignored": [],
-"instances": 2307,
-"devices": 287,
+"instances": 2433,
+"devices": 304,
 "shapes": 17,
 "variants": [
 {
-"instances": 2283,
-"devices": 287,
+"instances": 2409,
+"devices": 304,
 "members": 16,
 "registers": 24,
 "core": 21,
@@ -6094,26 +6604,26 @@
 {
 "name": "GTZC_MPCBB",
 "ignored": [],
-"instances": 259,
-"devices": 45,
-"shapes": 8,
+"instances": 275,
+"devices": 51,
+"shapes": 9,
 "variants": [
 {
-"instances": 259,
-"devices": 45,
-"members": 8,
+"instances": 275,
+"devices": 51,
+"members": 9,
 "registers": 134,
 "core": 0,
-"features": 19
+"features": 20
 }
 ]
 },
 {
 "name": "GTZC_TZIC",
 "ignored": [],
-"instances": 77,
-"devices": 28,
-"shapes": 27,
+"instances": 83,
+"devices": 34,
+"shapes": 28,
 "variants": [
 {
 "instances": 48,
@@ -6124,12 +6634,12 @@
 "features": 11
 },
 {
-"instances": 29,
-"devices": 16,
-"members": 14,
-"registers": 14,
+"instances": 35,
+"devices": 22,
+"members": 15,
+"registers": 17,
 "core": 1,
-"features": 25
+"features": 27
 }
 ]
 },
@@ -6167,36 +6677,53 @@
 ]
 },
 {
-"name": "HASH",
+"name": "GTZC_TZSC_Periph",
 "ignored": [],
-"instances": 111,
-"devices": 86,
-"shapes": 12,
+"instances": 6,
+"devices": 6,
+"shapes": 1,
 "variants": [
 {
-"instances": 111,
-"devices": 86,
-"members": 12,
-"registers": 158,
+"instances": 6,
+"devices": 6,
+"members": 1,
+"registers": 7,
+"core": 8,
+"features": 0
+}
+]
+},
+{
+"name": "HASH",
+"ignored": [],
+"instances": 128,
+"devices": 103,
+"shapes": 15,
+"variants": [
+{
+"instances": 128,
+"devices": 103,
+"members": 15,
+"registers": 207,
 "core": 25,
-"features": 19
+"features": 23
 }
 ]
 },
 {
 "name": "HRTIM",
 "ignored": [],
-"instances": 20,
-"devices": 20,
-"shapes": 3,
+"instances": 28,
+"devices": 26,
+"shapes": 5,
 "variants": [
 {
-"instances": 20,
-"devices": 20,
-"members": 3,
-"registers": 221,
-"core": 2370,
-"features": 3
+"instances": 28,
+"devices": 26,
+"members": 5,
+"registers": 426,
+"core": 415,
+"features": 9
 }
 ]
 },
@@ -6228,9 +6755,9 @@
 {
 "name": "HSP",
 "ignored": [],
-"instances": 2,
-"devices": 2,
-"shapes": 1,
+"instances": 4,
+"devices": 4,
+"shapes": 2,
 "variants": [
 {
 "instances": 2,
@@ -6239,23 +6766,31 @@
 "registers": 75,
 "core": 424,
 "features": 0
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 75,
+"core": 422,
+"features": 0
 }
 ]
 },
 {
 "name": "I2C",
 "ignored": [],
-"instances": 928,
-"devices": 287,
-"shapes": 14,
+"instances": 969,
+"devices": 304,
+"shapes": 16,
 "variants": [
 {
-"instances": 781,
-"devices": 224,
-"members": 12,
+"instances": 822,
+"devices": 241,
+"members": 14,
 "registers": 12,
 "core": 68,
-"features": 5
+"features": 6
 },
 {
 "instances": 147,
@@ -6270,34 +6805,34 @@
 {
 "name": "I3C",
 "ignored": [],
-"instances": 64,
-"devices": 28,
-"shapes": 3,
+"instances": 81,
+"devices": 45,
+"shapes": 6,
 "variants": [
 {
-"instances": 64,
-"devices": 28,
-"members": 3,
-"registers": 32,
-"core": 222,
-"features": 3
+"instances": 81,
+"devices": 45,
+"members": 6,
+"registers": 33,
+"core": 217,
+"features": 6
 }
 ]
 },
 {
 "name": "ICACHE",
 "ignored": [],
-"instances": 78,
-"devices": 53,
-"shapes": 2,
+"instances": 93,
+"devices": 68,
+"shapes": 5,
 "variants": [
 {
-"instances": 78,
-"devices": 53,
-"members": 2,
+"instances": 93,
+"devices": 68,
+"members": 5,
 "registers": 10,
 "core": 22,
-"features": 1
+"features": 3
 }
 ]
 },
@@ -6321,13 +6856,13 @@
 {
 "name": "IWDG",
 "ignored": [],
-"instances": 324,
-"devices": 287,
+"instances": 341,
+"devices": 304,
 "shapes": 6,
 "variants": [
 {
-"instances": 324,
-"devices": 287,
+"instances": 341,
+"devices": 304,
 "members": 6,
 "registers": 7,
 "core": 8,
@@ -6414,13 +6949,13 @@
 {
 "name": "LPTIM",
 "ignored": [],
-"instances": 590,
-"devices": 183,
+"instances": 615,
+"devices": 200,
 "shapes": 14,
 "variants": [
 {
-"instances": 571,
-"devices": 167,
+"instances": 596,
+"devices": 184,
 "members": 12,
 "registers": 18,
 "core": 37,
@@ -6634,13 +7169,13 @@
 {
 "name": "NSSLIB_pFunc",
 "ignored": [],
-"instances": 12,
-"devices": 12,
+"instances": 18,
+"devices": 18,
 "shapes": 1,
 "variants": [
 {
-"instances": 12,
-"devices": 12,
+"instances": 18,
+"devices": 18,
 "members": 1,
 "registers": 2,
 "core": 2,
@@ -6710,9 +7245,9 @@
 {
 "name": "OPAMP",
 "ignored": [],
-"instances": 401,
-"devices": 122,
-"shapes": 15,
+"instances": 416,
+"devices": 129,
+"shapes": 16,
 "variants": [
 {
 "instances": 164,
@@ -6745,6 +7280,14 @@
 "registers": 3,
 "core": 30,
 "features": 1
+},
+{
+"instances": 15,
+"devices": 7,
+"members": 1,
+"registers": 2,
+"core": 22,
+"features": 0
 }
 ]
 },
@@ -6776,14 +7319,14 @@
 {
 "name": "OTFDEC",
 "ignored": [],
-"instances": 55,
-"devices": 21,
-"shapes": 3,
+"instances": 57,
+"devices": 23,
+"shapes": 4,
 "variants": [
 {
-"instances": 55,
-"devices": 21,
-"members": 3,
+"instances": 57,
+"devices": 23,
+"members": 4,
 "registers": 46,
 "core": 14,
 "features": 3
@@ -6793,13 +7336,13 @@
 {
 "name": "PKA",
 "ignored": [],
-"instances": 81,
-"devices": 63,
-"shapes": 8,
+"instances": 90,
+"devices": 72,
+"shapes": 9,
 "variants": [
 {
-"instances": 62,
-"devices": 45,
+"instances": 68,
+"devices": 51,
 "members": 4,
 "registers": 4,
 "core": 17,
@@ -6812,6 +7355,14 @@
 "registers": 4,
 "core": 17,
 "features": 1
+},
+{
+"instances": 3,
+"devices": 3,
+"members": 1,
+"registers": 4,
+"core": 33,
+"features": 0
 },
 {
 "instances": 2,
@@ -6834,16 +7385,33 @@
 {
 "name": "PLAY",
 "ignored": [],
-"instances": 12,
-"devices": 6,
+"instances": 16,
+"devices": 10,
 "shapes": 1,
 "variants": [
 {
-"instances": 12,
-"devices": 6,
+"instances": 16,
+"devices": 10,
 "members": 1,
 "registers": 80,
 "core": 492,
+"features": 0
+}
+]
+},
+{
+"name": "POSENC",
+"ignored": [],
+"instances": 8,
+"devices": 4,
+"shapes": 1,
+"variants": [
+{
+"instances": 8,
+"devices": 4,
+"members": 1,
+"registers": 90,
+"core": 179,
 "features": 0
 }
 ]
@@ -6893,10 +7461,18 @@
 {
 "name": "PWR",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 110,
+"instances": 329,
+"devices": 304,
+"shapes": 116,
 "variants": [
+{
+"instances": 51,
+"devices": 35,
+"members": 24,
+"registers": 76,
+"core": 10,
+"features": 54
+},
 {
 "instances": 46,
 "devices": 44,
@@ -6904,14 +7480,6 @@
 "registers": 28,
 "core": 85,
 "features": 36
-},
-{
-"instances": 45,
-"devices": 29,
-"members": 22,
-"registers": 72,
-"core": 14,
-"features": 45
 },
 {
 "instances": 41,
@@ -6946,20 +7514,20 @@
 "features": 6
 },
 {
+"instances": 20,
+"devices": 17,
+"members": 8,
+"registers": 58,
+"core": 0,
+"features": 13
+},
+{
 "instances": 14,
 "devices": 14,
 "members": 10,
 "registers": 29,
 "core": 63,
 "features": 19
-},
-{
-"instances": 14,
-"devices": 10,
-"members": 5,
-"registers": 60,
-"core": 0,
-"features": 7
 },
 {
 "instances": 14,
@@ -6970,7 +7538,7 @@
 "features": 0
 },
 {
-"instances": 12,
+"instances": 13,
 "devices": 9,
 "members": 4,
 "registers": 39,
@@ -7000,6 +7568,14 @@
 "registers": 19,
 "core": 147,
 "features": 2
+},
+{
+"instances": 4,
+"devices": 4,
+"members": 1,
+"registers": 17,
+"core": 109,
+"features": 0
 },
 {
 "instances": 3,
@@ -7056,9 +7632,9 @@
 {
 "name": "RAMCFG",
 "ignored": [],
-"instances": 96,
-"devices": 49,
-"shapes": 19,
+"instances": 111,
+"devices": 64,
+"shapes": 24,
 "variants": [
 {
 "instances": 52,
@@ -7069,20 +7645,20 @@
 "features": 21
 },
 {
-"instances": 36,
-"devices": 12,
-"members": 5,
-"registers": 68,
-"core": 66,
-"features": 5
+"instances": 45,
+"devices": 21,
+"members": 8,
+"registers": 71,
+"core": 33,
+"features": 11
 },
 {
-"instances": 8,
-"devices": 8,
-"members": 2,
-"registers": 27,
-"core": 166,
-"features": 1
+"instances": 14,
+"devices": 14,
+"members": 4,
+"registers": 37,
+"core": 158,
+"features": 4
 }
 ]
 },
@@ -7114,26 +7690,26 @@
 {
 "name": "RAMECC",
 "ignored": [],
-"instances": 80,
-"devices": 32,
-"shapes": 6,
+"instances": 84,
+"devices": 34,
+"shapes": 8,
 "variants": [
 {
-"instances": 80,
-"devices": 32,
-"members": 6,
-"registers": 43,
-"core": 20,
-"features": 7
+"instances": 84,
+"devices": 34,
+"members": 8,
+"registers": 62,
+"core": 5,
+"features": 14
 }
 ]
 },
 {
 "name": "RCC",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 249,
+"instances": 329,
+"devices": 304,
+"shapes": 262,
 "variants": [
 {
 "instances": 29,
@@ -7142,6 +7718,14 @@
 "registers": 42,
 "core": 188,
 "features": 39
+},
+{
+"instances": 28,
+"devices": 28,
+"members": 22,
+"registers": 56,
+"core": 17,
+"features": 15
 },
 {
 "instances": 28,
@@ -7176,14 +7760,6 @@
 "features": 13
 },
 {
-"instances": 22,
-"devices": 22,
-"members": 19,
-"registers": 14,
-"core": 168,
-"features": 9
-},
-{
 "instances": 21,
 "devices": 21,
 "members": 13,
@@ -7204,7 +7780,7 @@
 "devices": 19,
 "members": 18,
 "registers": 21,
-"core": 151,
+"core": 150,
 "features": 12
 },
 {
@@ -7219,7 +7795,7 @@
 "instances": 14,
 "devices": 14,
 "members": 14,
-"registers": 13,
+"registers": 12,
 "core": 97,
 "features": 16
 },
@@ -7230,6 +7806,14 @@
 "registers": 30,
 "core": 240,
 "features": 20
+},
+{
+"instances": 11,
+"devices": 11,
+"members": 11,
+"registers": 44,
+"core": 12,
+"features": 9
 },
 {
 "instances": 10,
@@ -7314,10 +7898,10 @@
 {
 "instances": 2,
 "devices": 2,
-"members": 2,
-"registers": 13,
-"core": 159,
-"features": 1
+"members": 1,
+"registers": 61,
+"core": 536,
+"features": 0
 },
 {
 "instances": 2,
@@ -7391,13 +7975,13 @@
 {
 "name": "RNG",
 "ignored": [],
-"instances": 217,
-"devices": 192,
+"instances": 234,
+"devices": 209,
 "shapes": 12,
 "variants": [
 {
-"instances": 216,
-"devices": 191,
+"instances": 233,
+"devices": 208,
 "members": 11,
 "registers": 13,
 "core": 7,
@@ -7449,8 +8033,8 @@
 {
 "name": "RSSLIB_pFunc",
 "ignored": [],
-"instances": 51,
-"devices": 51,
+"instances": 57,
+"devices": 57,
 "shapes": 6,
 "variants": [
 {
@@ -7462,8 +8046,8 @@
 "features": 1
 },
 {
-"instances": 15,
-"devices": 15,
+"instances": 21,
+"devices": 21,
 "members": 2,
 "registers": 8,
 "core": 3,
@@ -7482,17 +8066,17 @@
 {
 "name": "RTC",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 45,
+"instances": 329,
+"devices": 304,
+"shapes": 48,
 "variants": [
 {
-"instances": 284,
-"devices": 259,
-"members": 43,
+"instances": 301,
+"devices": 276,
+"members": 46,
 "registers": 67,
 "core": 42,
-"features": 64
+"features": 65
 },
 {
 "instances": 14,
@@ -7549,17 +8133,25 @@
 {
 "name": "SBS",
 "ignored": [],
-"instances": 27,
-"devices": 16,
-"shapes": 7,
+"instances": 44,
+"devices": 33,
+"shapes": 13,
 "variants": [
 {
-"instances": 27,
-"devices": 16,
-"members": 7,
-"registers": 26,
-"core": 27,
-"features": 8
+"instances": 41,
+"devices": 30,
+"members": 12,
+"registers": 30,
+"core": 15,
+"features": 20
+},
+{
+"instances": 3,
+"devices": 3,
+"members": 1,
+"registers": 12,
+"core": 36,
+"features": 0
 }
 ]
 },
@@ -7600,17 +8192,17 @@
 {
 "name": "SDMMC",
 "ignored": [],
-"instances": 205,
-"devices": 100,
-"shapes": 8,
+"instances": 207,
+"devices": 102,
+"shapes": 9,
 "variants": [
 {
-"instances": 168,
-"devices": 73,
-"members": 6,
-"registers": 30,
-"core": 133,
-"features": 11
+"instances": 170,
+"devices": 75,
+"members": 7,
+"registers": 60,
+"core": 48,
+"features": 14
 },
 {
 "instances": 37,
@@ -7650,9 +8242,9 @@
 {
 "name": "SPI",
 "ignored": [],
-"instances": 1098,
-"devices": 287,
-"shapes": 20,
+"instances": 1150,
+"devices": 304,
+"shapes": 21,
 "variants": [
 {
 "instances": 641,
@@ -7663,12 +8255,12 @@
 "features": 11
 },
 {
-"instances": 457,
-"devices": 81,
-"members": 6,
+"instances": 509,
+"devices": 98,
+"members": 7,
 "registers": 15,
 "core": 84,
-"features": 6
+"features": 7
 }
 ]
 },
@@ -7773,24 +8365,32 @@
 {
 "name": "TAMP",
 "ignored": [],
-"instances": 123,
-"devices": 98,
-"shapes": 20,
+"instances": 140,
+"devices": 115,
+"shapes": 24,
 "variants": [
 {
-"instances": 119,
-"devices": 96,
-"members": 19,
+"instances": 107,
+"devices": 84,
+"members": 18,
 "registers": 53,
 "core": 37,
-"features": 56
+"features": 53
 },
 {
-"instances": 4,
-"devices": 2,
+"instances": 24,
+"devices": 22,
+"members": 5,
+"registers": 54,
+"core": 74,
+"features": 15
+},
+{
+"instances": 9,
+"devices": 9,
 "members": 1,
-"registers": 49,
-"core": 225,
+"registers": 43,
+"core": 148,
 "features": 0
 }
 ]
@@ -7806,9 +8406,9 @@
 "OR3",
 "TISEL"
 ],
-"instances": 2969,
-"devices": 287,
-"shapes": 145,
+"instances": 3204,
+"devices": 304,
+"shapes": 150,
 "variants": [
 {
 "instances": 2790,
@@ -7817,6 +8417,14 @@
 "registers": 27,
 "core": 21,
 "features": 72
+},
+{
+"instances": 235,
+"devices": 17,
+"members": 5,
+"registers": 30,
+"core": 143,
+"features": 4
 },
 {
 "instances": 174,
@@ -7864,39 +8472,39 @@
 {
 "name": "UCPD",
 "ignored": [],
-"instances": 72,
-"devices": 45,
-"shapes": 5,
+"instances": 78,
+"devices": 51,
+"shapes": 7,
 "variants": [
 {
-"instances": 72,
-"devices": 45,
-"members": 5,
-"registers": 15,
-"core": 92,
-"features": 5
+"instances": 78,
+"devices": 51,
+"members": 7,
+"registers": 24,
+"core": 64,
+"features": 8
 }
 ]
 },
 {
 "name": "USART",
 "ignored": [],
-"instances": 1761,
-"devices": 287,
-"shapes": 75,
+"instances": 1880,
+"devices": 304,
+"shapes": 78,
 "variants": [
 {
-"instances": 758,
-"devices": 122,
-"members": 33,
+"instances": 780,
+"devices": 124,
+"members": 34,
 "registers": 12,
 "core": 77,
 "features": 20
 },
 {
-"instances": 604,
-"devices": 72,
-"members": 20,
+"instances": 701,
+"devices": 87,
+"members": 22,
 "registers": 13,
 "core": 98,
 "features": 11
@@ -7939,30 +8547,30 @@
 {
 "name": "USB_DRD",
 "ignored": [],
-"instances": 34,
-"devices": 25,
-"shapes": 4,
+"instances": 47,
+"devices": 38,
+"shapes": 6,
 "variants": [
 {
-"instances": 34,
-"devices": 25,
-"members": 4,
+"instances": 47,
+"devices": 38,
+"members": 6,
 "registers": 46,
 "core": 182,
-"features": 4
+"features": 6
 }
 ]
 },
 {
 "name": "USB_DRD_PMABuffDesc",
 "ignored": [],
-"instances": 34,
-"devices": 25,
+"instances": 47,
+"devices": 38,
 "shapes": 1,
 "variants": [
 {
-"instances": 34,
-"devices": 25,
+"instances": 47,
+"devices": 38,
 "members": 1,
 "registers": 2,
 "core": 2,
@@ -7998,9 +8606,9 @@
 {
 "name": "USB_OTG_Global",
 "ignored": [],
-"instances": 179,
-"devices": 108,
-"shapes": 22,
+"instances": 181,
+"devices": 110,
+"shapes": 23,
 "variants": [
 {
 "instances": 163,
@@ -8017,19 +8625,27 @@
 "registers": 301,
 "core": 2175,
 "features": 0
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 184,
+"core": 1303,
+"features": 0
 }
 ]
 },
 {
 "name": "VREFBUF",
 "ignored": [],
-"instances": 143,
-"devices": 118,
+"instances": 151,
+"devices": 126,
 "shapes": 3,
 "variants": [
 {
-"instances": 143,
-"devices": 118,
+"instances": 151,
+"devices": 126,
 "members": 3,
 "registers": 2,
 "core": 6,
@@ -8057,13 +8673,13 @@
 {
 "name": "WWDG",
 "ignored": [],
-"instances": 315,
-"devices": 278,
+"instances": 332,
+"devices": 295,
 "shapes": 2,
 "variants": [
 {
-"instances": 315,
-"devices": 278,
+"instances": 332,
+"devices": 295,
 "members": 2,
 "registers": 3,
 "core": 8,
@@ -8074,10 +8690,18 @@
 {
 "name": "XSPI",
 "ignored": [],
-"instances": 119,
-"devices": 40,
-"shapes": 9,
+"instances": 128,
+"devices": 49,
+"shapes": 11,
 "variants": [
+{
+"instances": 66,
+"devices": 32,
+"members": 7,
+"registers": 31,
+"core": 58,
+"features": 14
+},
 {
 "instances": 62,
 "devices": 25,
@@ -8085,14 +8709,6 @@
 "registers": 31,
 "core": 120,
 "features": 5
-},
-{
-"instances": 57,
-"devices": 23,
-"members": 5,
-"registers": 31,
-"core": 58,
-"features": 12
 }
 ]
 },
@@ -8114,18 +8730,18 @@
 ]
 }
 ],
-"instances": 22001,
-"shapes": 1808,
-"variants": 300
+"instances": 23428,
+"shapes": 1941,
+"variants": 323
 },
 "similar": {
 "groups": [
 {
 "name": "ADC",
 "ignored": [],
-"instances": 584,
-"devices": 287,
-"shapes": 50,
+"instances": 626,
+"devices": 304,
+"shapes": 54,
 "variants": [
 {
 "instances": 137,
@@ -8136,20 +8752,20 @@
 "features": 23
 },
 {
+"instances": 136,
+"devices": 57,
+"members": 10,
+"registers": 70,
+"core": 98,
+"features": 27
+},
+{
 "instances": 134,
 "devices": 76,
 "members": 9,
 "registers": 42,
 "core": 2,
 "features": 16
-},
-{
-"instances": 94,
-"devices": 40,
-"members": 6,
-"registers": 61,
-"core": 108,
-"features": 13
 },
 {
 "instances": 84,
@@ -8196,17 +8812,17 @@
 {
 "name": "ADC_Common",
 "ignored": [],
-"instances": 203,
-"devices": 152,
-"shapes": 13,
+"instances": 222,
+"devices": 169,
+"shapes": 14,
 "variants": [
 {
-"instances": 197,
-"devices": 146,
-"members": 12,
+"instances": 216,
+"devices": 163,
+"members": 13,
 "registers": 4,
-"core": 2,
-"features": 15
+"core": 1,
+"features": 18
 },
 {
 "instances": 6,
@@ -8219,19 +8835,36 @@
 ]
 },
 {
-"name": "AES",
+"name": "ADF",
 "ignored": [],
-"instances": 134,
-"devices": 81,
-"shapes": 10,
+"instances": 2,
+"devices": 2,
+"shapes": 1,
 "variants": [
 {
-"instances": 134,
-"devices": 81,
-"members": 10,
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 15,
+"core": 85,
+"features": 0
+}
+]
+},
+{
+"name": "AES",
+"ignored": [],
+"instances": 143,
+"devices": 87,
+"shapes": 13,
+"variants": [
+{
+"instances": 143,
+"devices": 87,
+"members": 13,
 "registers": 43,
 "core": 12,
-"features": 14
+"features": 16
 }
 ]
 },
@@ -8290,6 +8923,23 @@
 "members": 1,
 "registers": 1,
 "core": 3,
+"features": 0
+}
+]
+},
+{
+"name": "AXIM",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 52,
+"core": 135,
 "features": 0
 }
 ]
@@ -8441,14 +9091,14 @@
 {
 "name": "CCB",
 "ignored": [],
-"instances": 9,
-"devices": 6,
-"shapes": 2,
+"instances": 12,
+"devices": 9,
+"shapes": 3,
 "variants": [
 {
-"instances": 9,
-"devices": 6,
-"members": 2,
+"instances": 12,
+"devices": 9,
+"members": 3,
 "registers": 6,
 "core": 15,
 "features": 2
@@ -8483,9 +9133,9 @@
 {
 "name": "COMP",
 "ignored": [],
-"instances": 520,
-"devices": 181,
-"shapes": 44,
+"instances": 596,
+"devices": 198,
+"shapes": 48,
 "variants": [
 {
 "instances": 141,
@@ -8494,6 +9144,14 @@
 "registers": 1,
 "core": 6,
 "features": 9
+},
+{
+"instances": 127,
+"devices": 43,
+"members": 6,
+"registers": 7,
+"core": 0,
+"features": 12
 },
 {
 "instances": 119,
@@ -8520,12 +9178,12 @@
 "features": 0
 },
 {
-"instances": 56,
-"devices": 28,
+"instances": 30,
+"devices": 9,
 "members": 2,
 "registers": 1,
-"core": 12,
-"features": 2
+"core": 15,
+"features": 0
 },
 {
 "instances": 30,
@@ -8536,28 +9194,12 @@
 "features": 0
 },
 {
-"instances": 24,
-"devices": 6,
-"members": 1,
-"registers": 1,
-"core": 15,
-"features": 0
-},
-{
 "instances": 18,
 "devices": 9,
 "members": 2,
 "registers": 2,
 "core": 18,
 "features": 2
-},
-{
-"instances": 1,
-"devices": 1,
-"members": 1,
-"registers": 4,
-"core": 20,
-"features": 0
 }
 ]
 },
@@ -8598,9 +9240,9 @@
 {
 "name": "COMP_Common",
 "ignored": [],
-"instances": 122,
-"devices": 110,
-"shapes": 14,
+"instances": 157,
+"devices": 121,
+"shapes": 17,
 "variants": [
 {
 "instances": 49,
@@ -8617,6 +9259,14 @@
 "registers": 2,
 "core": 22,
 "features": 2
+},
+{
+"instances": 24,
+"devices": 6,
+"members": 1,
+"registers": 2,
+"core": 26,
+"features": 0
 },
 {
 "instances": 22,
@@ -8641,19 +9291,35 @@
 "registers": 1,
 "core": 19,
 "features": 1
+},
+{
+"instances": 8,
+"devices": 2,
+"members": 1,
+"registers": 2,
+"core": 28,
+"features": 0
+},
+{
+"instances": 3,
+"devices": 3,
+"members": 1,
+"registers": 4,
+"core": 38,
+"features": 0
 }
 ]
 },
 {
 "name": "CORDIC",
 "ignored": [],
-"instances": 65,
-"devices": 44,
+"instances": 82,
+"devices": 61,
 "shapes": 1,
 "variants": [
 {
-"instances": 65,
-"devices": 44,
+"instances": 82,
+"devices": 61,
 "members": 1,
 "registers": 3,
 "core": 16,
@@ -8664,14 +9330,14 @@
 {
 "name": "CRC",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 8,
+"instances": 329,
+"devices": 304,
+"shapes": 9,
 "variants": [
 {
-"instances": 312,
-"devices": 287,
-"members": 8,
+"instances": 329,
+"devices": 304,
+"members": 9,
 "registers": 10,
 "core": 4,
 "features": 8
@@ -8681,13 +9347,13 @@
 {
 "name": "CRS",
 "ignored": [],
-"instances": 147,
-"devices": 122,
+"instances": 162,
+"devices": 137,
 "shapes": 2,
 "variants": [
 {
-"instances": 147,
-"devices": 122,
+"instances": 162,
+"devices": 137,
 "members": 2,
 "registers": 4,
 "core": 29,
@@ -8740,17 +9406,17 @@
 {
 "name": "DAC",
 "ignored": [],
-"instances": 382,
-"devices": 206,
-"shapes": 15,
+"instances": 447,
+"devices": 223,
+"shapes": 19,
 "variants": [
 {
-"instances": 382,
-"devices": 206,
-"members": 15,
-"registers": 26,
-"core": 5,
-"features": 25
+"instances": 447,
+"devices": 223,
+"members": 19,
+"registers": 31,
+"core": 3,
+"features": 36
 }
 ]
 },
@@ -8774,9 +9440,9 @@
 {
 "name": "DBGMCU",
 "ignored": [],
-"instances": 265,
-"devices": 265,
-"shapes": 91,
+"instances": 282,
+"devices": 282,
+"shapes": 98,
 "variants": [
 {
 "instances": 136,
@@ -8787,20 +9453,20 @@
 "features": 55
 },
 {
-"instances": 72,
-"devices": 72,
-"members": 23,
-"registers": 48,
-"core": 3,
-"features": 59
+"instances": 51,
+"devices": 51,
+"members": 14,
+"registers": 41,
+"core": 6,
+"features": 32
 },
 {
-"instances": 29,
-"devices": 29,
-"members": 9,
-"registers": 34,
-"core": 2,
-"features": 16
+"instances": 47,
+"devices": 47,
+"members": 20,
+"registers": 35,
+"core": 0,
+"features": 51
 },
 {
 "instances": 28,
@@ -8809,23 +9475,31 @@
 "registers": 4,
 "core": 20,
 "features": 7
+},
+{
+"instances": 20,
+"devices": 20,
+"members": 5,
+"registers": 22,
+"core": 8,
+"features": 5
 }
 ]
 },
 {
 "name": "DCACHE",
 "ignored": [],
-"instances": 58,
-"devices": 23,
-"shapes": 2,
+"instances": 62,
+"devices": 27,
+"shapes": 3,
 "variants": [
 {
-"instances": 58,
-"devices": 23,
-"members": 2,
+"instances": 62,
+"devices": 27,
+"members": 3,
 "registers": 10,
 "core": 38,
-"features": 2
+"features": 3
 }
 ]
 },
@@ -8934,13 +9608,13 @@
 {
 "name": "DLYB",
 "ignored": [],
-"instances": 277,
-"devices": 68,
+"instances": 288,
+"devices": 77,
 "shapes": 2,
 "variants": [
 {
-"instances": 269,
-"devices": 64,
+"instances": 280,
+"devices": 73,
 "members": 1,
 "registers": 2,
 "core": 8,
@@ -8959,9 +9633,9 @@
 {
 "name": "DMA",
 "ignored": [],
-"instances": 524,
-"devices": 287,
-"shapes": 35,
+"instances": 558,
+"devices": 304,
+"shapes": 42,
 "variants": [
 {
 "instances": 200,
@@ -8972,20 +9646,20 @@
 "features": 20
 },
 {
+"instances": 165,
+"devices": 70,
+"members": 22,
+"registers": 213,
+"core": 235,
+"features": 61
+},
+{
 "instances": 138,
 "devices": 69,
 "members": 5,
 "registers": 52,
 "core": 340,
 "features": 3
-},
-{
-"instances": 131,
-"devices": 53,
-"members": 15,
-"registers": 213,
-"core": 237,
-"features": 38
 },
 {
 "instances": 53,
@@ -9067,17 +9741,17 @@
 {
 "name": "DTS",
 "ignored": [],
-"instances": 43,
-"devices": 32,
-"shapes": 2,
+"instances": 51,
+"devices": 40,
+"shapes": 3,
 "variants": [
 {
-"instances": 39,
-"devices": 28,
-"members": 1,
+"instances": 47,
+"devices": 36,
+"members": 2,
 "registers": 9,
 "core": 41,
-"features": 0
+"features": 1
 },
 {
 "instances": 4,
@@ -9092,9 +9766,9 @@
 {
 "name": "ETH",
 "ignored": [],
-"instances": 66,
-"devices": 58,
-"shapes": 8,
+"instances": 69,
+"devices": 61,
+"shapes": 9,
 "variants": [
 {
 "instances": 46,
@@ -9111,23 +9785,48 @@
 "registers": 57,
 "core": 236,
 "features": 4
+},
+{
+"instances": 3,
+"devices": 3,
+"members": 1,
+"registers": 133,
+"core": 660,
+"features": 0
+}
+]
+},
+{
+"name": "EXITHDPLIB_pFunc",
+"ignored": [],
+"instances": 9,
+"devices": 9,
+"shapes": 1,
+"variants": [
+{
+"instances": 9,
+"devices": 9,
+"members": 1,
+"registers": 2,
+"core": 2,
+"features": 0
 }
 ]
 },
 {
 "name": "EXTI",
 "ignored": [],
-"instances": 306,
-"devices": 281,
-"shapes": 82,
+"instances": 323,
+"devices": 298,
+"shapes": 88,
 "variants": [
 {
-"instances": 298,
-"devices": 273,
-"members": 78,
+"instances": 315,
+"devices": 290,
+"members": 84,
 "registers": 72,
 "core": 0,
-"features": 204
+"features": 239
 },
 {
 "instances": 3,
@@ -9175,13 +9874,13 @@
 {
 "name": "FDCAN_Config",
 "ignored": [],
-"instances": 77,
-"devices": 52,
+"instances": 91,
+"devices": 66,
 "shapes": 3,
 "variants": [
 {
-"instances": 77,
-"devices": 52,
+"instances": 91,
+"devices": 66,
 "members": 3,
 "registers": 6,
 "core": 2,
@@ -9192,13 +9891,13 @@
 {
 "name": "FDCAN_Global",
 "ignored": [],
-"instances": 198,
-"devices": 84,
+"instances": 228,
+"devices": 98,
 "shapes": 3,
 "variants": [
 {
-"instances": 124,
-"devices": 52,
+"instances": 154,
+"devices": 66,
 "members": 1,
 "registers": 36,
 "core": 195,
@@ -9234,9 +9933,9 @@
 {
 "name": "FLASH",
 "ignored": [],
-"instances": 308,
-"devices": 283,
-"shapes": 85,
+"instances": 325,
+"devices": 300,
+"shapes": 91,
 "variants": [
 {
 "instances": 67,
@@ -9255,12 +9954,12 @@
 "features": 27
 },
 {
-"instances": 31,
-"devices": 31,
-"members": 6,
-"registers": 15,
-"core": 34,
-"features": 11
+"instances": 33,
+"devices": 33,
+"members": 7,
+"registers": 67,
+"core": 7,
+"features": 15
 },
 {
 "instances": 30,
@@ -9296,14 +9995,6 @@
 },
 {
 "instances": 14,
-"devices": 12,
-"members": 4,
-"registers": 110,
-"core": 3,
-"features": 5
-},
-{
-"instances": 14,
 "devices": 14,
 "members": 3,
 "registers": 13,
@@ -9319,11 +10010,27 @@
 "features": 3
 },
 {
+"instances": 13,
+"devices": 11,
+"members": 4,
+"registers": 66,
+"core": 4,
+"features": 6
+},
+{
 "instances": 10,
 "devices": 10,
 "members": 5,
 "registers": 10,
 "core": 42,
+"features": 3
+},
+{
+"instances": 10,
+"devices": 10,
+"members": 3,
+"registers": 79,
+"core": 8,
 "features": 3
 },
 {
@@ -9333,6 +10040,14 @@
 "registers": 14,
 "core": 39,
 "features": 6
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 2,
+"registers": 59,
+"core": 258,
+"features": 1
 },
 {
 "instances": 5,
@@ -9363,13 +10078,13 @@
 {
 "name": "FMAC",
 "ignored": [],
-"instances": 57,
-"devices": 38,
+"instances": 69,
+"devices": 46,
 "shapes": 1,
 "variants": [
 {
-"instances": 57,
-"devices": 38,
+"instances": 69,
+"devices": 46,
 "members": 1,
 "registers": 8,
 "core": 37,
@@ -9530,6 +10245,57 @@
 ]
 },
 {
+"name": "FMC_NAND",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 5,
+"core": 29,
+"features": 0
+}
+]
+},
+{
+"name": "FMC_NORSRAM",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 12,
+"core": 116,
+"features": 0
+}
+]
+},
+{
+"name": "FMC_SDRAM",
+"ignored": [],
+"instances": 2,
+"devices": 2,
+"shapes": 1,
+"variants": [
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 7,
+"core": 50,
+"features": 0
+}
+]
+},
+{
 "name": "FMPI2C",
 "ignored": [],
 "instances": 10,
@@ -9651,13 +10417,13 @@
 {
 "name": "GPIO",
 "ignored": [],
-"instances": 2307,
-"devices": 287,
+"instances": 2433,
+"devices": 304,
 "shapes": 17,
 "variants": [
 {
-"instances": 2283,
-"devices": 287,
+"instances": 2409,
+"devices": 304,
 "members": 16,
 "registers": 24,
 "core": 21,
@@ -9693,26 +10459,26 @@
 {
 "name": "GTZC_MPCBB",
 "ignored": [],
-"instances": 259,
-"devices": 45,
-"shapes": 8,
+"instances": 275,
+"devices": 51,
+"shapes": 9,
 "variants": [
 {
-"instances": 259,
-"devices": 45,
-"members": 8,
+"instances": 275,
+"devices": 51,
+"members": 9,
 "registers": 134,
 "core": 0,
-"features": 19
+"features": 20
 }
 ]
 },
 {
 "name": "GTZC_TZIC",
 "ignored": [],
-"instances": 77,
-"devices": 28,
-"shapes": 27,
+"instances": 83,
+"devices": 34,
+"shapes": 28,
 "variants": [
 {
 "instances": 48,
@@ -9723,12 +10489,12 @@
 "features": 11
 },
 {
-"instances": 29,
-"devices": 16,
-"members": 14,
-"registers": 14,
+"instances": 35,
+"devices": 22,
+"members": 15,
+"registers": 17,
 "core": 1,
-"features": 25
+"features": 27
 }
 ]
 },
@@ -9766,36 +10532,53 @@
 ]
 },
 {
-"name": "HASH",
+"name": "GTZC_TZSC_Periph",
 "ignored": [],
-"instances": 111,
-"devices": 86,
-"shapes": 12,
+"instances": 6,
+"devices": 6,
+"shapes": 1,
 "variants": [
 {
-"instances": 111,
-"devices": 86,
-"members": 12,
-"registers": 158,
+"instances": 6,
+"devices": 6,
+"members": 1,
+"registers": 7,
+"core": 8,
+"features": 0
+}
+]
+},
+{
+"name": "HASH",
+"ignored": [],
+"instances": 128,
+"devices": 103,
+"shapes": 15,
+"variants": [
+{
+"instances": 128,
+"devices": 103,
+"members": 15,
+"registers": 207,
 "core": 25,
-"features": 19
+"features": 23
 }
 ]
 },
 {
 "name": "HRTIM",
 "ignored": [],
-"instances": 20,
-"devices": 20,
-"shapes": 3,
+"instances": 28,
+"devices": 26,
+"shapes": 5,
 "variants": [
 {
-"instances": 20,
-"devices": 20,
-"members": 3,
-"registers": 221,
-"core": 2370,
-"features": 3
+"instances": 28,
+"devices": 26,
+"members": 5,
+"registers": 426,
+"core": 415,
+"features": 9
 }
 ]
 },
@@ -9827,9 +10610,9 @@
 {
 "name": "HSP",
 "ignored": [],
-"instances": 2,
-"devices": 2,
-"shapes": 1,
+"instances": 4,
+"devices": 4,
+"shapes": 2,
 "variants": [
 {
 "instances": 2,
@@ -9838,23 +10621,31 @@
 "registers": 75,
 "core": 424,
 "features": 0
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 75,
+"core": 422,
+"features": 0
 }
 ]
 },
 {
 "name": "I2C",
 "ignored": [],
-"instances": 928,
-"devices": 287,
-"shapes": 14,
+"instances": 969,
+"devices": 304,
+"shapes": 16,
 "variants": [
 {
-"instances": 781,
-"devices": 224,
-"members": 12,
+"instances": 822,
+"devices": 241,
+"members": 14,
 "registers": 12,
 "core": 68,
-"features": 5
+"features": 6
 },
 {
 "instances": 147,
@@ -9869,34 +10660,34 @@
 {
 "name": "I3C",
 "ignored": [],
-"instances": 64,
-"devices": 28,
-"shapes": 3,
+"instances": 81,
+"devices": 45,
+"shapes": 6,
 "variants": [
 {
-"instances": 64,
-"devices": 28,
-"members": 3,
-"registers": 32,
-"core": 222,
-"features": 3
+"instances": 81,
+"devices": 45,
+"members": 6,
+"registers": 33,
+"core": 217,
+"features": 6
 }
 ]
 },
 {
 "name": "ICACHE",
 "ignored": [],
-"instances": 78,
-"devices": 53,
-"shapes": 2,
+"instances": 93,
+"devices": 68,
+"shapes": 5,
 "variants": [
 {
-"instances": 78,
-"devices": 53,
-"members": 2,
+"instances": 93,
+"devices": 68,
+"members": 5,
 "registers": 10,
 "core": 22,
-"features": 1
+"features": 3
 }
 ]
 },
@@ -9920,13 +10711,13 @@
 {
 "name": "IWDG",
 "ignored": [],
-"instances": 324,
-"devices": 287,
+"instances": 341,
+"devices": 304,
 "shapes": 6,
 "variants": [
 {
-"instances": 324,
-"devices": 287,
+"instances": 341,
+"devices": 304,
 "members": 6,
 "registers": 7,
 "core": 8,
@@ -10013,13 +10804,13 @@
 {
 "name": "LPTIM",
 "ignored": [],
-"instances": 590,
-"devices": 183,
+"instances": 615,
+"devices": 200,
 "shapes": 14,
 "variants": [
 {
-"instances": 571,
-"devices": 167,
+"instances": 596,
+"devices": 184,
 "members": 12,
 "registers": 18,
 "core": 37,
@@ -10233,13 +11024,13 @@
 {
 "name": "NSSLIB_pFunc",
 "ignored": [],
-"instances": 12,
-"devices": 12,
+"instances": 18,
+"devices": 18,
 "shapes": 1,
 "variants": [
 {
-"instances": 12,
-"devices": 12,
+"instances": 18,
+"devices": 18,
 "members": 1,
 "registers": 2,
 "core": 2,
@@ -10301,9 +11092,9 @@
 {
 "name": "OPAMP",
 "ignored": [],
-"instances": 401,
-"devices": 122,
-"shapes": 15,
+"instances": 416,
+"devices": 129,
+"shapes": 16,
 "variants": [
 {
 "instances": 189,
@@ -10328,6 +11119,14 @@
 "registers": 3,
 "core": 30,
 "features": 1
+},
+{
+"instances": 15,
+"devices": 7,
+"members": 1,
+"registers": 2,
+"core": 22,
+"features": 0
 }
 ]
 },
@@ -10359,14 +11158,14 @@
 {
 "name": "OTFDEC",
 "ignored": [],
-"instances": 55,
-"devices": 21,
-"shapes": 3,
+"instances": 57,
+"devices": 23,
+"shapes": 4,
 "variants": [
 {
-"instances": 55,
-"devices": 21,
-"members": 3,
+"instances": 57,
+"devices": 23,
+"members": 4,
 "registers": 46,
 "core": 14,
 "features": 3
@@ -10376,33 +11175,50 @@
 {
 "name": "PKA",
 "ignored": [],
-"instances": 81,
-"devices": 63,
-"shapes": 8,
+"instances": 90,
+"devices": 72,
+"shapes": 9,
 "variants": [
 {
-"instances": 81,
-"devices": 63,
-"members": 8,
-"registers": 10,
+"instances": 90,
+"devices": 72,
+"members": 9,
+"registers": 11,
 "core": 0,
-"features": 10
+"features": 11
 }
 ]
 },
 {
 "name": "PLAY",
 "ignored": [],
-"instances": 12,
-"devices": 6,
+"instances": 16,
+"devices": 10,
 "shapes": 1,
 "variants": [
 {
-"instances": 12,
-"devices": 6,
+"instances": 16,
+"devices": 10,
 "members": 1,
 "registers": 80,
 "core": 492,
+"features": 0
+}
+]
+},
+{
+"name": "POSENC",
+"ignored": [],
+"instances": 8,
+"devices": 4,
+"shapes": 1,
+"variants": [
+{
+"instances": 8,
+"devices": 4,
+"members": 1,
+"registers": 90,
+"core": 179,
 "features": 0
 }
 ]
@@ -10444,9 +11260,9 @@
 {
 "name": "PWR",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 110,
+"instances": 329,
+"devices": 304,
+"shapes": 116,
 "variants": [
 {
 "instances": 52,
@@ -10457,12 +11273,12 @@
 "features": 39
 },
 {
-"instances": 45,
-"devices": 29,
-"members": 22,
-"registers": 72,
-"core": 14,
-"features": 45
+"instances": 51,
+"devices": 35,
+"members": 24,
+"registers": 76,
+"core": 10,
+"features": 54
 },
 {
 "instances": 41,
@@ -10497,6 +11313,22 @@
 "features": 6
 },
 {
+"instances": 18,
+"devices": 18,
+"members": 8,
+"registers": 51,
+"core": 0,
+"features": 18
+},
+{
+"instances": 16,
+"devices": 12,
+"members": 6,
+"registers": 63,
+"core": 0,
+"features": 9
+},
+{
 "instances": 14,
 "devices": 14,
 "members": 10,
@@ -10511,22 +11343,6 @@
 "registers": 4,
 "core": 52,
 "features": 0
-},
-{
-"instances": 13,
-"devices": 9,
-"members": 4,
-"registers": 39,
-"core": 0,
-"features": 5
-},
-{
-"instances": 9,
-"devices": 9,
-"members": 5,
-"registers": 50,
-"core": 0,
-"features": 12
 },
 {
 "instances": 8,
@@ -10545,12 +11361,12 @@
 "features": 2
 },
 {
-"instances": 6,
-"devices": 6,
-"members": 3,
-"registers": 43,
-"core": 3,
-"features": 3
+"instances": 5,
+"devices": 5,
+"members": 2,
+"registers": 22,
+"core": 162,
+"features": 1
 },
 {
 "instances": 3,
@@ -10607,9 +11423,9 @@
 {
 "name": "RAMCFG",
 "ignored": [],
-"instances": 96,
-"devices": 49,
-"shapes": 19,
+"instances": 111,
+"devices": 64,
+"shapes": 24,
 "variants": [
 {
 "instances": 60,
@@ -10620,12 +11436,20 @@
 "features": 26
 },
 {
-"instances": 36,
-"devices": 12,
-"members": 5,
-"registers": 68,
-"core": 66,
-"features": 5
+"instances": 45,
+"devices": 21,
+"members": 8,
+"registers": 71,
+"core": 33,
+"features": 11
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 2,
+"registers": 24,
+"core": 176,
+"features": 1
 }
 ]
 },
@@ -10657,26 +11481,26 @@
 {
 "name": "RAMECC",
 "ignored": [],
-"instances": 80,
-"devices": 32,
-"shapes": 6,
+"instances": 84,
+"devices": 34,
+"shapes": 8,
 "variants": [
 {
-"instances": 80,
-"devices": 32,
-"members": 6,
-"registers": 43,
-"core": 20,
-"features": 7
+"instances": 84,
+"devices": 34,
+"members": 8,
+"registers": 62,
+"core": 5,
+"features": 14
 }
 ]
 },
 {
 "name": "RCC",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 249,
+"instances": 329,
+"devices": 304,
+"shapes": 262,
 "variants": [
 {
 "instances": 31,
@@ -10697,6 +11521,14 @@
 {
 "instances": 28,
 "devices": 28,
+"members": 22,
+"registers": 56,
+"core": 17,
+"features": 15
+},
+{
+"instances": 28,
+"devices": 28,
 "members": 11,
 "registers": 102,
 "core": 403,
@@ -10706,7 +11538,7 @@
 "instances": 27,
 "devices": 27,
 "members": 27,
-"registers": 37,
+"registers": 36,
 "core": 39,
 "features": 44
 },
@@ -10735,14 +11567,6 @@
 "features": 33
 },
 {
-"instances": 22,
-"devices": 22,
-"members": 19,
-"registers": 14,
-"core": 168,
-"features": 9
-},
-{
 "instances": 21,
 "devices": 21,
 "members": 13,
@@ -10755,7 +11579,7 @@
 "devices": 19,
 "members": 18,
 "registers": 21,
-"core": 151,
+"core": 150,
 "features": 12
 },
 {
@@ -10765,6 +11589,14 @@
 "registers": 26,
 "core": 118,
 "features": 26
+},
+{
+"instances": 11,
+"devices": 11,
+"members": 11,
+"registers": 44,
+"core": 12,
+"features": 9
 },
 {
 "instances": 10,
@@ -10833,10 +11665,10 @@
 {
 "instances": 2,
 "devices": 2,
-"members": 2,
-"registers": 13,
-"core": 159,
-"features": 1
+"members": 1,
+"registers": 61,
+"core": 536,
+"features": 0
 },
 {
 "instances": 2,
@@ -10910,13 +11742,13 @@
 {
 "name": "RNG",
 "ignored": [],
-"instances": 217,
-"devices": 192,
+"instances": 234,
+"devices": 209,
 "shapes": 12,
 "variants": [
 {
-"instances": 216,
-"devices": 191,
+"instances": 233,
+"devices": 208,
 "members": 11,
 "registers": 13,
 "core": 7,
@@ -10960,8 +11792,8 @@
 {
 "name": "RSSLIB_pFunc",
 "ignored": [],
-"instances": 51,
-"devices": 51,
+"instances": 57,
+"devices": 57,
 "shapes": 6,
 "variants": [
 {
@@ -10973,8 +11805,8 @@
 "features": 1
 },
 {
-"instances": 15,
-"devices": 15,
+"instances": 21,
+"devices": 21,
 "members": 2,
 "registers": 8,
 "core": 3,
@@ -10993,17 +11825,17 @@
 {
 "name": "RTC",
 "ignored": [],
-"instances": 312,
-"devices": 287,
-"shapes": 45,
+"instances": 329,
+"devices": 304,
+"shapes": 48,
 "variants": [
 {
-"instances": 284,
-"devices": 259,
-"members": 43,
+"instances": 301,
+"devices": 276,
+"members": 46,
 "registers": 67,
 "core": 42,
-"features": 64
+"features": 65
 },
 {
 "instances": 14,
@@ -11060,17 +11892,17 @@
 {
 "name": "SBS",
 "ignored": [],
-"instances": 27,
-"devices": 16,
-"shapes": 7,
+"instances": 44,
+"devices": 33,
+"shapes": 13,
 "variants": [
 {
-"instances": 27,
-"devices": 16,
-"members": 7,
-"registers": 26,
-"core": 27,
-"features": 8
+"instances": 44,
+"devices": 33,
+"members": 13,
+"registers": 30,
+"core": 15,
+"features": 23
 }
 ]
 },
@@ -11111,17 +11943,17 @@
 {
 "name": "SDMMC",
 "ignored": [],
-"instances": 205,
-"devices": 100,
-"shapes": 8,
+"instances": 207,
+"devices": 102,
+"shapes": 9,
 "variants": [
 {
-"instances": 168,
-"devices": 73,
-"members": 6,
-"registers": 30,
-"core": 133,
-"features": 11
+"instances": 170,
+"devices": 75,
+"members": 7,
+"registers": 60,
+"core": 48,
+"features": 14
 },
 {
 "instances": 37,
@@ -11153,9 +11985,9 @@
 {
 "name": "SPI",
 "ignored": [],
-"instances": 1098,
-"devices": 287,
-"shapes": 20,
+"instances": 1150,
+"devices": 304,
+"shapes": 21,
 "variants": [
 {
 "instances": 641,
@@ -11166,12 +11998,12 @@
 "features": 11
 },
 {
-"instances": 457,
-"devices": 81,
-"members": 6,
+"instances": 509,
+"devices": 98,
+"members": 7,
 "registers": 15,
 "core": 84,
-"features": 6
+"features": 7
 }
 ]
 },
@@ -11260,24 +12092,32 @@
 {
 "name": "TAMP",
 "ignored": [],
-"instances": 123,
-"devices": 98,
-"shapes": 20,
+"instances": 140,
+"devices": 115,
+"shapes": 24,
 "variants": [
 {
-"instances": 119,
-"devices": 96,
-"members": 19,
+"instances": 107,
+"devices": 84,
+"members": 18,
 "registers": 53,
 "core": 37,
-"features": 56
+"features": 53
 },
 {
-"instances": 4,
-"devices": 2,
+"instances": 24,
+"devices": 22,
+"members": 5,
+"registers": 54,
+"core": 74,
+"features": 15
+},
+{
+"instances": 9,
+"devices": 9,
 "members": 1,
-"registers": 49,
-"core": 225,
+"registers": 43,
+"core": 148,
 "features": 0
 }
 ]
@@ -11293,9 +12133,9 @@
 "OR3",
 "TISEL"
 ],
-"instances": 2969,
-"devices": 287,
-"shapes": 145,
+"instances": 3204,
+"devices": 304,
+"shapes": 150,
 "variants": [
 {
 "instances": 2967,
@@ -11304,6 +12144,14 @@
 "registers": 27,
 "core": 21,
 "features": 77
+},
+{
+"instances": 235,
+"devices": 17,
+"members": 5,
+"registers": 30,
+"core": 143,
+"features": 4
 },
 {
 "instances": 2,
@@ -11335,31 +12183,31 @@
 {
 "name": "UCPD",
 "ignored": [],
-"instances": 72,
-"devices": 45,
-"shapes": 5,
+"instances": 78,
+"devices": 51,
+"shapes": 7,
 "variants": [
 {
-"instances": 72,
-"devices": 45,
-"members": 5,
-"registers": 15,
-"core": 92,
-"features": 5
+"instances": 78,
+"devices": 51,
+"members": 7,
+"registers": 24,
+"core": 64,
+"features": 8
 }
 ]
 },
 {
 "name": "USART",
 "ignored": [],
-"instances": 1761,
-"devices": 287,
-"shapes": 75,
+"instances": 1880,
+"devices": 304,
+"shapes": 78,
 "variants": [
 {
-"instances": 1469,
-"devices": 224,
-"members": 69,
+"instances": 1588,
+"devices": 241,
+"members": 72,
 "registers": 15,
 "core": 61,
 "features": 31
@@ -11394,30 +12242,30 @@
 {
 "name": "USB_DRD",
 "ignored": [],
-"instances": 34,
-"devices": 25,
-"shapes": 4,
+"instances": 47,
+"devices": 38,
+"shapes": 6,
 "variants": [
 {
-"instances": 34,
-"devices": 25,
-"members": 4,
+"instances": 47,
+"devices": 38,
+"members": 6,
 "registers": 46,
 "core": 182,
-"features": 4
+"features": 6
 }
 ]
 },
 {
 "name": "USB_DRD_PMABuffDesc",
 "ignored": [],
-"instances": 34,
-"devices": 25,
+"instances": 47,
+"devices": 38,
 "shapes": 1,
 "variants": [
 {
-"instances": 34,
-"devices": 25,
+"instances": 47,
+"devices": 38,
 "members": 1,
 "registers": 2,
 "core": 2,
@@ -11453,9 +12301,9 @@
 {
 "name": "USB_OTG_Global",
 "ignored": [],
-"instances": 179,
-"devices": 108,
-"shapes": 22,
+"instances": 181,
+"devices": 110,
+"shapes": 23,
 "variants": [
 {
 "instances": 163,
@@ -11472,19 +12320,27 @@
 "registers": 301,
 "core": 2175,
 "features": 0
+},
+{
+"instances": 2,
+"devices": 2,
+"members": 1,
+"registers": 184,
+"core": 1303,
+"features": 0
 }
 ]
 },
 {
 "name": "VREFBUF",
 "ignored": [],
-"instances": 143,
-"devices": 118,
+"instances": 151,
+"devices": 126,
 "shapes": 3,
 "variants": [
 {
-"instances": 143,
-"devices": 118,
+"instances": 151,
+"devices": 126,
 "members": 3,
 "registers": 2,
 "core": 6,
@@ -11512,13 +12368,13 @@
 {
 "name": "WWDG",
 "ignored": [],
-"instances": 315,
-"devices": 278,
+"instances": 332,
+"devices": 295,
 "shapes": 2,
 "variants": [
 {
-"instances": 315,
-"devices": 278,
+"instances": 332,
+"devices": 295,
 "members": 2,
 "registers": 3,
 "core": 8,
@@ -11529,10 +12385,18 @@
 {
 "name": "XSPI",
 "ignored": [],
-"instances": 119,
-"devices": 40,
-"shapes": 9,
+"instances": 128,
+"devices": 49,
+"shapes": 11,
 "variants": [
+{
+"instances": 66,
+"devices": 32,
+"members": 7,
+"registers": 31,
+"core": 58,
+"features": 14
+},
 {
 "instances": 62,
 "devices": 25,
@@ -11540,14 +12404,6 @@
 "registers": 31,
 "core": 120,
 "features": 5
-},
-{
-"instances": 57,
-"devices": 23,
-"members": 5,
-"registers": 31,
-"core": 58,
-"features": 12
 }
 ]
 },
@@ -11569,9 +12425,9 @@
 ]
 }
 ],
-"instances": 22001,
-"shapes": 1808,
-"variants": 268
+"instances": 23428,
+"shapes": 1941,
+"variants": 289
 }
 }
 }

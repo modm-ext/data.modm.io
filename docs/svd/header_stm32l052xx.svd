@@ -13387,16 +13387,27 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>PLLDIV2</name>
-              <description>PLL clock output = CKVCO / 2</description>
+              <name>PLLDIV</name>
+              <description>PLLDIV[1:0] bits (PLL Output Division)</description>
               <bitOffset>22</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PLLDIV3</name>
-              <description>PLL clock output = CKVCO / 3</description>
-              <bitOffset>23</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>2</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DIV_2</name>
+                  <description>PLL clock output = PLLVCO / 2</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_3</name>
+                  <description>PLL clock output = PLLVCO / 3</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_4</name>
+                  <description>PLL clock output = PLLVCO / 4</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>MCOSEL</name>

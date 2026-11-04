@@ -25329,16 +25329,47 @@
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>PLLMULL7</name>
-              <description>PLL input clock 7</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>PLLMULL</name>
               <description>PLLMUL[3:0] bits (PLL multiplication factor)</description>
-              <bitOffset>19</bitOffset>
-              <bitWidth>3</bitWidth>
+              <bitOffset>18</bitOffset>
+              <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MUL_4</name>
+                  <description>PLL input clock*4</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_5</name>
+                  <description>PLL input clock*5</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_6</name>
+                  <description>PLL input clock*6</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_7</name>
+                  <description>PLL input clock*7</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_8</name>
+                  <description>PLL input clock*8</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_9</name>
+                  <description>PLL input clock*9</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_6_5</name>
+                  <description>PLL input clock*6</description>
+                  <value>13</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>OTGFSPRE</name>
@@ -26191,185 +26222,110 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>PLL2MUL11</name>
-              <description>PLL2 input clock 11</description>
+              <name>PLL2MUL</name>
+              <description>PLL2MUL[3:0] bits</description>
               <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PLL2MUL8</name>
-              <description>PLL2 input clock 8</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>PLL2MUL10</name>
-              <description>PLL2 input clock 10</description>
-              <bitOffset>11</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PLL3MUL11</name>
-              <description>PLL3 input clock 11</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PLL3MUL8</name>
-              <description>PLL3 input clock 8</description>
-              <bitOffset>13</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>PLL3MUL10</name>
-              <description>PLL3 input clock 10</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PREDIV1SRC</name>
-              <description>PREDIV1 entry clock source</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>I2S2SRC</name>
-              <description>I2S2 entry clock source</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>I2S3SRC</name>
-              <description>I2S3 clock source</description>
-              <bitOffset>18</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CFGR2_ALT</name>
-          <alternateRegister>CFGR2</alternateRegister>
-          <addressOffset>0x2c</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <fields>
-            <field>
-              <name>PREDIV1</name>
-              <description>PREDIV1[3:0] bits</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-            </field>
-            <field>
-              <name>PREDIV2</name>
-              <description>PREDIV2[3:0] bits</description>
-              <bitOffset>4</bitOffset>
               <bitWidth>4</bitWidth>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>DIV_1</name>
-                  <description>PREDIV2 input clock not divided</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>DIV_2</name>
-                  <description>PREDIV2 input clock divided by 2</description>
-                  <value>1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>DIV_3</name>
-                  <description>PREDIV2 input clock divided by 3</description>
-                  <value>2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>DIV_4</name>
-                  <description>PREDIV2 input clock divided by 4</description>
-                  <value>3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>DIV_5</name>
-                  <description>PREDIV2 input clock divided by 5</description>
-                  <value>4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>DIV_6</name>
-                  <description>PREDIV2 input clock divided by 6</description>
-                  <value>5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>DIV_7</name>
-                  <description>PREDIV2 input clock divided by 7</description>
+                  <name>MUL_8</name>
+                  <description>PLL2 input clock * 8</description>
                   <value>6</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIV_8</name>
-                  <description>PREDIV2 input clock divided by 8</description>
+                  <name>MUL_9</name>
+                  <description>PLL2 input clock * 9</description>
                   <value>7</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIV_9</name>
-                  <description>PREDIV2 input clock divided by 9</description>
+                  <name>MUL_10</name>
+                  <description>PLL2 input clock * 10</description>
                   <value>8</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIV_10</name>
-                  <description>PREDIV2 input clock divided by 10</description>
+                  <name>MUL_11</name>
+                  <description>PLL2 input clock * 11</description>
                   <value>9</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIV_11</name>
-                  <description>PREDIV2 input clock divided by 11</description>
+                  <name>MUL_12</name>
+                  <description>PLL2 input clock * 12</description>
                   <value>10</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIV_12</name>
-                  <description>PREDIV2 input clock divided by 12</description>
+                  <name>MUL_13</name>
+                  <description>PLL2 input clock * 13</description>
                   <value>11</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIV_13</name>
-                  <description>PREDIV2 input clock divided by 13</description>
+                  <name>MUL_14</name>
+                  <description>PLL2 input clock * 14</description>
                   <value>12</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIV_14</name>
-                  <description>PREDIV2 input clock divided by 14</description>
-                  <value>13</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>DIV_15</name>
-                  <description>PREDIV2 input clock divided by 15</description>
+                  <name>MUL_16</name>
+                  <description>PLL2 input clock * 16</description>
                   <value>14</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>DIV_16</name>
-                  <description>PREDIV2 input clock divided by 16</description>
+                  <name>MUL_20</name>
+                  <description>PLL2 input clock * 20</description>
                   <value>15</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
             <field>
-              <name>PLL2MUL11</name>
-              <description>PLL2 input clock 11</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PLL2MUL14</name>
-              <description>PLL2 input clock 14</description>
-              <bitOffset>10</bitOffset>
-              <bitWidth>2</bitWidth>
-            </field>
-            <field>
-              <name>PLL3MUL11</name>
-              <description>PLL3 input clock 11</description>
+              <name>PLL3MUL</name>
+              <description>PLL3MUL[3:0] bits</description>
               <bitOffset>12</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PLL3MUL14</name>
-              <description>PLL3 input clock 14</description>
-              <bitOffset>14</bitOffset>
-              <bitWidth>2</bitWidth>
+              <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MUL_8</name>
+                  <description>PLLI2S input clock * 8</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_9</name>
+                  <description>PLLI2S input clock * 9</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_10</name>
+                  <description>PLLI2S input clock * 10</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_11</name>
+                  <description>PLLI2S input clock * 11</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_12</name>
+                  <description>PLLI2S input clock * 12</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_13</name>
+                  <description>PLLI2S input clock * 13</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_14</name>
+                  <description>PLLI2S input clock * 14</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_16</name>
+                  <description>PLLI2S input clock * 16</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MUL_20</name>
+                  <description>PLLI2S input clock * 20</description>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PREDIV1SRC</name>
