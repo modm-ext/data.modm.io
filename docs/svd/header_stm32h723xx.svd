@@ -15448,6 +15448,12 @@
               </enumeratedValues>
             </field>
             <field>
+              <name>CMS</name>
+              <description>CMS[1:0] bits (Center-aligned mode selection)</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
               <name>ARPE</name>
               <description>Auto-reload preload enable</description>
               <bitOffset>7</bitOffset>
