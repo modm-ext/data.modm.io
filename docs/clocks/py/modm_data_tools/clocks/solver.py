@@ -649,10 +649,10 @@ def solve(tree: dict, targets: dict, config: dict | None = None, **kwargs) -> di
 
 def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance: float = 0, budget: float = 2) -> dict:
     """
-    Highest SYSCLK from the HSE, with every peripheral in use when that works, else with none.
+    Highest SYSCLK from the HSE with every peripheral in use, else the highest with none.
     Every mux upstream of SYSCLK may only pick inputs that come from the HSE, the HSE frequency stays as
     configured, the solver picks the rest and repairs the bus limits. When the maximum is out of reach it
-    tries the closest reachable SYSCLK, then fractions of the maximum.
+    tries bands of 10 % below it down to half the maximum, and the closest SYSCLK the solver reports.
 
     :return: The `solve()` result plus `use` (None: all peripherals, []: none), or None without HSE, SYSCLK or result.
     """
@@ -696,18 +696,43 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
     keep = set(locked) | {"HSEOSC"}
     free = {k: v for k, v in config.items() if k in keep or restricted["nodes"].get(k) is nodes.get(k)}
     solver = Solver(restricted)
-    # ponytail: fixed ladder of fractions, a search over the reachable SYSCLKs if a device needs it
-    targets = [maximum * f for f in (1, 0.9, 0.8, 0.75, 0.6, 0.5)]
     # Every peripheral by name, so that the limits gated by their usage flags apply too
     everything = {name for name, node in nodes.items() if node["kind"] == "peripheral"}
-    i = 0
-    while i < len(targets):
-        for use in (everything, []):
-            r = solver.solve(free, keep, {"SysCLKOutput": targets[i]}, use, tolerance, budget)
-            if r["ok"]:
-                return {**r, "use": None if use else use}
+
+    def run(target, use, diagnose=True):
+        return solver.solve(free, keep, {"SysCLKOutput": target}, use, tolerance, budget, diagnose=diagnose)
+
+    def freq(r):
+        return r["result"]["SysCLKOutput"]["freq"]
+
+    # The maximum exactly, then bands of 10 % below it as ranges aiming at their top, e.g. 96 MHz in (90, 100]
+    # ponytail: fixed bands, the range search takes the best of a few solutions, not the highest in the band
+    steps = [maximum * f for f in (1, 0.9, 0.8, 0.7, 0.6, 0.5)]
+    ladder = [steps[0], *((lo, hi, hi) for hi, lo in zip(steps, steps[1:]))]
+    # A slower SYSCLK with every peripheral beats the fastest with none, e.g. the F411 runs USB only at 96 MHz:
+    # the best result without peripherals waits until no step works with every one
+    fallback, i, hard = None, 0, False
+    while i < len(ladder):
+        if not hard:
+            if (r := run(ladder[i], everything, diagnose=False))["ok"]:
+                # A round MHz near what a range found, e.g. 168 instead of 167.97 MHz
+                if isinstance(ladder[i], tuple):
+                    for f in (math.ceil(freq(r) / 1e6) * 1e6, math.floor(freq(r) / 1e6) * 1e6):
+                        if f != freq(r) and ladder[i][0] <= f <= ladder[i][1]:
+                            if (exact := run(f, everything, diagnose=False))["ok"]:
+                                r = exact
+                                break
+                return {**r, "use": None}
+            # Out of time proves nothing, but the steps below take as long, e.g. the H723: none from here on
+            hard = bool(r.get("timeout"))
+        if fallback is None:
+            if (r := run(ladder[i], []))["ok"]:
+                fallback = {**r, "use": []}
+            # e.g. the C0 reaches only the HSE frequency without a PLL
             closest = next((u.get("closest") for u in r["unmet"] if u["id"] == "SysCLKOutput"), None)
-            if closest and closest < targets[i] and closest not in targets:
-                targets.insert(i + 1, closest)
+            if closest and closest not in ladder:
+                ladder.insert(i + 1, closest)
+        if fallback and hard:
+            break
         i += 1
-    return None
+    return fallback
