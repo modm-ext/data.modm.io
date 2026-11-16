@@ -4,37 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STM32U375RET6 Pin Mapping</title>
-  <link rel="stylesheet" href="../../shared/theme.css">
   <link rel="stylesheet" href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css">
   <link rel="stylesheet" href="../assets/styles/pinout.css">
-  <script type="module" src="../../shared/site.js"></script>
 </head>
-<body class="app pinout" data-page="pinout">
-  <nav class="site" aria-label="modm-data pages"></nav>
+<body>
+  <main class="page">
+    <header class="header">
+      <div>
+        <nav class="subnav"><a class="back-link" href="../index.html">All devices</a></nav>
+        <h1 class="title">STM32U375RET6 Pin Mapping</h1>
+        <div class="meta">Package: <strong>LQFP64</strong> | Pins: 64</div>
+      </div>
+      <a
+        class="repo-cta repo-cta-header"
+        href="https://github.com/modm-io/modm-pinout"
+        target="_blank"
+        rel="noreferrer"
+      >Found bugs? Want features? Contribute!</a>
+    </header>
 
-  <header class="top">
-    <div>
-      <h1>STM32U375RET6</h1>
-      <p class="sub"><a href="../index.html">Pin Mapping</a> · LQFP64 · 64 pins</p>
-    </div>
-    <div class="controls">
-      <span id="save-status" class="save-status" aria-live="polite"></span>
-      <button id="copy-share-url" class="btn primary" type="button">Copy Share URL</button>
-      <button id="export-json" class="btn" type="button">Export JSON</button>
-      <button id="import-json" class="btn" type="button">Import JSON</button>
+    <section class="controls">
+      <button id="copy-share-url" type="button">Copy Share URL</button>
+      <button id="export-json" type="button">Export JSON</button>
+      <button id="import-json" type="button">Import JSON</button>
       <input id="import-json-input" type="file" accept=".json,application/json,text/json" hidden>
-    </div>
-  </header>
+      <span id="save-status" class="save-status" aria-live="polite"></span>
+    </section>
 
-  <main>
     <div id="content-layout" class="content-layout">
-      <section id="package-card" class="panel package-card" aria-labelledby="package-title">
-        <div class="card-head">
+      <section id="package-card" class="package-card" aria-labelledby="package-title">
+        <div class="package-card-header">
           <div>
-            <h2 id="package-title">Package Layout</h2>
-            <p id="package-subtitle"></p>
+            <h2 id="package-title" class="section-title">Package Layout</h2>
+            <div id="package-subtitle" class="package-subtitle"></div>
           </div>
-          <div id="package-view-controls" class="view-controls" aria-label="Package view controls"></div>
+          <div id="package-view-controls" class="package-view-controls" aria-label="Package view controls"></div>
         </div>
         <div id="package-diagram" class="package-diagram" role="img" aria-label="Graphical package layout"></div>
         <div
@@ -48,10 +52,10 @@
         ></div>
       </section>
 
-      <section id="table-card" class="panel table-card" aria-labelledby="table-title">
-        <div class="card-head">
-          <h2 id="table-title">Pin Matrix</h2>
-          <div id="table-view-controls" class="view-controls" aria-label="Table view controls"></div>
+      <section id="table-card" class="table-card" aria-labelledby="table-title">
+        <div class="table-card-header">
+          <h2 id="table-title" class="section-title">Pin Matrix</h2>
+          <div id="table-view-controls" class="table-view-controls" aria-label="Table view controls"></div>
         </div>
         <div id="pin-matrix"></div>
       </section>
@@ -64,7 +68,7 @@
     </p>
   </main>
 
-  <script id="modm-pinout-bootstrap" type="application/json">{"chipId": "stm32u375ret6", "cookieKey": "modm_pinout::stm32u375ret6", "dataUrl": "../data/stm32/stm32u375.json"}</script>
+  <script id="modm-pinout-bootstrap" type="application/json">{"chipId": "stm32u375ret6", "cookieKey": "modm_pinout::stm32u375ret6", "dataUrl": "../data/stm32/stm32u3-75_85.json"}</script>
   <script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xregexp/5.1.1/xregexp-all.min.js"></script>
   <script src="../assets/scripts/pinout-core.js"></script>

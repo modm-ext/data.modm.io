@@ -328,6 +328,7 @@
         },
         {
           "functions": [
+            "ADC_IN0",
             "SPI1_SCLK",
             "UART1_CTS",
             "I2C1_SDA",
@@ -335,8 +336,7 @@
             "SIO_PAD",
             "PIO0_PAD",
             "PIO1_PAD",
-            "USB_MUXING_VBUS_EN",
-            "ADC_IN0"
+            "USB_MUXING_VBUS_EN"
           ],
           "pin_label": "BANK026 26",
           "position": "BANK026",
@@ -345,6 +345,7 @@
         },
         {
           "functions": [
+            "ADC_IN1",
             "SPI1_TX",
             "UART1_RTS",
             "I2C1_SCL",
@@ -352,8 +353,7 @@
             "SIO_PAD",
             "PIO0_PAD",
             "PIO1_PAD",
-            "USB_MUXING_OVERCURR_DETECT",
-            "ADC_IN1"
+            "USB_MUXING_OVERCURR_DETECT"
           ],
           "pin_label": "BANK027 27",
           "position": "BANK027",
@@ -362,6 +362,7 @@
         },
         {
           "functions": [
+            "ADC_IN2",
             "SPI1_RX",
             "UART0_TX",
             "I2C0_SDA",
@@ -369,8 +370,7 @@
             "SIO_PAD",
             "PIO0_PAD",
             "PIO1_PAD",
-            "USB_MUXING_VBUS_DETECT",
-            "ADC_IN2"
+            "USB_MUXING_VBUS_DETECT"
           ],
           "pin_label": "BANK028 28",
           "position": "BANK028",
@@ -379,6 +379,7 @@
         },
         {
           "functions": [
+            "ADC_IN3",
             "SPI1_SS_N",
             "UART0_RX",
             "I2C0_SCL",
@@ -386,8 +387,7 @@
             "SIO_PAD",
             "PIO0_PAD",
             "PIO1_PAD",
-            "USB_MUXING_VBUS_EN",
-            "ADC_IN3"
+            "USB_MUXING_VBUS_EN"
           ],
           "pin_label": "BANK029 29",
           "position": "BANK029",
@@ -574,6 +574,6 @@
       ]
     }
   },
-  "generated_at": "2026-11-16 15:44:19 UTC",
-  "source": "rp/rp2040"
+  "generated_at": "2026-11-16 23:09:57 UTC",
+  "source_xml": "rp/rp2040.xml"
 }
