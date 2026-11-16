@@ -42,6 +42,13 @@ async function loadApi(/** @type {string} */ device) {
   return apiIndex?.[device] ? fetch(`data/rcc/${apiIndex[device]}.json`).then((r) => r.json()) : null;
 }
 
+/** Max performance per clock tree at its default HSE, computed by the export: Pyodide is too slow for the search */
+let maxIndex = null;
+async function precomputedMax() {
+  maxIndex ??= await fetch("data/max.json").then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+  return maxIndex[devices[state.device]] ?? null;
+}
+
 async function start() {
   devices = await (await fetch("data/devices.json")).json();
   $("devices").append(...Object.keys(devices).map((d) => el("option", {value: d})));
@@ -224,7 +231,9 @@ function setTarget(/** @type {string} */ id, /** @type {string} */ text) {
 /** Highest SYSCLK from the HSE, every peripheral in use if that works; everything else unlocked. */
 async function maxPerf() {
   const t0 = performance.now();
-  const r = await py.maxPerformance(state.config.HSEOSC ? {HSEOSC: state.config.HSEOSC} : {});
+  const hse = state.config.HSEOSC, pre = await precomputedMax();
+  const r = pre && (hse === undefined || String(hse) === String(pre.config.HSEOSC)) ? pre
+    : await py.maxPerformance(hse ? {HSEOSC: hse} : {});
   const ms = Math.round(performance.now() - t0);
   if (!r) {
     state.solved = {ok: false, ms, unmet: [{id: null, why: "no HSE or SYSCLK in this tree"}], problems: []};
@@ -234,7 +243,7 @@ async function maxPerf() {
   const all = Object.keys(state.tree.nodes).filter((id) => state.tree.nodes[id].kind === "peripheral");
   Object.assign(state, {config: r.config, locked: new Set(), targets: new Map(), use: new Set(r.use === null ? all : [])});
   state.solved = {ok: true, ms, changed: Object.keys(r.config),
-    note: `max performance from HSE: SYSCLK ${fmtHz(r.result.SysCLKOutput.freq)}, ${r.use === null ? "every peripheral ticked" : "not possible with every peripheral in use, none ticked"}`};
+    note: `max performance from HSE: SYSCLK ${fmtHz(r.result.SysCLKOutput?.freq ?? r.result.AHBOutput?.freq)}, ${r.use === null ? "every peripheral ticked" : "not possible with every peripheral in use, none ticked"}`};
 }
 
 async function solve() {
