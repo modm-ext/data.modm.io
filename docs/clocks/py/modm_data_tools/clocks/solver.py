@@ -699,7 +699,7 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
     # Every peripheral by name, so that the limits gated by their usage flags apply too
     everything = {name for name, node in nodes.items() if node["kind"] == "peripheral"}
 
-    def run(target, use, diagnose=True):
+    def run(target, use, diagnose=True, budget=budget):
         return solver.solve(free, keep, {"SysCLKOutput": target}, use, tolerance, budget, diagnose=diagnose)
 
     def freq(r):
@@ -714,7 +714,8 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
     fallback, i, hard = None, 0, False
     while i < len(ladder):
         if not hard:
-            if (r := run(ladder[i], everything, diagnose=False))["ok"]:
+            # Proving that the maximum misses some peripheral can take long, 2 s in Pyodide for the F411
+            if (r := run(ladder[i], everything, diagnose=False, budget=budget / 2 if i == 0 else budget))["ok"]:
                 # A round MHz near what a range found, e.g. 168 instead of 167.97 MHz
                 if isinstance(ladder[i], tuple):
                     for f in (math.ceil(freq(r) / 1e6) * 1e6, math.floor(freq(r) / 1e6) * 1e6):
@@ -723,8 +724,8 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
                                 r = exact
                                 break
                 return {**r, "use": None}
-            # Out of time proves nothing, but the steps below take as long, e.g. the H723: none from here on
-            hard = bool(r.get("timeout"))
+            # Out of time proves nothing, but the bands below take as long, e.g. the H723: none from here on
+            hard = bool(r.get("timeout")) and i > 0
         if fallback is None:
             if (r := run(ladder[i], []))["ok"]:
                 fallback = {**r, "use": []}
