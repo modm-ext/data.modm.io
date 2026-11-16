@@ -87,6 +87,12 @@ class Solver:
         self.config = {}
         self.params = {n: node["param"] for n, node in self.nodes.items() if "param" in node}
         self._compiled = {}
+        # The input frequency some factors need, the STM32C5 PSI x2 only from 50 MHz
+        self.refs = {
+            n: {d["factor"]: d["input"] for d in node["domain"] if "input" in d}
+            for n, node in self.nodes.items()
+            if any("input" in d for d in node.get("domain", ()))
+        }
         # Nodes upstream of a bus clock, the shared core, solved first
         self.core = set()
         for node in self.nodes.values():
@@ -161,17 +167,27 @@ class Solver:
             return gate[1] in settings
         return gate[0] == "const" or all(self._known(g, settings) for g in gate[1:])
 
+    def fits(self, name: str, k, f: float) -> bool:
+        """:return: Whether factor k of a node suits its input frequency f."""
+        ref = self.refs.get(name, {}).get(k)
+        return ref is None or abs(f - ref) <= 1e-3
+
     def current(self, name: str):
         return choice_of(self.tree, name, self.config)
 
     def _base(self, locked) -> dict:
-        """The locked variable nodes at their current setting. A mux that stands at no input, e.g. a HAL2 PLL
-        source at its default NoClock, is left free: evaluate() rejects that value when it is set."""
+        """The locked variable nodes at their current setting. A node without one, e.g. the F105 PLLMUL without
+        default, or a mux that stands at no input, e.g. a HAL2 PLL source at its default NoClock, is left free:
+        evaluate() rejects that value when it is set."""
         base = {}
         for n in locked:
             if n in self.nodes and is_variable(node := self.nodes[n]):
                 now = self.current(n)
-                if node["kind"] != "mux" or now in {i.get("macro") or i["from"] for i in node["inputs"]}:
+                if node["kind"] == "mux":
+                    known = now in {i.get("macro") or i["from"] for i in node["inputs"]}
+                else:
+                    known = now is not None
+                if known:
                     base[n] = now
         return base
 
@@ -277,7 +293,7 @@ class Solver:
                 ks = [now, *range(kmin, kmin + min(kmax - kmin + 1, 1024))]
             seen = set()
             for k in ks:
-                if k in seen or k is None or not klo <= k <= khi or k not in factors:
+                if k in seen or k is None or not klo <= k <= khi or k not in factors or not self.fits(name, k, r[0]):
                     continue
                 seen.add(k)
                 yield {**A, **r[1], name: k, **({frac: 0} if frac_free else {})}
@@ -289,7 +305,14 @@ class Solver:
             x = aim / r[0]
             k = math.floor(x)
             fr = round((x - k) * 8192)
-            if fr <= 0 or fr < low or fr > high or (name in A and A[name] != k) or k not in factors:
+            if (
+                fr <= 0
+                or fr < low
+                or fr > high
+                or (name in A and A[name] != k)
+                or k not in factors
+                or not self.fits(name, k, r[0])
+            ):
                 continue
             if lo <= r[0] * (k + fr / 8192) <= hi:
                 yield {**A, **r[1], name: k, frac: fr}
@@ -344,7 +367,7 @@ class Solver:
                 if kind == "div":
                     hits = [(f / k, d) for f, d in upstream if lo <= f / k <= hi and f > 0]
                 else:
-                    hits = [(f * k, d) for f, d in upstream if lo <= f * k <= hi and f > 0]
+                    hits = [(f * k, d) for f, d in upstream if lo <= f * k <= hi and f > 0 and self.fits(name, k, f)]
                 out += hits if rules else [(f, {**d, name: k, **zero}) for f, d in hits]
                 if len(out) > 4 * REACH_CAP:
                     break
