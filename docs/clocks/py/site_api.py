@@ -39,7 +39,7 @@ def handle(op: str, args: str) -> str:
             a["config"], set(a["locked"]), targets, _use(a.get("use")), a.get("tolerance", 0), a.get("budget", 3)
         )
     elif op == "max":
-        out = max_performance(_state["tree"], a["config"], budget=a.get("budget", 0.6))
+        out = max_performance(_state["tree"], a["config"], budget=a.get("budget", 2))
         if out is not None:
             out["use"] = None if out["use"] is None else list(out["use"])
     elif op == "generate":
