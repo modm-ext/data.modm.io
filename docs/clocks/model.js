@@ -25,9 +25,13 @@ export function fmtHz(/** @type {number | null | undefined} */ hz) {
   return `${Number(hz.toPrecision(7))} Hz`;
 }
 
-/** A frequency as a plain number of MHz for an input field. */
-export const mhz = (/** @type {number | null | undefined} */ hz) =>
-  hz === null || hz === undefined ? "" : String(Number((hz / 1e6).toPrecision(9)));
+/** The unit of the input fields of a node around this frequency: kHz for the slow clocks (LSI, LSE, RTC), else MHz. */
+export const unitOf = (/** @type {number | null | undefined} */ hz) =>
+  /** @type {[string, number]} */ (hz && Math.abs(hz) < 1e6 ? ["kHz", 1e3] : ["MHz", 1e6]);
+
+/** A frequency as a plain number in a unit of unitOf() for an input field. */
+export const inUnit = (/** @type {number | null | undefined} */ hz, /** @type {number} */ scale) =>
+  hz === null || hz === undefined ? "" : String(Number((hz / scale).toPrecision(9)));
 
 /** CubeMX calls dividers devisors, the UI does not. */
 export const label = (/** @type {any} */ text) => String(text).replace(/Devisor/g, "Divider").replace(/devisor/g, "divider");

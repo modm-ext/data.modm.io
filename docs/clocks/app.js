@@ -221,10 +221,9 @@ async function readHash() {
   } catch { return null; }
 }
 
-function setTarget(/** @type {string} */ id, /** @type {string} */ text) {
-  const value = parseFloat(text);
-  if (text.trim() === "" || !Number.isFinite(value)) state.targets.delete(id);
-  else state.targets.set(id, value * 1e6);
+function setTarget(/** @type {string} */ id, /** @type {number | null} */ hz) {
+  if (hz === null) state.targets.delete(id);
+  else state.targets.set(id, hz);
   if (state.targets.size) solve(); else refresh();
 }
 

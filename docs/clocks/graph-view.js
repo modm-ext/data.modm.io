@@ -9,7 +9,7 @@
 
 import {clamp, h as el} from "../shared/util.js";
 import {
-  KIND, fmtHz, fold, humanError, inputValue, isVariable, factorsOf, label, limitText, mhz, settingOf,
+  KIND, fmtHz, fold, humanError, inputValue, inUnit, isVariable, factorsOf, label, limitText, settingOf, unitOf,
 } from "./model.js";
 
 /** @typedef {import("./model.js").Tree} Tree */
@@ -21,7 +21,7 @@ import {
  * @typedef {object} Callbacks
  * @property {(id: string, value: any) => void} [onChoose] a mux input or factor was picked
  * @property {(id: string, locked: boolean) => void} [onLock]
- * @property {(id: string, text: string) => void} [onTarget] the target field of a node changed, in MHz
+ * @property {(id: string, hz: number | null) => void} [onTarget] the target field of a node changed, null when cleared
  * @property {(id: string, used: boolean) => void} [onUse] a peripheral was ticked or unticked
  *
  * @typedef {object} View
@@ -101,9 +101,13 @@ export function createClockGraph(container, tree, options = {}) {
     const row = el("div", {className: "row", style: "justify-content:space-between"}, hz, el("span", {style: "flex:1"}));
     if (editable && !alt) {
       // The target sits on every node, a peripheral also says whether it is in use
-      const target = el("input", {className: "tgt" + (view.targets.has(id) ? " set" : ""), placeholder: "target MHz",
-        value: view.targets.has(id) ? mhz(view.targets.get(id)) : "", title: "target frequency in MHz, Enter solves"});
-      target.onchange = () => options.onTarget?.(id, target.value);
+      const [unit, scale] = unitOf(view.targets.get(id) ?? r.freq ?? node.max);
+      const target = el("input", {className: "tgt" + (view.targets.has(id) ? " set" : ""), placeholder: `target ${unit}`,
+        value: inUnit(view.targets.get(id), scale), title: `target frequency in ${unit}, Enter solves`});
+      target.onchange = () => {
+        const value = parseFloat(target.value);
+        options.onTarget?.(id, Number.isFinite(value) ? value * scale : null);
+      };
       row.append(target);
       if (periph) {
         const use = el("input", {type: "checkbox", checked: view.use.has(id) || view.targets.has(id),
@@ -225,9 +229,10 @@ export function createClockGraph(container, tree, options = {}) {
       return el("span", {className: "lbl", textContent: `follows config${factor ? `: × ${Number(factor.toPrecision(4))}` : ""}`});
     }
     if (node.kind === "varied") {
-      const input = el("input", {type: "number", step: "any", value: mhz(now), title: limitText(node, {})});
-      input.onchange = () => choose(Number(input.value) * 1e6);
-      return el("span", {className: "row", style: "margin:0;flex:1"}, input, el("span", {className: "lbl", textContent: "MHz"}));
+      const [unit, scale] = unitOf(node.default ?? now);
+      const input = el("input", {type: "number", step: "any", value: inUnit(now, scale), title: limitText(node, {})});
+      input.onchange = () => choose(Number(input.value) * scale);
+      return el("span", {className: "row", style: "margin:0;flex:1"}, input, el("span", {className: "lbl", textContent: unit}));
     }
     if (node.kind === "choice" && node.domain?.length) {
       const select = el("select");
