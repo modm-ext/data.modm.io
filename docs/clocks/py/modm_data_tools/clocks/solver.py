@@ -164,6 +164,17 @@ class Solver:
     def current(self, name: str):
         return choice_of(self.tree, name, self.config)
 
+    def _base(self, locked) -> dict:
+        """The locked variable nodes at their current setting. A mux that stands at no input, e.g. a HAL2 PLL
+        source at its default NoClock, is left free: evaluate() rejects that value when it is set."""
+        base = {}
+        for n in locked:
+            if n in self.nodes and is_variable(node := self.nodes[n]):
+                now = self.current(n)
+                if node["kind"] != "mux" or now in {i.get("macro") or i["from"] for i in node["inputs"]}:
+                    base[n] = now
+        return base
+
     def order(self, name: str, values: list, A: dict, F) -> list:
         """The candidates of a variable node, the assigned one only, else the current one first."""
         now = self.current(name)
@@ -423,7 +434,7 @@ class Solver:
         """:return: The frequencies a node can reach with the locked nodes at their setting, fastest first."""
         self.config, self.memo, self.steps = dict(config or {}), {}, 0
         self.deadline = time.monotonic() + budget
-        base = {n: self.current(n) for n in locked if n in self.nodes and is_variable(self.nodes[n])}
+        base = self._base(locked)
         try:
             return sorted({round(f, 3) for f, _ in self.reach(name, base, _NONE)}, reverse=True)
         except _Timeout:
@@ -456,7 +467,7 @@ class Solver:
     def unreachable(self, config: dict, locked, targets: dict, budget: float = 2) -> list:
         """:return: The targets (lo, hi, aim) that no path reaches even alone, see `solve()`."""
         self.config, self.memo, self.steps = dict(config or {}), {}, 0
-        base = {n: self.current(n) for n in locked if n in self.nodes and is_variable(self.nodes[n])}
+        base = self._base(locked)
         found = [{"id": n, "lo": lo, "hi": hi, "aim": aim if aim is not None else hi}
                  for n, (lo, hi, aim) in targets.items() if n in self.nodes]  # fmt: skip
         return self._unreachable(found, base, budget)
@@ -501,7 +512,7 @@ class Solver:
             before = {n: r["freq"] for n, r in evaluate(self.tree, config, use).items() if n in buses - below}
         except ValueError:
             before = {}
-        base = {n: self.current(n) for n in locked if n in self.nodes and is_variable(self.nodes[n])}
+        base = self._base(locked)
 
         def eps(f):
             return max(f * tolerance, f * 1e-9, 1e-6)
@@ -654,12 +665,15 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
     configured, the solver picks the rest and repairs the bus limits. When the maximum is out of reach it
     tries bands of 10 % below it down to half the maximum, and the closest SYSCLK the solver reports.
 
-    :return: The `solve()` result plus `use` (None: all peripherals, []: none), or None without HSE, SYSCLK or result.
+    :return: The `solve()` result plus `use` (None: all peripherals, []: none) and `core`, the node it maximizes,
+             or None without HSE, core clock or result.
     """
     nodes, config = tree["nodes"], dict(config or {})
+    # The N6 has no SYSCLK, its core clock is the CPU clock
+    core = next((name for name in ("SysCLKOutput", "CpuClockOutput", "AHBOutput") if name in nodes), None)
     # Some limit SYSCLK only per voltage scale, the fastest one counts, the F0 and F7 limit only HCLK
     maximum = None
-    for name in ("SysCLKOutput", "AHBOutput"):
+    for name in (core, "AHBOutput"):
         node = nodes.get(name, {})
         maximum = (
             maximum or node.get("max") or max((v["max"] for v in node.get("limits", ()) if v.get("max")), default=None)
@@ -678,7 +692,7 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
 
     # A copy where these muxes lose their other inputs, so the solver cannot pick HSI, MSI or CSI
     restricted = {**tree, "nodes": dict(nodes)}
-    for name in upstream("SysCLKOutput"):
+    for name in upstream(core):
         node = nodes[name]
         hse = [i for i in node["inputs"] if "HSEOSC" in upstream(i["from"])]
         if node["kind"] == "mux" and hse:
@@ -700,10 +714,10 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
     everything = {name for name, node in nodes.items() if node["kind"] == "peripheral"}
 
     def run(target, use, diagnose=True, budget=budget):
-        return solver.solve(free, keep, {"SysCLKOutput": target}, use, tolerance, budget, diagnose=diagnose)
+        return solver.solve(free, keep, {core: target}, use, tolerance, budget, diagnose=diagnose)
 
     def freq(r):
-        return r["result"]["SysCLKOutput"]["freq"]
+        return r["result"][core]["freq"]
 
     # The maximum exactly, then bands of 10 % below it as ranges aiming at their top, e.g. 96 MHz in (90, 100]
     # ponytail: fixed bands, the range search takes the best of a few solutions, not the highest in the band
@@ -723,14 +737,14 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
                             if (exact := run(f, everything, diagnose=False))["ok"]:
                                 r = exact
                                 break
-                return {**r, "use": None}
+                return {**r, "use": None, "core": core}
             # Out of time proves nothing, but the bands below take as long, e.g. the H723: none from here on
             hard = bool(r.get("timeout")) and i > 0
         if fallback is None:
             if (r := run(ladder[i], []))["ok"]:
-                fallback = {**r, "use": []}
+                fallback = {**r, "use": [], "core": core}
             # e.g. the C0 reaches only the HSE frequency without a PLL
-            closest = next((u.get("closest") for u in r["unmet"] if u["id"] == "SysCLKOutput"), None)
+            closest = next((u.get("closest") for u in r["unmet"] if u["id"] == core), None)
             if closest and closest not in ladder:
                 ladder.insert(i + 1, closest)
         if fallback and hard:

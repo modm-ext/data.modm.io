@@ -55,6 +55,7 @@ async function start() {
   $("device").onchange = () => {
     const name = matchDevice($("device").value);
     if (name) load(name, {});
+    else status("err", `no clock tree for ${$("device").value.trim()}`);
   };
   $("solve").onclick = solve;
   $("unlock").onclick = () => { state.locked.clear(); refresh(); };
@@ -227,6 +228,9 @@ function setTarget(/** @type {string} */ id, /** @type {number | null} */ hz) {
   if (state.targets.size) solve(); else refresh();
 }
 
+/** The names of the core clocks that max performance raises */
+const CORE = {SysCLKOutput: "SYSCLK", CpuClockOutput: "CPU clock", AHBOutput: "HCLK"};
+
 /** Highest SYSCLK from the HSE, every peripheral in use if that works; everything else unlocked. */
 async function maxPerf() {
   const t0 = performance.now();
@@ -242,7 +246,7 @@ async function maxPerf() {
   const all = Object.keys(state.tree.nodes).filter((id) => state.tree.nodes[id].kind === "peripheral");
   Object.assign(state, {config: r.config, locked: new Set(), targets: new Map(), use: new Set(r.use === null ? all : [])});
   state.solved = {ok: true, ms, changed: Object.keys(r.config),
-    note: `max performance from HSE: SYSCLK ${fmtHz(r.result.SysCLKOutput?.freq ?? r.result.AHBOutput?.freq)}, ${r.use === null ? "every peripheral ticked" : "not possible with every peripheral in use, none ticked"}`};
+    note: `max performance from HSE: ${CORE[r.core] ?? label(r.core)} ${fmtHz(r.result[r.core]?.freq)}, ${r.use === null ? "every peripheral ticked" : "not possible with every peripheral in use, none ticked"}`};
 }
 
 async function solve() {
