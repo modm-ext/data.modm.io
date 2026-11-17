@@ -212,7 +212,9 @@ def restrict(tree: dict, settings: dict) -> dict:
 def prefer(tree: dict, source: str) -> dict:
     """The tree where the muxes upstream of SYSCLK only take inputs that come from `source`."""
     solver = Solver(tree)
-    upstream = solver.ancestors("SysCLKOutput") if "SysCLKOutput" in tree["nodes"] else set()
+    # the N6 has no SYSCLK, its cores and buses run from the SYSA, SYSB, ... muxes
+    cores = ["SysCLKOutput"] if "SysCLKOutput" in tree["nodes"] else ["CpuClockOutput", "AHBOutput"]
+    upstream = set().union(*(solver.ancestors(n) for n in cores if n in tree["nodes"]))
     return _without(tree, lambda mux, s: mux in upstream and source not in solver.ancestors(s))
 
 
@@ -289,6 +291,12 @@ def solve_text(tree: dict, targets: str, config: str = "", use: str = "", lock: 
     locked = {find_node(tree, n) for n in (lock or "").split(",") if n.strip()}
     # A board's oscillator frequencies are facts, not choices
     locked |= {n for n in settings if tree["nodes"].get(n, {}).get("kind") in ("varied", "fixed")}
+    # The muxes chosen in config are the user's choice: first try to keep all of them, only then move them
+    muxes = {n for n in settings if tree["nodes"].get(n, {}).get("kind") == "mux"} - locked
+    if muxes:
+        kept = solve_text(tree, targets, config, use, ",".join(sorted(locked | muxes)), budget / 2)
+        if kept["ok"]:
+            return kept | {"locked": sorted(locked)}
     use_set = _peripherals(tree, [u for u in (use or "").split(",") if u.strip()] + list(goals))
     start = time.monotonic()
     # The board decides which external clocks exist: only those set in config count
@@ -297,13 +305,23 @@ def solve_text(tree: dict, targets: str, config: str = "", use: str = "", lock: 
 
     cpu = next((n for n in _ALIASES["CPU"][:2] if n in tree["nodes"]), None)
 
-    def run(goals_now: dict, share: float, diagnose: bool = True) -> dict:
+    def run(goals_now: dict, share: float, diagnose: bool = True, start: dict | None = None) -> dict:
+        start = settings if start is None else start
         maxima = [n for n, (_, _, aim) in goals_now.items() if aim is None]
         if not maxima:
-            return solver.solve(settings, locked, goals_now, use_set, 0, budget * share, diagnose)
+            return solver.solve(start, locked, goals_now, use_set, 0, budget * share, diagnose)
+        if len(maxima) > 1:
+            # one maximum after the other, in the order given: CPU=max, HCLK=max is the fastest HCLK of the fastest CPU
+            first = run({k: v for k, v in goals_now.items() if k not in maxima[1:]}, share / 2, diagnose, start)
+            if not first["ok"]:
+                return first
+            f = first["result"][maxima[0]]["freq"]
+            # from the first configuration, so that the N6 HCLK shares the PLL of the CPU instead of taking another
+            fixed = goals_now | {maxima[0]: (f * (1 - 1e-9), f * (1 + 1e-9), f)}
+            return run(fixed, share / 2, diagnose, first["config"])
         # Aim at the maximum, then step down through the frequencies the node can reach
         name, top = maxima[0], goals_now[maxima[0]][1]
-        reachable = [f for f in solver.reachable(name, settings, locked) if f <= top * (1 + 1e-9)]
+        reachable = [f for f in solver.reachable(name, start, locked) if f <= top * (1 + 1e-9)]
         rungs = reachable[:200] or [top]
         # SYSCLK=max is the fastest core: a slightly slower SYSCLK may let the CPU and HCLK run faster,
         # for example, 434 MHz on the STM32H7P instead of 435 MHz, whose HCLK would need a divider of 2.008
@@ -327,7 +345,7 @@ def solve_text(tree: dict, targets: str, config: str = "", use: str = "", lock: 
             left = deadline - time.monotonic()
             # Only the last rung explains a failure
             last = diagnose and not best and (left <= budget * share / 5 or i == len(rungs))
-            r = solver.solve(settings, locked, trial, use_set, 0, max(min(left, budget * share / 5), 0.05), last)
+            r = solver.solve(start, locked, trial, use_set, 0, max(min(left, budget * share / 5), 0.05), last)
             # Two rungs out of time in a row: the next ones will not do better
             timeouts = timeouts + 1 if r.get("timeout") else 0
             if r["ok"]:
@@ -375,11 +393,32 @@ def solve_text(tree: dict, targets: str, config: str = "", use: str = "", lock: 
         }
         # Which targets stand in each other's way: each one left out in turn
         if len(goals) > 1 and not any(u["id"] for u in r["unmet"]):
+
+            def attempt(wanted):
+                # like the full search, from the crystal first
+                nonlocal solver
+                if "HSEOSC" in settings:
+                    solver = Solver(prefer(available, "HSEOSC"))
+                    found = run(wanted, 0.3 / len(goals), diagnose=False)
+                    solver = Solver(available)
+                    if found["ok"]:
+                        return found
+                return run(wanted, 0.3 / len(goals), diagnose=False)
+
             for name in goals:
-                rest = {k: v for k, v in goals.items() if k != name}
-                if run(rest, 0.3 / len(goals), diagnose=False)["ok"]:
+                if (partial := attempt({k: v for k, v in goals.items() if k != name}))["ok"]:
                     out["conflicts"].append(name)
+                    # the result shown leaves out the last conflicting target, the others come first for the user
+                    out |= {"config": partial["config"], "result": partial["result"], "left_out": name}
+            if name := out.get("left_out"):
+                # and gets that target as close as it can
+                lo, hi, aim = goals[name]
+                for tolerance in (0.01, 0.1, 0.25) if aim else ():
+                    if (partial := attempt(goals | {name: (aim * (1 - tolerance), aim * (1 + tolerance), aim)}))["ok"]:
+                        out |= {"config": partial["config"], "result": partial["result"]}
+                        break
     out["seconds"] = time.monotonic() - start
+    out["moved"] = {n: (settings[n], out["config"].get(n)) for n in muxes if out["config"].get(n) != settings[n]}
     return out
 
 
@@ -438,6 +477,8 @@ def report(tree: dict, solved: dict, device: str = "", code: str | None = None) 
             lines.append(f"  {solved['conflicts'][0]} does not fit with the other targets, without it they solve.")
         elif solved["conflicts"]:
             lines.append(f"  {', '.join(solved['conflicts'])} conflict: leaving out any one of them solves the rest.")
+        if solved.get("left_out"):
+            lines.append(f"  the configuration below solves every target except {solved['left_out']}.")
         if solved["problems"]:
             lines.append("  closest candidate breaks: " + "; ".join(_problem(p) for p in solved["problems"][:6]))
         if solved["timeout"]:
@@ -461,10 +502,35 @@ def report(tree: dict, solved: dict, device: str = "", code: str | None = None) 
               for n, r in result.items() if n in nodes and r.get("used") and r.get("errors")]  # fmt: skip
     if errors and solved["ok"]:
         lines.append("warnings: " + "; ".join(errors))
+    usb = [p for p in list(solved["targets"]) + list(solved["use"]) if "USB" in p.upper() and p in nodes]
+    if any(re.search(r"(HSI)?48(RC|M)?$|RC48", _source_path(tree, result, p).split(" < ")[-1]) for p in usb):
+        lines.append("note: USB from the HSI48 needs the CRS synchronized to the USB SOF, or use a crystal clock.")
+    if moved := solved.get("moved"):
+        # no silent change of a choice the user made
+        lines.append("moved: " + ", ".join(f"{n} {a} -> {b or 'default'}" for n, (a, b) in moved.items())
+                     + " (the targets could not be met with these kept; lock them to insist)")  # fmt: skip
     text = config_text(tree, solved["config"])
     lines.append(f"config: {text or '(all defaults)'}")
+    # factors whose macro is not just their number, e.g. PSI=18 is PSI_144MHZ_REF_8MHZ
+    named = []
+    for k, v in _settings(tree, solved["config"]).items():
+        for d in nodes.get(k, {}).get("domain", ()):
+            try:
+                same = d.get("macro") and abs(float(d["factor"]) - float(v)) < 1e-9
+            except (KeyError, TypeError, ValueError):
+                same = False
+            if same and not re.search(rf"(?<![\d.]){float(v):g}$", d["macro"]):
+                named.append(f"{k}={d['macro']}")
+    if named:
+        lines.append("macros: " + ", ".join(named))
     if solved["ok"]:
         lines.append("next: pass this config back with more targets or use items; it keeps these choices where it can.")
+    elif (name := solved.get("left_out")) and (aim := solved["targets"][name][2]) and (f := freq(name)):
+        # the tolerance that accepts what the other targets leave for it
+        tolerance = math.ceil(abs(f - aim) / aim * 1000) / 10
+        lines.append(
+            f"next: {name}={fmt_hz(aim).replace(' ', '')}~{tolerance:g}% accepts {fmt_hz(f)}, or change another target."
+        )
     else:
         lines.append(
             "next: relax a target (tolerance ~0.1%, a range or <=), unlock nodes, or change the sources in config."

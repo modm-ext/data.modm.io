@@ -212,8 +212,15 @@ class Solver:
         )
 
     def _frac_input(self, node: dict):
+        # only a fraction the tree lets set: the N6 PLL2FRACV has neither range nor values, it stays as it is
         return next(
-            (i["from"] for i in node["inputs"] if i["from"] in self.nodes and self.nodes[i["from"]]["kind"] == "frac"),
+            (
+                i["from"]
+                for i in node["inputs"]
+                if i["from"] in self.nodes
+                and self.nodes[i["from"]]["kind"] == "frac"
+                and ("range" in self.nodes[i["from"]] or self.nodes[i["from"]].get("domain"))
+            ),
             None,
         )
 
@@ -600,7 +607,8 @@ class Solver:
                     return None
             return trial
 
-        ranged = [c for c in target_list if c["hi"] - c["lo"] > c["aim"] * 1e-6]
+        # a target at its maximum has no aim
+        ranged = [c for c in target_list if c["aim"] is not None and c["hi"] - c["lo"] > c["aim"] * 1e-6]
         best_ok, oks, soft = None, 0, time.monotonic() + budget / 4
         try:
             # A candidate that breaks the limits of a node gets those limits as another
@@ -742,6 +750,21 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
     def freq(r):
         return r["result"][core]["freq"]
 
+    def bus(r):
+        # The N6 clocks its AHB apart from the CPU: the fastest HCLK next to the CPU found, from the same PLL
+        ahb = nodes.get("AHBOutput")
+        if not r or not ahb or core == "AHBOutput" or core in solver.ancestors("AHBOutput"):
+            return r
+        top = ahb.get("max") or max((v["max"] for v in ahb.get("limits", ()) if v.get("max")), default=None)
+        if not top or r["result"]["AHBOutput"]["freq"] >= top * (1 - 1e-9):
+            return r
+        f, use = freq(r), everything if r["use"] is None else r["use"]
+        for t in (top, (top / 2, top, top)):
+            targets = {core: (f * (1 - 1e-9), f * (1 + 1e-9), f), "AHBOutput": t}
+            if (fast := solver.solve(r["config"], keep, targets, use, tolerance, budget, diagnose=False))["ok"]:
+                return {**fast, "use": r["use"], "core": core}
+        return r
+
     # The maximum exactly, then bands of 10 % below it as ranges aiming at their top, e.g. 96 MHz in (90, 100]
     # ponytail: fixed bands, the range search takes the best of a few solutions, not the highest in the band
     steps = [maximum * f for f in (1, 0.9, 0.8, 0.7, 0.6, 0.5)]
@@ -760,7 +783,7 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
                             if (exact := run(f, everything, diagnose=False))["ok"]:
                                 r = exact
                                 break
-                return {**r, "use": None, "core": core}
+                return bus({**r, "use": None, "core": core})
             # Out of time proves nothing, but the bands below take as long, e.g. the H723: none from here on
             hard = bool(r.get("timeout")) and i > 0
         if fallback is None:
@@ -773,4 +796,4 @@ def max_performance(tree: dict, config: dict | None = None, locked=(), tolerance
         if fallback and hard:
             break
         i += 1
-    return fallback
+    return bus(fallback)
