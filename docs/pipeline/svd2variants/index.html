@@ -786,6 +786,60 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clock Solver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -993,36 +1047,6 @@ is a mechanical definition and says nothing about what the feature <em>is</em>. 
 of them do share something lexically, since ST names and documents related
 elements alike, so a name is derived from the shared name prefix, the shared
 description phrase or the registers involved, see <code>modm_data.svd2variants.naming</code>.</p>
-<p>That misses the semantics though: the seventeen bit fields of the first
-capture/compare channel of a timer share no name and no description, but they
-are obviously "Channel 1". A small language model names those much better, so
-the names are generated into a lookup table keyed by the <em>content</em> of the
-feature, see <code>modm_data.svd2variants.annotate</code>. The table is stable across
-runs, reviewable as a diff, and only features that actually changed need to be
-asked again. Every feature is named by the first of these that works:</p>
-<ol>
-<li>the lookup table of <code>--names</code>, which the homepage and the CI download from
-   the gist, so that they never need a model,</li>
-<li>a local model, by default Gemma 4 26B-A4B served by LM Studio at
-   <code>http://localhost:1234/v1</code>, which only new features are sent to,</li>
-<li>the heuristic.</li>
-</ol>
-<p>The prompt matters more than the size of the model. Keeping the numbers of
-similar elements as a range turns "High line interrupt masking" into "Lines 28
-to 30 interrupt masking", and asking for a different name per feature stops
-four ADC features from all becoming "Multimode and dual mode support".
-Conversely, naming the vague words to avoid produced <em>more</em> of them.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Name the features that are missing from the table with a local model and update it</span>
-python3<span class="w"> </span>-m<span class="w"> </span>modm_data.svd2variants<span class="w"> </span>--all<span class="w"> </span>--names<span class="w"> </span>feature-names.json
-<span class="c1"># Name them with the claude command line tool instead</span>
-python3<span class="w"> </span>-m<span class="w"> </span>modm_data.svd2variants<span class="w"> </span>--all<span class="w"> </span>--names<span class="w"> </span>feature-names.json<span class="w"> </span>--claude
-<span class="c1"># Use another local model or server</span>
-python3<span class="w"> </span>-m<span class="w"> </span>modm_data.svd2variants<span class="w"> </span>--all<span class="w"> </span>--names<span class="w"> </span>feature-names.json<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--endpoint<span class="w"> </span>http://localhost:1234/v1<span class="w"> </span>--model<span class="w"> </span>qwen/qwen3-4b-2507
-<span class="c1"># Only use the table, as the CI does</span>
-python3<span class="w"> </span>-m<span class="w"> </span>modm_data.svd2variants<span class="w"> </span>--all<span class="w"> </span>--names<span class="w"> </span>feature-names.json<span class="w"> </span>--no-generate
-</code></pre></div>
-<p>The homepage and the CI workflow currently use the heuristic names only.</p>
 <h2 id="selective-analysis">Selective Analysis<a class="headerlink" href="#selective-analysis" title="Permanent link">&para;</a></h2>
 <p>The reports are written to <code>log/stmicro/variants/&lt;mode&gt;/*.txt</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Analyze only these peripheral groups</span>

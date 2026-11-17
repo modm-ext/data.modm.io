@@ -1,0 +1,816 @@
+{
+  "devices": {
+    "attiny45v-10mu": {
+      "chip_id": "attiny45v-10mu",
+      "package": null,
+      "partname": "attiny45v-10mu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny45v-10pu": {
+      "chip_id": "attiny45v-10pu",
+      "package": null,
+      "partname": "attiny45v-10pu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny45v-10sh": {
+      "chip_id": "attiny45v-10sh",
+      "package": null,
+      "partname": "attiny45v-10sh",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny45v-10su": {
+      "chip_id": "attiny45v-10su",
+      "package": null,
+      "partname": "attiny45v-10su",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny45v-10xu": {
+      "chip_id": "attiny45v-10xu",
+      "package": null,
+      "partname": "attiny45v-10xu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny45v-20mu": {
+      "chip_id": "attiny45v-20mu",
+      "package": null,
+      "partname": "attiny45v-20mu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny45v-20pu": {
+      "chip_id": "attiny45v-20pu",
+      "package": null,
+      "partname": "attiny45v-20pu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny45v-20sh": {
+      "chip_id": "attiny45v-20sh",
+      "package": null,
+      "partname": "attiny45v-20sh",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny45v-20su": {
+      "chip_id": "attiny45v-20su",
+      "package": null,
+      "partname": "attiny45v-20su",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    },
+    "attiny45v-20xu": {
+      "chip_id": "attiny45v-20xu",
+      "package": null,
+      "partname": "attiny45v-20xu",
+      "pin_count": 6,
+      "rows": [
+        {
+          "functions": [
+            "AC_AIN0",
+            "ADC_AREF",
+            "EXINT_PCINT0",
+            "TC0_OC0A",
+            "TC1_OC1AINV",
+            "USI_DI",
+            "USI_SDA"
+          ],
+          "pin_label": "B0 PB0",
+          "position": "B0",
+          "row_id": 0,
+          "short_name": "PB0"
+        },
+        {
+          "functions": [
+            "AC_AIN1",
+            "EXINT_PCINT1",
+            "TC0_OC0B",
+            "TC1_OC1A",
+            "USI_DO"
+          ],
+          "pin_label": "B1 PB1",
+          "position": "B1",
+          "row_id": 1,
+          "short_name": "PB1"
+        },
+        {
+          "functions": [
+            "ADC_1",
+            "EXINT_0",
+            "EXINT_PCINT2",
+            "TC0_T0",
+            "USI_SCL",
+            "USI_USCK"
+          ],
+          "pin_label": "B2 PB2",
+          "position": "B2",
+          "row_id": 2,
+          "short_name": "PB2"
+        },
+        {
+          "functions": [
+            "EXINT_PCINT3",
+            "TC1_OC1BINV"
+          ],
+          "pin_label": "B3 PB3",
+          "position": "B3",
+          "row_id": 3,
+          "short_name": "PB3"
+        },
+        {
+          "functions": [
+            "ADC_2",
+            "EXINT_PCINT4",
+            "TC1_OC1B"
+          ],
+          "pin_label": "B4 PB4",
+          "position": "B4",
+          "row_id": 4,
+          "short_name": "PB4"
+        },
+        {
+          "functions": [
+            "ADC_0",
+            "EXINT_PCINT5"
+          ],
+          "pin_label": "B5 PB5",
+          "position": "B5",
+          "row_id": 5,
+          "short_name": "PB5"
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-11-16 23:43:28 UTC",
+  "source": "avr/attiny45"
+}

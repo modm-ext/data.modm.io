@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>modm-data tools</title>
+<meta name="description" content="How to install and use the modm-data tools: the modm-data-lookup command line, the MCP server for coding agents and the interactive pages for STM32 headers, registers, documents, clocks, interrupts and pinouts.">
+<link rel="stylesheet" href="../shared/theme.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="../shared/site.js"></script>
+<body class="doc-page" data-page="tools">
+<nav class="site" aria-label="modm-data pages"></nav>
+<div class="doc">
+<nav class="toc" aria-labelledby="toc-title">
+  <h2 id="toc-title">Contents</h2>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#install">Installation</a>
+      <ol>
+        <li><a href="#install-tools">The tools</a></li>
+        <li><a href="#install-data">The data</a></li>
+        <li><a href="#install-env">Environment</a></li>
+      </ol>
+    </li>
+    <li><a href="#cli">Command line</a>
+      <ol>
+        <li><a href="#cli-usage">Usage</a></li>
+        <li><a href="#cli-headers">Headers</a></li>
+        <li><a href="#cli-registers">Registers</a></li>
+        <li><a href="#cli-docs">Documents</a></li>
+        <li><a href="#cli-figures">Figures</a></li>
+        <li><a href="#cli-clocks">Clocks</a></li>
+        <li><a href="#cli-irq">Interrupts</a></li>
+        <li><a href="#cli-pins">Pins</a></li>
+      </ol>
+    </li>
+    <li><a href="#mcp">MCP server</a>
+      <ol>
+        <li><a href="#mcp-run">Running it</a></li>
+        <li><a href="#mcp-claude-code">Claude Code</a></li>
+        <li><a href="#mcp-claude-desktop">Claude desktop</a></li>
+        <li><a href="#mcp-apps">Apps</a></li>
+        <li><a href="#mcp-other">Other clients</a></li>
+        <li><a href="#mcp-tools">Tools</a></li>
+        <li><a href="#mcp-errors">Errors</a></li>
+        <li><a href="#mcp-instructions">Instructions</a></li>
+      </ol>
+    </li>
+    <li><a href="#pages">Pages</a>
+      <ol>
+        <li><a href="#pages-svd">SVD Registers</a></li>
+        <li><a href="#pages-variants">Peripheral Variants</a></li>
+        <li><a href="#pages-boards">Board Pinouts</a></li>
+        <li><a href="#pages-pinout">Pin Mapping</a></li>
+        <li><a href="#pages-clocks">Clock Solver</a></li>
+        <li><a href="#pages-local">Serving locally</a></li>
+      </ol>
+    </li>
+    <li><a href="#licence">Licences</a></li>
+  </ol>
+</nav>
+
+<main>
+<h1 id="overview">modm-data tools</h1>
+<p class="lead">Answers about STM32 devices for embedded developers and their coding agents:
+a command line, an MCP server and a few interactive pages.</p>
+
+<p><a href="https://github.com/modm-io/modm-data">modm-data</a> converts vendor sources (CMSIS headers,
+SVD files, the STM32CubeMX database, PDF documentation) into a stable form in the <code>ext/</code> folder
+of its checkout. The <a href="https://github.com/modm-ext/modm-data-tools">modm-data tools</a> only read that data.
+They answer questions like these:</p>
+<ul>
+  <li><b>Headers:</b> which CMSIS header a device uses, which headers define a macro, which bus a peripheral is on.</li>
+  <li><b>Registers:</b> the bit fields of a peripheral, and what a value read from a board means.</li>
+  <li><b>Documents:</b> the datasheet, reference manual and errata of a device; search them, read a section or a table as Markdown.</li>
+  <li><b>Figures:</b> the labels of a drawing, a PNG of one region, the curves of a chart, the lanes of a timing diagram.</li>
+  <li><b>Clocks:</b> the clock tree, flash wait states, and a clock configuration for frequency targets with the modm <code>SystemClock</code> code.</li>
+  <li><b>Interrupts:</b> which events share a vector, with their enable, flag and clear bits, and the trigger multiplexers between peripherals.</li>
+  <li><b>Pins:</b> the alternate functions of the device pins and the connector pins of NUCLEO boards and Discovery kits.</li>
+</ul>
+<p>The same 25 lookups are available as the <a href="#cli"><code>modm-data-lookup</code></a> command and as
+<a href="#mcp">MCP tools</a>. Every lookup takes text and returns text.</p>
+
+<!-- ================================================================== -->
+<h2 id="install">Installation</h2>
+
+<h3 id="install-tools">The tools</h3>
+<p>You need Python 3.11 or newer, <code>git</code>, and <code>g++</code> and <code>patch</code> for modm-data.
+The tools read the data in the <code>ext/</code> folder of a modm-data checkout, so modm-data is installed
+from that checkout with <code>pip install -e</code>, not from PyPI. Clone both repositories next to each other:</p>
+<pre class="code cmd"><code>git clone https://github.com/modm-io/modm-data.git
+git clone https://github.com/modm-ext/modm-data-tools.git
+cd modm-data-tools
+make venv</code></pre>
+<p><code>make venv</code> creates <code>.venv</code> and installs both packages in editable mode:</p>
+<pre class="code out"><code>python3 -m venv .venv
+.venv/bin/pip install -e "../modm-data" -e ".[all]"</code></pre>
+<p>If modm-data is somewhere else, pass its path: <code>make venv MODM_DATA=/path/to/modm-data</code>.
+The extra <code>[all]</code> includes the MCP server (<code>mcp</code>, <code>uvicorn</code>) and <code>pytest</code>.
+This installs two commands into <code>.venv/bin</code>: <code>modm-data-lookup</code> and <code>modm-data-mcp</code>.</p>
+
+<h3 id="install-data">The data</h3>
+<p>All data goes into the <code>ext/</code> folder of the modm-data checkout. Run these targets there,
+with the virtual environment of the tools active (<code>source ../modm-data-tools/.venv/bin/activate</code>),
+since they call <code>python3 -m modm_data…</code>.</p>
+
+<h4>Public sources</h4>
+<pre class="code cmd"><code>make clone-sources-stmicro       # headers, SVDs, CubeHAL, packs
+make convert-stmicro-header-svd  # SVDs from the CMSIS headers</code></pre>
+<p>The first target clones the CMSIS headers, the ST SVD files, the CubeHAL drivers, the CMSIS packs of ST and the
+CMSIS core, all public repositories under BSD-3-Clause and Apache-2.0.</p>
+
+<h4>Data you download and convert yourself</h4>
+<p>The STM32CubeMX database and ST's PDF documentation are under the ST licence agreement (SLA).
+They cannot be redistributed, so modm-data downloads them from ST for you and you convert them locally:</p>
+<pre class="code cmd"><code>make download-stmicro-cubemx     # CubeMX database from ST
+make build-device-database       # ext/modm-data/devices.db
+make download-stmicro-pdfs       # all PDFs, about 10 GB
+make convert-stmicro-html        # PDF to HTML, takes long</code></pre>
+<p>You can also convert only the documents you need, one PDF at a time:</p>
+<pre class="code cmd"><code># converts ext/stmicro/pdf/RM0440-v9.pdf
+make ext/stmicro/html-archive/RM0440-v9</code></pre>
+<p>The conversion log goes to <code>log/stmicro/html/</code>. The first documentation lookup builds a SQLite
+full-text index in <code>ext/cache/lookup</code>; it is rebuilt when the HTML archive or the CubeMX checkout
+moves to another commit. The MCP server starts building it in the background when it starts.</p>
+
+<h4>What needs what</h4>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Data</th><th>Needed by</th></tr></thead>
+  <tbody>
+    <tr><td>CMSIS headers, header SVDs</td><td>SVD Registers and Peripheral Variants pages; together with <code>devices.db</code>: the header and register lookups</td></tr>
+    <tr><td><code>devices.db</code> (CubeMX)</td><td>every lookup that takes a device name: headers, registers, flash latency, pin functions, board pinouts</td></tr>
+    <tr><td>CubeMX database</td><td>clock trees and the clock solver, the documents of a device (<code>device_docs</code>), interrupts</td></tr>
+    <tr><td>HTML documentation</td><td>documents, figures, register descriptions, interrupts, interconnect, board pinouts</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note warn">With the public sources alone you get the SVD Registers and Peripheral Variants pages.
+The lookups map part names like <code>stm32g474re</code> to headers through <code>devices.db</code>, so even the
+header and register lookups need the CubeMX database. Documents, figures, clock trees and board pinouts
+need the ST data as well.</p>
+
+<h3 id="install-env">Environment</h3>
+<p>The defaults work for the layout above. These variables override them:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Variable</th><th>Default</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><code>MODM_DATA</code></td><td>the installed modm-data checkout</td><td>the checkout whose <code>ext/</code> folder is read</td></tr>
+    <tr><td><code>MODM_DOCS_ARCHIVE</code></td><td><code>ext/stmicro/html-archive</code></td><td>another HTML archive, for example a local conversion; it gets an index of its own</td></tr>
+    <tr><td><code>MODM_DATA_LOOKUP_CACHE</code></td><td><code>ext/cache/lookup</code></td><td>the full-text index and the OCR results</td></tr>
+    <tr><td><code>MODM_REPO</code></td><td><code>modm</code> next to the modm-data checkout</td><td>the <a href="https://github.com/modm-io/modm">modm</a> checkout that <code>clock_solve --code</code> generates the code for</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The text of bitmap figures (board photos) comes from the OCR of macOS. On other systems these figures have no text.</p>
+
+<!-- ================================================================== -->
+<h2 id="cli">Command line</h2>
+
+<h3 id="cli-usage">Usage</h3>
+<p>Every lookup is a subcommand of <code>modm-data-lookup</code>. Activate the virtual environment or call
+<code>.venv/bin/modm-data-lookup</code> directly. <code>--help</code> lists all of them, and
+<code>modm-data-lookup &lt;tool&gt; --help</code> shows the full description and the arguments of one:</p>
+<pre class="code cmd"><code>modm-data-lookup --help
+modm-data-lookup doc_section --help</code></pre>
+<pre class="code out"><code>usage: python -m modm_data_tools.lookup doc_section [-h]
+                                                    [--subsections | --no-subsections]
+                                                    [--offset OFFSET]
+                                                    [--max_chars MAX_CHARS]
+                                                    doc section
+
+One section as Markdown, with its subsections unless `subsections` is false. Register layouts become one line
+per bit field, large tables are only summarized (read them with doc_table). Long sections are paged by `offset`,
+`max_chars` is at most 100000.
+…</code></pre>
+<p>The arguments follow the parameters of the lookup functions:</p>
+<ul>
+  <li>Required parameters are positional arguments: <code>doc_section RM0440 7.2.1</code>.</li>
+  <li>Optional parameters are options with the same name, underscores included: <code>--max_chars 600</code>.</li>
+  <li>Boolean parameters have a pair of flags: <code>--subsections</code> and <code>--no-subsections</code>,
+    <code>--code</code> and <code>--no-code</code>, <code>--image</code> and <code>--no-image</code>.</li>
+  <li>Patterns like <code>find_define</code>'s <code>pattern</code> or <code>doc_table</code>'s <code>--where</code>
+    are regular expressions. A regex may run for 2 seconds on one text; a slower one is rejected with
+    <code>pattern too slow, simplify it</code>, an invalid one with <code>invalid regex: …</code>.</li>
+  <li>Lists are capped: <code>--limit</code> is at most 200 and <code>--max_chars</code> at most 100000.
+    Larger values are clamped. Long answers say how to get the rest, for example with <code>--offset</code>.</li>
+</ul>
+<p>A wrong input prints a message to stderr and exits with 1. Anything else is a bug and prints a traceback.</p>
+<pre class="code cmd"><code>modm-data-lookup device_header stm99</code></pre>
+<pre class="code out"><code>no STM32 device matches 'stm99', similar: stm32u599vjt6 stm32l4s9ziy6 stm32l4s9zit6 stm32l4s9zij6 stm32l4s9vit6</code></pre>
+<p>The examples below are real output, shortened where marked with <code>…</code>.</p>
+
+<h3 id="cli-headers">Headers</h3>
+<p>A device name is a prefix of the part name, so <code>g474re</code> and <code>stm32g474ret6</code> both work.</p>
+<pre class="code cmd"><code>modm-data-lookup device_header g474re</code></pre>
+<pre class="code out"><code>…/ext/stmicro/header/stm32g4xx/Include/stm32g474xx.h (3 devices: stm32g474ret3 stm32g474ret6 stm32g474ret7)</code></pre>
+<p><code>find_define</code> answers which headers define a macro, matched as a full regex:</p>
+<pre class="code cmd"><code>modm-data-lookup find_define 'FDCAN_CCCR_\w+' --devices g4 --limit 5</code></pre>
+<pre class="code out"><code>12 headers (338 devices) define it, 0 headers (0 devices) do not.
+
+Defined in:
+all of them: FDCAN_CCCR_ASM FDCAN_CCCR_ASM_Msk FDCAN_CCCR_ASM_Pos FDCAN_CCCR_BRSE FDCAN_CCCR_BRSE_Msk ... (+37)
+stm32g411xb.h stm32g411xc.h stm32g414xx.h stm32g431xx.h stm32g441xx.h stm32g471xx.h stm32g473xx.h …</code></pre>
+<p>Related: <code>header_devices</code> lists the devices of a header, <code>device_condition</code> writes the
+lbuild template condition for the devices that define a macro, <code>peripheral_buses</code> lists the bus of
+every peripheral, and <code>flash_latency</code> the wait states per voltage:</p>
+<pre class="code cmd"><code>modm-data-lookup flash_latency stm32g474re</code></pre>
+<pre class="code out"><code>…
+  1.28 V: 0 WS &lt;= 34 MHz, 1 WS &lt;= 68 MHz, 2 WS &lt;= 102 MHz, 3 WS &lt;= 136 MHz, 4 WS &lt;= 170 MHz
+  1.2 V: 0 WS &lt;= 30 MHz, 1 WS &lt;= 60 MHz, 2 WS &lt;= 90 MHz, 3 WS &lt;= 120 MHz, 4 WS &lt;= 150 MHz
+  1 V: 0 WS &lt;= 12 MHz, 1 WS &lt;= 24 MHz, 2 WS &lt;= 26 MHz</code></pre>
+
+<h3 id="cli-registers">Registers</h3>
+<p>The registers come from the SVD files generated from the CMSIS headers, plus the Cortex-M core peripherals
+(SCB, NVIC, SysTick, …) from the CMSIS core headers. <code>register_map</code> shows all registers of a peripheral:</p>
+<pre class="code cmd"><code>modm-data-lookup register_map stm32g474re USART1</code></pre>
+<pre class="code out"><code>stm32g474xx USART1 @ 0x40013800: Universal Synchronous Asynchronous Receiver Transmitter
+0x40013800 +0x000 CR1: USART Control register 1
+  RXFFIE[31] TXFEIE[30] FIFOEN[29] M1[28] EOBIE[27] RTOIE[26] DEAT[25:21] DEDT[20:16] OVER8[15] CMIE[14] …
+0x40013804 +0x004 CR2: USART Control register 2
+…</code></pre>
+<p><code>decode_register</code> decodes a value, for example one read with a debugger:</p>
+<pre class="code cmd"><code>modm-data-lookup decode_register stm32g474re --register RCC.CR --value 0x03030500</code></pre>
+<pre class="code out"><code>RCC.CR @ 0x40021000: RCC clock control register = 0x03030500
+     25 PLLRDY = 0x1: System PLL clock ready
+     24 PLLON = 0x1: System PLL clock enable
+     17 HSERDY = 0x1: External High Speed oscillator (HSE) clock ready
+     16 HSEON = 0x1: External High Speed oscillator (HSE) clock enable
+     10 HSIRDY = 0x1: Internal High Speed oscillator (HSI16) clock ready flag
+      8 HSION = 0x1: Internal High Speed oscillator (HSI16) clock enable
+  (3 other fields are 0)</code></pre>
+<p>It also takes the output of OpenOCD's <code>mdw</code> as it is, then the register can be left out.
+Bare numbers are hex, like <code>mdw</code> prints them:</p>
+<pre class="code cmd"><code>modm-data-lookup decode_register stm32g474re --value '0x40021000: 03030500 00000000 00001002'</code></pre>
+<pre class="code out"><code>RCC.CR @ 0x40021000: RCC clock control register = 0x03030500
+…
+RCC.ICSCR @ 0x40021004: RCC internal clock sources calibration register = 0x00000000
+RCC.CFGR @ 0x40021008: RCC clock configuration register = 0x00001002
+  13:11 PPRE2 = 0x2: PRE2[2:0] bits (APB2 prescaler)
+   10:8 PPRE1 = 0x0 DIV_1: PRE1[2:0] bits (APB2 prescaler)
+    7:4 HPRE = 0x0 DIV_1: HPRE[3:0] bits (AHB prescaler)
+    1:0 SW = 0x2 HSE: SW[1:0] bits (System clock Switch)
+  (3 other fields are 0)</code></pre>
+<p>Fault registers work the same way: <code>decode_register stm32g474re --register SCB.CFSR --value 0x00008200</code>
+reports <code>BFARVALID</code> and <code>PRECISERR</code>.</p>
+
+<h3 id="cli-docs">Documents</h3>
+<p>Start with the documents of a device:</p>
+<pre class="code cmd"><code>modm-data-lookup device_docs stm32g474re</code></pre>
+<pre class="code out"><code>1 ST part numbers: stm32g474re
+ES0430 (Errata Sheets, ST v9.0, HTML v10.0): STM32G471xx/473xx/474xx/483xx/484xx device errata
+DS12288 (Product Specifications, ST v6.0, HTML v6.0): Arm® Cortex®-M4 32-bit MCU+FPU, 170 MHz / 213 DMIPS, …
+PM0214 (Programming Manuals, ST v10.0, HTML v11.0): STM32 Cortex®-M4 MCUs and MPUs programming manual
+RM0440 (Reference Manuals, ST v9.0, HTML v9.0): STM32G4 series advanced Arm®-based 32-bit MCUs
+not shown: 54 AN, 7 TN, 1 UM (use kinds)</code></pre>
+<p>Then find the content. <code>doc_search</code> is a full-text search where all words must match and
+<code>"…"</code> is a phrase. It also lists matching figures:</p>
+<pre class="code cmd"><code>modm-data-lookup doc_search '"wait states" HCLK' --device stm32g474re --limit 3</code></pre>
+<pre class="code out"><code>AN5094 4.5.1 Performance versus Vcore ranges [0.7k]: ...Zero **wait state**, if 0 &lt; **HCLK** ≤ 24 MHz One …
+RM0440 4.3.3 Read access latency [3.1k]: ...Number of **wait states** according to CPU clock (**HCLK**) frequency …
+RM0440 5.3.3 Read access latency [3.1k]: ...Number of **wait states** according to CPU clock (**HCLK**) frequency …
+figures (doc_figure reads them):
+RM0440 Figure 69. Wait configuration waveforms (section 19.6.5): Memory transaction = burst of 4 half words …
+…</code></pre>
+<p><code>doc_grep</code> finds what a word search cannot, like identifiers with digits, and ranks sections by hits:</p>
+<pre class="code cmd"><code>modm-data-lookup doc_grep 'TIM\d+_SMCR' --doc RM0440 --limit 3</code></pre>
+<pre class="code out"><code>12 hits in 9 sections of RM0440
+RM0440 31.7.7 TIM15 capture/compare mode register 1 (TIM15_CCMR1): 2 hits, 0.6/1k chars: ...ly if an internal …
+…
+[6 more sections with 6 hits]</code></pre>
+<p>Navigate with <code>doc_toc</code> and read with <code>doc_section</code>. The size of each section tells
+you what reading it costs:</p>
+<pre class="code cmd"><code>modm-data-lookup doc_toc RM0440 --section 7 --depth 1
+modm-data-lookup doc_section RM0440 7.2.1 --no-subsections --max_chars 600</code></pre>
+<pre class="code out"><code>RM0440 v9.0
+7 Reset and clock control (RCC) [112k]
+  7.1 Reset [4.8k]
+  7.2 Clocks [23k]
+  7.3 Low-power modes [1.6k]
+  7.4 RCC registers [82k]
+
+RM0440 v9.0 section 7.2.1
+
+#### 7.2.1 HSE clock
+
+The high speed external clock signal (HSE) can be generated from two possible clock sources:
+…
+[1106 more characters, continue with offset=519]</code></pre>
+<p>Tables are found by caption and column header with <code>find_tables</code> and read with <code>doc_table</code>,
+which can keep only some columns and rows:</p>
+<pre class="code cmd"><code>modm-data-lookup doc_table DS12288 13 --columns port,AF7 --where '^PA9$'</code></pre>
+<pre class="code out"><code>DS12288 v6.0 section 4.11
+
+**Table 13. Alternate function**
+
+| Port #1 | Port #2 | AF7 / USART1/2/3 /FDCAN/COMP7/5/6 |
+|---|---|---|
+| Port A | PA9 | USART1_TX |</code></pre>
+<p><code>doc_register</code> gives the reference manual description of a register, with the address from the header SVD:</p>
+<pre class="code cmd"><code>modm-data-lookup doc_register RCC_CR --device stm32g474re</code></pre>
+<pre class="code out"><code>Addresses (stm32g474xx header SVD): RCC.CR 0x40021000
+…
+**7.4.1 Clock control register (RCC_CR)**
+
+Address offset: 0x00
+
+Reset value: 0x0000 0500
+…</code></pre>
+
+<h3 id="cli-figures">Figures</h3>
+<p><code>doc_figures</code> finds figures by a regex on the caption and the labels in the drawing:</p>
+<pre class="code cmd"><code>modm-data-lookup doc_figures RM0440 --query 'clock tree'</code></pre>
+<pre class="code out"><code>RM0440 v9.0: 1 of 688 figures
+Figure 17 (section 7.2): Clock tree
+  to IWDG | LSI RC 32 kHz | LSCO | to RTC | OSC32_OUT | LSE OSC | /32 | 32.768 kHz ... (96 labels)</code></pre>
+<p><code>doc_figure</code> gives the labels by the cells of a 4×4 grid (columns A–D, rows 1–4). With <code>--image</code>
+it writes a PNG of the figure, or only of a region, which is much smaller:</p>
+<pre class="code cmd"><code>modm-data-lookup doc_figure RM0440 17
+modm-data-lookup doc_figure RM0440 17 --image --region C2:D2 --output clock.png</code></pre>
+<pre class="code out"><code>RM0440 v9.0 section 7.2, Figure 17. Clock tree
+96 labels by cell (A-D left to right, 1-4 top to bottom):
+A1: LSI RC 32 kHz | LSCO | OSC32_OUT | LSE OSC | 32.768 kHz | OSC32_IN | LSE LSI | HSI HSE SYSCLK PLLCLK HSI48 | …
+B1: /32
+C1: AHB | HCLK | PRESC | / 1,2,..512 | / 8
+…
+RM0440 v9.0 section 7.2, Figure 17. Clock tree, region C2:D2, 468x304 px
+written to clock.png</code></pre>
+<p><code>doc_figure_data</code> reads the data from the geometry of the drawing: the curves of characteristic charts,
+the lanes and timing parameters of timing diagrams, and state machines and flowcharts as Mermaid graphs.
+The result says whether it was verified against the drawing.</p>
+<pre class="code cmd"><code>modm-data-lookup doc_figure_data DS12288 18 --x 25,85</code></pre>
+<pre class="code out"><code>DS12288 v6.0 section 5.3.4, Figure 18. V REFINT versus temperature
+chart, verified against the drawing
+x: (no title), linear, -40 to 120
+y: V, linear, 1.185 to 1.235
+typical characterization data, not guaranteed values
+curve Max: y(25) = 1.231, y(85) = 1.229
+curve Mean: y(25) = 1.213, y(85) = 1.212
+curve Min: y(25) = 1.195, y(85) = 1.196</code></pre>
+
+<h3 id="cli-clocks">Clocks</h3>
+<p>The clock lookups work on the clock tree of STM32CubeMX and take its part names, like <code>STM32G474RETx</code>.
+<code>clock_solve</code> finds a configuration for frequency targets. Targets are exact (<code>40M</code>),
+relative (<code>49.152M~0.1%</code>), a range (<code>12.288M..12.3M</code>), a bound (<code>ADC&lt;=50M</code>)
+or <code>max</code>. <code>--config</code> describes the board, <code>--code</code> adds the modm code:</p>
+<pre class="code cmd"><code>modm-data-lookup clock_solve STM32G474RETx "SYSCLK=max, FDCAN1=40M" --config "HSE=24M" --code</code></pre>
+<pre class="code out"><code>STM32G474RETx: solved in 0.07 s
+targets:
+  SysCLKOutput = 160 MHz (want max) ok  from SysClkSource &lt; PLLR &lt; PLLN &lt; PLLM &lt; PLLSource &lt; HSEOSC
+  FDCAN1 = 40 MHz (want 40 MHz) ok  from FDCANMult &lt; PLLQ &lt; PLLN &lt; PLLM &lt; PLLSource &lt; HSEOSC
+clocks: SysCLK 160 MHz, FCLKCortex 160 MHz, AHB 160 MHz, APB1 160 MHz, APB2 160 MHz
+power: PWR_Regulator_Voltage_Scale=PWR_REGULATOR_VOLTAGE_SCALE1_BOOST, flash FLASH_LATENCY_4
+config: HSEOSC=24M, SysClkSource=PLLCLK, PLLSource=HSE, PLLM=3, PLLN=40, FDCANMult=PLL, PLLQ=8
+next: pass this config back with more targets or use items; it keeps these choices where it can.
+
+namespace Board
+{
+using namespace modm::literals;
+
+/// STM32G474RETx, generated by the clock solver for the modm Rcc API
+struct SystemClock
+{
+	static constexpr uint32_t Hse       = 24_MHz;
+	static constexpr uint32_t SysClk    = 160_MHz;
+	…
+	static constexpr Rcc::PllConfig pll{
+		.M = 3,
+		.N = 40,
+		.R = 2,
+		.Q = 8
+	};
+	…
+};
+} // namespace Board</code></pre>
+<p>Work iteratively: solve the core first, then pass the returned <code>config:</code> line back as
+<code>--config</code> with more targets. The solver keeps earlier choices where it can.
+<code>--code</code> needs a modm checkout (see <a href="#install-env"><code>MODM_REPO</code></a>).</p>
+<p><code>clock_tree</code> shows the tree. With <code>--node</code> it shows the path to a peripheral and the limits,
+with <code>--config</code> the frequency of every node, the violated limits and the flash wait states:</p>
+<pre class="code cmd"><code>modm-data-lookup clock_tree STM32G474RETx --node FDCAN1</code></pre>
+<pre class="code out"><code>STM32G474RETx: drawing STM32G4, RCC STM32G4_rcc_v1_0, 80 nodes, 67 peripherals
+…
+FDCAN1 peripheral &lt;- FDCANoutput
+  from: FDCANoutput output &lt;- FDCANMult; FDCANMult mux &lt;- APB1Prescaler* | PLLQ | HSEOSC; APB1Prescaler div 1,2,4,8,16 …
+  bus: APB1Output output &lt;- APB1Prescaler [&lt;=170 MHz]</code></pre>
+
+<h3 id="cli-irq">Interrupts</h3>
+<p><code>irq_events</code> lists the interrupt vectors and the sources that name each instance. With <code>--query</code>
+it shows the events of the matching vectors with their enable, flag and clear bits:</p>
+<pre class="code cmd"><code>modm-data-lookup irq_events stm32g071rb --query TIM6_DAC</code></pre>
+<pre class="code out"><code>stm32g071rb: stm32g071xx.h, RM0444, ST SVD STM32G071.svd, 31 vectors, 305 events
+
+17 TIM6_DAC_LPTIM1: DAC1[cubemx,name,rm], LPTIM1[cubemx,name,rm], TIM6[cubemx,name,rm,svd]
+  RM: TIM6, LPTIM1 and DAC global interrupt
+  CubeMX: TIM6, DAC1 and LPTIM1 interrupts (LPTIM1 interrupt through EXTI line 29)
+  DAC1 DMAUDR2: enable CR.DMAUDRIE2, flag SR.DMAUDR2, write 1 to the flag (no read-modify-write) [name,ll,rm-table,rm-register]
+  …
+  LPTIM1 DOWN: enable IER.DOWNIE, flag ISR.DOWN, write 1 to ICR.DOWNCF [name,ll,rm-register]
+  …</code></pre>
+<p><code>interconnect</code> gives the trigger multiplexers between peripherals with the register value of each signal:</p>
+<pre class="code cmd"><code>modm-data-lookup interconnect stm32g474re --sink TIM2 --signal TIM3_TRGO</code></pre>
+<pre class="code out"><code>stm32g474re: RM0440, 16 multiplexers
+TIM2_TS @0x40000008 (bits 6:4 + bits 21:20): TIM3_TRGO=2</code></pre>
+
+<h3 id="cli-pins">Pins</h3>
+<p><code>pin_functions</code> takes a pin, or a regex on signal names to find the pins that can carry a signal:</p>
+<pre class="code cmd"><code>modm-data-lookup pin_functions stm32g474re --query USART2_TX</code></pre>
+<pre class="code out"><code>stm32g474ret3 (also matches stm32g474ret6 stm32g474ret7)
+USART2_TX: PA2 AF7, PA14 AF7, PB3 AF7</code></pre>
+<p><code>board_pinout</code> reads the connector tables of the user manual of a NUCLEO board or Discovery kit.
+<code>--query</code> takes words that must all match, for example a GPIO to find all its connector pins:</p>
+<pre class="code cmd"><code>modm-data-lookup board_pinout nucleo-g474re --query PA9</code></pre>
+<pre class="code out"><code>NUCLEO-G474RE: UM2505-v7, device STM32G474RETx
+CN5 (arduino):
+  CN5-1 D8: PA9, net ARD_D8, function I/O
+CN10 (morpho, right):
+  CN10-21: PA9</code></pre>
+
+<!-- ================================================================== -->
+<h2 id="mcp">MCP server</h2>
+<p>The MCP server offers the same lookups as tools to coding agents. All tools are read-only.
+There are two ways to run it.</p>
+
+<h3 id="mcp-run">Running it</h3>
+<p><b>stdio</b>, one server per client: the client starts <code>modm-data-mcp</code> itself.
+This server has an extra tool, <code>reload_server</code>, which reloads the code of the lookups after you
+edit them, without reconnecting.</p>
+<p><b>HTTP</b>, one server shared by all clients:</p>
+<pre class="code cmd"><code>make mcp   # http://127.0.0.1:8765/mcp</code></pre>
+<p>This runs <code>uvicorn</code> with <code>--reload</code>, so the server restarts whenever the code of the tools
+or of modm-data changes. It is stateless, so clients do not notice a restart. Use it when several agents
+work at the same time: they share one index and one set of caches.</p>
+
+<h3 id="mcp-claude-code">Claude Code</h3>
+<p>Over stdio, with the absolute path to your checkout:</p>
+<pre class="code cmd"><code>claude mcp add --scope user modm-data -- /path/to/modm-data-tools/.venv/bin/modm-data-mcp</code></pre>
+<p>Over HTTP, with <code>make mcp</code> running:</p>
+<pre class="code cmd"><code>claude mcp add --scope user --transport http modm-data http://127.0.0.1:8765/mcp</code></pre>
+<p><code>--scope user</code> makes the server available in all your projects. Check it with <code>claude mcp list</code>.</p>
+
+<h3 id="mcp-claude-desktop">Claude desktop</h3>
+<p>Add the server to <code>claude_desktop_config.json</code> (Settings → Developer → Edit Config) and restart the app:</p>
+<pre class="code cmd"><code>{
+  "mcpServers": {
+    "modm-data": {
+      "command": "/path/to/modm-data-tools/.venv/bin/modm-data-mcp"
+    }
+  }
+}</code></pre>
+<p>Add <code>"env": {"MODM_DATA": "/path/to/modm-data"}</code> next to <code>command</code> if the tools should read
+another checkout than the installed one.</p>
+
+<h3 id="mcp-apps">Apps</h3>
+<p>With the environment variable <code>MODM_DATA_MCP_APPS=1</code> (off by default), <code>decode_register</code> and
+<code>clock_solve</code> are also <a href="https://github.com/modelcontextprotocol/ext-apps">MCP Apps</a>: hosts that
+render apps show the decoded registers drawn like in the reference manual, and the active clock path of the solution
+with a button for the whole tree (fullscreen where the host has it). The Claude desktop chat and claude.ai render
+them, Claude Code does not. The model gets the same text either way, the data of the view travels in the
+<code>_meta</code> of the result. In <code>claude_desktop_config.json</code>:</p>
+<pre class="code cmd"><code>{
+  "mcpServers": {
+    "modm-data": {
+      "command": "/path/to/modm-data-tools/.venv/bin/modm-data-mcp",
+      "env": {"MODM_DATA_MCP_APPS": "1"}
+    }
+  }
+}</code></pre>
+<p>The pages are the views of the web pages, bundled into one HTML file each time the host reads them, so edits in
+<code>web/</code> show up after reloading the MCP configuration. They load the ext-apps client from unpkg.com and
+dagre from cdnjs.cloudflare.com, so they need a network connection.</p>
+
+<h3 id="mcp-other">Other clients</h3>
+<p>Any MCP client works. For stdio, the command is <code>/path/to/modm-data-tools/.venv/bin/modm-data-mcp</code>
+without arguments. For HTTP, the endpoint is <code>http://127.0.0.1:8765/mcp</code> with the Streamable HTTP
+transport. The server answers in JSON and refuses the optional GET stream with 405, as the specification allows.</p>
+
+<h3 id="mcp-tools">Tools</h3>
+<p>The tool names and parameters are those of the command line. The descriptions below are shortened;
+clients get the full text, which is also what <code>modm-data-lookup &lt;tool&gt; --help</code> shows.
+The last column names the data each tool reads (see <a href="#install-data">The data</a>):
+<span class="tag">headers</span> and <span class="tag">SVD</span> are public, <span class="tag">devices.db</span> is
+built from the CubeMX database, <span class="tag private">CubeMX</span> and <span class="tag private">docs</span> are the
+ST data you download yourself.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Tool</th><th>What it answers</th><th>Data</th></tr></thead>
+  <tbody>
+    <tr class="group"><td colspan="3">Headers</td></tr>
+    <tr><td><code>device_header</code></td><td>Header files of all devices whose part name starts with a prefix.</td><td><span class="tag">headers</span> <span class="tag">devices.db</span></td></tr>
+    <tr><td><code>header_devices</code></td><td>All devices that use a device header, given as file name or define.</td><td><span class="tag">headers</span> <span class="tag">devices.db</span></td></tr>
+    <tr><td><code>find_define</code></td><td>Which device headers define a macro matching a regex, and which do not.</td><td><span class="tag">headers</span> <span class="tag">devices.db</span></td></tr>
+    <tr><td><code>device_condition</code></td><td>lbuild template condition for the devices whose header defines a macro.</td><td><span class="tag">headers</span> <span class="tag">devices.db</span></td></tr>
+    <tr><td><code>peripheral_buses</code></td><td>Which bus (AHB1, APB2, …) every peripheral of a device is on.</td><td><span class="tag">headers</span> <span class="tag">devices.db</span></td></tr>
+    <tr><td><code>flash_latency</code></td><td>Flash wait states: the highest HCLK frequency per number of wait states and voltage.</td><td><span class="tag">devices.db</span></td></tr>
+    <tr class="group"><td colspan="3">Clocks</td></tr>
+    <tr><td><code>clock_tree</code></td><td>The CubeMX clock tree with domains, limits, the clock of every peripheral and the frequencies of a configuration.</td><td><span class="tag private">CubeMX</span></td></tr>
+    <tr><td><code>clock_solve</code></td><td>A clock configuration for frequency targets, why it fails, and the modm <code>SystemClock</code> code.</td><td><span class="tag private">CubeMX</span></td></tr>
+    <tr class="group"><td colspan="3">Registers</td></tr>
+    <tr><td><code>register_map</code></td><td>All registers of a peripheral instance with address, offset and bit fields.</td><td><span class="tag">SVD</span> <span class="tag">devices.db</span></td></tr>
+    <tr><td><code>decode_register</code></td><td>The bit fields of a register, and the decoded fields of a value or of OpenOCD <code>mdw</code> output.</td><td><span class="tag">SVD</span> <span class="tag">devices.db</span></td></tr>
+    <tr class="group"><td colspan="3">Documents</td></tr>
+    <tr><td><code>device_docs</code></td><td>The documents ST lists for a device, with the latest version in the HTML archive.</td><td><span class="tag private">CubeMX</span> <span class="tag private">docs</span></td></tr>
+    <tr><td><code>doc_search</code></td><td>Full-text search over all sections of the latest documents, and matching figures.</td><td><span class="tag private">docs</span></td></tr>
+    <tr><td><code>doc_grep</code></td><td>Where a regex occurs, as hits per section or chapter with their density.</td><td><span class="tag private">docs</span></td></tr>
+    <tr><td><code>doc_toc</code></td><td>The headings of a document or of one section, with the size of each section.</td><td><span class="tag private">docs</span></td></tr>
+    <tr><td><code>doc_section</code></td><td>One section as Markdown, paged for long sections.</td><td><span class="tag private">docs</span></td></tr>
+    <tr><td><code>find_tables</code></td><td>Search table and figure captions and column headers.</td><td><span class="tag private">docs</span></td></tr>
+    <tr><td><code>doc_table</code></td><td>One table as Markdown, filtered by columns and rows.</td><td><span class="tag private">docs</span></td></tr>
+    <tr><td><code>doc_register</code></td><td>The description of a register from the reference manual, with one row per bit field.</td><td><span class="tag private">docs</span></td></tr>
+    <tr class="group"><td colspan="3">Figures</td></tr>
+    <tr><td><code>doc_figures</code></td><td>The figures of a document: number, section, caption and the first labels.</td><td><span class="tag private">docs</span></td></tr>
+    <tr><td><code>doc_figure</code></td><td>One figure: its labels by region of the drawing, or a PNG of it or of one region.</td><td><span class="tag private">docs</span></td></tr>
+    <tr><td><code>doc_figure_data</code></td><td>The data of a figure: chart curves, timing diagram lanes, state machines and flowcharts as Mermaid.</td><td><span class="tag private">docs</span></td></tr>
+    <tr class="group"><td colspan="3">Interrupts</td></tr>
+    <tr><td><code>irq_events</code></td><td>Which events are ORed into which interrupt vector, with enable, flag and clear bits.</td><td><span class="tag private">CubeMX</span> <span class="tag private">docs</span></td></tr>
+    <tr><td><code>interconnect</code></td><td>The trigger multiplexers between peripherals (timer ITR, DAC TSEL) with their values.</td><td><span class="tag private">docs</span></td></tr>
+    <tr class="group"><td colspan="3">Pins</td></tr>
+    <tr><td><code>board_pinout</code></td><td>The connector pins of a NUCLEO board or Discovery kit, with the solder bridges.</td><td><span class="tag private">docs</span> <span class="tag">devices.db</span></td></tr>
+    <tr><td><code>pin_functions</code></td><td>The alternate function numbers of the device pins, and which pins can carry a signal.</td><td><span class="tag">devices.db</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p><code>doc_figure</code> with <code>image</code> returns the PNG as an MCP image next to the text.</p>
+
+<h3 id="mcp-errors">Errors</h3>
+<p>Errors are tool errors with a message, so the agent can react. A wrong input, like an unknown device, a value out of
+range or an invalid or too slow regex, returns the message alone:</p>
+<pre class="code out"><code>Error executing tool device_header: no STM32 device matches 'stm99', similar: stm32u599vjt6 stm32l4s9ziy6 …</code></pre>
+<p>Anything else is a bug in the tools and the message starts with the exception type, for example
+<code>KeyError: …</code>. Please report those.</p>
+
+<h3 id="mcp-instructions">Instructions</h3>
+<p>The server sends instructions to the agent when it connects. They say which tool answers what, for example:</p>
+<ul>
+  <li>Use <code>device_header</code>, <code>header_devices</code> and <code>find_define</code> instead of grepping <code>modm-data/ext</code>.</li>
+  <li>Find documentation with <code>device_docs</code>, <code>doc_search</code> and <code>find_tables</code>, navigate with
+    <code>doc_toc</code>, read with <code>doc_section</code> and <code>doc_table</code> instead of reading the HTML files.</li>
+  <li>Find figures with <code>doc_figures</code>, read them with <code>doc_figure</code>, and take a PNG of one region when the drawing matters.</li>
+  <li>Solve clocks iteratively: feed the <code>config</code> line of <code>clock_solve</code> back with more targets.</li>
+  <li>Use <code>doc_register</code> for the manual's description, <code>register_map</code> and <code>decode_register</code> for addresses and values read from a board.</li>
+  <li>Over stdio, call <code>reload_server</code> after editing the tools; the HTTP server restarts by itself.</li>
+</ul>
+<p>The full text is in <code>src/modm_data_tools/lookup/mcp.py</code>.</p>
+
+<!-- ================================================================== -->
+<h2 id="pages">Pages</h2>
+<p>The pages on <a href="https://data.modm.dev">data.modm.dev</a> run in the browser on data that modm-data generated.
+They are plain HTML, CSS and JavaScript without a build step. Each page keeps its state in the URL hash, so copy the
+address to share what you see.</p>
+
+<h3 id="pages-svd">SVD Registers</h3>
+<p><a href="../svd/">SVD Registers</a> browses the SVD files generated from the STM32 CMSIS headers, or any SVD file you
+open or drop on the page. It shows peripherals, registers, bit fields and enumerated values as a table, or the address
+space as a zoomable map. Filter the file list and the registers with regular expressions, like
+<code>^USART\d+$</code> or <code>CR1\.(RE|TE)</code>, optionally in the descriptions too. The hash holds the file name.</p>
+
+<h3 id="pages-variants">Peripheral Variants</h3>
+<p><a href="../variants/">Peripheral Variants</a> shows how many different implementations of each STM32 peripheral exist.
+The register maps of every peripheral instance of every device are merged into variants with a common core and optional
+features. Compare them by address (binary), by name (source) or with the descriptions aside (similar), and highlight the
+variants that one device uses. The hash holds the mode, the peripheral group and the variant.</p>
+
+<h3 id="pages-boards">Board Pinouts</h3>
+<p><a href="../boards/">Board Pinouts</a> shows the connector pins of the NUCLEO boards and Discovery kits with their
+alternate functions, grouped into sets of boards that are compatible on those pins. Search pins, functions, board uses
+and solder bridges by regex, like <code>^SPI\d_SCK$|PA5</code>, show only free or freeable pins, and choose whether
+compatible means the same name, the same function or only the same position. Hover a pin for its details.
+The hash holds the filters.</p>
+
+<h3 id="pages-pinout">Pin Mapping</h3>
+<p><a href="../pinout/">Pin Mapping</a> has one page per device with the package drawing and a table of all pins and their
+signals. Search for a device on the index page. On a device page you assign signals to pins; <b>Copy Share URL</b> puts
+your assignment into the hash, and you can export and import it as JSON.</p>
+
+<h3 id="pages-clocks">Clock Solver</h3>
+<p><a href="../clocks/">Clock Solver</a> draws the CubeMX clock tree of a device and runs the same solver as
+<code>clock_solve</code> in the browser (with Pyodide). Set targets on the nodes, lock settings, start from the boot
+configuration or the maximum performance, and copy the modm <code>Rcc</code> code. The hash holds the whole configuration,
+and Export and Import save it as JSON.</p>
+
+<h3 id="pages-local">Serving locally</h3>
+<p>To use or work on the pages, generate their data in the modm-data checkout and serve the pages on top of it:</p>
+<pre class="code cmd"><code>make serve   # http://127.0.0.1:8768, data from ../modm-data/docs/src</code></pre>
+<p>Pages in <code>web/</code> take precedence over files in the data folder. <code>python3 serve.py &lt;data folder&gt; [port]</code>
+serves another folder. In modm-data, <code>make build-homepage</code> generates the data of all pages into
+<code>docs/src</code>. To generate the data of a single page, run its exporter from the modm-data checkout:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Page</th><th>Data</th></tr></thead>
+  <tbody>
+    <tr><td>SVD Registers</td><td><code>python -m modm_data.header2svd.stmicro --all --output docs/src/svd/</code></td></tr>
+    <tr><td>Peripheral Variants</td><td><code>python -m modm_data.svd2variants --all --input docs/src/svd/ --output docs/src/variants/</code></td></tr>
+    <tr><td>Board Pinouts</td><td><code>python -m modm_data.html2pinout --output docs/src/boards/nucleo.json --pinout docs/src/pinout</code></td></tr>
+    <tr><td>Pin Mapping</td><td><code>python -m modm_data.pinout --output docs/src/pinout --templates ../modm-data-tools/templates/pinout</code></td></tr>
+    <tr><td>Clock Solver</td><td><code>python -m modm_data.clocks --output docs/src/clocks</code>, then
+      <code>python -m modm_data_tools.clocks --output docs/src/clocks</code></td></tr>
+  </tbody>
+</table>
+</div>
+<p>The second clock step adds the modm <code>Rcc</code> API of every device (from the modm checkout in
+<code>MODM_REPO</code>) and copies the Python code that the page runs.</p>
+
+<!-- ================================================================== -->
+<h2 id="licence">Licences</h2>
+<p>The code of the tools and the pages is under the <a href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public
+License 2.0</a>.</p>
+<p>The data keeps the licence of its source. The CMSIS headers and Open Pin Data are BSD-3-Clause, the ST SVD files are
+Apache-2.0. The STM32CubeMX database and ST's PDF documentation are under the ST licence agreement (SLA): modm-data does
+not redistribute them, you download them from ST yourself.</p>
+<p class="note warn">Data derived from STM32CubeMX is under the ST SLA and must not be published. This includes
+<code>devices.db</code>, the clock trees and the board pinouts, and the output of <code>clock_tree</code> and
+<code>clock_solve</code>. Keep it out of public repositories.</p>
+<p>See the <a href="https://github.com/modm-io/modm-data">modm-data README</a> for the licence of every input source.</p>
+</main>
+</div>
+
+<script type="module">
+// A copy button for every command block
+for (const pre of document.querySelectorAll("pre.code.cmd")) {
+  const wrap = document.createElement("div");
+  const button = document.createElement("button");
+  wrap.className = "code-wrap";
+  button.className = "btn small copy";
+  button.type = "button";
+  button.textContent = "Copy";
+  const show = (text) => {
+    button.textContent = text;
+    setTimeout(() => (button.textContent = "Copy"), 1200);
+  };
+  button.addEventListener("click", () =>
+    navigator.clipboard.writeText(pre.textContent).then(() => show("Copied"), () => show("Not allowed")));
+  pre.before(wrap);
+  wrap.append(pre, button);
+}
+</script>
+</body>
+</html>

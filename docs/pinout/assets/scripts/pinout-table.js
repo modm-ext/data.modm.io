@@ -222,27 +222,22 @@
       ctx.bindAllPackageHeaderHighlights();
     };
 
+    // Tabulator builds the table asynchronously, its methods are unreliable before "tableBuilt"
     ctx.waitForTableBuilt = function waitForTableBuilt(instance) {
       return new Promise((resolve) => {
-        let settled = false;
-        const done = () => {
-          if (settled) {
-            return;
-          }
-          settled = true;
+        if (instance.initialized) {
           resolve();
-        };
-
-        instance.on("tableBuilt", done);
-        window.requestAnimationFrame(done);
+        } else {
+          instance.on("tableBuilt", resolve);
+        }
       });
     };
 
+    // Lets Tabulator finish the current task. Not requestAnimationFrame: browsers pause it in background
+    // tabs, which left the regex cells and the status of an import waiting until the tab was shown.
     ctx.waitForTableRenderTick = function waitForTableRenderTick() {
       return new Promise((resolve) => {
-        window.requestAnimationFrame(() => {
-          window.requestAnimationFrame(resolve);
-        });
+        window.setTimeout(resolve, 0);
       });
     };
 
@@ -305,7 +300,6 @@
           headerFilterFunc: ctx.baseRegexHeaderFilterFunc,
           headerFilterFuncParams: { field: "position" },
           editable: false,
-          movable: false,
           minWidth: 70,
           width: 80,
           hozAlign: "right",
@@ -340,7 +334,6 @@
           headerFilterFunc: ctx.baseRegexHeaderFilterFunc,
           headerFilterFuncParams: { field: "short_name" },
           editable: false,
-          movable: false,
           minWidth: 110,
           width: 140,
           formatter: (cell) => ctx.escapeHtml(cell.getValue() || ""),
@@ -355,7 +348,6 @@
           headerFilterLiveFilter: false,
           headerFilterFunc: ctx.baseRegexHeaderFilterFunc,
           headerFilterFuncParams: { field: "selected_function" },
-          movable: false,
           minWidth: 260,
           widthGrow: 2,
           editor: "list",
@@ -375,7 +367,6 @@
           headerFilterLiveFilter: false,
           headerFilterFunc: ctx.baseRegexHeaderFilterFunc,
           headerFilterFuncParams: { field: "internal_name" },
-          movable: false,
           minWidth: 180,
           widthGrow: 1,
           editor: "input",
