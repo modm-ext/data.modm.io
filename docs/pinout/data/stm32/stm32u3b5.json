@@ -947,7 +947,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -976,7 +975,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -2081,7 +2079,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -2110,7 +2107,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -3243,7 +3239,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -3272,7 +3267,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -4377,7 +4371,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -4406,7 +4399,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -5539,7 +5531,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -5568,7 +5559,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -6673,7 +6663,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -6702,7 +6691,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -7835,7 +7823,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -7864,7 +7851,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -8969,7 +8955,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -8998,7 +8983,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -10131,7 +10115,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C5 PA13 (JTMS/SWDIO)",
@@ -10146,7 +10129,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -11839,7 +11821,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C5 PA13 (JTMS/SWDIO)",
@@ -11854,7 +11835,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -14153,7 +14133,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C10 PA13 (JTMS/SWDIO)",
@@ -14168,7 +14147,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -17082,7 +17060,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C10 PA13 (JTMS/SWDIO)",
@@ -17097,7 +17074,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -19996,7 +19972,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C10 PA13 (JTMS/SWDIO)",
@@ -20011,7 +19986,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -22925,7 +22899,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C10 PA13 (JTMS/SWDIO)",
@@ -22940,7 +22913,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -25541,7 +25513,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -25570,7 +25541,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -27069,7 +27039,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -27098,7 +27067,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -28611,7 +28579,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -28640,7 +28607,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -30139,7 +30105,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -30168,7 +30133,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -32316,7 +32280,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -32352,7 +32315,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -34594,7 +34556,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -34630,7 +34591,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -36125,7 +36085,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -36293,7 +36252,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "F2 PA13 (JTMS/SWDIO)",
@@ -39163,7 +39121,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -39199,7 +39156,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -41441,7 +41397,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -41477,7 +41432,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -42972,7 +42926,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -43140,7 +43093,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "F2 PA13 (JTMS/SWDIO)",
@@ -45631,7 +45583,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C3 PA13 (JTMS/SWDIO)",
@@ -45646,7 +45597,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -48454,7 +48404,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C3 PA13 (JTMS/SWDIO)",
@@ -48469,7 +48418,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -52375,7 +52323,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "105 PA13 (JTMS/SWDIO)",
@@ -52411,7 +52358,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -55493,7 +55439,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "105 PA13 (JTMS/SWDIO)",
@@ -55529,7 +55474,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -58621,7 +58565,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "105 PA13 (JTMS/SWDIO)",
@@ -58657,7 +58600,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -61739,7 +61681,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "105 PA13 (JTMS/SWDIO)",
@@ -61775,7 +61716,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "I2C4_SMBA",
             "SAI1_FS_B"
           ],
@@ -62259,6 +62199,6 @@
       ]
     }
   },
-  "generated_at": "2026-11-17 00:23:58 UTC",
+  "generated_at": "2026-11-17 22:18:28 UTC",
   "source": "stm32/stm32u3b5"
 }

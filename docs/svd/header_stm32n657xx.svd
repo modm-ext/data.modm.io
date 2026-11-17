@@ -161348,50 +161348,6 @@
           <addressOffset>0x4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>CR_RETENABLEN1</name>
-              <description>Retention mode enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_AUTORSMENB1</name>
-              <description>Auto-resume mode enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_CMN</name>
-              <description>Controls the power down of analog blocks during Suspend and Sleep</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_FSEL</name>
-              <description>Frequency selection</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>CR_OTGDISABLE0</name>
-              <description>OTG disable 0</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_DRVVBUS0</name>
-              <description>Drive VBUS 0</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_SELOTGDBG</name>
-              <description>Select HS PHY debug port</description>
-              <bitOffset>31</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
         </register>
         <register>
           <name>USBPHYC_TRIM2CR</name>
@@ -161399,50 +161355,6 @@
           <addressOffset>0x8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
-          <fields>
-            <field>
-              <name>CR_RETENABLEN1</name>
-              <description>Retention mode enable</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_AUTORSMENB1</name>
-              <description>Auto-resume mode enable</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_CMN</name>
-              <description>Controls the power down of analog blocks during Suspend and Sleep</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_FSEL</name>
-              <description>Frequency selection</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>3</bitWidth>
-            </field>
-            <field>
-              <name>CR_OTGDISABLE0</name>
-              <description>OTG disable 0</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_DRVVBUS0</name>
-              <description>Drive VBUS 0</description>
-              <bitOffset>17</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>CR_SELOTGDBG</name>
-              <description>Select HS PHY debug port</description>
-              <bitOffset>31</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
         </register>
       </registers>
     </peripheral>

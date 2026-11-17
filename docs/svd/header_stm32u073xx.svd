@@ -15173,9 +15173,24 @@
           </fields>
         </register>
         <register>
-          <name>ITLINE1_SR</name>
+          <name>ITLINE0_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
           <addressOffset>0x80</addressOffset>
+          <size>0x20</size>
+          <access>read-write</access>
+          <fields>
+            <field>
+              <name>WWDG</name>
+              <description>WWDG interrupt</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ITLINE1_SR</name>
+          <description>SYSCFG configuration IT_LINE register</description>
+          <addressOffset>0x84</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15208,7 +15223,7 @@
         <register>
           <name>ITLINE2_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0x84</addressOffset>
+          <addressOffset>0x88</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15229,7 +15244,7 @@
         <register>
           <name>ITLINE3_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0x88</addressOffset>
+          <addressOffset>0x8c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15250,7 +15265,7 @@
         <register>
           <name>ITLINE4_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0x8c</addressOffset>
+          <addressOffset>0x90</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15271,7 +15286,7 @@
         <register>
           <name>ITLINE5_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0x90</addressOffset>
+          <addressOffset>0x94</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15292,7 +15307,7 @@
         <register>
           <name>ITLINE6_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0x94</addressOffset>
+          <addressOffset>0x98</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15313,7 +15328,7 @@
         <register>
           <name>ITLINE7_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0x98</addressOffset>
+          <addressOffset>0x9c</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15394,7 +15409,7 @@
         <register>
           <name>ITLINE8_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0x9c</addressOffset>
+          <addressOffset>0xa0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15409,7 +15424,7 @@
         <register>
           <name>ITLINE9_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xa0</addressOffset>
+          <addressOffset>0xa4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15424,7 +15439,7 @@
         <register>
           <name>ITLINE10_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xa4</addressOffset>
+          <addressOffset>0xa8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15445,7 +15460,7 @@
         <register>
           <name>ITLINE11_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xa8</addressOffset>
+          <addressOffset>0xac</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15514,7 +15529,7 @@
         <register>
           <name>ITLINE12_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xac</addressOffset>
+          <addressOffset>0xb0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15541,7 +15556,7 @@
         <register>
           <name>ITLINE13_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xb0</addressOffset>
+          <addressOffset>0xb4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15574,7 +15589,7 @@
         <register>
           <name>ITLINE14_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xb4</addressOffset>
+          <addressOffset>0xb8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15607,7 +15622,7 @@
         <register>
           <name>ITLINE15_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xb8</addressOffset>
+          <addressOffset>0xbc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15622,7 +15637,7 @@
         <register>
           <name>ITLINE16_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xbc</addressOffset>
+          <addressOffset>0xc0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15637,7 +15652,7 @@
         <register>
           <name>ITLINE17_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xc0</addressOffset>
+          <addressOffset>0xc4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15664,7 +15679,7 @@
         <register>
           <name>ITLINE18_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xc4</addressOffset>
+          <addressOffset>0xc8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15685,7 +15700,7 @@
         <register>
           <name>ITLINE19_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xc8</addressOffset>
+          <addressOffset>0xcc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15706,7 +15721,7 @@
         <register>
           <name>ITLINE20_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xcc</addressOffset>
+          <addressOffset>0xd0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15721,7 +15736,7 @@
         <register>
           <name>ITLINE21_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xd0</addressOffset>
+          <addressOffset>0xd4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15742,7 +15757,7 @@
         <register>
           <name>ITLINE22_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xd4</addressOffset>
+          <addressOffset>0xd8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15757,7 +15772,7 @@
         <register>
           <name>ITLINE23_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xd8</addressOffset>
+          <addressOffset>0xdc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15772,7 +15787,7 @@
         <register>
           <name>ITLINE24_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xdc</addressOffset>
+          <addressOffset>0xe0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15799,7 +15814,7 @@
         <register>
           <name>ITLINE25_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xe0</addressOffset>
+          <addressOffset>0xe4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15814,7 +15829,7 @@
         <register>
           <name>ITLINE26_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xe4</addressOffset>
+          <addressOffset>0xe8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15835,7 +15850,7 @@
         <register>
           <name>ITLINE27_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xe8</addressOffset>
+          <addressOffset>0xec</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15850,7 +15865,7 @@
         <register>
           <name>ITLINE28_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xec</addressOffset>
+          <addressOffset>0xf0</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15871,7 +15886,7 @@
         <register>
           <name>ITLINE29_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xf0</addressOffset>
+          <addressOffset>0xf4</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15892,7 +15907,7 @@
         <register>
           <name>ITLINE30_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xf4</addressOffset>
+          <addressOffset>0xf8</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15913,7 +15928,7 @@
         <register>
           <name>ITLINE31_SR</name>
           <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xf8</addressOffset>
+          <addressOffset>0xfc</addressOffset>
           <size>0x20</size>
           <access>read-write</access>
           <fields>
@@ -15921,39 +15936,6 @@
               <name>RNG</name>
               <description>RNG Interrupt</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>IT_LINE_SR31</name>
-          <description>SYSCFG configuration IT_LINE register</description>
-          <addressOffset>0xfc</addressOffset>
-          <size>0x20</size>
-          <access>read-write</access>
-          <fields>
-            <field>
-              <name>PVDOUT</name>
-              <description>PVDOUT interrupt</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PVMOUT1</name>
-              <description>VDDUSB interrupt</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PVMOUT3</name>
-              <description>VDDADC interrupt</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>PVMOUT4</name>
-              <description>VDDADC interrupt</description>
-              <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>

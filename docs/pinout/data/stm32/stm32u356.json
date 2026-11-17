@@ -913,7 +913,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -2004,7 +2003,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -3119,7 +3117,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -4210,7 +4207,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -5185,7 +5181,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "D5 PA13 (JTMS/SWDIO)",
@@ -6401,7 +6396,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -7492,7 +7486,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -8607,7 +8600,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -9698,7 +9690,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -10673,7 +10664,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "D5 PA13 (JTMS/SWDIO)",
@@ -11600,7 +11590,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "23 PA13 (JTMS/SWDIO)",
@@ -12379,7 +12368,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "23 PA13 (JTMS/SWDIO)",
@@ -13229,7 +13217,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "A8 PA13 (JTMS/SWDIO)",
@@ -14862,7 +14849,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "C6 PA13 (JTMS/SWDIO)",
@@ -16679,7 +16665,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -18138,7 +18123,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -19075,7 +19059,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "B1 PA13 (JTMS/SWDIO)",
@@ -20516,7 +20499,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "A8 PA13 (JTMS/SWDIO)",
@@ -22149,7 +22131,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "C6 PA13 (JTMS/SWDIO)",
@@ -23966,7 +23947,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -25425,7 +25405,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -26362,7 +26341,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "B1 PA13 (JTMS/SWDIO)",
@@ -28047,7 +28025,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "A11 PA13 (JTMS/SWDIO)",
@@ -30572,7 +30549,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "C12 PA13 (JTMS/SWDIO)",
@@ -33303,7 +33279,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -35481,7 +35456,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -36787,7 +36761,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "A11 PA13 (JTMS/SWDIO)",
@@ -39312,7 +39285,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "C12 PA13 (JTMS/SWDIO)",
@@ -42043,7 +42015,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -44221,7 +44192,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "LCD_SEG12"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -44589,6 +44559,6 @@
       ]
     }
   },
-  "generated_at": "2026-11-17 00:23:58 UTC",
+  "generated_at": "2026-11-17 22:18:28 UTC",
   "source": "stm32/stm32u356"
 }

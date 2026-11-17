@@ -4242,12 +4242,12 @@
 "features": 7
 },
 {
-"instances": 36,
-"devices": 36,
-"members": 10,
-"registers": 64,
-"core": 0,
-"features": 20
+"instances": 30,
+"devices": 30,
+"members": 27,
+"registers": 42,
+"core": 8,
+"features": 40
 },
 {
 "instances": 29,
@@ -4258,27 +4258,27 @@
 "features": 5
 },
 {
+"instances": 28,
+"devices": 28,
+"members": 4,
+"registers": 31,
+"core": 50,
+"features": 5
+},
+{
+"instances": 20,
+"devices": 20,
+"members": 6,
+"registers": 10,
+"core": 25,
+"features": 6
+},
+{
 "instances": 19,
 "devices": 19,
 "members": 8,
 "registers": 7,
 "core": 33,
-"features": 6
-},
-{
-"instances": 18,
-"devices": 18,
-"members": 17,
-"registers": 38,
-"core": 83,
-"features": 26
-},
-{
-"instances": 18,
-"devices": 18,
-"members": 5,
-"registers": 10,
-"core": 25,
 "features": 6
 },
 {
@@ -4288,14 +4288,6 @@
 "registers": 8,
 "core": 36,
 "features": 2
-},
-{
-"instances": 11,
-"devices": 11,
-"members": 9,
-"registers": 38,
-"core": 30,
-"features": 7
 },
 {
 "instances": 8,
@@ -4312,6 +4304,14 @@
 "registers": 8,
 "core": 40,
 "features": 5
+},
+{
+"instances": 6,
+"devices": 6,
+"members": 5,
+"registers": 38,
+"core": 31,
+"features": 6
 },
 {
 "instances": 6,
@@ -4365,16 +4365,8 @@
 "instances": 1,
 "devices": 1,
 "members": 1,
-"registers": 37,
-"core": 141,
-"features": 0
-},
-{
-"instances": 1,
-"devices": 1,
-"members": 1,
 "registers": 35,
-"core": 106,
+"core": 100,
 "features": 0
 }
 ]
@@ -4765,7 +4757,7 @@
 ],
 "instances": 23428,
 "shapes": 1941,
-"variants": 423
+"variants": 422
 },
 "source": {
 "groups": [
@@ -8310,7 +8302,7 @@
 "members": 29,
 "registers": 96,
 "core": 0,
-"features": 70
+"features": 65
 },
 {
 "instances": 28,
@@ -8357,7 +8349,7 @@
 "devices": 1,
 "members": 1,
 "registers": 35,
-"core": 106,
+"core": 100,
 "features": 0
 }
 ]
@@ -8590,7 +8582,7 @@
 "devices": 4,
 "members": 1,
 "registers": 3,
-"core": 24,
+"core": 10,
 "features": 0
 },
 {
@@ -12053,7 +12045,7 @@
 "members": 31,
 "registers": 56,
 "core": 0,
-"features": 62
+"features": 57
 },
 {
 "instances": 19,
@@ -12084,7 +12076,7 @@
 "devices": 1,
 "members": 1,
 "registers": 35,
-"core": 106,
+"core": 100,
 "features": 0
 }
 ]
@@ -12285,7 +12277,7 @@
 "devices": 4,
 "members": 1,
 "registers": 3,
-"core": 24,
+"core": 10,
 "features": 0
 },
 {

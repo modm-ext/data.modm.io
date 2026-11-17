@@ -843,7 +843,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -918,7 +917,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -947,7 +945,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "37 PA14 (JTCK/SWCLK)",
@@ -1939,7 +1936,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -2014,7 +2010,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -2043,7 +2038,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "37 PA14 (JTCK/SWCLK)",
@@ -3061,7 +3055,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -3136,7 +3129,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -3165,7 +3157,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "37 PA14 (JTCK/SWCLK)",
@@ -4157,7 +4148,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -4232,7 +4222,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -4261,7 +4250,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "37 PA14 (JTCK/SWCLK)",
@@ -5046,7 +5034,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "C3 PA14 (JTCK/SWCLK)",
@@ -5134,7 +5121,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "E3 PA13 (JTMS/SWDIO)",
@@ -5296,7 +5282,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -6450,7 +6435,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -6525,7 +6509,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -6554,7 +6537,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "37 PA14 (JTCK/SWCLK)",
@@ -7546,7 +7528,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -7621,7 +7602,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -7650,7 +7630,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "37 PA14 (JTCK/SWCLK)",
@@ -8668,7 +8647,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -8743,7 +8721,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -8772,7 +8749,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "37 PA14 (JTCK/SWCLK)",
@@ -9764,7 +9740,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -9839,7 +9814,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "34 PA13 (JTMS/SWDIO)",
@@ -9868,7 +9842,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "37 PA14 (JTCK/SWCLK)",
@@ -10653,7 +10626,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "C3 PA14 (JTCK/SWCLK)",
@@ -10741,7 +10713,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "E3 PA13 (JTMS/SWDIO)",
@@ -10903,7 +10874,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -11760,7 +11730,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -11834,7 +11803,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "23 PA13 (JTMS/SWDIO)",
@@ -11848,7 +11816,6 @@
             "LPTIM1_CH1",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "24 PA14 (JTCK/SWCLK)",
@@ -12534,7 +12501,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -12608,7 +12574,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "23 PA13 (JTMS/SWDIO)",
@@ -12622,7 +12587,6 @@
             "LPTIM1_CH1",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "24 PA14 (JTCK/SWCLK)",
@@ -13453,7 +13417,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "A7 PA14 (JTCK/SWCLK)",
@@ -13465,7 +13428,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "A8 PA13 (JTMS/SWDIO)",
@@ -13763,7 +13725,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -15112,7 +15073,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "C5 PA14 (JTCK/SWCLK)",
@@ -15124,7 +15084,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C6 PA13 (JTMS/SWDIO)",
@@ -15257,7 +15216,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -16883,7 +16841,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -16958,7 +16915,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -16987,7 +16943,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "49 PA14 (JTCK/SWCLK)",
@@ -18363,7 +18318,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -18438,7 +18392,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -18467,7 +18420,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "49 PA14 (JTCK/SWCLK)",
@@ -19638,7 +19590,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "F4 PA14 (JTCK/SWCLK)",
@@ -19731,7 +19682,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "H4 PA13 (JTMS/SWDIO)",
@@ -19746,7 +19696,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -20949,7 +20898,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "C3 PA14 (JTCK/SWCLK)",
@@ -21081,7 +21029,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "E3 PA13 (JTMS/SWDIO)",
@@ -21275,7 +21222,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -22453,7 +22399,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "A7 PA14 (JTCK/SWCLK)",
@@ -22465,7 +22410,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "A8 PA13 (JTMS/SWDIO)",
@@ -22763,7 +22707,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -24112,7 +24055,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "C5 PA14 (JTCK/SWCLK)",
@@ -24124,7 +24066,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C6 PA13 (JTMS/SWDIO)",
@@ -24257,7 +24198,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -25883,7 +25823,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -25958,7 +25897,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -25987,7 +25925,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "49 PA14 (JTCK/SWCLK)",
@@ -27363,7 +27300,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -27438,7 +27374,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "46 PA13 (JTMS/SWDIO)",
@@ -27467,7 +27402,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "49 PA14 (JTCK/SWCLK)",
@@ -28638,7 +28572,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "F4 PA14 (JTCK/SWCLK)",
@@ -28731,7 +28664,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "H4 PA13 (JTMS/SWDIO)",
@@ -28746,7 +28678,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -29949,7 +29880,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "C3 PA14 (JTCK/SWCLK)",
@@ -30081,7 +30011,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "E3 PA13 (JTMS/SWDIO)",
@@ -30275,7 +30204,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -31692,7 +31620,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "A10 PA14 (JTCK/SWCLK)",
@@ -31704,7 +31631,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "A11 PA13 (JTMS/SWDIO)",
@@ -32177,7 +32103,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -34264,7 +34189,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "C11 PA14 (JTCK/SWCLK)",
@@ -34276,7 +34200,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C12 PA13 (JTMS/SWDIO)",
@@ -34505,7 +34428,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -36963,7 +36885,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -37038,7 +36959,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -37074,7 +36994,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "76 PA14 (JTCK/SWCLK)",
@@ -39171,7 +39090,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -39246,7 +39164,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -39282,7 +39199,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "76 PA14 (JTCK/SWCLK)",
@@ -40556,7 +40472,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "A10 PA14 (JTCK/SWCLK)",
@@ -40568,7 +40483,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "A11 PA13 (JTMS/SWDIO)",
@@ -41041,7 +40955,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -43128,7 +43041,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "C11 PA14 (JTCK/SWCLK)",
@@ -43140,7 +43052,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "C12 PA13 (JTMS/SWDIO)",
@@ -43369,7 +43280,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -45827,7 +45737,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -45902,7 +45811,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -45938,7 +45846,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "76 PA14 (JTCK/SWCLK)",
@@ -48035,7 +47942,6 @@
             "SAI1_CK2",
             "SPI1_RDY",
             "USART1_CK",
-            "USB_SOF",
             "RCC_MCO2",
             "DEBUG_TRACECLK",
             "SAI1_SCK_A",
@@ -48110,7 +48016,6 @@
           "functions": [
             "DEBUG_JTMS/DEBUG_SWDIO",
             "IRTIM_OUT",
-            "USB_NOE",
             "SAI1_SD_B"
           ],
           "pin_label": "72 PA13 (JTMS/SWDIO)",
@@ -48146,7 +48051,6 @@
             "I2C2_SMBA",
             "I2C1_SMBA",
             "I2C3_SMBA",
-            "USB_SOF",
             "SAI1_FS_B"
           ],
           "pin_label": "76 PA14 (JTCK/SWCLK)",
@@ -48491,6 +48395,6 @@
       ]
     }
   },
-  "generated_at": "2026-11-17 00:23:58 UTC",
+  "generated_at": "2026-11-17 22:18:28 UTC",
   "source": "stm32/stm32u375"
 }
