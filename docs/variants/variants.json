@@ -4223,7 +4223,7 @@
 "ignored": [],
 "instances": 271,
 "devices": 257,
-"shapes": 107,
+"shapes": 106,
 "variants": [
 {
 "instances": 46,
@@ -4252,10 +4252,10 @@
 {
 "instances": 29,
 "devices": 29,
-"members": 4,
+"members": 3,
 "registers": 9,
 "core": 23,
-"features": 5
+"features": 3
 },
 {
 "instances": 28,
@@ -4756,7 +4756,7 @@
 }
 ],
 "instances": 23428,
-"shapes": 1941,
+"shapes": 1940,
 "variants": 422
 },
 "source": {
@@ -8278,15 +8278,15 @@
 "ignored": [],
 "instances": 271,
 "devices": 257,
-"shapes": 107,
+"shapes": 106,
 "variants": [
 {
 "instances": 97,
 "devices": 95,
-"members": 36,
+"members": 35,
 "registers": 85,
 "core": 0,
-"features": 56
+"features": 55
 },
 {
 "instances": 62,
@@ -8723,7 +8723,7 @@
 }
 ],
 "instances": 23428,
-"shapes": 1941,
+"shapes": 1940,
 "variants": 323
 },
 "similar": {
@@ -12021,15 +12021,15 @@
 "ignored": [],
 "instances": 271,
 "devices": 257,
-"shapes": 107,
+"shapes": 106,
 "variants": [
 {
 "instances": 114,
 "devices": 112,
-"members": 36,
+"members": 35,
 "registers": 116,
 "core": 0,
-"features": 65
+"features": 64
 },
 {
 "instances": 62,
@@ -12418,7 +12418,7 @@
 }
 ],
 "instances": 23428,
-"shapes": 1941,
+"shapes": 1940,
 "variants": 289
 }
 }

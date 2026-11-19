@@ -24662,15 +24662,15 @@
           <access>read-write</access>
           <fields>
             <field>
-              <name>FMPI2C1_SCL</name>
-              <description>FM+ drive capability for FMPI2C1_SCL pin</description>
+              <name>LOCKUP_LOCK</name>
+              <description>Core Lockup lock</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>FMPI2C1_SDA</name>
-              <description>FM+ drive capability for FMPI2C1_SDA pin</description>
-              <bitOffset>1</bitOffset>
+              <name>PVD_LOCK</name>
+              <description>PVD Lock</description>
+              <bitOffset>2</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
