@@ -1325,19 +1325,27 @@
 "features": 0
 },
 {
-"instances": 20,
-"devices": 20,
-"members": 4,
-"registers": 57,
-"core": 236,
-"features": 4
-},
-{
 "instances": 12,
 "devices": 6,
 "members": 2,
 "registers": 142,
 "core": 622,
+"features": 2
+},
+{
+"instances": 10,
+"devices": 10,
+"members": 2,
+"registers": 57,
+"core": 236,
+"features": 1
+},
+{
+"instances": 10,
+"devices": 10,
+"members": 2,
+"registers": 56,
+"core": 257,
 "features": 2
 },
 {
@@ -4757,7 +4765,7 @@
 ],
 "instances": 23428,
 "shapes": 1940,
-"variants": 422
+"variants": 423
 },
 "source": {
 "groups": [
@@ -5873,7 +5881,7 @@
 "members": 4,
 "registers": 57,
 "core": 236,
-"features": 4
+"features": 5
 },
 {
 "instances": 16,
@@ -9776,7 +9784,7 @@
 "members": 4,
 "registers": 57,
 "core": 236,
-"features": 4
+"features": 5
 },
 {
 "instances": 3,

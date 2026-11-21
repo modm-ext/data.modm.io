@@ -44170,12 +44170,12 @@
           <fields>
             <field>
               <name>TSSO</name>
-              <bitOffset>4</bitOffset>
+              <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
               <name>TSTTR</name>
-              <bitOffset>5</bitOffset>
+              <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
           </fields>
