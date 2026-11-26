@@ -74680,6 +74680,28 @@
               <description>Flash signal delay</description>
               <bitOffset>4</bitOffset>
               <bitWidth>2</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DELAY_0</name>
+                  <description>programming delay set for Flash running at 70 MHz or below</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DELAY_1</name>
+                  <description>programming delay set for Flash running between 70 MHz and 185 MHz</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DELAY_2</name>
+                  <description>programming delay set for Flash running between 185 MHz and 225 MHz</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DELAY_3</name>
+                  <description>programming delay set for Flash at startup</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -84150,6 +84172,28 @@
               <description>Voltage reference scale</description>
               <bitOffset>4</bitOffset>
               <bitWidth>3</bitWidth>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SCALE0</name>
+                  <description>Voltage reference scale 0 (VREF_OUT1)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SCALE1</name>
+                  <description>Voltage reference scale 1 (VREF_OUT2)</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SCALE2</name>
+                  <description>Voltage reference scale 2 (VREF_OUT3)</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SCALE3</name>
+                  <description>Voltage reference scale 3 (VREF_OUT4)</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>

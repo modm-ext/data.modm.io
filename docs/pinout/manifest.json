@@ -3830,11 +3830,32 @@
       "source": "rp/rp2040"
     },
     {
-      "chip_id": "rp2350",
-      "data": "data/rp/rp2350.json",
-      "page": "rp2350/index.html",
-      "partname": "rp2350",
-      "source": "rp/rp2350"
+      "chip_id": "rp2350a",
+      "data": "data/rp/rp2350a.json",
+      "page": "rp2350a/index.html",
+      "partname": "rp2350a",
+      "source": "rp/rp2350a"
+    },
+    {
+      "chip_id": "rp2350b",
+      "data": "data/rp/rp2350b.json",
+      "page": "rp2350b/index.html",
+      "partname": "rp2350b",
+      "source": "rp/rp2350b"
+    },
+    {
+      "chip_id": "rp2354a",
+      "data": "data/rp/rp2354a.json",
+      "page": "rp2354a/index.html",
+      "partname": "rp2354a",
+      "source": "rp/rp2354a"
+    },
+    {
+      "chip_id": "rp2354b",
+      "data": "data/rp/rp2354b.json",
+      "page": "rp2354b/index.html",
+      "partname": "rp2354b",
+      "source": "rp/rp2354b"
     },
     {
       "chip_id": "samd09c13a-ssu",
